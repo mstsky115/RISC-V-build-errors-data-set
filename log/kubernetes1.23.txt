@@ -1,0 +1,371 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] goat19 started "build kubernetes1.23.spec" at Fri Jul 22 08:13:24 UTC 2022.
+[    0s] 
+[    0s] Building kubernetes1.23 for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '49c62e562be401c89b60335feb058c03'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/kubernetes1.23.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/kubernetes1.23.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/kubernetes1.23.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [a8c20c14845191ca728f46a68553563e]
+[    1s] 
+[    1s] copying packages...
+[    1s] reordering...done
+[    2s] booting kvm...
+[    2s] ### VM INTERACTION START ###
+[    2s] Using UART console
+[    2s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 16
+[    7s] ### VM INTERACTION END ###
+[    7s] 2nd stage started in virtual machine
+[    7s] machine type: riscv64
+[    7s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[    7s] Increasing log le[    4.871523][  T497] sysrq: Changing Loglevel
+[    7s] vel from now on.[    4.872086][  T497] sysrq: Loglevel set to 4
+[    7s] ..
+[    7s] Enable sysrq operations
+[    8s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    8s] no label, UUID=28a51bb1-f1e0-4d8c-b62c-d65ae4c85398
+[    8s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    8s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    8s] swapon /dev/vdb
+[    8s] WARNING: udev not running, creating extra device nodes
+[    8s] logging output to //.build.log...
+[    8s] processing recipe /.build-srcdir/kubernetes1.23.spec ...
+[    8s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/kubernetes1.23.spec build ...
+[    8s] initializing rpm db...
+[    9s] querying package ids...
+[   19s] [1/166] preinstalled aaa_base-84.87+git20220518.dc83f4e-1.1
+[   19s] [2/166] preinstalled aaa_base-malloccheck-84.87+git20220518.dc83f4e-1.1
+[   19s] [3/166] preinstalled attr-2.5.1-1.1
+[   19s] [4/166] preinstalled bash-5.1.16-8.1
+[   19s] [5/166] cumulate bash-completion-2.11-5.2
+[   19s] [6/166] preinstalled bash-sh-5.1.16-8.1
+[   19s] [7/166] preinstalled binutils-2.38-6.1
+[   19s] [8/166] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   19s] [9/166] preinstalled build-compare-20220620T150329.a852498-1.1
+[   19s] [10/166] preinstalled build-mkbaselibs-20220613-1.1
+[   19s] [11/166] preinstalled bzip2-1.0.8-4.1
+[   19s] [12/166] preinstalled chkstat-1599_20220309-33.1
+[   19s] [13/166] preinstalled compat-usrmerge-build-84.87-5.1
+[   19s] [14/166] preinstalled compat-usrmerge-tools-84.87-5.1
+[   19s] [15/166] preinstalled coreutils-9.1-2.1
+[   19s] [16/166] preinstalled cpio-2.13-4.1
+[   19s] [17/166] preinstalled cpp-12-2.1
+[   19s] [18/166] preinstalled cpp12-12.1.1+git215-4.1
+[   19s] [19/166] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   19s] [20/166] preinstalled diffutils-3.8-2.1
+[   19s] [21/166] preinstalled dwz-0.14-4.1
+[   19s] [22/166] cumulate fdupes-2.1.2-3.1
+[   19s] [23/166] preinstalled file-5.42-1.1
+[   19s] [24/166] preinstalled file-magic-5.42-1.1
+[   19s] [25/166] preinstalled filesystem-84.87-5.1
+[   19s] [26/166] preinstalled fillup-1.42-277.1
+[   19s] [27/166] preinstalled findutils-4.9.0-1.1
+[   19s] [28/166] preinstalled gawk-5.1.1-6.1
+[   19s] [29/166] preinstalled gcc-12-2.1
+[   19s] [30/166] preinstalled gcc-PIE-12-2.1
+[   19s] [31/166] preinstalled gcc12-12.1.1+git215-4.1
+[   19s] [32/166] preinstalled gcc12-PIE-12.1.1+git215-4.1
+[   19s] [33/166] preinstalled gettext-runtime-mini-0.21-4.1
+[   19s] [34/166] preinstalled gettext-tools-mini-0.21-4.1
+[   19s] [35/166] preinstalled glibc-2.35-6.1
+[   19s] [36/166] preinstalled glibc-devel-2.35-6.1
+[   19s] [37/166] preinstalled glibc-locale-base-2.35-6.1
+[   19s] [38/166] cumulate go-md2man-2.0.0+git20190314.f79a8a8-1.2
+[   19s] [39/166] cumulate go1.17-1.17.12-1.1
+[   19s] [40/166] cumulate golang-github-jteeuwen-go-bindata-3.0.7+git20151023.72.a0ff256-5.1
+[   19s] [41/166] preinstalled grep-3.7-4.1
+[   19s] [42/166] preinstalled gzip-1.12-2.1
+[   19s] [43/166] preinstalled kernel-obs-build-5.14.2-1.3
+[   19s] [44/166] cumulate less-590-3.1
+[   19s] [45/166] preinstalled libacl1-2.3.1-2.1
+[   19s] [46/166] preinstalled libasan8-12.1.1+git215-4.1
+[   19s] [47/166] preinstalled libatomic1-12.1.1+git215-4.1
+[   19s] [48/166] preinstalled libattr1-2.5.1-1.1
+[   19s] [49/166] preinstalled libaudit1-3.0.6-4.1
+[   19s] [50/166] preinstalled libblkid1-2.37.4-1.2
+[   19s] [51/166] cumulate libbrotlicommon1-1.0.9-1.1
+[   19s] [52/166] preinstalled libbz2-1-1.0.8-4.1
+[   19s] [53/166] preinstalled libcap-ng0-0.8.3-1.1
+[   19s] [54/166] preinstalled libcap2-2.64-1.1
+[   19s] [55/166] cumulate libcbor0_9-0.9.0-1.1
+[   19s] [56/166] cumulate libcom_err2-1.46.5-2.1
+[   19s] [57/166] preinstalled libcrypt1-4.4.27-1.1
+[   19s] [58/166] preinstalled libctf-nobfd0-2.38-6.1
+[   19s] [59/166] preinstalled libctf0-2.38-6.1
+[   19s] [60/166] preinstalled libdb-4_8-4.8.30-39.1
+[   19s] [61/166] preinstalled libdw1-0.187-8.1
+[   19s] [62/166] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   19s] [63/166] cumulate libedit0-20210910.3.1-1.1
+[   19s] [64/166] preinstalled libelf1-0.187-8.1
+[   19s] [65/166] cumulate libexpat1-2.4.8-1.1
+[   19s] [66/166] preinstalled libfdisk1-2.37.4-1.2
+[   19s] [67/166] preinstalled libgcc_s1-12.1.1+git215-4.1
+[   19s] [68/166] preinstalled libgcrypt20-1.9.4-3.1
+[   19s] [69/166] preinstalled libgdbm6-1.23-1.1
+[   19s] [70/166] preinstalled libgdbm_compat4-1.23-1.1
+[   19s] [71/166] preinstalled libgmp10-6.2.1-4.1
+[   19s] [72/166] preinstalled libgomp1-12.1.1+git215-4.1
+[   19s] [73/166] preinstalled libgpg-error0-1.45-1.1
+[   19s] [74/166] preinstalled libisl23-0.25-1.1
+[   19s] [75/166] cumulate libkeyutils1-1.6.3-4.1
+[   19s] [76/166] preinstalled liblua5_4-5-5.4.4-5.1
+[   19s] [77/166] cumulate liblz4-1-1.9.3-2.1
+[   19s] [78/166] preinstalled liblzma5-5.2.5-3.1
+[   19s] [79/166] preinstalled libmagic1-5.42-1.1
+[   19s] [80/166] preinstalled libmount1-2.37.4-1.2
+[   19s] [81/166] preinstalled libmpc3-1.2.1-1.2
+[   19s] [82/166] preinstalled libmpfr6-4.1.0-2.1
+[   19s] [83/166] preinstalled libncurses6-6.3.20220716-24.1
+[   19s] [84/166] cumulate libnghttp2-14-1.48.0-7.1
+[   19s] [85/166] preinstalled libpcre1-8.45-2.1
+[   19s] [86/166] preinstalled libpcre2-8-0-10.40-2.1
+[   19s] [87/166] preinstalled libpkgconf3-1.8.0-1.1
+[   19s] [88/166] preinstalled libpopt0-1.18-3.1
+[   19s] [89/166] preinstalled libreadline8-8.1-3.1
+[   19s] [90/166] preinstalled librpmbuild9-4.17.0-9.1
+[   19s] [91/166] cumulate libsasl2-3-2.1.28-1.3
+[   19s] [92/166] preinstalled libseccomp2-2.5.4-2.1
+[   19s] [93/166] preinstalled libselinux1-3.4-2.1
+[   19s] [94/166] preinstalled libsemanage-conf-3.4-1.1
+[   19s] [95/166] preinstalled libsemanage2-3.4-1.1
+[   19s] [96/166] preinstalled libsepol2-3.4-1.1
+[   19s] [97/166] cumulate libsha1detectcoll1-1.0.3-4.3
+[   19s] [98/166] preinstalled libsmartcols1-2.37.4-1.2
+[   19s] [99/166] cumulate libssh-config-0.9.6-3.1
+[   19s] [100/166] preinstalled libstdc++6-12.1.1+git215-4.1
+[   19s] [101/166] preinstalled libsubid4-4.11.1-1.1
+[   19s] [102/166] preinstalled libubsan1-12.1.1+git215-4.1
+[   19s] [103/166] cumulate libudev-mini1-251.2-1.1
+[   19s] [104/166] cumulate libunistring2-1.0-1.1
+[   19s] [105/166] preinstalled libutempter0-1.2.0-3.2
+[   19s] [106/166] preinstalled libuuid1-2.37.4-1.2
+[   19s] [107/166] cumulate libverto1-0.3.1-1.2
+[   19s] [108/166] preinstalled libxcrypt-devel-4.4.27-1.1
+[   19s] [109/166] cumulate libxxhash0-0.8.1-2.1
+[   19s] [110/166] preinstalled libz1-1.2.11-19.1
+[   19s] [111/166] preinstalled libzstd1-1.5.2-1.1
+[   19s] [112/166] preinstalled linux-glibc-devel-5.17-1.1
+[   19s] [113/166] preinstalled login_defs-4.11.1-1.1
+[   19s] [114/166] preinstalled lua54-5.4.4-5.1
+[   19s] [115/166] preinstalled make-4.3-3.1
+[   19s] [116/166] preinstalled ncurses-utils-6.3.20220716-24.1
+[   19s] [117/166] preinstalled pam-1.5.2-7.1
+[   19s] [118/166] preinstalled pam_unix-1.5.2-7.1
+[   19s] [119/166] preinstalled patch-2.7.6-6.1
+[   19s] [120/166] preinstalled perl-5.36.0-2.1
+[   19s] [121/166] cumulate perl-Error-0.17029-1.6
+[   19s] [122/166] preinstalled perl-base-5.36.0-2.1
+[   19s] [123/166] preinstalled permissions-20220309.1599-33.1
+[   19s] [124/166] preinstalled permissions-config-1599_20220309-33.1
+[   19s] [125/166] preinstalled pkgconf-1.8.0-1.1
+[   19s] [126/166] preinstalled pkgconf-m4-1.8.0-1.1
+[   19s] [127/166] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   19s] [128/166] preinstalled polkit-default-privs-1550+20220608.097448e-1.1
+[   19s] [129/166] preinstalled post-build-checks-84.87+git20220325.f46ef3c-1.1
+[   19s] [130/166] preinstalled qemu-linux-user-6.2.0-73.1
+[   19s] [131/166] preinstalled rpm-4.17.0-9.1
+[   19s] [132/166] preinstalled rpm-build-4.17.0-9.1
+[   19s] [133/166] preinstalled rpm-build-perl-4.17.0-9.1
+[   19s] [134/166] preinstalled rpm-config-SUSE-20220421-1.1
+[   19s] [135/166] preinstalled rpmlint-mini-2.3.0+git20220712.761ddf0-6.12
+[   19s] [136/166] preinstalled rpmlint-strict-2.3.0+git20220712.761ddf0-1.1
+[   19s] [137/166] preinstalled sed-4.8-3.2
+[   19s] [138/166] preinstalled shadow-4.11.1-1.1
+[   19s] [139/166] preinstalled system-group-hardware-20170617-24.1
+[   19s] [140/166] preinstalled system-user-root-20190513-2.1
+[   19s] [141/166] preinstalled systemd-rpm-macros-16-1.1
+[   19s] [142/166] preinstalled sysuser-shadow-3.1-4.1
+[   19s] [143/166] preinstalled tar-1.34-6.1
+[   19s] [144/166] preinstalled terminfo-base-6.3.20220716-24.1
+[   19s] [145/166] preinstalled update-alternatives-1.21.8-1.1
+[   19s] [146/166] preinstalled util-linux-2.37.4-1.2
+[   19s] [147/166] preinstalled which-2.21-5.1
+[   19s] [148/166] preinstalled xz-5.2.5-3.1
+[   19s] [149/166] cumulate golang-packaging-15.0.16-3.1
+[   19s] [150/166] cumulate libbrotlidec1-1.0.9-1.1
+[   19s] [151/166] cumulate libhidapi-hidraw0-0.12.0-1.1
+[   19s] [152/166] cumulate libidn2-0-2.3.3-1.1
+[   19s] [153/166] cumulate libopenssl1_1-1.1.1q-1.1
+[   19s] [154/166] cumulate perl-Git-2.37.1-1.1
+[   19s] [155/166] cumulate krb5-mini-1.20-1.1
+[   19s] [156/166] cumulate libslp1-2.0.0-20.1
+[   19s] [157/166] cumulate openssh-common-8.9p1-2.1
+[   19s] [158/166] cumulate libldap2-2.6.2-1.2
+[   19s] [159/166] cumulate libpsl5-0.21.1-1.2
+[   19s] [160/166] cumulate libssh4-0.9.6-3.1
+[   19s] [161/166] cumulate libfido2-1-1.10.0-1.1
+[   19s] [162/166] cumulate rsync-3.2.4-2.1
+[   19s] [163/166] cumulate openssh-clients-8.9p1-2.1
+[   19s] [164/166] cumulate libcurl4-7.83.1-1.1
+[   19s] [165/166] cumulate git-core-2.37.1-1.1
+[   19s] [166/166] cumulate git-2.37.1-1.1
+[   20s] now installing cumulated packages
+[   20s] Preparing...                          ########################################
+[   20s] Updating / installing...
+[   20s] libunistring2-1.0-1.1                 ########################################
+[   20s] libidn2-0-2.3.3-1.1                   ########################################
+[   20s] libudev-mini1-251.2-1.1               ########################################
+[   20s] libhidapi-hidraw0-0.12.0-1.1          ########################################
+[   20s] libpsl5-0.21.1-1.2                    ########################################
+[   20s] perl-Error-0.17029-1.6                ########################################
+[   20s] perl-Git-2.37.1-1.1                   ########################################
+[   20s] libxxhash0-0.8.1-2.1                  ########################################
+[   20s] libverto1-0.3.1-1.2                   ########################################
+[   20s] libssh-config-0.9.6-3.1               ########################################
+[   20s] libsha1detectcoll1-1.0.3-4.3          ########################################
+[   20s] libsasl2-3-2.1.28-1.3                 ########################################
+[   20s] libnghttp2-14-1.48.0-7.1              ########################################
+[   20s] liblz4-1-1.9.3-2.1                    ########################################
+[   20s] libkeyutils1-1.6.3-4.1                ########################################
+[   20s] libexpat1-2.4.8-1.1                   ########################################
+[   21s] libedit0-20210910.3.1-1.1             ########################################
+[   21s] libcom_err2-1.46.5-2.1                ########################################
+[   21s] krb5-mini-1.20-1.1                    ########################################
+[   21s] Updating /etc/sysconfig/kadmind ...
+[   21s] Updating /etc/sysconfig/krb5kdc ...
+[   21s] libcbor0_9-0.9.0-1.1                  ########################################
+[   21s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   21s] libbrotlidec1-1.0.9-1.1               ########################################
+[   21s] less-590-3.1                          ########################################
+[   45s] go1.17-1.17.12-1.1                    ########################################
+[   45s] update-alternatives: using /usr/lib64/go/1.17/bin/go to provide /usr/bin/go (go) in auto mode
+[   45s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   45s] libopenssl1_1-1.1.1q-1.1              ########################################
+[   46s] libslp1-2.0.0-20.1                    ########################################
+[   46s] openssh-common-8.9p1-2.1              ########################################
+[   46s] libldap2-2.6.2-1.2                    ########################################
+[   46s] libssh4-0.9.6-3.1                     ########################################
+[   46s] libcurl4-7.83.1-1.1                   ########################################
+[   46s] libfido2-1-1.10.0-1.1                 ########################################
+[   46s] openssh-clients-8.9p1-2.1             ########################################
+[   47s] git-core-2.37.1-1.1                   ########################################
+[   47s] git-2.37.1-1.1                        ########################################
+[   47s] rsync-3.2.4-2.1                       ########################################
+[   48s] golang-packaging-15.0.16-3.1          ########################################
+[   48s] golang-github-jteeuwen-go-bindata-3.0.########################################
+[   48s] go-md2man-2.0.0+git20190314.f79a8a8-1.########################################
+[   48s] fdupes-2.1.2-3.1                      ########################################
+[   48s] bash-completion-2.11-5.2              ########################################
+[   49s] now finalizing build dir...
+[   50s] ... running 01-add_abuild_user_to_trusted_group
+[   50s] ... running 02-set_timezone_to_utc
+[   50s] ... running 03-set-permissions-secure
+[   50s] ... running 11-hack_uname_version_to_kernel_version
+[   53s] Running build time source services...
+[   55s] Warning: spec file parser line 307: can't expand %(...)
+[   57s] build target is riscv64-suse-linux
+[   57s] -----------------------------------------------------------------
+[   57s] I have the following modifications for kubernetes1.23.spec:
+[   57s] 26c26
+[   57s] < Release:        0
+[   57s] ---
+[   57s] > Release:        1.1
+[   57s] -----------------------------------------------------------------
+[   57s] ----- building kubernetes1.23.spec (user abuild)
+[   57s] -----------------------------------------------------------------
+[   57s] -----------------------------------------------------------------
+[   59s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/49c62e562be401c89b60335feb058c03-kubernetes1.23' /home/abuild/rpmbuild/SOURCES/kubernetes1.23.spec
+[   59s] warning: line 143: It's not recommended to have unversioned Obsoletes: Obsoletes:      kubernetes1.22-kubeadm
+[   59s] warning: line 174: It's not recommended to have unversioned Obsoletes: Obsoletes:      kubernetes1.22-client-common
+[   59s] ++ rpm --eval %go_contribsrcdir
+[   59s] + GO_CONTRIBSRCDIR=/usr/share/go/1.17/contrib/src/
+[   59s] + main arch
+[   59s] + local action=arch
+[   59s] + case "${action}" in
+[   59s] + process_arch
+[   59s] ++ uname -m
+[   60s] + local arch=riscv64
+[   60s] + case "${arch}" in
+[   60s] + echo riscv64
+[   60s] Building target platforms: riscv64-suse-linux
+[   60s] Building for target riscv64-suse-linux
+[   60s] setting SOURCE_DATE_EPOCH=1658188800
+[   60s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.P4Fbl2
+[   60s] + umask 022
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + rm -rf kubernetes-1.23.9
+[   60s] + /usr/bin/xz -dc /home/abuild/rpmbuild/SOURCES/kubernetes-1.23.9.tar.xz
+[   60s] + /usr/bin/tar -xof -
+[   69s] + STATUS=0
+[   69s] + '[' 0 -ne 0 ']'
+[   69s] + cd kubernetes-1.23.9
+[   69s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   69s] + echo 'Patch #2 (kubeadm-opensuse-registry.patch):'
+[   69s] Patch #2 (kubeadm-opensuse-registry.patch):
+[   69s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   69s] patching file cmd/kubeadm/app/apis/kubeadm/v1beta2/defaults.go
+[   69s] patching file cmd/kubeadm/app/apis/kubeadm/v1beta3/defaults.go
+[   69s] + echo 'Patch #3 (opensuse-version-checks.patch):'
+[   69s] Patch #3 (opensuse-version-checks.patch):
+[   69s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   69s] patching file cmd/kubeadm/app/util/version.go
+[   69s] Hunk #1 succeeded at 39 (offset 1 line).
+[   69s] + echo 'Patch #4 (kubeadm-opensuse-flexvolume.patch):'
+[   69s] Patch #4 (kubeadm-opensuse-flexvolume.patch):
+[   69s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[   69s] patching file cmd/kubeadm/app/phases/controlplane/volumes.go
+[   69s] Hunk #1 succeeded at 34 (offset 1 line).
+[   70s] + echo 'Patch #5 (revert-coredns-image-renaming.patch):'
+[   70s] Patch #5 (revert-coredns-image-renaming.patch):
+[   70s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   70s] patching file cmd/kubeadm/app/images/images.go
+[   70s] + RPM_EC=0
+[   70s] ++ jobs -p
+[   70s] + exit 0
+[   70s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.tTFRGY
+[   70s] + umask 022
+[   70s] + cd /home/abuild/rpmbuild/BUILD
+[   70s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/kubernetes1.23-1.23.9-1.1.riscv64
+[   70s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/kubernetes1.23-1.23.9-1.1.riscv64
+[   70s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   70s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/kubernetes1.23-1.23.9-1.1.riscv64
+[   70s] + cd kubernetes-1.23.9
+[   70s] + ref=/usr/lib/rpm
+[   70s] + mints=0
+[   70s] + case $(uname -m) in
+[   70s] ++ uname -m
+[   70s] + mints=20160911
+[   70s] + for s in guess sub
+[   70s] ++ find -maxdepth 8 -name config.guess
+[   70s] + for s in guess sub
+[   70s] ++ find -maxdepth 8 -name config.sub
+[   71s] ++ grep commit: /home/abuild/rpmbuild/SOURCES/kubernetes.obsinfo
+[   71s] ++ cut -d : -f2
+[   71s] ++ tr -d ' '
+[   71s] + export KUBE_GIT_COMMIT=c1de2d70269039fe55efb98e737d9a29f9155246
+[   71s] + KUBE_GIT_COMMIT=c1de2d70269039fe55efb98e737d9a29f9155246
+[   71s] + export KUBE_GIT_TREE_STATE=clean
+[   71s] + KUBE_GIT_TREE_STATE=clean
+[   71s] + export KUBE_GIT_VERSION=v1.23.9
+[   71s] + KUBE_GIT_VERSION=v1.23.9
+[   71s] + make 'WHAT=cmd/kube-apiserver cmd/kube-controller-manager cmd/kube-scheduler cmd/kube-proxy cmd/kubelet cmd/kubectl cmd/kubeadm' GOFLAGS=-buildmode=pie
+[   91s] !!! [0722 08:14:54] Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+[  167s] !!! [0722 08:16:10] Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+[  238s] !!! [0722 08:17:21] Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+[  243s] !!! [0722 08:17:26] Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+[  278s] !!! [0722 08:18:02] Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+[  281s] +++ [0722 08:18:04] Building go targets for linux/riscv64:
+[  281s]     ./vendor/k8s.io/code-generator/cmd/prerelease-lifecycle-gen
+[  282s] > non-static build: k8s.io/kubernetes/./vendor/k8s.io/code-generator/cmd/prerelease-lifecycle-gen
+[  379s] touch: cannot touch '_output/bin/prerelease-lifecycle-gen': No such file or directory
+[  379s] make[1]: *** [Makefile.generated_files:209: _output/bin/prerelease-lifecycle-gen] Error 1
+[  379s] make: *** [Makefile:528: generated_files] Error 2
+[  379s] error: Bad exit status from /var/tmp/rpm-tmp.tTFRGY (%build)
+[  379s] 
+[  379s] 
+[  379s] RPM build errors:
+[  379s]     line 143: It's not recommended to have unversioned Obsoletes: Obsoletes:      kubernetes1.22-kubeadm
+[  379s]     line 174: It's not recommended to have unversioned Obsoletes: Obsoletes:      kubernetes1.22-client-common
+[  379s]     Bad exit status from /var/tmp/rpm-tmp.tTFRGY (%build)
+[  379s] ### VM INTERACTION START ###
+[  380s] [  377.566037][    T1] sysrq: Power Off
+[  380s] [  377.591528][    T7] reboot: Power down
+[  380s] ### VM INTERACTION END ###
+[  380s] 
+[  380s] goat19 failed "build kubernetes1.23.spec" at Fri Jul 22 08:19:44 UTC 2022.
+[  380s] 

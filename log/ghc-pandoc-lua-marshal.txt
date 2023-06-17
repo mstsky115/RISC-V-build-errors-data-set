@@ -1,0 +1,618 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] cloud121 started "build ghc-pandoc-lua-marshal.spec" at Mon Feb 20 12:19:28 UTC 2023.
+[    0s] 
+[    0s] Building ghc-pandoc-lua-marshal for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '1ffcd576e375108a1bf1fae3e5732974'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/ghc-pandoc-lua-marshal.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/ghc-pandoc-lua-marshal.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/ghc-pandoc-lua-marshal.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7af7cc9404d4e5044d5fcd39115539d1]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...cycle: ghc-compiler -> ghc-base-devel
+[    4s]   breaking dependency ghc-compiler -> ghc-base-devel
+[    4s] done
+[    4s] Detected virtio-serial support
+[   21s] booting kvm...
+[   21s] ### VM INTERACTION START ###
+[   21s] Using virtio-serial support
+[   21s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   26s] ### VM INTERACTION END ###
+[   26s] 2nd stage started in virtual machine
+[   26s] machine type: riscv64
+[   26s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   26s] Increasing log level from now on...
+[   26s] [    4.538116][  T368] sysrq: Changing Loglevel
+[   26s] [    4.538425][  T368] sysrq: Loglevel set to 4
+[   26s] Enable sysrq operations
+[   27s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   27s] no label, UUID=5e0f93c8-f1bf-4df4-8c13-3233fb6d54ef
+[   27s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   27s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   27s] swapon /dev/vdb
+[   27s] WARNING: udev not running, creating extra device nodes
+[   28s] logging output to //.build.log...
+[   28s] processing recipe /.build-srcdir/ghc-pandoc-lua-marshal.spec ...
+[   28s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/ghc-pandoc-lua-marshal.spec build ...
+[   28s] initializing rpm db...
+[   29s] querying package ids...
+[   59s] [1/273] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   59s] [2/273] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   59s] [3/273] preinstalled attr-2.5.1-1.1
+[   59s] [4/273] preinstalled bash-5.2.15-8.1
+[   59s] [5/273] preinstalled bash-sh-5.2.15-8.1
+[   59s] [6/273] preinstalled binutils-2.39-3.1
+[   59s] [7/273] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   59s] [8/273] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   59s] [9/273] preinstalled build-mkbaselibs-20230215-1.1
+[   59s] [10/273] preinstalled bzip2-1.0.8-4.1
+[   59s] [11/273] preinstalled chkstat-1599_20230217-1.1
+[   59s] [12/273] preinstalled compat-usrmerge-build-84.87-5.1
+[   59s] [13/273] preinstalled compat-usrmerge-tools-84.87-5.1
+[   59s] [14/273] preinstalled coreutils-9.1-5.1
+[   59s] [15/273] preinstalled cpio-2.13-5.1
+[   59s] [16/273] preinstalled cpp-12-2.1
+[   59s] [17/273] preinstalled cpp12-12.2.1+git749-4.1
+[   59s] [18/273] preinstalled debugedit-5.0-5.1
+[   59s] [19/273] preinstalled diffutils-3.9-1.1
+[   59s] [20/273] preinstalled dwz-0.15-2.1
+[   59s] [21/273] preinstalled elfutils-0.188-4.1
+[   59s] [22/273] preinstalled file-5.44-1.2
+[   59s] [23/273] preinstalled file-magic-5.44-1.2
+[   59s] [24/273] preinstalled filesystem-84.87-12.1
+[   59s] [25/273] preinstalled fillup-1.42-279.1
+[   59s] [26/273] preinstalled findutils-4.9.0-2.1
+[   59s] [27/273] preinstalled gawk-5.2.1-2.1
+[   59s] [28/273] preinstalled gcc-12-2.1
+[   59s] [29/273] preinstalled gcc-PIE-12-2.1
+[   59s] [30/273] preinstalled gcc12-12.2.1+git749-4.1
+[   59s] [31/273] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   59s] [32/273] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   59s] [33/273] preinstalled gettext-tools-mini-0.21.1-1.1
+[   59s] [34/273] cumulate ghc-rpm-macros-1.9.95-3.1
+[   59s] [35/273] preinstalled glibc-2.37-1.1
+[   59s] [36/273] preinstalled glibc-devel-2.37-1.1
+[   59s] [37/273] preinstalled glibc-locale-base-2.37-1.1
+[   59s] [38/273] preinstalled grep-3.8-3.1
+[   59s] [39/273] preinstalled gzip-1.12-3.1
+[   59s] [40/273] preinstalled kernel-obs-build-6.1.12-1.1
+[   59s] [41/273] preinstalled libacl1-2.3.1-2.1
+[   59s] [42/273] preinstalled libasan8-13.0.1+git5428-6.1
+[   59s] [43/273] preinstalled libasm1-0.188-4.1
+[   59s] [44/273] preinstalled libatomic1-13.0.1+git5428-6.1
+[   59s] [45/273] preinstalled libattr1-2.5.1-1.1
+[   59s] [46/273] preinstalled libaudit1-3.0.9-1.1
+[   59s] [47/273] preinstalled libblkid1-2.38.1-7.1
+[   59s] [48/273] preinstalled libbz2-1-1.0.8-4.1
+[   59s] [49/273] preinstalled libcap-ng0-0.8.3-1.1
+[   59s] [50/273] preinstalled libcap2-2.67-1.1
+[   59s] [51/273] preinstalled libcrypt1-4.4.33-1.1
+[   59s] [52/273] preinstalled libctf-nobfd0-2.39-3.1
+[   59s] [53/273] preinstalled libctf0-2.39-3.1
+[   59s] [54/273] preinstalled libdb-4_8-4.8.30-39.1
+[   59s] [55/273] preinstalled libdw1-0.188-4.1
+[   59s] [56/273] preinstalled libeconf0-0.5.1-1.1
+[   59s] [57/273] cumulate libedit0-20210910.3.1-1.1
+[   59s] [58/273] preinstalled libelf1-0.188-4.1
+[   59s] [59/273] preinstalled libfdisk1-2.38.1-7.1
+[   59s] [60/273] cumulate libffi8-3.4.4-1.1
+[   59s] [61/273] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   59s] [62/273] preinstalled libgcrypt20-1.10.1-1.1
+[   59s] [63/273] preinstalled libgdbm6-1.23-1.1
+[   59s] [64/273] preinstalled libgdbm_compat4-1.23-1.1
+[   59s] [65/273] preinstalled libgmp10-6.2.1-4.1
+[   59s] [66/273] cumulate libgmpxx4-6.2.1-4.1
+[   59s] [67/273] preinstalled libgomp1-13.0.1+git5428-6.1
+[   59s] [68/273] preinstalled libgpg-error0-1.46-1.1
+[   59s] [69/273] preinstalled libisl23-0.25-1.1
+[   59s] [70/273] preinstalled liblua5_4-5-5.4.4-8.1
+[   59s] [71/273] preinstalled liblzma5-5.4.1-1.1
+[   59s] [72/273] preinstalled libmagic1-5.44-1.2
+[   59s] [73/273] preinstalled libmount1-2.38.1-7.1
+[   59s] [74/273] preinstalled libmpc3-1.3.1-1.2
+[   59s] [75/273] preinstalled libmpfr6-4.2.0-1.1
+[   59s] [76/273] preinstalled libncurses6-6.4.20230128-5.1
+[   59s] [77/273] cumulate libnuma1-2.0.15.0.g01a39cb-1.1
+[   59s] [78/273] preinstalled libpcre2-8-0-10.42-3.2
+[   59s] [79/273] preinstalled libpkgconf3-1.8.0-2.1
+[   59s] [80/273] preinstalled libpopt0-1.19-1.1
+[   59s] [81/273] preinstalled libreadline8-8.2-2.1
+[   59s] [82/273] preinstalled librpmbuild9-4.18.0-3.2
+[   59s] [83/273] preinstalled libseccomp2-2.5.4-2.1
+[   59s] [84/273] preinstalled libselinux1-3.4-2.1
+[   59s] [85/273] preinstalled libsemanage-conf-3.4-1.1
+[   59s] [86/273] preinstalled libsemanage2-3.4-1.1
+[   59s] [87/273] preinstalled libsepol2-3.4-1.1
+[   59s] [88/273] preinstalled libsmartcols1-2.38.1-7.1
+[   59s] [89/273] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   59s] [90/273] preinstalled libsubid4-4.13-4.1
+[   59s] [91/273] preinstalled libubsan1-13.0.1+git5428-6.1
+[   59s] [92/273] preinstalled libutempter0-1.2.0-3.2
+[   59s] [93/273] preinstalled libuuid1-2.38.1-7.1
+[   59s] [94/273] preinstalled libxcrypt-devel-4.4.33-1.1
+[   59s] [95/273] preinstalled libz1-1.2.13-2.1
+[   59s] [96/273] cumulate libzstd-devel-1.5.2-2.1
+[   59s] [97/273] preinstalled libzstd1-1.5.2-2.1
+[   59s] [98/273] preinstalled linux-glibc-devel-6.1-1.1
+[   59s] [99/273] preinstalled login_defs-4.13-4.1
+[   59s] [100/273] preinstalled lua54-5.4.4-8.1
+[   59s] [101/273] preinstalled make-4.4-2.1
+[   59s] [102/273] preinstalled ncurses-utils-6.4.20230128-5.1
+[   59s] [103/273] preinstalled pam-1.5.2-12.1
+[   59s] [104/273] preinstalled patch-2.7.6-6.1
+[   59s] [105/273] preinstalled perl-5.36.0-4.1
+[   59s] [106/273] preinstalled perl-base-5.36.0-4.1
+[   59s] [107/273] preinstalled permissions-1599_20230217-1.1
+[   59s] [108/273] preinstalled permissions-config-1599_20230217-1.1
+[   59s] [109/273] preinstalled pkgconf-1.8.0-2.1
+[   59s] [110/273] preinstalled pkgconf-m4-1.8.0-2.1
+[   59s] [111/273] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   59s] [112/273] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   59s] [113/273] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   59s] [114/273] preinstalled qemu-linux-user-7.1.0-50.1
+[   59s] [115/273] preinstalled rpm-4.18.0-3.2
+[   59s] [116/273] preinstalled rpm-build-4.18.0-3.2
+[   59s] [117/273] preinstalled rpm-build-perl-4.18.0-3.2
+[   59s] [118/273] preinstalled rpm-config-SUSE-20220926-1.1
+[   59s] [119/273] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.6
+[   59s] [120/273] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   59s] [121/273] preinstalled sed-4.9-2.1
+[   59s] [122/273] preinstalled shadow-4.13-4.1
+[   59s] [123/273] preinstalled system-group-hardware-20170617-24.1
+[   59s] [124/273] preinstalled system-user-root-20190513-2.1
+[   59s] [125/273] preinstalled systemd-rpm-macros-19-1.1
+[   59s] [126/273] preinstalled sysuser-shadow-3.1-5.1
+[   59s] [127/273] preinstalled tar-1.34-9.1
+[   59s] [128/273] preinstalled terminfo-base-6.4.20230128-5.1
+[   59s] [129/273] preinstalled update-alternatives-1.21.8-1.1
+[   59s] [130/273] preinstalled util-linux-2.38.1-7.1
+[   59s] [131/273] preinstalled which-2.21-5.1
+[   59s] [132/273] preinstalled xz-5.4.1-1.1
+[   59s] [133/273] cumulate xz-devel-5.4.1-1.1
+[   59s] [134/273] cumulate zlib-devel-1.2.13-2.1
+[   59s] [135/273] cumulate gmp-devel-6.2.1-4.1
+[   59s] [136/273] cumulate libLLVM12-12.0.1-19.1
+[   59s] [137/273] cumulate libelf-devel-0.188-4.1
+[   59s] [138/273] cumulate libffi-devel-3.4.4-1.1
+[   59s] [139/273] cumulate libnuma-devel-2.0.15.0.g01a39cb-1.1
+[   59s] [140/273] cumulate ghc-base-4.14.3.0-23.1
+[   59s] [141/273] cumulate ghc-array-0.5.4.0-23.1
+[   59s] [142/273] cumulate ghc-base-orphans-0.8.7-1.1
+[   59s] [143/273] cumulate ghc-filepath-1.4.2.1-23.1
+[   59s] [144/273] cumulate ghc-ghc-boot-th-8.10.7-23.1
+[   59s] [145/273] cumulate ghc-ghc-heap-8.10.7-23.1
+[   59s] [146/273] cumulate ghc-lua-2.2.1-1.1
+[   59s] [147/273] cumulate ghc-safe-0.3.19-3.4
+[   59s] [148/273] cumulate ghc-syb-0.7.2.2-1.1
+[   59s] [149/273] cumulate ghc-terminfo-0.4.1.4-23.1
+[   59s] [150/273] cumulate ghc-transformers-0.5.6.2-23.1
+[   59s] [151/273] cumulate ghc-xhtml-3000.2.2.1-23.1
+[   59s] [152/273] cumulate llvm12-12.0.1-19.1
+[   59s] [153/273] cumulate libdw-devel-0.188-4.1
+[   59s] [154/273] cumulate ghc-deepseq-1.4.4.0-23.1
+[   59s] [155/273] cumulate ghc-integer-logarithms-1.0.3.1-5.1
+[   59s] [156/273] cumulate ghc-mtl-2.2.2-23.1
+[   59s] [157/273] cumulate ghc-stm-2.5.0.1-23.1
+[   59s] [158/273] cumulate ghc-transformers-compat-0.7.2-1.1
+[   59s] [159/273] cumulate ghc-bytestring-0.10.12.0-23.1
+[   59s] [160/273] cumulate ghc-containers-0.6.5.1-23.1
+[   59s] [161/273] cumulate ghc-dlist-1.0-2.4
+[   59s] [162/273] cumulate ghc-pretty-1.1.3.6-23.1
+[   59s] [163/273] cumulate ghc-splitmix-0.1.0.4-3.1
+[   59s] [164/273] cumulate ghc-time-1.9.3-23.1
+[   59s] [165/273] cumulate ghc-primitive-0.7.3.0-2.1
+[   59s] [166/273] cumulate ghc-binary-0.8.8.0-23.1
+[   59s] [167/273] cumulate ghc-indexed-traversable-0.1.2-3.1
+[   59s] [168/273] cumulate ghc-template-haskell-2.16.0.0-23.1
+[   59s] [169/273] cumulate ghc-unix-2.7.2.2-23.1
+[   59s] [170/273] cumulate ghc-vector-0.12.3.1-3.1
+[   59s] [171/273] cumulate ghc-random-1.2.1.1-1.1
+[   59s] [172/273] cumulate ghc-base-compat-0.12.2-1.1
+[   59s] [173/273] cumulate ghc-directory-1.3.6.0-23.1
+[   59s] [174/273] cumulate ghc-tagged-0.8.6.1-4.1
+[   59s] [175/273] cumulate ghc-th-abstraction-0.4.5.0-1.1
+[   59s] [176/273] cumulate ghc-exceptions-0.10.4-23.1
+[   59s] [177/273] cumulate ghc-text-1.2.4.1-23.1
+[   59s] [178/273] cumulate ghc-QuickCheck-2.14.2-2.4
+[   59s] [179/273] cumulate ghc-process-1.6.13.2-23.1
+[   59s] [180/273] cumulate ghc-distributive-0.6.2.1-2.2
+[   59s] [181/273] cumulate ghc-hpc-0.6.1.0-23.1
+[   59s] [182/273] cumulate ghc-hashable-1.3.5.0-2.1
+[   59s] [183/273] cumulate ghc-ghc-boot-8.10.7-23.1
+[   59s] [184/273] cumulate ghc-parsec-3.1.14.0-23.1
+[   59s] [185/273] cumulate ghc-hslua-core-2.2.1-1.1
+[   59s] [186/273] cumulate ghc-data-fix-0.3.2-3.1
+[   59s] [187/273] cumulate ghc-unordered-containers-0.2.19.1-2.1
+[   59s] [188/273] cumulate ghc-OneTuple-0.3.1-3.2
+[   59s] [189/273] cumulate ghc-comonad-5.0.8-2.3
+[   59s] [190/273] cumulate ghc-time-compat-1.9.6.1-4.2
+[   59s] [191/273] cumulate ghc-scientific-0.3.7.0-4.1
+[   59s] [192/273] cumulate ghc-uuid-types-1.0.5-4.1
+[   59s] [193/273] cumulate ghc-ghci-8.10.7-23.1
+[   59s] [194/273] cumulate ghc-hslua-marshalling-2.2.1-1.1
+[   59s] [195/273] cumulate ghc-Cabal-3.2.1.0-23.1
+[   59s] [196/273] cumulate ghc-haskeline-0.8.2-23.1
+[   59s] [197/273] cumulate ghc-attoparsec-0.14.4-2.1
+[   59s] [198/273] cumulate ghc-bifunctors-5.5.14-1.1
+[   59s] [199/273] cumulate ghc-base-compat-batteries-0.12.2-1.1
+[   59s] [200/273] cumulate ghc-hslua-classes-2.2.0-1.1
+[   59s] [201/273] cumulate ghc-hslua-objectorientation-2.2.1-1.1
+[   59s] [202/273] cumulate ghc-libiserv-8.10.7-23.1
+[   59s] [203/273] cumulate ghc-ghc-8.10.7-23.1
+[   59s] [204/273] cumulate ghc-assoc-1.0.2-6.3
+[   59s] [205/273] cumulate ghc-hslua-packaging-2.2.1-1.1
+[   59s] [206/273] cumulate ghc-these-1.1.1.1-8.2
+[   59s] [207/273] cumulate ghc-strict-0.4.0.1-5.4
+[   59s] [208/273] cumulate ghc-aeson-1.5.6.0-6.4
+[   59s] [209/273] cumulate ghc-pandoc-types-1.22.2.1-1.3
+[   59s] [210/273] cumulate ghc-hslua-aeson-2.2.1-1.3
+[   59s] [211/273] cumulate ghc-hslua-2.2.1-1.3
+[   59s] [212/273] cumulate ghc-compiler-8.10.7-23.1
+[   59s] [213/273] cumulate ghc-base-devel-4.14.3.0-23.1
+[   59s] [214/273] cumulate ghc-array-devel-0.5.4.0-23.1
+[   59s] [215/273] cumulate ghc-base-orphans-devel-0.8.7-1.1
+[   59s] [216/273] cumulate ghc-filepath-devel-1.4.2.1-23.1
+[   59s] [217/273] cumulate ghc-ghc-boot-th-devel-8.10.7-23.1
+[   59s] [218/273] cumulate ghc-lua-devel-2.2.1-1.1
+[   59s] [219/273] cumulate ghc-safe-devel-0.3.19-3.4
+[   59s] [220/273] cumulate ghc-syb-devel-0.7.2.2-1.1
+[   59s] [221/273] cumulate ghc-transformers-devel-0.5.6.2-23.1
+[   59s] [222/273] cumulate ghc-deepseq-devel-1.4.4.0-23.1
+[   59s] [223/273] cumulate ghc-integer-logarithms-devel-1.0.3.1-5.1
+[   59s] [224/273] cumulate ghc-mtl-devel-2.2.2-23.1
+[   59s] [225/273] cumulate ghc-stm-devel-2.5.0.1-23.1
+[   59s] [226/273] cumulate ghc-transformers-compat-devel-0.7.2-1.1
+[   59s] [227/273] cumulate ghc-bytestring-devel-0.10.12.0-23.1
+[   59s] [228/273] cumulate ghc-dlist-devel-1.0-2.4
+[   59s] [229/273] cumulate ghc-pretty-devel-1.1.3.6-23.1
+[   59s] [230/273] cumulate ghc-splitmix-devel-0.1.0.4-3.1
+[   59s] [231/273] cumulate ghc-time-devel-1.9.3-23.1
+[   59s] [232/273] cumulate ghc-containers-devel-0.6.5.1-23.1
+[   59s] [233/273] cumulate ghc-primitive-devel-0.7.3.0-2.1
+[   59s] [234/273] cumulate ghc-template-haskell-devel-2.16.0.0-23.1
+[   59s] [235/273] cumulate ghc-unix-devel-2.7.2.2-23.1
+[   59s] [236/273] cumulate ghc-vector-devel-0.12.3.1-3.1
+[   59s] [237/273] cumulate ghc-binary-devel-0.8.8.0-23.1
+[   59s] [238/273] cumulate ghc-indexed-traversable-devel-0.1.2-3.1
+[   59s] [239/273] cumulate ghc-random-devel-1.2.1.1-1.1
+[   59s] [240/273] cumulate ghc-base-compat-devel-0.12.2-1.1
+[   59s] [241/273] cumulate ghc-th-abstraction-devel-0.4.5.0-1.1
+[   59s] [242/273] cumulate ghc-directory-devel-1.3.6.0-23.1
+[   59s] [243/273] cumulate ghc-tagged-devel-0.8.6.1-4.1
+[   59s] [244/273] cumulate ghc-exceptions-devel-0.10.4-23.1
+[   59s] [245/273] cumulate ghc-text-devel-1.2.4.1-23.1
+[   59s] [246/273] cumulate ghc-QuickCheck-devel-2.14.2-2.4
+[   59s] [247/273] cumulate ghc-distributive-devel-0.6.2.1-2.2
+[   59s] [248/273] cumulate ghc-parsec-devel-3.1.14.0-23.1
+[   59s] [249/273] cumulate ghc-hashable-devel-1.3.5.0-2.1
+[   59s] [250/273] cumulate ghc-process-devel-1.6.13.2-23.1
+[   59s] [251/273] cumulate ghc-hslua-core-devel-2.2.1-1.1
+[   59s] [252/273] cumulate ghc-data-fix-devel-0.3.2-3.1
+[   59s] [253/273] cumulate ghc-OneTuple-devel-0.3.1-3.2
+[   59s] [254/273] cumulate ghc-unordered-containers-devel-0.2.19.1-2.1
+[   59s] [255/273] cumulate ghc-time-compat-devel-1.9.6.1-4.2
+[   59s] [256/273] cumulate ghc-hslua-marshalling-devel-2.2.1-1.1
+[   59s] [257/273] cumulate ghc-comonad-devel-5.0.8-2.3
+[   59s] [258/273] cumulate ghc-uuid-types-devel-1.0.5-4.1
+[   59s] [259/273] cumulate ghc-scientific-devel-0.3.7.0-4.1
+[   60s] [260/273] cumulate ghc-Cabal-devel-3.2.1.0-23.1
+[   60s] [261/273] cumulate ghc-base-compat-batteries-devel-0.12.2-1.1
+[   60s] [262/273] cumulate ghc-hslua-classes-devel-2.2.0-1.1
+[   60s] [263/273] cumulate ghc-attoparsec-devel-0.14.4-2.1
+[   60s] [264/273] cumulate ghc-bifunctors-devel-5.5.14-1.1
+[   60s] [265/273] cumulate ghc-hslua-objectorientation-devel-2.2.1-1.1
+[   60s] [266/273] cumulate ghc-assoc-devel-1.0.2-6.3
+[   60s] [267/273] cumulate ghc-hslua-packaging-devel-2.2.1-1.1
+[   60s] [268/273] cumulate ghc-these-devel-1.1.1.1-8.2
+[   60s] [269/273] cumulate ghc-strict-devel-0.4.0.1-5.4
+[   60s] [270/273] cumulate ghc-aeson-devel-1.5.6.0-6.4
+[   60s] [271/273] cumulate ghc-pandoc-types-devel-1.22.2.1-1.3
+[   60s] [272/273] cumulate ghc-hslua-aeson-devel-2.2.1-1.3
+[   60s] [273/273] cumulate ghc-hslua-devel-2.2.1-1.3
+[   60s] now installing cumulated packages
+[   60s] Preparing...                          ########################################
+[   61s] Updating / installing...
+[   61s] libnuma1-2.0.15.0.g01a39cb-1.1        ########################################
+[   61s] libffi8-3.4.4-1.1                     ########################################
+[   65s] ghc-base-4.14.3.0-23.1                ########################################
+[   66s] ghc-array-0.5.4.0-23.1                ########################################
+[   66s] ghc-deepseq-1.4.4.0-23.1              ########################################
+[   66s] ghc-ghc-boot-th-8.10.7-23.1           ########################################
+[   66s] ghc-bytestring-0.10.12.0-23.1         ########################################
+[   67s] ghc-containers-0.6.5.1-23.1           ########################################
+[   67s] ghc-pretty-1.1.3.6-23.1               ########################################
+[   69s] ghc-template-haskell-2.16.0.0-23.1    ########################################
+[   69s] ghc-transformers-0.5.6.2-23.1         ########################################
+[   69s] ghc-binary-0.8.8.0-23.1               ########################################
+[   70s] ghc-text-1.2.4.1-23.1                 ########################################
+[   71s] ghc-time-1.9.3-23.1                   ########################################
+[   71s] ghc-mtl-2.2.2-23.1                    ########################################
+[   71s] ghc-unix-2.7.2.2-23.1                 ########################################
+[   71s] ghc-hashable-1.3.5.0-2.1              ########################################
+[   71s] ghc-base-orphans-0.8.7-1.1            ########################################
+[   71s] ghc-tagged-0.8.6.1-4.1                ########################################
+[   71s] ghc-stm-2.5.0.1-23.1                  ########################################
+[   71s] ghc-filepath-1.4.2.1-23.1             ########################################
+[   71s] ghc-directory-1.3.6.0-23.1            ########################################
+[   71s] ghc-exceptions-0.10.4-23.1            ########################################
+[   71s] ghc-distributive-0.6.2.1-2.2          ########################################
+[   71s] ghc-transformers-compat-0.7.2-1.1     ########################################
+[   72s] ghc-indexed-traversable-0.1.2-3.1     ########################################
+[   72s] ghc-comonad-5.0.8-2.3                 ########################################
+[   72s] ghc-th-abstraction-0.4.5.0-1.1        ########################################
+[   72s] ghc-bifunctors-5.5.14-1.1             ########################################
+[   72s] ghc-primitive-0.7.3.0-2.1             ########################################
+[   72s] ghc-splitmix-0.1.0.4-3.1              ########################################
+[   72s] ghc-lua-2.2.1-1.1                     ########################################
+[   72s] ghc-hslua-core-2.2.1-1.1              ########################################
+[   73s] ghc-random-1.2.1.1-1.1                ########################################
+[   73s] ghc-assoc-1.0.2-6.3                   ########################################
+[   73s] ghc-integer-logarithms-1.0.3.1-5.1    ########################################
+[   73s] ghc-scientific-0.3.7.0-4.1            ########################################
+[   73s] ghc-these-1.1.1.1-8.2                 ########################################
+[   73s] ghc-hslua-marshalling-2.2.1-1.1       ########################################
+[   73s] ghc-OneTuple-0.3.1-3.2                ########################################
+[   73s] ghc-base-compat-0.12.2-1.1            ########################################
+[   73s] ghc-base-compat-batteries-0.12.2-1.1  ########################################
+[   73s] ghc-strict-0.4.0.1-5.4                ########################################
+[   73s] ghc-attoparsec-0.14.4-2.1             ########################################
+[   73s] ghc-uuid-types-1.0.5-4.1              ########################################
+[   74s] ghc-vector-0.12.3.1-3.1               ########################################
+[   74s] ghc-process-1.6.13.2-23.1             ########################################
+[   74s] ghc-time-compat-1.9.6.1-4.2           ########################################
+[   74s] ghc-data-fix-0.3.2-3.1                ########################################
+[   74s] ghc-unordered-containers-0.2.19.1-2.1 ########################################
+[   75s] ghc-dlist-1.0-2.4                     ########################################
+[   76s] ghc-aeson-1.5.6.0-6.4                 ########################################
+[   76s] ghc-ghc-boot-8.10.7-23.1              ########################################
+[   76s] ghc-ghc-heap-8.10.7-23.1              ########################################
+[   77s] ghc-ghci-8.10.7-23.1                  ########################################
+[   77s] ghc-hslua-objectorientation-2.2.1-1.1 ########################################
+[   77s] ghc-parsec-3.1.14.0-23.1              ########################################
+[   77s] ghc-terminfo-0.4.1.4-23.1             ########################################
+[   86s] ghc-Cabal-3.2.1.0-23.1                ########################################
+[   86s] ghc-hslua-packaging-2.2.1-1.1         ########################################
+[   86s] ghc-hslua-aeson-2.2.1-1.3             ########################################
+[   86s] ghc-hslua-classes-2.2.0-1.1           ########################################
+[   87s] ghc-QuickCheck-2.14.2-2.4             ########################################
+[   87s] ghc-hpc-0.6.1.0-23.1                  ########################################
+[   87s] ghc-syb-0.7.2.2-1.1                   ########################################
+[   87s] zlib-devel-1.2.13-2.1                 ########################################
+[   87s] libelf-devel-0.188-4.1                ########################################
+[   88s] ghc-pandoc-types-1.22.2.1-1.3         ########################################
+[  112s] ghc-ghc-8.10.7-23.1                   ########################################
+[  112s] ghc-hslua-2.2.1-1.3                   ########################################
+[  112s] ghc-haskeline-0.8.2-23.1              ########################################
+[  112s] ghc-libiserv-8.10.7-23.1              ########################################
+[  112s] ghc-safe-0.3.19-3.4                   ########################################
+[  113s] ghc-xhtml-3000.2.2.1-23.1             ########################################
+[  113s] libffi-devel-3.4.4-1.1                ########################################
+[  113s] libnuma-devel-2.0.15.0.g01a39cb-1.1   ########################################
+[  113s] xz-devel-5.4.1-1.1                    ########################################
+[  113s] libzstd-devel-1.5.2-2.1               ########################################
+[  116s] libdw-devel-0.188-4.1                 ########################################
+[  116s] libgmpxx4-6.2.1-4.1                   ########################################
+[  116s] gmp-devel-6.2.1-4.1                   ########################################
+[  116s] libedit0-20210910.3.1-1.1             ########################################
+[  129s] libLLVM12-12.0.1-19.1                 ########################################
+[  131s] llvm12-12.0.1-19.1                    ########################################
+[  131s] update-alternatives: using /usr/bin/llvm-ar-12.0.1 to provide /usr/bin/llvm-ar (llvm-ar) in auto mode
+[  143s] ghc-compiler-8.10.7-23.1              ########################################
+[  144s] update-alternatives: using /usr/bin/runghc to provide /usr/bin/runhaskell (runhaskell) in auto mode
+[  144s] update-alternatives: using /usr/bin/hsc2hs-ghc to provide /usr/bin/hsc2hs (hsc2hs) in auto mode
+[  240s] ghc-base-devel-4.14.3.0-23.1          ########################################
+[  260s] [  237.885440][ T2412] Out of memory: Killed process 2412 (ghc-pkg) total-vm:1079008268kB, anon-rss:2880080kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  260s] /var/tmp/rpm-tmp.Ksbibp: line 1:  2412 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  267s] ghc-transformers-devel-0.5.6.2-23.1   ########################################
+[  286s] [  264.135726][ T2478] Out of memory: Killed process 2478 (ghc-pkg) total-vm:1078992356kB, anon-rss:2865312kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9868kB oom_score_adj:0
+[  286s] /var/tmp/rpm-tmp.K2stli: line 1:  2478 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  288s] ghc-mtl-devel-2.2.2-23.1              ########################################
+[  323s] [  301.489171][  T435] Out of memory: Killed process 2535 (ghc-pkg) total-vm:1079007956kB, anon-rss:2880556kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  324s] /var/tmp/rpm-tmp.vb1NHu: line 1:  2535 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  327s] ghc-array-devel-0.5.4.0-23.1          ########################################
+[  351s] [  329.103927][ T2625] Out of memory: Killed process 2625 (ghc-pkg) total-vm:1079007332kB, anon-rss:2879860kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9900kB oom_score_adj:0
+[  351s] /var/tmp/rpm-tmp.0QG40D: line 1:  2625 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  352s] ghc-deepseq-devel-1.4.4.0-23.1        ########################################
+[  366s] [  344.050922][ T2679] Out of memory: Killed process 2679 (ghc-pkg) total-vm:1079006240kB, anon-rss:2878968kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  366s] /var/tmp/rpm-tmp.2Xy9c4: line 1:  2679 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  371s] ghc-bytestring-devel-0.10.12.0-23.1   ########################################
+[  388s] [  366.592138][ T2736] Out of memory: Killed process 2736 (ghc-pkg) total-vm:1078988456kB, anon-rss:2862384kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9864kB oom_score_adj:0
+[  389s] /var/tmp/rpm-tmp.x2IsHs: line 1:  2736 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  406s] ghc-containers-devel-0.6.5.1-23.1     ########################################
+[  429s] [  406.996076][ T2884] Out of memory: Killed process 2836 (ghc-pkg) total-vm:1078956476kB, anon-rss:2831184kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9800kB oom_score_adj:0
+[  429s] /var/tmp/rpm-tmp.870ysP: line 1:  2836 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  433s] ghc-binary-devel-0.8.8.0-23.1         ########################################
+[  457s] [  435.267483][ T2890] Out of memory: Killed process 2890 (ghc-pkg) total-vm:1079001092kB, anon-rss:2874512kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9884kB oom_score_adj:0
+[  457s] /var/tmp/rpm-tmp.9rR9VF: line 1:  2890 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  464s] ghc-time-devel-1.9.3-23.1             ########################################
+[  498s] [  476.162638][ T2969] Out of memory: Killed process 2969 (ghc-pkg) total-vm:1079002340kB, anon-rss:2875672kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9892kB oom_score_adj:0
+[  498s] /var/tmp/rpm-tmp.cdBOj4: line 1:  2969 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  502s] ghc-unix-devel-2.7.2.2-23.1           ########################################
+[  525s] [  503.258735][ T3048] Out of memory: Killed process 3048 (ghc-pkg) total-vm:1078982996kB, anon-rss:2857852kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9852kB oom_score_adj:0
+[  525s] /var/tmp/rpm-tmp.usPnPm: line 1:  3048 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  527s] ghc-base-orphans-devel-0.8.7-1.1      ########################################
+[  600s] [  577.923444][ T3216] Out of memory: Killed process 3113 (ghc-pkg) total-vm:1079007332kB, anon-rss:2881684kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  601s] /var/tmp/rpm-tmp.HTz9PR: line 1:  3113 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  604s] ghc-primitive-devel-0.7.3.0-2.1       ########################################
+[  625s] [  603.451241][ T3233] Out of memory: Killed process 3233 (ghc-pkg) total-vm:1079006084kB, anon-rss:2880368kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9900kB oom_score_adj:0
+[  626s] /var/tmp/rpm-tmp.vL6oDN: line 1:  3233 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  627s] ghc-filepath-devel-1.4.2.1-23.1       ########################################
+[  658s] [  636.501550][ T3287] Out of memory: Killed process 3287 (ghc-pkg) total-vm:1079003120kB, anon-rss:2877432kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9884kB oom_score_adj:0
+[  659s] /var/tmp/rpm-tmp.uwqtNS: line 1:  3287 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  661s] ghc-directory-devel-1.3.6.0-23.1      ########################################
+[  681s] [  659.261745][ T3363] Out of memory: Killed process 3363 (ghc-pkg) total-vm:1079005928kB, anon-rss:2876072kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  681s] /var/tmp/rpm-tmp.SZ8GxT: line 1:  3363 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  695s] ghc-vector-devel-0.12.3.1-3.1         ########################################
+[  710s] [  688.422483][ T3459] Out of memory: Killed process 3459 (ghc-pkg) total-vm:1078988612kB, anon-rss:2863316kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9864kB oom_score_adj:0
+[  711s] /var/tmp/rpm-tmp.ZyPdJ4: line 1:  3459 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  713s] ghc-pretty-devel-1.1.3.6-23.1         ########################################
+[  747s] [  724.978736][ T3503] Out of memory: Killed process 3503 (ghc-pkg) total-vm:1079006552kB, anon-rss:2880636kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9892kB oom_score_adj:0
+[  747s] /var/tmp/rpm-tmp.KpMFQ1: line 1:  3503 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  748s] ghc-splitmix-devel-0.1.0.4-3.1        ########################################
+[  761s] [  739.520571][ T3590] Out of memory: Killed process 3590 (ghc-pkg) total-vm:1079002340kB, anon-rss:2876784kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9888kB oom_score_adj:0
+[  762s] /var/tmp/rpm-tmp.H9SNZ6: line 1:  3590 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  764s] ghc-random-devel-1.2.1.1-1.1          ########################################
+[  786s] [  764.069182][ T3636] Out of memory: Killed process 3636 (ghc-pkg) total-vm:1079006396kB, anon-rss:2880896kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9900kB oom_score_adj:0
+[  786s] /var/tmp/rpm-tmp.dTZksQ: line 1:  3636 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  787s] ghc-process-devel-1.6.13.2-23.1       ########################################
+[  809s] [  787.368229][ T3690] Out of memory: Killed process 3690 (ghc-pkg) total-vm:1079006552kB, anon-rss:2886708kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  810s] /var/tmp/rpm-tmp.tiE0zT: line 1:  3690 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  811s] ghc-base-compat-devel-0.12.2-1.1      ########################################
+[  834s] [  811.910017][ T3755] Out of memory: Killed process 3755 (ghc-pkg) total-vm:1079004368kB, anon-rss:2884656kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  834s] /var/tmp/rpm-tmp.b72pUv: line 1:  3755 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  835s] ghc-indexed-traversable-devel-0.1.2-3.########################################
+[  855s] [  832.871235][ T3823] Out of memory: Killed process 3823 (ghc-pkg) total-vm:1079007176kB, anon-rss:2887340kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  855s] /var/tmp/rpm-tmp.U6IZxo: line 1:  3823 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  856s] ghc-dlist-devel-1.0-2.4               ########################################
+[  869s] [  847.233123][ T3863] Out of memory: Killed process 3863 (ghc-pkg) total-vm:1078977536kB, anon-rss:2858176kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9836kB oom_score_adj:0
+[  869s] /var/tmp/rpm-tmp.MZSatj: line 1:  3863 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  870s] ghc-integer-logarithms-devel-1.0.3.1-5########################################
+[  886s] [  864.070877][ T3906] Out of memory: Killed process 3906 (ghc-pkg) total-vm:1078994228kB, anon-rss:2874708kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9880kB oom_score_adj:0
+[  886s] /var/tmp/rpm-tmp.YQV6Xn: line 1:  3906 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  887s] ghc-stm-devel-2.5.0.1-23.1            ########################################
+[  902s] [  880.096983][ T3949] Out of memory: Killed process 3949 (ghc-pkg) total-vm:1078989392kB, anon-rss:2865952kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9860kB oom_score_adj:0
+[  902s] /var/tmp/rpm-tmp.4givFg: line 1:  3949 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  903s] ghc-transformers-compat-devel-0.7.2-1.########################################
+[  917s] [  895.274385][ T4006] Out of memory: Killed process 4006 (ghc-pkg) total-vm:1079001560kB, anon-rss:2881732kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9888kB oom_score_adj:0
+[  917s] /var/tmp/rpm-tmp.XftH6q: line 1:  4006 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  919s] ghc-ghc-boot-th-devel-8.10.7-23.1     ########################################
+[  932s] [  910.519003][ T4052] Out of memory: Killed process 4052 (ghc-pkg) total-vm:1078977380kB, anon-rss:2854008kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9840kB oom_score_adj:0
+[  933s] /var/tmp/rpm-tmp.Xr9xd6: line 1:  4052 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  950s] ghc-template-haskell-devel-2.16.0.0-23########################################
+[  972s] [  950.551796][ T4140] Out of memory: Killed process 4140 (ghc-pkg) total-vm:1079006864kB, anon-rss:2887096kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[  973s] /var/tmp/rpm-tmp.2iMjqg: line 1:  4140 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[  983s] ghc-text-devel-1.2.4.1-23.1           ########################################
+[ 1012s] [  990.585124][ T4222] Out of memory: Killed process 4222 (ghc-pkg) total-vm:1078986584kB, anon-rss:2867288kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9852kB oom_score_adj:0
+[ 1013s] /var/tmp/rpm-tmp.Be4urV: line 1:  4222 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1014s] ghc-hashable-devel-1.3.5.0-2.1        ########################################
+[ 1036s] [ 1014.662679][ T4298] Out of memory: Killed process 4298 (ghc-pkg) total-vm:1078984712kB, anon-rss:2865448kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9856kB oom_score_adj:0
+[ 1037s] /var/tmp/rpm-tmp.wOe6Pw: line 1:  4298 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1037s] ghc-tagged-devel-0.8.6.1-4.1          ########################################
+[ 1061s] [ 1038.921859][ T4352] Out of memory: Killed process 4352 (ghc-pkg) total-vm:1078984556kB, anon-rss:2865276kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9848kB oom_score_adj:0
+[ 1061s] /var/tmp/rpm-tmp.NY88f4: line 1:  4352 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1063s] ghc-exceptions-devel-0.10.4-23.1      ########################################
+[ 1083s] [ 1061.001407][ T4406] Out of memory: Killed process 4406 (ghc-pkg) total-vm:1079006864kB, anon-rss:2886840kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[ 1083s] /var/tmp/rpm-tmp.sjHYs0: line 1:  4406 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1084s] ghc-scientific-devel-0.3.7.0-4.1      ########################################
+[ 1099s] [ 1077.337547][ T4460] Out of memory: Killed process 4460 (ghc-pkg) total-vm:1078966304kB, anon-rss:2847300kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9816kB oom_score_adj:0
+[ 1100s] /var/tmp/rpm-tmp.w18qHY: line 1:  4460 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1103s] ghc-unordered-containers-devel-0.2.19.########################################
+[ 1115s] [ 1092.910263][ T4517] Out of memory: Killed process 4517 (ghc-pkg) total-vm:1078948364kB, anon-rss:2829988kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9784kB oom_score_adj:0
+[ 1115s] /var/tmp/rpm-tmp.UqNj9N: line 1:  4517 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1117s] ghc-th-abstraction-devel-0.4.5.0-1.1  ########################################
+[ 1130s] [ 1108.432516][ T4549] Out of memory: Killed process 4549 (ghc-pkg) total-vm:1079001404kB, anon-rss:2881728kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9888kB oom_score_adj:0
+[ 1131s] /var/tmp/rpm-tmp.VVupVn: line 1:  4549 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1135s] ghc-attoparsec-devel-0.14.4-2.1       ########################################
+[ 1149s] [ 1127.136785][ T4606] Out of memory: Killed process 4606 (ghc-pkg) total-vm:1078989236kB, anon-rss:2870488kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9868kB oom_score_adj:0
+[ 1149s] /var/tmp/rpm-tmp.KQ3AqS: line 1:  4606 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1150s] ghc-distributive-devel-0.6.2.1-2.2    ########################################
+[ 1168s] [ 1146.058698][ T4649] Out of memory: Killed process 4649 (ghc-pkg) total-vm:1078999064kB, anon-rss:2879876kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9888kB oom_score_adj:0
+[ 1168s] /var/tmp/rpm-tmp.7P3Np1: line 1:  4649 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1170s] ghc-comonad-devel-5.0.8-2.3           ########################################
+[ 1189s] [ 1167.218045][ T4703] Out of memory: Killed process 4703 (ghc-pkg) total-vm:1078996880kB, anon-rss:2878060kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9876kB oom_score_adj:0
+[ 1189s] /var/tmp/rpm-tmp.nCArTO: line 1:  4703 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1193s] ghc-bifunctors-devel-5.5.14-1.1       ########################################
+[ 1217s] [ 1195.494465][ T4760] Out of memory: Killed process 4760 (ghc-pkg) total-vm:1079005148kB, anon-rss:2882060kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[ 1218s] /var/tmp/rpm-tmp.SU7KoO: line 1:  4760 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1218s] ghc-assoc-devel-1.0.2-6.3             ########################################
+[ 1248s] [ 1226.229072][ T4811] Out of memory: Killed process 4811 (ghc-pkg) total-vm:1079006084kB, anon-rss:2887172kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[ 1248s] /var/tmp/rpm-tmp.zMrD7o: line 1:  4811 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1249s] ghc-these-devel-1.1.1.1-8.2           ########################################
+[ 1289s] [ 1267.458261][ T4887] Out of memory: Killed process 4887 (ghc-pkg) total-vm:1079005616kB, anon-rss:2886484kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9900kB oom_score_adj:0
+[ 1290s] /var/tmp/rpm-tmp.9zu3Ep: line 1:  4887 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1293s] ghc-strict-devel-0.4.0.1-5.4          ########################################
+[ 1319s] [ 1296.984136][ T4988] Out of memory: Killed process 4988 (ghc-pkg) total-vm:1079008268kB, anon-rss:2889272kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9900kB oom_score_adj:0
+[ 1319s] /var/tmp/rpm-tmp.TsV20p: line 1:  4988 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1320s] ghc-data-fix-devel-0.3.2-3.1          ########################################
+[ 1339s] [ 1317.120936][ T5053] Out of memory: Killed process 5053 (ghc-pkg) total-vm:1078986272kB, anon-rss:2867764kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9852kB oom_score_adj:0
+[ 1339s] /var/tmp/rpm-tmp.TY3pzw: line 1:  5053 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1340s] ghc-OneTuple-devel-0.3.1-3.2          ########################################
+[ 1359s] [ 1337.549657][ T5136] Out of memory: Killed process 5096 (ghc-pkg) total-vm:1078975040kB, anon-rss:2852780kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9836kB oom_score_adj:0
+[ 1360s] /var/tmp/rpm-tmp.qyuWYB: line 1:  5096 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1361s] ghc-base-compat-batteries-devel-0.12.2########################################
+[ 1382s] [ 1360.394987][ T5150] Out of memory: Killed process 5150 (ghc-pkg) total-vm:1078978784kB, anon-rss:2860580kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9852kB oom_score_adj:0
+[ 1383s] /var/tmp/rpm-tmp.6Lwfl4: line 1:  5150 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1384s] ghc-time-compat-devel-1.9.6.1-4.2     ########################################
+[ 1403s] [ 1381.392656][ T5204] Out of memory: Killed process 5204 (ghc-pkg) total-vm:1078995632kB, anon-rss:2876760kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9880kB oom_score_adj:0
+[ 1404s] /var/tmp/rpm-tmp.DH827q: line 1:  5204 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1404s] ghc-uuid-types-devel-1.0.5-4.1        ########################################
+[ 1428s] [ 1406.711150][ T5258] Out of memory: Killed process 5258 (ghc-pkg) total-vm:1079000936kB, anon-rss:2882120kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9888kB oom_score_adj:0
+[ 1429s] /var/tmp/rpm-tmp.PmZKn4: line 1:  5258 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1446s] ghc-aeson-devel-1.5.6.0-6.4           ########################################
+[ 1465s] [ 1442.956263][ T5365] Out of memory: Killed process 5365 (ghc-pkg) total-vm:1078990172kB, anon-rss:2871696kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9864kB oom_score_adj:0
+[ 1465s] /var/tmp/rpm-tmp.mpgETB: line 1:  5365 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1469s] ghc-parsec-devel-3.1.14.0-23.1        ########################################
+[ 1486s] [ 1464.678789][ T5428] Out of memory: Killed process 5428 (ghc-pkg) total-vm:1078997348kB, anon-rss:2878740kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9876kB oom_score_adj:0
+[ 1487s] /var/tmp/rpm-tmp.btNXon: line 1:  5428 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1491s] ghc-QuickCheck-devel-2.14.2-2.4       ########################################
+[ 1508s] [ 1486.354003][ T5488] Out of memory: Killed process 5488 (ghc-pkg) total-vm:1078937132kB, anon-rss:2819940kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9760kB oom_score_adj:0
+[ 1509s] /var/tmp/rpm-tmp.U9QHWi: line 1:  5488 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1510s] ghc-lua-devel-2.2.1-1.1               ########################################
+[ 1531s] [ 1509.121741][ T5531] Out of memory: Killed process 5531 (ghc-pkg) total-vm:1078976288kB, anon-rss:2858024kB, file-rss:108kB, shmem-rss:0kB, UID:0 pgtables:9832kB oom_score_adj:0
+[ 1531s] /var/tmp/rpm-tmp.er2pAg: line 1:  5531 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1532s] ghc-hslua-core-devel-2.2.1-1.1        ########################################
+[ 1553s] [ 1531.144981][ T5599] Out of memory: Killed process 5599 (ghc-pkg) total-vm:1079006084kB, anon-rss:2883004kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9896kB oom_score_adj:0
+[ 1553s] /var/tmp/rpm-tmp.FFaDr4: line 1:  5599 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1554s] ghc-hslua-marshalling-devel-2.2.1-1.1 ########################################
+[ 1574s] [ 1552.218025][ T5639] Out of memory: Killed process 5639 (ghc-pkg) total-vm:1079001872kB, anon-rss:2882784kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9892kB oom_score_adj:0
+[ 1574s] /var/tmp/rpm-tmp.mdbA3E: line 1:  5639 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1575s] ghc-hslua-objectorientation-devel-2.2.########################################
+[ 1616s] [ 1594.048458][ T5693] Out of memory: Killed process 5693 (ghc-pkg) total-vm:1078999532kB, anon-rss:2880688kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9880kB oom_score_adj:0
+[ 1616s] /var/tmp/rpm-tmp.x50VIe: line 1:  5693 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1617s] ghc-hslua-packaging-devel-2.2.1-1.1   ########################################
+[ 1641s] [ 1619.014558][ T5791] Out of memory: Killed process 5791 (ghc-pkg) total-vm:1078984400kB, anon-rss:2866096kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9852kB oom_score_adj:0
+[ 1641s] /var/tmp/rpm-tmp.XrgTTv: line 1:  5791 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1642s] ghc-hslua-classes-devel-2.2.0-1.1     ########################################
+[ 1668s] [ 1646.445152][ T5845] Out of memory: Killed process 5845 (ghc-pkg) total-vm:1078998440kB, anon-rss:2879592kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9876kB oom_score_adj:0
+[ 1669s] /var/tmp/rpm-tmp.E3ftLE: line 1:  5845 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1669s] ghc-hslua-aeson-devel-2.2.1-1.3       ########################################
+[ 1688s] [ 1666.257671][ T5910] Out of memory: Killed process 5910 (ghc-pkg) total-vm:1078975508kB, anon-rss:2857216kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9836kB oom_score_adj:0
+[ 1688s] /var/tmp/rpm-tmp.o3aBvZ: line 1:  5910 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1689s] ghc-syb-devel-0.7.2.2-1.1             ########################################
+[ 1713s] [ 1691.477634][ T5950] Out of memory: Killed process 5950 (ghc-pkg) total-vm:1078973480kB, anon-rss:2855280kB, file-rss:4kB, shmem-rss:0kB, UID:0 pgtables:9832kB oom_score_adj:0
+[ 1714s] /var/tmp/rpm-tmp.0UNAbD: line 1:  5950 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1722s] ghc-pandoc-types-devel-1.22.2.1-1.3   ########################################
+[ 1844s] [ 1821.913971][ T6029] Out of memory: Killed process 6029 (ghc-pkg) total-vm:1078976132kB, anon-rss:2857892kB, file-rss:160kB, shmem-rss:0kB, UID:0 pgtables:9840kB oom_score_adj:0
+[ 1844s] /var/tmp/rpm-tmp.TQ4Zh0: line 1:  6029 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1845s] ghc-hslua-devel-2.2.1-1.3             ########################################
+[ 1865s] [ 1843.050542][ T6259] Out of memory: Killed process 6259 (ghc-pkg) total-vm:1078997972kB, anon-rss:2879304kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9876kB oom_score_adj:0
+[ 1865s] /var/tmp/rpm-tmp.d48T79: line 1:  6259 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 1995s] ghc-Cabal-devel-3.2.1.0-23.1          ########################################
+[ 2048s] [ 2025.740320][ T6663] Out of memory: Killed process 6663 (ghc-pkg) total-vm:1078959596kB, anon-rss:2842000kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9808kB oom_score_adj:0
+[ 2048s] /var/tmp/rpm-tmp.XqPcgW: line 1:  6663 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 2049s] ghc-safe-devel-0.3.19-3.4             ########################################
+[ 2115s] [ 2093.275783][ T6772] Out of memory: Killed process 6772 (ghc-pkg) total-vm:1079000468kB, anon-rss:2881804kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:9884kB oom_score_adj:0
+[ 2116s] /var/tmp/rpm-tmp.1B4ljN: line 1:  6772 Killed                  /usr/bin/ghc-pkg-8.10.7 recache --no-user-package-db
+[ 2116s] ghc-rpm-macros-1.9.95-3.1             ########################################
+[ 2135s] now finalizing build dir...
+[ 2136s] ... running 01-add_abuild_user_to_trusted_group
+[ 2138s] ... running 02-set_timezone_to_utc
+[ 2138s] ... running 03-set-permissions-secure
+[ 2138s] ... running 11-hack_uname_version_to_kernel_version
+[ 2164s] -----------------------------------------------------------------
+[ 2164s] I have the following modifications for ghc-pandoc-lua-marshal.spec:
+[ 2164s] 23c23
+[ 2164s] < Release:        0
+[ 2164s] ---
+[ 2164s] > Release:        1.4
+[ 2174s] build target is riscv64-suse-linux
+[ 2174s] -----------------------------------------------------------------
+[ 2174s] ----- building ghc-pandoc-lua-marshal.spec (user abuild)
+[ 2174s] -----------------------------------------------------------------
+[ 2174s] -----------------------------------------------------------------
+[ 2178s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/1ffcd576e375108a1bf1fae3e5732974-ghc-pandoc-lua-marshal' /home/abuild/rpmbuild/SOURCES/ghc-pandoc-lua-marshal.spec
+[ 2206s] [ 2183.878046][ T7779] Out of memory: Killed process 7779 (ghc) total-vm:1079049660kB, anon-rss:2868876kB, file-rss:0kB, shmem-rss:0kB, UID:399 pgtables:9764kB oom_score_adj:0
+[ 2206s] error: line 62: Version required: Requires:       ghc-compiler =
+[ 2206s] Building target platforms: riscv64-suse-linux
+[ 2206s] Building for target riscv64-suse-linux
+[ 2207s] ### VM INTERACTION START ###
+[ 2211s] [ 2189.241204][    T1] sysrq: Power Off
+[ 2211s] [ 2189.248771][  T228] reboot: Power down
+[ 2211s] ### VM INTERACTION END ###
+[ 2211s] 
+[ 2211s] cloud121 failed "build ghc-pandoc-lua-marshal.spec" at Mon Feb 20 12:56:19 UTC 2023.
+[ 2211s] 

@@ -1,0 +1,994 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] cloud124 started "build python-openmesh.spec" at Sun Feb 19 03:08:43 UTC 2023.
+[    0s] 
+[    0s] Building python-openmesh for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '365d56211ef686304a163d5fd749177e'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/python-openmesh.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/python-openmesh.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/python-openmesh.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[   13s] 
+[   13s] copying packages...
+[   14s] reordering...done
+[   14s] Detected virtio-serial support
+[   44s] booting kvm...
+[   46s] ### VM INTERACTION START ###
+[   46s] Using virtio-serial support
+[   47s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   52s] ### VM INTERACTION END ###
+[   52s] 2nd stage started in virtual machine
+[   53s] machine type: riscv64
+[   53s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   53s] Increasing log level from now on...
+[   53s] [    5.473302][  T367] sysrq: Changing Loglevel
+[   53s] [    5.473457][  T367] sysrq: Loglevel set to 4
+[   53s] Enable sysrq operations
+[   54s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   54s] no label, UUID=afbe01ac-4964-45e0-877a-f7731e787a59
+[   54s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   54s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   54s] swapon /dev/vdb
+[   54s] WARNING: udev not running, creating extra device nodes
+[   55s] logging output to //.build.log...
+[   55s] processing recipe /.build-srcdir/python-openmesh.spec ...
+[   55s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-openmesh.spec build ...
+[   55s] initializing rpm db...
+[   56s] querying package ids...
+[   86s] [1/183] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   86s] [2/183] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   86s] [3/183] preinstalled attr-2.5.1-1.1
+[   86s] [4/183] preinstalled bash-5.2.15-8.1
+[   86s] [5/183] preinstalled bash-sh-5.2.15-8.1
+[   86s] [6/183] preinstalled binutils-2.39-3.1
+[   86s] [7/183] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   86s] [8/183] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   86s] [9/183] preinstalled build-mkbaselibs-20230215-1.1
+[   86s] [10/183] preinstalled bzip2-1.0.8-4.1
+[   86s] [11/183] preinstalled chkstat-1599_20221220-1.2
+[   86s] [12/183] preinstalled compat-usrmerge-build-84.87-5.1
+[   86s] [13/183] preinstalled compat-usrmerge-tools-84.87-5.1
+[   86s] [14/183] preinstalled coreutils-9.1-5.1
+[   86s] [15/183] preinstalled cpio-2.13-5.1
+[   86s] [16/183] preinstalled cpp-12-2.1
+[   86s] [17/183] preinstalled cpp12-12.2.1+git749-4.1
+[   86s] [18/183] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   86s] [19/183] preinstalled debugedit-5.0-5.1
+[   86s] [20/183] preinstalled diffutils-3.9-1.1
+[   86s] [21/183] preinstalled dwz-0.15-2.1
+[   86s] [22/183] preinstalled elfutils-0.188-3.2
+[   86s] [23/183] cumulate fdupes-2.2.1-1.1
+[   86s] [24/183] preinstalled file-5.44-1.2
+[   87s] [25/183] preinstalled file-magic-5.44-1.2
+[   87s] [26/183] preinstalled filesystem-84.87-12.1
+[   87s] [27/183] preinstalled fillup-1.42-279.1
+[   87s] [28/183] preinstalled findutils-4.9.0-2.1
+[   87s] [29/183] preinstalled gawk-5.2.1-2.1
+[   87s] [30/183] preinstalled gcc-12-2.1
+[   87s] [31/183] preinstalled gcc-PIE-12-2.1
+[   87s] [32/183] preinstalled gcc12-12.2.1+git749-4.1
+[   87s] [33/183] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   87s] [34/183] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   87s] [35/183] preinstalled gettext-tools-mini-0.21.1-1.1
+[   87s] [36/183] preinstalled glibc-2.37-1.1
+[   87s] [37/183] preinstalled glibc-devel-2.37-1.1
+[   87s] [38/183] preinstalled glibc-locale-base-2.37-1.1
+[   87s] [39/183] preinstalled grep-3.8-3.1
+[   87s] [40/183] preinstalled gzip-1.12-3.1
+[   87s] [41/183] preinstalled kernel-obs-build-6.1.12-1.1
+[   87s] [42/183] preinstalled libacl1-2.3.1-2.1
+[   87s] [43/183] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   87s] [44/183] preinstalled libasan8-13.0.1+git5428-6.1
+[   87s] [45/183] preinstalled libasm1-0.188-3.2
+[   87s] [46/183] preinstalled libatomic1-13.0.1+git5428-6.1
+[   87s] [47/183] preinstalled libattr1-2.5.1-1.1
+[   87s] [48/183] preinstalled libaudit1-3.0.6-4.1
+[   87s] [49/183] preinstalled libblkid1-2.38.1-7.1
+[   87s] [50/183] preinstalled libbz2-1-1.0.8-4.1
+[   87s] [51/183] preinstalled libcap-ng0-0.8.3-1.1
+[   87s] [52/183] preinstalled libcap2-2.67-1.1
+[   87s] [53/183] preinstalled libcrypt1-4.4.33-1.1
+[   87s] [54/183] preinstalled libctf-nobfd0-2.39-3.1
+[   87s] [55/183] preinstalled libctf0-2.39-3.1
+[   87s] [56/183] preinstalled libdb-4_8-4.8.30-39.1
+[   87s] [57/183] preinstalled libdw1-0.188-3.2
+[   87s] [58/183] preinstalled libeconf0-0.5.1-1.1
+[   87s] [59/183] preinstalled libelf1-0.188-3.2
+[   87s] [60/183] preinstalled libexpat1-2.5.0-2.1
+[   87s] [61/183] preinstalled libfdisk1-2.38.1-7.1
+[   87s] [62/183] preinstalled libffi8-3.4.4-1.1
+[   87s] [63/183] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   87s] [64/183] preinstalled libgcrypt20-1.10.1-1.1
+[   87s] [65/183] preinstalled libgdbm6-1.23-1.1
+[   87s] [66/183] preinstalled libgdbm_compat4-1.23-1.1
+[   87s] [67/183] cumulate libgfortran5-13.0.1+git5428-6.1
+[   87s] [68/183] preinstalled libgmp10-6.2.1-4.1
+[   87s] [69/183] preinstalled libgomp1-13.0.1+git5428-6.1
+[   87s] [70/183] preinstalled libgpg-error0-1.46-1.1
+[   87s] [71/183] preinstalled libisl23-0.25-1.1
+[   87s] [72/183] preinstalled liblua5_4-5-5.4.4-8.1
+[   87s] [73/183] preinstalled liblzma5-5.4.1-1.1
+[   87s] [74/183] preinstalled libmagic1-5.44-1.2
+[   87s] [75/183] preinstalled libmount1-2.38.1-7.1
+[   87s] [76/183] preinstalled libmpc3-1.3.1-1.2
+[   87s] [77/183] preinstalled libmpdec3-2.5.1-2.1
+[   87s] [78/183] preinstalled libmpfr6-4.2.0-1.1
+[   87s] [79/183] preinstalled libncurses6-6.4.20230128-5.1
+[   87s] [80/183] preinstalled libopenssl3-3.0.7-3.1
+[   87s] [81/183] preinstalled libpcre2-8-0-10.42-3.2
+[   87s] [82/183] preinstalled libpkgconf3-1.8.0-2.1
+[   87s] [83/183] preinstalled libpopt0-1.19-1.1
+[   87s] [84/183] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   87s] [85/183] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   87s] [86/183] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   87s] [87/183] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   87s] [88/183] preinstalled libreadline8-8.2-2.1
+[   87s] [89/183] cumulate librhash0-1.4.3-1.1
+[   87s] [90/183] preinstalled librpmbuild9-4.18.0-3.2
+[   87s] [91/183] preinstalled libseccomp2-2.5.4-2.1
+[   87s] [92/183] preinstalled libselinux1-3.4-2.1
+[   87s] [93/183] preinstalled libsemanage-conf-3.4-1.1
+[   87s] [94/183] preinstalled libsemanage2-3.4-1.1
+[   87s] [95/183] preinstalled libsepol2-3.4-1.1
+[   87s] [96/183] preinstalled libsmartcols1-2.38.1-7.1
+[   87s] [97/183] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   87s] [98/183] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   87s] [99/183] preinstalled libsubid4-4.13-3.1
+[   87s] [100/183] preinstalled libubsan1-13.0.1+git5428-6.1
+[   87s] [101/183] preinstalled libutempter0-1.2.0-3.2
+[   87s] [102/183] preinstalled libuuid1-2.38.1-7.1
+[   87s] [103/183] cumulate libuv1-1.44.2-3.1
+[   87s] [104/183] preinstalled libxcrypt-devel-4.4.33-1.1
+[   87s] [105/183] preinstalled libz1-1.2.13-2.1
+[   87s] [106/183] preinstalled libzstd1-1.5.2-2.1
+[   87s] [107/183] preinstalled linux-glibc-devel-6.1-1.1
+[   87s] [108/183] preinstalled login_defs-4.13-3.1
+[   87s] [109/183] preinstalled lua54-5.4.4-8.1
+[   87s] [110/183] preinstalled make-4.4-2.1
+[   87s] [111/183] preinstalled ncurses-utils-6.4.20230128-5.1
+[   87s] [112/183] preinstalled pam-1.5.2-12.1
+[   87s] [113/183] preinstalled patch-2.7.6-6.1
+[   87s] [114/183] preinstalled perl-5.36.0-4.1
+[   87s] [115/183] preinstalled perl-base-5.36.0-4.1
+[   87s] [116/183] preinstalled permissions-1599_20221220-1.2
+[   87s] [117/183] preinstalled permissions-config-1599_20221220-1.2
+[   87s] [118/183] preinstalled pkgconf-1.8.0-2.1
+[   87s] [119/183] preinstalled pkgconf-m4-1.8.0-2.1
+[   87s] [120/183] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   87s] [121/183] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   87s] [122/183] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   87s] [123/183] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   87s] [124/183] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   87s] [125/183] preinstalled python310-base-3.10.9-2.2
+[   87s] [126/183] cumulate python310-devel-3.10.9-2.2
+[   87s] [127/183] preinstalled python310-packaging-23.0-1.1
+[   87s] [128/183] preinstalled python310-setuptools-65.6.3-1.2
+[   87s] [129/183] cumulate python310-tomli-2.0.1-1.3
+[   87s] [130/183] cumulate python310-typing_extensions-4.4.0-2.2
+[   87s] [131/183] preinstalled python311-base-3.11.1-4.2
+[   87s] [132/183] cumulate python311-devel-3.11.1-4.2
+[   87s] [133/183] cumulate python311-packaging-23.0-1.2
+[   87s] [134/183] preinstalled python311-setuptools-65.6.3-1.2
+[   87s] [135/183] cumulate python311-tomli-2.0.1-1.3
+[   87s] [136/183] cumulate python311-typing_extensions-4.4.0-2.2
+[   87s] [137/183] preinstalled python38-base-3.8.16-3.2
+[   87s] [138/183] cumulate python38-devel-3.8.16-3.2
+[   87s] [139/183] cumulate python38-packaging-23.0-1.2
+[   87s] [140/183] preinstalled python38-setuptools-65.6.3-1.2
+[   87s] [141/183] cumulate python38-tomli-2.0.1-1.3
+[   87s] [142/183] cumulate python38-typing_extensions-4.4.0-2.2
+[   87s] [143/183] preinstalled python39-base-3.9.16-3.2
+[   87s] [144/183] cumulate python39-devel-3.9.16-3.2
+[   87s] [145/183] cumulate python39-packaging-23.0-1.2
+[   87s] [146/183] preinstalled python39-setuptools-65.6.3-1.2
+[   87s] [147/183] cumulate python39-tomli-2.0.1-1.3
+[   87s] [148/183] cumulate python39-typing_extensions-4.4.0-2.2
+[   87s] [149/183] preinstalled qemu-linux-user-7.1.0-50.1
+[   87s] [150/183] preinstalled rpm-4.18.0-3.2
+[   87s] [151/183] preinstalled rpm-build-4.18.0-3.2
+[   87s] [152/183] preinstalled rpm-build-perl-4.18.0-3.2
+[   87s] [153/183] preinstalled rpm-config-SUSE-20220926-1.1
+[   87s] [154/183] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   87s] [155/183] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   87s] [156/183] preinstalled sed-4.9-2.1
+[   87s] [157/183] preinstalled shadow-4.13-3.1
+[   87s] [158/183] preinstalled system-group-hardware-20170617-24.1
+[   87s] [159/183] preinstalled system-user-root-20190513-2.1
+[   87s] [160/183] preinstalled systemd-rpm-macros-19-1.1
+[   87s] [161/183] preinstalled sysuser-shadow-3.1-5.1
+[   87s] [162/183] preinstalled tar-1.34-9.1
+[   87s] [163/183] preinstalled terminfo-base-6.4.20230128-5.1
+[   87s] [164/183] preinstalled update-alternatives-1.21.8-1.1
+[   87s] [165/183] preinstalled util-linux-2.38.1-7.1
+[   87s] [166/183] preinstalled which-2.21-5.1
+[   87s] [167/183] preinstalled xz-5.4.1-1.1
+[   87s] [168/183] cumulate alts-1.2+3.b848aad-3.1
+[   87s] [169/183] cumulate gcc12-c++-12.2.1+git749-4.1
+[   87s] [170/183] cumulate libblas3-3.9.0-6.1
+[   87s] [171/183] cumulate cmake-mini-3.25.2-1.2
+[   87s] [172/183] cumulate python310-setuptools_scm-7.0.5-1.2
+[   87s] [173/183] cumulate python311-setuptools_scm-7.0.5-1.2
+[   87s] [174/183] cumulate python38-setuptools_scm-7.0.5-1.2
+[   87s] [175/183] cumulate python39-setuptools_scm-7.0.5-1.2
+[   87s] [176/183] cumulate cmake-3.25.2-1.1
+[   87s] [177/183] cumulate gcc-c++-12-2.1
+[   87s] [178/183] cumulate libcblas3-3.9.0-6.1
+[   87s] [179/183] cumulate liblapack3-3.9.0-6.1
+[   87s] [180/183] cumulate python310-numpy-1.24.1-3.2
+[   87s] [181/183] cumulate python311-numpy-1.24.1-3.2
+[   87s] [182/183] cumulate python38-numpy-1.24.1-3.2
+[   87s] [183/183] cumulate python39-numpy-1.24.1-3.2
+[   87s] now installing cumulated packages
+[   88s] Preparing...                          ########################################
+[   88s] Updating / installing...
+[   88s] libgfortran5-13.0.1+git5428-6.1       ########################################
+[   88s] libblas3-3.9.0-6.1                    ########################################
+[   89s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   89s] libcblas3-3.9.0-6.1                   ########################################
+[   89s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   90s] liblapack3-3.9.0-6.1                  ########################################
+[   90s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   90s] python39-typing_extensions-4.4.0-2.2  ########################################
+[   90s] python39-tomli-2.0.1-1.3              ########################################
+[   90s] python39-packaging-23.0-1.2           ########################################
+[   90s] python38-typing_extensions-4.4.0-2.2  ########################################
+[   90s] python38-tomli-2.0.1-1.3              ########################################
+[   90s] python38-packaging-23.0-1.2           ########################################
+[   90s] python311-typing_extensions-4.4.0-2.2 ########################################
+[   90s] python311-tomli-2.0.1-1.3             ########################################
+[   91s] python311-packaging-23.0-1.2          ########################################
+[   91s] python310-typing_extensions-4.4.0-2.2 ########################################
+[   91s] python310-tomli-2.0.1-1.3             ########################################
+[   91s] libuv1-1.44.2-3.1                     ########################################
+[  106s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[  111s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[  111s] librhash0-1.4.3-1.1                   ########################################
+[  120s] cmake-mini-3.25.2-1.2                 ########################################
+[  120s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  120s] alts-1.2+3.b848aad-3.1                ########################################
+[  125s] python310-numpy-1.24.1-3.2            ########################################
+[  130s] python311-numpy-1.24.1-3.2            ########################################
+[  135s] python38-numpy-1.24.1-3.2             ########################################
+[  139s] python39-numpy-1.24.1-3.2             ########################################
+[  140s] cmake-3.25.2-1.1                      ########################################
+[  140s] gcc-c++-12-2.1                        ########################################
+[  140s] python310-setuptools_scm-7.0.5-1.2    ########################################
+[  140s] python311-setuptools_scm-7.0.5-1.2    ########################################
+[  140s] python38-setuptools_scm-7.0.5-1.2     ########################################
+[  140s] python39-setuptools_scm-7.0.5-1.2     ########################################
+[  140s] python39-devel-3.9.16-3.2             ########################################
+[  140s] python38-devel-3.8.16-3.2             ########################################
+[  141s] python311-devel-3.11.1-4.2            ########################################
+[  141s] python310-devel-3.10.9-2.2            ########################################
+[  141s] fdupes-2.2.1-1.1                      ########################################
+[  144s] now finalizing build dir...
+[  144s] ... running 01-add_abuild_user_to_trusted_group
+[  144s] ... running 02-set_timezone_to_utc
+[  144s] ... running 03-set-permissions-secure
+[  145s] ... running 11-hack_uname_version_to_kernel_version
+[  156s] -----------------------------------------------------------------
+[  156s] I have the following modifications for python-openmesh.spec:
+[  156s] 23c23
+[  156s] < Release:        0
+[  156s] ---
+[  156s] > Release:        2.5
+[  167s] build target is riscv64-suse-linux
+[  167s] -----------------------------------------------------------------
+[  167s] ----- building python-openmesh.spec (user abuild)
+[  167s] -----------------------------------------------------------------
+[  167s] -----------------------------------------------------------------
+[  172s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/365d56211ef686304a163d5fd749177e-python-openmesh' /home/abuild/rpmbuild/SOURCES/python-openmesh.spec
+[  184s] Building target platforms: riscv64-suse-linux
+[  184s] Building for target riscv64-suse-linux
+[  184s] setting SOURCE_DATE_EPOCH=1613606400
+[  185s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.YVCrDb
+[  185s] + umask 022
+[  185s] + cd /home/abuild/rpmbuild/BUILD
+[  185s] + cd /home/abuild/rpmbuild/BUILD
+[  185s] + rm -rf openmesh-1.1.3
+[  185s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/openmesh-1.1.3.tar.gz
+[  186s] + STATUS=0
+[  186s] + '[' 0 -ne 0 ']'
+[  186s] + cd openmesh-1.1.3
+[  186s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  187s] + RPM_EC=0
+[  187s] ++ jobs -p
+[  187s] + exit 0
+[  187s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.fNWd73
+[  187s] + umask 022
+[  187s] + cd /home/abuild/rpmbuild/BUILD
+[  187s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-openmesh-1.1.3-2.5.riscv64
+[  187s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-openmesh-1.1.3-2.5.riscv64
+[  187s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  187s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-openmesh-1.1.3-2.5.riscv64
+[  187s] + cd openmesh-1.1.3
+[  187s] + ref=/usr/lib/rpm
+[  187s] + mints=0
+[  187s] + case $(uname -m) in
+[  187s] ++ uname -m
+[  187s] + mints=20160911
+[  187s] + for s in guess sub
+[  187s] ++ find -maxdepth 8 -name config.guess
+[  187s] + for s in guess sub
+[  187s] ++ find -maxdepth 8 -name config.sub
+[  187s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  187s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ true
+[  187s] + last_flavor=
+[  187s] + '[' -z '' ']'
+[  187s] + last_flavor=tmp
+[  187s] + '[' tmp '!=' python38 ']'
+[  187s] + '[' -d build ']'
+[  187s] + '[' -d _build.python38 ']'
+[  187s] + echo python38
+[  187s] + python_flavor=python38
+[  187s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  195s] running build
+[  195s] running build_ext
+[  201s] -- The C compiler identification is GNU 12.2.1
+[  203s] -- The CXX compiler identification is GNU 12.2.1
+[  203s] -- Detecting C compiler ABI info
+[  209s] -- Detecting C compiler ABI info - done
+[  209s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  209s] -- Detecting C compile features
+[  209s] -- Detecting C compile features - done
+[  209s] -- Detecting CXX compiler ABI info
+[  212s] -- Detecting CXX compiler ABI info - done
+[  213s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  213s] -- Detecting CXX compile features
+[  213s] -- Detecting CXX compile features - done
+[  213s] CMake Warning (dev) at OpenMesh/cmake/ACGCompiler.cmake:106 (set):
+[  213s]   implicitly converting 'STRINGLIST' to 'STRING' type.
+[  213s] Call Stack (most recent call first):
+[  213s]   OpenMesh/cmake/ACGCommon.cmake:131 (include)
+[  213s]   OpenMesh/CMakeLists.txt:38 (include)
+[  213s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[  213s] 
+[  213s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[  213s] 
+[  213s] [40;37m************************************************************[0m
+[  213s] [40;37m* [1;31mACG [0;40;34mBuildsystem[0m[40;37m                                          *[0m
+[  213s] [40;37m*                                                          *[0m
+[  213s] [40;37m* Package : [32mOpenMesh                                 [37m      *[0m
+[  213s] [40;37m* Version : [32m8.0                                      [37m      *[0m
+[  213s] [40;37m* Type    : [32mRelease [37m                                       *[0m
+[  213s] [40;37m************************************************************[0m
+[  214s] -- Found PythonInterp: /usr/bin/python3.8 (found version "3.8.16") 
+[  219s] -- Found PythonLibs: /usr/lib64/libpython3.8.so
+[  220s] -- pybind11 v2.2.4
+[  220s] -- Performing Test HAS_FLTO
+[  224s] -- Performing Test HAS_FLTO - Success
+[  224s] -- LTO enabled
+[  224s] -- Configuring done
+[  225s] -- Generating done
+[  225s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/build-setuptools/temp.linux-riscv64-cpython-38
+[  227s] [  2%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/BinaryHelper.cc.o
+[  240s] [  5%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/IOManager.cc.o
+[  277s] [  7%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/OMFormat.cc.o
+[  306s] [ 10%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/BaseReader.cc.o
+[  335s] [ 12%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OBJReader.cc.o
+[  396s] [ 15%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OFFReader.cc.o
+[  440s] [ 17%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OMReader.cc.o
+[  487s] [ 20%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/PLYReader.cc.o
+[  686s] [ 23%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/STLReader.cc.o
+[  728s] [ 25%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/BaseWriter.cc.o
+[  755s] [ 28%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OBJWriter.cc.o
+[  805s] [ 30%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OFFWriter.cc.o
+[  843s] [ 33%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OMWriter.cc.o
+[  888s] [ 35%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/PLYWriter.cc.o
+[  932s] [ 38%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/STLWriter.cc.o
+[  969s] [ 41%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/VTKWriter.cc.o
+[ 1003s] [ 43%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/ArrayKernel.cc.o
+[ 1071s] [ 46%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/BaseKernel.cc.o
+[ 1099s] [ 48%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/PolyConnectivity.cc.o
+[ 1163s] [ 51%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/TriConnectivity.cc.o
+[ 1204s] [ 53%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/System/omstream.cc.o
+[ 1225s] [ 56%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/BaseProperty.cc.o
+[ 1246s] [ 58%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/Endian.cc.o
+[ 1248s] [ 61%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/RandomNumberGenerator.cc.o
+[ 1251s] [ 64%] Linking CXX static library libOpenMeshCore.a
+[ 1253s] [ 64%] Built target OpenMeshCoreStatic
+[ 1254s] [ 66%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Decimater/Observer.cc.o
+[ 1256s] [ 69%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Gnuplot.cc.o
+[ 1283s] [ 71%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Timer.cc.o
+[ 1296s] [ 74%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/conio.cc.o
+[ 1299s] [ 76%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VFront.cc.o
+[ 1311s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VFront.hh:57,
+[ 1311s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VFront.cc:53:
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1311s]   155 |   { node_index_ = _node_index; }
+[ 1311s]       |                   ^~~~~~~~~~~
+[ 1311s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1311s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1311s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1311s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 1311s]       |                               ^~~~~~~~~~~
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1311s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1311s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1311s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 1311s]       |                               ^~~~~~~~~~~
+[ 1311s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1311s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1311s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1316s] [ 79%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchy.cc.o
+[ 1327s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 1327s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchy.cc:53:
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1327s]   155 |   { node_index_ = _node_index; }
+[ 1327s]       |                   ^~~~~~~~~~~
+[ 1327s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1327s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1327s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1327s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 1327s]       |                               ^~~~~~~~~~~
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1327s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1327s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1327s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 1327s]       |                               ^~~~~~~~~~~
+[ 1327s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1327s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1327s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1333s] [ 82%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyNodeIndex.cc.o
+[ 1338s] [ 84%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyWindow.cc.o
+[ 1349s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 1349s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyWindow.hh:56,
+[ 1349s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchyWindow.cc:53:
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1349s]   155 |   { node_index_ = _node_index; }
+[ 1349s]       |                   ^~~~~~~~~~~
+[ 1349s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1349s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1349s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1349s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 1349s]       |                               ^~~~~~~~~~~
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1349s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1349s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 1349s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 1349s]       |                               ^~~~~~~~~~~
+[ 1349s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 1349s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 1349s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 1354s] [ 87%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/ViewingParameters.cc.o
+[ 1370s] [ 89%] Linking CXX static library libOpenMeshTools.a
+[ 1371s] [ 89%] Built target OpenMeshToolsStatic
+[ 1372s] [ 92%] Building CXX object CMakeFiles/openmesh.dir/src/Bindings.cc.o
+[ 1963s] [ 94%] Building CXX object CMakeFiles/openmesh.dir/src/InputOutput.cc.o
+[ 2109s] [ 97%] Building CXX object CMakeFiles/openmesh.dir/src/Miscellaneous.cc.o
+[ 2183s] [100%] Linking CXX shared module /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/build-setuptools/lib.linux-riscv64-cpython-38/openmesh.cpython-38-riscv64-linux-gnu.so
+[ 2214s] lto-wrapper: warning: using serial compilation of 36 LTRANS jobs
+[ 2214s] lto-wrapper: note: see the ‘-flto’ option documentation for more information
+[ 3158s] [100%] Built target openmesh
+[ 3158s] ++ '[' -f _current_flavor ']'
+[ 3158s] ++ cat _current_flavor
+[ 3158s] + last_flavor=python38
+[ 3158s] + '[' -z python38 ']'
+[ 3158s] + '[' python38 '!=' python39 ']'
+[ 3158s] + '[' -d build ']'
+[ 3158s] + '[' -d _build.python39 ']'
+[ 3158s] + echo python39
+[ 3158s] + python_flavor=python39
+[ 3158s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[ 3167s] running build
+[ 3167s] running build_ext
+[ 3172s] -- The C compiler identification is GNU 12.2.1
+[ 3175s] -- The CXX compiler identification is GNU 12.2.1
+[ 3175s] -- Detecting C compiler ABI info
+[ 3180s] -- Detecting C compiler ABI info - done
+[ 3180s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 3180s] -- Detecting C compile features
+[ 3180s] -- Detecting C compile features - done
+[ 3180s] -- Detecting CXX compiler ABI info
+[ 3183s] -- Detecting CXX compiler ABI info - done
+[ 3184s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 3184s] -- Detecting CXX compile features
+[ 3184s] -- Detecting CXX compile features - done
+[ 3184s] CMake Warning (dev) at OpenMesh/cmake/ACGCompiler.cmake:106 (set):
+[ 3184s]   implicitly converting 'STRINGLIST' to 'STRING' type.
+[ 3184s] Call Stack (most recent call first):
+[ 3184s]   OpenMesh/cmake/ACGCommon.cmake:131 (include)
+[ 3184s]   OpenMesh/CMakeLists.txt:38 (include)
+[ 3184s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[ 3184s] 
+[ 3184s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[ 3184s] 
+[ 3184s] [40;37m************************************************************[0m
+[ 3184s] [40;37m* [1;31mACG [0;40;34mBuildsystem[0m[40;37m                                          *[0m
+[ 3184s] [40;37m*                                                          *[0m
+[ 3184s] [40;37m* Package : [32mOpenMesh                                 [37m      *[0m
+[ 3184s] [40;37m* Version : [32m8.0                                      [37m      *[0m
+[ 3184s] [40;37m* Type    : [32mRelease [37m                                       *[0m
+[ 3184s] [40;37m************************************************************[0m
+[ 3185s] -- Found PythonInterp: /usr/bin/python3.9 (found version "3.9.16") 
+[ 3189s] -- Found PythonLibs: /usr/lib64/libpython3.9.so
+[ 3190s] -- pybind11 v2.2.4
+[ 3190s] -- Performing Test HAS_FLTO
+[ 3194s] -- Performing Test HAS_FLTO - Success
+[ 3194s] -- LTO enabled
+[ 3194s] -- Configuring done
+[ 3195s] -- Generating done
+[ 3195s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/build-setuptools/temp.linux-riscv64-cpython-39
+[ 3196s] [  2%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/BinaryHelper.cc.o
+[ 3208s] [  5%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/IOManager.cc.o
+[ 3242s] [  7%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/OMFormat.cc.o
+[ 3269s] [ 10%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/BaseReader.cc.o
+[ 3295s] [ 12%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OBJReader.cc.o
+[ 3353s] [ 15%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OFFReader.cc.o
+[ 3394s] [ 17%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OMReader.cc.o
+[ 3443s] [ 20%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/PLYReader.cc.o
+[ 3645s] [ 23%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/STLReader.cc.o
+[ 3688s] [ 25%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/BaseWriter.cc.o
+[ 3718s] [ 28%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OBJWriter.cc.o
+[ 3765s] [ 30%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OFFWriter.cc.o
+[ 3802s] [ 33%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OMWriter.cc.o
+[ 3842s] [ 35%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/PLYWriter.cc.o
+[ 3883s] [ 38%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/STLWriter.cc.o
+[ 3916s] [ 41%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/VTKWriter.cc.o
+[ 3947s] [ 43%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/ArrayKernel.cc.o
+[ 4009s] [ 46%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/BaseKernel.cc.o
+[ 4034s] [ 48%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/PolyConnectivity.cc.o
+[ 4091s] [ 51%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/TriConnectivity.cc.o
+[ 4133s] [ 53%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/System/omstream.cc.o
+[ 4154s] [ 56%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/BaseProperty.cc.o
+[ 4174s] [ 58%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/Endian.cc.o
+[ 4176s] [ 61%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/RandomNumberGenerator.cc.o
+[ 4179s] [ 64%] Linking CXX static library libOpenMeshCore.a
+[ 4180s] [ 64%] Built target OpenMeshCoreStatic
+[ 4181s] [ 66%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Decimater/Observer.cc.o
+[ 4183s] [ 69%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Gnuplot.cc.o
+[ 4209s] [ 71%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Timer.cc.o
+[ 4222s] [ 74%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/conio.cc.o
+[ 4225s] [ 76%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VFront.cc.o
+[ 4236s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VFront.hh:57,
+[ 4236s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VFront.cc:53:
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4236s]   155 |   { node_index_ = _node_index; }
+[ 4236s]       |                   ^~~~~~~~~~~
+[ 4236s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4236s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4236s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4236s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 4236s]       |                               ^~~~~~~~~~~
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4236s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4236s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4236s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 4236s]       |                               ^~~~~~~~~~~
+[ 4236s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4236s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4236s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4241s] [ 79%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchy.cc.o
+[ 4252s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 4252s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchy.cc:53:
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4252s]   155 |   { node_index_ = _node_index; }
+[ 4252s]       |                   ^~~~~~~~~~~
+[ 4252s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4252s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4252s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4252s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 4252s]       |                               ^~~~~~~~~~~
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4252s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4252s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4252s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 4252s]       |                               ^~~~~~~~~~~
+[ 4252s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4252s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4252s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4257s] [ 82%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyNodeIndex.cc.o
+[ 4262s] [ 84%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyWindow.cc.o
+[ 4274s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 4274s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyWindow.hh:56,
+[ 4274s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchyWindow.cc:53:
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4274s]   155 |   { node_index_ = _node_index; }
+[ 4274s]       |                   ^~~~~~~~~~~
+[ 4274s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4274s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4274s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4274s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 4274s]       |                               ^~~~~~~~~~~
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4274s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4274s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 4274s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 4274s]       |                               ^~~~~~~~~~~
+[ 4274s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 4274s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 4274s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 4279s] [ 87%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/ViewingParameters.cc.o
+[ 4294s] [ 89%] Linking CXX static library libOpenMeshTools.a
+[ 4295s] [ 89%] Built target OpenMeshToolsStatic
+[ 4296s] [ 92%] Building CXX object CMakeFiles/openmesh.dir/src/Bindings.cc.o
+[ 4313s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:16,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/attr.h:13,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:43,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Utilities.hh:4,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/MeshTypes.hh:8,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Bindings.cc:1:
+[ 4313s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h: In function ‘pybind11::detail::internals& pybind11::detail::get_internals()’:
+[ 4313s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h:194:27: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+[ 4313s]   194 |         PyEval_InitThreads();
+[ 4313s]       |         ~~~~~~~~~~~~~~~~~~^~
+[ 4313s] In file included from /usr/include/python3.9/Python.h:140,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/common.h:112,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pytypes.h:12,
+[ 4313s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:13:
+[ 4313s] /usr/include/python3.9/ceval.h:130:37: note: declared here
+[ 4313s]   130 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+[ 4313s]       |                                     ^~~~~~~~~~~~~~~~~~
+[ 4893s] [ 94%] Building CXX object CMakeFiles/openmesh.dir/src/InputOutput.cc.o
+[ 4911s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:16,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/attr.h:13,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:43,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/InputOutput.hh:4,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/InputOutput.cc:1:
+[ 4911s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h: In function ‘pybind11::detail::internals& pybind11::detail::get_internals()’:
+[ 4911s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h:194:27: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+[ 4911s]   194 |         PyEval_InitThreads();
+[ 4911s]       |         ~~~~~~~~~~~~~~~~~~^~
+[ 4911s] In file included from /usr/include/python3.9/Python.h:140,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/common.h:112,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pytypes.h:12,
+[ 4911s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:13:
+[ 4911s] /usr/include/python3.9/ceval.h:130:37: note: declared here
+[ 4911s]   130 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+[ 4911s]       |                                     ^~~~~~~~~~~~~~~~~~
+[ 5034s] [ 97%] Building CXX object CMakeFiles/openmesh.dir/src/Miscellaneous.cc.o
+[ 5050s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:16,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/attr.h:13,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:43,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Miscellaneous.hh:4,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Miscellaneous.cc:1:
+[ 5050s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h: In function ‘pybind11::detail::internals& pybind11::detail::get_internals()’:
+[ 5050s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h:194:27: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+[ 5050s]   194 |         PyEval_InitThreads();
+[ 5050s]       |         ~~~~~~~~~~~~~~~~~~^~
+[ 5050s] In file included from /usr/include/python3.9/Python.h:140,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/common.h:112,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pytypes.h:12,
+[ 5050s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:13:
+[ 5050s] /usr/include/python3.9/ceval.h:130:37: note: declared here
+[ 5050s]   130 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+[ 5050s]       |                                     ^~~~~~~~~~~~~~~~~~
+[ 5104s] [100%] Linking CXX shared module /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/build-setuptools/lib.linux-riscv64-cpython-39/openmesh.cpython-39-riscv64-linux-gnu.so
+[ 5133s] lto-wrapper: warning: using serial compilation of 36 LTRANS jobs
+[ 5133s] lto-wrapper: note: see the ‘-flto’ option documentation for more information
+[ 6032s] [100%] Built target openmesh
+[ 6033s] ++ '[' -f _current_flavor ']'
+[ 6033s] ++ cat _current_flavor
+[ 6033s] + last_flavor=python39
+[ 6033s] + '[' -z python39 ']'
+[ 6033s] + '[' python39 '!=' python311 ']'
+[ 6033s] + '[' -d build ']'
+[ 6033s] + '[' -d _build.python311 ']'
+[ 6033s] + echo python311
+[ 6033s] + python_flavor=python311
+[ 6033s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[ 6041s] running build
+[ 6041s] running build_ext
+[ 6046s] -- The C compiler identification is GNU 12.2.1
+[ 6048s] -- The CXX compiler identification is GNU 12.2.1
+[ 6049s] -- Detecting C compiler ABI info
+[ 6054s] -- Detecting C compiler ABI info - done
+[ 6054s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 6054s] -- Detecting C compile features
+[ 6054s] -- Detecting C compile features - done
+[ 6054s] -- Detecting CXX compiler ABI info
+[ 6057s] -- Detecting CXX compiler ABI info - done
+[ 6057s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 6057s] -- Detecting CXX compile features
+[ 6057s] -- Detecting CXX compile features - done
+[ 6057s] CMake Warning (dev) at OpenMesh/cmake/ACGCompiler.cmake:106 (set):
+[ 6057s]   implicitly converting 'STRINGLIST' to 'STRING' type.
+[ 6057s] Call Stack (most recent call first):
+[ 6057s]   OpenMesh/cmake/ACGCommon.cmake:131 (include)
+[ 6057s]   OpenMesh/CMakeLists.txt:38 (include)
+[ 6057s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[ 6057s] 
+[ 6058s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[ 6058s] 
+[ 6058s] [40;37m************************************************************[0m
+[ 6058s] [40;37m* [1;31mACG [0;40;34mBuildsystem[0m[40;37m                                          *[0m
+[ 6058s] [40;37m*                                                          *[0m
+[ 6058s] [40;37m* Package : [32mOpenMesh                                 [37m      *[0m
+[ 6058s] [40;37m* Version : [32m8.0                                      [37m      *[0m
+[ 6058s] [40;37m* Type    : [32mRelease [37m                                       *[0m
+[ 6058s] [40;37m************************************************************[0m
+[ 6058s] -- Found PythonInterp: /usr/bin/python3.11 (found version "3.11.1") 
+[ 6063s] -- Found PythonLibs: /usr/lib64/libpython3.11.so
+[ 6063s] -- pybind11 v2.2.4
+[ 6063s] -- Performing Test HAS_FLTO
+[ 6067s] -- Performing Test HAS_FLTO - Success
+[ 6067s] -- LTO enabled
+[ 6067s] -- Configuring done
+[ 6068s] -- Generating done
+[ 6068s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/build-setuptools/temp.linux-riscv64-cpython-311
+[ 6070s] [  2%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/BinaryHelper.cc.o
+[ 6081s] [  5%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/IOManager.cc.o
+[ 6113s] [  7%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/OMFormat.cc.o
+[ 6139s] [ 10%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/BaseReader.cc.o
+[ 6165s] [ 12%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OBJReader.cc.o
+[ 6220s] [ 15%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OFFReader.cc.o
+[ 6259s] [ 17%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/OMReader.cc.o
+[ 6303s] [ 20%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/PLYReader.cc.o
+[ 6503s] [ 23%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/reader/STLReader.cc.o
+[ 6541s] [ 25%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/BaseWriter.cc.o
+[ 6565s] [ 28%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OBJWriter.cc.o
+[ 6607s] [ 30%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OFFWriter.cc.o
+[ 6639s] [ 33%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/OMWriter.cc.o
+[ 6678s] [ 35%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/PLYWriter.cc.o
+[ 6717s] [ 38%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/STLWriter.cc.o
+[ 6748s] [ 41%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/IO/writer/VTKWriter.cc.o
+[ 6777s] [ 43%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/ArrayKernel.cc.o
+[ 6835s] [ 46%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/BaseKernel.cc.o
+[ 6859s] [ 48%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/PolyConnectivity.cc.o
+[ 6916s] [ 51%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Mesh/TriConnectivity.cc.o
+[ 6955s] [ 53%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/System/omstream.cc.o
+[ 6977s] [ 56%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/BaseProperty.cc.o
+[ 6996s] [ 58%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/Endian.cc.o
+[ 6999s] [ 61%] Building CXX object OpenMesh/src/OpenMesh/Core/CMakeFiles/OpenMeshCoreStatic.dir/Utils/RandomNumberGenerator.cc.o
+[ 7002s] [ 64%] Linking CXX static library libOpenMeshCore.a
+[ 7003s] [ 64%] Built target OpenMeshCoreStatic
+[ 7004s] [ 66%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Decimater/Observer.cc.o
+[ 7006s] [ 69%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Gnuplot.cc.o
+[ 7032s] [ 71%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/Timer.cc.o
+[ 7045s] [ 74%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/Utils/conio.cc.o
+[ 7048s] [ 76%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VFront.cc.o
+[ 7059s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VFront.hh:57,
+[ 7059s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VFront.cc:53:
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7059s]   155 |   { node_index_ = _node_index; }
+[ 7059s]       |                   ^~~~~~~~~~~
+[ 7059s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7059s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7059s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7059s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 7059s]       |                               ^~~~~~~~~~~
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7059s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7059s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7059s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 7059s]       |                               ^~~~~~~~~~~
+[ 7059s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7059s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7059s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7064s] [ 79%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchy.cc.o
+[ 7075s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 7075s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchy.cc:53:
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7075s]   155 |   { node_index_ = _node_index; }
+[ 7075s]       |                   ^~~~~~~~~~~
+[ 7075s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7075s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7075s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7075s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 7075s]       |                               ^~~~~~~~~~~
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7075s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7075s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7075s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 7075s]       |                               ^~~~~~~~~~~
+[ 7075s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7075s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7075s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7080s] [ 82%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyNodeIndex.cc.o
+[ 7085s] [ 84%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/VHierarchyWindow.cc.o
+[ 7096s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchy.hh:57,
+[ 7096s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyWindow.hh:56,
+[ 7096s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/VDPM/VHierarchyWindow.cc:53:
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_index(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:155:19: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7096s]   155 |   { node_index_ = _node_index; }
+[ 7096s]       |                   ^~~~~~~~~~~
+[ 7096s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:61:
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7096s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7096s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_lcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:158:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7096s]   158 |   { fund_cut_node_index_[0] = _node_index; }
+[ 7096s]       |                               ^~~~~~~~~~~
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7096s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7096s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh: In member function ‘void OpenMesh::VDPM::VHierarchyNode::set_fund_rcut(const OpenMesh::VDPM::VHierarchyNodeIndex&)’:
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNode.hh:161:31: warning: implicitly-declared ‘OpenMesh::VDPM::VHierarchyNodeIndex& OpenMesh::VDPM::VHierarchyNodeIndex::operator=(const OpenMesh::VDPM::VHierarchyNodeIndex&)’ is deprecated [-Wdeprecated-copy]
+[ 7096s]   161 |   { fund_cut_node_index_[1] = _node_index; }
+[ 7096s]       |                               ^~~~~~~~~~~
+[ 7096s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/OpenMesh/src/OpenMesh/Tools/../../OpenMesh/Tools/VDPM/VHierarchyNodeIndex.hh:90:3: note: because ‘OpenMesh::VDPM::VHierarchyNodeIndex’ has user-provided ‘OpenMesh::VDPM::VHierarchyNodeIndex::VHierarchyNodeIndex(const OpenMesh::VDPM::VHierarchyNodeIndex&)’
+[ 7096s]    90 |   VHierarchyNodeIndex(const VHierarchyNodeIndex &_other)
+[ 7096s]       |   ^~~~~~~~~~~~~~~~~~~
+[ 7101s] [ 87%] Building CXX object OpenMesh/src/OpenMesh/Tools/CMakeFiles/OpenMeshToolsStatic.dir/VDPM/ViewingParameters.cc.o
+[ 7116s] [ 89%] Linking CXX static library libOpenMeshTools.a
+[ 7117s] [ 89%] Built target OpenMeshToolsStatic
+[ 7118s] [ 92%] Building CXX object CMakeFiles/openmesh.dir/src/Bindings.cc.o
+[ 7135s] In file included from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:16,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/attr.h:13,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:43,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Utilities.hh:4,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/MeshTypes.hh:8,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/src/Bindings.cc:1:
+[ 7135s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h: In function ‘pybind11::detail::internals& pybind11::detail::get_internals()’:
+[ 7135s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/internals.h:194:27: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+[ 7135s]   194 |         PyEval_InitThreads();
+[ 7135s]       |         ~~~~~~~~~~~~~~~~~~^~
+[ 7135s] In file included from /usr/include/python3.11/Python.h:95,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/detail/common.h:112,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pytypes.h:12,
+[ 7135s]                  from /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:13:
+[ 7135s] /usr/include/python3.11/ceval.h:132:37: note: declared here
+[ 7135s]   132 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+[ 7135s]       |                                     ^~~~~~~~~~~~~~~~~~
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h: In function ‘std::string pybind11::detail::error_string()’:
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:441:36: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]   441 |                 "  " + handle(frame->f_code->co_filename).cast<std::string>() +
+[ 7136s]       |                                    ^~
+[ 7136s] In file included from /usr/include/python3.11/Python.h:42:
+[ 7136s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]    22 | typedef struct _frame PyFrameObject;
+[ 7136s]       |                ^~~~~~
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:441:75: error: expected primary-expression before ‘>’ token
+[ 7136s]   441 |                 "  " + handle(frame->f_code->co_filename).cast<std::string>() +
+[ 7136s]       |                                                                           ^
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:441:77: error: expected primary-expression before ‘)’ token
+[ 7136s]   441 |                 "  " + handle(frame->f_code->co_filename).cast<std::string>() +
+[ 7136s]       |                                                                             ^
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:443:29: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]   443 |                 handle(frame->f_code->co_name).cast<std::string>() + "\n";
+[ 7136s]       |                             ^~
+[ 7136s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]    22 | typedef struct _frame PyFrameObject;
+[ 7136s]       |                ^~~~~~
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:443:64: error: expected primary-expression before ‘>’ token
+[ 7136s]   443 |                 handle(frame->f_code->co_name).cast<std::string>() + "\n";
+[ 7136s]       |                                                                ^
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:443:66: error: expected primary-expression before ‘)’ token
+[ 7136s]   443 |                 handle(frame->f_code->co_name).cast<std::string>() + "\n";
+[ 7136s]       |                                                                  ^
+[ 7136s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/cast.h:444:26: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]   444 |             frame = frame->f_back;
+[ 7136s]       |                          ^~
+[ 7136s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7136s]    22 | typedef struct _frame PyFrameObject;
+[ 7136s]       |                ^~~~~~
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h: In function ‘pybind11::function pybind11::get_type_overload(const void*, const detail::type_info*, const char*)’:
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1890:49: error: ‘PyThreadState’ {aka ‘struct _ts’} has no member named ‘frame’; did you mean ‘cframe’?
+[ 7139s]  1890 |     PyFrameObject *frame = PyThreadState_Get()->frame;
+[ 7139s]       |                                                 ^~~~~
+[ 7139s]       |                                                 cframe
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1891:41: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]  1891 |     if (frame && (std::string) str(frame->f_code->co_name) == name &&
+[ 7139s]       |                                         ^~
+[ 7139s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]    22 | typedef struct _frame PyFrameObject;
+[ 7139s]       |                ^~~~~~
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1892:14: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]  1892 |         frame->f_code->co_argcount > 0) {
+[ 7139s]       |              ^~
+[ 7139s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]    22 | typedef struct _frame PyFrameObject;
+[ 7139s]       |                ^~~~~~
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1895:18: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]  1895 |             frame->f_locals, PyTuple_GET_ITEM(frame->f_code->co_varnames, 0));
+[ 7139s]       |                  ^~
+[ 7139s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]    22 | typedef struct _frame PyFrameObject;
+[ 7139s]       |                ^~~~~~
+[ 7139s] In file included from /usr/include/python3.11/Python.h:38:
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1895:52: error: invalid use of incomplete type ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]  1895 |             frame->f_locals, PyTuple_GET_ITEM(frame->f_code->co_varnames, 0));
+[ 7139s]       |                                                    ^~
+[ 7139s] /usr/include/python3.11/pyport.h:24:38: note: in definition of macro ‘_Py_CAST’
+[ 7139s]    24 | #define _Py_CAST(type, expr) ((type)(expr))
+[ 7139s]       |                                      ^~~~
+[ 7139s] /usr/include/python3.11/cpython/tupleobject.h:30:38: note: in expansion of macro ‘_PyTuple_CAST’
+[ 7139s]    30 | #define PyTuple_GET_ITEM(op, index) (_PyTuple_CAST(op)->ob_item[index])
+[ 7139s]       |                                      ^~~~~~~~~~~~~
+[ 7139s] /home/abuild/rpmbuild/BUILD/openmesh-1.1.3/pybind11/include/pybind11/pybind11.h:1895:30: note: in expansion of macro ‘PyTuple_GET_ITEM’
+[ 7139s]  1895 |             frame->f_locals, PyTuple_GET_ITEM(frame->f_code->co_varnames, 0));
+[ 7139s]       |                              ^~~~~~~~~~~~~~~~
+[ 7139s] /usr/include/python3.11/pytypedefs.h:22:16: note: forward declaration of ‘PyFrameObject’ {aka ‘struct _frame’}
+[ 7139s]    22 | typedef struct _frame PyFrameObject;
+[ 7139s]       |                ^~~~~~
+[ 7388s] gmake[2]: *** [CMakeFiles/openmesh.dir/build.make:76: CMakeFiles/openmesh.dir/src/Bindings.cc.o] Error 1
+[ 7388s] gmake[1]: *** [CMakeFiles/Makefile2:190: CMakeFiles/openmesh.dir/all] Error 2
+[ 7388s] gmake: *** [Makefile:101: all] Error 2
+[ 7388s] Traceback (most recent call last):
+[ 7388s]   File "/home/abuild/rpmbuild/BUILD/openmesh-1.1.3/setup.py", line 82, in <module>
+[ 7388s]     setup(
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/__init__.py", line 87, in setup
+[ 7388s]     return distutils.core.setup(**attrs)
+[ 7388s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 185, in setup
+[ 7388s]     return run_commands(dist)
+[ 7388s]            ^^^^^^^^^^^^^^^^^^
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 201, in run_commands
+[ 7388s]     dist.run_commands()
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 969, in run_commands
+[ 7388s]     self.run_command(cmd)
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/dist.py", line 1208, in run_command
+[ 7388s]     super().run_command(command)
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+[ 7388s]     cmd_obj.run()
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/command/build.py", line 132, in run
+[ 7388s]     self.run_command(cmd_name)
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/cmd.py", line 318, in run_command
+[ 7388s]     self.distribution.run_command(command)
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/dist.py", line 1208, in run_command
+[ 7388s]     super().run_command(command)
+[ 7388s]   File "/usr/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+[ 7388s]     cmd_obj.run()
+[ 7388s]   File "/home/abuild/rpmbuild/BUILD/openmesh-1.1.3/setup.py", line 36, in run
+[ 7388s]     self.build_extension(ext)
+[ 7388s]   File "/home/abuild/rpmbuild/BUILD/openmesh-1.1.3/setup.py", line 79, in build_extension
+[ 7388s]     subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
+[ 7388s]   File "/usr/lib64/python3.11/subprocess.py", line 413, in check_call
+[ 7388s]     raise CalledProcessError(retcode, cmd)
+[ 7388s] subprocess.CalledProcessError: Command '['cmake', '--build', '.', '--config', 'Release']' returned non-zero exit status 2.
+[ 7389s] error: Bad exit status from /var/tmp/rpm-tmp.fNWd73 (%build)
+[ 7389s] 
+[ 7389s] RPM build errors:
+[ 7389s]     Bad exit status from /var/tmp/rpm-tmp.fNWd73 (%build)
+[ 7389s] ### VM INTERACTION START ###
+[ 7389s] [ 7341.583509][    T1] sysrq: Power Off
+[ 7389s] [ 7341.586235][   T18] reboot: Power down
+[ 7389s] ### VM INTERACTION END ###
+[ 7389s] 
+[ 7389s] cloud124 failed "build python-openmesh.spec" at Sun Feb 19 05:11:52 UTC 2023.
+[ 7389s] 

@@ -1,0 +1,577 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb62 started "build ncspot.spec" at Sat Dec 31 10:24:36 UTC 2022.
+[    0s] 
+[    0s] Building ncspot for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f8515f77aecef4fdf785bc4ab5ccc856'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/ncspot.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/ncspot.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/ncspot.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [57b23b1810d3dc031685f93e03b8fb68]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: gio-branding-upstream -> libgio-2_0-0
+[    3s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    3s] cycle: libgio-2_0-0 -> glib2-tools
+[    3s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    3s] cycle: libpython3_10-1_0 -> python310-base
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] cycle: libopenssl-1_1-devel -> libopenssl-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-1_1-devel
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.1-1-default #1 SMP PREEMPT_DYNAMIC Thu Dec 22 15:37:40 UTC 2022 (e71748d)
+[    9s] Increasing log level from now on...
+[    9s] [    4.522269][  T413] sysrq: Changing Loglevel
+[    9s] [    4.522548][  T413] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=c3a4793a-97aa-439a-acef-90dc4f2d8c65
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/ncspot.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/ncspot.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   36s] [1/237] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   36s] [2/237] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   36s] [3/237] preinstalled attr-2.5.1-1.1
+[   36s] [4/237] preinstalled bash-5.2.15-7.2
+[   36s] [5/237] preinstalled bash-sh-5.2.15-7.2
+[   36s] [6/237] preinstalled binutils-2.39-1.1
+[   36s] [7/237] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   36s] [8/237] preinstalled build-compare-20221206T204012.bb70754-1.1
+[   36s] [9/237] preinstalled build-mkbaselibs-20221118-1.1
+[   36s] [10/237] preinstalled bzip2-1.0.8-4.1
+[   36s] [11/237] preinstalled chkstat-1599_20221220-1.1
+[   36s] [12/237] preinstalled compat-usrmerge-build-84.87-5.1
+[   36s] [13/237] preinstalled compat-usrmerge-tools-84.87-5.1
+[   36s] [14/237] preinstalled coreutils-9.1-5.1
+[   36s] [15/237] preinstalled cpio-2.13-4.1
+[   36s] [16/237] preinstalled cpp-12-2.1
+[   36s] [17/237] preinstalled cpp12-12.2.1+git537-1.2
+[   36s] [18/237] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   36s] [19/237] cumulate dbus-1-common-1.14.4-1.1
+[   36s] [20/237] preinstalled debugedit-5.0-5.1
+[   36s] [21/237] preinstalled diffutils-3.8-3.1
+[   36s] [22/237] preinstalled dwz-0.15-2.1
+[   36s] [23/237] preinstalled elfutils-0.188-3.1
+[   36s] [24/237] preinstalled file-5.43-2.1
+[   36s] [25/237] preinstalled file-magic-5.43-2.1
+[   36s] [26/237] preinstalled filesystem-84.87-10.1
+[   36s] [27/237] preinstalled fillup-1.42-278.1
+[   36s] [28/237] preinstalled findutils-4.9.0-1.1
+[   36s] [29/237] preinstalled gawk-5.2.1-1.1
+[   36s] [30/237] preinstalled gcc-12-2.1
+[   36s] [31/237] preinstalled gcc-PIE-12-2.1
+[   36s] [32/237] preinstalled gcc12-12.2.1+git537-1.2
+[   36s] [33/237] preinstalled gcc12-PIE-12.2.1+git537-1.2
+[   36s] [34/237] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   36s] [35/237] preinstalled gettext-tools-mini-0.21.1-1.1
+[   36s] [36/237] preinstalled glibc-2.36-9.1
+[   36s] [37/237] preinstalled glibc-devel-2.36-9.1
+[   36s] [38/237] preinstalled glibc-locale-base-2.36-9.1
+[   36s] [39/237] preinstalled grep-3.8-2.1
+[   36s] [40/237] preinstalled gzip-1.12-2.1
+[   36s] [41/237] preinstalled kernel-obs-build-6.1.1-1.1
+[   36s] [42/237] cumulate libXau6-1.0.10-1.1
+[   36s] [43/237] preinstalled libacl1-2.3.1-2.1
+[   36s] [44/237] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   36s] [45/237] preinstalled libasan8-13.0.0+git197351-5.1
+[   36s] [46/237] preinstalled libasm1-0.188-3.1
+[   36s] [47/237] preinstalled libatomic1-13.0.0+git197351-5.1
+[   36s] [48/237] preinstalled libattr1-2.5.1-1.1
+[   36s] [49/237] preinstalled libaudit1-3.0.6-4.1
+[   36s] [50/237] cumulate libblkid-devel-2.38.1-1.1
+[   36s] [51/237] preinstalled libblkid1-2.38.1-1.1
+[   36s] [52/237] cumulate libbrotlicommon1-1.0.9-1.1
+[   36s] [53/237] preinstalled libbz2-1-1.0.8-4.1
+[   36s] [54/237] preinstalled libcap-ng0-0.8.3-1.1
+[   36s] [55/237] preinstalled libcap2-2.66-1.1
+[   36s] [56/237] cumulate libcom_err2-1.46.5-3.1
+[   36s] [57/237] preinstalled libcrypt1-4.4.33-1.1
+[   36s] [58/237] preinstalled libctf-nobfd0-2.39-1.1
+[   36s] [59/237] preinstalled libctf0-2.39-1.1
+[   36s] [60/237] preinstalled libdb-4_8-4.8.30-39.1
+[   36s] [61/237] preinstalled libdw1-0.188-3.1
+[   36s] [62/237] preinstalled libeconf0-0.5.0-1.1
+[   36s] [63/237] cumulate libedit0-20210910.3.1-1.1
+[   36s] [64/237] preinstalled libelf1-0.188-3.1
+[   36s] [65/237] cumulate libexpat1-2.5.0-2.1
+[   36s] [66/237] preinstalled libfdisk1-2.38.1-1.1
+[   36s] [67/237] cumulate libffi8-3.4.4-1.1
+[   36s] [68/237] preinstalled libgcc_s1-13.0.0+git197351-5.1
+[   36s] [69/237] preinstalled libgcrypt20-1.10.1-1.1
+[   36s] [70/237] preinstalled libgdbm6-1.23-1.1
+[   36s] [71/237] preinstalled libgdbm_compat4-1.23-1.1
+[   36s] [72/237] cumulate libglib-2_0-0-2.74.4-1.1
+[   36s] [73/237] preinstalled libgmp10-6.2.1-4.1
+[   36s] [74/237] preinstalled libgomp1-13.0.0+git197351-5.1
+[   36s] [75/237] preinstalled libgpg-error0-1.46-1.1
+[   36s] [76/237] preinstalled libisl23-0.25-1.1
+[   36s] [77/237] cumulate libkeyutils1-1.6.3-4.1
+[   36s] [78/237] preinstalled liblua5_4-5-5.4.4-7.1
+[   36s] [79/237] preinstalled liblzma5-5.2.10-1.1
+[   36s] [80/237] preinstalled libmagic1-5.43-2.1
+[   36s] [81/237] preinstalled libmount1-2.38.1-1.1
+[   36s] [82/237] preinstalled libmpc3-1.3.1-1.1
+[   36s] [83/237] cumulate libmpdec3-2.5.1-2.1
+[   36s] [84/237] preinstalled libmpfr6-4.1.1-3.1
+[   36s] [85/237] cumulate libncurses5-6.3.20221126-31.1
+[   36s] [86/237] preinstalled libncurses6-6.3.20221126-31.1
+[   36s] [87/237] cumulate libnghttp2-14-1.51.0-7.1
+[   36s] [88/237] cumulate libogg0-1.3.5-1.1
+[   36s] [89/237] cumulate libopus0-1.3.1-3.2
+[   36s] [90/237] cumulate libpcre2-16-0-10.42-3.1
+[   36s] [91/237] cumulate libpcre2-32-0-10.42-3.1
+[   36s] [92/237] preinstalled libpcre2-8-0-10.42-3.1
+[   36s] [93/237] cumulate libpcre2-posix3-10.42-3.1
+[   36s] [94/237] preinstalled libpkgconf3-1.8.0-1.1
+[   36s] [95/237] preinstalled libpopt0-1.19-1.1
+[   36s] [96/237] preinstalled libreadline8-8.2-2.1
+[   36s] [97/237] preinstalled librpmbuild9-4.18.0-2.1
+[   36s] [98/237] cumulate libsasl2-3-2.1.28-2.1
+[   36s] [99/237] preinstalled libseccomp2-2.5.4-2.1
+[   36s] [100/237] preinstalled libselinux1-3.4-2.1
+[   36s] [101/237] preinstalled libsemanage-conf-3.4-1.1
+[   36s] [102/237] preinstalled libsemanage2-3.4-1.1
+[   36s] [103/237] cumulate libsepol-devel-3.4-1.1
+[   36s] [104/237] preinstalled libsepol2-3.4-1.1
+[   36s] [105/237] preinstalled libsmartcols1-2.38.1-1.1
+[   36s] [106/237] cumulate libspeex1-1.2.1-1.1
+[   36s] [107/237] cumulate libssh-config-0.10.4-1.1
+[   36s] [108/237] preinstalled libstdc++6-13.0.0+git197351-5.1
+[   36s] [109/237] cumulate libstdc++6-devel-gcc12-12.2.1+git537-1.2
+[   36s] [110/237] preinstalled libsubid4-4.13-2.1
+[   36s] [111/237] cumulate libsystemd0-mini-252.3-2.1
+[   36s] [112/237] preinstalled libubsan1-13.0.0+git197351-5.1
+[   36s] [113/237] cumulate libunistring5-1.1-1.1
+[   36s] [114/237] preinstalled libutempter0-1.2.0-3.2
+[   36s] [115/237] preinstalled libuuid1-2.38.1-1.1
+[   36s] [116/237] cumulate libverto1-0.3.2-1.1
+[   36s] [117/237] preinstalled libxcrypt-devel-4.4.33-1.1
+[   36s] [118/237] cumulate libxml2-2-2.10.3-2.1
+[   36s] [119/237] preinstalled libz1-1.2.12-3.1
+[   36s] [120/237] preinstalled libzstd1-1.5.2-1.1
+[   36s] [121/237] preinstalled linux-glibc-devel-6.1-1.1
+[   36s] [122/237] preinstalled login_defs-4.13-2.1
+[   36s] [123/237] preinstalled lua54-5.4.4-7.1
+[   36s] [124/237] preinstalled make-4.4-2.1
+[   36s] [125/237] cumulate ncurses-devel-6.3.20221126-31.1
+[   36s] [126/237] preinstalled ncurses-utils-6.3.20221126-31.1
+[   36s] [127/237] preinstalled pam-1.5.2-11.1
+[   36s] [128/237] preinstalled patch-2.7.6-6.1
+[   36s] [129/237] preinstalled perl-5.36.0-3.1
+[   36s] [130/237] preinstalled perl-base-5.36.0-3.1
+[   36s] [131/237] preinstalled permissions-1599_20221220-1.1
+[   36s] [132/237] preinstalled permissions-config-1599_20221220-1.1
+[   36s] [133/237] preinstalled pkgconf-1.8.0-1.1
+[   36s] [134/237] preinstalled pkgconf-m4-1.8.0-1.1
+[   36s] [135/237] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   36s] [136/237] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   36s] [137/237] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   36s] [138/237] cumulate python-rpm-macros-20221117.8687578-1.1
+[   36s] [139/237] preinstalled qemu-linux-user-7.1.0-45.1
+[   36s] [140/237] preinstalled rpm-4.18.0-2.1
+[   36s] [141/237] preinstalled rpm-build-4.18.0-2.1
+[   36s] [142/237] preinstalled rpm-build-perl-4.18.0-2.1
+[   36s] [143/237] preinstalled rpm-config-SUSE-20220926-1.1
+[   36s] [144/237] preinstalled rpmlint-mini-2.4.0+git20221220.12af927-8.42
+[   36s] [145/237] preinstalled rpmlint-strict-2.4.0+git20221220.12af927-1.1
+[   36s] [146/237] preinstalled sed-4.9-1.1
+[   36s] [147/237] preinstalled shadow-4.13-2.1
+[   36s] [148/237] preinstalled system-group-hardware-20170617-24.1
+[   36s] [149/237] preinstalled system-user-root-20190513-2.1
+[   36s] [150/237] preinstalled systemd-rpm-macros-18-1.1
+[   36s] [151/237] preinstalled sysuser-shadow-3.1-5.1
+[   36s] [152/237] preinstalled tar-1.34-8.1
+[   36s] [153/237] preinstalled terminfo-base-6.3.20221126-31.1
+[   36s] [154/237] preinstalled update-alternatives-1.21.8-1.1
+[   36s] [155/237] preinstalled util-linux-2.38.1-1.1
+[   36s] [156/237] preinstalled which-2.21-5.1
+[   36s] [157/237] cumulate xorgproto-devel-2022.2-1.1
+[   36s] [158/237] preinstalled xz-5.2.10-1.1
+[   36s] [159/237] cumulate zlib-devel-1.2.12-3.1
+[   36s] [160/237] cumulate alts-1.2+3.b848aad-3.1
+[   36s] [161/237] cumulate desktop-file-utils-0.26-5.1
+[   36s] [162/237] cumulate libFLAC12-1.4.2-1.1
+[   36s] [163/237] cumulate libLLVM15-15.0.6-1.1
+[   36s] [164/237] cumulate libbrotlidec1-1.0.9-1.1
+[   36s] [165/237] cumulate libffi-devel-3.4.4-1.1
+[   36s] [166/237] cumulate libgmodule-2_0-0-2.74.4-1.1
+[   36s] [167/237] cumulate libgthread-2_0-0-2.74.4-1.1
+[   36s] [168/237] cumulate libidn2-0-2.3.4-1.1
+[   36s] [169/237] cumulate libopenssl1_1-1.1.1s-2.1
+[   36s] [170/237] cumulate libstdc++-devel-12-2.1
+[   36s] [171/237] cumulate libvorbis0-1.3.7-2.1
+[   36s] [172/237] cumulate libxcb1-1.15-1.1
+[   36s] [173/237] cumulate libXau-devel-1.0.10-1.1
+[   36s] [174/237] cumulate libdbus-1-3-1.14.4-1.1
+[   36s] [175/237] cumulate libgobject-2_0-0-2.74.4-1.1
+[   36s] [176/237] cumulate ncurses5-devel-6.3.20221126-31.1
+[   36s] [177/237] cumulate shared-mime-info-2.2-1.1
+[   36s] [178/237] cumulate krb5-mini-1.20.1-2.1
+[   36s] [179/237] cumulate dbus-1-tools-1.14.4-1.1
+[   36s] [180/237] cumulate libvorbisenc2-1.3.7-2.1
+[   36s] [181/237] cumulate libxcb-composite0-1.15-1.1
+[   36s] [182/237] cumulate libxcb-damage0-1.15-1.1
+[   36s] [183/237] cumulate libxcb-dpms0-1.15-1.1
+[   36s] [184/237] cumulate libxcb-dri2-0-1.15-1.1
+[   36s] [185/237] cumulate libxcb-dri3-0-1.15-1.1
+[   36s] [186/237] cumulate libxcb-glx0-1.15-1.1
+[   36s] [187/237] cumulate libxcb-present0-1.15-1.1
+[   36s] [188/237] cumulate libxcb-randr0-1.15-1.1
+[   36s] [189/237] cumulate libxcb-record0-1.15-1.1
+[   36s] [190/237] cumulate libxcb-render0-1.15-1.1
+[   36s] [191/237] cumulate libxcb-res0-1.15-1.1
+[   36s] [192/237] cumulate libxcb-screensaver0-1.15-1.1
+[   36s] [193/237] cumulate libxcb-shape0-1.15-1.1
+[   36s] [194/237] cumulate libxcb-shm0-1.15-1.1
+[   36s] [195/237] cumulate libxcb-sync1-1.15-1.1
+[   36s] [196/237] cumulate libxcb-xf86dri0-1.15-1.1
+[   36s] [197/237] cumulate libxcb-xfixes0-1.15-1.1
+[   36s] [198/237] cumulate libxcb-xinerama0-1.15-1.1
+[   36s] [199/237] cumulate libxcb-xinput0-1.15-1.1
+[   36s] [200/237] cumulate libxcb-xkb1-1.15-1.1
+[   36s] [201/237] cumulate libxcb-xtest0-1.15-1.1
+[   36s] [202/237] cumulate libxcb-xv0-1.15-1.1
+[   36s] [203/237] cumulate libxcb-xvmc0-1.15-1.1
+[   36s] [204/237] cumulate lld15-15.0.6-1.1
+[   36s] [205/237] cumulate update-desktop-files-84.87-6.1
+[   36s] [206/237] cumulate libldap2-2.6.3-3.1
+[   36s] [207/237] cumulate libpsl5-0.21.2-1.1
+[   36s] [208/237] cumulate openssl-1_1-1.1.1s-2.1
+[   36s] [209/237] cumulate dbus-1-daemon-1.14.4-1.1
+[   36s] [210/237] cumulate libssh4-0.10.4-1.1
+[   36s] [211/237] cumulate pcre2-devel-10.42-3.1
+[   36s] [212/237] cumulate openssl-1.1.1s-1.1
+[   36s] [213/237] cumulate libselinux-devel-3.4-2.1
+[   36s] [214/237] cumulate rust1.66-1.66.0-1.1
+[   36s] [215/237] cumulate libsndfile1-1.1.0-1.2
+[   36s] [216/237] cumulate dbus-1-1.14.4-1.1
+[   36s] [217/237] cumulate libcurl4-7.87.0-1.1
+[   36s] [218/237] cumulate libxcb-devel-1.15-1.1
+[   36s] [219/237] cumulate rust-1.66.0-1.1
+[   36s] [220/237] cumulate dbus-1-devel-1.14.4-1.1
+[   36s] [221/237] cumulate libmount-devel-2.38.1-1.1
+[   36s] [222/237] cumulate cargo1.66-1.66.0-1.1
+[   36s] [223/237] cumulate libpulse0-16.1-1.2
+[   36s] [224/237] cumulate cargo-1.66.0-1.1
+[   36s] [225/237] cumulate libpulse-mainloop-glib0-16.1-1.2
+[   36s] [226/237] cumulate libopenssl-devel-1.1.1s-1.1
+[   36s] [227/237] cumulate python310-base-3.10.9-1.2
+[   36s] [228/237] cumulate libgio-2_0-0-2.74.4-1.1
+[   36s] [229/237] cumulate gio-branding-upstream-2.74.4-1.1
+[   36s] [230/237] cumulate libpython3_10-1_0-3.10.9-1.2
+[   36s] [231/237] cumulate python310-pyparsing-3.0.9-2.1
+[   36s] [232/237] cumulate libopenssl-1_1-devel-1.1.1s-2.1
+[   36s] [233/237] cumulate glib2-tools-2.74.4-1.1
+[   36s] [234/237] cumulate python310-packaging-21.3-4.1
+[   36s] [235/237] cumulate glib2-devel-2.74.4-1.1
+[   36s] [236/237] cumulate libpulse-devel-16.1-1.2
+[   36s] [237/237] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   36s] now installing cumulated packages
+[   36s] Preparing...                          ########################################
+[   37s] Updating / installing...
+[   37s] libglib-2_0-0-2.74.4-1.1              ########################################
+[   37s] libsystemd0-mini-252.3-2.1            ########################################
+[   37s] libgmodule-2_0-0-2.74.4-1.1           ########################################
+[   37s] libogg0-1.3.5-1.1                     ########################################
+[   37s] libffi8-3.4.4-1.1                     ########################################
+[   37s] libgobject-2_0-0-2.74.4-1.1           ########################################
+[   37s] libexpat1-2.5.0-2.1                   ########################################
+[   38s] libvorbis0-1.3.7-2.1                  ########################################
+[   38s] zlib-devel-1.2.12-3.1                 ########################################
+[   38s] libunistring5-1.1-1.1                 ########################################
+[   38s] libidn2-0-2.3.4-1.1                   ########################################
+[   38s] libXau6-1.0.10-1.1                    ########################################
+[   38s] libxcb1-1.15-1.1                      ########################################
+[   38s] dbus-1-common-1.14.4-1.1              ########################################
+[   38s] libdbus-1-3-1.14.4-1.1                ########################################
+[   38s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   39s] libopenssl1_1-1.1.1s-2.1              ########################################
+[   39s] openssl-1_1-1.1.1s-2.1                ########################################
+[   39s] openssl-1.1.1s-1.1                    ########################################
+[   39s] libopenssl-1_1-devel-1.1.1s-2.1       ########################################
+[   39s] dbus-1-tools-1.14.4-1.1               ########################################
+[   39s] dbus-1-daemon-1.14.4-1.1              ########################################
+[   39s] libxcb-composite0-1.15-1.1            ########################################
+[   39s] libxcb-damage0-1.15-1.1               ########################################
+[   39s] libxcb-dpms0-1.15-1.1                 ########################################
+[   39s] libxcb-dri2-0-1.15-1.1                ########################################
+[   40s] libxcb-dri3-0-1.15-1.1                ########################################
+[   40s] libxcb-glx0-1.15-1.1                  ########################################
+[   40s] libxcb-present0-1.15-1.1              ########################################
+[   40s] libxcb-randr0-1.15-1.1                ########################################
+[   40s] libxcb-record0-1.15-1.1               ########################################
+[   40s] libxcb-render0-1.15-1.1               ########################################
+[   40s] libxcb-res0-1.15-1.1                  ########################################
+[   40s] libxcb-screensaver0-1.15-1.1          ########################################
+[   40s] libxcb-shape0-1.15-1.1                ########################################
+[   40s] libxcb-shm0-1.15-1.1                  ########################################
+[   40s] libxcb-sync1-1.15-1.1                 ########################################
+[   40s] libxcb-xf86dri0-1.15-1.1              ########################################
+[   40s] libxcb-xfixes0-1.15-1.1               ########################################
+[   41s] libxcb-xinerama0-1.15-1.1             ########################################
+[   41s] libxcb-xinput0-1.15-1.1               ########################################
+[   41s] libxcb-xkb1-1.15-1.1                  ########################################
+[   41s] libxcb-xtest0-1.15-1.1                ########################################
+[   41s] libxcb-xv0-1.15-1.1                   ########################################
+[   41s] libxcb-xvmc0-1.15-1.1                 ########################################
+[   41s] libpsl5-0.21.2-1.1                    ########################################
+[   41s] libvorbisenc2-1.3.7-2.1               ########################################
+[   41s] libffi-devel-3.4.4-1.1                ########################################
+[   41s] libFLAC12-1.4.2-1.1                   ########################################
+[   41s] desktop-file-utils-0.26-5.1           ########################################
+[   45s] libgthread-2_0-0-2.74.4-1.1           ########################################
+[   45s] xorgproto-devel-2022.2-1.1            ########################################
+[   45s] libXau-devel-1.0.10-1.1               ########################################
+[   45s] python-rpm-macros-20221117.8687578-1.1########################################
+[   46s] ncurses-devel-6.3.20221126-31.1       ########################################
+[   46s] libxml2-2-2.10.3-2.1                  ########################################
+[   46s] shared-mime-info-2.2-1.1              ########################################
+[   55s] libverto1-0.3.2-1.1                   ########################################
+[   65s] libstdc++6-devel-gcc12-12.2.1+git537-1########################################
+[   65s] libstdc++-devel-12-2.1                ########################################
+[   65s] libssh-config-0.10.4-1.1              ########################################
+[   65s] libspeex1-1.2.1-1.1                   ########################################
+[   65s] libsepol-devel-3.4-1.1                ########################################
+[   65s] libsasl2-3-2.1.28-2.1                 ########################################
+[   65s] libldap2-2.6.3-3.1                    ########################################
+[   65s] libpcre2-posix3-10.42-3.1             ########################################
+[   65s] libpcre2-32-0-10.42-3.1               ########################################
+[   65s] libpcre2-16-0-10.42-3.1               ########################################
+[   65s] pcre2-devel-10.42-3.1                 ########################################
+[   65s] libselinux-devel-3.4-2.1              ########################################
+[   66s] libopus0-1.3.1-3.2                    ########################################
+[   66s] libsndfile1-1.1.0-1.2                 ########################################
+[   66s] libpulse0-16.1-1.2                    ########################################
+[   66s] libpulse-mainloop-glib0-16.1-1.2      ########################################
+[   66s] libnghttp2-14-1.51.0-7.1              ########################################
+[   66s] libncurses5-6.3.20221126-31.1         ########################################
+[   66s] libmpdec3-2.5.1-2.1                   ########################################
+[   67s] libpython3_10-1_0-3.10.9-1.2          ########################################
+[   71s] python310-base-3.10.9-1.2             ########################################
+[   71s] python310-pyparsing-3.0.9-2.1         ########################################
+[   71s] python310-packaging-21.3-4.1          ########################################
+[   71s] libkeyutils1-1.6.3-4.1                ########################################
+[   71s] libedit0-20210910.3.1-1.1             ########################################
+[   81s] libLLVM15-15.0.6-1.1                  ########################################
+[   82s] lld15-15.0.6-1.1                      ########################################
+[   82s] update-alternatives: using /usr/bin/lld-15.0.6 to provide /usr/bin/lld (lld) in auto mode
+[   82s] libcom_err2-1.46.5-3.1                ########################################
+[   83s] krb5-mini-1.20.1-2.1                  ########################################
+[   83s] Updating /etc/sysconfig/kadmind ...
+[   83s] Updating /etc/sysconfig/krb5kdc ...
+[   83s] libssh4-0.10.4-1.1                    ########################################
+[   83s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   83s] libbrotlidec1-1.0.9-1.1               ########################################
+[   83s] libcurl4-7.87.0-1.1                   ########################################
+[   84s] rust-1.66.0-1.1                       ########################################
+[  106s] rust1.66-1.66.0-1.1                   ########################################
+[  108s] cargo1.66-1.66.0-1.1                  ########################################
+[  108s] cargo-1.66.0-1.1                      ########################################
+[  108s] libblkid-devel-2.38.1-1.1             ########################################
+[  108s] libmount-devel-2.38.1-1.1             ########################################
+[  108s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  108s] alts-1.2+3.b848aad-3.1                ########################################
+[  108s] /usr/sbin/useradd -r -c User for D-Bus -d /run/dbus -U messagebus -s /usr/sbin/nologin
+[  109s] dbus-1-1.14.4-1.1                     ########################################
+[  109s] gio-branding-upstream-2.74.4-1.1      ########################################
+[  109s] libgio-2_0-0-2.74.4-1.1               ########################################
+[  113s] glib2-tools-2.74.4-1.1                ########################################
+[  114s] glib2-devel-2.74.4-1.1                ########################################
+[  114s] libpulse-devel-16.1-1.2               ########################################
+[  114s] dbus-1-devel-1.14.4-1.1               ########################################
+[  114s] python-rpm-packaging-20210526+a18ca48-########################################
+[  114s] ncurses5-devel-6.3.20221126-31.1      ########################################
+[  114s] libxcb-devel-1.15-1.1                 ########################################
+[  114s] update-desktop-files-84.87-6.1        ########################################
+[  114s] libopenssl-devel-1.1.1s-1.1           ########################################
+[  120s] now finalizing build dir...
+[  120s] ... running 01-add_abuild_user_to_trusted_group
+[  120s] ... running 02-set_timezone_to_utc
+[  120s] ... running 03-set-permissions-secure
+[  121s] ... running 11-hack_uname_version_to_kernel_version
+[  126s] Running build time source services...
+[  129s] -----------------------------------------------------------------
+[  129s] I have the following modifications for ncspot.spec:
+[  129s] 22c22
+[  129s] < Release:        0
+[  129s] ---
+[  129s] > Release:        1.1
+[  134s] build target is riscv64-suse-linux
+[  134s] -----------------------------------------------------------------
+[  134s] ----- building ncspot.spec (user abuild)
+[  134s] -----------------------------------------------------------------
+[  134s] -----------------------------------------------------------------
+[  137s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f8515f77aecef4fdf785bc4ab5ccc856-ncspot' /home/abuild/rpmbuild/SOURCES/ncspot.spec
+[  138s] Building target platforms: riscv64-suse-linux
+[  138s] Building for target riscv64-suse-linux
+[  138s] setting SOURCE_DATE_EPOCH=1672358400
+[  138s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.9EbnqE
+[  138s] + umask 022
+[  138s] + cd /home/abuild/rpmbuild/BUILD
+[  138s] + cd /home/abuild/rpmbuild/BUILD
+[  138s] + rm -rf ncspot-0.12.0
+[  138s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/ncspot-0.12.0.tar.gz
+[  138s] + STATUS=0
+[  139s] + '[' 0 -ne 0 ']'
+[  139s] + cd ncspot-0.12.0
+[  139s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.xz
+[  173s] + STATUS=0
+[  173s] + '[' 0 -ne 0 ']'
+[  173s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  173s] + install -D -m 0644 /home/abuild/rpmbuild/SOURCES/cargo_config .cargo/config
+[  173s] + RPM_EC=0
+[  173s] ++ jobs -p
+[  173s] + exit 0
+[  174s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.VlSqjv
+[  174s] + umask 022
+[  174s] + cd /home/abuild/rpmbuild/BUILD
+[  174s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/ncspot-0.12.0-1.1.riscv64
+[  174s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/ncspot-0.12.0-1.1.riscv64
+[  174s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  174s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/ncspot-0.12.0-1.1.riscv64
+[  174s] + cd ncspot-0.12.0
+[  174s] + ref=/usr/lib/rpm
+[  174s] + mints=0
+[  174s] + case $(uname -m) in
+[  174s] ++ uname -m
+[  174s] + mints=20160911
+[  174s] + for s in guess sub
+[  174s] ++ find -maxdepth 8 -name config.guess
+[  175s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  175s] + grep -q config-patches@ ./vendor/pdcurses-sys/src/PDCurses/x11/config.guess
+[  175s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./vendor/pdcurses-sys/src/PDCurses/x11/config.guess
+[  175s] + timestamp=$'20060702\r'
+[  175s] + test -n $'20060702\r'
+[  175s] + test $'20060702\r' -ge 20160911
+[  175s] /var/tmp/rpm-tmp.VlSqjv: line 45: test: 20060702: integer expression expected
+[  175s] + install -m 755 /usr/lib/rpm/config.guess ./vendor/pdcurses-sys/src/PDCurses/x11/config.guess
+[  175s] + for s in guess sub
+[  175s] ++ find -maxdepth 8 -name config.sub
+[  175s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  175s] + grep -q config-patches@ ./vendor/pdcurses-sys/src/PDCurses/x11/config.sub
+[  175s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./vendor/pdcurses-sys/src/PDCurses/x11/config.sub
+[  175s] + timestamp=$'20060920\r'
+[  175s] + test -n $'20060920\r'
+[  175s] + test $'20060920\r' -ge 20160911
+[  175s] /var/tmp/rpm-tmp.VlSqjv: line 45: test: 20060920: integer expression expected
+[  175s] + install -m 755 /usr/lib/rpm/config.sub ./vendor/pdcurses-sys/src/PDCurses/x11/config.sub
+[  175s] + export 'NCURSES_RS_RUSTC_FLAGS=-L /usr/lib64/ncurses5'
+[  175s] + NCURSES_RS_RUSTC_FLAGS='-L /usr/lib64/ncurses5'
+[  175s] + cargo build --release --locked -j8
+[  190s]    Compiling autocfg v1.1.0
+[  190s]    Compiling libc v0.2.139
+[  190s]    Compiling proc-macro2 v1.0.49
+[  190s]    Compiling quote v1.0.23
+[  190s]    Compiling unicode-ident v1.0.6
+[  190s]    Compiling syn v1.0.107
+[  190s]    Compiling cfg-if v1.0.0
+[  190s]    Compiling version_check v0.9.4
+[  193s]    Compiling cc v1.0.78
+[  195s]    Compiling once_cell v1.17.0
+[  199s]    Compiling pkg-config v0.3.26
+[  200s]    Compiling log v0.4.17
+[  203s]    Compiling libm v0.2.6
+[  203s]    Compiling num-traits v0.2.15
+[  207s]    Compiling memchr v2.5.0
+[  220s]    Compiling typenum v1.16.0
+[  226s]    Compiling indexmap v1.9.2
+[  231s]    Compiling generic-array v0.14.6
+[  231s]    Compiling itoa v1.0.5
+[  237s]    Compiling hashbrown v0.12.3
+[  247s]    Compiling bitflags v1.3.2
+[  249s]    Compiling num-integer v0.1.45
+[  252s]    Compiling smallvec v1.10.0
+[  262s]    Compiling serde_derive v1.0.152
+[  263s]    Compiling fixedbitset v0.4.2
+[  263s]    Compiling pin-project-lite v0.2.9
+[  266s]    Compiling backtrace v0.3.67
+[  268s]    Compiling gimli v0.27.0
+[  271s]    Compiling bytes v1.3.0
+[  273s]    Compiling serde v1.0.152
+[  276s]    Compiling petgraph v0.6.2
+[  278s]    Compiling adler v1.0.2
+[  281s]    Compiling futures-core v0.3.25
+[  281s]    Compiling object v0.30.0
+[  282s]    Compiling lock_api v0.4.9
+[  288s]    Compiling miniz_oxide v0.6.2
+[  288s]    Compiling tinyvec_macros v0.1.0
+[  289s]    Compiling parking_lot_core v0.9.5
+[  291s]    Compiling rustc-demangle v0.1.21
+[  297s]    Compiling tinyvec v1.6.0
+[  318s]    Compiling thread-id v4.0.0
+[  320s]    Compiling getrandom v0.2.8
+[  321s]    Compiling fnv v1.0.7
+[  325s]    Compiling futures-sink v0.3.25
+[  329s]    Compiling scopeguard v1.1.0
+[  329s]    Compiling slab v0.4.7
+[  335s]    Compiling tokio v1.23.0
+[  336s]    Compiling futures-task v0.3.25
+[  342s]    Compiling futures-channel v0.3.25
+[  343s]    Compiling addr2line v0.19.0
+[  345s]    Compiling unicode-normalization v0.1.22
+[  347s]    Compiling socket2 v0.4.7
+[  348s]    Compiling num_cpus v1.15.0
+[  349s]    Compiling mio v0.8.5
+[  366s]    Compiling percent-encoding v2.2.0
+[  377s]    Compiling futures-util v0.3.25
+[  384s]    Compiling protobuf v2.28.0
+[  386s]    Compiling unicode-bidi v0.3.8
+[  402s]    Compiling http v0.2.8
+[  408s]    Compiling parking_lot v0.12.1
+[  409s]    Compiling tracing-core v0.1.30
+[  420s]    Compiling futures-io v0.3.25
+[  430s]    Compiling pin-utils v0.1.0
+[  431s]    Compiling serde_json v1.0.91
+[  432s]    Compiling ryu v1.0.12
+[  439s]    Compiling tokio-macros v1.8.2
+[  445s]    Compiling futures-macro v0.3.25
+[  453s]    Compiling tracing v0.1.37
+[  471s]    Compiling idna v0.3.0
+[  481s]    Compiling form_urlencoded v1.1.0
+[  497s]    Compiling crypto-common v0.1.6
+[  498s]    Compiling block-buffer v0.10.3
+[  502s]    Compiling time v0.1.45
+[  505s]    Compiling ring v0.16.20
+[  507s]    Compiling time-core v0.1.0
+[  510s]    Compiling semver v1.0.16
+[  517s]    Compiling httparse v1.8.0
+[  520s]    Compiling base64 v0.13.1
+[  521s]    Compiling thiserror v1.0.38
+[  524s]    Compiling iana-time-zone v0.1.53
+[  531s]    Compiling chrono v0.4.23
+[  532s] error: failed to run custom build command for `ring v0.16.20`
+[  532s] 
+[  532s] Caused by:
+[  532s]   process didn't exit successfully: `/home/abuild/rpmbuild/BUILD/ncspot-0.12.0/target/release/build/ring-4cac2c8cdedb9b21/build-script-build` (exit status: 101)
+[  532s]   --- stderr
+[  532s]   thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', /home/abuild/rpmbuild/BUILD/ncspot-0.12.0/vendor/ring/build.rs:358:10
+[  532s]   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[  532s] warning: build failed, waiting for other jobs to finish...
+[  597s] error: Bad exit status from /var/tmp/rpm-tmp.VlSqjv (%build)
+[  597s] 
+[  597s] RPM build errors:
+[  597s]     Bad exit status from /var/tmp/rpm-tmp.VlSqjv (%build)
+[  597s] ### VM INTERACTION START ###
+[  598s] [  593.178378][    T1] sysrq: Power Off
+[  598s] [  593.182425][   T99] reboot: Power down
+[  598s] ### VM INTERACTION END ###
+[  598s] 
+[  598s] lamb62 failed "build ncspot.spec" at Sat Dec 31 10:34:34 UTC 2022.
+[  598s] 

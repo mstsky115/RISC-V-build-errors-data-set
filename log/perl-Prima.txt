@@ -1,0 +1,811 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] lamb11 started "build perl-Prima.spec" at Wed Feb 15 18:46:40 UTC 2023.
+[    0s] 
+[    0s] Building perl-Prima for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'fbc77c4e6be59f3d56302267040f1bfd'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/perl-Prima.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/perl-Prima.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/perl-Prima.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [5b590b84cfd18d0e3dd8d40de50e0bcb]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: imake -> xorg-cf-files
+[    3s]   breaking dependency xorg-cf-files -> imake
+[    3s] cycle: Mesa-dri -> Mesa
+[    3s]   breaking dependency Mesa -> Mesa-dri
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    3s]   breaking dependency Mesa -> Mesa-libEGL1
+[    3s] cycle: Mesa -> Mesa-libGL1
+[    3s]   breaking dependency Mesa-libGL1 -> Mesa
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    3s]   breaking dependency Mesa -> Mesa-libGL1
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    3s]   breaking dependency libglvnd -> Mesa-dri
+[    3s] cycle: libfontconfig1 -> fontconfig
+[    3s]   breaking dependency libfontconfig1 -> fontconfig
+[    3s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.1.10-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 6 07:27:26 UTC 2023 (2a0570b)
+[   10s] Increasing log level from now on...
+[   10s] [    4.990829][  T412] sysrq: Changing Loglevel
+[   10s] [    4.990985][  T412] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=4e25ebc9-896e-43da-be34-8e9040c2a71b
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   12s] processing recipe /.build-srcdir/perl-Prima.spec ...
+[   12s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/perl-Prima.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   44s] [1/337] cumulate Mesa-KHR-devel-22.3.5-350.1
+[   44s] [2/337] cumulate Mesa-libglapi0-22.3.5-350.1
+[   44s] [3/337] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   44s] [4/337] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   44s] [5/337] preinstalled attr-2.5.1-1.1
+[   44s] [6/337] preinstalled bash-5.2.15-8.1
+[   44s] [7/337] preinstalled bash-sh-5.2.15-8.1
+[   44s] [8/337] preinstalled binutils-2.39-3.1
+[   44s] [9/337] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   44s] [10/337] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   44s] [11/337] preinstalled build-mkbaselibs-20230208-1.1
+[   44s] [12/337] preinstalled bzip2-1.0.8-4.1
+[   44s] [13/337] preinstalled chkstat-1599_20221220-1.2
+[   44s] [14/337] preinstalled compat-usrmerge-build-84.87-5.1
+[   44s] [15/337] preinstalled compat-usrmerge-tools-84.87-5.1
+[   44s] [16/337] preinstalled coreutils-9.1-5.1
+[   44s] [17/337] preinstalled cpio-2.13-5.1
+[   44s] [18/337] preinstalled cpp-12-2.1
+[   44s] [19/337] preinstalled cpp12-12.2.1+git749-4.1
+[   44s] [20/337] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   44s] [21/337] preinstalled debugedit-5.0-5.1
+[   44s] [22/337] preinstalled diffutils-3.9-1.1
+[   44s] [23/337] preinstalled dwz-0.15-2.1
+[   44s] [24/337] preinstalled elfutils-0.188-3.2
+[   44s] [25/337] preinstalled file-5.44-1.1
+[   44s] [26/337] preinstalled file-magic-5.44-1.1
+[   44s] [27/337] preinstalled filesystem-84.87-12.1
+[   44s] [28/337] preinstalled fillup-1.42-279.1
+[   44s] [29/337] preinstalled findutils-4.9.0-2.1
+[   44s] [30/337] cumulate font-util-1.3.3-1.1
+[   44s] [31/337] cumulate fontcacheproto-devel-0.1.3-4.3
+[   44s] [32/337] preinstalled gawk-5.2.1-2.1
+[   44s] [33/337] preinstalled gcc-12-2.1
+[   44s] [34/337] preinstalled gcc-PIE-12-2.1
+[   44s] [35/337] preinstalled gcc12-12.2.1+git749-4.1
+[   44s] [36/337] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   44s] [37/337] cumulate gccmakedep-1.0.3-4.1
+[   44s] [38/337] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   44s] [39/337] preinstalled gettext-tools-mini-0.21.1-1.1
+[   44s] [40/337] preinstalled glibc-2.37-1.1
+[   44s] [41/337] preinstalled glibc-devel-2.37-1.1
+[   44s] [42/337] preinstalled glibc-locale-base-2.37-1.1
+[   44s] [43/337] preinstalled grep-3.8-3.1
+[   44s] [44/337] preinstalled gzip-1.12-3.1
+[   44s] [45/337] preinstalled kernel-obs-build-6.1.10-1.1
+[   44s] [46/337] cumulate libFS6-1.0.9-1.1
+[   44s] [47/337] cumulate libICE6-1.1.1-1.1
+[   44s] [48/337] cumulate libX11-data-1.8.1-4.1
+[   44s] [49/337] cumulate libXau6-1.0.11-1.1
+[   44s] [50/337] cumulate libXdmcp6-1.1.4-1.1
+[   44s] [51/337] preinstalled libacl1-2.3.1-2.1
+[   44s] [52/337] preinstalled libasan8-13.0.1+git5428-6.1
+[   44s] [53/337] preinstalled libasm1-0.188-3.2
+[   44s] [54/337] preinstalled libatomic1-13.0.1+git5428-6.1
+[   44s] [55/337] preinstalled libattr1-2.5.1-1.1
+[   44s] [56/337] preinstalled libaudit1-3.0.6-4.1
+[   44s] [57/337] preinstalled libblkid1-2.38.1-6.1
+[   44s] [58/337] cumulate libblogger2-2.26-2.1
+[   44s] [59/337] cumulate libbrotlicommon1-1.0.9-1.1
+[   44s] [60/337] preinstalled libbz2-1-1.0.8-4.1
+[   44s] [61/337] cumulate libbz2-devel-1.0.8-4.1
+[   44s] [62/337] preinstalled libcap-ng0-0.8.3-1.1
+[   44s] [63/337] preinstalled libcap2-2.67-1.1
+[   44s] [64/337] preinstalled libcrypt1-4.4.33-1.1
+[   44s] [65/337] preinstalled libctf-nobfd0-2.39-3.1
+[   44s] [66/337] preinstalled libctf0-2.39-3.1
+[   44s] [67/337] preinstalled libdb-4_8-4.8.30-39.1
+[   44s] [68/337] cumulate libdrm2-2.4.115-2.1
+[   44s] [69/337] preinstalled libdw1-0.188-3.2
+[   44s] [70/337] preinstalled libeconf0-0.5.1-1.1
+[   44s] [71/337] cumulate libedit0-20210910.3.1-1.1
+[   44s] [72/337] preinstalled libelf1-0.188-3.2
+[   44s] [73/337] cumulate libexpat1-2.5.0-2.1
+[   44s] [74/337] preinstalled libfdisk1-2.38.1-6.1
+[   44s] [75/337] cumulate libffi8-3.4.4-1.1
+[   44s] [76/337] cumulate libfontenc1-1.1.7-1.1
+[   44s] [77/337] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   44s] [78/337] preinstalled libgcrypt20-1.10.1-1.1
+[   44s] [79/337] preinstalled libgdbm6-1.23-1.1
+[   44s] [80/337] preinstalled libgdbm_compat4-1.23-1.1
+[   44s] [81/337] cumulate libgif7-5.2.1-3.2
+[   44s] [82/337] preinstalled libgmp10-6.2.1-4.1
+[   44s] [83/337] preinstalled libgomp1-13.0.1+git5428-6.1
+[   44s] [84/337] preinstalled libgpg-error0-1.46-1.1
+[   44s] [85/337] preinstalled libisl23-0.25-1.1
+[   44s] [86/337] cumulate libjbig2-2.1-4.1
+[   44s] [87/337] cumulate libjpeg8-8.2.2-72.1
+[   44s] [88/337] cumulate liblbxutil1-1.1.0-13.2
+[   44s] [89/337] preinstalled liblua5_4-5-5.4.4-8.1
+[   44s] [90/337] preinstalled liblzma5-5.4.1-1.1
+[   44s] [91/337] preinstalled libmagic1-5.44-1.1
+[   44s] [92/337] preinstalled libmount1-2.38.1-6.1
+[   44s] [93/337] preinstalled libmpc3-1.3.1-1.2
+[   44s] [94/337] preinstalled libmpfr6-4.2.0-1.1
+[   44s] [95/337] preinstalled libncurses6-6.4.20230128-5.1
+[   44s] [96/337] cumulate libpciaccess0-0.17-1.1
+[   44s] [97/337] preinstalled libpcre2-8-0-10.42-3.2
+[   44s] [98/337] cumulate libpixman-1-0-0.42.2-1.1
+[   44s] [99/337] preinstalled libpkgconf3-1.8.0-2.1
+[   44s] [100/337] cumulate libpng16-16-1.6.39-2.1
+[   44s] [101/337] preinstalled libpopt0-1.19-1.1
+[   44s] [102/337] preinstalled libreadline8-8.2-2.1
+[   44s] [103/337] preinstalled librpmbuild9-4.18.0-3.1
+[   44s] [104/337] preinstalled libseccomp2-2.5.4-2.1
+[   44s] [105/337] preinstalled libselinux1-3.4-2.1
+[   44s] [106/337] preinstalled libsemanage-conf-3.4-1.1
+[   44s] [107/337] preinstalled libsemanage2-3.4-1.1
+[   44s] [108/337] preinstalled libsepol2-3.4-1.1
+[   44s] [109/337] preinstalled libsmartcols1-2.38.1-6.1
+[   44s] [110/337] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   44s] [111/337] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   44s] [112/337] preinstalled libsubid4-4.13-3.1
+[   44s] [113/337] cumulate libsystemd0-mini-252.5-1.1
+[   44s] [114/337] cumulate libturbojpeg0-8.2.2-72.1
+[   44s] [115/337] preinstalled libubsan1-13.0.1+git5428-6.1
+[   44s] [116/337] preinstalled libutempter0-1.2.0-3.2
+[   44s] [117/337] cumulate libuuid-devel-2.38.1-6.1
+[   44s] [118/337] preinstalled libuuid1-2.38.1-6.1
+[   44s] [119/337] preinstalled libxcrypt-devel-4.4.33-1.1
+[   44s] [120/337] cumulate libxshmfence1-1.3.2-1.1
+[   44s] [121/337] preinstalled libz1-1.2.13-2.1
+[   44s] [122/337] cumulate libzstd-devel-1.5.2-2.1
+[   44s] [123/337] preinstalled libzstd1-1.5.2-2.1
+[   44s] [124/337] preinstalled linux-glibc-devel-6.1-1.1
+[   44s] [125/337] cumulate lndir-1.0.4-1.1
+[   44s] [126/337] preinstalled login_defs-4.13-3.1
+[   44s] [127/337] cumulate logrotate-3.21.0-1.1
+[   44s] [128/337] preinstalled lua54-5.4.4-8.1
+[   44s] [129/337] preinstalled make-4.4-2.1
+[   44s] [130/337] cumulate makedepend-1.0.8-2.1
+[   44s] [131/337] preinstalled ncurses-utils-6.4.20230128-5.1
+[   44s] [132/337] preinstalled pam-1.5.2-12.1
+[   44s] [133/337] preinstalled patch-2.7.6-6.1
+[   44s] [134/337] preinstalled perl-5.36.0-4.1
+[   44s] [135/337] preinstalled perl-base-5.36.0-4.1
+[   44s] [136/337] cumulate perl-doc-5.36.0-4.1
+[   44s] [137/337] preinstalled permissions-1599_20221220-1.2
+[   44s] [138/337] preinstalled permissions-config-1599_20221220-1.2
+[   44s] [139/337] preinstalled pkgconf-1.8.0-2.1
+[   44s] [140/337] preinstalled pkgconf-m4-1.8.0-2.1
+[   44s] [141/337] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   44s] [142/337] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   44s] [143/337] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   44s] [144/337] preinstalled qemu-linux-user-7.1.0-50.1
+[   44s] [145/337] cumulate rgb-1.1.0-1.1
+[   44s] [146/337] preinstalled rpm-4.18.0-3.1
+[   44s] [147/337] preinstalled rpm-build-4.18.0-3.1
+[   44s] [148/337] preinstalled rpm-build-perl-4.18.0-3.1
+[   44s] [149/337] preinstalled rpm-config-SUSE-20220926-1.1
+[   44s] [150/337] preinstalled rpmlint-mini-2.4.0+git20230206.a2c4626-9.3
+[   44s] [151/337] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   44s] [152/337] preinstalled sed-4.9-2.1
+[   44s] [153/337] cumulate sessreg-1.1.3-1.1
+[   44s] [154/337] preinstalled shadow-4.13-3.1
+[   44s] [155/337] preinstalled system-group-hardware-20170617-24.1
+[   44s] [156/337] preinstalled system-user-root-20190513-2.1
+[   44s] [157/337] cumulate systemd-mini-252.5-1.1
+[   44s] [158/337] preinstalled systemd-rpm-macros-19-1.1
+[   44s] [159/337] preinstalled sysuser-shadow-3.1-5.1
+[   44s] [160/337] preinstalled tar-1.34-9.1
+[   44s] [161/337] preinstalled terminfo-base-6.4.20230128-5.1
+[   44s] [162/337] preinstalled update-alternatives-1.21.8-1.1
+[   44s] [163/337] preinstalled util-linux-2.38.1-6.1
+[   44s] [164/337] preinstalled which-2.21-5.1
+[   44s] [165/337] cumulate xbitmaps-1.1.2-1.2
+[   44s] [166/337] cumulate xbitmaps-devel-1.1.2-1.2
+[   44s] [167/337] cumulate xkeyboard-config-2.38-1.1
+[   44s] [168/337] cumulate xorg-sgml-doctools-1.12-1.1
+[   44s] [169/337] cumulate xorgproto-devel-2022.2-2.1
+[   44s] [170/337] cumulate xterm-resize-378-1.1
+[   44s] [171/337] cumulate xtrans-1.4.0-3.1
+[   44s] [172/337] preinstalled xz-5.4.1-1.1
+[   44s] [173/337] cumulate xz-devel-5.4.1-1.1
+[   44s] [174/337] cumulate zlib-devel-1.2.13-2.1
+[   44s] [175/337] cumulate blog-2.26-2.1
+[   45s] [176/337] cumulate giflib-devel-5.2.1-3.2
+[   45s] [177/337] cumulate iceauth-1.0.9-1.1
+[   45s] [178/337] cumulate libLLVM15-15.0.7-1.1
+[   45s] [179/337] cumulate libSM6-1.2.4-2.1
+[   45s] [180/337] cumulate libX11-xcb1-1.8.1-4.1
+[   45s] [181/337] cumulate libbrotlidec1-1.0.9-1.1
+[   45s] [182/337] cumulate libbrotlienc1-1.0.9-1.1
+[   45s] [183/337] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   45s] [184/337] cumulate libdrm_nouveau2-2.4.115-2.1
+[   45s] [185/337] cumulate libdrm_radeon1-2.4.115-2.1
+[   45s] [186/337] cumulate libexpat-devel-2.5.0-2.1
+[   45s] [187/337] cumulate libfontenc-devel-1.1.7-1.1
+[   45s] [188/337] cumulate liblbxutil-devel-1.1.0-13.2
+[   45s] [189/337] cumulate libopenssl3-3.0.7-3.1
+[   45s] [190/337] cumulate libpciaccess-devel-0.17-1.1
+[   45s] [191/337] cumulate libpixman-1-0-devel-0.42.2-1.1
+[   45s] [192/337] cumulate libstdc++-devel-12-2.1
+[   45s] [193/337] cumulate libwayland-client0-1.21.0-4.2
+[   45s] [194/337] cumulate libwayland-server0-1.21.0-4.2
+[   45s] [195/337] cumulate libxcb1-1.15-2.1
+[   45s] [196/337] cumulate libFS-devel-1.0.9-1.1
+[   45s] [197/337] cumulate libICE-devel-1.1.1-1.1
+[   45s] [198/337] cumulate libXau-devel-1.0.11-1.1
+[   45s] [199/337] cumulate libXdmcp-devel-1.1.4-1.1
+[   45s] [200/337] cumulate libjpeg8-devel-8.2.2-72.1
+[   45s] [201/337] cumulate libpng16-devel-1.6.39-2.1
+[   45s] [202/337] cumulate libtiff6-4.5.0-2.1
+[   45s] [203/337] cumulate libxcb-composite0-1.15-2.1
+[   45s] [204/337] cumulate libxcb-damage0-1.15-2.1
+[   45s] [205/337] cumulate libxcb-dpms0-1.15-2.1
+[   45s] [206/337] cumulate libxcb-dri2-0-1.15-2.1
+[   45s] [207/337] cumulate libxcb-dri3-0-1.15-2.1
+[   45s] [208/337] cumulate libxcb-glx0-1.15-2.1
+[   45s] [209/337] cumulate libxcb-present0-1.15-2.1
+[   45s] [210/337] cumulate libxcb-randr0-1.15-2.1
+[   45s] [211/337] cumulate libxcb-record0-1.15-2.1
+[   45s] [212/337] cumulate libxcb-render0-1.15-2.1
+[   45s] [213/337] cumulate libxcb-res0-1.15-2.1
+[   45s] [214/337] cumulate libxcb-screensaver0-1.15-2.1
+[   45s] [215/337] cumulate libxcb-shape0-1.15-2.1
+[   45s] [216/337] cumulate libxcb-shm0-1.15-2.1
+[   45s] [217/337] cumulate libxcb-sync1-1.15-2.1
+[   45s] [218/337] cumulate libxcb-util1-0.4.1-1.1
+[   45s] [219/337] cumulate libxcb-xf86dri0-1.15-2.1
+[   45s] [220/337] cumulate libxcb-xfixes0-1.15-2.1
+[   45s] [221/337] cumulate libxcb-xinerama0-1.15-2.1
+[   45s] [222/337] cumulate libxcb-xinput0-1.15-2.1
+[   45s] [223/337] cumulate libxcb-xkb1-1.15-2.1
+[   45s] [224/337] cumulate libxcb-xtest0-1.15-2.1
+[   45s] [225/337] cumulate libxcb-xv0-1.15-2.1
+[   45s] [226/337] cumulate libxcb-xvmc0-1.15-2.1
+[   45s] [227/337] cumulate printproto-devel-1.0.5-4.3
+[   45s] [228/337] cumulate libX11-6-1.8.1-4.1
+[   45s] [229/337] cumulate libfreetype6-2.12.1-4.1
+[   45s] [230/337] cumulate libpng16-compat-devel-1.6.39-2.1
+[   45s] [231/337] cumulate sysvinit-tools-3.00-4.1
+[   45s] [232/337] cumulate libbrotli-devel-1.0.9-1.1
+[   45s] [233/337] cumulate libgbm1-22.3.5-350.1
+[   45s] [234/337] cumulate libSM-devel-1.2.4-2.1
+[   45s] [235/337] cumulate libtiff-devel-4.5.0-2.1
+[   45s] [236/337] cumulate libXcomposite1-0.4.6-1.1
+[   45s] [237/337] cumulate libXdamage1-1.1.6-1.2
+[   45s] [238/337] cumulate libXext6-1.3.5-1.1
+[   45s] [239/337] cumulate libXfixes3-6.0.0-2.1
+[   45s] [240/337] cumulate libXmuu1-1.1.4-1.1
+[   45s] [241/337] cumulate libXpm4-3.5.14-2.1
+[   45s] [242/337] cumulate libXrender1-0.9.11-1.1
+[   45s] [243/337] cumulate liboldX6-1.0.1-11.3
+[   45s] [244/337] cumulate xmodmap-1.0.11-1.1
+[   45s] [245/337] cumulate xprop-1.2.6-1.1
+[   45s] [246/337] cumulate libXfont1-1.5.4-2.3
+[   45s] [247/337] cumulate libXfont2-2-2.0.6-1.1
+[   45s] [248/337] cumulate libxkbfile1-1.1.2-1.1
+[   45s] [249/337] cumulate mkfontscale-1.2.2-1.1
+[   45s] [250/337] cumulate libXt6-1.2.1-1.1
+[   45s] [251/337] cumulate freetype2-devel-2.12.1-4.1
+[   45s] [252/337] cumulate libxcb-devel-1.15-2.1
+[   45s] [253/337] cumulate libXRes1-1.2.2-1.2
+[   45s] [254/337] cumulate libXevie1-1.0.3-12.3
+[   45s] [255/337] cumulate libXfontcache1-1.0.5-12.3
+[   45s] [256/337] cumulate libXi6-1.8-1.1
+[   45s] [257/337] cumulate libXinerama1-1.1.5-1.1
+[   45s] [258/337] cumulate libXss1-1.2.4-1.1
+[   45s] [259/337] cumulate libXtst6-1.2.4-1.1
+[   45s] [260/337] cumulate libXv1-1.0.12-1.1
+[   45s] [261/337] cumulate libXvMC1-1.0.13-1.1
+[   45s] [262/337] cumulate libXxf86dga1-1.1.6-1.1
+[   45s] [263/337] cumulate libXxf86vm1-1.1.5-1.1
+[   45s] [264/337] cumulate libdmx1-1.1.4-1.2
+[   45s] [265/337] cumulate libxkbui1-1.0.2-12.3
+[   45s] [266/337] cumulate xcb-util-devel-0.4.1-1.1
+[   45s] [267/337] cumulate xkbcomp-1.4.6-1.1
+[   45s] [268/337] cumulate xrdb-1.2.1-2.1
+[   45s] [269/337] cumulate libXcursor1-1.2.1-1.1
+[   45s] [270/337] cumulate libXp6-1.0.4-1.1
+[   45s] [271/337] cumulate libXrandr2-1.5.3-1.1
+[   45s] [272/337] cumulate libX11-devel-1.8.1-4.1
+[   45s] [273/337] cumulate libXfont-devel-1.5.4-2.3
+[   45s] [274/337] cumulate libXmu6-1.1.4-1.1
+[   45s] [275/337] cumulate xauth-1.1.2-1.3
+[   45s] [276/337] cumulate xli-1.17+git20170726.0bb4fb4-1.3
+[   45s] [277/337] cumulate libXpm-devel-3.5.14-2.1
+[   45s] [278/337] cumulate libXprintUtil1-1.0.1-12.3
+[   45s] [279/337] cumulate liboldX-devel-1.0.1-11.3
+[   45s] [280/337] cumulate libXext-devel-1.3.5-1.1
+[   45s] [281/337] cumulate libXfixes-devel-6.0.0-2.1
+[   45s] [282/337] cumulate libXrender-devel-0.9.11-1.1
+[   45s] [283/337] cumulate libxkbfile-devel-1.1.2-1.1
+[   45s] [284/337] cumulate setxkbmap-1.3.3-1.1
+[   45s] [285/337] cumulate xsetroot-1.1.3-1.1
+[   45s] [286/337] cumulate libXaw6-1.0.14-1.1
+[   45s] [287/337] cumulate xset-1.2.5-1.1
+[   45s] [288/337] cumulate libXaw7-1.0.14-1.1
+[   45s] [289/337] cumulate libXt-devel-1.2.1-1.1
+[   45s] [290/337] cumulate libXaw8-1.0.14-1.1
+[   45s] [291/337] cumulate libXprintAppUtil1-1.0.1-12.3
+[   45s] [292/337] cumulate xmessage-1.0.6-1.1
+[   45s] [293/337] cumulate libXcomposite-devel-0.4.6-1.1
+[   45s] [294/337] cumulate libXdamage-devel-1.1.6-1.2
+[   45s] [295/337] cumulate libXevie-devel-1.0.3-12.3
+[   45s] [296/337] cumulate libXfontcache-devel-1.0.5-12.3
+[   45s] [297/337] cumulate libXinerama-devel-1.1.5-1.1
+[   45s] [298/337] cumulate libXres-devel-1.2.2-1.2
+[   45s] [299/337] cumulate libXss-devel-1.2.4-1.1
+[   45s] [300/337] cumulate libXv-devel-1.0.12-1.1
+[   45s] [301/337] cumulate libXxf86dga-devel-1.1.6-1.1
+[   45s] [302/337] cumulate libXxf86vm-devel-1.1.5-1.1
+[   45s] [303/337] cumulate libdmx-devel-1.1.4-1.2
+[   45s] [304/337] cumulate libxkbui-devel-1.0.2-12.3
+[   45s] [305/337] cumulate xconsole-1.0.8-1.1
+[   45s] [306/337] cumulate libXcursor-devel-1.2.1-1.1
+[   45s] [307/337] cumulate libXi-devel-1.8-1.1
+[   45s] [308/337] cumulate libXp-devel-1.0.4-1.1
+[   45s] [309/337] cumulate libXrandr-devel-1.5.3-1.1
+[   45s] [310/337] cumulate libXmu-devel-1.1.4-1.1
+[   45s] [311/337] cumulate libXprintUtil-devel-1.0.1-12.3
+[   45s] [312/337] cumulate libXtst-devel-1.2.4-1.1
+[   45s] [313/337] cumulate libXvMC-devel-1.0.13-1.1
+[   45s] [314/337] cumulate libXaw-devel-1.0.14-1.1
+[   45s] [315/337] cumulate libXprintAppUtil-devel-1.0.1-12.3
+[   45s] [316/337] cumulate libglvnd-1.6.0-1.1
+[   45s] [317/337] cumulate libfontconfig1-2.14.2-1.1
+[   45s] [318/337] cumulate xorg-cf-files-1.0.7-1.1
+[   45s] [319/337] cumulate imake-1.0.9-1.1
+[   45s] [320/337] cumulate libglvnd-devel-1.6.0-1.1
+[   45s] [321/337] cumulate fontconfig-2.14.2-1.1
+[   45s] [322/337] cumulate fontconfig-devel-2.14.2-1.1
+[   45s] [323/337] cumulate Mesa-22.3.5-350.1
+[   45s] [324/337] cumulate libXft2-2.3.7-1.1
+[   45s] [325/337] cumulate Mesa-libEGL1-22.3.5-350.1
+[   45s] [326/337] cumulate Mesa-libGL1-22.3.5-350.1
+[   45s] [327/337] cumulate Mesa-libEGL-devel-22.3.5-350.1
+[   45s] [328/337] cumulate Mesa-libGL-devel-22.3.5-350.1
+[   45s] [329/337] cumulate libXft-devel-2.3.7-1.1
+[   45s] [330/337] cumulate Mesa-dri-22.3.5-350.1
+[   45s] [331/337] cumulate xorg-x11-server-Xvfb-21.1.7-1.1
+[   45s] [332/337] cumulate xterm-bin-378-1.1
+[   45s] [333/337] cumulate xinit-1.4.2-1.1
+[   45s] [334/337] cumulate xorg-x11-devel-7.6.1-2.2
+[   45s] [335/337] cumulate xdm-1.1.14-1.1
+[   45s] [336/337] cumulate xorg-x11-essentials-7.6_1-16.3
+[   45s] [337/337] cumulate xorg-x11-7.6_1-16.3
+[   45s] now installing cumulated packages
+[   46s] Preparing...                          ########################################
+[   46s] Updating / installing...
+[   46s] xorgproto-devel-2022.2-2.1            ########################################
+[   46s] libdrm2-2.4.115-2.1                   ########################################
+[   46s] libexpat1-2.5.0-2.1                   ########################################
+[   46s] libXau6-1.0.11-1.1                    ########################################
+[   46s] libxcb1-1.15-2.1                      ########################################
+[   46s] libICE6-1.1.1-1.1                     ########################################
+[   46s] libXau-devel-1.0.11-1.1               ########################################
+[   47s] zlib-devel-1.2.13-2.1                 ########################################
+[   47s] libfontenc1-1.1.7-1.1                 ########################################
+[   47s] libICE-devel-1.1.1-1.1                ########################################
+[   47s] libxcb-dri2-0-1.15-2.1                ########################################
+[   47s] libxcb-dri3-0-1.15-2.1                ########################################
+[   47s] libxcb-present0-1.15-2.1              ########################################
+[   47s] libxcb-randr0-1.15-2.1                ########################################
+[   47s] libxcb-sync1-1.15-2.1                 ########################################
+[   47s] libxcb-xfixes0-1.15-2.1               ########################################
+[   47s] libpng16-16-1.6.39-2.1                ########################################
+[   47s] libjpeg8-8.2.2-72.1                   ########################################
+[   47s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   47s] libXdmcp6-1.1.4-1.1                   ########################################
+[   48s] Mesa-libglapi0-22.3.5-350.1           ########################################
+[   48s] libbrotlidec1-1.0.9-1.1               ########################################
+[   48s] libfreetype6-2.12.1-4.1               ########################################
+[   48s] libfontconfig1-2.14.2-1.1             ########################################
+[   48s] fontconfig-2.14.2-1.1                 ########################################
+[   48s] libfontenc-devel-1.1.7-1.1            ########################################
+[   48s] printproto-devel-1.0.5-4.3            ########################################
+[   48s] libSM6-1.2.4-2.1                      ########################################
+[   48s] libxcb-glx0-1.15-2.1                  ########################################
+[   48s] libxcb-shm0-1.15-2.1                  ########################################
+[   49s] xkeyboard-config-2.38-1.1             ########################################
+[   49s] xbitmaps-devel-1.1.2-1.2              ########################################
+[   49s] systemd-mini-252.5-1.1                warning: group systemd-journal does not exist - using root
+[   50s] ########################################
+[   51s] Creating group 'systemd-journal' with GID 486.
+[   51s] Creating group 'systemd-timesync' with GID 485.
+[   51s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   51s] Running in chroot, ignoring command 'daemon-reexec'
+[   51s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   51s] All rules containing unresolvable specifiers will be skipped.
+[   52s] sessreg-1.1.3-1.1                     ########################################
+[   52s] makedepend-1.0.8-2.1                  ########################################
+[   52s] libxshmfence1-1.3.2-1.1               ########################################
+[   52s] libpixman-1-0-0.42.2-1.1              ########################################
+[   53s] libffi8-3.4.4-1.1                     ########################################
+[   53s] libwayland-server0-1.21.0-4.2         ########################################
+[   53s] libblogger2-2.26-2.1                  ########################################
+[   53s] libX11-data-1.8.1-4.1                 ########################################
+[   53s] libX11-6-1.8.1-4.1                    ########################################
+[   53s] libXext6-1.3.5-1.1                    ########################################
+[   53s] libXt6-1.2.1-1.1                      ########################################
+[   54s] libXmuu1-1.1.4-1.1                    ########################################
+[   54s] libXrender1-0.9.11-1.1                ########################################
+[   54s] libXpm4-3.5.14-2.1                    ########################################
+[   54s] libxkbfile1-1.1.2-1.1                 ########################################
+[   54s] libXft2-2.3.7-1.1                     ########################################
+[   54s] xrdb-1.2.1-2.1                        ########################################
+[   54s] libXp6-1.0.4-1.1                      ########################################
+[   54s] libXfixes3-6.0.0-2.1                  ########################################
+[   54s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   54s] libXcursor1-1.2.1-1.1                 ########################################
+[   54s] xsetroot-1.1.3-1.1                    ########################################
+[   54s] libXprintUtil1-1.0.1-12.3             ########################################
+[   54s] xkbcomp-1.4.6-1.1                     ########################################
+[   54s] libXrandr2-1.5.3-1.1                  ########################################
+[   55s] setxkbmap-1.3.3-1.1                   ########################################
+[   55s] xauth-1.1.2-1.3                       ########################################
+[   55s] libXfontcache1-1.0.5-12.3             ########################################
+[   55s] xset-1.2.5-1.1                        ########################################
+[   55s] libXinerama1-1.1.5-1.1                ########################################
+[   55s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   55s] xmodmap-1.0.11-1.1                    ########################################
+[   55s] gccmakedep-1.0.3-4.1                  ########################################
+[   55s] imake-1.0.9-1.1                       ########################################
+[   55s] xorg-cf-files-1.0.7-1.1               ########################################
+[   55s] Mesa-KHR-devel-22.3.5-350.1           ########################################
+[   55s] libXprintAppUtil1-1.0.1-12.3          ########################################
+[   55s] libxkbui1-1.0.2-12.3                  ########################################
+[   55s] libXRes1-1.2.2-1.2                    ########################################
+[   55s] libXevie1-1.0.3-12.3                  ########################################
+[   55s] libXi6-1.8-1.1                        ########################################
+[   55s] libXss1-1.2.4-1.1                     ########################################
+[   56s] libXtst6-1.2.4-1.1                    ########################################
+[   56s] libXv1-1.0.12-1.1                     ########################################
+[   56s] libXvMC1-1.0.13-1.1                   ########################################
+[   56s] libXxf86dga1-1.1.6-1.1                ########################################
+[   56s] libdmx1-1.1.4-1.2                     ########################################
+[   56s] xli-1.17+git20170726.0bb4fb4-1.3      ########################################
+[   56s] libXcomposite1-0.4.6-1.1              ########################################
+[   56s] libXdamage1-1.1.6-1.2                 ########################################
+[   56s] liboldX6-1.0.1-11.3                   ########################################
+[   56s] xprop-1.2.6-1.1                       ########################################
+[   56s] blog-2.26-2.1                         ########################################
+[   56s] sysvinit-tools-3.00-4.1               ########################################
+[   56s] libgbm1-22.3.5-350.1                  ########################################
+[   56s] libwayland-client0-1.21.0-4.2         ########################################
+[   57s] libpixman-1-0-devel-0.42.2-1.1        ########################################
+[   57s] logrotate-3.21.0-1.1                  ########################################
+[   57s] libXfont1-1.5.4-2.3                   ########################################
+[   58s] libXfont2-2-2.0.6-1.1                 ########################################
+[   58s] mkfontscale-1.2.2-1.1                 ########################################
+[   58s] libXdmcp-devel-1.1.4-1.1              ########################################
+[   58s] libbrotlienc1-1.0.9-1.1               ########################################
+[   58s] libbrotli-devel-1.0.9-1.1             ########################################
+[   58s] libpng16-compat-devel-1.6.39-2.1      ########################################
+[   58s] libpng16-devel-1.6.39-2.1             ########################################
+[   58s] iceauth-1.0.9-1.1                     ########################################
+[   58s] libxcb-composite0-1.15-2.1            ########################################
+[   58s] libxcb-damage0-1.15-2.1               ########################################
+[   58s] libxcb-dpms0-1.15-2.1                 ########################################
+[   58s] libxcb-record0-1.15-2.1               ########################################
+[   58s] libxcb-render0-1.15-2.1               ########################################
+[   58s] libxcb-res0-1.15-2.1                  ########################################
+[   58s] libxcb-screensaver0-1.15-2.1          ########################################
+[   59s] libxcb-shape0-1.15-2.1                ########################################
+[   59s] libxcb-util1-0.4.1-1.1                ########################################
+[   59s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   59s] libxcb-xinerama0-1.15-2.1             ########################################
+[   59s] libxcb-xinput0-1.15-2.1               ########################################
+[   59s] libxcb-xkb1-1.15-2.1                  ########################################
+[   59s] libxcb-xtest0-1.15-2.1                ########################################
+[   59s] libxcb-xv0-1.15-2.1                   ########################################
+[   59s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   60s] libxcb-devel-1.15-2.1                 ########################################
+[   61s] libX11-devel-1.8.1-4.1                ########################################
+[   61s] libXext-devel-1.3.5-1.1               ########################################
+[   61s] libXfixes-devel-6.0.0-2.1             ########################################
+[   61s] libXrender-devel-0.9.11-1.1           ########################################
+[   61s] libXp-devel-1.0.4-1.1                 ########################################
+[   61s] libXi-devel-1.8-1.1                   ########################################
+[   61s] libXv-devel-1.0.12-1.1                ########################################
+[   61s] libXpm-devel-3.5.14-2.1               ########################################
+[   61s] libXvMC-devel-1.0.13-1.1              ########################################
+[   61s] libXtst-devel-1.2.4-1.1               ########################################
+[   61s] libXcursor-devel-1.2.1-1.1            ########################################
+[   61s] libXrandr-devel-1.5.3-1.1             ########################################
+[   61s] libXcomposite-devel-0.4.6-1.1         ########################################
+[   61s] libXdamage-devel-1.1.6-1.2            ########################################
+[   61s] libXevie-devel-1.0.3-12.3             ########################################
+[   61s] libXinerama-devel-1.1.5-1.1           ########################################
+[   61s] libXres-devel-1.2.2-1.2               ########################################
+[   61s] libXss-devel-1.2.4-1.1                ########################################
+[   61s] libXxf86dga-devel-1.1.6-1.1           ########################################
+[   61s] libXxf86vm-devel-1.1.5-1.1            ########################################
+[   61s] libdmx-devel-1.1.4-1.2                ########################################
+[   61s] liboldX-devel-1.0.1-11.3              ########################################
+[   61s] libxkbfile-devel-1.1.2-1.1            ########################################
+[   61s] xcb-util-devel-0.4.1-1.1              ########################################
+[   61s] libexpat-devel-2.5.0-2.1              ########################################
+[   61s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   61s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   61s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   61s] xz-devel-5.4.1-1.1                    ########################################
+[   62s] xtrans-1.4.0-3.1                      ########################################
+[   62s] xterm-resize-378-1.1                  ########################################
+[   62s] xorg-sgml-doctools-1.12-1.1           ########################################
+[   62s] xbitmaps-1.1.2-1.2                    ########################################
+[   62s] libXmu6-1.1.4-1.1                     ########################################
+[   62s] libXaw7-1.0.14-1.1                    ########################################
+[   62s] xmessage-1.0.6-1.1                    ########################################
+[   62s] xconsole-1.0.8-1.1                    ########################################
+[   62s] xterm-bin-378-1.1                     ########################################
+[   62s] xinit-1.4.2-1.1                       ########################################
+[   63s] xdm-1.1.14-1.1                        ########################################
+[   63s] Updating /etc/sysconfig/displaymanager ...
+[   63s] update-alternatives: using /usr/lib/X11/displaymanagers/console to provide /usr/lib/X11/displaymanagers/default-displaymanager (default-displaymanager) in auto mode
+[   63s] update-alternatives: using /usr/lib/X11/displaymanagers/xdm to provide /usr/lib/X11/displaymanagers/default-displaymanager (default-displaymanager) in auto mode
+[   63s] libXaw8-1.0.14-1.1                    ########################################
+[   63s] libXaw6-1.0.14-1.1                    ########################################
+[   64s] rgb-1.1.0-1.1                         ########################################
+[   64s] xorg-x11-essentials-7.6_1-16.3        ########################################
+[   64s] lndir-1.0.4-1.1                       ########################################
+[   64s] libzstd-devel-1.5.2-2.1               ########################################
+[   64s] libuuid-devel-2.38.1-6.1              ########################################
+[   64s] libSM-devel-1.2.4-2.1                 ########################################
+[   64s] libXt-devel-1.2.1-1.1                 ########################################
+[   64s] libXmu-devel-1.1.4-1.1                ########################################
+[   64s] libXprintUtil-devel-1.0.1-12.3        ########################################
+[   64s] libXprintAppUtil-devel-1.0.1-12.3     ########################################
+[   64s] libXaw-devel-1.0.14-1.1               ########################################
+[   64s] libxkbui-devel-1.0.2-12.3             ########################################
+[   64s] libturbojpeg0-8.2.2-72.1              ########################################
+[   64s] libjpeg8-devel-8.2.2-72.1             ########################################
+[   64s] libsystemd0-mini-252.5-1.1            ########################################
+[   76s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   76s] libstdc++-devel-12-2.1                ########################################
+[   76s] libpciaccess0-0.17-1.1                ########################################
+[   76s] libpciaccess-devel-0.17-1.1           ########################################
+[   76s] liblbxutil1-1.1.0-13.2                ########################################
+[   76s] liblbxutil-devel-1.1.0-13.2           ########################################
+[   76s] libjbig2-2.1-4.1                      ########################################
+[   76s] libtiff6-4.5.0-2.1                    ########################################
+[   77s] libgif7-5.2.1-3.2                     ########################################
+[   77s] libedit0-20210910.3.1-1.1             ########################################
+[   89s] libLLVM15-15.0.7-1.1                  ########################################
+[   89s] Mesa-libEGL1-22.3.5-350.1             ########################################
+[   90s] libglvnd-1.6.0-1.1                    ########################################
+[   90s] Mesa-libGL1-22.3.5-350.1              ########################################
+[   90s] Mesa-22.3.5-350.1                     ########################################
+[   92s] Mesa-dri-22.3.5-350.1                 ########################################
+[   92s] libglvnd-devel-1.6.0-1.1              ########################################
+[   93s] Mesa-libEGL-devel-22.3.5-350.1        ########################################
+[   93s] Mesa-libGL-devel-22.3.5-350.1         ########################################
+[   93s] libbz2-devel-1.0.8-4.1                ########################################
+[   94s] freetype2-devel-2.12.1-4.1            ########################################
+[   94s] fontconfig-devel-2.14.2-1.1           ########################################
+[   94s] libXft-devel-2.3.7-1.1                ########################################
+[   94s] libXfont-devel-1.5.4-2.3              ########################################
+[   94s] libFS6-1.0.9-1.1                      ########################################
+[   94s] libFS-devel-1.0.9-1.1                 ########################################
+[   94s] fontcacheproto-devel-0.1.3-4.3        ########################################
+[   94s] libXfontcache-devel-1.0.5-12.3        ########################################
+[   94s] font-util-1.3.3-1.1                   ########################################
+[   94s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   95s] libopenssl3-3.0.7-3.1                 ########################################
+[   96s] xorg-x11-server-Xvfb-21.1.7-1.1       ########################################
+[   96s] xorg-x11-devel-7.6.1-2.2              ########################################
+[   96s] giflib-devel-5.2.1-3.2                ########################################
+[   96s] libtiff-devel-4.5.0-2.1               ########################################
+[   96s] xorg-x11-7.6_1-16.3                   ########################################
+[   98s] perl-doc-5.36.0-4.1                   ########################################
+[  109s] now finalizing build dir...
+[  109s] ... running 01-add_abuild_user_to_trusted_group
+[  110s] ... running 02-set_timezone_to_utc
+[  110s] ... running 03-set-permissions-secure
+[  110s] ... running 11-hack_uname_version_to_kernel_version
+[  119s] -----------------------------------------------------------------
+[  119s] I have the following modifications for perl-Prima.spec:
+[  120s] 22c22
+[  120s] < Release:        0
+[  120s] ---
+[  120s] > Release:        1.1
+[  127s] build target is riscv64-suse-linux
+[  128s] -----------------------------------------------------------------
+[  128s] ----- building perl-Prima.spec (user abuild)
+[  128s] -----------------------------------------------------------------
+[  128s] -----------------------------------------------------------------
+[  132s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/fbc77c4e6be59f3d56302267040f1bfd-perl-Prima' /home/abuild/rpmbuild/SOURCES/perl-Prima.spec
+[  144s] Building target platforms: riscv64-suse-linux
+[  144s] Building for target riscv64-suse-linux
+[  144s] setting SOURCE_DATE_EPOCH=1676246400
+[  144s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.3CeNSf
+[  145s] + umask 022
+[  145s] + cd /home/abuild/rpmbuild/BUILD
+[  145s] + cd /home/abuild/rpmbuild/BUILD
+[  145s] + rm -rf Prima-1.67001
+[  145s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/Prima-1.67001.tar.gz
+[  146s] + STATUS=0
+[  146s] + '[' 0 -ne 0 ']'
+[  146s] + cd Prima-1.67001
+[  146s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  146s] + RPM_EC=0
+[  146s] ++ jobs -p
+[  146s] + exit 0
+[  146s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.77tRs7
+[  147s] + umask 022
+[  147s] + cd /home/abuild/rpmbuild/BUILD
+[  147s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/perl-Prima-1.67001-1.1.riscv64
+[  147s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/perl-Prima-1.67001-1.1.riscv64
+[  147s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  147s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/perl-Prima-1.67001-1.1.riscv64
+[  147s] + cd Prima-1.67001
+[  147s] + ref=/usr/lib/rpm
+[  147s] + mints=0
+[  147s] + case $(uname -m) in
+[  147s] ++ uname -m
+[  147s] + mints=20160911
+[  147s] + for s in guess sub
+[  147s] ++ find -maxdepth 8 -name config.guess
+[  147s] + for s in guess sub
+[  147s] ++ find -maxdepth 8 -name config.sub
+[  148s] + perl Makefile.PL INSTALLDIRS=vendor 'OPTIMIZE=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  151s] Version: 1.67001
+[  151s] Flavor: linux.riscv64
+[  151s] Build: Prima-1.67001-linux.riscv64-5.36.0
+[  151s] Compiler: gcc
+[  153s] Checking if can compile... yes
+[  155s] Checking if can link... yes
+[  158s] Checking if can compile with OpenMP... yes
+[  160s] Checking for presence of io.h... no
+[  161s] Checking for presence of unistd.h... yes
+[  162s] Checking for presence of strings.h... yes
+[  163s] Checking for presence of sys/types.h... yes
+[  165s] Checking for presence of type int8_t... yes
+[  167s] Checking for presence of type int16_t... yes
+[  169s] Checking for presence of type int32_t... yes
+[  171s] Checking for presence of type int64_t... yes
+[  172s] Checking for presence of type uint8_t... no
+[  173s] Checking for presence of sys/bitypes.h... yes
+[  174s] Checking for presence of type uint8_t... no
+[  175s] Checking for presence of sys/inttypes.h... no
+[  176s] Checking for presence of stdint.h... yes
+[  177s] Checking for presence of type uint8_t... yes
+[  179s] Checking for presence of type uint16_t... yes
+[  181s] Checking for presence of type uint32_t... yes
+[  182s] Checking for presence of type uint64_t... yes
+[  183s] Checking for presence of type u_int8_t... yes
+[  185s] Checking for presence of type u_int16_t... yes
+[  186s] Checking for presence of type u_int32_t... yes
+[  188s] Checking for presence of type u_int64_t... yes
+[  189s] Checking for presence of type ssize_t... yes
+[  190s] Checking for presence of sys/ipc.h... yes
+[  191s] Checking for presence of sys/shm.h... yes
+[  192s] Checking for function strcasecmp... no
+[  193s] Checking for presence of string.h... yes
+[  194s] Checking for function stricmp... no
+[  195s] Checking for function strncasecmp... no
+[  196s] Checking for function strnicmp... no
+[  197s] Checking for function strcasestr... no
+[  198s] Checking for presence of stdio.h... yes
+[  199s] Checking for function snprintf... no
+[  200s] Checking for function _snprintf... no
+[  201s] Checking for presence of stdlib.h... yes
+[  202s] Checking for function reallocf... no
+[  204s] Checking for function bzero... no
+[  206s] Checking for function memmem... no
+[  207s] Checking for function strlcpy... no
+[  209s] Checking for function eaccess... no
+[  211s] Checking for inline... inline
+[  213s] Checking for glibc... yes
+[  230s] Determining dl_load_flags... 0x01
+[  230s] Checking for pkg-config... yes
+[  231s] Checking for fribidi using pkg-config...no
+[  231s] Checking for libthai using pkg-config...no
+[  231s] Checking for x11 using pkg-config...1.8.1
+[  233s] Checking for xext using pkg-config...1.3.5
+[  234s] Checking for presence of X11/extensions/shape.h... yes
+[  235s] Checking for presence of X11/extensions/XShm.h... yes
+[  236s] Checking for xft using pkg-config...2.3.7
+[  237s] Checking for freetype2 using pkg-config...24.3.18
+[  238s] Checking for fontconfig using pkg-config...2.14.2
+[  239s] Checking for xrender using pkg-config...0.9.11
+[  241s] Checking for harfbuzz using pkg-config...no
+[  242s] Checking for presence of iconv.h... yes
+[  244s] Checking for presence of libiconv... no, but works as part of libc
+[  244s] Checking for gtk+-3.0 using pkg-config...no
+[  245s] no
+[  245s] Checking for xrandr using pkg-config...1.5.3
+[  247s] Checking for xcomposite using pkg-config...0.4.6
+[  248s] Checking for xcursor using pkg-config...1.2.1
+[  249s] Using Xft library
+[  249s] Using iconv library
+[  249s] Using Xrandr library
+[  251s] Checking for gif library... yes
+[  251s] Checking for libheif using pkg-config...no
+[  253s] Checking for heif library... no
+[  255s] Checking for jpeg library... yes
+[  256s] Checking for libpng using pkg-config...1.6.39
+[  257s] Checking for libtiff-5 using pkg-config...no
+[  258s] Checking for libtiff-4 using pkg-config...4.5.0
+[  259s] Checking for libwebp using pkg-config...no
+[  261s] Checking for webp library... no
+[  261s] Checking for xpm using pkg-config...3.5.14
+[  262s] Creating img/codecs.c
+[  262s] Creating include/generic/config.h
+[  263s] Checking if your kit is complete...
+[  263s] Looks good
+[  264s] Unrecognized argument in LIBS ignored: ':nosearch'
+[  269s] Finding .cls dependencies...
+[  269s] Finding .c dependencies in api...
+[  269s] Finding .c dependencies in class...
+[  269s] Finding .c dependencies in img...
+[  269s] Finding .c dependencies in unix...
+[  269s] Generating a Unix-style Makefile
+[  269s] Writing Makefile for Prima
+[  269s] Writing MYMETA.yml and MYMETA.json
+[  269s] 
+[  269s] ** Warning: fribidi is needed for bidirectional text.
+[  269s] Prima compiled without fribidi will not be able
+[  269s] to handle right-to-left text, f.ex. Arabic or Hebrew.
+[  269s] Consider fixing your installation.
+[  269s] 
+[  269s] 
+[  269s] ** Warning: libthai is needed for proper breaking of thai text.
+[  269s] Consider fixing your installation.
+[  269s] 
+[  269s] 
+[  269s] ** Warning: Prima compiled without harfbuzz will not be able
+[  269s] to render proper ligatured text, f.ex. Arabic, Hindi, Tibetan etc etc.
+[  269s] Consider fixing your installation.
+[  269s] 
+[  269s] 
+[  269s] ** Warning: not compiling with GTK2. Fonts and colors will look
+[  269s] differently from Gnome environment. You might want to install
+[  269s] 'libgtk+-3.0-dev' or 'libgtk+-2.0-dev' package.
+[  269s] 
+[  269s] 
+[  269s] ** Warning: the following image libraries weren't found:
+[  269s] 
+[  269s] heif webp
+[  269s] 
+[  269s] Note that in this configuration Prima will not be
+[  269s] able to work with the corresponding image formats.
+[  269s] Please follow the instructions in README file.
+[  269s] 
+[  269s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  273s] /usr/bin/perl -I. utils/prima-gencls.pl --inc --h -Iclass --tml class/Object.cls include/generic
+[  273s] make: *** No rule to make target 'include/generic/Types.inc', needed by 'api/thunks.o'.  Stop.
+[  273s] make: *** Waiting for unfinished jobs....
+[  273s] /usr/bin/perl -I. utils/prima-gencls.pl --inc --h -Iclass --tml class/Utils.cls include/generic
+[  273s] /usr/bin/perl -I. utils/prima-gencls.pl --inc --h -Iclass --tml class/Types.cls include/generic
+[  274s] Running Mkbootstrap for Prima ()
+[  274s] chmod 644 "Prima.bs"
+[  281s] cc -c  -Iinclude -Iinclude/generic -I/usr/include/freetype2 -I/usr/include/libpng16  -fopenmp -D_REENTRANT -D_GNU_SOURCE -DPERL_USE_SAFE_PUTENV -fwrapv -fno-strict-aliasing -pipe -fstack-protector-strong -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g   -DVERSION=\"1.67001\" -DXS_VERSION=\"1.67001\" -fPIC "-I/usr/lib/perl5/5.36.0/riscv64-linux-thread-multi/CORE"   api/omp.c -o api/omp.o
+[  281s] error: Bad exit status from /var/tmp/rpm-tmp.77tRs7 (%build)
+[  281s] 
+[  281s] RPM build errors:
+[  281s]     Bad exit status from /var/tmp/rpm-tmp.77tRs7 (%build)
+[  282s] ### VM INTERACTION START ###
+[  282s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  282s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  282s] Powering off.
+[  282s] [  277.118665][ T5417] reboot: Power down
+[  282s] ### VM INTERACTION END ###
+[  282s] 
+[  282s] lamb11 failed "build perl-Prima.spec" at Wed Feb 15 18:51:22 UTC 2023.
+[  282s] 

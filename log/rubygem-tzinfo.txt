@@ -1,0 +1,991 @@
+[    0s] Memory limit set to 21970664KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    3s] 
+[    3s] oe-RISCV-worker23 started "build _service:extract_file:rubygem-tzinfo.spec" at Sat Apr 23 00:14:36 UTC 2022.
+[    3s] 
+[    3s] Building rubygem-tzinfo for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 'e3a39e4363a787e8bf0406e2c4312d44'
+[    3s] 
+[    3s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rubygem-tzinfo.spec ...
+[    7s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rubygem-tzinfo.spec
+[    8s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rubygem-tzinfo.spec build ...
+[   73s] cycle: bash -> coreutils
+[   73s]   breaking dependency coreutils -> bash
+[   73s] cycle: bash -> coreutils -> info
+[   73s]   breaking dependency coreutils -> info
+[   73s] cycle: glibc -> filesystem -> bash -> coreutils
+[   73s]   breaking dependency filesystem -> bash
+[   73s] cycle: glibc -> filesystem -> coreutils
+[   73s]   breaking dependency coreutils -> glibc
+[   73s] cycle: glibc -> filesystem -> coreutils -> libacl
+[   73s]   breaking dependency coreutils -> libacl
+[   73s] cycle: glibc -> filesystem -> coreutils -> attr
+[   73s]   breaking dependency coreutils -> attr
+[   73s] cycle: coreutils -> libcap -> bash
+[   73s]   breaking dependency coreutils -> libcap
+[   73s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[   73s]   breaking dependency coreutils -> openssl-libs
+[   73s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[   73s]   breaking dependency libselinux -> glibc
+[   73s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[   73s]   breaking dependency pcre2 -> glibc
+[   73s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[   73s]   breaking dependency readline -> glibc
+[   73s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   73s]   breaking dependency coreutils -> libselinux
+[   73s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[   73s]   breaking dependency ncurses -> glibc
+[   73s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[   73s]   breaking dependency ncurses -> ncurses-libs
+[   73s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[   73s]   breaking dependency ncurses -> libgcc
+[   73s] cycle: perl-Carp -> perl-libs
+[   73s]   breaking dependency perl-libs -> perl-Carp
+[   73s] cycle: perl-libs -> perl-Exporter
+[   73s]   breaking dependency perl-libs -> perl-Exporter
+[   73s] cycle: perl-Carp -> perl-Exporter
+[   73s]   breaking dependency perl-Exporter -> perl-Carp
+[   73s] cycle: nss-util -> nss
+[   73s]   breaking dependency nss -> nss-util
+[   73s] cycle: nss-softokn -> nss-util -> nss
+[   73s]   breaking dependency nss -> nss-softokn
+[   73s] cycle: systemd -> cryptsetup -> device-mapper
+[   73s]   breaking dependency systemd -> cryptsetup
+[   73s] cycle: audit -> systemd -> pam
+[   73s]   breaking dependency systemd -> pam
+[   73s] [1/84] preinstalling dbus...
+[   74s] [2/84] preinstalling libffi-devel...
+[   74s] [3/84] preinstalling nodejs-source-map...
+[   75s] [4/84] preinstalling python3-pip...
+[   78s] [5/84] preinstalling python3-setuptools_scm...
+[   78s] [6/84] preinstalling ncurses...
+[   83s] [7/84] preinstalling coreutils...
+[   87s] [8/84] preinstalling filesystem...
+[   89s] [9/84] preinstalling glibc...
+[   92s] [10/84] preinstalling libgcc...
+[   93s] [11/84] preinstalling diffutils...
+[   94s] [12/84] preinstalling libcap-ng...
+[   95s] [13/84] preinstalling libgpg-error...
+[   96s] [14/84] preinstalling libpcap...
+[   96s] [15/84] preinstalling libsmartcols...
+[   97s] [16/84] preinstalling libuuid...
+[   98s] [17/84] preinstalling libxcrypt...
+[   99s] [18/84] preinstalling lz4...
+[   99s] [19/84] preinstalling m4...
+[  100s] [20/84] preinstalling ncurses-libs...
+[  101s] [21/84] preinstalling nspr...
+[  102s] [22/84] preinstalling xz-libs...
+[  102s] [23/84] preinstalling zlib...
+[  103s] [24/84] preinstalling attr...
+[  104s] [25/84] preinstalling libdb...
+[  107s] [26/84] preinstalling zstd...
+[  109s] [27/84] preinstalling audit-libs...
+[  109s] [28/84] preinstalling file...
+[  110s] [29/84] preinstalling iptables-libs...
+[  111s] [30/84] preinstalling libacl...
+[  111s] [31/84] preinstalling libgcrypt...
+[  112s] [32/84] preinstalling openssl-libs...
+[  115s] [33/84] preinstalling readline...
+[  115s] [34/84] preinstalling bash...
+[  117s] [35/84] preinstalling cmake...
+[  127s] [36/84] preinstalling perl-libs...
+[  130s] [37/84] preinstalling dnf...
+[  130s] [38/84] preinstalling pcre2...
+[  131s] [39/84] preinstalling perl-Exporter...
+[  132s] [40/84] preinstalling bzip2...
+[  133s] [41/84] preinstalling hostname...
+[  134s] [42/84] preinstalling libcap...
+[  134s] [43/84] preinstalling pcre...
+[  135s] [44/84] preinstalling popt...
+[  136s] [45/84] preinstalling acl...
+[  137s] [46/84] preinstalling elfutils...
+[  138s] [47/84] preinstalling libblkid...
+[  139s] [48/84] preinstalling openssl...
+[  140s] [49/84] preinstalling sqlite...
+[  142s] [50/84] preinstalling tar...
+[  143s] [51/84] preinstalling info...
+[  144s] [52/84] preinstalling libgcrypt-devel...
+[  145s] [53/84] preinstalling lua...
+[  146s] [54/84] preinstalling libselinux...
+[  147s] [55/84] preinstalling perl-Carp...
+[  147s] [56/84] preinstalling copy-jdk-configs...
+[  148s] [57/84] preinstalling libfdisk...
+[  149s] [58/84] preinstalling perl-Digest-MD5...
+[  149s] [59/84] preinstalling grep...
+[  150s] [60/84] preinstalling rpm-libs...
+[  151s] [61/84] preinstalling chkconfig...
+[  152s] [62/84] preinstalling sed...
+[  153s] [63/84] preinstalling libmount...
+[  154s] [64/84] preinstalling libsemanage...
+[  154s] [65/84] preinstalling perl-constant...
+[  155s] [66/84] preinstalling findutils...
+[  156s] [67/84] preinstalling xz...
+[  157s] [68/84] preinstalling perl-Getopt-Long...
+[  158s] [69/84] preinstalling glib2...
+[  161s] [70/84] preinstalling nss...
+[  163s] [71/84] preinstalling perl-Data-Dumper...
+[  163s] [72/84] preinstalling systemd-libs...
+[  165s] [73/84] preinstalling systemd...
+[  169s] [74/84] preinstalling dbus-libs...
+[  169s] [75/84] preinstalling nss-util...
+[  171s] [76/84] preinstalling audit...
+[  171s] [77/84] preinstalling nss-softokn...
+[  173s] [78/84] preinstalling pam...
+[  174s] [79/84] preinstalling rpm...
+[  175s] [80/84] preinstalling openEuler-rpm-config...
+[  176s] [81/84] preinstalling util-linux...
+[  179s] [82/84] preinstalling device-mapper...
+[  180s] [83/84] preinstalling cryptsetup...
+[  181s] [84/84] preinstalling lvm2...
+[  183s] 
+[  185s] initializing rpm db...
+[  195s] reordering...cycle: bash -> coreutils
+[  195s]   breaking dependency coreutils -> bash
+[  195s] cycle: bash -> coreutils -> info
+[  195s]   breaking dependency coreutils -> info
+[  195s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  195s]   breaking dependency filesystem -> bash
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  195s]   breaking dependency coreutils -> gmp
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  195s]   breaking dependency coreutils -> glibc
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  195s]   breaking dependency coreutils -> libacl
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  195s]   breaking dependency coreutils -> attr
+[  195s] cycle: coreutils -> libcap -> bash
+[  195s]   breaking dependency coreutils -> libcap
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  195s]   breaking dependency openssl-libs -> glibc
+[  195s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  195s]   breaking dependency ca-certificates -> bash
+[  195s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  195s]   breaking dependency ca-certificates -> coreutils
+[  195s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  195s]   breaking dependency grep -> bash
+[  195s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  195s]   breaking dependency ca-certificates -> grep
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  195s]   breaking dependency p11-kit -> glibc
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  195s]   breaking dependency openssl-libs -> ca-certificates
+[  195s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  195s]   breaking dependency crypto-policies -> bash
+[  195s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  195s]   breaking dependency crypto-policies -> coreutils
+[  195s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency grep -> coreutils
+[  195s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency glibc -> basesystem
+[  195s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency glibc-common -> bash
+[  195s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency glibc-common -> coreutils
+[  195s] cycle: glibc -> glibc-common
+[  195s]   breaking dependency glibc-common -> glibc
+[  195s] cycle: glibc -> glibc-common -> libselinux
+[  195s]   breaking dependency libselinux -> glibc
+[  195s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  195s]   breaking dependency pcre2 -> glibc
+[  195s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  195s]   breaking dependency readline -> glibc
+[  195s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  195s]   breaking dependency libselinux -> pcre2
+[  195s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency bash -> coreutils
+[  195s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency libsepol -> bash
+[  195s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  195s]   breaking dependency coreutils -> openssl-libs
+[  195s] cycle: libselinux -> libsepol -> coreutils
+[  195s]   breaking dependency libsepol -> coreutils
+[  195s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  195s]   breaking dependency glibc -> glibc-common
+[  195s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  195s]   breaking dependency filesystem -> coreutils
+[  195s] cycle: filesystem -> setup
+[  195s]   breaking dependency filesystem -> setup
+[  195s] cycle: systemd -> cryptsetup -> device-mapper
+[  195s]   breaking dependency systemd -> cryptsetup
+[  195s] cycle: perl-libs -> perl-Carp
+[  195s]   breaking dependency perl-libs -> perl-Carp
+[  195s] cycle: perl-libs -> perl-Exporter
+[  195s]   breaking dependency perl-libs -> perl-Exporter
+[  195s] cycle: perl-Carp -> perl-Exporter
+[  195s]   breaking dependency perl-Exporter -> perl-Carp
+[  195s] cycle: perl -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-PathTools
+[  195s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  195s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  195s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-File-Path
+[  195s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  195s]   breaking dependency perl -> perl-Getopt-Long
+[  195s] cycle: perl -> perl-Locale-Maketext
+[  195s]   breaking dependency perl -> perl-Locale-Maketext
+[  195s] cycle: perl -> perl-Pod-Simple
+[  195s]   breaking dependency perl -> perl-Pod-Simple
+[  195s] cycle: perl -> perl-Socket
+[  195s]   breaking dependency perl -> perl-Socket
+[  195s] cycle: perl -> perl-Storable
+[  195s]   breaking dependency perl -> perl-Storable
+[  195s] cycle: perl -> perl-Text-Tabs+Wrap
+[  195s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  195s] cycle: perl -> perl-Time-Local -> perl-constant
+[  195s]   breaking dependency perl -> perl-Time-Local
+[  195s] cycle: perl -> perl-constant
+[  195s]   breaking dependency perl -> perl-constant
+[  195s] cycle: perl -> perl-threads
+[  195s]   breaking dependency perl -> perl-threads
+[  195s] cycle: perl -> perl-threads-shared
+[  195s]   breaking dependency perl -> perl-threads-shared
+[  195s] cycle: perl -> perl-Archive-Tar
+[  195s]   breaking dependency perl -> perl-Archive-Tar
+[  195s] cycle: perl -> perl-B-Debug
+[  195s]   breaking dependency perl -> perl-B-Debug
+[  195s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  195s]   breaking dependency perl -> perl-CPAN-Meta
+[  195s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  195s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  195s] cycle: perl -> perl-CPAN-Meta-YAML
+[  195s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  195s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  195s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  195s] cycle: perl -> perl-Compress-Raw-Zlib
+[  195s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  195s] cycle: perl -> perl-Config-Perl-V
+[  195s]   breaking dependency perl -> perl-Config-Perl-V
+[  195s] cycle: perl -> perl-DB_File
+[  195s]   breaking dependency perl -> perl-DB_File
+[  195s] cycle: perl -> perl-Data-Dumper
+[  195s]   breaking dependency perl -> perl-Data-Dumper
+[  195s] cycle: perl -> perl-Devel-PPPort
+[  195s]   breaking dependency perl -> perl-Devel-PPPort
+[  195s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  195s]   breaking dependency perl -> perl-Digest
+[  195s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  195s]   breaking dependency perl -> perl-Digest-MD5
+[  195s] cycle: perl -> perl-Digest-SHA
+[  195s]   breaking dependency perl -> perl-Digest-SHA
+[  195s] cycle: perl -> perl-Encode
+[  195s]   breaking dependency perl -> perl-Encode
+[  195s] cycle: perl -> perl-Env
+[  195s]   breaking dependency perl -> perl-Env
+[  195s] cycle: perl -> perl-ExtUtils-Command
+[  195s]   breaking dependency perl -> perl-ExtUtils-Command
+[  195s] cycle: perl -> perl-ExtUtils-Install
+[  195s]   breaking dependency perl -> perl-ExtUtils-Install
+[  195s] cycle: perl -> perl-ExtUtils-Manifest
+[  195s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  195s] cycle: perl -> perl-ExtUtils-ParseXS
+[  195s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  195s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-File-Fetch
+[  195s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-File-Temp
+[  195s] cycle: perl -> perl-Filter
+[  195s]   breaking dependency perl -> perl-Filter
+[  195s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  195s]   breaking dependency perl -> perl-Filter-Simple
+[  195s] cycle: perl -> perl-HTTP-Tiny
+[  195s]   breaking dependency perl -> perl-HTTP-Tiny
+[  195s] cycle: perl -> perl-IO-Compress
+[  195s]   breaking dependency perl -> perl-IO-Compress
+[  195s] cycle: perl -> perl-IO-Socket-IP
+[  195s]   breaking dependency perl -> perl-IO-Socket-IP
+[  195s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  195s]   breaking dependency perl -> perl-IPC-Cmd
+[  195s] cycle: perl -> perl-IPC-SysV
+[  195s]   breaking dependency perl -> perl-IPC-SysV
+[  195s] cycle: perl -> perl-JSON-PP
+[  195s]   breaking dependency perl -> perl-JSON-PP
+[  195s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  195s]   breaking dependency perl -> perl-Locale-Codes
+[  195s] cycle: perl -> perl-MIME-Base64
+[  195s]   breaking dependency perl -> perl-MIME-Base64
+[  195s] cycle: perl -> perl-Math-BigInt
+[  195s]   breaking dependency perl -> perl-Math-BigInt
+[  195s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  195s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  195s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  195s]   breaking dependency perl -> perl-Math-BigRat
+[  195s] cycle: perl -> perl-Module-CoreList
+[  195s]   breaking dependency perl -> perl-Module-CoreList
+[  195s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-Module-Load
+[  195s] cycle: perl -> perl-Module-Load-Conditional
+[  195s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  195s] cycle: perl -> perl-Module-Metadata
+[  195s]   breaking dependency perl -> perl-Module-Metadata
+[  195s] cycle: perl -> perl-Params-Check
+[  195s]   breaking dependency perl -> perl-Params-Check
+[  195s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  195s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  195s] cycle: perl -> perl-Pod-Checker
+[  195s]   breaking dependency perl -> perl-Pod-Checker
+[  195s] cycle: perl -> perl-Pod-Escapes
+[  195s]   breaking dependency perl -> perl-Pod-Escapes
+[  195s] cycle: perl -> perl-Pod-Parser
+[  195s]   breaking dependency perl -> perl-Pod-Parser
+[  195s] cycle: perl -> perl-Pod-Perldoc
+[  195s]   breaking dependency perl -> perl-Pod-Perldoc
+[  195s] cycle: perl -> perl-Pod-Usage
+[  195s]   breaking dependency perl -> perl-Pod-Usage
+[  195s] cycle: perl -> perl-Sys-Syslog
+[  195s]   breaking dependency perl -> perl-Sys-Syslog
+[  195s] cycle: perl -> perl-Term-Cap
+[  195s]   breaking dependency perl -> perl-Term-Cap
+[  195s] cycle: perl -> perl-Test-Harness
+[  195s]   breaking dependency perl -> perl-Test-Harness
+[  195s] cycle: perl -> perl-Test-Simple
+[  195s]   breaking dependency perl -> perl-Test-Simple
+[  195s] cycle: perl -> perl-Text-Balanced
+[  195s]   breaking dependency perl -> perl-Text-Balanced
+[  195s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  195s]   breaking dependency perl -> perl-Thread-Queue
+[  195s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  195s]   breaking dependency perl -> perl-Unicode-Collate
+[  195s] cycle: perl -> perl-autodie
+[  195s]   breaking dependency perl -> perl-autodie
+[  195s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  195s]   breaking dependency perl -> perl-bignum
+[  195s] cycle: perl -> perl-devel
+[  195s]   breaking dependency perl -> perl-devel
+[  195s] cycle: perl -> perl-Encode-devel
+[  195s]   breaking dependency perl -> perl-Encode-devel
+[  195s] cycle: perl -> perl-experimental
+[  195s]   breaking dependency perl -> perl-experimental
+[  195s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  195s]   breaking dependency perl -> perl-libnet
+[  195s] cycle: perl -> perl-podlators
+[  195s]   breaking dependency perl -> perl-podlators
+[  195s] cycle: perl -> perl-version
+[  195s]   breaking dependency perl -> perl-version
+[  195s] cycle: glib2 -> gamin
+[  195s]   breaking dependency glib2 -> gamin
+[  195s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  195s]   breaking dependency systemd -> gnutls
+[  195s] cycle: systemd -> pam -> audit
+[  195s]   breaking dependency systemd -> pam
+[  195s] cycle: systemd -> shadow -> pam -> audit
+[  195s]   breaking dependency systemd -> shadow
+[  195s] cycle: pam -> libpwquality
+[  195s]   breaking dependency pam -> libpwquality
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  195s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  195s]   breaking dependency perl-podlators -> perl-Encode
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  195s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  195s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  195s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  195s] cycle: perl-Pod-Usage -> perl-podlators
+[  195s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  195s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  195s]   breaking dependency groff -> perl-Getopt-Long
+[  195s] cycle: rubygems -> rubygem-openssl
+[  195s]   breaking dependency rubygem-openssl -> rubygems
+[  195s] cycle: rubygems -> rubygem-psych
+[  195s]   breaking dependency rubygem-psych -> rubygems
+[  195s] cycle: libxcrypt-devel -> glibc-devel
+[  195s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  195s] cycle: cmake-data -> cmake
+[  195s]   breaking dependency cmake -> cmake-data
+[  195s] cycle: nss-util -> nss
+[  195s]   breaking dependency nss -> nss-util
+[  195s] cycle: nss-softokn -> nss-util -> nss
+[  195s]   breaking dependency nss -> nss-softokn
+[  195s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  195s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  195s] cycle: openssh -> openssh-server
+[  195s]   breaking dependency openssh-server -> openssh
+[  195s] cycle: git -> perl-Git
+[  195s]   breaking dependency git -> perl-Git
+[  195s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  195s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  196s] done
+[  196s] querying package ids...
+[  222s] [1/353] installing cmake-filesystem-3.22.0-1.oe1
+[  225s] [2/353] installing fuse-common-3.9.2-5.oe1
+[  225s] [3/353] installing kernel-headers-5.10-3.oe1
+[  231s] [4/353] installing libreport-filesystem-2.13.1-5.oe1
+[  232s] [5/353] installing ncurses-base-6.1-14.oe1
+[  233s] [6/353] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  234s] [7/353] installing python-setuptools-59.4.0-3.oe1
+[  235s] [8/353] installing qt5-srpm-macros-5.15.2-1.oe1
+[  236s] [9/353] installing tzdata-2021a-2.oe1
+[  242s] [10/353] installing dnf-data-4.10.0-1.oe1
+[  243s] [11/353] installing openEuler-repos-1.0-2.5.oe1
+[  244s] [12/353] installing openEuler-release-20.03LTS-40.oe1
+[  244s] [13/353] installing filesystem-3.9-3.oe1
+[  253s] warning: group mail does not exist - using root
+[  253s] [14/353] installing emacs-filesystem-1:27.1-5.oe1
+[  254s] [15/353] installing libgcc-10.3.1-10.oe1
+[  256s] [16/353] installing setup-2.13.3-4.oe1
+[  257s] [17/353] installing glibc-2.34-74.oe1
+[  262s] [18/353] installing brotli-1.0.9-2.oe1
+[  263s] [19/353] installing chrpath-0.16-12.oe1
+[  264s] [20/353] installing cpio-2.13-4.oe1
+[  265s] [21/353] installing diffutils-3.7-4.oe1
+[  267s] [22/353] installing expat-2.2.10-1.oe1
+[  268s] [23/353] installing json-c-0.15-1.oe1
+[  269s] [24/353] installing keyutils-libs-1.6.3-3.oe1
+[  270s] [25/353] installing libICE-1.0.10-2.oe1
+[  270s] [26/353] installing libXau-1.0.9-2.oe1
+[  271s] [27/353] installing libaio-0.3.112-1.oe1
+[  276s] [28/353] installing libargon2-20190702-1.oe1
+[  277s] [29/353] installing libatomic-10.3.1-10.oe1
+[  278s] [30/353] installing libcap-ng-0.7.11-1.oe1
+[  279s] [31/353] installing libev-4.24-11.oe1
+[  280s] [32/353] installing libffi-3.3-31.oe1
+[  281s] [33/353] installing libgomp-10.3.1-10.oe1
+[  282s] [34/353] installing libgpg-error-1.41-1.oe1
+[  283s] [35/353] installing libnghttp2-1.42.0-1.oe1
+[  284s] [36/353] installing libpcap-14:1.9.1-7.oe1
+[  285s] [37/353] installing libpipeline-1.5.3-1.oe1
+[  286s] [38/353] installing libsigsegv-2.11-10.oe1
+[  287s] [39/353] installing libsmartcols-2.36.1-3.oe1
+[  288s] [40/353] installing libtasn1-4.16.0-2.oe1
+[  289s] [41/353] installing libtool-ltdl-2.4.6-34.oe1
+[  290s] [42/353] installing libunistring-0.9.10-8.oe1
+[  292s] [43/353] installing libuuid-2.36.1-3.oe1
+[  293s] [44/353] installing libuv-1:1.40.0-1.oe1
+[  294s] [45/353] installing libxcrypt-4.4.8-4.oe1
+[  295s] [46/353] installing libyaml-0.2.5-1.oe1
+[  296s] [47/353] installing lz4-1.9.3-1.oe1
+[  297s] [48/353] installing m4-1.4.18-14.oe1
+[  298s] [49/353] installing nspr-4.32.0-1.oe1
+[  299s] [50/353] installing pkgconf-1.7.3-1.oe1
+[  300s] [51/353] installing rhash-1.3.5-5.oe1
+[  301s] [52/353] installing which-2.21-14.oe1
+[  301s] [53/353] installing xz-libs-5.2.5-1.oe1
+[  302s] [54/353] installing zlib-1.2.11-18.oe1
+[  303s] [55/353] installing attr-2.4.48-12.oe1
+[  304s] [56/353] installing basesystem-12-2.oe1
+[  305s] [57/353] installing libstdc++-10.3.1-10.oe1
+[  307s] [58/353] installing ncurses-libs-6.1-14.oe1
+[  308s] [59/353] installing libsepol-3.1-4.oe1
+[  309s] [60/353] installing libstdc++-devel-10.3.1-10.oe1
+[  317s] [61/353] installing audit-libs-1:3.0-2.oe1
+[  318s] [62/353] installing file-libs-5.39-6.oe1
+[  320s] [63/353] installing gmp-1:6.2.1-1.oe1
+[  321s] [64/353] installing iptables-libs-1.8.1-4.oe1
+[  322s] [65/353] installing less-563-2.oe1
+[  323s] [66/353] installing libacl-2.2.53-7.oe1
+[  324s] [67/353] installing libassuan-2.5.4-1.oe1
+[  325s] [68/353] installing libedit-3.1-27.oe1
+[  326s] [69/353] installing libffi-devel-3.3-31.oe1
+[  327s] [70/353] installing libgcrypt-1.8.7-1.oe1
+[  328s] [71/353] installing libpng-2:1.6.37-1.oe1
+[  329s] [72/353] installing libxcb-1.14-1.oe1
+[  330s] [73/353] installing readline-8.0-2.oe1
+[  332s] [74/353] installing fuse-2.9.9-6.oe1
+[  333s] [75/353] installing gc-8.0.4-2.oe1
+[  334s] [76/353] installing libSM-1.2.3-2.oe1
+[  335s] [77/353] installing libdb-5.3.28-35.oe1
+[  339s] [78/353] installing libselinux-3.1-3.oe1
+[  340s] [79/353] installing libxml2-2.9.12-5.oe1
+[  342s] [80/353] installing bash-5.1-1.oe1
+[  345s] [81/353] installing perl-libs-4:5.28.0-435.oe1
+[  351s] [82/353] installing zstd-1.4.8-2.oe1
+[  353s] [83/353] installing ncurses-6.1-14.oe1
+[  362s] [84/353] installing thin-provisioning-tools-0.8.5-1.oe1
+[  364s] [85/353] installing perl-parent-1:0.237-4.oe1
+[  364s] [86/353] installing perl-perlfaq-5.20180915-5.oe1
+[  366s] [87/353] installing libX11-1.6.9-2.oe1
+[  368s] [88/353] installing mpfr-4.1.0-1.oe1
+[  370s] [89/353] installing nettle-3.6-6.oe1
+[  372s] [90/353] installing pcre2-10.36-1.oe1
+[  374s] [91/353] installing perl-Exporter-5.74-1.oe1
+[  375s] [92/353] installing file-5.39-6.oe1
+[  376s] [93/353] installing gdbm-1:1.18.1-1.oe1
+[  377s] [94/353] installing patch-2.7.6-12.oe1
+[  378s] [95/353] installing qrencode-4.1.1-1
+[  379s] [96/353] installing sed-4.8-2.oe1
+[  381s] [97/353] installing acl-2.2.53-7.oe1
+[  381s] [98/353] installing libcomps-0.1.15-1.oe1
+[  383s] [99/353] installing pcre-8.44-1.oe1
+[  384s] [100/353] installing glibc-common-2.34-74.oe1
+[  395s] [101/353] installing coreutils-8.31-4.oe1
+[  402s] [102/353] installing crontabs-1.11-21.oe1
+[  403s] [103/353] installing libXext-1.3.4-2.oe1
+[  404s] [104/353] installing libXpm-3.5.12-11.oe1
+[  406s] [105/353] installing perl-Carp-1.50-418.oe1
+[  407s] [106/353] installing perl-Perl-OSType-1.010-421.oe1
+[  408s] [107/353] installing perl-Term-ANSIColor-4.06-511.oe1
+[  409s] [108/353] installing publicsuffix-list-20200718-1.oe1
+[  410s] [109/353] installing uname-build-checks-1.0-0.4.oe1
+[  411s] [110/353] installing bzip2-1.0.8-3.oe1
+[  412s] [111/353] installing gzip-1.10-1.oe1
+[  414s] [112/353] installing hostname-3.21-2.oe1
+[  415s] [113/353] installing libcap-2.32-2.oe1
+[  416s] [114/353] installing libmpc-1.2.0-2.oe1
+[  418s] [115/353] installing libseccomp-2.4.3-2.oe1
+[  419s] [116/353] installing npth-1.5-7.oe1
+[  420s] [117/353] installing popt-1.18-1.oe1
+[  422s] [118/353] installing grep-3.6-1.oe1
+[  424s] [119/353] installing libXt-1.2.0-0.oe1
+[  426s] [120/353] installing libblkid-2.36.1-3.oe1
+[  427s] [121/353] installing libidn2-2.3.0-1.oe1
+[  430s] [122/353] installing libksba-1.3.5-12.oe1
+[  432s] [123/353] installing tar-2:1.32-3.oe1
+[  435s] [124/353] installing tcl-1:8.6.10-3.oe1
+[  438s] [125/353] installing elfutils-0.185-5.oe1
+[  441s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  441s] [126/353] installing info-6.7-2.oe1
+[  443s] [127/353] installing jsoncpp-1.9.4-1.oe1
+[  444s] [128/353] installing libgpg-error-devel-1.41-1.oe1
+[  446s] [129/353] installing lua-5.3.5-6.oe1
+[  449s] [130/353] installing slang-2.3.2-8.oe1
+[  452s] [131/353] installing gawk-5.0.1-2.oe1
+[  454s] [132/353] installing glibc-devel-2.34-74.oe1
+[  462s] [133/353] installing guile-5:2.0.14-15.oe1
+[  471s] [134/353] installing zip-3.0-29.oe1
+[  472s] [135/353] installing libfdisk-2.36.1-3.oe1
+[  474s] [136/353] installing libxcrypt-devel-4.4.8-4.oe1
+[  475s] [137/353] installing newt-0.52.21-4.oe1
+[  478s] [138/353] installing perl-Text-ParseWords-3.30-419.oe1
+[  478s] [139/353] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  485s] [140/353] installing libXmu-1.1.3-1.oe1
+[  486s] [141/353] installing libmount-2.36.1-3.oe1
+[  488s] [142/353] installing lua-posix-33.3.1-12.oe1
+[  490s] [143/353] installing unzip-6.0-47.oe1
+[  491s] [144/353] installing cracklib-2.9.7-6.oe1
+[  496s] [145/353] installing e2fsprogs-1.45.6-3.oe1
+[  500s] [146/353] installing findutils-2:4.7.0-7.oe1
+[  502s] [147/353] installing libsemanage-3.1-4.oe1
+[  503s] [148/353] installing make-1:4.2.1-15.oe1
+[  505s] [149/353] installing sqlite-3.24.0-9.oe1
+[  507s] [150/353] installing xz-5.2.5-1.oe1
+[  509s] [151/353] installing logrotate-3.15.1-2.oe1
+[  510s] [152/353] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  511s] [153/353] installing perl-Time-HiRes-1.9760-2.oe1
+[  513s] [154/353] installing perl-Unicode-Normalize-1.26-419.oe1
+[  514s] [155/353] installing libgcrypt-devel-1.8.7-1.oe1
+[  516s] [156/353] installing cpp-10.3.1-10.oe1
+[  523s] [157/353] installing gnupg2-2.2.27-2.oe1
+[  529s] [158/353] installing systemd-libs-243-22.oe1
+[  531s] [159/353] installing dbus-libs-1:1.12.20-3.oe1
+[  533s] [160/353] installing p11-kit-0.23.22-1.oe1
+[  535s] [161/353] installing procps-ng-3.3.16-15.oe1
+[  538s] [162/353] installing copy-jdk-configs-4.0-1.oe1
+[  539s] [163/353] installing gpgme-1.15.1-1.oe1
+[  541s] [164/353] installing openssl-libs-1:1.1.1f-2.oe1
+[  544s] [165/353] installing chkconfig-1.14-2.oe1
+[  546s] [166/353] installing libXaw-1.0.13-13.oe1
+[  547s] [167/353] installing glib2-2.66.8-1.oe1
+[  554s] [168/353] installing dbus-tools-1:1.12.20-3.oe1
+[  555s] [169/353] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  556s] [170/353] installing libevent-2.1.12-4
+[  558s] [171/353] installing libcroco-0.6.12-13.oe1
+[  560s] [172/353] installing fipscheck-1.5.0-7.oe1
+[  562s] [173/353] installing gamin-0.1.10-38.oe1
+[  563s] [174/353] installing kmod-libs-27-4.oe1
+[  565s] [175/353] installing libsecret-0.18.6-5.oe1
+[  568s] [176/353] installing obs-env-1.0-5.oe1
+[  575s] [177/353] installing kmod-27-4.oe1
+[  577s] [178/353] installing binutils-2.37-6.oe1
+[  584s] [179/353] installing babeltrace-1.5.8-1.oe1
+[  586s] [180/353] installing p11-kit-trust-0.23.22-1.oe1
+[  588s] [181/353] installing libarchive-3.5.1-1.oe1
+[  590s] [182/353] installing nodejs-libs-1:16.10.0-1.oe1
+[  624s] [183/353] installing ruby-2.5.8-113.oe1
+[  630s] [184/353] installing ruby-irb-2.5.8-113.oe1
+[  631s] [185/353] installing libverto-0.3.1-2.oe1
+[  632s] [186/353] installing rubygem-openssl-2.1.2-113.oe1
+[  634s] [187/353] installing rubygem-psych-3.0.2-113.oe1
+[  637s] [188/353] installing ca-certificates-2020.2.46-2.oe1
+[  645s] [189/353] installing gettext-0.20.1-2.oe1
+[  649s] [190/353] installing gcc-10.3.1-10.oe1
+[  671s] [191/353] installing rpm-libs-4.15.1-25.oe1
+[  672s] [192/353] installing python-pip-wheel-19.2.3-2.fc32
+[  674s] [193/353] installing rubygems-2.7.6-113.oe1
+[  676s] [194/353] installing libmodulemd-2.13.0-1.oe1
+[  678s] [195/353] installing gcc-c++-10.3.1-10.oe1
+[  687s] [196/353] installing krb5-libs-1.18.2-3.oe1
+[  689s] [197/353] installing rubygem-concurrent-ruby-1.0.5-2.oe1
+[  691s] [198/353] installing rubygem-did_you_mean-1.2.0-113.oe1
+[  693s] [199/353] installing rubygem-minitest-5.10.3-113.oe1
+[  694s] [200/353] installing libtirpc-1.3.1-1.oe1
+[  696s] [201/353] installing rubygem-io-console-0.4.6-113.oe1
+[  697s] [202/353] installing rubygem-json-2.1.0-113.oe1
+[  699s] [203/353] installing cyrus-sasl-lib-2.1.27-10.oe1
+[  701s] [204/353] installing libssh-0.9.5-1.oe1
+[  702s] [205/353] installing openldap-2.4.46-15.oe1
+[  704s] [206/353] installing libnsl2-1.3.0-2.oe1
+[  706s] [207/353] installing rubygem-rdoc-6.0.1.1-113.oe1
+[  708s] [208/353] installing rubygems-devel-2.7.6-113.oe1
+[  710s] [209/353] installing python3-3.8.5-13.oe1
+[  732s] [210/353] installing python3-pyparsing-2.4.5-1.fc32
+[  734s] [211/353] installing python3-setuptools-59.4.0-3.oe1
+[  738s] [212/353] installing python3-setuptools_scm-3.3.3-6.fc32
+[  741s] [213/353] installing python3-gpgme-1.15.1-1.oe1
+[  743s] [214/353] installing python3-libcomps-0.1.15-1.oe1
+[  745s] [215/353] installing libpsl-0.21.1-1.oe1
+[  747s] [216/353] installing gdb-headless-9.2-5.oe1
+[  752s] [217/353] installing systemtap-sdt-devel-4.1-3.oe1
+[  754s] [218/353] installing gdb-9.2-5.oe1
+[  755s] [219/353] installing python3-pip-19.2.3-2.fc32
+[  762s] [220/353] installing libcurl-7.79.1-1.oe1
+[  763s] [221/353] installing curl-7.79.1-1.oe1
+[  764s] [222/353] installing librepo-1.14.2-2.oe1
+[  766s] [223/353] installing rpm-4.15.1-25.oe1
+[  769s] [224/353] installing efi-srpm-macros-4-3.oe1
+[  772s] [225/353] installing cmake-rpm-macros-3.22.0-1.oe1
+[  773s] [226/353] installing libsolv-0.7.20-1.oe1
+[  775s] [227/353] installing python3-rpm-4.15.1-25.oe1
+[  777s] [228/353] installing openEuler-rpm-config-30-22.oe1
+[  778s] [229/353] installing cmake-3.22.0-1.oe1
+[  791s] [230/353] installing libdnf-0.65.0-2.oe1
+[  793s] [231/353] installing cmake-data-3.22.0-1.oe1
+[  807s] [232/353] installing python3-libdnf-0.65.0-2.oe1
+[  810s] [233/353] installing perl-4:5.28.0-435.oe1
+[  818s] [234/353] installing perl-B-Debug-1.26-4.oe1
+[  819s] [235/353] installing perl-Env-1.04-397.oe1
+[  820s] [236/353] installing perl-Devel-PPPort-3.42-4.oe1
+[  822s] [237/353] installing perl-Pod-Escapes-1:1.07-419.oe1
+[  823s] [238/353] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[  824s] [239/353] installing perl-Algorithm-Diff-1.1903-14.oe1
+[  825s] [240/353] installing perl-Params-Check-1:0.38-418.oe1
+[  826s] [241/353] installing perl-Term-Cap-1.17-510.oe1
+[  827s] [242/353] installing perl-TermReadKey-2.38-2.oe1
+[  829s] [243/353] installing perl-Text-Balanced-2.03-420.oe1
+[  830s] [244/353] installing perl-threads-1:2.22-419.oe1
+[  831s] [245/353] installing openssl-1:1.1.1f-2.oe1
+[  833s] [246/353] installing perl-Config-Perl-V-0.30-5.oe1
+[  835s] [247/353] installing perl-Error-1:0.17029-1.oe1
+[  836s] [248/353] installing perl-Filter-2:1.59-2.oe1
+[  837s] [249/353] installing perl-IPC-SysV-2.07-5.oe1
+[  839s] [250/353] installing perl-Locale-Maketext-1:1.28-1.oe1
+[  840s] [251/353] installing perl-constant-1.33-421.oe1
+[  842s] [252/353] installing perl-MIME-Base64-3.15-418.oe1
+[  843s] [253/353] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[  845s] [254/353] installing perl-Socket-4:2.029-2.oe1
+[  854s] [255/353] installing perl-Storable-1:3.15-2.oe1
+[  858s] [256/353] installing python3-hawkey-0.65.0-2.oe1
+[  860s] [257/353] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[  861s] [258/353] installing perl-Digest-1.17-419.oe1
+[  862s] [259/353] installing perl-Filter-Simple-1:0.94-1.oe1
+[  863s] [260/353] installing perl-IO-Socket-IP-0.39-420.oe1
+[  864s] [261/353] installing perl-Text-Diff-1.45-7.oe1
+[  865s] [262/353] installing perl-Time-Local-2:1.280-6.oe1
+[  867s] [263/353] installing perl-version-8:0.99.24-3.oe1
+[  868s] [264/353] installing perl-IPC-System-Simple-1.25-19.oe1
+[  869s] [265/353] installing perl-threads-shared-1.59-2.oe1
+[  871s] [266/353] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[  873s] [267/353] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[  875s] [268/353] installing perl-Locale-Codes-3.58-2.oe1
+[  877s] [269/353] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[  879s] [270/353] installing perl-PathTools-3.75-4.oe1
+[  880s] [271/353] installing python3-dnf-4.10.0-1.oe1
+[  883s] [272/353] installing perl-Data-Dumper-2.172-3.oe1
+[  885s] [273/353] installing perl-Sys-Syslog-0.35-420.oe1
+[  888s] [274/353] installing perl-Encode-4:2.98-9.oe1
+[  892s] [275/353] installing autogen-5.18.16-1.oe1
+[  894s] [276/353] installing nodejs-1:16.10.0-1.oe1
+[  896s] [277/353] installing systemd-243-22.oe1
+[  911s] /var/tmp/rpm-tmp.NiBjpg: line 8: groupadd: command not found
+[  911s] /var/tmp/rpm-tmp.NiBjpg: line 10: groupadd: command not found
+[  911s] /var/tmp/rpm-tmp.NiBjpg: line 13: groupadd: command not found
+[  911s] /var/tmp/rpm-tmp.NiBjpg: line 16: groupadd: command not found
+[  911s] [278/353] installing dbus-common-1:1.12.20-3.oe1
+[  912s] [279/353] installing nodejs-source-map-0.5.6-1.oe1
+[  914s] [280/353] installing perl-Module-Load-1:0.32-418.oe1
+[  915s] [281/353] installing nodejs-packaging-20-1.oe1
+[  916s] [282/353] installing dnf-4.10.0-1.oe1
+[  919s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[  919s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[  919s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[  919s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[  919s] [283/353] installing perl-File-Which-1.23-1.oe1
+[  920s] [284/353] installing perl-Thread-Queue-3.13-3.oe1
+[  921s] [285/353] installing perl-experimental-0.020-2.oe1
+[  923s] [286/353] installing perl-Digest-MD5-2.55-419.oe1
+[  925s] [287/353] installing perl-File-Path-2.16-4.oe1
+[  926s] [288/353] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[  928s] [289/353] installing perl-Module-Metadata-1.000036-3.oe1
+[  929s] [290/353] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[  931s] [291/353] installing perl-Encode-devel-4:2.98-9.oe1
+[  932s] [292/353] installing perl-HTTP-Tiny-0.076-3.oe1
+[  933s] [293/353] installing perl-Math-BigRat-0.2614-2.oe1
+[  935s] [294/353] installing audit-1:3.0-2.oe1
+[  938s] [295/353] installing perl-DB_File-1.842-2.oe1
+[  940s] [296/353] installing perl-autodie-2.29-398.oe1
+[  941s] [297/353] installing perl-Unicode-Collate-1.25-4.oe1
+[  944s] [298/353] installing perl-IO-Compress-2.081-6.oe1
+[  947s] [299/353] installing perl-podlators-1:4.14-1.oe1
+[  948s] [300/353] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[  949s] [301/353] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[  950s] [302/353] installing perl-bignum-0.50-4.oe1
+[  952s] [303/353] installing perl-File-Temp-1:0.230.800-4.oe1
+[  953s] [304/353] installing perl-libnet-3.11-420.oe1
+[  955s] [305/353] installing pam-1.5.1-1.oe1
+[  960s] [306/353] installing libpwquality-1.4.4-1.oe1
+[  963s] [307/353] installing perl-File-HomeDir-1.004-4.oe1
+[  965s] [308/353] installing shadow-2:4.8.1-5.oe1
+[  967s] [309/353] installing perl-Test-Simple-2:1.302175-2.oe1
+[  969s] [310/353] installing libutempter-1.1.6-16.oe1
+[  971s] [311/353] installing unbound-libs-1.10.1-4.oe1
+[  975s] [312/353] installing dbus-daemon-1:1.12.20-3.oe1
+[  988s] [313/353] installing openssh-server-8.2p1-10.oe1
+[  991s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[  991s] [314/353] installing groff-1.22.4-4.oe1
+[  999s] [315/353] installing dbus-1:1.12.20-3.oe1
+[ 1000s] [316/353] installing man-db-2.9.3-2.oe1
+[ 1005s] [317/353] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1006s] [318/353] installing gnutls-3.6.15-3.oe1
+[ 1009s] [319/353] installing util-linux-2.36.1-3.oe1
+[ 1022s] [320/353] installing nss-help-3.72.0-2.oe1
+[ 1023s] [321/353] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1025s] [322/353] installing device-mapper-8:1.02.172-1.oe1
+[ 1029s] [323/353] installing openssh-8.2p1-10.oe1
+[ 1031s] [324/353] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1032s] [325/353] installing cryptsetup-2.3.3-3.oe1
+[ 1036s] [326/353] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1038s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1038s] [327/353] installing nss-3.72.0-2.oe1
+[ 1047s] [328/353] installing openssh-clients-8.2p1-10.oe1
+[ 1049s] [329/353] installing nss-util-3.72.0-2.oe1
+[ 1051s] [330/353] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1053s] [331/353] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1054s] [332/353] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1056s] [333/353] installing perl-Pod-Parser-1.63-397.oe1
+[ 1057s] [334/353] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1061s] [335/353] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1062s] [336/353] installing perl-Archive-Tar-2.30-421.oe1
+[ 1063s] [337/353] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1065s] [338/353] installing lvm2-8:2.03.11-1.oe1
+[ 1071s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1071s] [339/353] installing autoconf-2.69-30.oe1
+[ 1074s] [340/353] installing git-2.23.0-12.oe1
+[ 1084s] [341/353] installing nss-softokn-3.72.0-2.oe1
+[ 1087s] [342/353] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1088s] [343/353] installing perl-Git-2.23.0-12.oe1
+[ 1089s] [344/353] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1092s] [345/353] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1093s] [346/353] installing automake-1.16.1-6.oe1
+[ 1095s] [347/353] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1097s] [348/353] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1098s] [349/353] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1101s] [350/353] installing rpm-build-4.15.1-25.oe1
+[ 1102s] [351/353] installing gcc_secure-1.0-0.9.oe1
+[ 1104s] [352/353] installing perl-File-Fetch-0.56-4.oe1
+[ 1105s] [353/353] installing perl-devel-4:5.28.0-435.oe1
+[ 1115s] removing nis flags from /var/cache/obs/worker/root_3/etc/nsswitch.conf...
+[ 1115s] now finalizing build dir...
+[ 1125s] Running build time source services...
+[ 1141s] -----------------------------------------------------------------
+[ 1141s] I have the following modifications for rubygem-tzinfo.spec:
+[ 1142s] -----------------------------------------------------------------
+[ 1142s] ----- building rubygem-tzinfo.spec (user abuild)
+[ 1142s] -----------------------------------------------------------------
+[ 1142s] -----------------------------------------------------------------
+[ 1150s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/e3a39e4363a787e8bf0406e2c4312d44-rubygem-tzinfo' /home/abuild/rpmbuild/SOURCES/rubygem-tzinfo.spec
+[ 1150s] error: bad date in %changelog: Web Mar 2 2022 liqiuyu <liqiuyu@kylinos.cn> - 2.0.4-1
+[ 1151s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.kyXzpR
+[ 1151s] + umask 022
+[ 1151s] + cd /home/abuild/rpmbuild/BUILD
+[ 1151s] + cd /home/abuild/rpmbuild/BUILD
+[ 1151s] + rm -rf tzinfo-2.0.4
+[ 1151s] + /usr/bin/tar -xof /home/abuild/rpmbuild/SOURCES/tzinfo-2.0.4-tests.txz
+[ 1151s] + STATUS=0
+[ 1151s] + '[' 0 -ne 0 ']'
+[ 1151s] + /usr/bin/gem unpack /home/abuild/rpmbuild/SOURCES/tzinfo-2.0.4.gem
+[ 1157s] Unpacked gem: '/home/abuild/rpmbuild/BUILD/tzinfo-2.0.4'
+[ 1157s] + /usr/bin/gem spec /home/abuild/rpmbuild/SOURCES/tzinfo-2.0.4.gem --ruby
+[ 1160s] + STATUS=0
+[ 1160s] + '[' 0 -ne 0 ']'
+[ 1160s] + cd tzinfo-2.0.4
+[ 1160s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1161s] + RPM_EC=0
+[ 1161s] ++ jobs -p
+[ 1161s] + exit 0
+[ 1161s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.F3KCKM
+[ 1161s] + umask 022
+[ 1161s] + cd /home/abuild/rpmbuild/BUILD
+[ 1161s] + cd tzinfo-2.0.4
+[ 1161s] + gem build ../tzinfo-2.0.4.gemspec
+[ 1165s]   Successfully built RubyGem
+[ 1165s]   Name: tzinfo
+[ 1165s]   Version: 2.0.4
+[ 1165s]   File: tzinfo-2.0.4.gem
+[ 1165s] + mkdir -p ./usr/share/gems
+[ 1165s] + CONFIGURE_ARGS='--with-cflags='\''-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'\'' '
+[ 1165s] + gem install -V --local --build-root . --force --document=ri,rdoc tzinfo-2.0.4.gem
+[ 1171s] WARNING:  You build with buildroot.
+[ 1171s]   Build root: /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4
+[ 1171s]   Bin dir: /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/bin
+[ 1171s]   Gem home: /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/.yardopts
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/CHANGES.md
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/LICENSE
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/README.md
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/annual_rules.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/country.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/country_timezone.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_source.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/country_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/data_timezone_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/linked_timezone_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/posix_time_zone_parser.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/ruby_data_source.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/timezone_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/transitions_data_timezone_info.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/zoneinfo_data_source.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_sources/zoneinfo_reader.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/data_timezone.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/datetime_with_offset.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1/country_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1/country_index_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1/timezone_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1/timezone_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format1/timezone_index_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/country_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/country_index_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/country_index_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/timezone_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/timezone_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/timezone_index_definer.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/format2/timezone_index_definition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/info_timezone.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/linked_timezone.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/offset_timezone_period.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/string_deduper.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/time_with_offset.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timestamp.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timestamp_with_offset.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timezone.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timezone_offset.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timezone_period.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timezone_proxy.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/timezone_transition.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/transition_rule.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/transitions_timezone_period.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/untaint_ext.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/version.rb
+[ 1178s] /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/lib/tzinfo/with_offset.rb
+[ 1178s] Successfully installed tzinfo-2.0.4
+[ 1178s] Parsing documentation for tzinfo-2.0.4
+[ 1178s] Parsing sources...
+[ 1178s]   1% [ 1/52]  CHANGES.md
+[ 1178s]   3% [ 2/52]  LICENSE
+[ 1178s]   5% [ 3/52]  README.md
+[ 1178s]   7% [ 4/52]  lib/tzinfo.rb
+[ 1178s]   9% [ 5/52]  lib/tzinfo/annual_rules.rb
+[ 1178s]  11% [ 6/52]  lib/tzinfo/country.rb
+[ 1178s]  13% [ 7/52]  lib/tzinfo/country_timezone.rb
+[ 1179s]  15% [ 8/52]  lib/tzinfo/data_source.rb
+[ 1180s]  17% [ 9/52]  lib/tzinfo/data_sources.rb
+[ 1180s]  19% [10/52]  lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb
+[ 1180s]  21% [11/52]  lib/tzinfo/data_sources/country_info.rb
+[ 1180s]  23% [12/52]  lib/tzinfo/data_sources/data_timezone_info.rb
+[ 1180s]  25% [13/52]  lib/tzinfo/data_sources/linked_timezone_info.rb
+[ 1180s]  26% [14/52]  lib/tzinfo/data_sources/posix_time_zone_parser.rb
+[ 1181s]  28% [15/52]  lib/tzinfo/data_sources/ruby_data_source.rb
+[ 1181s]  30% [16/52]  lib/tzinfo/data_sources/timezone_info.rb
+[ 1181s]  32% [17/52]  lib/tzinfo/data_sources/transitions_data_timezone_info.rb
+[ 1182s]  34% [18/52]  lib/tzinfo/data_sources/zoneinfo_data_source.rb
+[ 1183s]  36% [19/52]  lib/tzinfo/data_sources/zoneinfo_reader.rb
+[ 1185s]  38% [20/52]  lib/tzinfo/data_timezone.rb
+[ 1185s]  40% [21/52]  lib/tzinfo/datetime_with_offset.rb
+[ 1185s]  42% [22/52]  lib/tzinfo/format1.rb
+[ 1185s]  44% [23/52]  lib/tzinfo/format1/country_definer.rb
+[ 1185s]  46% [24/52]  lib/tzinfo/format1/country_index_definition.rb
+[ 1185s]  48% [25/52]  lib/tzinfo/format1/timezone_definer.rb
+[ 1185s]  50% [26/52]  lib/tzinfo/format1/timezone_definition.rb
+[ 1186s]  51% [27/52]  lib/tzinfo/format1/timezone_index_definition.rb
+[ 1186s]  53% [28/52]  lib/tzinfo/format2.rb
+[ 1186s]  55% [29/52]  lib/tzinfo/format2/country_definer.rb
+[ 1186s]  57% [30/52]  lib/tzinfo/format2/country_index_definer.rb
+[ 1186s]  59% [31/52]  lib/tzinfo/format2/country_index_definition.rb
+[ 1186s]  61% [32/52]  lib/tzinfo/format2/timezone_definer.rb
+[ 1186s]  63% [33/52]  lib/tzinfo/format2/timezone_definition.rb
+[ 1187s]  65% [34/52]  lib/tzinfo/format2/timezone_index_definer.rb
+[ 1187s]  67% [35/52]  lib/tzinfo/format2/timezone_index_definition.rb
+[ 1187s]  69% [36/52]  lib/tzinfo/info_timezone.rb
+[ 1187s]  71% [37/52]  lib/tzinfo/linked_timezone.rb
+[ 1187s]  73% [38/52]  lib/tzinfo/offset_timezone_period.rb
+[ 1187s]  75% [39/52]  lib/tzinfo/string_deduper.rb
+[ 1187s]  76% [40/52]  lib/tzinfo/time_with_offset.rb
+[ 1188s]  78% [41/52]  lib/tzinfo/timestamp.rb
+[ 1189s]  80% [42/52]  lib/tzinfo/timestamp_with_offset.rb
+[ 1189s]  82% [43/52]  lib/tzinfo/timezone.rb
+[ 1191s]  84% [44/52]  lib/tzinfo/timezone_offset.rb
+[ 1192s]  86% [45/52]  lib/tzinfo/timezone_period.rb
+[ 1192s]  88% [46/52]  lib/tzinfo/timezone_proxy.rb
+[ 1192s]  90% [47/52]  lib/tzinfo/timezone_transition.rb
+[ 1192s]  92% [48/52]  lib/tzinfo/transition_rule.rb
+[ 1193s]  94% [49/52]  lib/tzinfo/transitions_timezone_period.rb
+[ 1193s]  96% [50/52]  lib/tzinfo/untaint_ext.rb
+[ 1193s]  98% [51/52]  lib/tzinfo/version.rb
+[ 1193s] 100% [52/52]  lib/tzinfo/with_offset.rb
+[ 1231s] 
+[ 1231s] Installing ri documentation for tzinfo-2.0.4
+[ 1231s] Installing darkfish documentation for tzinfo-2.0.4
+[ 1246s] Done installing documentation for tzinfo after 70 seconds
+[ 1246s] 1 gem installed
+[ 1246s] + RPM_EC=0
+[ 1246s] ++ jobs -p
+[ 1246s] + exit 0
+[ 1246s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.DbW3xu
+[ 1246s] + umask 022
+[ 1246s] + cd /home/abuild/rpmbuild/BUILD
+[ 1246s] + '[' /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64 '!=' / ']'
+[ 1246s] + rm -rf /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64
+[ 1246s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64
+[ 1246s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[ 1246s] + mkdir /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64
+[ 1247s] + cd tzinfo-2.0.4
+[ 1247s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64/usr/share/gems
+[ 1247s] + cp -a ./usr/share/gems/build_info ./usr/share/gems/cache ./usr/share/gems/doc ./usr/share/gems/extensions ./usr/share/gems/gems ./usr/share/gems/specifications /home/abuild/rpmbuild/BUILDROOT/rubygem-tzinfo-2.0.4-1.oe1.riscv64/usr/share/gems/
+[ 1248s] + /usr/lib/rpm/find-debuginfo.sh -j8 --strict-build-id -i --build-id-seed 2.0.4-1.oe1 --unique-debug-suffix -2.0.4-1.oe1.riscv64 --unique-debug-src-base rubygem-tzinfo-2.0.4-1.oe1.riscv64 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4
+[ 1249s] + /usr/lib/rpm/check-buildroot
+[ 1251s] + /usr/lib/rpm/brp-ldconfig
+[ 1251s] + /usr/lib/rpm/brp-compress
+[ 1251s] + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+[ 1254s] + /usr/lib/rpm/brp-python-bytecompile /usr/bin/python 1 1
+[ 1255s] + /usr/lib/rpm/brp-python-hardlink
+[ 1255s] Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.Gx9tPu
+[ 1255s] + umask 022
+[ 1255s] + cd /home/abuild/rpmbuild/BUILD
+[ 1255s] + cd tzinfo-2.0.4
+[ 1255s] + pushd ./usr/share/gems/gems/tzinfo-2.0.4
+[ 1255s] ~/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4 ~/rpmbuild/BUILD/tzinfo-2.0.4
+[ 1255s] + ln -s /home/abuild/rpmbuild/BUILD/test .
+[ 1256s] + sed -i '/raise '\''Tests must be run with bundler/ s/^/#/' test/test_utils.rb
+[ 1256s] + RUBYOPT=-I.:lib:test
+[ 1256s] + ruby -rtest/ts_all
+[ 1262s] Using Ruby DataSource: tzdb v2020d, tzinfo-data v2.2020.4.test
+[ 1262s] Run options: --seed 49594
+[ 1262s] 
+[ 1262s] # Running:
+[ 1262s] 
+[ 1312s] ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................E...............................................................................................................................................................................................................................................................................................................................................................................................................................................................SSSS......................................................................................................................................................................................................................................................................................................................
+[ 1312s] 
+[ 1312s] Finished in 49.308746s, 36.8292 runs/s, 267.7010 assertions/s.
+[ 1312s] 
+[ 1312s]   1) Error:
+[ 1312s] TZInfo::DataSources::TCZoneinfoDataSource#test_timezone_identifiers_excludes_those_that_cannot_be_utf8_encoded:
+[ 1312s] NoMethodError: undefined method `call' for nil:NilClass
+[ 1312s]     /home/abuild/rpmbuild/BUILD/tzinfo-2.0.4/usr/share/gems/gems/tzinfo-2.0.4/test/data_sources/tc_zoneinfo_data_source.rb:966:in `block in test_timezone_identifiers_excludes_those_that_cannot_be_utf8_encoded'
+[ 1312s] 
+[ 1312s] 1816 runs, 13200 assertions, 0 failures, 1 errors, 4 skips
+[ 1312s] 
+[ 1312s] You have skipped tests. Run with --verbose for details.
+[ 1312s] error: Bad exit status from /var/tmp/rpm-tmp.Gx9tPu (%check)
+[ 1312s] 
+[ 1312s] 
+[ 1312s] RPM build errors:
+[ 1312s]     bad date in %changelog: Web Mar 2 2022 liqiuyu <liqiuyu@kylinos.cn> - 2.0.4-1
+[ 1312s]     Bad exit status from /var/tmp/rpm-tmp.Gx9tPu (%check)
+[ 1312s] 
+[ 1312s] oe-RISCV-worker23 failed "build rubygem-tzinfo.spec" at Sat Apr 23 00:36:25 UTC 2022.
+[ 1312s] 

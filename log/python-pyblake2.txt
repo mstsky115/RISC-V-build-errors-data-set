@@ -1,0 +1,357 @@
+[    1s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    1s] Using BUILD_ARCH=riscv64
+[    1s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    1s] 
+[    1s] 
+[    1s] lamb72 started "build python-pyblake2.spec" at Sat Feb 18 20:04:45 UTC 2023.
+[    1s] 
+[    1s] Building python-pyblake2 for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'caf714ffb7951f4046c0497709ec546a'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-pyblake2.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-pyblake2.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-pyblake2.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7f1f24da28b81384a50e3930e651d4e0]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] cycle: libpython3_11-1_0 -> python311-base
+[    4s]   breaking dependency python311-base -> libpython3_11-1_0
+[    4s] cycle: libpython3_8-1_0 -> python38-base
+[    4s]   breaking dependency python38-base -> libpython3_8-1_0
+[    4s] cycle: libpython3_9-1_0 -> python39-base
+[    4s]   breaking dependency python39-base -> libpython3_9-1_0
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   10s] ### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   11s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   11s] Increasing log level from now on...
+[   11s] [    5.266311][  T402] sysrq: Changing Loglevel
+[   11s] [    5.266390][  T402] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=2a9e0db9-65f8-4269-8d49-c9df9868832d
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/python-pyblake2.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-pyblake2.spec build ...
+[   13s] initializing rpm db...
+[   14s] querying package ids...
+[   37s] [1/150] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   37s] [2/150] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   37s] [3/150] preinstalled attr-2.5.1-1.1
+[   37s] [4/150] preinstalled bash-5.2.15-8.1
+[   37s] [5/150] preinstalled bash-sh-5.2.15-8.1
+[   37s] [6/150] preinstalled binutils-2.39-3.1
+[   37s] [7/150] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   37s] [8/150] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   37s] [9/150] preinstalled build-mkbaselibs-20230215-1.1
+[   37s] [10/150] preinstalled bzip2-1.0.8-4.1
+[   37s] [11/150] preinstalled chkstat-1599_20221220-1.2
+[   37s] [12/150] preinstalled compat-usrmerge-build-84.87-5.1
+[   37s] [13/150] preinstalled compat-usrmerge-tools-84.87-5.1
+[   37s] [14/150] preinstalled coreutils-9.1-5.1
+[   37s] [15/150] preinstalled cpio-2.13-5.1
+[   37s] [16/150] preinstalled cpp-12-2.1
+[   37s] [17/150] preinstalled cpp12-12.2.1+git749-4.1
+[   37s] [18/150] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   37s] [19/150] preinstalled debugedit-5.0-5.1
+[   37s] [20/150] preinstalled diffutils-3.9-1.1
+[   37s] [21/150] preinstalled dwz-0.15-2.1
+[   37s] [22/150] preinstalled elfutils-0.188-3.2
+[   37s] [23/150] preinstalled file-5.44-1.1
+[   37s] [24/150] preinstalled file-magic-5.44-1.1
+[   37s] [25/150] preinstalled filesystem-84.87-12.1
+[   37s] [26/150] preinstalled fillup-1.42-279.1
+[   37s] [27/150] preinstalled findutils-4.9.0-2.1
+[   37s] [28/150] preinstalled gawk-5.2.1-2.1
+[   37s] [29/150] preinstalled gcc-12-2.1
+[   37s] [30/150] preinstalled gcc-PIE-12-2.1
+[   37s] [31/150] preinstalled gcc12-12.2.1+git749-4.1
+[   37s] [32/150] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   37s] [33/150] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   37s] [34/150] preinstalled gettext-tools-mini-0.21.1-1.1
+[   37s] [35/150] preinstalled glibc-2.37-1.1
+[   37s] [36/150] preinstalled glibc-devel-2.37-1.1
+[   37s] [37/150] preinstalled glibc-locale-base-2.37-1.1
+[   37s] [38/150] preinstalled grep-3.8-3.1
+[   37s] [39/150] preinstalled gzip-1.12-3.1
+[   37s] [40/150] preinstalled kernel-obs-build-6.1.12-1.1
+[   37s] [41/150] preinstalled libacl1-2.3.1-2.1
+[   37s] [42/150] preinstalled libasan8-13.0.1+git5428-6.1
+[   37s] [43/150] preinstalled libasm1-0.188-3.2
+[   37s] [44/150] preinstalled libatomic1-13.0.1+git5428-6.1
+[   37s] [45/150] preinstalled libattr1-2.5.1-1.1
+[   37s] [46/150] preinstalled libaudit1-3.0.6-4.1
+[   37s] [47/150] preinstalled libblkid1-2.38.1-7.1
+[   37s] [48/150] preinstalled libbz2-1-1.0.8-4.1
+[   37s] [49/150] preinstalled libcap-ng0-0.8.3-1.1
+[   37s] [50/150] preinstalled libcap2-2.67-1.1
+[   37s] [51/150] preinstalled libcrypt1-4.4.33-1.1
+[   37s] [52/150] preinstalled libctf-nobfd0-2.39-3.1
+[   37s] [53/150] preinstalled libctf0-2.39-3.1
+[   37s] [54/150] preinstalled libdb-4_8-4.8.30-39.1
+[   37s] [55/150] preinstalled libdw1-0.188-3.2
+[   37s] [56/150] preinstalled libeconf0-0.5.1-1.1
+[   37s] [57/150] preinstalled libelf1-0.188-3.2
+[   37s] [58/150] cumulate libexpat1-2.5.0-2.1
+[   37s] [59/150] preinstalled libfdisk1-2.38.1-7.1
+[   37s] [60/150] cumulate libffi8-3.4.4-1.1
+[   37s] [61/150] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   37s] [62/150] preinstalled libgcrypt20-1.10.1-1.1
+[   37s] [63/150] preinstalled libgdbm6-1.23-1.1
+[   37s] [64/150] preinstalled libgdbm_compat4-1.23-1.1
+[   37s] [65/150] preinstalled libgmp10-6.2.1-4.1
+[   37s] [66/150] preinstalled libgomp1-13.0.1+git5428-6.1
+[   37s] [67/150] preinstalled libgpg-error0-1.46-1.1
+[   37s] [68/150] preinstalled libisl23-0.25-1.1
+[   37s] [69/150] preinstalled liblua5_4-5-5.4.4-8.1
+[   37s] [70/150] preinstalled liblzma5-5.4.1-1.1
+[   37s] [71/150] preinstalled libmagic1-5.44-1.1
+[   37s] [72/150] preinstalled libmount1-2.38.1-7.1
+[   37s] [73/150] preinstalled libmpc3-1.3.1-1.2
+[   37s] [74/150] cumulate libmpdec3-2.5.1-2.1
+[   37s] [75/150] preinstalled libmpfr6-4.2.0-1.1
+[   37s] [76/150] preinstalled libncurses6-6.4.20230128-5.1
+[   37s] [77/150] preinstalled libpcre2-8-0-10.42-3.2
+[   37s] [78/150] preinstalled libpkgconf3-1.8.0-2.1
+[   37s] [79/150] preinstalled libpopt0-1.19-1.1
+[   37s] [80/150] preinstalled libreadline8-8.2-2.1
+[   37s] [81/150] preinstalled librpmbuild9-4.18.0-3.1
+[   37s] [82/150] preinstalled libseccomp2-2.5.4-2.1
+[   37s] [83/150] preinstalled libselinux1-3.4-2.1
+[   37s] [84/150] preinstalled libsemanage-conf-3.4-1.1
+[   37s] [85/150] preinstalled libsemanage2-3.4-1.1
+[   37s] [86/150] preinstalled libsepol2-3.4-1.1
+[   37s] [87/150] preinstalled libsmartcols1-2.38.1-7.1
+[   37s] [88/150] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   37s] [89/150] preinstalled libsubid4-4.13-3.1
+[   37s] [90/150] preinstalled libubsan1-13.0.1+git5428-6.1
+[   37s] [91/150] preinstalled libutempter0-1.2.0-3.2
+[   37s] [92/150] preinstalled libuuid1-2.38.1-7.1
+[   37s] [93/150] preinstalled libxcrypt-devel-4.4.33-1.1
+[   37s] [94/150] preinstalled libz1-1.2.13-2.1
+[   37s] [95/150] preinstalled libzstd1-1.5.2-2.1
+[   37s] [96/150] preinstalled linux-glibc-devel-6.1-1.1
+[   37s] [97/150] preinstalled login_defs-4.13-3.1
+[   37s] [98/150] preinstalled lua54-5.4.4-8.1
+[   37s] [99/150] preinstalled make-4.4-2.1
+[   37s] [100/150] preinstalled ncurses-utils-6.4.20230128-5.1
+[   37s] [101/150] preinstalled pam-1.5.2-12.1
+[   37s] [102/150] preinstalled patch-2.7.6-6.1
+[   37s] [103/150] preinstalled perl-5.36.0-4.1
+[   37s] [104/150] preinstalled perl-base-5.36.0-4.1
+[   37s] [105/150] preinstalled permissions-1599_20221220-1.2
+[   37s] [106/150] preinstalled permissions-config-1599_20221220-1.2
+[   37s] [107/150] preinstalled pkgconf-1.8.0-2.1
+[   37s] [108/150] preinstalled pkgconf-m4-1.8.0-2.1
+[   37s] [109/150] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   37s] [110/150] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   37s] [111/150] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   37s] [112/150] cumulate python-rpm-macros-20230128.e704796-1.2
+[   37s] [113/150] preinstalled qemu-linux-user-7.1.0-50.1
+[   37s] [114/150] preinstalled rpm-4.18.0-3.1
+[   37s] [115/150] preinstalled rpm-build-4.18.0-3.1
+[   37s] [116/150] preinstalled rpm-build-perl-4.18.0-3.1
+[   37s] [117/150] preinstalled rpm-config-SUSE-20220926-1.1
+[   37s] [118/150] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   37s] [119/150] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   37s] [120/150] preinstalled sed-4.9-2.1
+[   37s] [121/150] preinstalled shadow-4.13-3.1
+[   37s] [122/150] preinstalled system-group-hardware-20170617-24.1
+[   37s] [123/150] preinstalled system-user-root-20190513-2.1
+[   37s] [124/150] preinstalled systemd-rpm-macros-19-1.1
+[   37s] [125/150] preinstalled sysuser-shadow-3.1-5.1
+[   37s] [126/150] preinstalled tar-1.34-9.1
+[   37s] [127/150] preinstalled terminfo-base-6.4.20230128-5.1
+[   37s] [128/150] preinstalled update-alternatives-1.21.8-1.1
+[   37s] [129/150] preinstalled util-linux-2.38.1-7.1
+[   37s] [130/150] preinstalled which-2.21-5.1
+[   37s] [131/150] preinstalled xz-5.4.1-1.1
+[   37s] [132/150] cumulate libopenssl3-3.0.7-3.1
+[   37s] [133/150] cumulate python310-base-3.10.9-2.2
+[   37s] [134/150] cumulate python311-base-3.11.1-4.2
+[   37s] [135/150] cumulate python38-base-3.8.16-3.2
+[   37s] [136/150] cumulate python39-base-3.9.16-3.2
+[   37s] [137/150] cumulate libpython3_10-1_0-3.10.9-2.2
+[   37s] [138/150] cumulate libpython3_11-1_0-3.11.1-4.2
+[   37s] [139/150] cumulate libpython3_8-1_0-3.8.16-3.2
+[   37s] [140/150] cumulate libpython3_9-1_0-3.9.16-3.2
+[   37s] [141/150] cumulate python310-packaging-23.0-1.1
+[   37s] [142/150] cumulate python310-setuptools-65.6.3-1.2
+[   37s] [143/150] cumulate python311-devel-3.11.1-4.2
+[   37s] [144/150] cumulate python311-setuptools-65.6.3-1.2
+[   37s] [145/150] cumulate python38-devel-3.8.16-3.2
+[   37s] [146/150] cumulate python38-setuptools-65.6.3-1.2
+[   37s] [147/150] cumulate python39-devel-3.9.16-3.2
+[   37s] [148/150] cumulate python39-setuptools-65.6.3-1.2
+[   37s] [149/150] cumulate python310-devel-3.10.9-2.2
+[   37s] [150/150] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   37s] now installing cumulated packages
+[   38s] Preparing...                          ########################################
+[   38s] Updating / installing...
+[   38s] libmpdec3-2.5.1-2.1                   ########################################
+[   38s] libffi8-3.4.4-1.1                     ########################################
+[   38s] libexpat1-2.5.0-2.1                   ########################################
+[   38s] python-rpm-macros-20230128.e704796-1.2########################################
+[   38s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   39s] libopenssl3-3.0.7-3.1                 ########################################
+[   40s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   44s] python310-base-3.10.9-2.2             ########################################
+[   45s] libpython3_11-1_0-3.11.1-4.2          ########################################
+[   50s] python311-base-3.11.1-4.2             ########################################
+[   51s] libpython3_8-1_0-3.8.16-3.2           ########################################
+[   55s] python38-base-3.8.16-3.2              ########################################
+[   56s] libpython3_9-1_0-3.9.16-3.2           ########################################
+[   60s] python39-base-3.9.16-3.2              ########################################
+[   60s] python310-packaging-23.0-1.1          ########################################
+[   60s] python-rpm-packaging-20210526+a18ca48-########################################
+[   60s] python39-devel-3.9.16-3.2             ########################################
+[   61s] python39-setuptools-65.6.3-1.2        ########################################
+[   61s] python38-devel-3.8.16-3.2             ########################################
+[   62s] python38-setuptools-65.6.3-1.2        ########################################
+[   63s] python311-devel-3.11.1-4.2            ########################################
+[   64s] python311-setuptools-65.6.3-1.2       ########################################
+[   65s] python310-setuptools-65.6.3-1.2       ########################################
+[   65s] python310-devel-3.10.9-2.2            ########################################
+[   66s] now finalizing build dir...
+[   67s] ... running 01-add_abuild_user_to_trusted_group
+[   67s] ... running 02-set_timezone_to_utc
+[   67s] ... running 03-set-permissions-secure
+[   67s] ... running 11-hack_uname_version_to_kernel_version
+[   75s] -----------------------------------------------------------------
+[   75s] I have the following modifications for python-pyblake2.spec:
+[   75s] 22c22
+[   75s] < Release:        0
+[   75s] ---
+[   75s] > Release:        3.10
+[   81s] build target is riscv64-suse-linux
+[   81s] -----------------------------------------------------------------
+[   81s] ----- building python-pyblake2.spec (user abuild)
+[   81s] -----------------------------------------------------------------
+[   81s] -----------------------------------------------------------------
+[   85s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/caf714ffb7951f4046c0497709ec546a-python-pyblake2' /home/abuild/rpmbuild/SOURCES/python-pyblake2.spec
+[   91s] Building target platforms: riscv64-suse-linux
+[   91s] Building for target riscv64-suse-linux
+[   91s] setting SOURCE_DATE_EPOCH=1555545600
+[   92s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.rC4ubj
+[   92s] + umask 022
+[   92s] + cd /home/abuild/rpmbuild/BUILD
+[   92s] + cd /home/abuild/rpmbuild/BUILD
+[   92s] + rm -rf pyblake2-1.1.2
+[   92s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pyblake2-1.1.2.tar.gz
+[   92s] + STATUS=0
+[   92s] + '[' 0 -ne 0 ']'
+[   92s] + cd pyblake2-1.1.2
+[   92s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   92s] + RPM_EC=0
+[   92s] ++ jobs -p
+[   92s] + exit 0
+[   92s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.qEAjRL
+[   92s] + umask 022
+[   92s] + cd /home/abuild/rpmbuild/BUILD
+[   92s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pyblake2-1.1.2-3.10.riscv64
+[   92s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pyblake2-1.1.2-3.10.riscv64
+[   93s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   93s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pyblake2-1.1.2-3.10.riscv64
+[   93s] + cd pyblake2-1.1.2
+[   93s] + ref=/usr/lib/rpm
+[   93s] + mints=0
+[   93s] + case $(uname -m) in
+[   93s] ++ uname -m
+[   93s] + mints=20160911
+[   93s] + for s in guess sub
+[   93s] ++ find -maxdepth 8 -name config.guess
+[   93s] + for s in guess sub
+[   93s] ++ find -maxdepth 8 -name config.sub
+[   93s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[   93s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[   93s] ++ '[' -f _current_flavor ']'
+[   93s] ++ true
+[   93s] + last_flavor=
+[   93s] + '[' -z '' ']'
+[   93s] + last_flavor=tmp
+[   93s] + '[' tmp '!=' python38 ']'
+[   93s] + '[' -d build ']'
+[   93s] + '[' -d _build.python38 ']'
+[   93s] + echo python38
+[   93s] + python_flavor=python38
+[   93s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[   97s] running build
+[   97s] running build_ext
+[   97s] building 'pyblake2' extension
+[   97s] creating build
+[   97s] creating build/temp.linux-riscv64-cpython-38
+[   97s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.8 -c blake2b_impl.c -o build/temp.linux-riscv64-cpython-38/blake2b_impl.o
+[  100s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.8 -c blake2s_impl.c -o build/temp.linux-riscv64-cpython-38/blake2s_impl.o
+[  103s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.8 -c pyblake2module.c -o build/temp.linux-riscv64-cpython-38/pyblake2module.o
+[  108s] creating build/lib.linux-riscv64-cpython-38
+[  108s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing build/temp.linux-riscv64-cpython-38/blake2b_impl.o build/temp.linux-riscv64-cpython-38/blake2s_impl.o build/temp.linux-riscv64-cpython-38/pyblake2module.o -L/usr/lib64 -o build/lib.linux-riscv64-cpython-38/pyblake2.cpython-38-riscv64-linux-gnu.so
+[  130s] ++ '[' -f _current_flavor ']'
+[  130s] ++ cat _current_flavor
+[  130s] + last_flavor=python38
+[  130s] + '[' -z python38 ']'
+[  130s] + '[' python38 '!=' python39 ']'
+[  130s] + '[' -d build ']'
+[  130s] + mv build _build.python38
+[  130s] + '[' -d _build.python39 ']'
+[  130s] + echo python39
+[  130s] + python_flavor=python39
+[  130s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  134s] running build
+[  134s] running build_ext
+[  134s] building 'pyblake2' extension
+[  134s] creating build
+[  134s] creating build/temp.linux-riscv64-cpython-39
+[  134s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.9 -c blake2b_impl.c -o build/temp.linux-riscv64-cpython-39/blake2b_impl.o
+[  137s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.9 -c blake2s_impl.c -o build/temp.linux-riscv64-cpython-39/blake2s_impl.o
+[  140s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.9 -c pyblake2module.c -o build/temp.linux-riscv64-cpython-39/pyblake2module.o
+[  144s] creating build/lib.linux-riscv64-cpython-39
+[  144s] gcc -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing build/temp.linux-riscv64-cpython-39/blake2b_impl.o build/temp.linux-riscv64-cpython-39/blake2s_impl.o build/temp.linux-riscv64-cpython-39/pyblake2module.o -L/usr/lib64 -o build/lib.linux-riscv64-cpython-39/pyblake2.cpython-39-riscv64-linux-gnu.so
+[  165s] ++ '[' -f _current_flavor ']'
+[  165s] ++ cat _current_flavor
+[  165s] + last_flavor=python39
+[  165s] + '[' -z python39 ']'
+[  165s] + '[' python39 '!=' python311 ']'
+[  165s] + '[' -d build ']'
+[  165s] + mv build _build.python39
+[  165s] + '[' -d _build.python311 ']'
+[  165s] + echo python311
+[  165s] + python_flavor=python311
+[  165s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  168s] running build
+[  168s] running build_ext
+[  168s] building 'pyblake2' extension
+[  168s] creating build
+[  168s] creating build/temp.linux-riscv64-cpython-311
+[  168s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.11 -c blake2b_impl.c -o build/temp.linux-riscv64-cpython-311/blake2b_impl.o
+[  171s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.11 -c blake2s_impl.c -o build/temp.linux-riscv64-cpython-311/blake2s_impl.o
+[  174s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing -fPIC -DBLAKE2_COMPRESS_AUTO=1 -I/usr/include/python3.11 -c pyblake2module.c -o build/temp.linux-riscv64-cpython-311/pyblake2module.o
+[  176s] pyblake2module.c: In function ‘PyInit_pyblake2’:
+[  176s] pyblake2module.c:699:27: error: lvalue required as left operand of assignment
+[  176s]   699 |     Py_TYPE(&blake2bType) = &PyType_Type;
+[  176s]       |                           ^
+[  176s] pyblake2module.c:703:27: error: lvalue required as left operand of assignment
+[  176s]   703 |     Py_TYPE(&blake2sType) = &PyType_Type;
+[  176s]       |                           ^
+[  176s] error: command '/usr/bin/gcc' failed with exit code 1
+[  177s] error: Bad exit status from /var/tmp/rpm-tmp.qEAjRL (%build)
+[  177s] 
+[  177s] RPM build errors:
+[  177s]     Bad exit status from /var/tmp/rpm-tmp.qEAjRL (%build)
+[  177s] ### VM INTERACTION START ###
+[  177s] [  171.773469][    T1] sysrq: Power Off
+[  177s] [  171.777026][  T592] reboot: Power down
+[  178s] ### VM INTERACTION END ###
+[  178s] 
+[  178s] lamb72 failed "build python-pyblake2.spec" at Sat Feb 18 20:07:42 UTC 2023.
+[  178s] 

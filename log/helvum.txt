@@ -1,0 +1,846 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_9/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_9/root
+[    0s] 
+[    0s] 
+[    0s] beatles started "build helvum.spec" at Mon Feb 13 15:59:57 UTC 2023.
+[    0s] 
+[    0s] Building helvum for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '20e3ea77ee73c82fe7d502ba0e06948f'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_9/.build-srcdir/helvum.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_9/.build-srcdir/helvum.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/9/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_9/.build.rpmlist /var/cache/obs/worker/root_9/.build-srcdir/helvum.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [d36d127946f358da1136ab34d2b5c2b9]
+[    2s] 
+[    2s] copying packages...
+[    2s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    2s]   breaking dependency python310-base -> libpython3_10-1_0
+[    2s] cycle: llvm15-devel -> llvm15-polly-devel
+[    2s]   breaking dependency llvm15-polly-devel -> llvm15-devel
+[    2s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    2s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    2s] cycle: libgio-2_0-0 -> glib2-tools
+[    2s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    2s] cycle: girepository-1_0 -> libgirepository-1_0-1
+[    2s]   breaking dependency libgirepository-1_0-1 -> girepository-1_0
+[    2s] cycle: Mesa-dri -> Mesa
+[    2s]   breaking dependency Mesa -> Mesa-dri
+[    2s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    2s]   breaking dependency Mesa -> Mesa-libEGL1
+[    2s] cycle: Mesa -> Mesa-libGL1
+[    2s]   breaking dependency Mesa-libGL1 -> Mesa
+[    2s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    2s]   breaking dependency Mesa -> Mesa-libGL1
+[    2s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    2s]   breaking dependency libglvnd -> Mesa-dri
+[    2s] cycle: libpipewire-0_3-0 -> pipewire-modules-0_3
+[    2s]   breaking dependency pipewire-modules-0_3 -> libpipewire-0_3-0
+[    2s] cycle: fontconfig -> libfontconfig1
+[    2s]   breaking dependency libfontconfig1 -> fontconfig
+[    2s] cycle: gstreamer -> libgstreamer-1_0-0
+[    2s]   breaking dependency libgstreamer-1_0-0 -> gstreamer
+[    2s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstallocators-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgstapp-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstapp-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgstaudio-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstaudio-1_0-0
+[    2s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base -> libgstgl-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstgl-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgstriff-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstriff-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgsttag-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgsttag-1_0-0
+[    2s] cycle: gstreamer-plugins-base -> libgstvideo-1_0-0
+[    2s]   breaking dependency gstreamer-plugins-base -> libgstvideo-1_0-0
+[    2s] done
+[    2s] Detected virtio-serial support
+[    3s] booting kvm...
+[    3s] ### VM INTERACTION START ###
+[    3s] Using virtio-serial support
+[    3s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_9/.mount/boot/kernel -initrd /var/cache/obs/worker/root_9/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_9/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_9/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_9/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    6s] ### VM INTERACTION END ###
+[    6s] 2nd stage started in virtual machine
+[    6s] machine type: riscv64
+[    6s] Linux version: 6.1.10-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 6 07:27:26 UTC 2023 (2a0570b)
+[    6s] Increasing log level from now on...
+[    6s] [    2.593196][  T409] sysrq: Changing Loglevel
+[    6s] [    2.593283][  T409] sysrq: Loglevel set to 4
+[    6s] Enable sysrq operations
+[    6s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    6s] no label, UUID=55a5bd30-0f67-42f8-9d7a-8adf48d998b6
+[    6s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    6s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    6s] swapon /dev/vdb
+[    7s] WARNING: udev not running, creating extra device nodes
+[    7s] logging output to //.build.log...
+[    7s] processing recipe /.build-srcdir/helvum.spec ...
+[    7s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/helvum.spec build ...
+[    7s] initializing rpm db...
+[    8s] querying package ids...
+[   26s] [1/414] cumulate Mesa-KHR-devel-22.3.5-350.1
+[   26s] [2/414] cumulate Mesa-libglapi0-22.3.5-350.1
+[   26s] [3/414] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   26s] [4/414] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   26s] [5/414] cumulate adwaita-icon-theme-43-1.1
+[   26s] [6/414] preinstalled attr-2.5.1-1.1
+[   26s] [7/414] preinstalled bash-5.2.15-8.1
+[   26s] [8/414] preinstalled bash-sh-5.2.15-8.1
+[   26s] [9/414] preinstalled binutils-2.39-3.1
+[   26s] [10/414] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   26s] [11/414] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   26s] [12/414] preinstalled build-mkbaselibs-20230208-1.1
+[   26s] [13/414] preinstalled bzip2-1.0.8-4.1
+[   26s] [14/414] preinstalled chkstat-1599_20221220-1.2
+[   26s] [15/414] preinstalled compat-usrmerge-build-84.87-5.1
+[   26s] [16/414] preinstalled compat-usrmerge-tools-84.87-5.1
+[   26s] [17/414] preinstalled coreutils-9.1-5.1
+[   26s] [18/414] preinstalled cpio-2.13-5.1
+[   26s] [19/414] preinstalled cpp-12-2.1
+[   26s] [20/414] preinstalled cpp12-12.2.1+git749-4.1
+[   26s] [21/414] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   26s] [22/414] cumulate dbus-1-common-1.14.6-1.1
+[   26s] [23/414] preinstalled debugedit-5.0-5.1
+[   26s] [24/414] preinstalled diffutils-3.9-1.1
+[   26s] [25/414] preinstalled dwz-0.15-2.1
+[   26s] [26/414] preinstalled elfutils-0.188-3.2
+[   26s] [27/414] preinstalled file-5.44-1.1
+[   26s] [28/414] preinstalled file-magic-5.44-1.1
+[   26s] [29/414] preinstalled filesystem-84.87-11.1
+[   26s] [30/414] preinstalled fillup-1.42-279.1
+[   26s] [31/414] preinstalled findutils-4.9.0-2.1
+[   26s] [32/414] preinstalled gawk-5.2.1-2.1
+[   26s] [33/414] preinstalled gcc-12-2.1
+[   26s] [34/414] preinstalled gcc-PIE-12-2.1
+[   26s] [35/414] preinstalled gcc12-12.2.1+git749-4.1
+[   26s] [36/414] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   26s] [37/414] cumulate gettext-its-gtk4-4.8.3-1.3
+[   26s] [38/414] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   26s] [39/414] preinstalled gettext-tools-mini-0.21.1-1.1
+[   26s] [40/414] preinstalled glibc-2.37-1.1
+[   26s] [41/414] preinstalled glibc-devel-2.37-1.1
+[   26s] [42/414] preinstalled glibc-locale-base-2.37-1.1
+[   26s] [43/414] preinstalled grep-3.8-3.1
+[   26s] [44/414] cumulate gtk4-schema-4.8.3-1.3
+[   26s] [45/414] preinstalled gzip-1.12-3.1
+[   26s] [46/414] cumulate hicolor-icon-theme-0.17-4.1
+[   26s] [47/414] preinstalled kernel-obs-build-6.1.10-1.1
+[   26s] [48/414] cumulate libX11-data-1.8.1-4.1
+[   26s] [49/414] cumulate libXau6-1.0.11-1.1
+[   26s] [50/414] preinstalled libacl1-2.3.1-2.1
+[   26s] [51/414] preinstalled libasan8-13.0.1+git5428-6.1
+[   26s] [52/414] preinstalled libasm1-0.188-3.2
+[   26s] [53/414] cumulate libasound2-1.2.8-1.1
+[   26s] [54/414] preinstalled libatomic1-13.0.1+git5428-6.1
+[   26s] [55/414] preinstalled libattr1-2.5.1-1.1
+[   26s] [56/414] preinstalled libaudit1-3.0.6-4.1
+[   26s] [57/414] cumulate libavahi-common3-0.8-22.2
+[   26s] [58/414] cumulate libblkid-devel-2.38.1-6.1
+[   26s] [59/414] preinstalled libblkid1-2.38.1-6.1
+[   26s] [60/414] cumulate libbluetooth3-5.66-1.5
+[   26s] [61/414] cumulate libbrotlicommon1-1.0.9-1.1
+[   26s] [62/414] preinstalled libbz2-1-1.0.8-4.1
+[   26s] [63/414] cumulate libbz2-devel-1.0.8-4.1
+[   26s] [64/414] preinstalled libcap-ng0-0.8.3-1.1
+[   26s] [65/414] preinstalled libcap2-2.66-1.1
+[   26s] [66/414] cumulate libcdda_interface0-3.10.2-28.2
+[   26s] [67/414] cumulate libcom_err2-1.46.5-4.1
+[   26s] [68/414] preinstalled libcrypt1-4.4.33-1.1
+[   26s] [69/414] preinstalled libctf-nobfd0-2.39-3.1
+[   26s] [70/414] preinstalled libctf0-2.39-3.1
+[   26s] [71/414] cumulate libdatrie1-0.2.13-1.1
+[   26s] [72/414] preinstalled libdb-4_8-4.8.30-39.1
+[   26s] [73/414] cumulate libdrm2-2.4.115-1.1
+[   26s] [74/414] preinstalled libdw1-0.188-3.2
+[   26s] [75/414] preinstalled libeconf0-0.5.1-1.1
+[   26s] [76/414] cumulate libedit0-20210910.3.1-1.1
+[   26s] [77/414] preinstalled libelf1-0.188-3.2
+[   26s] [78/414] cumulate libepoxy0-1.5.10-2.1
+[   26s] [79/414] cumulate libexpat1-2.5.0-2.1
+[   26s] [80/414] preinstalled libfdisk1-2.38.1-6.1
+[   26s] [81/414] cumulate libfdk-aac2-2.0.0-2.1
+[   26s] [82/414] cumulate libffi8-3.4.4-1.1
+[   26s] [83/414] cumulate libfribidi0-1.0.12-1.1
+[   26s] [84/414] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   26s] [85/414] preinstalled libgcrypt20-1.10.1-1.1
+[   26s] [86/414] preinstalled libgdbm6-1.23-1.1
+[   26s] [87/414] preinstalled libgdbm_compat4-1.23-1.1
+[   26s] [88/414] cumulate libglib-2_0-0-2.74.5-1.1
+[   26s] [89/414] preinstalled libgmp10-6.2.1-4.1
+[   26s] [90/414] preinstalled libgomp1-13.0.1+git5428-6.1
+[   26s] [91/414] preinstalled libgpg-error0-1.46-1.1
+[   26s] [92/414] cumulate libgraphite2-3-1.3.14-3.1
+[   26s] [93/414] cumulate libicu72-ledata-72.1-1.1
+[   26s] [94/414] preinstalled libisl23-0.25-1.1
+[   26s] [95/414] cumulate libjack0-1.9.21-1.3
+[   26s] [96/414] cumulate libjbig2-2.1-4.1
+[   26s] [97/414] cumulate libjitterentropy3-3.4.1-1.1
+[   26s] [98/414] cumulate libjpeg8-8.2.2-72.1
+[   26s] [99/414] cumulate libkeyutils1-1.6.3-5.1
+[   26s] [100/414] cumulate liblcms2-2-2.14-3.3
+[   26s] [101/414] cumulate libldac2-2.0.2.3-4.1
+[   26s] [102/414] cumulate libltdl7-2.4.7-3.2
+[   26s] [103/414] preinstalled liblua5_4-5-5.4.4-8.1
+[   26s] [104/414] preinstalled liblzma5-5.4.1-1.1
+[   26s] [105/414] preinstalled libmagic1-5.44-1.1
+[   26s] [106/414] preinstalled libmount1-2.38.1-6.1
+[   26s] [107/414] preinstalled libmpc3-1.3.1-1.2
+[   26s] [108/414] cumulate libmpdec3-2.5.1-2.1
+[   26s] [109/414] preinstalled libmpfr6-4.2.0-1.1
+[   26s] [110/414] preinstalled libncurses6-6.4.20230128-5.1
+[   26s] [111/414] cumulate libnettle8-3.8.1-1.1
+[   26s] [112/414] cumulate libnghttp2-14-1.51.0-7.2
+[   26s] [113/414] cumulate libogg0-1.3.5-1.1
+[   26s] [114/414] cumulate libopus0-1.3.1-3.2
+[   26s] [115/414] cumulate liborc-0_4-0-0.4.33-1.1
+[   26s] [116/414] cumulate libpcre2-16-0-10.42-3.2
+[   26s] [117/414] cumulate libpcre2-32-0-10.42-3.2
+[   26s] [118/414] preinstalled libpcre2-8-0-10.42-3.2
+[   26s] [119/414] cumulate libpcre2-posix3-10.42-3.2
+[   26s] [120/414] cumulate libpixman-1-0-0.42.2-1.1
+[   26s] [121/414] preinstalled libpkgconf3-1.8.0-2.1
+[   26s] [122/414] cumulate libpng16-16-1.6.39-2.1
+[   26s] [123/414] preinstalled libpopt0-1.19-1.1
+[   26s] [124/414] preinstalled libreadline8-8.2-2.1
+[   26s] [125/414] preinstalled librpmbuild9-4.18.0-3.1
+[   26s] [126/414] cumulate libsasl2-3-2.1.28-4.2
+[   26s] [127/414] cumulate libsbc1-1.5-2.1
+[   26s] [128/414] preinstalled libseccomp2-2.5.4-2.1
+[   26s] [129/414] preinstalled libselinux1-3.4-2.1
+[   26s] [130/414] preinstalled libsemanage-conf-3.4-1.1
+[   26s] [131/414] preinstalled libsemanage2-3.4-1.1
+[   26s] [132/414] cumulate libsepol-devel-3.4-1.1
+[   26s] [133/414] preinstalled libsepol2-3.4-1.1
+[   26s] [134/414] cumulate libserd-0-0-0.30.12-1.1
+[   26s] [135/414] preinstalled libsmartcols1-2.38.1-6.1
+[   26s] [136/414] cumulate libspeex1-1.2.1-1.1
+[   26s] [137/414] cumulate libsqlite3-0-3.40.1-1.1
+[   26s] [138/414] cumulate libssh-config-0.10.4-1.2
+[   26s] [139/414] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   26s] [140/414] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   26s] [141/414] preinstalled libsubid4-4.13-3.1
+[   26s] [142/414] cumulate libsystemd0-mini-252.5-1.1
+[   26s] [143/414] cumulate libtasn1-6-4.19.0-1.1
+[   26s] [144/414] cumulate libthai-data-0.1.29-1.1
+[   26s] [145/414] cumulate libtheoradec1-1.1.1-30.1
+[   26s] [146/414] cumulate libturbojpeg0-8.2.2-72.1
+[   26s] [147/414] preinstalled libubsan1-13.0.1+git5428-6.1
+[   26s] [148/414] cumulate libudev-mini1-252.5-1.1
+[   26s] [149/414] cumulate libunistring5-1.1-1.1
+[   26s] [150/414] cumulate libunwind8-1.6.2-4.1
+[   26s] [151/414] preinstalled libutempter0-1.2.0-3.2
+[   26s] [152/414] preinstalled libuuid1-2.38.1-6.1
+[   26s] [153/414] cumulate libverto1-0.3.2-1.1
+[   26s] [154/414] cumulate libvisual-0_4-0-0.4.0-204.1
+[   26s] [155/414] cumulate libvulkan1-1.3.239.0-1.1
+[   26s] [156/414] cumulate libwayland-egl1-1.21.0-4.2
+[   26s] [157/414] cumulate libwebrtc_audio_processing1-0.3.1-1.1
+[   26s] [158/414] preinstalled libxcrypt-devel-4.4.33-1.1
+[   26s] [159/414] cumulate libxml2-2-2.10.3-3.1
+[   26s] [160/414] cumulate libxshmfence1-1.3.2-1.1
+[   26s] [161/414] cumulate libyaml-0-2-0.2.5-2.1
+[   26s] [162/414] preinstalled libz1-1.2.13-2.1
+[   26s] [163/414] cumulate libzstd-devel-1.5.2-2.1
+[   26s] [164/414] preinstalled libzstd1-1.5.2-2.1
+[   26s] [165/414] preinstalled linux-glibc-devel-6.1-1.1
+[   26s] [166/414] cumulate llvm15-polly-15.0.7-1.1
+[   26s] [167/414] preinstalled login_defs-4.13-3.1
+[   26s] [168/414] preinstalled lua54-5.4.4-8.1
+[   26s] [169/414] cumulate m4-1.4.18-7.1
+[   26s] [170/414] preinstalled make-4.4-2.1
+[   26s] [171/414] preinstalled ncurses-utils-6.4.20230128-5.1
+[   26s] [172/414] preinstalled pam-1.5.2-12.1
+[   26s] [173/414] preinstalled patch-2.7.6-6.1
+[   26s] [174/414] preinstalled perl-5.36.0-4.1
+[   26s] [175/414] preinstalled perl-base-5.36.0-4.1
+[   26s] [176/414] preinstalled permissions-1599_20221220-1.2
+[   26s] [177/414] preinstalled permissions-config-1599_20221220-1.2
+[   26s] [178/414] preinstalled pkgconf-1.8.0-2.1
+[   26s] [179/414] preinstalled pkgconf-m4-1.8.0-2.1
+[   26s] [180/414] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   26s] [181/414] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   26s] [182/414] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   26s] [183/414] cumulate python-rpm-macros-20230128.e704796-1.1
+[   26s] [184/414] preinstalled qemu-linux-user-7.1.0-49.1
+[   26s] [185/414] preinstalled rpm-4.18.0-3.1
+[   26s] [186/414] preinstalled rpm-build-4.18.0-3.1
+[   26s] [187/414] preinstalled rpm-build-perl-4.18.0-3.1
+[   26s] [188/414] preinstalled rpm-config-SUSE-20220926-1.1
+[   26s] [189/414] preinstalled rpmlint-mini-2.4.0+git20230206.a2c4626-9.3
+[   26s] [190/414] preinstalled rpmlint-strict-2.4.0+git20230206.a2c4626-1.1
+[   26s] [191/414] preinstalled sed-4.9-2.1
+[   26s] [192/414] preinstalled shadow-4.13-3.1
+[   26s] [193/414] preinstalled system-group-hardware-20170617-24.1
+[   26s] [194/414] cumulate system-user-lp-20170617-24.1
+[   26s] [195/414] preinstalled system-user-root-20190513-2.1
+[   26s] [196/414] preinstalled systemd-rpm-macros-19-1.1
+[   26s] [197/414] preinstalled sysuser-shadow-3.1-5.1
+[   26s] [198/414] preinstalled tar-1.34-9.1
+[   26s] [199/414] preinstalled terminfo-base-6.4.20230128-5.1
+[   26s] [200/414] cumulate timezone-2022g-2.1
+[   26s] [201/414] preinstalled update-alternatives-1.21.8-1.1
+[   26s] [202/414] preinstalled util-linux-2.38.1-6.1
+[   26s] [203/414] preinstalled which-2.21-5.1
+[   26s] [204/414] cumulate xkeyboard-config-2.38-1.1
+[   26s] [205/414] cumulate xorgproto-devel-2022.2-2.1
+[   26s] [206/414] preinstalled xz-5.4.1-1.1
+[   26s] [207/414] cumulate xz-devel-5.4.1-1.1
+[   26s] [208/414] cumulate zlib-devel-1.2.13-2.1
+[   26s] [209/414] cumulate autoconf-2.71-2.1
+[   26s] [210/414] cumulate cups-config-2.4.2-4.2
+[   26s] [211/414] cumulate fribidi-devel-1.0.12-1.1
+[   26s] [212/414] cumulate graphite2-devel-1.3.14-3.1
+[   26s] [213/414] cumulate libFLAC12-1.4.2-1.1
+[   26s] [214/414] cumulate libLLVM15-15.0.7-1.1
+[   26s] [215/414] cumulate libX11-xcb1-1.8.1-4.1
+[   26s] [216/414] cumulate libbrotlidec1-1.0.9-1.1
+[   26s] [217/414] cumulate libbrotlienc1-1.0.9-1.1
+[   26s] [218/414] cumulate libcamera-base0_0_4-0.0.4-1.1
+[   26s] [219/414] cumulate libcdda_paranoia0-3.10.2-28.2
+[   26s] [220/414] cumulate libdatrie-devel-0.2.13-1.1
+[   26s] [221/414] cumulate libdrm_amdgpu1-2.4.115-1.1
+[   26s] [222/414] cumulate libdrm_nouveau2-2.4.115-1.1
+[   26s] [223/414] cumulate libdrm_radeon1-2.4.115-1.1
+[   26s] [224/414] cumulate libexpat-devel-2.5.0-2.1
+[   26s] [225/414] cumulate libffi-devel-3.4.4-1.1
+[   26s] [226/414] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   26s] [227/414] cumulate libgthread-2_0-0-2.74.5-1.1
+[   26s] [228/414] cumulate libhogweed6-3.8.1-1.1
+[   26s] [229/414] cumulate libidn2-0-2.3.4-1.1
+[   26s] [230/414] cumulate libopenssl3-3.0.7-3.1
+[   26s] [231/414] cumulate libp11-kit0-0.24.1-2.1
+[   26s] [232/414] cumulate libpixman-1-0-devel-0.42.2-1.1
+[   26s] [233/414] cumulate libsord-0-0-0.16.14-1.1
+[   26s] [234/414] cumulate libstdc++-devel-12-2.1
+[   26s] [235/414] cumulate libtheoraenc1-1.1.1-30.1
+[   26s] [236/414] cumulate libusb-1_0-0-1.0.26-1.1
+[   26s] [237/414] cumulate libvorbis0-1.3.7-2.1
+[   26s] [238/414] cumulate libwayland-client0-1.21.0-4.2
+[   26s] [239/414] cumulate libwayland-server0-1.21.0-4.2
+[   26s] [240/414] cumulate libxcb1-1.15-2.1
+[   26s] [241/414] cumulate libxkbcommon0-1.5.0-1.1
+[   26s] [242/414] cumulate libXau-devel-1.0.11-1.1
+[   26s] [243/414] cumulate libdbus-1-3-1.14.6-1.1
+[   26s] [244/414] cumulate libgobject-2_0-0-2.74.5-1.1
+[   26s] [245/414] cumulate libicu72-72.1-1.1
+[   26s] [246/414] cumulate libjpeg8-devel-8.2.2-72.1
+[   26s] [247/414] cumulate libpng16-devel-1.6.39-2.1
+[   26s] [248/414] cumulate libthai0-0.1.29-1.1
+[   26s] [249/414] cumulate libtiff6-4.5.0-2.1
+[   26s] [250/414] cumulate shared-mime-info-2.2-1.1
+[   26s] [251/414] cumulate krb5-mini-1.20.1-2.3
+[   26s] [252/414] cumulate automake-1.16.5-3.1
+[   26s] [253/414] cumulate libLTO15-15.0.7-1.1
+[   26s] [254/414] cumulate libclang-cpp15-15.0.7-1.1
+[   26s] [255/414] cumulate libicu-devel-72.1-1.1
+[   26s] [256/414] cumulate libvorbisenc2-1.3.7-2.1
+[   26s] [257/414] cumulate libwayland-cursor0-1.21.0-4.2
+[   26s] [258/414] cumulate libxcb-composite0-1.15-2.1
+[   26s] [259/414] cumulate libxcb-damage0-1.15-2.1
+[   26s] [260/414] cumulate libxcb-dpms0-1.15-2.1
+[   26s] [261/414] cumulate libxcb-dri2-0-1.15-2.1
+[   26s] [262/414] cumulate libxcb-dri3-0-1.15-2.1
+[   26s] [263/414] cumulate libxcb-glx0-1.15-2.1
+[   26s] [264/414] cumulate libxcb-present0-1.15-2.1
+[   26s] [265/414] cumulate libxcb-randr0-1.15-2.1
+[   26s] [266/414] cumulate libxcb-record0-1.15-2.1
+[   26s] [267/414] cumulate libxcb-render0-1.15-2.1
+[   26s] [268/414] cumulate libxcb-res0-1.15-2.1
+[   26s] [269/414] cumulate libxcb-screensaver0-1.15-2.1
+[   26s] [270/414] cumulate libxcb-shape0-1.15-2.1
+[   26s] [271/414] cumulate libxcb-shm0-1.15-2.1
+[   26s] [272/414] cumulate libxcb-sync1-1.15-2.1
+[   26s] [273/414] cumulate libxcb-xf86dri0-1.15-2.1
+[   26s] [274/414] cumulate libxcb-xfixes0-1.15-2.1
+[   26s] [275/414] cumulate libxcb-xinerama0-1.15-2.1
+[   26s] [276/414] cumulate libxcb-xinput0-1.15-2.1
+[   26s] [277/414] cumulate libxcb-xkb1-1.15-2.1
+[   26s] [278/414] cumulate libxcb-xtest0-1.15-2.1
+[   26s] [279/414] cumulate libxcb-xv0-1.15-2.1
+[   26s] [280/414] cumulate libxcb-xvmc0-1.15-2.1
+[   26s] [281/414] cumulate libxkbcommon-devel-1.5.0-1.1
+[   26s] [282/414] cumulate lld15-15.0.7-1.1
+[   26s] [283/414] cumulate llvm15-15.0.7-1.1
+[   26s] [284/414] cumulate llvm15-gold-15.0.7-1.1
+[   26s] [285/414] cumulate libX11-6-1.8.1-4.1
+[   26s] [286/414] cumulate libavahi-client3-0.8-22.2
+[   26s] [287/414] cumulate libfreetype6-2.12.1-4.1
+[   26s] [288/414] cumulate libgraphene-1_0-0-1.10.8-1.1
+[   26s] [289/414] cumulate libldap2-2.6.3-3.2
+[   26s] [290/414] cumulate libpng16-compat-devel-1.6.39-2.1
+[   26s] [291/414] cumulate libpsl5-0.21.2-1.1
+[   26s] [292/414] cumulate libsratom-0-0-0.6.10-1.1
+[   26s] [293/414] cumulate libthai-devel-0.1.29-1.1
+[   26s] [294/414] cumulate libbrotli-devel-1.0.9-1.1
+[   26s] [295/414] cumulate libgbm1-22.3.5-350.1
+[   26s] [296/414] cumulate libgudev-1_0-0-237-2.1
+[   26s] [297/414] cumulate libssh4-0.10.4-1.2
+[   26s] [298/414] cumulate pcre2-devel-10.42-3.2
+[   26s] [299/414] cumulate libtiff-devel-4.5.0-2.1
+[   26s] [300/414] cumulate libgnutls30-3.7.8-3.1
+[   26s] [301/414] cumulate libXdamage1-1.1.6-1.2
+[   26s] [302/414] cumulate libXext6-1.3.5-1.1
+[   26s] [303/414] cumulate libXfixes3-6.0.0-2.1
+[   26s] [304/414] cumulate libXrender1-0.9.11-1.1
+[   26s] [305/414] cumulate libclang13-15.0.7-1.1
+[   26s] [306/414] cumulate libselinux-devel-3.4-2.1
+[   26s] [307/414] cumulate rust1.66-1.66.0-2.2
+[   26s] [308/414] cumulate libharfbuzz0-6.0.0-2.1
+[   26s] [309/414] cumulate liblilv-0-0-0.24.12-1.5
+[   26s] [310/414] cumulate libtool-2.4.7-3.2
+[   26s] [311/414] cumulate freetype2-devel-2.12.1-4.1
+[   26s] [312/414] cumulate libcamera0_0_4-0.0.4-1.1
+[   26s] [313/414] cumulate libcups2-2.4.2-4.2
+[   26s] [314/414] cumulate libsndfile1-1.1.0-1.2
+[   26s] [315/414] cumulate wayland-devel-1.21.0-4.2
+[   26s] [316/414] cumulate libcurl4-7.87.0-1.3
+[   26s] [317/414] cumulate libxcb-devel-1.15-2.1
+[   26s] [318/414] cumulate libharfbuzz-subset0-6.0.0-2.1
+[   26s] [319/414] cumulate rust-1.66.0-1.2
+[   26s] [320/414] cumulate libXi6-1.8-1.1
+[   26s] [321/414] cumulate libXinerama1-1.1.5-1.1
+[   26s] [322/414] cumulate libXv1-1.0.12-1.1
+[   26s] [323/414] cumulate libXxf86vm1-1.1.5-1.1
+[   26s] [324/414] cumulate libharfbuzz-icu0-6.0.0-2.1
+[   26s] [325/414] cumulate libmount-devel-2.38.1-6.1
+[   26s] [326/414] cumulate cargo1.66-1.66.0-2.2
+[   26s] [327/414] cumulate clang15-15.0.7-1.1
+[   26s] [328/414] cumulate libXcursor1-1.2.1-1.1
+[   26s] [329/414] cumulate libXrandr2-1.5.3-1.1
+[   26s] [330/414] cumulate libharfbuzz-gobject0-6.0.0-2.1
+[   26s] [331/414] cumulate libX11-devel-1.8.1-4.1
+[   26s] [332/414] cumulate libpulse0-16.1-2.1
+[   26s] [333/414] cumulate cargo-1.66.0-1.2
+[   26s] [334/414] cumulate libXext-devel-1.3.5-1.1
+[   26s] [335/414] cumulate libXfixes-devel-6.0.0-2.1
+[   26s] [336/414] cumulate libXrender-devel-0.9.11-1.1
+[   26s] [337/414] cumulate libXdamage-devel-1.1.6-1.2
+[   26s] [338/414] cumulate libXinerama-devel-1.1.5-1.1
+[   26s] [339/414] cumulate libXcursor-devel-1.2.1-1.1
+[   26s] [340/414] cumulate libXi-devel-1.8-1.1
+[   26s] [341/414] cumulate libXrandr-devel-1.5.3-1.1
+[   26s] [342/414] cumulate libglvnd-1.6.0-1.1
+[   26s] [343/414] cumulate llvm15-polly-devel-15.0.7-1.1
+[   26s] [344/414] cumulate libfontconfig1-2.14.2-1.1
+[   26s] [345/414] cumulate python310-base-3.10.9-2.2
+[   26s] [346/414] cumulate libgio-2_0-0-2.74.5-1.1
+[   26s] [347/414] cumulate gio-branding-upstream-2.74.5-1.1
+[   26s] [348/414] cumulate libglvnd-devel-1.6.0-1.1
+[   26s] [349/414] cumulate libpython3_10-1_0-3.10.9-2.2
+[   26s] [350/414] cumulate python310-packaging-23.0-1.1
+[   26s] [351/414] cumulate fontconfig-2.14.2-1.1
+[   26s] [352/414] cumulate fontconfig-devel-2.14.2-1.1
+[   26s] [353/414] cumulate libcloudproviders0-0.3.1-3.2
+[   26s] [354/414] cumulate libjson-glib-1_0-0-1.6.6-2.1
+[   26s] [355/414] cumulate Mesa-22.3.5-350.1
+[   26s] [356/414] cumulate clang-tools-15.0.7-1.1
+[   26s] [357/414] cumulate gdk-pixbuf-query-loaders-2.42.10-1.2
+[   26s] [358/414] cumulate glib2-tools-2.74.5-1.1
+[   26s] [359/414] cumulate libXft2-2.3.7-1.1
+[   26s] [360/414] cumulate libcolord2-1.4.6-2.1
+[   26s] [361/414] cumulate vulkan-headers-1.3.239.0-1.1
+[   26s] [362/414] cumulate libgirepository-1_0-1-1.74.0-2.1
+[   26s] [363/414] cumulate libgstreamer-1_0-0-1.22.0-2.1
+[   26s] [364/414] cumulate llvm15-devel-15.0.7-1.1
+[   26s] [365/414] cumulate libcairo2-1.17.6-1.1
+[   26s] [366/414] cumulate pipewire-modules-0_3-0.3.65-1.3
+[   26s] [367/414] cumulate Mesa-libEGL1-22.3.5-350.1
+[   26s] [368/414] cumulate pipewire-spa-plugins-0_2-0.3.65-1.3
+[   26s] [369/414] cumulate Mesa-libGL1-22.3.5-350.1
+[   26s] [370/414] cumulate girepository-1_0-1.74.0-2.1
+[   26s] [371/414] cumulate libpipewire-0_3-0-0.3.65-1.3
+[   26s] [372/414] cumulate vulkan-devel-1.3.239.0-1.1
+[   26s] [373/414] cumulate libcairo-gobject2-1.17.6-1.1
+[   26s] [374/414] cumulate libcairo-script-interpreter2-1.17.6-1.1
+[   26s] [375/414] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   26s] [376/414] cumulate Mesa-libEGL-devel-22.3.5-350.1
+[   26s] [377/414] cumulate Mesa-libGL-devel-22.3.5-350.1
+[   26s] [378/414] cumulate gstreamer-1.22.0-2.1
+[   26s] [379/414] cumulate clang15-devel-15.0.7-1.1
+[   26s] [380/414] cumulate libXft-devel-2.3.7-1.1
+[   26s] [381/414] cumulate Mesa-dri-22.3.5-350.1
+[   26s] [382/414] cumulate libgdk_pixbuf-2_0-0-2.42.10-1.2
+[   26s] [383/414] cumulate libtracker-sparql-3_0-0-3.4.2-1.1
+[   26s] [384/414] cumulate glib2-devel-2.74.5-1.1
+[   26s] [385/414] cumulate libpango-1_0-0-1.50.12-1.1
+[   26s] [386/414] cumulate clang-devel-15.0.7-1.1
+[   26s] [387/414] cumulate pipewire-devel-0.3.65-1.3
+[   26s] [388/414] cumulate typelib-1_0-GdkPixbuf-2_0-2.42.10-1.2
+[   26s] [389/414] cumulate typelib-1_0-Graphene-1_0-1.10.8-1.1
+[   26s] [390/414] cumulate typelib-1_0-HarfBuzz-0_0-6.0.0-2.1
+[   26s] [391/414] cumulate libepoxy-devel-1.5.10-2.1
+[   26s] [392/414] cumulate cairo-devel-1.17.6-1.1
+[   26s] [393/414] cumulate gstreamer-plugins-base-1.22.0-1.1
+[   26s] [394/414] cumulate libgraphene-devel-1.10.8-1.1
+[   26s] [395/414] cumulate typelib-1_0-GdkPixdata-2_0-2.42.10-1.2
+[   26s] [396/414] cumulate typelib-1_0-Pango-1_0-1.50.12-1.1
+[   26s] [397/414] cumulate libgstallocators-1_0-0-1.22.0-1.1
+[   26s] [398/414] cumulate libgstapp-1_0-0-1.22.0-1.1
+[   26s] [399/414] cumulate libgsttag-1_0-0-1.22.0-1.1
+[   26s] [400/414] cumulate libgstvideo-1_0-0-1.22.0-1.1
+[   26s] [401/414] cumulate harfbuzz-devel-6.0.0-2.1
+[   26s] [402/414] cumulate libgstaudio-1_0-0-1.22.0-1.1
+[   26s] [403/414] cumulate gdk-pixbuf-devel-2.42.10-1.2
+[   26s] [404/414] cumulate pango-devel-1.50.12-1.1
+[   26s] [405/414] cumulate libgstgl-1_0-0-1.22.0-1.1
+[   26s] [406/414] cumulate libgstriff-1_0-0-1.22.0-1.1
+[   26s] [407/414] cumulate libgstpbutils-1_0-0-1.22.0-1.1
+[   26s] [408/414] cumulate libgstplay-1_0-0-1.22.0-3.1
+[   26s] [409/414] cumulate libgstplayer-1_0-0-1.22.0-3.1
+[   26s] [410/414] cumulate libgtk-4-1-4.8.3-1.3
+[   26s] [411/414] cumulate gtk4-tools-4.8.3-1.3
+[   26s] [412/414] cumulate typelib-1_0-Gtk-4_0-4.8.3-1.3
+[   26s] [413/414] cumulate gtk4-devel-tools-4.8.3-1.3
+[   26s] [414/414] cumulate gtk4-devel-4.8.3-1.3
+[   26s] now installing cumulated packages
+[   27s] Preparing...                          ########################################
+[   27s] Updating / installing...
+[   27s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   27s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   27s] xorgproto-devel-2022.2-2.1            ########################################
+[   27s] libexpat1-2.5.0-2.1                   ########################################
+[   27s] libdrm2-2.4.115-1.1                   ########################################
+[   27s] libpng16-16-1.6.39-2.1                ########################################
+[   27s] libffi8-3.4.4-1.1                     ########################################
+[   27s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   27s] libwayland-client0-1.21.0-4.2         ########################################
+[   27s] libjpeg8-8.2.2-72.1                   ########################################
+[   27s] libgraphene-1_0-0-1.10.8-1.1          ########################################
+[   28s] zlib-devel-1.2.13-2.1                 ########################################
+[   28s] libudev-mini1-252.5-1.1               ########################################
+[   28s] libogg0-1.3.5-1.1                     ########################################
+[   28s] libwayland-egl1-1.21.0-4.2            ########################################
+[   28s] libvulkan1-1.3.239.0-1.1              ########################################
+[   28s] libsystemd0-mini-252.5-1.1            ########################################
+[   28s] libfribidi0-1.0.12-1.1                ########################################
+[   28s] libvorbis0-1.3.7-2.1                  ########################################
+[   28s] libwayland-server0-1.21.0-4.2         ########################################
+[   28s] libxml2-2-2.10.3-3.1                  ########################################
+[   28s] libunistring5-1.1-1.1                 ########################################
+[   28s] libidn2-0-2.3.4-1.1                   ########################################
+[   28s] libserd-0-0-0.30.12-1.1               ########################################
+[   28s] liborc-0_4-0-0.4.33-1.1               ########################################
+[   29s] libopus0-1.3.1-3.2                    ########################################
+[   29s] libepoxy0-1.5.10-2.1                  ########################################
+[   29s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   29s] libbrotlidec1-1.0.9-1.1               ########################################
+[   29s] libfreetype6-2.12.1-4.1               ########################################
+[   29s] libfontconfig1-2.14.2-1.1             ########################################
+[   29s] fontconfig-2.14.2-1.1                 ########################################
+[   29s] libavahi-common3-0.8-22.2             ########################################
+[   29s] Mesa-libglapi0-22.3.5-350.1           ########################################
+[   29s] libsord-0-0-0.16.14-1.1               ########################################
+[   29s] shared-mime-info-2.2-1.1              ########################################
+[   34s] gio-branding-upstream-2.74.5-1.1      ########################################
+[   34s] libgio-2_0-0-2.74.5-1.1               ########################################
+[   35s] glib2-tools-2.74.5-1.1                ########################################
+[   35s] No schema files found: doing nothing.
+[   35s] libcloudproviders0-0.3.1-3.2          ########################################
+[   35s] libgbm1-22.3.5-350.1                  ########################################
+[   35s] libvorbisenc2-1.3.7-2.1               ########################################
+[   35s] libwayland-cursor0-1.21.0-4.2         ########################################
+[   35s] libffi-devel-3.4.4-1.1                ########################################
+[   35s] wayland-devel-1.21.0-4.2              ########################################
+[   35s] m4-1.4.18-7.1                         ########################################
+[   35s] libxshmfence1-1.3.2-1.1               ########################################
+[   35s] libunwind8-1.6.2-4.1                  ########################################
+[   35s] libcamera-base0_0_4-0.0.4-1.1         ########################################
+[   35s] libpixman-1-0-0.42.2-1.1              ########################################
+[   35s] libnettle8-3.8.1-1.1                  ########################################
+[   35s] libgraphite2-3-1.3.14-3.1             ########################################
+[   35s] libharfbuzz0-6.0.0-2.1                ########################################
+[   35s] libharfbuzz-gobject0-6.0.0-2.1        ########################################
+[   36s] libdatrie1-0.2.13-1.1                 ########################################
+[   36s] libcdda_interface0-3.10.2-28.2        ########################################
+[   36s] libasound2-1.2.8-1.1                  ########################################
+[   36s] libXau6-1.0.11-1.1                    ########################################
+[   36s] libxcb1-1.15-2.1                      ########################################
+[   36s] libxcb-dri2-0-1.15-2.1                ########################################
+[   36s] libxcb-dri3-0-1.15-2.1                ########################################
+[   36s] libxcb-present0-1.15-2.1              ########################################
+[   36s] libxcb-randr0-1.15-2.1                ########################################
+[   36s] libxcb-shm0-1.15-2.1                  ########################################
+[   36s] libxcb-sync1-1.15-2.1                 ########################################
+[   36s] libxcb-xfixes0-1.15-2.1               ########################################
+[   36s] libxcb-glx0-1.15-2.1                  ########################################
+[   36s] libxcb-render0-1.15-2.1               ########################################
+[   36s] libX11-data-1.8.1-4.1                 ########################################
+[   36s] libX11-6-1.8.1-4.1                    ########################################
+[   37s] libXext6-1.3.5-1.1                    ########################################
+[   37s] libXrender1-0.9.11-1.1                ########################################
+[   37s] libXfixes3-6.0.0-2.1                  ########################################
+[   37s] libXi6-1.8-1.1                        ########################################
+[   37s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   37s] libXcursor1-1.2.1-1.1                 ########################################
+[   37s] libXrandr2-1.5.3-1.1                  ########################################
+[   37s] libXinerama1-1.1.5-1.1                ########################################
+[   37s] libXdamage1-1.1.6-1.2                 ########################################
+[   37s] libXft2-2.3.7-1.1                     ########################################
+[   37s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   37s] libopenssl3-3.0.7-3.1                 ########################################
+[   37s] Mesa-KHR-devel-22.3.5-350.1           ########################################
+[   37s] libXv1-1.0.12-1.1                     ########################################
+[   37s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   38s] libxcb-composite0-1.15-2.1            ########################################
+[   38s] libxcb-damage0-1.15-2.1               ########################################
+[   38s] libxcb-dpms0-1.15-2.1                 ########################################
+[   38s] libxcb-record0-1.15-2.1               ########################################
+[   38s] libxcb-res0-1.15-2.1                  ########################################
+[   38s] libxcb-screensaver0-1.15-2.1          ########################################
+[   38s] libxcb-shape0-1.15-2.1                ########################################
+[   38s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   38s] libxcb-xinerama0-1.15-2.1             ########################################
+[   38s] libxcb-xinput0-1.15-2.1               ########################################
+[   38s] libxcb-xkb1-1.15-2.1                  ########################################
+[   38s] libxcb-xtest0-1.15-2.1                ########################################
+[   38s] libxcb-xv0-1.15-2.1                   ########################################
+[   38s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   38s] libXau-devel-1.0.11-1.1               ########################################
+[   38s] libxcb-devel-1.15-2.1                 ########################################
+[   39s] libX11-devel-1.8.1-4.1                ########################################
+[   39s] libXext-devel-1.3.5-1.1               ########################################
+[   39s] libXrender-devel-0.9.11-1.1           ########################################
+[   39s] libXfixes-devel-6.0.0-2.1             ########################################
+[   39s] libXrandr-devel-1.5.3-1.1             ########################################
+[   39s] libXdamage-devel-1.1.6-1.2            ########################################
+[   39s] libXcursor-devel-1.2.1-1.1            ########################################
+[   39s] libXi-devel-1.8-1.1                   ########################################
+[   39s] libXinerama-devel-1.1.5-1.1           ########################################
+[   39s] libcdda_paranoia0-3.10.2-28.2         ########################################
+[   39s] libdatrie-devel-0.2.13-1.1            ########################################
+[   39s] libharfbuzz-subset0-6.0.0-2.1         ########################################
+[   39s] graphite2-devel-1.3.14-3.1            ########################################
+[   39s] libhogweed6-3.8.1-1.1                 ########################################
+[   39s] libpixman-1-0-devel-0.42.2-1.1        ########################################
+[   39s] autoconf-2.71-2.1                     ########################################
+[   40s] automake-1.16.5-3.1                   ########################################
+[   40s] libjson-glib-1_0-0-1.6.6-2.1          ########################################
+[   40s] gdk-pixbuf-query-loaders-2.42.10-1.2  ########################################
+[   40s] girepository-1_0-1.74.0-2.1           ########################################
+[   40s] libgirepository-1_0-1-1.74.0-2.1      ########################################
+[   40s] typelib-1_0-HarfBuzz-0_0-6.0.0-2.1    ########################################
+[   40s] typelib-1_0-Graphene-1_0-1.10.8-1.1   ########################################
+[   40s] libsratom-0-0-0.6.10-1.1              ########################################
+[   40s] liblilv-0-0-0.24.12-1.5               ########################################
+[   40s] libbrotlienc1-1.0.9-1.1               ########################################
+[   40s] libbrotli-devel-1.0.9-1.1             ########################################
+[   40s] libpsl5-0.21.2-1.1                    ########################################
+[   40s] fribidi-devel-1.0.12-1.1              ########################################
+[   40s] libFLAC12-1.4.2-1.1                   ########################################
+[   40s] libtheoraenc1-1.1.1-30.1              ########################################
+[   40s] libusb-1_0-0-1.0.26-1.1               ########################################
+[   40s] libgudev-1_0-0-237-2.1                ########################################
+[   40s] libpng16-compat-devel-1.6.39-2.1      ########################################
+[   40s] libpng16-devel-1.6.39-2.1             ########################################
+[   41s] libp11-kit0-0.24.1-2.1                ########################################
+[   41s] libdrm_amdgpu1-2.4.115-1.1            ########################################
+[   41s] libdrm_nouveau2-2.4.115-1.1           ########################################
+[   41s] libdrm_radeon1-2.4.115-1.1            ########################################
+[   41s] libexpat-devel-2.5.0-2.1              ########################################
+[   41s] libgthread-2_0-0-2.74.5-1.1           ########################################
+[   41s] xz-devel-5.4.1-1.1                    ########################################
+[   41s] xkeyboard-config-2.38-1.1             ########################################
+[   41s] libxkbcommon0-1.5.0-1.1               ########################################
+[   41s] libxkbcommon-devel-1.5.0-1.1          ########################################
+[   42s] timezone-2022g-2.1                    ########################################
+[   42s] /usr/sbin/useradd -r -c Printing daemon -d /var/spool/lpd -g lp lp -s /usr/sbin/nologin
+[   42s] system-user-lp-20170617-24.1          ########################################
+[   42s] cups-config-2.4.2-4.2                 ########################################
+[   42s] python-rpm-macros-20230128.e704796-1.1########################################
+[   42s] llvm15-polly-15.0.7-1.1               ########################################
+[   43s] libzstd-devel-1.5.2-2.1               ########################################
+[   43s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   43s] libwebrtc_audio_processing1-0.3.1-1.1 ########################################
+[   43s] libvisual-0_4-0-0.4.0-204.1           ########################################
+[   43s] libverto1-0.3.2-1.1                   ########################################
+[   43s] libturbojpeg0-8.2.2-72.1              ########################################
+[   43s] libjpeg8-devel-8.2.2-72.1             ########################################
+[   43s] libtheoradec1-1.1.1-30.1              ########################################
+[   43s] libthai-data-0.1.29-1.1               ########################################
+[   43s] libthai0-0.1.29-1.1                   ########################################
+[   43s] libthai-devel-0.1.29-1.1              ########################################
+[   43s] libtasn1-6-4.19.0-1.1                 ########################################
+[   50s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   50s] libstdc++-devel-12-2.1                ########################################
+[   50s] libssh-config-0.10.4-1.2              ########################################
+[   50s] libsqlite3-0-3.40.1-1.1               ########################################
+[   50s] libspeex1-1.2.1-1.1                   ########################################
+[   50s] libsndfile1-1.1.0-1.2                 ########################################
+[   50s] libsepol-devel-3.4-1.1                ########################################
+[   50s] libsbc1-1.5-2.1                       ########################################
+[   50s] libsasl2-3-2.1.28-4.2                 ########################################
+[   50s] libldap2-2.6.3-3.2                    ########################################
+[   50s] libpcre2-posix3-10.42-3.2             ########################################
+[   50s] libpcre2-32-0-10.42-3.2               ########################################
+[   50s] libpcre2-16-0-10.42-3.2               ########################################
+[   50s] pcre2-devel-10.42-3.2                 ########################################
+[   50s] libselinux-devel-3.4-2.1              ########################################
+[   50s] libnghttp2-14-1.51.0-7.2              ########################################
+[   50s] libmpdec3-2.5.1-2.1                   ########################################
+[   51s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   53s] python310-base-3.10.9-2.2             ########################################
+[   53s] python310-packaging-23.0-1.1          ########################################
+[   54s] vulkan-headers-1.3.239.0-1.1          ########################################
+[   54s] vulkan-devel-1.3.239.0-1.1            ########################################
+[   54s] libltdl7-2.4.7-3.2                    ########################################
+[   55s] libtool-2.4.7-3.2                     ########################################
+[   55s] libldac2-2.0.2.3-4.1                  ########################################
+[   55s] liblcms2-2-2.14-3.3                   ########################################
+[   55s] libcolord2-1.4.6-2.1                  ########################################
+[   55s] libkeyutils1-1.6.3-5.1                ########################################
+[   55s] libjitterentropy3-3.4.1-1.1           ########################################
+[   55s] libgnutls30-3.7.8-3.1                 ########################################
+[   55s] libcamera0_0_4-0.0.4-1.1              ########################################
+[   55s] libjbig2-2.1-4.1                      ########################################
+[   55s] libtiff6-4.5.0-2.1                    ########################################
+[   55s] libgdk_pixbuf-2_0-0-2.42.10-1.2       ########################################
+[   56s] typelib-1_0-GdkPixbuf-2_0-2.42.10-1.2 ########################################
+[   56s] typelib-1_0-GdkPixdata-2_0-2.42.10-1.2########################################
+[   56s] libtiff-devel-4.5.0-2.1               ########################################
+[   56s] libjack0-1.9.21-1.3                   ########################################
+[   58s] libicu72-ledata-72.1-1.1              ########################################
+[   59s] libicu72-72.1-1.1                     ########################################
+[   59s] libtracker-sparql-3_0-0-3.4.2-1.1     ########################################
+[   59s] libicu-devel-72.1-1.1                 ########################################
+[   59s] libharfbuzz-icu0-6.0.0-2.1            ########################################
+[   59s] libfdk-aac2-2.0.0-2.1                 ########################################
+[   59s] libedit0-20210910.3.1-1.1             ########################################
+[   66s] libLLVM15-15.0.7-1.1                  ########################################
+[   70s] libclang-cpp15-15.0.7-1.1             ########################################
+[   70s] Mesa-libEGL1-22.3.5-350.1             ########################################
+[   70s] libglvnd-1.6.0-1.1                    ########################################
+[   70s] Mesa-libGL1-22.3.5-350.1              ########################################
+[   70s] Mesa-22.3.5-350.1                     ########################################
+[   72s] Mesa-dri-22.3.5-350.1                 ########################################
+[   72s] libcairo2-1.17.6-1.1                  ########################################
+[   72s] libpango-1_0-0-1.50.12-1.1            ########################################
+[   72s] libgstreamer-1_0-0-1.22.0-2.1         ########################################
+[   72s] gstreamer-1.22.0-2.1                  ########################################
+[   72s] /usr/libexec/gstreamer-1.0/gst-ptp-helper: setting to root:root 0755 "cap_net_bind_service=ep". (missing capabilities)
+[   72s] libgstallocators-1_0-0-1.22.0-1.1     ########################################
+[   72s] libgstapp-1_0-0-1.22.0-1.1            ########################################
+[   72s] libgsttag-1_0-0-1.22.0-1.1            ########################################
+[   73s] libgstvideo-1_0-0-1.22.0-1.1          ########################################
+[   73s] libgstgl-1_0-0-1.22.0-1.1             ########################################
+[   73s] libgstaudio-1_0-0-1.22.0-1.1          ########################################
+[   73s] libgstriff-1_0-0-1.22.0-1.1           ########################################
+[   73s] libgstpbutils-1_0-0-1.22.0-1.1        ########################################
+[   73s] gstreamer-plugins-base-1.22.0-1.1     ########################################
+[   73s] libcairo-gobject2-1.17.6-1.1          ########################################
+[   73s] libcairo-script-interpreter2-1.17.6-1.########################################
+[   73s] typelib-1_0-Pango-1_0-1.50.12-1.1     ########################################
+[   73s] libglvnd-devel-1.6.0-1.1              ########################################
+[   73s] Mesa-libEGL-devel-22.3.5-350.1        ########################################
+[   73s] Mesa-libGL-devel-22.3.5-350.1         ########################################
+[   74s] libclang13-15.0.7-1.1                 ########################################
+[   79s] clang15-15.0.7-1.1                    ########################################
+[   79s] update-alternatives: using /usr/bin/clang-15.0.7 to provide /usr/bin/clang (clang) in auto mode
+[   79s] clang-tools-15.0.7-1.1                ########################################
+[   79s] libepoxy-devel-1.5.10-2.1             ########################################
+[   79s] libgstplay-1_0-0-1.22.0-3.1           ########################################
+[   79s] libgstplayer-1_0-0-1.22.0-3.1         ########################################
+[   79s] libLTO15-15.0.7-1.1                   ########################################
+[   80s] lld15-15.0.7-1.1                      ########################################
+[   80s] update-alternatives: using /usr/bin/lld-15.0.7 to provide /usr/bin/lld (lld) in auto mode
+[   81s] llvm15-15.0.7-1.1                     ########################################
+[   81s] update-alternatives: using /usr/bin/llvm-ar-15.0.7 to provide /usr/bin/llvm-ar (llvm-ar) in auto mode
+[   81s] llvm15-gold-15.0.7-1.1                ########################################
+[   81s] llvm15-polly-devel-15.0.7-1.1         ########################################
+[   83s] llvm15-devel-15.0.7-1.1               ########################################
+[   84s] clang15-devel-15.0.7-1.1              ########################################
+[   84s] libcom_err2-1.46.5-4.1                ########################################
+[   84s] krb5-mini-1.20.1-2.3                  ########################################
+[   85s] Updating /etc/sysconfig/kadmind ...
+[   85s] Updating /etc/sysconfig/krb5kdc ...
+[   85s] libssh4-0.10.4-1.2                    ########################################
+[   85s] libcurl4-7.87.0-1.3                   ########################################
+[   85s] rust-1.66.0-1.2                       ########################################
+[   99s] rust1.66-1.66.0-2.2                   ########################################
+[  101s] cargo1.66-1.66.0-2.2                  ########################################
+[  101s] cargo-1.66.0-1.2                      ########################################
+[  101s] libbz2-devel-1.0.8-4.1                ########################################
+[  101s] freetype2-devel-2.12.1-4.1            ########################################
+[  101s] fontconfig-devel-2.14.2-1.1           ########################################
+[  101s] libXft-devel-2.3.7-1.1                ########################################
+[  101s] libbluetooth3-5.66-1.5                ########################################
+[  101s] libblkid-devel-2.38.1-6.1             ########################################
+[  101s] libmount-devel-2.38.1-6.1             ########################################
+[  101s] glib2-devel-2.74.5-1.1                ########################################
+[  101s] No schema files found: doing nothing.
+[  102s] cairo-devel-1.17.6-1.1                ########################################
+[  102s] libgraphene-devel-1.10.8-1.1          ########################################
+[  102s] harfbuzz-devel-6.0.0-2.1              ########################################
+[  102s] pango-devel-1.50.12-1.1               ########################################
+[  102s] gdk-pixbuf-devel-2.42.10-1.2          ########################################
+[  102s] hicolor-icon-theme-0.17-4.1           ########################################
+[  102s] gtk4-schema-4.8.3-1.3                 ########################################
+[  102s] gettext-its-gtk4-4.8.3-1.3            ########################################
+[  102s] dbus-1-common-1.14.6-1.1              ########################################
+[  102s] libdbus-1-3-1.14.6-1.1                ########################################
+[  102s] libavahi-client3-0.8-22.2             ########################################
+[  102s] libcups2-2.4.2-4.2                    ########################################
+[  103s] libgtk-4-1-4.8.3-1.3                  ########################################
+[  103s] gtk4-tools-4.8.3-1.3                  ########################################
+[  105s] adwaita-icon-theme-43-1.1             ########################################
+[  105s] typelib-1_0-Gtk-4_0-4.8.3-1.3         ########################################
+[  106s] gtk4-devel-tools-4.8.3-1.3            ########################################
+[  106s] libpulse0-16.1-2.1                    ########################################
+[  106s] pipewire-spa-plugins-0_2-0.3.65-1.3   ########################################
+[  106s] pipewire-modules-0_3-0.3.65-1.3       ########################################
+[  107s] libpipewire-0_3-0-0.3.65-1.3          ########################################
+[  107s] pipewire-devel-0.3.65-1.3             ########################################
+[  107s] gtk4-devel-4.8.3-1.3                  ########################################
+[  107s] clang-devel-15.0.7-1.1                ########################################
+[  107s] python-rpm-packaging-20210526+a18ca48-########################################
+[  115s] now finalizing build dir...
+[  115s] ... running 01-add_abuild_user_to_trusted_group
+[  116s] ... running 02-set_timezone_to_utc
+[  116s] ... running 03-set-permissions-secure
+[  116s] ... running 11-hack_uname_version_to_kernel_version
+[  120s] -----------------------------------------------------------------
+[  120s] I have the following modifications for helvum.spec:
+[  120s] 23c23
+[  120s] < Release:        0
+[  120s] ---
+[  120s] > Release:        4.1
+[  123s] build target is riscv64-suse-linux
+[  123s] -----------------------------------------------------------------
+[  123s] ----- building helvum.spec (user abuild)
+[  123s] -----------------------------------------------------------------
+[  123s] -----------------------------------------------------------------
+[  125s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/20e3ea77ee73c82fe7d502ba0e06948f-helvum' /home/abuild/rpmbuild/SOURCES/helvum.spec
+[  125s] Building target platforms: riscv64-suse-linux
+[  125s] Building for target riscv64-suse-linux
+[  125s] setting SOURCE_DATE_EPOCH=1676246400
+[  125s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.am9NNs
+[  125s] + umask 022
+[  125s] + cd /home/abuild/rpmbuild/BUILD
+[  125s] + cd /home/abuild/rpmbuild/BUILD
+[  125s] + rm -rf helvum-0.4.0
+[  125s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/helvum-0.4.0.tar.xz
+[  131s] + STATUS=0
+[  131s] + '[' 0 -ne 0 ']'
+[  131s] + cd helvum-0.4.0
+[  131s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  131s] + echo 'Patch #24300 (vendor.patch):'
+[  131s] Patch #24300 (vendor.patch):
+[  131s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  131s] patching file vendor/nix/.cargo-checksum.json
+[  131s] Hunk #1 FAILED at 1.
+[  131s] 1 out of 1 hunk FAILED -- saving rejects to file vendor/nix/.cargo-checksum.json.rej
+[  131s] patching file vendor/nix/src/sys/ioctl/linux.rs
+[  131s] Hunk #1 FAILED at 33.
+[  131s] 1 out of 1 hunk FAILED -- saving rejects to file vendor/nix/src/sys/ioctl/linux.rs.rej
+[  131s] error: Bad exit status from /var/tmp/rpm-tmp.am9NNs (%prep)
+[  131s] 
+[  131s] RPM build errors:
+[  131s]     Bad exit status from /var/tmp/rpm-tmp.am9NNs (%prep)
+[  131s] ### VM INTERACTION START ###
+[  132s] [  127.968646][    T1] sysrq: Power Off
+[  132s] [  127.970567][   T99] reboot: Power down
+[  132s] ### VM INTERACTION END ###
+[  132s] 
+[  132s] beatles failed "build helvum.spec" at Mon Feb 13 16:02:09 UTC 2023.
+[  132s] 

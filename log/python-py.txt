@@ -1,0 +1,939 @@
+[    0s] Memory limit set to 10955196KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    3s] 
+[    3s] oe-RISCV-worker24 started "build _service:extract_file:python-py.spec" at Sat Apr 23 10:27:53 UTC 2022.
+[    3s] 
+[    3s] Building python-py for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '8b069866d5d3512a6fb44d002423c2a2'
+[    3s] 
+[    3s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:python-py.spec ...
+[    8s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:python-py.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:python-py.spec build ...
+[   87s] cycle: coreutils -> bash
+[   87s]   breaking dependency coreutils -> bash
+[   87s] cycle: coreutils -> info
+[   87s]   breaking dependency coreutils -> info
+[   87s] cycle: glibc -> filesystem -> coreutils
+[   87s]   breaking dependency coreutils -> glibc
+[   87s] cycle: glibc -> filesystem -> coreutils -> libacl
+[   87s]   breaking dependency coreutils -> libacl
+[   87s] cycle: glibc -> filesystem -> coreutils -> attr
+[   87s]   breaking dependency coreutils -> attr
+[   87s] cycle: coreutils -> libcap
+[   87s]   breaking dependency coreutils -> libcap
+[   87s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[   87s]   breaking dependency coreutils -> openssl-libs
+[   87s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[   87s]   breaking dependency libselinux -> glibc
+[   87s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[   87s]   breaking dependency pcre2 -> glibc
+[   87s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[   87s]   breaking dependency readline -> glibc
+[   87s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   87s]   breaking dependency filesystem -> coreutils
+[   87s] cycle: glibc -> filesystem -> bash -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   87s]   breaking dependency filesystem -> bash
+[   87s] cycle: perl-Carp -> perl-libs
+[   87s]   breaking dependency perl-libs -> perl-Carp
+[   87s] cycle: perl-libs -> perl-Exporter
+[   87s]   breaking dependency perl-libs -> perl-Exporter
+[   87s] cycle: perl-Carp -> perl-Exporter
+[   87s]   breaking dependency perl-Exporter -> perl-Carp
+[   87s] cycle: nss-util -> nss
+[   87s]   breaking dependency nss -> nss-util
+[   87s] cycle: nss-softokn -> nss-util -> nss
+[   87s]   breaking dependency nss -> nss-softokn
+[   87s] cycle: systemd -> cryptsetup -> device-mapper
+[   87s]   breaking dependency systemd -> cryptsetup
+[   87s] cycle: audit -> systemd -> pam
+[   87s]   breaking dependency systemd -> pam
+[   87s] [1/84] preinstalling dbus...
+[   88s] [2/84] preinstalling libffi-devel...
+[   89s] [3/84] preinstalling nodejs-source-map...
+[   89s] [4/84] preinstalling python3-pip...
+[   93s] [5/84] preinstalling python3-setuptools_scm...
+[   94s] [6/84] preinstalling filesystem...
+[   96s] [7/84] preinstalling glibc...
+[  100s] [8/84] preinstalling libgcc...
+[  101s] [9/84] preinstalling diffutils...
+[  102s] [10/84] preinstalling libcap-ng...
+[  103s] [11/84] preinstalling libgpg-error...
+[  104s] [12/84] preinstalling libpcap...
+[  105s] [13/84] preinstalling libsmartcols...
+[  105s] [14/84] preinstalling libuuid...
+[  107s] [15/84] preinstalling libxcrypt...
+[  107s] [16/84] preinstalling lz4...
+[  108s] [17/84] preinstalling m4...
+[  109s] [18/84] preinstalling ncurses-libs...
+[  110s] [19/84] preinstalling nspr...
+[  111s] [20/84] preinstalling xz-libs...
+[  112s] [21/84] preinstalling zlib...
+[  113s] [22/84] preinstalling attr...
+[  114s] [23/84] preinstalling libdb...
+[  117s] [24/84] preinstalling zstd...
+[  119s] [25/84] preinstalling audit-libs...
+[  120s] [26/84] preinstalling file...
+[  122s] [27/84] preinstalling iptables-libs...
+[  123s] [28/84] preinstalling libacl...
+[  124s] [29/84] preinstalling libgcrypt...
+[  125s] [30/84] preinstalling openssl-libs...
+[  127s] [31/84] preinstalling readline...
+[  128s] [32/84] preinstalling ncurses...
+[  133s] [33/84] preinstalling cmake...
+[  145s] [34/84] preinstalling perl-libs...
+[  149s] [35/84] preinstalling pcre2...
+[  151s] [36/84] preinstalling perl-Exporter...
+[  152s] [37/84] preinstalling pcre...
+[  153s] [38/84] preinstalling acl...
+[  154s] [39/84] preinstalling sqlite...
+[  156s] [40/84] preinstalling libselinux...
+[  157s] [41/84] preinstalling perl-Carp...
+[  158s] [42/84] preinstalling perl-Digest-MD5...
+[  159s] [43/84] preinstalling sed...
+[  160s] [44/84] preinstalling coreutils...
+[  164s] [45/84] preinstalling bash...
+[  167s] [46/84] preinstalling openssl...
+[  168s] [47/84] preinstalling dnf...
+[  169s] [48/84] preinstalling bzip2...
+[  170s] [49/84] preinstalling hostname...
+[  171s] [50/84] preinstalling libcap...
+[  172s] [51/84] preinstalling popt...
+[  173s] [52/84] preinstalling elfutils...
+[  175s] [53/84] preinstalling grep...
+[  176s] [54/84] preinstalling libblkid...
+[  177s] [55/84] preinstalling perl-constant...
+[  178s] [56/84] preinstalling tar...
+[  180s] [57/84] preinstalling info...
+[  181s] [58/84] preinstalling libgcrypt-devel...
+[  181s] [59/84] preinstalling lua...
+[  182s] [60/84] preinstalling nss...
+[  184s] [61/84] preinstalling chkconfig...
+[  185s] [62/84] preinstalling copy-jdk-configs...
+[  185s] [63/84] preinstalling libfdisk...
+[  186s] [64/84] preinstalling libmount...
+[  187s] [65/84] preinstalling libsemanage...
+[  188s] [66/84] preinstalling nss-util...
+[  189s] [67/84] preinstalling findutils...
+[  191s] [68/84] preinstalling perl-Getopt-Long...
+[  191s] [69/84] preinstalling xz...
+[  192s] [70/84] preinstalling perl-Data-Dumper...
+[  193s] [71/84] preinstalling systemd-libs...
+[  195s] [72/84] preinstalling rpm-libs...
+[  196s] [73/84] preinstalling dbus-libs...
+[  196s] [74/84] preinstalling nss-softokn...
+[  198s] [75/84] preinstalling glib2...
+[  202s] [76/84] preinstalling systemd...
+[  206s] [77/84] preinstalling audit...
+[  207s] [78/84] preinstalling rpm...
+[  209s] [79/84] preinstalling openEuler-rpm-config...
+[  210s] [80/84] preinstalling pam...
+[  211s] [81/84] preinstalling util-linux...
+[  215s] [82/84] preinstalling device-mapper...
+[  216s] [83/84] preinstalling cryptsetup...
+[  217s] [84/84] preinstalling lvm2...
+[  220s] 
+[  222s] initializing rpm db...
+[  236s] reordering...cycle: coreutils -> bash
+[  236s]   breaking dependency coreutils -> bash
+[  236s] cycle: coreutils -> info
+[  236s]   breaking dependency coreutils -> info
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  236s]   breaking dependency coreutils -> gmp
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  236s]   breaking dependency coreutils -> glibc
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  236s]   breaking dependency coreutils -> libacl
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  236s]   breaking dependency coreutils -> attr
+[  236s] cycle: coreutils -> libcap
+[  236s]   breaking dependency coreutils -> libcap
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  236s]   breaking dependency openssl-libs -> glibc
+[  236s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  236s]   breaking dependency ca-certificates -> coreutils
+[  236s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  236s]   breaking dependency ca-certificates -> bash
+[  236s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  236s]   breaking dependency grep -> coreutils
+[  236s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  236s]   breaking dependency ca-certificates -> grep
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  236s]   breaking dependency p11-kit -> glibc
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  236s]   breaking dependency openssl-libs -> ca-certificates
+[  236s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  236s]   breaking dependency crypto-policies -> bash
+[  236s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  236s]   breaking dependency crypto-policies -> coreutils
+[  236s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  236s]   breaking dependency bash -> coreutils
+[  236s] cycle: filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  236s]   breaking dependency grep -> bash
+[  236s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  236s]   breaking dependency glibc -> basesystem
+[  236s] cycle: glibc -> glibc-common -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  236s]   breaking dependency glibc-common -> bash
+[  236s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  236s]   breaking dependency glibc-common -> coreutils
+[  236s] cycle: glibc -> glibc-common
+[  236s]   breaking dependency glibc-common -> glibc
+[  236s] cycle: glibc -> glibc-common -> libselinux
+[  236s]   breaking dependency libselinux -> glibc
+[  236s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  236s]   breaking dependency pcre2 -> glibc
+[  236s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  236s]   breaking dependency readline -> glibc
+[  236s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  236s]   breaking dependency libselinux -> pcre2
+[  236s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  236s]   breaking dependency libsepol -> coreutils
+[  236s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  236s]   breaking dependency filesystem -> coreutils
+[  236s] cycle: bash -> filesystem
+[  236s]   breaking dependency filesystem -> bash
+[  236s] cycle: filesystem -> setup
+[  236s]   breaking dependency filesystem -> setup
+[  236s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[  236s]   breaking dependency bash -> glibc
+[  236s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> ncurses-libs
+[  236s]   breaking dependency libsepol -> bash
+[  236s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  236s]   breaking dependency glibc -> glibc-common
+[  236s] cycle: systemd -> cryptsetup -> device-mapper
+[  236s]   breaking dependency systemd -> cryptsetup
+[  236s] cycle: perl-libs -> perl-Carp
+[  236s]   breaking dependency perl-libs -> perl-Carp
+[  236s] cycle: perl-libs -> perl-Exporter
+[  236s]   breaking dependency perl-libs -> perl-Exporter
+[  236s] cycle: perl-Carp -> perl-Exporter
+[  236s]   breaking dependency perl-Exporter -> perl-Carp
+[  236s] cycle: perl -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-PathTools
+[  236s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  236s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  236s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-File-Path
+[  236s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  236s]   breaking dependency perl -> perl-Getopt-Long
+[  236s] cycle: perl -> perl-Locale-Maketext
+[  236s]   breaking dependency perl -> perl-Locale-Maketext
+[  236s] cycle: perl -> perl-Pod-Simple
+[  236s]   breaking dependency perl -> perl-Pod-Simple
+[  236s] cycle: perl -> perl-Socket
+[  236s]   breaking dependency perl -> perl-Socket
+[  236s] cycle: perl -> perl-Storable
+[  236s]   breaking dependency perl -> perl-Storable
+[  236s] cycle: perl -> perl-Text-Tabs+Wrap
+[  236s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  236s] cycle: perl -> perl-Time-Local -> perl-constant
+[  236s]   breaking dependency perl -> perl-Time-Local
+[  236s] cycle: perl -> perl-constant
+[  236s]   breaking dependency perl -> perl-constant
+[  236s] cycle: perl -> perl-threads
+[  236s]   breaking dependency perl -> perl-threads
+[  236s] cycle: perl -> perl-threads-shared
+[  236s]   breaking dependency perl -> perl-threads-shared
+[  236s] cycle: perl -> perl-Archive-Tar
+[  236s]   breaking dependency perl -> perl-Archive-Tar
+[  236s] cycle: perl -> perl-B-Debug
+[  236s]   breaking dependency perl -> perl-B-Debug
+[  236s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  236s]   breaking dependency perl -> perl-CPAN-Meta
+[  236s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  236s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  236s] cycle: perl -> perl-CPAN-Meta-YAML
+[  236s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  236s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  236s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  236s] cycle: perl -> perl-Compress-Raw-Zlib
+[  236s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  236s] cycle: perl -> perl-Config-Perl-V
+[  236s]   breaking dependency perl -> perl-Config-Perl-V
+[  236s] cycle: perl -> perl-DB_File
+[  236s]   breaking dependency perl -> perl-DB_File
+[  236s] cycle: perl -> perl-Data-Dumper
+[  236s]   breaking dependency perl -> perl-Data-Dumper
+[  236s] cycle: perl -> perl-Devel-PPPort
+[  236s]   breaking dependency perl -> perl-Devel-PPPort
+[  236s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  236s]   breaking dependency perl -> perl-Digest
+[  236s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  236s]   breaking dependency perl -> perl-Digest-MD5
+[  236s] cycle: perl -> perl-Digest-SHA
+[  236s]   breaking dependency perl -> perl-Digest-SHA
+[  236s] cycle: perl -> perl-Encode
+[  236s]   breaking dependency perl -> perl-Encode
+[  236s] cycle: perl -> perl-Env
+[  236s]   breaking dependency perl -> perl-Env
+[  236s] cycle: perl -> perl-ExtUtils-Command
+[  236s]   breaking dependency perl -> perl-ExtUtils-Command
+[  236s] cycle: perl -> perl-ExtUtils-Install
+[  236s]   breaking dependency perl -> perl-ExtUtils-Install
+[  236s] cycle: perl -> perl-ExtUtils-Manifest
+[  236s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  236s] cycle: perl -> perl-ExtUtils-ParseXS
+[  236s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  236s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-File-Fetch
+[  236s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-File-Temp
+[  236s] cycle: perl -> perl-Filter
+[  236s]   breaking dependency perl -> perl-Filter
+[  236s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  236s]   breaking dependency perl -> perl-Filter-Simple
+[  236s] cycle: perl -> perl-HTTP-Tiny
+[  236s]   breaking dependency perl -> perl-HTTP-Tiny
+[  236s] cycle: perl -> perl-IO-Compress
+[  236s]   breaking dependency perl -> perl-IO-Compress
+[  236s] cycle: perl -> perl-IO-Socket-IP
+[  236s]   breaking dependency perl -> perl-IO-Socket-IP
+[  236s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  236s]   breaking dependency perl -> perl-IPC-Cmd
+[  236s] cycle: perl -> perl-IPC-SysV
+[  236s]   breaking dependency perl -> perl-IPC-SysV
+[  236s] cycle: perl -> perl-JSON-PP
+[  236s]   breaking dependency perl -> perl-JSON-PP
+[  236s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  236s]   breaking dependency perl -> perl-Locale-Codes
+[  236s] cycle: perl -> perl-MIME-Base64
+[  236s]   breaking dependency perl -> perl-MIME-Base64
+[  236s] cycle: perl -> perl-Math-BigInt
+[  236s]   breaking dependency perl -> perl-Math-BigInt
+[  236s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  236s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  236s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  236s]   breaking dependency perl -> perl-Math-BigRat
+[  236s] cycle: perl -> perl-Module-CoreList
+[  236s]   breaking dependency perl -> perl-Module-CoreList
+[  236s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-Module-Load
+[  236s] cycle: perl -> perl-Module-Load-Conditional
+[  236s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  236s] cycle: perl -> perl-Module-Metadata
+[  236s]   breaking dependency perl -> perl-Module-Metadata
+[  236s] cycle: perl -> perl-Params-Check
+[  236s]   breaking dependency perl -> perl-Params-Check
+[  236s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  236s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  236s] cycle: perl -> perl-Pod-Checker
+[  236s]   breaking dependency perl -> perl-Pod-Checker
+[  236s] cycle: perl -> perl-Pod-Escapes
+[  236s]   breaking dependency perl -> perl-Pod-Escapes
+[  236s] cycle: perl -> perl-Pod-Parser
+[  236s]   breaking dependency perl -> perl-Pod-Parser
+[  236s] cycle: perl -> perl-Pod-Perldoc
+[  236s]   breaking dependency perl -> perl-Pod-Perldoc
+[  236s] cycle: perl -> perl-Pod-Usage
+[  236s]   breaking dependency perl -> perl-Pod-Usage
+[  236s] cycle: perl -> perl-Sys-Syslog
+[  236s]   breaking dependency perl -> perl-Sys-Syslog
+[  236s] cycle: perl -> perl-Term-Cap
+[  236s]   breaking dependency perl -> perl-Term-Cap
+[  236s] cycle: perl -> perl-Test-Harness
+[  236s]   breaking dependency perl -> perl-Test-Harness
+[  236s] cycle: perl -> perl-Test-Simple
+[  236s]   breaking dependency perl -> perl-Test-Simple
+[  236s] cycle: perl -> perl-Text-Balanced
+[  236s]   breaking dependency perl -> perl-Text-Balanced
+[  236s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  236s]   breaking dependency perl -> perl-Thread-Queue
+[  236s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  236s]   breaking dependency perl -> perl-Unicode-Collate
+[  236s] cycle: perl -> perl-autodie
+[  236s]   breaking dependency perl -> perl-autodie
+[  236s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  236s]   breaking dependency perl -> perl-bignum
+[  236s] cycle: perl -> perl-devel
+[  236s]   breaking dependency perl -> perl-devel
+[  236s] cycle: perl -> perl-Encode-devel
+[  236s]   breaking dependency perl -> perl-Encode-devel
+[  236s] cycle: perl -> perl-experimental
+[  236s]   breaking dependency perl -> perl-experimental
+[  236s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  236s]   breaking dependency perl -> perl-libnet
+[  236s] cycle: perl -> perl-podlators
+[  236s]   breaking dependency perl -> perl-podlators
+[  236s] cycle: perl -> perl-version
+[  236s]   breaking dependency perl -> perl-version
+[  236s] cycle: glib2 -> gamin
+[  236s]   breaking dependency glib2 -> gamin
+[  236s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  236s]   breaking dependency systemd -> gnutls
+[  236s] cycle: systemd -> pam -> audit
+[  236s]   breaking dependency systemd -> pam
+[  236s] cycle: systemd -> shadow -> pam -> audit
+[  236s]   breaking dependency systemd -> shadow
+[  236s] cycle: pam -> libpwquality
+[  236s]   breaking dependency pam -> libpwquality
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  236s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  236s]   breaking dependency perl-podlators -> perl-Encode
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  236s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  236s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  236s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  236s] cycle: perl-Pod-Usage -> perl-podlators
+[  236s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  236s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  236s]   breaking dependency groff -> perl-Getopt-Long
+[  236s] cycle: libxcrypt-devel -> glibc-devel
+[  236s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  236s] cycle: cmake-data -> cmake
+[  236s]   breaking dependency cmake -> cmake-data
+[  236s] cycle: nss-util -> nss
+[  236s]   breaking dependency nss -> nss-util
+[  236s] cycle: nss-softokn -> nss-util -> nss
+[  236s]   breaking dependency nss -> nss-softokn
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  236s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  236s] cycle: openssh -> openssh-server
+[  236s]   breaking dependency openssh-server -> openssh
+[  236s] cycle: git -> perl-Git
+[  236s]   breaking dependency git -> perl-Git
+[  236s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  236s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  237s] done
+[  237s] querying package ids...
+[  273s] [1/373] installing cmake-filesystem-3.22.0-1.oe1
+[  274s] [2/373] installing fonts-filesystem-2.0.2-2.oe1
+[  275s] [3/373] installing fuse-common-3.9.2-5.oe1
+[  276s] [4/373] installing kernel-headers-5.10-3.oe1
+[  284s] [5/373] installing libreport-filesystem-2.13.1-5.oe1
+[  285s] [6/373] installing ncurses-base-6.1-14.oe1
+[  290s] [7/373] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  291s] [8/373] installing python-setuptools-59.4.0-3.oe1
+[  292s] [9/373] installing qt5-srpm-macros-5.15.2-1.oe1
+[  293s] [10/373] installing tzdata-2021a-2.oe1
+[  308s] [11/373] installing dnf-data-4.10.0-1.oe1
+[  310s] [12/373] installing openEuler-repos-1.0-2.5.oe1
+[  311s] [13/373] installing wqy-zenhei-fonts-0.9.46-21.oe1
+[  320s] [14/373] installing openEuler-release-20.03LTS-40.oe1
+[  322s] [15/373] installing filesystem-3.9-3.oe1
+[  333s] warning: group mail does not exist - using root
+[  333s] [16/373] installing emacs-filesystem-1:27.1-5.oe1
+[  334s] [17/373] installing libgcc-10.3.1-10.oe1
+[  336s] [18/373] installing setup-2.13.3-4.oe1
+[  337s] [19/373] installing glibc-2.34-74.oe1
+[  347s] [20/373] installing brotli-1.0.9-2.oe1
+[  349s] [21/373] installing chrpath-0.16-12.oe1
+[  351s] [22/373] installing cpio-2.13-4.oe1
+[  354s] [23/373] installing diffutils-3.7-4.oe1
+[  356s] [24/373] installing expat-2.2.10-1.oe1
+[  358s] [25/373] installing json-c-0.15-1.oe1
+[  361s] [26/373] installing keyutils-libs-1.6.3-3.oe1
+[  363s] [27/373] installing libICE-1.0.10-2.oe1
+[  364s] [28/373] installing libXau-1.0.9-2.oe1
+[  366s] [29/373] installing libaio-0.3.112-1.oe1
+[  368s] [30/373] installing libargon2-20190702-1.oe1
+[  369s] [31/373] installing libatomic-10.3.1-10.oe1
+[  370s] [32/373] installing libcap-ng-0.7.11-1.oe1
+[  371s] [33/373] installing libev-4.24-11.oe1
+[  372s] [34/373] installing libffi-3.3-31.oe1
+[  373s] [35/373] installing libgomp-10.3.1-10.oe1
+[  376s] [36/373] installing libgpg-error-1.41-1.oe1
+[  377s] [37/373] installing libnghttp2-1.42.0-1.oe1
+[  379s] [38/373] installing libpcap-14:1.9.1-7.oe1
+[  380s] [39/373] installing libpipeline-1.5.3-1.oe1
+[  381s] [40/373] installing libsigsegv-2.11-10.oe1
+[  382s] [41/373] installing libsmartcols-2.36.1-3.oe1
+[  384s] [42/373] installing libtasn1-4.16.0-2.oe1
+[  385s] [43/373] installing libtool-ltdl-2.4.6-34.oe1
+[  386s] [44/373] installing libunistring-0.9.10-8.oe1
+[  387s] [45/373] installing libuuid-2.36.1-3.oe1
+[  389s] [46/373] installing libuv-1:1.40.0-1.oe1
+[  390s] [47/373] installing libxcrypt-4.4.8-4.oe1
+[  391s] [48/373] installing libyaml-0.2.5-1.oe1
+[  393s] [49/373] installing lz4-1.9.3-1.oe1
+[  395s] [50/373] installing m4-1.4.18-14.oe1
+[  396s] [51/373] installing nspr-4.32.0-1.oe1
+[  397s] [52/373] installing pkgconf-1.7.3-1.oe1
+[  398s] [53/373] installing rhash-1.3.5-5.oe1
+[  399s] [54/373] installing which-2.21-14.oe1
+[  400s] [55/373] installing xz-libs-5.2.5-1.oe1
+[  401s] [56/373] installing zlib-1.2.11-18.oe1
+[  403s] [57/373] installing attr-2.4.48-12.oe1
+[  405s] [58/373] installing basesystem-12-2.oe1
+[  406s] [59/373] installing libstdc++-10.3.1-10.oe1
+[  408s] [60/373] installing ncurses-libs-6.1-14.oe1
+[  409s] [61/373] installing libsepol-3.1-4.oe1
+[  412s] [62/373] installing libstdc++-devel-10.3.1-10.oe1
+[  423s] [63/373] installing audit-libs-1:3.0-2.oe1
+[  424s] [64/373] installing file-libs-5.39-6.oe1
+[  427s] [65/373] installing gmp-1:6.2.1-1.oe1
+[  429s] [66/373] installing iptables-libs-1.8.1-4.oe1
+[  430s] [67/373] installing less-563-2.oe1
+[  432s] [68/373] installing libacl-2.2.53-7.oe1
+[  433s] [69/373] installing libassuan-2.5.4-1.oe1
+[  434s] [70/373] installing libedit-3.1-27.oe1
+[  436s] [71/373] installing libffi-devel-3.3-31.oe1
+[  439s] [72/373] installing libgcrypt-1.8.7-1.oe1
+[  441s] [73/373] installing libpng-2:1.6.37-1.oe1
+[  442s] [74/373] installing libxcb-1.14-1.oe1
+[  444s] [75/373] installing readline-8.0-2.oe1
+[  445s] [76/373] installing fuse-2.9.9-6.oe1
+[  447s] [77/373] installing gc-8.0.4-2.oe1
+[  449s] [78/373] installing libSM-1.2.3-2.oe1
+[  451s] [79/373] installing libdb-5.3.28-35.oe1
+[  458s] [80/373] installing libselinux-3.1-3.oe1
+[  460s] [81/373] installing libxml2-2.9.12-5.oe1
+[  462s] [82/373] installing bash-5.1-1.oe1
+[  466s] [83/373] installing perl-libs-4:5.28.0-435.oe1
+[  474s] [84/373] installing zstd-1.4.8-2.oe1
+[  477s] [85/373] installing ncurses-6.1-14.oe1
+[  488s] [86/373] installing thin-provisioning-tools-0.8.5-1.oe1
+[  490s] [87/373] installing perl-parent-1:0.237-4.oe1
+[  490s] [88/373] installing perl-perlfaq-5.20180915-5.oe1
+[  492s] [89/373] installing libX11-1.6.9-2.oe1
+[  495s] [90/373] installing mpfr-4.1.0-2.oe1
+[  497s] [91/373] installing nettle-3.6-6.oe1
+[  499s] [92/373] installing pcre2-10.36-1.oe1
+[  502s] [93/373] installing perl-Exporter-5.74-1.oe1
+[  503s] [94/373] installing file-5.39-6.oe1
+[  505s] [95/373] installing gdbm-1:1.18.1-1.oe1
+[  506s] [96/373] installing patch-2.7.6-12.oe1
+[  507s] [97/373] installing qrencode-4.1.1-1
+[  509s] [98/373] installing sed-4.8-2.oe1
+[  511s] [99/373] installing acl-2.2.53-7.oe1
+[  512s] [100/373] installing libcomps-0.1.15-1.oe1
+[  514s] [101/373] installing pcre-8.44-1.oe1
+[  516s] [102/373] installing glibc-common-2.34-74.oe1
+[  529s] [103/373] installing crontabs-1.11-21.oe1
+[  530s] [104/373] installing libXext-1.3.4-2.oe1
+[  532s] [105/373] installing libXpm-3.5.12-11.oe1
+[  534s] [106/373] installing libXrender-0.9.10-10.oe1
+[  536s] [107/373] installing perl-Carp-1.50-418.oe1
+[  537s] [108/373] installing perl-Perl-OSType-1.010-421.oe1
+[  538s] [109/373] installing perl-Term-ANSIColor-4.06-511.oe1
+[  539s] [110/373] installing libmpc-1.2.0-2.oe1
+[  541s] [111/373] installing grep-3.6-1.oe1
+[  543s] [112/373] installing libXt-1.2.0-0.oe1
+[  546s] [113/373] installing gawk-5.1.0-1.oe1
+[  548s] [114/373] installing perl-Text-ParseWords-3.30-419.oe1
+[  549s] [115/373] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  556s] [116/373] installing libXmu-1.1.3-1.oe1
+[  559s] [117/373] installing cpp-10.3.1-10.oe1
+[  569s] [118/373] installing openssl-libs-1:1.1.1f-2.oe1
+[  573s] [119/373] installing libXaw-1.0.13-13.oe1
+[  575s] [120/373] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  576s] [121/373] installing libevent-2.1.12-4
+[  578s] [122/373] installing kmod-libs-27-4.oe1
+[  580s] [123/373] installing kmod-27-4.oe1
+[  582s] [124/373] installing nodejs-libs-1:16.10.0-1.oe1
+[  624s] [125/373] installing coreutils-8.31-4.oe1
+[  632s] [126/373] installing publicsuffix-list-20200718-1.oe1
+[  633s] [127/373] installing uname-build-checks-1.0-0.4.oe1
+[  634s] [128/373] installing bzip2-1.0.8-3.oe1
+[  636s] [129/373] installing gzip-1.10-1.oe1
+[  638s] [130/373] installing hostname-3.21-2.oe1
+[  640s] [131/373] installing libcap-2.32-2.oe1
+[  645s] [132/373] installing libseccomp-2.4.3-2.oe1
+[  648s] [133/373] installing npth-1.5-7.oe1
+[  650s] [134/373] installing popt-1.18-1.oe1
+[  652s] [135/373] installing fipscheck-1.5.0-7.oe1
+[  654s] [136/373] installing libblkid-2.36.1-3.oe1
+[  657s] [137/373] installing libidn2-2.3.0-1.oe1
+[  664s] [138/373] installing libksba-1.3.5-12.oe1
+[  666s] [139/373] installing tar-2:1.32-3.oe1
+[  669s] [140/373] installing tcl-1:8.6.10-3.oe1
+[  674s] [141/373] installing elfutils-0.185-5.oe1
+[  678s] Couldn't write '0' to 'kernel/yama/ptrace_scope', ignoring: No such file or directory
+[  678s] [142/373] installing info-6.7-2.oe1
+[  680s] [143/373] installing jsoncpp-1.9.4-1.oe1
+[  684s] [144/373] installing libgpg-error-devel-1.41-1.oe1
+[  687s] [145/373] installing lua-5.3.5-6.oe1
+[  689s] [146/373] installing slang-2.3.2-8.oe1
+[  694s] [147/373] installing xz-5.2.5-1.oe1
+[  696s] [148/373] installing glibc-devel-2.34-74.oe1
+[  708s] [149/373] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  711s] [150/373] installing perl-Time-HiRes-1.9760-2.oe1
+[  713s] [151/373] installing perl-Unicode-Normalize-1.26-419.oe1
+[  715s] [152/373] installing systemd-libs-243-22.oe1
+[  718s] [153/373] installing guile-5:2.0.14-15.oe1
+[  732s] [154/373] installing dbus-libs-1:1.12.20-3.oe1
+[  736s] [155/373] installing zip-3.0-29.oe1
+[  738s] [156/373] installing libfdisk-2.36.1-3.oe1
+[  740s] [157/373] installing libxcrypt-devel-4.4.8-4.oe1
+[  742s] [158/373] installing newt-0.52.21-4.oe1
+[  745s] [159/373] installing p11-kit-0.23.22-1.oe1
+[  748s] [160/373] installing procps-ng-3.3.16-15.oe1
+[  750s] [161/373] installing libmount-2.36.1-3.oe1
+[  753s] [162/373] installing lua-posix-33.3.1-12.oe1
+[  755s] [163/373] installing unzip-6.0-47.oe1
+[  757s] [164/373] installing cracklib-2.9.7-6.oe1
+[  764s] [165/373] installing e2fsprogs-1.45.6-3.oe1
+[  768s] [166/373] installing findutils-2:4.7.0-7.oe1
+[  771s] [167/373] installing libsemanage-3.1-4.oe1
+[  773s] [168/373] installing make-1:4.2.1-15.oe1
+[  775s] [169/373] installing sqlite-3.24.0-9.oe1
+[  778s] [170/373] installing logrotate-3.15.1-2.oe1
+[  782s] [171/373] installing freetype-2.10.2-3.oe1
+[  785s] [172/373] installing libgcrypt-devel-1.8.7-1.oe1
+[  787s] [173/373] installing gnupg2-2.2.27-2.oe1
+[  793s] [174/373] installing libarchive-3.5.1-1.oe1
+[  796s] [175/373] installing rpm-libs-4.15.1-25.oe1
+[  798s] [176/373] installing dbus-tools-1:1.12.20-3.oe1
+[  800s] [177/373] installing copy-jdk-configs-4.0-1.oe1
+[  802s] [178/373] installing gpgme-1.15.1-1.oe1
+[  805s] [179/373] installing obs-env-1.0-5.oe1
+[  814s] [180/373] installing chkconfig-1.14-2.oe1
+[  816s] [181/373] installing fontconfig-2.13.92-1.oe1
+[  823s] [182/373] installing glib2-2.66.8-1.oe1
+[  830s] [183/373] installing libcroco-0.6.12-13.oe1
+[  833s] [184/373] installing gamin-0.1.10-38.oe1
+[  835s] [185/373] installing libsecret-0.18.6-5.oe1
+[  838s] [186/373] installing libverto-0.3.1-2.oe1
+[  841s] [187/373] installing libXft-2.3.3-1.oe1
+[  844s] [188/373] installing libmodulemd-2.13.0-1.oe1
+[  846s] [189/373] installing binutils-2.37-6.oe1
+[  856s] [190/373] installing babeltrace-1.5.8-1.oe1
+[  860s] [191/373] installing p11-kit-trust-0.23.22-1.oe1
+[  862s] [192/373] installing ca-certificates-2020.2.46-2.oe1
+[  873s] [193/373] installing tk-1:8.6.10-2.oe1
+[  878s] [194/373] installing gettext-0.20.1-2.oe1
+[  883s] [195/373] installing krb5-libs-1.18.2-3.oe1
+[  886s] [196/373] installing gcc-10.3.1-10.oe1
+[  920s] [197/373] installing python-pip-wheel-19.2.3-2.fc32
+[  922s] [198/373] installing libtirpc-1.3.1-1.oe1
+[  924s] [199/373] installing cyrus-sasl-lib-2.1.27-10.oe1
+[  926s] [200/373] installing libssh-0.9.5-1.oe1
+[  929s] [201/373] installing gcc-c++-10.3.1-10.oe1
+[  940s] [202/373] installing openldap-2.4.46-15.oe1
+[  943s] [203/373] installing libnsl2-1.3.0-2.oe1
+[  947s] [204/373] installing python3-3.8.5-13.oe1
+[  976s] [205/373] installing python3-docutils-0.15.2-3.fc32
+[  982s] [206/373] installing python3-idna-2.8-5.fc32
+[  984s] [207/373] installing python3-imagesize-1.1.0-1.fc32
+[  985s] [208/373] installing python3-pyparsing-2.4.5-1.fc32
+[  987s] [209/373] installing python3-pysocks-1.7.1-3.fc32
+[  989s] [210/373] installing python3-setuptools-59.4.0-3.oe1
+[  994s] [211/373] installing python3-setuptools_scm-3.3.3-6.fc32
+[  996s] [212/373] installing python3-six-1.16.0-2.oe1
+[  998s] [213/373] installing python3-snowballstemmer-1.9.0-4.fc32
+[ 1000s] [214/373] installing python3-sphinx-theme-alabaster-0.7.12-7.fc32
+[ 1002s] [215/373] installing python3-sphinxcontrib-applehelp-1.0.1-5.fc32
+[ 1005s] [216/373] installing python3-sphinxcontrib-devhelp-1.0.1-5.fc32
+[ 1008s] [217/373] installing python3-sphinxcontrib-htmlhelp-1.0.1-5.fc32
+[ 1010s] [218/373] installing python3-sphinxcontrib-jsmath-1.0.1-5.fc32
+[ 1012s] [219/373] installing python3-sphinxcontrib-qthelp-1.0.2-5.fc32
+[ 1014s] [220/373] installing python3-sphinxcontrib-serializinghtml-1.1.3-5.fc32
+[ 1017s] [221/373] installing python3-markupsafe-1.1.1-4.fc32
+[ 1018s] [222/373] installing python3-pytz-2019.2-2
+[ 1020s] [223/373] installing python3-gpgme-1.15.1-1.oe1
+[ 1023s] [224/373] installing python3-libcomps-0.1.15-1.oe1
+[ 1025s] [225/373] installing libpsl-0.21.1-1.oe1
+[ 1027s] [226/373] installing gdb-headless-9.2-5.oe1
+[ 1038s] [227/373] installing python3-chardet-3.0.4-14.fc32
+[ 1041s] [228/373] installing python3-pygments-2.4.2-6.fc32
+[ 1047s] [229/373] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1049s] [230/373] installing gdb-9.2-5.oe1
+[ 1050s] [231/373] installing python3-babel-2.8.0-2.fc32
+[ 1061s] [232/373] installing python3-packaging-19.2-1.fc32
+[ 1064s] [233/373] installing python3-pip-19.2.3-2.fc32
+[ 1072s] [234/373] installing python3-rpm-generators-10-2.fc32
+[ 1075s] [235/373] installing python3-urllib3-1.25.7-2.fc32
+[ 1078s] [236/373] installing libcurl-7.79.1-1.oe1
+[ 1080s] [237/373] installing curl-7.79.1-1.oe1
+[ 1082s] [238/373] installing python3-jinja2-2.10.3-2.fc32
+[ 1086s] [239/373] installing python3-requests-2.22.0-7.fc32
+[ 1088s] [240/373] installing librepo-1.14.2-2.oe1
+[ 1091s] [241/373] installing python3-sphinx-1:2.2.2-1.fc32
+[ 1100s] [242/373] installing rpm-4.15.1-25.oe1
+[ 1105s] [243/373] installing efi-srpm-macros-4-3.oe1
+[ 1108s] [244/373] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1110s] [245/373] installing libsolv-0.7.20-1.oe1
+[ 1113s] [246/373] installing python3-rpm-4.15.1-25.oe1
+[ 1115s] [247/373] installing openEuler-rpm-config-30-22.oe1
+[ 1117s] [248/373] installing cmake-3.22.0-1.oe1
+[ 1134s] [249/373] installing libdnf-0.65.0-2.oe1
+[ 1138s] [250/373] installing cmake-data-3.22.0-1.oe1
+[ 1156s] [251/373] installing python3-devel-3.8.5-13.oe1
+[ 1200s] [252/373] installing python3-libdnf-0.65.0-2.oe1
+[ 1204s] [253/373] installing perl-4:5.28.0-435.oe1
+[ 1216s] [254/373] installing perl-B-Debug-1.26-4.oe1
+[ 1218s] [255/373] installing perl-Env-1.04-397.oe1
+[ 1221s] [256/373] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1224s] [257/373] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1225s] [258/373] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1226s] [259/373] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1228s] [260/373] installing perl-Params-Check-1:0.38-418.oe1
+[ 1229s] [261/373] installing perl-Term-Cap-1.17-510.oe1
+[ 1231s] [262/373] installing perl-TermReadKey-2.38-2.oe1
+[ 1234s] [263/373] installing perl-Text-Balanced-2.03-420.oe1
+[ 1235s] [264/373] installing perl-threads-1:2.22-419.oe1
+[ 1237s] [265/373] installing openssl-1:1.1.1f-2.oe1
+[ 1240s] [266/373] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1242s] [267/373] installing perl-Error-1:0.17029-1.oe1
+[ 1244s] [268/373] installing perl-Filter-2:1.59-2.oe1
+[ 1248s] [269/373] installing perl-IPC-SysV-2.07-5.oe1
+[ 1251s] [270/373] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1253s] [271/373] installing perl-constant-1.33-421.oe1
+[ 1256s] [272/373] installing perl-MIME-Base64-3.15-418.oe1
+[ 1258s] [273/373] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1260s] [274/373] installing perl-Socket-4:2.029-2.oe1
+[ 1263s] [275/373] installing perl-Storable-1:3.15-2.oe1
+[ 1266s] [276/373] installing python3-hawkey-0.65.0-2.oe1
+[ 1269s] [277/373] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1270s] [278/373] installing perl-Digest-1.17-419.oe1
+[ 1272s] [279/373] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1273s] [280/373] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1274s] [281/373] installing perl-Text-Diff-1.45-7.oe1
+[ 1276s] [282/373] installing perl-Time-Local-2:1.280-6.oe1
+[ 1277s] [283/373] installing perl-version-8:0.99.24-3.oe1
+[ 1279s] [284/373] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1281s] [285/373] installing perl-threads-shared-1.59-2.oe1
+[ 1283s] [286/373] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1285s] [287/373] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1288s] [288/373] installing perl-Locale-Codes-3.58-2.oe1
+[ 1290s] [289/373] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1293s] [290/373] installing perl-PathTools-3.75-4.oe1
+[ 1295s] [291/373] installing python3-dnf-4.10.0-1.oe1
+[ 1299s] [292/373] installing perl-Data-Dumper-2.172-3.oe1
+[ 1301s] [293/373] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1303s] [294/373] installing perl-Encode-4:2.98-9.oe1
+[ 1308s] [295/373] installing autogen-5.18.16-1.oe1
+[ 1311s] [296/373] installing nodejs-1:16.10.0-1.oe1
+[ 1314s] [297/373] installing systemd-243-22.oe1
+[ 1333s] /var/tmp/rpm-tmp.LV71vq: line 8: groupadd: command not found
+[ 1333s] /var/tmp/rpm-tmp.LV71vq: line 10: groupadd: command not found
+[ 1333s] /var/tmp/rpm-tmp.LV71vq: line 13: groupadd: command not found
+[ 1333s] /var/tmp/rpm-tmp.LV71vq: line 16: groupadd: command not found
+[ 1333s] [298/373] installing dbus-common-1:1.12.20-3.oe1
+[ 1334s] [299/373] installing nodejs-source-map-0.5.6-1.oe1
+[ 1336s] [300/373] installing perl-Module-Load-1:0.32-418.oe1
+[ 1338s] [301/373] installing nodejs-packaging-20-1.oe1
+[ 1340s] [302/373] installing dnf-4.10.0-1.oe1
+[ 1343s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1343s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1343s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1343s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1343s] [303/373] installing perl-File-Which-1.23-1.oe1
+[ 1345s] [304/373] installing perl-Thread-Queue-3.13-3.oe1
+[ 1346s] [305/373] installing perl-experimental-0.020-2.oe1
+[ 1348s] [306/373] installing perl-Digest-MD5-2.55-419.oe1
+[ 1349s] [307/373] installing perl-File-Path-2.16-4.oe1
+[ 1351s] [308/373] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1353s] [309/373] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1355s] [310/373] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1357s] [311/373] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1359s] [312/373] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1361s] [313/373] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1362s] [314/373] installing audit-1:3.0-2.oe1
+[ 1366s] [315/373] installing perl-DB_File-1.842-2.oe1
+[ 1368s] [316/373] installing perl-autodie-2.29-398.oe1
+[ 1369s] [317/373] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1376s] [318/373] installing perl-IO-Compress-2.081-6.oe1
+[ 1378s] [319/373] installing perl-podlators-1:4.14-1.oe1
+[ 1380s] [320/373] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1381s] [321/373] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1384s] [322/373] installing perl-bignum-0.50-4.oe1
+[ 1386s] [323/373] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1388s] [324/373] installing perl-libnet-3.11-420.oe1
+[ 1389s] [325/373] installing pam-1.5.1-1.oe1
+[ 1394s] [326/373] installing libpwquality-1.4.4-1.oe1
+[ 1397s] [327/373] installing perl-File-HomeDir-1.004-4.oe1
+[ 1398s] [328/373] installing shadow-2:4.8.1-5.oe1
+[ 1401s] [329/373] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1403s] [330/373] installing libutempter-1.1.6-16.oe1
+[ 1408s] [331/373] installing unbound-libs-1.10.1-4.oe1
+[ 1413s] [332/373] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1417s] [333/373] installing openssh-server-8.2p1-10.oe1
+[ 1420s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1421s] [334/373] installing groff-1.22.4-4.oe1
+[ 1428s] [335/373] installing dbus-1:1.12.20-3.oe1
+[ 1430s] [336/373] installing man-db-2.9.3-2.oe1
+[ 1436s] [337/373] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1437s] [338/373] installing gnutls-3.6.15-3.oe1
+[ 1442s] [339/373] installing util-linux-2.36.1-3.oe1
+[ 1451s] [340/373] installing nss-help-3.72.0-2.oe1
+[ 1454s] [341/373] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1455s] [342/373] installing device-mapper-8:1.02.172-1.oe1
+[ 1460s] [343/373] installing openssh-8.2p1-10.oe1
+[ 1463s] [344/373] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1465s] [345/373] installing cryptsetup-2.3.3-3.oe1
+[ 1471s] [346/373] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1475s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1475s] [347/373] installing nss-3.72.0-2.oe1
+[ 1485s] [348/373] installing openssh-clients-8.2p1-10.oe1
+[ 1488s] [349/373] installing nss-util-3.72.0-2.oe1
+[ 1491s] [350/373] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1493s] [351/373] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1495s] [352/373] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1498s] [353/373] installing perl-Pod-Parser-1.63-397.oe1
+[ 1500s] [354/373] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1502s] [355/373] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1504s] [356/373] installing perl-Archive-Tar-2.30-421.oe1
+[ 1506s] [357/373] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1508s] [358/373] installing lvm2-8:2.03.11-1.oe1
+[ 1515s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1516s] [359/373] installing autoconf-2.69-30.oe1
+[ 1518s] [360/373] installing git-2.23.0-12.oe1
+[ 1539s] [361/373] installing nss-softokn-3.72.0-2.oe1
+[ 1543s] [362/373] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1545s] [363/373] installing perl-Git-2.23.0-12.oe1
+[ 1547s] [364/373] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1550s] [365/373] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1552s] [366/373] installing automake-1.16.1-6.oe1
+[ 1556s] [367/373] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1558s] [368/373] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1560s] [369/373] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1562s] [370/373] installing rpm-build-4.15.1-25.oe1
+[ 1564s] [371/373] installing gcc_secure-1.0-0.9.oe1
+[ 1566s] [372/373] installing perl-File-Fetch-0.56-4.oe1
+[ 1568s] [373/373] installing perl-devel-4:5.28.0-435.oe1
+[ 1580s] removing nis flags from /var/cache/obs/worker/root_1/etc/nsswitch.conf...
+[ 1580s] now finalizing build dir...
+[ 1592s] Running build time source services...
+[ 1607s] -----------------------------------------------------------------
+[ 1607s] I have the following modifications for python-py.spec:
+[ 1607s] 38c38
+[ 1607s] < BuildRequires:  %{_bindir}/sphinx-build-3
+[ 1607s] ---
+[ 1607s] > BuildRequires:  python3-sphinx
+[ 1607s] -----------------------------------------------------------------
+[ 1607s] ----- building python-py.spec (user abuild)
+[ 1607s] -----------------------------------------------------------------
+[ 1607s] -----------------------------------------------------------------
+[ 1615s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/8b069866d5d3512a6fb44d002423c2a2-python-py' /home/abuild/rpmbuild/SOURCES/python-py.spec
+[ 1618s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.hGJtAf
+[ 1618s] + umask 022
+[ 1618s] + cd /home/abuild/rpmbuild/BUILD
+[ 1618s] + cd /home/abuild/rpmbuild/BUILD
+[ 1618s] + rm -rf py-1.10.0
+[ 1618s] + /usr/bin/mkdir -p py-1.10.0
+[ 1618s] + cd py-1.10.0
+[ 1618s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/py-1.10.0.tar.gz
+[ 1618s] + /usr/bin/tar -xof -
+[ 1619s] + STATUS=0
+[ 1619s] + '[' 0 -ne 0 ']'
+[ 1619s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1619s] + find py-1.10.0 -type f -a '(' -name '*.py' -o -name 'py.*' ')' -exec sed -i '1{/^#!/d}' '{}' ';' -exec chmod u=rw,go=r '{}' ';'
+[ 1631s] + mv py-1.10.0 python3tmp
+[ 1631s] + RPM_EC=0
+[ 1631s] ++ jobs -p
+[ 1631s] + exit 0
+[ 1631s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.9Ocp9Y
+[ 1631s] + umask 022
+[ 1631s] + cd /home/abuild/rpmbuild/BUILD
+[ 1631s] + cd py-1.10.0
+[ 1631s] + pushd python3tmp
+[ 1631s] ~/rpmbuild/BUILD/py-1.10.0/python3tmp ~/rpmbuild/BUILD/py-1.10.0
+[ 1631s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 1631s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 1631s] + /usr/bin/python3 setup.py build '--executable=/usr/bin/python3 -s'
+[ 1637s] running build
+[ 1637s] running build_py
+[ 1637s] creating build
+[ 1637s] creating build/lib
+[ 1637s] creating build/lib/py
+[ 1637s] copying py/__init__.py -> build/lib/py
+[ 1637s] copying py/__metainfo.py -> build/lib/py
+[ 1637s] copying py/_builtin.py -> build/lib/py
+[ 1637s] copying py/_error.py -> build/lib/py
+[ 1637s] copying py/_std.py -> build/lib/py
+[ 1637s] copying py/_version.py -> build/lib/py
+[ 1637s] copying py/_xmlgen.py -> build/lib/py
+[ 1637s] copying py/test.py -> build/lib/py
+[ 1637s] creating build/lib/py/_code
+[ 1637s] copying py/_code/__init__.py -> build/lib/py/_code
+[ 1637s] copying py/_code/_assertionnew.py -> build/lib/py/_code
+[ 1637s] copying py/_code/_assertionold.py -> build/lib/py/_code
+[ 1637s] copying py/_code/_py2traceback.py -> build/lib/py/_code
+[ 1637s] copying py/_code/assertion.py -> build/lib/py/_code
+[ 1637s] copying py/_code/code.py -> build/lib/py/_code
+[ 1637s] copying py/_code/source.py -> build/lib/py/_code
+[ 1637s] creating build/lib/py/_io
+[ 1637s] copying py/_io/__init__.py -> build/lib/py/_io
+[ 1637s] copying py/_io/capture.py -> build/lib/py/_io
+[ 1637s] copying py/_io/saferepr.py -> build/lib/py/_io
+[ 1637s] copying py/_io/terminalwriter.py -> build/lib/py/_io
+[ 1637s] creating build/lib/py/_log
+[ 1637s] copying py/_log/__init__.py -> build/lib/py/_log
+[ 1637s] copying py/_log/log.py -> build/lib/py/_log
+[ 1637s] copying py/_log/warning.py -> build/lib/py/_log
+[ 1637s] creating build/lib/py/_path
+[ 1637s] copying py/_path/__init__.py -> build/lib/py/_path
+[ 1637s] copying py/_path/cacheutil.py -> build/lib/py/_path
+[ 1637s] copying py/_path/common.py -> build/lib/py/_path
+[ 1637s] copying py/_path/local.py -> build/lib/py/_path
+[ 1638s] copying py/_path/svnurl.py -> build/lib/py/_path
+[ 1638s] copying py/_path/svnwc.py -> build/lib/py/_path
+[ 1638s] creating build/lib/py/_process
+[ 1638s] copying py/_process/__init__.py -> build/lib/py/_process
+[ 1638s] copying py/_process/cmdexec.py -> build/lib/py/_process
+[ 1638s] copying py/_process/forkedfunc.py -> build/lib/py/_process
+[ 1638s] copying py/_process/killproc.py -> build/lib/py/_process
+[ 1638s] creating build/lib/py/_vendored_packages
+[ 1638s] copying py/_vendored_packages/__init__.py -> build/lib/py/_vendored_packages
+[ 1638s] creating build/lib/py/_vendored_packages/apipkg
+[ 1638s] copying py/_vendored_packages/apipkg/__init__.py -> build/lib/py/_vendored_packages/apipkg
+[ 1638s] copying py/_vendored_packages/apipkg/version.py -> build/lib/py/_vendored_packages/apipkg
+[ 1638s] creating build/lib/py/_vendored_packages/iniconfig
+[ 1638s] copying py/_vendored_packages/iniconfig/__init__.py -> build/lib/py/_vendored_packages/iniconfig
+[ 1638s] running egg_info
+[ 1638s] writing py.egg-info/PKG-INFO
+[ 1638s] writing dependency_links to py.egg-info/dependency_links.txt
+[ 1638s] writing top-level names to py.egg-info/top_level.txt
+[ 1638s] reading manifest file 'py.egg-info/SOURCES.txt'
+[ 1638s] reading manifest template 'MANIFEST.in'
+[ 1639s] warning: no previously-included files matching '*.pyc' found anywhere in distribution
+[ 1639s] adding license file 'LICENSE'
+[ 1639s] writing manifest file 'py.egg-info/SOURCES.txt'
+[ 1639s] copying py/__init__.pyi -> build/lib/py
+[ 1639s] copying py/error.pyi -> build/lib/py
+[ 1639s] copying py/iniconfig.pyi -> build/lib/py
+[ 1639s] copying py/io.pyi -> build/lib/py
+[ 1639s] copying py/path.pyi -> build/lib/py
+[ 1639s] copying py/py.typed -> build/lib/py
+[ 1639s] copying py/xml.pyi -> build/lib/py
+[ 1639s] creating build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/INSTALLER -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/METADATA -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/RECORD -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/REQUESTED -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/WHEEL -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] copying py/_vendored_packages/apipkg-1.5.dist-info/top_level.txt -> build/lib/py/_vendored_packages/apipkg-1.5.dist-info
+[ 1639s] creating build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/INSTALLER -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/LICENSE -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/METADATA -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/RECORD -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/REQUESTED -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/WHEEL -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig-1.1.1.dist-info/top_level.txt -> build/lib/py/_vendored_packages/iniconfig-1.1.1.dist-info
+[ 1639s] copying py/_vendored_packages/iniconfig/__init__.pyi -> build/lib/py/_vendored_packages/iniconfig
+[ 1639s] copying py/_vendored_packages/iniconfig/py.typed -> build/lib/py/_vendored_packages/iniconfig
+[ 1639s] + sleep 1
+[ 1640s] ++ pwd
+[ 1640s] + make -C doc html PYTHONPATH=/home/abuild/rpmbuild/BUILD/py-1.10.0/python3tmp SPHINXBUILD=sphinx-build-3
+[ 1641s] make: Entering directory '/home/abuild/rpmbuild/BUILD/py-1.10.0/python3tmp/doc'
+[ 1641s] sphinx-build-3 -b html -d _build/doctrees   . _build/html
+[ 1646s] Traceback (most recent call last):
+[ 1646s]   File "/usr/bin/sphinx-build-3", line 6, in <module>
+[ 1646s]     from pkg_resources import load_entry_point
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 3266, in <module>
+[ 1646s]     def _initialize_master_working_set():
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 3240, in _call_aside
+[ 1646s]     f(*args, **kwargs)
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 3278, in _initialize_master_working_set
+[ 1646s]     working_set = WorkingSet._build_master()
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 573, in _build_master
+[ 1646s]     ws.require(__requires__)
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 891, in require
+[ 1646s]     needed = self.resolve(parse_requirements(requirements))
+[ 1646s]   File "/usr/lib/python3.8/site-packages/pkg_resources/__init__.py", line 777, in resolve
+[ 1646s]     raise DistributionNotFound(req, requirers)
+[ 1646s] pkg_resources.DistributionNotFound: The 'pytz>=2015.7' distribution was not found and is required by babel
+[ 1647s] make: *** [Makefile:43: html] Error 1
+[ 1647s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/py-1.10.0/python3tmp/doc'
+[ 1647s] error: Bad exit status from /var/tmp/rpm-tmp.9Ocp9Y (%build)
+[ 1647s] 
+[ 1647s] 
+[ 1647s] RPM build errors:
+[ 1647s]     Bad exit status from /var/tmp/rpm-tmp.9Ocp9Y (%build)
+[ 1647s] 
+[ 1647s] oe-RISCV-worker24 failed "build python-py.spec" at Sat Apr 23 10:55:17 UTC 2022.
+[ 1647s] 

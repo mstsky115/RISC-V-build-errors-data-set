@@ -1,0 +1,348 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    1s] 
+[    1s] goat03 started "build noisetorch.spec" at Tue Jul  5 13:44:03 UTC 2022.
+[    1s] 
+[    1s] Building noisetorch for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '658b840b7e3b17cbe702ff251459d3e5'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/noisetorch.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/noisetorch.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/noisetorch.spec build ...
+[    2s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [f0e7962e81f01d9cdb79eac7554eabdb]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    5s]   breaking dependency python310-base -> libpython3_10-1_0
+[    5s] done
+[    6s] using io_uring on x86_64
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using UART console
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 16
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   16s] machine type: riscv64
+[   16s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   16s] Increasing log level from now on...
+[   16s] [    8.167935][  T513] sysrq: Changing Loglevel
+[   16s] [    8.168505][  T513] sysrq: Loglevel set to 4
+[   16s] Enable sysrq operations
+[   17s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[   17s] no label, UUID=12779778-c534-4068-940f-50c31dbb5ef3
+[   17s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   17s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[   17s] swapon /dev/vdb
+[   17s] WARNING: udev not running, creating extra device nodes
+[   18s] logging output to //.build.log...
+[   18s] processing recipe /.build-srcdir/noisetorch.spec ...
+[   18s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/noisetorch.spec build ...
+[   19s] initializing rpm db...
+[   19s] querying package ids...
+[   41s] [1/169] preinstalled aaa_base-84.87+git20220518.dc83f4e-1.1
+[   41s] [2/169] preinstalled aaa_base-malloccheck-84.87+git20220518.dc83f4e-1.1
+[   41s] [3/169] preinstalled attr-2.5.1-1.1
+[   41s] [4/169] preinstalled bash-5.1.16-8.1
+[   41s] [5/169] preinstalled bash-sh-5.1.16-8.1
+[   41s] [6/169] preinstalled binutils-2.38-6.1
+[   41s] [7/169] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   41s] [8/169] preinstalled build-compare-20220620T150329.a852498-1.1
+[   41s] [9/169] preinstalled build-mkbaselibs-20220613-1.1
+[   41s] [10/169] preinstalled bzip2-1.0.8-4.1
+[   41s] [11/169] preinstalled chkstat-1599_20220309-33.1
+[   41s] [12/169] preinstalled compat-usrmerge-build-84.87-5.1
+[   41s] [13/169] preinstalled compat-usrmerge-tools-84.87-5.1
+[   41s] [14/169] preinstalled coreutils-9.1-2.1
+[   41s] [15/169] preinstalled cpio-2.13-4.1
+[   41s] [16/169] preinstalled cpp-12-2.1
+[   41s] [17/169] preinstalled cpp12-12.1.0+git27-4.1
+[   41s] [18/169] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   41s] [19/169] preinstalled diffutils-3.8-2.1
+[   41s] [20/169] preinstalled dwz-0.14-4.1
+[   41s] [21/169] preinstalled file-5.42-1.1
+[   41s] [22/169] preinstalled file-magic-5.42-1.1
+[   41s] [23/169] preinstalled filesystem-84.87-5.1
+[   41s] [24/169] preinstalled fillup-1.42-277.1
+[   41s] [25/169] preinstalled findutils-4.9.0-1.1
+[   41s] [26/169] preinstalled gawk-5.1.1-6.1
+[   41s] [27/169] preinstalled gcc-12-2.1
+[   41s] [28/169] preinstalled gcc-PIE-12-2.1
+[   41s] [29/169] preinstalled gcc12-12.1.0+git27-4.1
+[   41s] [30/169] preinstalled gcc12-PIE-12.1.0+git27-4.1
+[   41s] [31/169] preinstalled gettext-runtime-mini-0.21-4.1
+[   41s] [32/169] preinstalled gettext-tools-mini-0.21-4.1
+[   41s] [33/169] preinstalled glibc-2.35-5.1
+[   41s] [34/169] preinstalled glibc-devel-2.35-5.1
+[   41s] [35/169] preinstalled glibc-locale-base-2.35-5.1
+[   41s] [36/169] cumulate go1.18-1.18.3-1.1
+[   41s] [37/169] preinstalled grep-3.7-4.1
+[   41s] [38/169] preinstalled gzip-1.12-2.1
+[   41s] [39/169] cumulate hicolor-icon-theme-0.17-3.2
+[   41s] [40/169] preinstalled kernel-obs-build-5.14.2-1.3
+[   41s] [41/169] cumulate less-590-3.1
+[   41s] [42/169] preinstalled libacl1-2.3.1-2.1
+[   41s] [43/169] preinstalled libasan8-12.1.0+git27-4.1
+[   41s] [44/169] preinstalled libatomic1-12.1.0+git27-4.1
+[   41s] [45/169] preinstalled libattr1-2.5.1-1.1
+[   41s] [46/169] preinstalled libaudit1-3.0.6-4.1
+[   41s] [47/169] preinstalled libblkid1-2.37.4-1.2
+[   41s] [48/169] cumulate libbrotlicommon1-1.0.9-1.1
+[   41s] [49/169] preinstalled libbz2-1-1.0.8-4.1
+[   41s] [50/169] preinstalled libcap-ng0-0.8.3-1.1
+[   41s] [51/169] preinstalled libcap2-2.64-1.1
+[   41s] [52/169] cumulate libcbor0_9-0.9.0-1.1
+[   41s] [53/169] cumulate libcom_err2-1.46.5-2.1
+[   41s] [54/169] preinstalled libcrypt1-4.4.27-1.1
+[   41s] [55/169] preinstalled libctf-nobfd0-2.38-6.1
+[   41s] [56/169] preinstalled libctf0-2.38-6.1
+[   42s] [57/169] preinstalled libdb-4_8-4.8.30-39.1
+[   42s] [58/169] preinstalled libdw1-0.187-8.1
+[   42s] [59/169] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   42s] [60/169] cumulate libedit0-20210910.3.1-1.1
+[   42s] [61/169] preinstalled libelf1-0.187-8.1
+[   42s] [62/169] cumulate libexpat1-2.4.8-1.1
+[   42s] [63/169] preinstalled libfdisk1-2.37.4-1.2
+[   42s] [64/169] cumulate libffi8-3.4.2-6.1
+[   42s] [65/169] preinstalled libgcc_s1-12.1.0+git27-4.1
+[   42s] [66/169] preinstalled libgcrypt20-1.9.4-3.1
+[   42s] [67/169] preinstalled libgdbm6-1.23-1.1
+[   42s] [68/169] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [69/169] preinstalled libgmp10-6.2.1-4.1
+[   42s] [70/169] preinstalled libgomp1-12.1.0+git27-4.1
+[   42s] [71/169] preinstalled libgpg-error0-1.45-1.1
+[   42s] [72/169] preinstalled libisl23-0.24-1.1
+[   42s] [73/169] cumulate libkeyutils1-1.6.3-4.1
+[   42s] [74/169] preinstalled liblua5_4-5-5.4.4-5.1
+[   42s] [75/169] preinstalled liblzma5-5.2.5-3.1
+[   42s] [76/169] preinstalled libmagic1-5.42-1.1
+[   42s] [77/169] preinstalled libmount1-2.37.4-1.2
+[   42s] [78/169] preinstalled libmpc3-1.2.1-1.2
+[   42s] [79/169] cumulate libmpdec3-2.5.1-2.1
+[   42s] [80/169] preinstalled libmpfr6-4.1.0-2.1
+[   42s] [81/169] preinstalled libncurses6-6.3.20220618-22.1
+[   42s] [82/169] cumulate libnghttp2-14-1.47.0-7.2
+[   42s] [83/169] preinstalled libpcre1-8.45-2.1
+[   42s] [84/169] preinstalled libpcre2-8-0-10.40-2.1
+[   42s] [85/169] preinstalled libpkgconf3-1.8.0-1.1
+[   42s] [86/169] preinstalled libpopt0-1.18-3.1
+[   42s] [87/169] preinstalled libreadline8-8.1-3.1
+[   42s] [88/169] cumulate librhash0-1.4.3-1.1
+[   42s] [89/169] preinstalled librpmbuild9-4.17.0-9.1
+[   42s] [90/169] cumulate libsasl2-3-2.1.28-1.3
+[   42s] [91/169] preinstalled libseccomp2-2.5.4-2.1
+[   42s] [92/169] preinstalled libselinux1-3.4-1.1
+[   42s] [93/169] preinstalled libsemanage-conf-3.4-1.1
+[   42s] [94/169] preinstalled libsemanage2-3.4-1.1
+[   42s] [95/169] preinstalled libsepol2-3.4-1.1
+[   42s] [96/169] cumulate libsha1detectcoll1-1.0.3-4.3
+[   42s] [97/169] preinstalled libsmartcols1-2.37.4-1.2
+[   42s] [98/169] cumulate libssh-config-0.9.6-3.1
+[   42s] [99/169] preinstalled libstdc++6-12.1.0+git27-4.1
+[   42s] [100/169] cumulate libstdc++6-devel-gcc12-12.1.0+git27-4.1
+[   42s] [101/169] preinstalled libsubid4-4.11.1-1.1
+[   42s] [102/169] preinstalled libubsan1-12.1.0+git27-4.1
+[   42s] [103/169] cumulate libudev-mini1-250.6-1.1
+[   42s] [104/169] cumulate libunistring2-1.0-1.1
+[   42s] [105/169] preinstalled libutempter0-1.2.0-3.2
+[   42s] [106/169] preinstalled libuuid1-2.37.4-1.2
+[   42s] [107/169] cumulate libuv1-1.44.1-12.1
+[   42s] [108/169] cumulate libverto1-0.3.1-1.2
+[   42s] [109/169] preinstalled libxcrypt-devel-4.4.27-1.1
+[   42s] [110/169] preinstalled libz1-1.2.11-19.1
+[   42s] [111/169] preinstalled libzstd1-1.5.2-1.1
+[   42s] [112/169] preinstalled linux-glibc-devel-5.17-1.1
+[   42s] [113/169] preinstalled login_defs-4.11.1-1.1
+[   42s] [114/169] preinstalled lua54-5.4.4-5.1
+[   42s] [115/169] preinstalled make-4.3-3.1
+[   42s] [116/169] preinstalled ncurses-utils-6.3.20220618-22.1
+[   42s] [117/169] preinstalled pam-1.5.2-6.1
+[   42s] [118/169] preinstalled pam_unix-1.5.2-6.1
+[   42s] [119/169] preinstalled patch-2.7.6-6.1
+[   42s] [120/169] preinstalled perl-5.34.1-1.2
+[   42s] [121/169] preinstalled perl-base-5.34.1-1.2
+[   42s] [122/169] preinstalled permissions-20220309.1599-33.1
+[   42s] [123/169] preinstalled permissions-config-1599_20220309-33.1
+[   42s] [124/169] preinstalled pkgconf-1.8.0-1.1
+[   42s] [125/169] preinstalled pkgconf-m4-1.8.0-1.1
+[   42s] [126/169] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   42s] [127/169] preinstalled polkit-default-privs-1550+20220524.0345bd9-1.1
+[   42s] [128/169] preinstalled post-build-checks-84.87+git20220325.f46ef3c-1.1
+[   42s] [129/169] cumulate python-rpm-macros-20220618.1ed0055-1.1
+[   42s] [130/169] preinstalled qemu-linux-user-6.2.0-73.1
+[   42s] [131/169] preinstalled rpm-4.17.0-9.1
+[   42s] [132/169] preinstalled rpm-build-4.17.0-9.1
+[   42s] [133/169] preinstalled rpm-build-perl-4.17.0-9.1
+[   42s] [134/169] preinstalled rpm-config-SUSE-20220421-1.1
+[   42s] [135/169] preinstalled rpmlint-mini-2.3.0+git20220525.d213f48-6.7
+[   42s] [136/169] preinstalled rpmlint-strict-2.3.0+git20220525.d213f48-1.1
+[   42s] [137/169] preinstalled sed-4.8-3.2
+[   42s] [138/169] preinstalled shadow-4.11.1-1.1
+[   42s] [139/169] preinstalled system-group-hardware-20170617-24.1
+[   42s] [140/169] preinstalled system-user-root-20190513-2.1
+[   42s] [141/169] preinstalled systemd-rpm-macros-16-1.1
+[   42s] [142/169] preinstalled sysuser-shadow-3.1-4.1
+[   42s] [143/169] preinstalled tar-1.34-6.1
+[   42s] [144/169] preinstalled terminfo-base-6.3.20220618-22.1
+[   42s] [145/169] preinstalled update-alternatives-1.21.8-1.1
+[   42s] [146/169] preinstalled util-linux-2.37.4-1.2
+[   42s] [147/169] preinstalled which-2.21-5.1
+[   42s] [148/169] preinstalled xz-5.2.5-3.1
+[   42s] [149/169] cumulate gcc12-c++-12.1.0+git27-4.1
+[   42s] [150/169] cumulate go-1.18-1.1
+[   42s] [151/169] cumulate libbrotlidec1-1.0.9-1.1
+[   42s] [152/169] cumulate libhidapi-hidraw0-0.11.0-1.1
+[   42s] [153/169] cumulate libidn2-0-2.3.2-2.1
+[   42s] [154/169] cumulate libopenssl1_1-1.1.1p-6.1
+[   42s] [155/169] cumulate krb5-mini-1.20-1.1
+[   42s] [156/169] cumulate gcc-c++-12-2.1
+[   42s] [157/169] cumulate openssh-common-8.9p1-2.1
+[   42s] [158/169] cumulate libldap2-2.6.2-1.1
+[   42s] [159/169] cumulate libpsl5-0.21.1-1.2
+[   42s] [160/169] cumulate libssh4-0.9.6-3.1
+[   42s] [161/169] cumulate libfido2-1-1.10.0-1.1
+[   42s] [162/169] cumulate openssh-clients-8.9p1-2.1
+[   42s] [163/169] cumulate libcurl4-7.83.1-1.1
+[   42s] [164/169] cumulate git-core-2.36.1-3.1
+[   42s] [165/169] cumulate python310-base-3.10.5-2.1
+[   42s] [166/169] cumulate libpython3_10-1_0-3.10.5-2.1
+[   42s] [167/169] cumulate rpm-build-python-4.17.0-9.1
+[   42s] [168/169] cumulate cmake-mini-3.23.2-2.1
+[   42s] [169/169] cumulate cmake-3.23.2-2.1
+[   42s] now installing cumulated packages
+[   43s] Preparing...                          ########################################
+[   43s] Updating / installing...
+[   43s] libexpat1-2.4.8-1.1                   ########################################
+[   43s] libunistring2-1.0-1.1                 ########################################
+[   43s] libidn2-0-2.3.2-2.1                   ########################################
+[   43s] libudev-mini1-250.6-1.1               ########################################
+[   43s] libhidapi-hidraw0-0.11.0-1.1          ########################################
+[   44s] libpsl5-0.21.1-1.2                    ########################################
+[   44s] python-rpm-macros-20220618.1ed0055-1.1########################################
+[   44s] libverto1-0.3.1-1.2                   ########################################
+[   44s] libuv1-1.44.1-12.1                    ########################################
+[   54s] libstdc++6-devel-gcc12-12.1.0+git27-4.########################################
+[   58s] gcc12-c++-12.1.0+git27-4.1            ########################################
+[   58s] libssh-config-0.9.6-3.1               ########################################
+[   58s] libsha1detectcoll1-1.0.3-4.3          ########################################
+[   58s] libsasl2-3-2.1.28-1.3                 ########################################
+[   58s] librhash0-1.4.3-1.1                   ########################################
+[   59s] libnghttp2-14-1.47.0-7.2              ########################################
+[   59s] libmpdec3-2.5.1-2.1                   ########################################
+[   59s] libkeyutils1-1.6.3-4.1                ########################################
+[   59s] libffi8-3.4.2-6.1                     ########################################
+[   59s] libedit0-20210910.3.1-1.1             ########################################
+[   59s] libcom_err2-1.46.5-2.1                ########################################
+[   60s] krb5-mini-1.20-1.1                    ########################################
+[   60s] Updating /etc/sysconfig/kadmind ...
+[   60s] Updating /etc/sysconfig/krb5kdc ...
+[   60s] libcbor0_9-0.9.0-1.1                  ########################################
+[   61s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   61s] libbrotlidec1-1.0.9-1.1               ########################################
+[   61s] less-590-3.1                          ########################################
+[   98s] go1.18-1.18.3-1.1                     ########################################
+[   99s] update-alternatives: using /usr/lib64/go/1.18/bin/go to provide /usr/bin/go (go) in auto mode
+[   99s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  100s] libopenssl1_1-1.1.1p-6.1              ########################################
+[  100s] libpython3_10-1_0-3.10.5-2.1          ########################################
+[  104s] python310-base-3.10.5-2.1             ########################################
+[  109s] cmake-mini-3.23.2-2.1                 ########################################
+[  109s] openssh-common-8.9p1-2.1              ########################################
+[  109s] libldap2-2.6.2-1.1                    ########################################
+[  109s] libssh4-0.9.6-3.1                     ########################################
+[  110s] libcurl4-7.83.1-1.1                   ########################################
+[  110s] libfido2-1-1.10.0-1.1                 ########################################
+[  110s] openssh-clients-8.9p1-2.1             ########################################
+[  112s] git-core-2.36.1-3.1                   ########################################
+[  112s] cmake-3.23.2-2.1                      ########################################
+[  112s] rpm-build-python-4.17.0-9.1           ########################################
+[  112s] go-1.18-1.1                           ########################################
+[  112s] gcc-c++-12-2.1                        ########################################
+[  112s] hicolor-icon-theme-0.17-3.2           ########################################
+[  115s] now finalizing build dir...
+[  116s] ... running 01-add_abuild_user_to_trusted_group
+[  116s] ... running 02-set_timezone_to_utc
+[  116s] ... running 03-set-permissions-secure
+[  117s] ... running 11-hack_uname_version_to_kernel_version
+[  123s] Running build time source services...
+[  129s] build target is riscv64-suse-linux
+[  129s] -----------------------------------------------------------------
+[  129s] I have the following modifications for noisetorch.spec:
+[  129s] 21c21
+[  129s] < Release:        0
+[  129s] ---
+[  129s] > Release:        2.1
+[  129s] -----------------------------------------------------------------
+[  129s] ----- building noisetorch.spec (user abuild)
+[  129s] -----------------------------------------------------------------
+[  129s] -----------------------------------------------------------------
+[  133s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/658b840b7e3b17cbe702ff251459d3e5-noisetorch' /home/abuild/rpmbuild/SOURCES/noisetorch.spec
+[  134s] Building target platforms: riscv64-suse-linux
+[  134s] Building for target riscv64-suse-linux
+[  134s] setting SOURCE_DATE_EPOCH=1656892800
+[  134s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.qoSK1o
+[  134s] + umask 022
+[  134s] + cd /home/abuild/rpmbuild/BUILD
+[  134s] + cd /home/abuild/rpmbuild/BUILD
+[  134s] + rm -rf NoiseTorch-0.12.2
+[  134s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/NoiseTorch-0.12.2.tar.gz
+[  134s] + /usr/bin/tar -xof -
+[  136s] + STATUS=0
+[  136s] + '[' 0 -ne 0 ']'
+[  136s] + cd NoiseTorch-0.12.2
+[  136s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/vendor.tar.gz
+[  136s] + /usr/bin/tar -xof -
+[  136s] + STATUS=0
+[  136s] + '[' 0 -ne 0 ']'
+[  136s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  136s] + RPM_EC=0
+[  136s] ++ jobs -p
+[  136s] + exit 0
+[  137s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.WsW8eK
+[  137s] + umask 022
+[  137s] + cd /home/abuild/rpmbuild/BUILD
+[  137s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/noisetorch-0.12.2-2.1.riscv64
+[  137s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/noisetorch-0.12.2-2.1.riscv64
+[  137s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  137s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/noisetorch-0.12.2-2.1.riscv64
+[  137s] + cd NoiseTorch-0.12.2
+[  137s] + ref=/usr/lib/rpm
+[  137s] + mints=0
+[  137s] + case $(uname -m) in
+[  137s] ++ uname -m
+[  137s] + mints=20160911
+[  137s] + for s in guess sub
+[  137s] ++ find -maxdepth 8 -name config.guess
+[  137s] + for s in guess sub
+[  137s] ++ find -maxdepth 8 -name config.sub
+[  137s] + pushd c/ladspa
+[  137s] ~/rpmbuild/BUILD/NoiseTorch-0.12.2/c/ladspa ~/rpmbuild/BUILD/NoiseTorch-0.12.2
+[  137s] + /usr/bin/make -O -j16 V=1 VERBOSE=1
+[  173s] cc -I ../rnnoise/include -Wall -Werror -O2 -c -fPIC ../c-ringbuf/ringbuf.c ../rnnoise/src/*.c module.c
+[  173s] cc -o rnnoise_ladspa.so *.o -shared -Wl,--version-script=export.txt -lm
+[  173s] + ldd rnnoise_ladspa.so
+[  173s] 	libm.so.6 => /lib64/lp64d/libm.so.6 (0x0000004001849000)
+[  173s] 	libc.so.6 => /lib64/lp64d/libc.so.6 (0x00000040018c2000)
+[  173s] 	/lib/ld-linux-riscv64-lp64d.so.1 (0x0000004000000000)
+[  173s] + popd
+[  173s] ~/rpmbuild/BUILD/NoiseTorch-0.12.2
+[  173s] + go generate
+[  178s] + CGO_ENABLED=0
+[  178s] + GOOS=linux
+[  178s] + go build -buildmode=pie -a -ldflags '-w -X main.version=0.12.2 -X main.distribution=rpm' .
+[  279s] # golang.org/x/exp/shiny/driver/x11driver
+[  279s] vendor/golang.org/x/exp/shiny/driver/x11driver/buffer.go:111:12: undefined: shmClose
+[  279s] vendor/golang.org/x/exp/shiny/driver/x11driver/screen.go:328:23: undefined: shmOpen
+[  279s] vendor/golang.org/x/exp/shiny/driver/x11driver/screen.go:334:5: undefined: shmClose
+[  292s] error: Bad exit status from /var/tmp/rpm-tmp.WsW8eK (%build)
+[  292s] 
+[  292s] 
+[  292s] RPM build errors:
+[  292s]     Bad exit status from /var/tmp/rpm-tmp.WsW8eK (%build)
+[  293s] ### VM INTERACTION START ###
+[  293s] [  285.104777][    T1] sysrq: Power Off
+[  293s] [  285.134286][    T7] reboot: Power down
+[  293s] ### VM INTERACTION END ###
+[  293s] 
+[  293s] goat03 failed "build noisetorch.spec" at Tue Jul  5 13:48:55 UTC 2022.
+[  293s] 

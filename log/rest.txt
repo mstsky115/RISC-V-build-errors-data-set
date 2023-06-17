@@ -1,0 +1,1717 @@
+[    0s] Memory limit set to 10955196KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    4s] 
+[    4s] oe-RISCV-worker25 started "build _service:extract_file:rest.spec" at Fri Apr 15 02:03:32 UTC 2022.
+[    4s] 
+[    4s] Building rest for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '72a5ff13b0d36dff36d86f483a6ebd81'
+[    4s] 
+[    4s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rest.spec ...
+[    8s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rest.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:rest.spec build ...
+[  112s] cycle: coreutils -> bash
+[  112s]   breaking dependency coreutils -> bash
+[  112s] cycle: coreutils -> info
+[  112s]   breaking dependency coreutils -> info
+[  112s] cycle: glibc -> filesystem -> coreutils
+[  112s]   breaking dependency coreutils -> glibc
+[  112s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  112s]   breaking dependency coreutils -> libacl
+[  112s] cycle: glibc -> filesystem -> coreutils -> attr
+[  112s]   breaking dependency coreutils -> attr
+[  112s] cycle: coreutils -> libcap
+[  112s]   breaking dependency coreutils -> libcap
+[  112s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  112s]   breaking dependency coreutils -> openssl-libs
+[  112s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  112s]   breaking dependency libselinux -> glibc
+[  112s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  112s]   breaking dependency pcre2 -> glibc
+[  112s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  112s]   breaking dependency readline -> glibc
+[  112s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  112s]   breaking dependency filesystem -> coreutils
+[  112s] cycle: glibc -> filesystem -> bash -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  112s]   breaking dependency filesystem -> bash
+[  112s] cycle: perl-Carp -> perl-libs
+[  112s]   breaking dependency perl-libs -> perl-Carp
+[  112s] cycle: perl-libs -> perl-Exporter
+[  112s]   breaking dependency perl-libs -> perl-Exporter
+[  112s] cycle: perl-Carp -> perl-Exporter
+[  112s]   breaking dependency perl-Exporter -> perl-Carp
+[  112s] cycle: nss-util -> nss
+[  112s]   breaking dependency nss -> nss-util
+[  112s] cycle: nss-softokn -> nss-util -> nss
+[  112s]   breaking dependency nss -> nss-softokn
+[  112s] cycle: systemd -> cryptsetup -> device-mapper
+[  112s]   breaking dependency systemd -> cryptsetup
+[  112s] cycle: audit -> systemd -> pam
+[  112s]   breaking dependency systemd -> pam
+[  113s] [1/84] preinstalling dbus...
+[  114s] [2/84] preinstalling libffi-devel...
+[  114s] [3/84] preinstalling nodejs-source-map...
+[  115s] [4/84] preinstalling python3-pip...
+[  119s] [5/84] preinstalling python3-setuptools_scm...
+[  120s] [6/84] preinstalling filesystem...
+[  123s] [7/84] preinstalling glibc...
+[  128s] [8/84] preinstalling libgcc...
+[  129s] [9/84] preinstalling diffutils...
+[  130s] [10/84] preinstalling libcap-ng...
+[  131s] [11/84] preinstalling libgpg-error...
+[  133s] [12/84] preinstalling libpcap...
+[  135s] [13/84] preinstalling libsmartcols...
+[  136s] [14/84] preinstalling libuuid...
+[  137s] [15/84] preinstalling libxcrypt...
+[  138s] [16/84] preinstalling lz4...
+[  139s] [17/84] preinstalling m4...
+[  140s] [18/84] preinstalling ncurses-libs...
+[  141s] [19/84] preinstalling nspr...
+[  142s] [20/84] preinstalling xz-libs...
+[  144s] [21/84] preinstalling zlib...
+[  145s] [22/84] preinstalling attr...
+[  146s] [23/84] preinstalling libdb...
+[  151s] [24/84] preinstalling zstd...
+[  153s] [25/84] preinstalling audit-libs...
+[  154s] [26/84] preinstalling file...
+[  155s] [27/84] preinstalling iptables-libs...
+[  156s] [28/84] preinstalling libacl...
+[  157s] [29/84] preinstalling libgcrypt...
+[  159s] [30/84] preinstalling openssl-libs...
+[  161s] [31/84] preinstalling readline...
+[  164s] [32/84] preinstalling ncurses...
+[  172s] [33/84] preinstalling cmake...
+[  188s] [34/84] preinstalling perl-libs...
+[  192s] [35/84] preinstalling pcre2...
+[  194s] [36/84] preinstalling perl-Exporter...
+[  195s] [37/84] preinstalling pcre...
+[  196s] [38/84] preinstalling acl...
+[  197s] [39/84] preinstalling sqlite...
+[  199s] [40/84] preinstalling libselinux...
+[  201s] [41/84] preinstalling perl-Carp...
+[  202s] [42/84] preinstalling perl-Digest-MD5...
+[  203s] [43/84] preinstalling sed...
+[  204s] [44/84] preinstalling coreutils...
+[  210s] [45/84] preinstalling bash...
+[  214s] [46/84] preinstalling openssl...
+[  215s] [47/84] preinstalling dnf...
+[  216s] [48/84] preinstalling bzip2...
+[  217s] [49/84] preinstalling elfutils...
+[  219s] [50/84] preinstalling hostname...
+[  220s] [51/84] preinstalling libcap...
+[  221s] [52/84] preinstalling popt...
+[  223s] [53/84] preinstalling grep...
+[  224s] [54/84] preinstalling libblkid...
+[  225s] [55/84] preinstalling perl-constant...
+[  226s] [56/84] preinstalling tar...
+[  229s] [57/84] preinstalling info...
+[  230s] [58/84] preinstalling libgcrypt-devel...
+[  231s] [59/84] preinstalling lua...
+[  232s] [60/84] preinstalling nss...
+[  234s] [61/84] preinstalling chkconfig...
+[  236s] [62/84] preinstalling copy-jdk-configs...
+[  237s] [63/84] preinstalling libfdisk...
+[  239s] [64/84] preinstalling libmount...
+[  240s] [65/84] preinstalling libsemanage...
+[  241s] [66/84] preinstalling nss-util...
+[  243s] [67/84] preinstalling findutils...
+[  245s] [68/84] preinstalling perl-Getopt-Long...
+[  246s] [69/84] preinstalling xz...
+[  247s] [70/84] preinstalling perl-Data-Dumper...
+[  248s] [71/84] preinstalling systemd-libs...
+[  250s] [72/84] preinstalling rpm-libs...
+[  251s] [73/84] preinstalling dbus-libs...
+[  252s] [74/84] preinstalling nss-softokn...
+[  254s] [75/84] preinstalling glib2...
+[  259s] [76/84] preinstalling systemd...
+[  264s] [77/84] preinstalling audit...
+[  266s] [78/84] preinstalling rpm...
+[  268s] [79/84] preinstalling openEuler-rpm-config...
+[  268s] [80/84] preinstalling pam...
+[  270s] [81/84] preinstalling util-linux...
+[  276s] [82/84] preinstalling device-mapper...
+[  278s] [83/84] preinstalling cryptsetup...
+[  280s] [84/84] preinstalling lvm2...
+[  283s] 
+[  286s] initializing rpm db...
+[  304s] reordering...cycle: bash -> coreutils
+[  304s]   breaking dependency coreutils -> bash
+[  304s] cycle: bash -> coreutils -> info
+[  304s]   breaking dependency coreutils -> info
+[  304s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  304s]   breaking dependency filesystem -> bash
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  304s]   breaking dependency coreutils -> gmp
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  304s]   breaking dependency coreutils -> glibc
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  304s]   breaking dependency coreutils -> libacl
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  304s]   breaking dependency coreutils -> attr
+[  304s] cycle: coreutils -> libcap -> bash
+[  304s]   breaking dependency coreutils -> libcap
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  304s]   breaking dependency openssl-libs -> glibc
+[  304s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  304s]   breaking dependency ca-certificates -> bash
+[  304s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  304s]   breaking dependency ca-certificates -> coreutils
+[  304s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  304s]   breaking dependency grep -> bash
+[  304s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  304s]   breaking dependency ca-certificates -> grep
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  304s]   breaking dependency p11-kit -> glibc
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  304s]   breaking dependency openssl-libs -> ca-certificates
+[  304s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  304s]   breaking dependency crypto-policies -> bash
+[  304s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  304s]   breaking dependency crypto-policies -> coreutils
+[  304s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency grep -> coreutils
+[  304s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency glibc -> basesystem
+[  304s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency glibc-common -> bash
+[  304s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency glibc-common -> coreutils
+[  304s] cycle: glibc -> glibc-common
+[  304s]   breaking dependency glibc-common -> glibc
+[  304s] cycle: glibc -> glibc-common -> libselinux
+[  304s]   breaking dependency libselinux -> glibc
+[  304s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  304s]   breaking dependency pcre2 -> glibc
+[  304s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  304s]   breaking dependency readline -> glibc
+[  304s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  304s]   breaking dependency libselinux -> pcre2
+[  304s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency bash -> coreutils
+[  304s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency libsepol -> bash
+[  304s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  304s]   breaking dependency coreutils -> openssl-libs
+[  304s] cycle: libselinux -> libsepol -> coreutils
+[  304s]   breaking dependency libsepol -> coreutils
+[  304s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  304s]   breaking dependency glibc -> glibc-common
+[  304s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  304s]   breaking dependency filesystem -> coreutils
+[  304s] cycle: filesystem -> setup
+[  304s]   breaking dependency filesystem -> setup
+[  304s] cycle: systemd -> cryptsetup -> device-mapper
+[  304s]   breaking dependency systemd -> cryptsetup
+[  304s] cycle: perl-libs -> perl-Carp
+[  304s]   breaking dependency perl-libs -> perl-Carp
+[  304s] cycle: perl-libs -> perl-Exporter
+[  304s]   breaking dependency perl-libs -> perl-Exporter
+[  304s] cycle: perl-Carp -> perl-Exporter
+[  304s]   breaking dependency perl-Exporter -> perl-Carp
+[  304s] cycle: perl -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-PathTools
+[  304s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  304s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  304s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-File-Path
+[  304s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  304s]   breaking dependency perl -> perl-Getopt-Long
+[  304s] cycle: perl -> perl-Locale-Maketext
+[  304s]   breaking dependency perl -> perl-Locale-Maketext
+[  304s] cycle: perl -> perl-Pod-Simple
+[  304s]   breaking dependency perl -> perl-Pod-Simple
+[  304s] cycle: perl -> perl-Socket
+[  304s]   breaking dependency perl -> perl-Socket
+[  304s] cycle: perl -> perl-Storable
+[  304s]   breaking dependency perl -> perl-Storable
+[  304s] cycle: perl -> perl-Text-Tabs+Wrap
+[  304s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  304s] cycle: perl -> perl-Time-Local -> perl-constant
+[  304s]   breaking dependency perl -> perl-Time-Local
+[  304s] cycle: perl -> perl-constant
+[  304s]   breaking dependency perl -> perl-constant
+[  304s] cycle: perl -> perl-threads
+[  304s]   breaking dependency perl -> perl-threads
+[  304s] cycle: perl -> perl-threads-shared
+[  304s]   breaking dependency perl -> perl-threads-shared
+[  304s] cycle: perl -> perl-Archive-Tar
+[  304s]   breaking dependency perl -> perl-Archive-Tar
+[  304s] cycle: perl -> perl-B-Debug
+[  304s]   breaking dependency perl -> perl-B-Debug
+[  304s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  304s]   breaking dependency perl -> perl-CPAN-Meta
+[  304s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  304s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  304s] cycle: perl -> perl-CPAN-Meta-YAML
+[  304s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  304s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  304s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  304s] cycle: perl -> perl-Compress-Raw-Zlib
+[  304s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  304s] cycle: perl -> perl-Config-Perl-V
+[  304s]   breaking dependency perl -> perl-Config-Perl-V
+[  304s] cycle: perl -> perl-DB_File
+[  304s]   breaking dependency perl -> perl-DB_File
+[  304s] cycle: perl -> perl-Data-Dumper
+[  304s]   breaking dependency perl -> perl-Data-Dumper
+[  304s] cycle: perl -> perl-Devel-PPPort
+[  304s]   breaking dependency perl -> perl-Devel-PPPort
+[  304s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  304s]   breaking dependency perl -> perl-Digest
+[  304s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  304s]   breaking dependency perl -> perl-Digest-MD5
+[  304s] cycle: perl -> perl-Digest-SHA
+[  304s]   breaking dependency perl -> perl-Digest-SHA
+[  304s] cycle: perl -> perl-Encode
+[  304s]   breaking dependency perl -> perl-Encode
+[  304s] cycle: perl -> perl-Env
+[  304s]   breaking dependency perl -> perl-Env
+[  304s] cycle: perl -> perl-ExtUtils-Command
+[  304s]   breaking dependency perl -> perl-ExtUtils-Command
+[  304s] cycle: perl -> perl-ExtUtils-Install
+[  304s]   breaking dependency perl -> perl-ExtUtils-Install
+[  304s] cycle: perl -> perl-ExtUtils-Manifest
+[  304s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  304s] cycle: perl -> perl-ExtUtils-ParseXS
+[  304s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  304s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-File-Fetch
+[  304s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-File-Temp
+[  304s] cycle: perl -> perl-Filter
+[  304s]   breaking dependency perl -> perl-Filter
+[  304s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  304s]   breaking dependency perl -> perl-Filter-Simple
+[  304s] cycle: perl -> perl-HTTP-Tiny
+[  304s]   breaking dependency perl -> perl-HTTP-Tiny
+[  304s] cycle: perl -> perl-IO-Compress
+[  304s]   breaking dependency perl -> perl-IO-Compress
+[  304s] cycle: perl -> perl-IO-Socket-IP
+[  304s]   breaking dependency perl -> perl-IO-Socket-IP
+[  304s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  304s]   breaking dependency perl -> perl-IPC-Cmd
+[  304s] cycle: perl -> perl-IPC-SysV
+[  304s]   breaking dependency perl -> perl-IPC-SysV
+[  304s] cycle: perl -> perl-JSON-PP
+[  304s]   breaking dependency perl -> perl-JSON-PP
+[  304s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  304s]   breaking dependency perl -> perl-Locale-Codes
+[  304s] cycle: perl -> perl-MIME-Base64
+[  304s]   breaking dependency perl -> perl-MIME-Base64
+[  304s] cycle: perl -> perl-Math-BigInt
+[  304s]   breaking dependency perl -> perl-Math-BigInt
+[  304s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  304s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  304s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  304s]   breaking dependency perl -> perl-Math-BigRat
+[  304s] cycle: perl -> perl-Module-CoreList
+[  304s]   breaking dependency perl -> perl-Module-CoreList
+[  304s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-Module-Load
+[  304s] cycle: perl -> perl-Module-Load-Conditional
+[  304s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  304s] cycle: perl -> perl-Module-Metadata
+[  304s]   breaking dependency perl -> perl-Module-Metadata
+[  304s] cycle: perl -> perl-Params-Check
+[  304s]   breaking dependency perl -> perl-Params-Check
+[  304s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  304s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  304s] cycle: perl -> perl-Pod-Checker
+[  304s]   breaking dependency perl -> perl-Pod-Checker
+[  304s] cycle: perl -> perl-Pod-Escapes
+[  304s]   breaking dependency perl -> perl-Pod-Escapes
+[  304s] cycle: perl -> perl-Pod-Parser
+[  304s]   breaking dependency perl -> perl-Pod-Parser
+[  304s] cycle: perl -> perl-Pod-Perldoc
+[  304s]   breaking dependency perl -> perl-Pod-Perldoc
+[  304s] cycle: perl -> perl-Pod-Usage
+[  304s]   breaking dependency perl -> perl-Pod-Usage
+[  304s] cycle: perl -> perl-Sys-Syslog
+[  304s]   breaking dependency perl -> perl-Sys-Syslog
+[  304s] cycle: perl -> perl-Term-Cap
+[  304s]   breaking dependency perl -> perl-Term-Cap
+[  304s] cycle: perl -> perl-Test-Harness
+[  304s]   breaking dependency perl -> perl-Test-Harness
+[  304s] cycle: perl -> perl-Test-Simple
+[  304s]   breaking dependency perl -> perl-Test-Simple
+[  304s] cycle: perl -> perl-Text-Balanced
+[  304s]   breaking dependency perl -> perl-Text-Balanced
+[  304s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  304s]   breaking dependency perl -> perl-Thread-Queue
+[  304s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  304s]   breaking dependency perl -> perl-Unicode-Collate
+[  304s] cycle: perl -> perl-autodie
+[  304s]   breaking dependency perl -> perl-autodie
+[  304s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  304s]   breaking dependency perl -> perl-bignum
+[  304s] cycle: perl -> perl-devel
+[  304s]   breaking dependency perl -> perl-devel
+[  304s] cycle: perl -> perl-Encode-devel
+[  304s]   breaking dependency perl -> perl-Encode-devel
+[  304s] cycle: perl -> perl-experimental
+[  304s]   breaking dependency perl -> perl-experimental
+[  304s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  304s]   breaking dependency perl -> perl-libnet
+[  304s] cycle: perl -> perl-podlators
+[  304s]   breaking dependency perl -> perl-podlators
+[  304s] cycle: perl -> perl-version
+[  304s]   breaking dependency perl -> perl-version
+[  304s] cycle: glib2 -> gamin
+[  304s]   breaking dependency glib2 -> gamin
+[  304s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  304s]   breaking dependency systemd -> gnutls
+[  304s] cycle: systemd -> pam -> audit
+[  304s]   breaking dependency systemd -> pam
+[  304s] cycle: systemd -> shadow -> pam -> audit
+[  304s]   breaking dependency systemd -> shadow
+[  304s] cycle: pam -> libpwquality
+[  304s]   breaking dependency pam -> libpwquality
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  304s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  304s]   breaking dependency perl-podlators -> perl-Encode
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  304s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  304s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  304s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  304s] cycle: perl-Pod-Usage -> perl-podlators
+[  304s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  304s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  304s]   breaking dependency groff -> perl-Getopt-Long
+[  304s] cycle: libglvnd-egl -> mesa-libEGL
+[  304s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[  304s] cycle: libglvnd-glx -> mesa-libGL
+[  304s]   breaking dependency mesa-libGL -> libglvnd-glx
+[  304s] cycle: libxcrypt-devel -> glibc-devel
+[  304s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  304s] cycle: cmake-data -> cmake
+[  304s]   breaking dependency cmake -> cmake-data
+[  304s] cycle: nss-util -> nss
+[  304s]   breaking dependency nss -> nss-util
+[  304s] cycle: nss-softokn -> nss-util -> nss
+[  304s]   breaking dependency nss -> nss-softokn
+[  304s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  304s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  304s] cycle: openssh -> openssh-server
+[  304s]   breaking dependency openssh-server -> openssh
+[  304s] cycle: git -> perl-Git
+[  304s]   breaking dependency git -> perl-Git
+[  304s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  304s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  305s] done
+[  305s] querying package ids...
+[  355s] [1/501] installing cmake-filesystem-3.22.0-1.oe1
+[  356s] [2/501] installing fonts-filesystem-2.0.2-2.oe1
+[  358s] [3/501] installing fuse-common-3.9.2-5.oe1
+[  359s] [4/501] installing hwdata-0.316-3.oe1
+[  363s] [5/501] installing kernel-headers-5.10-3.oe1
+[  371s] [6/501] installing libreport-filesystem-2.13.1-5.oe1
+[  372s] [7/501] installing ncurses-base-6.1-14.oe1
+[  374s] [8/501] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  376s] [9/501] installing python-setuptools-59.4.0-3.oe1
+[  377s] [10/501] installing qt5-srpm-macros-5.15.2-1.oe1
+[  378s] [11/501] installing tzdata-2021a-2.oe1
+[  388s] [12/501] installing xkeyboard-config-2.30-1.oe1
+[  393s] [13/501] installing dnf-data-4.10.0-1.oe1
+[  395s] [14/501] installing openEuler-repos-1.0-2.5.oe1
+[  396s] [15/501] installing wqy-zenhei-fonts-0.9.46-21.oe1
+[  408s] [16/501] installing openEuler-release-20.03LTS-40.oe1
+[  409s] [17/501] installing filesystem-3.9-3.oe1
+[  422s] warning: group mail does not exist - using root
+[  422s] [18/501] installing emacs-filesystem-1:27.1-5.oe1
+[  423s] [19/501] installing libgcc-10.3.1-20220105.6.oe1
+[  425s] [20/501] installing setup-2.13.3-4.oe1
+[  427s] [21/501] installing glibc-2.34-64.oe1
+[  435s] [22/501] installing brotli-1.0.9-2.oe1
+[  437s] [23/501] installing chrpath-0.16-12.oe1
+[  438s] [24/501] installing cpio-2.13-4.oe1
+[  439s] [25/501] installing diffutils-3.7-4.oe1
+[  442s] [26/501] installing expat-2.2.10-1.oe1
+[  443s] [27/501] installing fribidi-1.0.10-1.oe1
+[  445s] [28/501] installing gpm-libs-1.20.7-21.oe1
+[  446s] [29/501] installing jbigkit-libs-2.1-17.oe1
+[  447s] [30/501] installing json-c-0.15-1.oe1
+[  448s] [31/501] installing keyutils-libs-1.6.3-3.oe1
+[  450s] [32/501] installing lcms2-2.11-2.oe1
+[  451s] [33/501] installing libICE-1.0.10-2.oe1
+[  452s] [34/501] installing libXau-1.0.9-2.oe1
+[  454s] [35/501] installing libaio-0.3.112-1.oe1
+[  455s] [36/501] installing libargon2-20190702-1.oe1
+[  456s] [37/501] installing libatomic-10.3.1-20220105.6.oe1
+[  457s] [38/501] installing libcap-ng-0.7.11-1.oe1
+[  459s] [39/501] installing libdatrie-0.2.12-1.oe1
+[  461s] [40/501] installing libdrm-2.4.109-1.oe1
+[  463s] [41/501] installing libepoxy-1.5.3-2
+[  464s] [42/501] installing libev-4.24-11.oe1
+[  465s] [43/501] installing libffi-3.3-31.oe1
+[  467s] [44/501] installing libglvnd-1:1.3.4-2.oe1
+[  468s] [45/501] installing libgomp-10.3.1-20220105.6.oe1
+[  469s] [46/501] installing libgpg-error-1.41-1.oe1
+[  471s] [47/501] installing libjpeg-turbo-2.0.6-1.oe1
+[  472s] [48/501] installing libnghttp2-1.42.0-1.oe1
+[  473s] [49/501] installing libpcap-14:1.9.1-7.oe1
+[  474s] [50/501] installing libpipeline-1.5.3-1.oe1
+[  476s] [51/501] installing libsigsegv-2.11-10.oe1
+[  478s] [52/501] installing libsmartcols-2.36.1-3.oe1
+[  479s] [53/501] installing libtasn1-4.16.0-2.oe1
+[  481s] [54/501] installing libtool-ltdl-2.4.6-34.oe1
+[  482s] [55/501] installing libunistring-0.9.10-8.oe1
+[  484s] [56/501] installing libuuid-2.36.1-3.oe1
+[  486s] [57/501] installing libuv-1:1.40.0-1.oe1
+[  489s] [58/501] installing libwayland-egl-1.18.0-1.fc33
+[  490s] [59/501] installing libxcrypt-4.4.8-4.oe1
+[  492s] [60/501] installing libxshmfence-1.3-6.oe1
+[  493s] [61/501] installing libyaml-0.2.5-1.oe1
+[  495s] [62/501] installing lz4-1.9.3-1.oe1
+[  497s] [63/501] installing m4-1.4.18-14.oe1
+[  499s] [64/501] installing nspr-4.32.0-1.oe1
+[  500s] [65/501] installing pixman-0.38.0-1.oe1
+[  502s] [66/501] installing pkgconf-1.7.3-1.oe1
+[  504s] [67/501] installing rhash-1.3.5-5.oe1
+[  506s] [68/501] installing which-2.21-14.oe1
+[  507s] [69/501] installing xz-libs-5.2.5-1.oe1
+[  508s] [70/501] installing zlib-1.2.11-18.oe1
+[  509s] [71/501] installing attr-2.4.48-12.oe1
+[  513s] [72/501] installing basesystem-12-2.oe1
+[  514s] [73/501] installing libstdc++-10.3.1-20220105.6.oe1
+[  516s] [74/501] installing ncurses-libs-6.1-14.oe1
+[  521s] [75/501] installing libsepol-3.1-4.oe1
+[  523s] [76/501] installing libglvnd-core-devel-1:1.3.4-2.oe1
+[  524s] [77/501] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  537s] [78/501] installing wayland-protocols-devel-1.20-1.oe1
+[  539s] [79/501] installing xorg-x11-proto-devel-2019.1-1.oe1
+[  544s] [80/501] installing audit-libs-1:3.0-2.oe1
+[  545s] [81/501] installing brotli-devel-1.0.9-2.oe1
+[  546s] [82/501] installing elfutils-libelf-0.185-3.oe1
+[  550s] [83/501] installing file-libs-5.39-6.oe1
+[  554s] [84/501] installing fribidi-devel-1.0.10-1.oe1
+[  556s] [85/501] installing gmp-1:6.2.1-3.oe1
+[  558s] [86/501] installing iptables-libs-1.8.1-4.oe1
+[  560s] [87/501] installing less-563-2.oe1
+[  562s] [88/501] installing libacl-2.2.53-7.oe1
+[  563s] [89/501] installing libassuan-2.5.4-1.oe1
+[  565s] [90/501] installing libedit-3.1-27.oe1
+[  566s] [91/501] installing libffi-devel-3.3-31.oe1
+[  567s] [92/501] installing libgcrypt-1.8.7-1.oe1
+[  569s] [93/501] installing libglvnd-opengl-1:1.3.4-2.oe1
+[  571s] [94/501] installing libpng-2:1.6.37-1.oe1
+[  573s] [95/501] installing libsepol-devel-3.1-4.oe1
+[  578s] [96/501] installing libthai-0.1.28-4.oe1
+[  580s] [97/501] installing libwayland-client-1.18.0-1.fc33
+[  581s] [98/501] installing libwayland-server-1.18.0-1.fc33
+[  582s] [99/501] installing libxcb-1.14-1.oe1
+[  585s] [100/501] installing pixman-devel-0.38.0-1.oe1
+[  586s] [101/501] installing readline-8.0-2.oe1
+[  588s] [102/501] installing zlib-devel-1.2.11-18.oe1
+[  589s] [103/501] installing fuse-2.9.9-6.oe1
+[  591s] [104/501] installing gc-8.0.4-2.oe1
+[  593s] [105/501] installing libSM-1.2.3-2.oe1
+[  594s] [106/501] installing libdatrie-devel-0.2.12-1.oe1
+[  596s] [107/501] installing libdb-5.3.28-35.oe1
+[  601s] [108/501] installing libicu-62.1-5.oe1
+[  619s] [109/501] installing libselinux-3.1-3.oe1
+[  621s] [110/501] installing libxml2-2.9.12-5.oe1
+[  623s] [111/501] installing bash-5.1-1.oe1
+[  628s] [112/501] installing perl-libs-4:5.28.0-435.oe1
+[  635s] [113/501] installing zstd-1.4.8-2.oe1
+[  639s] [114/501] installing mozjs52-52.9.0-1.0.riscv64
+[  651s] [115/501] installing ncurses-6.1-14.oe1
+[  665s] [116/501] installing thin-provisioning-tools-0.8.5-1.oe1
+[  668s] [117/501] installing libtiff-4.2.0-1.oe1
+[  669s] [118/501] installing perl-parent-1:0.237-4.oe1
+[  671s] [119/501] installing perl-perlfaq-5.20180915-5.oe1
+[  673s] [120/501] installing libX11-1.6.9-2.oe1
+[  677s] [121/501] installing libtiff-devel-4.2.0-1.oe1
+[  680s] [122/501] installing mesa-libglapi-21.3.1-1.oe1
+[  681s] [123/501] installing mpfr-4.1.0-1.oe1
+[  684s] [124/501] installing nettle-3.6-6.oe1
+[  686s] [125/501] installing pcre2-10.36-1.oe1
+[  689s] [126/501] installing perl-Exporter-5.74-1.oe1
+[  690s] [127/501] installing file-5.39-6.oe1
+[  692s] [128/501] installing gdbm-1:1.18.1-1.oe1
+[  693s] [129/501] installing libXau-devel-1.0.9-2.oe1
+[  695s] [130/501] installing libthai-devel-0.1.28-4.oe1
+[  697s] [131/501] installing libwayland-cursor-1.18.0-1.fc33
+[  698s] [132/501] installing libxkbcommon-1.0.3-1.oe1
+[  700s] [133/501] installing patch-2.7.6-12.oe1
+[  702s] [134/501] installing qrencode-4.1.1-1
+[  704s] [135/501] installing sed-4.8-2.oe1
+[  706s] [136/501] installing acl-2.2.53-7.oe1
+[  708s] [137/501] installing libcomps-0.1.15-1.oe1
+[  710s] [138/501] installing pcre-8.44-1.oe1
+[  711s] [139/501] installing glibc-common-2.34-64.oe1
+[  726s] [140/501] installing mesa-libgbm-21.3.1-1.oe1
+[  728s] [141/501] installing coreutils-8.31-4.oe1
+[  739s] [142/501] installing adwaita-icon-theme-3.38.0-1.oe1
+[  785s] [143/501] installing crontabs-1.11-21.oe1
+[  786s] [144/501] installing elfutils-default-yama-scope-0.185-3.oe1
+[  788s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  788s] [145/501] installing hicolor-icon-theme-0.17-4.oe1
+[  791s] [146/501] installing libXcomposite-0.4.5-1.oe1
+[  793s] [147/501] installing libXext-1.3.4-2.oe1
+[  795s] [148/501] installing libXfixes-5.0.3-11.oe1
+[  797s] [149/501] installing libXpm-3.5.12-11.oe1
+[  798s] [150/501] installing libXrender-0.9.10-10.oe1
+[  800s] [151/501] installing perl-Carp-1.50-418.oe1
+[  802s] [152/501] installing perl-Perl-OSType-1.010-421.oe1
+[  803s] [153/501] installing perl-Term-ANSIColor-4.06-511.oe1
+[  804s] [154/501] installing publicsuffix-list-20200718-1.oe1
+[  806s] [155/501] installing uname-build-checks-1.0-0.4.oe1
+[  808s] [156/501] installing bzip2-1.0.8-3.oe1
+[  810s] [157/501] installing gzip-1.10-1.oe1
+[  812s] [158/501] installing hostname-3.21-2.oe1
+[  813s] [159/501] installing libcap-2.32-2.oe1
+[  815s] [160/501] installing libmpc-1.2.0-2.oe1
+[  818s] [161/501] installing libseccomp-2.4.3-2.oe1
+[  822s] [162/501] installing libxcb-devel-1.14-1.oe1
+[  826s] [163/501] installing npth-1.5-7.oe1
+[  828s] [164/501] installing popt-1.18-1.oe1
+[  831s] [165/501] installing sgml-common-0.6.3-51.oe1
+[  833s] [166/501] installing grep-3.6-1.oe1
+[  836s] [167/501] installing libXt-1.2.0-0.oe1
+[  840s] [168/501] installing libblkid-2.36.1-3.oe1
+[  845s] [169/501] installing libidn2-2.3.0-1.oe1
+[  847s] [170/501] installing libksba-1.3.5-12.oe1
+[  850s] [171/501] installing pcre-devel-8.44-1.oe1
+[  854s] [172/501] installing pcre2-devel-10.36-1.oe1
+[  857s] [173/501] installing tar-2:1.32-3.oe1
+[  861s] [174/501] installing tcl-1:8.6.10-3.oe1
+[  867s] [175/501] installing graphite2-1.3.13-2.oe1
+[  870s] [176/501] installing info-6.7-2.oe1
+[  873s] [177/501] installing jsoncpp-1.9.4-1.oe1
+[  876s] [178/501] installing libgpg-error-devel-1.41-1.oe1
+[  878s] [179/501] installing libmodman-2.0.1-19.oe1
+[  880s] [180/501] installing lua-5.3.5-6.oe1
+[  882s] [181/501] installing slang-2.3.2-8.oe1
+[  886s] [182/501] installing gawk-5.0.1-2.oe1
+[  889s] [183/501] installing libxslt-1.1.32-7.oe1
+[  893s] [184/501] installing libicu-devel-62.1-5.oe1
+[  899s] [185/501] installing libpng-devel-2:1.6.37-1.oe1
+[  902s] [186/501] installing wayland-devel-1.18.0-1.fc33
+[  904s] [187/501] installing guile-5:2.0.14-15.oe1
+[  913s] [188/501] installing mesa-libEGL-21.3.1-1.oe1
+[  915s] [189/501] installing bzip2-devel-1.0.8-3.oe1
+[  917s] [190/501] installing graphite2-devel-1.3.13-2.oe1
+[  919s] [191/501] installing zip-3.0-29.oe1
+[  922s] [192/501] installing libXdamage-1.1.5-1.oe1
+[  923s] [193/501] installing libXi-1.7.10-1.oe1
+[  925s] [194/501] installing libXinerama-1.1.4-5.oe1
+[  927s] [195/501] installing libXxf86vm-1.1.4-13.oe1
+[  929s] [196/501] installing libfdisk-2.36.1-3.oe1
+[  932s] [197/501] installing libglvnd-egl-1:1.3.4-2.oe1
+[  934s] [198/501] installing libglvnd-gles-1:1.3.4-2.oe1
+[  936s] [199/501] installing newt-0.52.21-4.oe1
+[  939s] [200/501] installing perl-Text-ParseWords-3.30-419.oe1
+[  941s] [201/501] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  949s] [202/501] installing elfutils-libs-0.185-3.oe1
+[  951s] [203/501] installing libX11-devel-1.6.9-2.oe1
+[  956s] [204/501] installing libXcursor-1.2.0-1.oe1
+[  959s] [205/501] installing libXmu-1.1.3-1.oe1
+[  961s] [206/501] installing libXrandr-1.5.2-1.oe1
+[  963s] [207/501] installing libmount-2.36.1-3.oe1
+[  965s] [208/501] installing libselinux-devel-3.1-3.oe1
+[  968s] [209/501] installing lua-posix-33.3.1-12.oe1
+[  971s] [210/501] installing unzip-6.0-47.oe1
+[  973s] [211/501] installing cracklib-2.9.7-6.oe1
+[  981s] [212/501] installing docbook-dtds-1.0-78.oe1
+[ 1008s] [213/501] installing e2fsprogs-1.45.6-3.oe1
+[ 1012s] [214/501] installing findutils-2:4.7.0-7.oe1
+[ 1015s] [215/501] installing libsemanage-3.1-4.oe1
+[ 1018s] [216/501] installing make-1:4.2.1-15.oe1
+[ 1020s] [217/501] installing sqlite-3.24.0-9.oe1
+[ 1024s] [218/501] installing xz-5.2.5-1.oe1
+[ 1026s] [219/501] installing logrotate-3.15.1-2.oe1
+[ 1028s] [220/501] installing opensp-1.5.2-31.oe1
+[ 1032s] [221/501] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[ 1035s] [222/501] installing perl-Time-HiRes-1.9760-2.oe1
+[ 1038s] [223/501] installing perl-Unicode-Normalize-1.26-419.oe1
+[ 1040s] [224/501] installing freetype-2.10.2-3.oe1
+[ 1043s] [225/501] installing glibc-devel-2.34-64.oe1
+[ 1058s] [226/501] installing libgcrypt-devel-1.8.7-1.oe1
+[ 1060s] [227/501] installing cpp-10.3.1-20220105.6.oe1
+[ 1072s] [228/501] installing gnupg2-2.2.27-2.oe1
+[ 1077s] [229/501] installing systemd-libs-243-22.oe1
+[ 1081s] [230/501] installing dbus-libs-1:1.12.20-3.oe1
+[ 1084s] [231/501] installing libusbx-1.0.23-3.oe1
+[ 1087s] [232/501] installing sqlite-devel-3.24.0-9.oe1
+[ 1089s] [233/501] installing xz-devel-5.2.5-1.oe1
+[ 1091s] [234/501] installing libxcrypt-devel-4.4.8-4.oe1
+[ 1094s] [235/501] installing p11-kit-0.23.22-1.oe1
+[ 1099s] [236/501] installing procps-ng-3.3.16-15.oe1
+[ 1101s] [237/501] installing copy-jdk-configs-4.0-1.oe1
+[ 1104s] [238/501] installing gpgme-1.15.1-1.oe1
+[ 1107s] [239/501] installing libXext-devel-1.3.4-2.oe1
+[ 1109s] [240/501] installing libXfixes-devel-5.0.3-11.oe1
+[ 1110s] [241/501] installing libXrender-devel-0.9.10-10.oe1
+[ 1112s] [242/501] installing libXtst-1.2.3-10.oe1
+[ 1114s] [243/501] installing openssl-libs-1:1.1.1f-2.oe1
+[ 1118s] [244/501] installing chkconfig-1.14-2.oe1
+[ 1121s] [245/501] installing docbook-style-xsl-1.79.2-9.oe1
+[ 1139s] [246/501] installing elfutils-0.185-3.oe1
+[ 1142s] [247/501] installing libXaw-1.0.13-13.oe1
+[ 1144s] [248/501] installing freetype-devel-2.10.2-3.oe1
+[ 1147s] [249/501] installing openjade-1.3.2-60.oe1
+[ 1153s] [250/501] installing fontconfig-2.13.92-1.oe1
+[ 1160s] [251/501] installing glib2-2.66.8-1.oe1
+[ 1169s] [252/501] installing mesa-libGL-21.3.1-1.oe1
+[ 1171s] [253/501] installing gsettings-desktop-schemas-3.38.0-1.oe1
+[ 1175s] [254/501] installing atk-2.36.0-1.oe1
+[ 1180s] [255/501] installing dbus-tools-1:1.12.20-3.oe1
+[ 1181s] [256/501] installing ima-evm-utils-libs-1.2.1-8.oe1
+[ 1183s] [257/501] installing libevent-2.1.12-4
+[ 1186s] [258/501] installing libcroco-0.6.12-13.oe1
+[ 1189s] [259/501] installing libgusb-0.3.0-5.oe1
+[ 1192s] [260/501] installing fipscheck-1.5.0-7.oe1
+[ 1195s] [261/501] installing gamin-0.1.10-38.oe1
+[ 1198s] [262/501] installing kmod-libs-27-4.oe1
+[ 1200s] [263/501] installing libsecret-0.18.6-5.oe1
+[ 1203s] [264/501] installing obs-env-1.0-5.oe1
+[ 1214s] [265/501] installing polkit-libs-0.116-4.oe1
+[ 1216s] [266/501] installing dbus-devel-1:1.12.20-3.oe1
+[ 1218s] [267/501] installing gobject-introspection-1.66.1-1.oe1
+[ 1222s] [268/501] installing kmod-27-4.oe1
+[ 1224s] [269/501] installing libXcomposite-devel-0.4.5-1.oe1
+[ 1226s] [270/501] installing libXdamage-devel-1.1.5-1.oe1
+[ 1228s] [271/501] installing libXft-2.3.3-1.oe1
+[ 1231s] [272/501] installing libXinerama-devel-1.1.4-5.oe1
+[ 1233s] [273/501] installing libglvnd-glx-1:1.3.4-2.oe1
+[ 1235s] [274/501] installing shared-mime-info-1.10-4.oe1
+[ 1255s] [275/501] installing binutils-2.37-6.oe1
+[ 1266s] [276/501] installing libXcursor-devel-1.2.0-1.oe1
+[ 1268s] [277/501] installing libXi-devel-1.7.10-1.oe1
+[ 1270s] [278/501] installing libXrandr-devel-1.5.2-1.oe1
+[ 1272s] [279/501] installing harfbuzz-2.7.4-1.oe1
+[ 1276s] [280/501] installing libxml2-devel-2.9.12-5.oe1
+[ 1286s] [281/501] installing p11-kit-trust-0.23.22-1.oe1
+[ 1288s] [282/501] installing babeltrace-1.5.8-1.oe1
+[ 1290s] [283/501] installing libarchive-3.5.1-1.oe1
+[ 1293s] [284/501] installing nodejs-libs-1:16.10.0-1.oe1
+[ 1339s] [285/501] installing cairo-1.16.0-6.fc32
+[ 1341s] [286/501] installing avahi-libs-0.8-6.oe1
+[ 1344s] [287/501] installing libxkbcommon-devel-1.0.3-1.oe1
+[ 1346s] [288/501] installing libverto-0.3.1-2.oe1
+[ 1349s] [289/501] installing colord-libs-1.4.3-6.oe1
+[ 1352s] [290/501] installing pciutils-3.7.0-1.oe1
+[ 1354s] [291/501] installing ca-certificates-2020.2.46-2.oe1
+[ 1369s] [292/501] installing libXtst-devel-1.2.3-10.oe1
+[ 1371s] [293/501] installing gdk-pixbuf2-2.42.6-1.oe1
+[ 1375s] [294/501] installing libglvnd-devel-1:1.3.4-2.oe1
+[ 1378s] [295/501] installing gettext-0.20.1-2.oe1
+[ 1383s] [296/501] installing pango-1.47.0-1.oe1
+[ 1386s] [297/501] installing cairo-gobject-1.16.0-6.fc32
+[ 1388s] [298/501] installing gcc-10.3.1-20220105.6.oe1
+[ 1416s] [299/501] installing rpm-libs-4.15.1-25.oe1
+[ 1419s] [300/501] installing python-pip-wheel-19.2.3-2.fc32
+[ 1421s] [301/501] installing libepoxy-devel-1.5.3-2
+[ 1423s] [302/501] installing gdk-pixbuf2-modules-2.42.6-1.oe1
+[ 1425s] [303/501] installing fontconfig-devel-2.13.92-1.oe1
+[ 1428s] [304/501] installing kernel-tools-5.10-3.oe1
+[ 1432s] [305/501] installing libmodulemd-2.13.0-1.oe1
+[ 1434s] [306/501] installing gcc-c++-10.3.1-20220105.6.oe1
+[ 1447s] [307/501] installing krb5-libs-1.18.2-3.oe1
+[ 1450s] [308/501] installing libtirpc-1.3.1-1.oe1
+[ 1453s] [309/501] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1455s] [310/501] installing libssh-0.9.5-1.oe1
+[ 1458s] [311/501] installing libXft-devel-2.3.3-1.oe1
+[ 1460s] [312/501] installing sysprof-cli-3.38.1-2.oe1
+[ 1465s] [313/501] installing elinks-0.12-1.oe1
+[ 1469s] [314/501] installing openldap-2.4.46-15.oe1
+[ 1471s] [315/501] installing libnsl2-1.3.0-2.oe1
+[ 1475s] [316/501] installing python3-3.8.5-13.oe1
+[ 1503s] [317/501] installing python3-parameterized-0.6.1-9.fc32
+[ 1505s] [318/501] installing python3-pyparsing-2.4.5-1.fc32
+[ 1508s] [319/501] installing python3-setuptools-59.4.0-3.oe1
+[ 1514s] [320/501] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1517s] [321/501] installing python3-six-1.15.0-3.oe1
+[ 1519s] [322/501] installing python3-markupsafe-1.1.1-4.fc32
+[ 1521s] [323/501] installing python3-gpgme-1.15.1-1.oe1
+[ 1524s] [324/501] installing python3-lxml-4.4.1-3.fc32
+[ 1528s] [325/501] installing python3-libcomps-0.1.15-1.oe1
+[ 1530s] [326/501] installing libpsl-0.21.1-1.oe1
+[ 1533s] [327/501] installing gdb-headless-9.2-5.oe1
+[ 1540s] [328/501] installing python3-anytree-2.7.2-2.fc32
+[ 1543s] [329/501] installing python3-pygments-2.4.2-6.fc32
+[ 1551s] [330/501] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1554s] [331/501] installing gdb-9.2-5.oe1
+[ 1555s] [332/501] installing libpsl-devel-0.21.1-1.oe1
+[ 1557s] [333/501] installing python3-mako-1.1.0-4.fc32
+[ 1560s] [334/501] installing python3-pip-19.2.3-2.fc32
+[ 1570s] [335/501] installing libcurl-7.79.1-1.oe1
+[ 1572s] [336/501] installing curl-7.79.1-1.oe1
+[ 1574s] [337/501] installing librepo-1.14.2-2.oe1
+[ 1577s] [338/501] installing rpm-4.15.1-25.oe1
+[ 1582s] [339/501] installing efi-srpm-macros-4-3.oe1
+[ 1585s] [340/501] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1587s] [341/501] installing libsolv-0.7.20-1.oe1
+[ 1590s] [342/501] installing python3-rpm-4.15.1-25.oe1
+[ 1592s] [343/501] installing openEuler-rpm-config-30-22.oe1
+[ 1594s] [344/501] installing cmake-3.22.0-1.oe1
+[ 1609s] [345/501] installing libdnf-0.65.0-2.oe1
+[ 1613s] [346/501] installing cmake-data-3.22.0-1.oe1
+[ 1635s] [347/501] installing python3-libdnf-0.65.0-2.oe1
+[ 1638s] [348/501] installing perl-4:5.28.0-435.oe1
+[ 1648s] [349/501] installing perl-B-Debug-1.26-4.oe1
+[ 1650s] [350/501] installing perl-Env-1.04-397.oe1
+[ 1653s] [351/501] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1655s] [352/501] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1656s] [353/501] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1657s] [354/501] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1659s] [355/501] installing perl-Params-Check-1:0.38-418.oe1
+[ 1661s] [356/501] installing perl-Term-Cap-1.17-510.oe1
+[ 1663s] [357/501] installing perl-TermReadKey-2.38-2.oe1
+[ 1665s] [358/501] installing perl-Text-Balanced-2.03-420.oe1
+[ 1668s] [359/501] installing perl-threads-1:2.22-419.oe1
+[ 1671s] [360/501] installing openssl-1:1.1.1f-2.oe1
+[ 1673s] [361/501] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1674s] [362/501] installing perl-Error-1:0.17029-1.oe1
+[ 1676s] [363/501] installing perl-Filter-2:1.59-2.oe1
+[ 1679s] [364/501] installing perl-IPC-SysV-2.07-5.oe1
+[ 1681s] [365/501] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1683s] [366/501] installing perl-SGMLSpm-1.03ii-45.oe1
+[ 1685s] [367/501] installing perl-constant-1.33-421.oe1
+[ 1687s] [368/501] installing docbook-style-dsssl-1.79-27.oe1
+[ 1696s] [369/501] installing perl-MIME-Base64-3.15-418.oe1
+[ 1699s] [370/501] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1702s] [371/501] installing perl-Socket-4:2.029-2.oe1
+[ 1704s] [372/501] installing perl-Storable-1:3.15-2.oe1
+[ 1707s] [373/501] installing python3-hawkey-0.65.0-2.oe1
+[ 1709s] [374/501] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1711s] [375/501] installing perl-Digest-1.17-419.oe1
+[ 1713s] [376/501] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1714s] [377/501] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1716s] [378/501] installing perl-Text-Diff-1.45-7.oe1
+[ 1718s] [379/501] installing perl-Time-Local-2:1.280-6.oe1
+[ 1720s] [380/501] installing perl-version-8:0.99.24-3.oe1
+[ 1722s] [381/501] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1725s] [382/501] installing perl-threads-shared-1.59-2.oe1
+[ 1729s] [383/501] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1731s] [384/501] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1734s] [385/501] installing perl-Locale-Codes-3.58-2.oe1
+[ 1737s] [386/501] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1740s] [387/501] installing perl-PathTools-3.75-4.oe1
+[ 1742s] [388/501] installing python3-dnf-4.10.0-1.oe1
+[ 1747s] [389/501] installing perl-Data-Dumper-2.172-3.oe1
+[ 1749s] [390/501] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1751s] [391/501] installing perl-Encode-4:2.98-9.oe1
+[ 1757s] [392/501] installing autogen-5.18.16-1.oe1
+[ 1761s] [393/501] installing nodejs-1:16.10.0-1.oe1
+[ 1765s] [394/501] installing systemd-243-22.oe1
+[ 1782s] /var/tmp/rpm-tmp.zBMNwk: line 8: groupadd: command not found
+[ 1782s] /var/tmp/rpm-tmp.zBMNwk: line 10: groupadd: command not found
+[ 1782s] /var/tmp/rpm-tmp.zBMNwk: line 13: groupadd: command not found
+[ 1782s] /var/tmp/rpm-tmp.zBMNwk: line 16: groupadd: command not found
+[ 1783s] [395/501] installing dbus-common-1:1.12.20-3.oe1
+[ 1784s] [396/501] installing nodejs-source-map-0.5.6-1.oe1
+[ 1787s] [397/501] installing perl-Module-Load-1:0.32-418.oe1
+[ 1788s] [398/501] installing nodejs-packaging-20-1.oe1
+[ 1791s] [399/501] installing dnf-4.10.0-1.oe1
+[ 1794s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1794s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1794s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1794s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1794s] [400/501] installing perl-File-Which-1.23-1.oe1
+[ 1796s] [401/501] installing perl-Thread-Queue-3.13-3.oe1
+[ 1798s] [402/501] installing perl-experimental-0.020-2.oe1
+[ 1800s] [403/501] installing perl-Digest-MD5-2.55-419.oe1
+[ 1802s] [404/501] installing perl-File-Path-2.16-4.oe1
+[ 1803s] [405/501] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1806s] [406/501] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1808s] [407/501] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1810s] [408/501] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1814s] [409/501] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1815s] [410/501] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1817s] [411/501] installing audit-1:3.0-2.oe1
+[ 1822s] [412/501] installing perl-DB_File-1.842-2.oe1
+[ 1824s] [413/501] installing perl-autodie-2.29-398.oe1
+[ 1826s] [414/501] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1830s] [415/501] installing perl-IO-Compress-2.081-6.oe1
+[ 1832s] [416/501] installing perl-podlators-1:4.14-1.oe1
+[ 1834s] [417/501] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1835s] [418/501] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1837s] [419/501] installing perl-bignum-0.50-4.oe1
+[ 1839s] [420/501] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1841s] [421/501] installing perl-libnet-3.11-420.oe1
+[ 1843s] [422/501] installing pam-1.5.1-1.oe1
+[ 1848s] [423/501] installing libpwquality-1.4.4-1.oe1
+[ 1852s] [424/501] installing perl-File-HomeDir-1.004-4.oe1
+[ 1854s] [425/501] installing shadow-2:4.8.1-5.oe1
+[ 1857s] [426/501] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1860s] [427/501] installing libutempter-1.1.6-16.oe1
+[ 1863s] [428/501] installing unbound-libs-1.10.1-4.oe1
+[ 1867s] [429/501] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1872s] [430/501] installing openssh-server-8.2p1-10.oe1
+[ 1876s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1876s] [431/501] installing groff-1.22.4-4.oe1
+[ 1885s] [432/501] installing dbus-1:1.12.20-3.oe1
+[ 1888s] [433/501] installing man-db-2.9.3-2.oe1
+[ 1894s] [434/501] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1896s] [435/501] installing gnutls-3.6.15-3.oe1
+[ 1901s] [436/501] installing util-linux-2.36.1-3.oe1
+[ 1911s] [437/501] installing nss-help-3.72.0-2.oe1
+[ 1914s] [438/501] installing polkit-help-0.116-4.oe1
+[ 1916s] [439/501] installing util-linux-devel-2.36.1-3.oe1
+[ 1918s] [440/501] installing NetworkManager-libnm-1:1.26.0-5
+[ 1923s] [441/501] installing at-spi2-core-2.39.1-1.oe1
+[ 1927s] [442/501] installing cups-libs-1:2.3.3-6.oe1
+[ 1930s] [443/501] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1933s] [444/501] installing device-mapper-8:1.02.172-1.oe1
+[ 1936s] [445/501] installing openssh-8.2p1-10.oe1
+[ 1939s] [446/501] installing at-spi2-atk-2.38.0-1.oe1
+[ 1942s] [447/501] installing libproxy-0.4.15-13.oe1
+[ 1945s] [448/501] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1947s] [449/501] installing cryptsetup-2.3.3-3.oe1
+[ 1952s] [450/501] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1955s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1955s] [451/501] installing nss-3.72.0-2.oe1
+[ 1965s] [452/501] installing glib2-devel-2.66.8-1.oe1
+[ 1987s] [453/501] installing openssh-clients-8.2p1-10.oe1
+[ 1990s] [454/501] installing atk-devel-2.36.0-1.oe1
+[ 1993s] [455/501] installing polkit-devel-0.116-4.oe1
+[ 1996s] [456/501] installing nss-util-3.72.0-2.oe1
+[ 1999s] [457/501] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 2001s] [458/501] installing glib-networking-2.58.0-7.oe1
+[ 2006s] [459/501] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 2008s] [460/501] installing at-spi2-core-devel-2.39.1-1.oe1
+[ 2011s] [461/501] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 2013s] [462/501] installing perl-Pod-Parser-1.63-397.oe1
+[ 2015s] [463/501] installing gdk-pixbuf2-devel-2.42.6-1.oe1
+[ 2017s] [464/501] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 2019s] [465/501] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 2021s] [466/501] installing cairo-devel-1.16.0-6.fc32
+[ 2024s] [467/501] installing docbook-utils-0.6.14-47.oe1
+[ 2026s] [468/501] installing harfbuzz-devel-2.7.4-1.oe1
+[ 2029s] [469/501] installing perl-Archive-Tar-2.30-421.oe1
+[ 2031s] [470/501] installing perl-JSON-PP-1:4.04-2.oe1
+[ 2033s] [471/501] installing lvm2-8:2.03.11-1.oe1
+[ 2041s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 2041s] [472/501] installing autoconf-2.69-30.oe1
+[ 2044s] [473/501] installing git-2.23.0-12.oe1
+[ 2057s] [474/501] installing gtk3-3.24.30-2.oe1
+[ 2069s] [475/501] installing cairo-gobject-devel-1.16.0-6.fc32
+[ 2072s] [476/501] installing nss-softokn-3.72.0-2.oe1
+[ 2075s] [477/501] installing at-spi2-atk-devel-2.38.0-1.oe1
+[ 2077s] [478/501] installing libdazzle-3.38.0-1.oe1
+[ 2080s] [479/501] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 2084s] [480/501] installing libsoup-2.72.0-2.oe1
+[ 2097s] [481/501] installing perl-Git-2.23.0-12.oe1
+[ 2100s] [482/501] installing gtk-doc-1.33.2-1.oe1
+[ 2108s] [483/501] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 2111s] [484/501] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 2113s] [485/501] installing automake-1.16.1-6.oe1
+[ 2121s] [486/501] installing pango-devel-1.47.0-1.oe1
+[ 2125s] [487/501] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 2130s] [488/501] installing libsysprof-ui-3.38.1-2.oe1
+[ 2133s] [489/501] installing libtool-2.4.6-34.oe1
+[ 2139s] [490/501] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 2141s] [491/501] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 2143s] [492/501] installing rpm-build-4.15.1-25.oe1
+[ 2145s] [493/501] installing gtk3-devel-3.24.30-2.oe1
+[ 2188s] [494/501] installing libdazzle-devel-3.38.0-1.oe1
+[ 2194s] [495/501] installing gcc_secure-1.0-0.9.oe1
+[ 2196s] [496/501] installing sysprof-3.38.1-2.oe1
+[ 2215s] [497/501] installing gobject-introspection-devel-1.66.1-1.oe1
+[ 2223s] [498/501] installing perl-File-Fetch-0.56-4.oe1
+[ 2225s] [499/501] installing perl-devel-4:5.28.0-435.oe1
+[ 2237s] [500/501] installing sysprof-devel-3.38.1-2.oe1
+[ 2240s] [501/501] installing libsoup-devel-2.72.0-2.oe1
+[ 2243s] removing nis flags from /var/cache/obs/worker/root_3/etc/nsswitch.conf...
+[ 2243s] now finalizing build dir...
+[ 2257s] Running build time source services...
+[ 2277s] -----------------------------------------------------------------
+[ 2277s] ----- building rest.spec (user abuild)
+[ 2277s] -----------------------------------------------------------------
+[ 2277s] -----------------------------------------------------------------
+[ 2286s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/72a5ff13b0d36dff36d86f483a6ebd81-rest' /home/abuild/rpmbuild/SOURCES/rest.spec
+[ 2288s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.XdTo2p
+[ 2288s] + umask 022
+[ 2288s] + cd /home/abuild/rpmbuild/BUILD
+[ 2288s] + cd /home/abuild/rpmbuild/BUILD
+[ 2288s] + rm -rf rest-0.8.1
+[ 2288s] + /usr/bin/xz -dc /home/abuild/rpmbuild/SOURCES/rest-0.8.1.tar.xz
+[ 2288s] + /usr/bin/tar -xof -
+[ 2288s] + STATUS=0
+[ 2288s] + '[' 0 -ne 0 ']'
+[ 2288s] + cd rest-0.8.1
+[ 2288s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2289s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/rest-0.8.0-fix-the-XML-test.patch
+[ 2289s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2289s] + RPM_EC=0
+[ 2289s] ++ jobs -p
+[ 2289s] + exit 0
+[ 2289s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.hSxJvF
+[ 2289s] + umask 022
+[ 2289s] + cd /home/abuild/rpmbuild/BUILD
+[ 2289s] + cd rest-0.8.1
+[ 2289s] + autoreconf -fiv
+[ 2297s] autoreconf: Entering directory `.'
+[ 2297s] autoreconf: configure.ac: not using Gettext
+[ 2298s] autoreconf: running: aclocal --force -I build ${ACLOCAL_FLAGS}
+[ 2331s] autoreconf: configure.ac: tracing
+[ 2345s] autoreconf: running: libtoolize --copy --force
+[ 2355s] libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build'.
+[ 2355s] libtoolize: copying file 'build/ltmain.sh'
+[ 2357s] libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'build'.
+[ 2357s] libtoolize: copying file 'build/libtool.m4'
+[ 2358s] libtoolize: copying file 'build/ltoptions.m4'
+[ 2359s] libtoolize: copying file 'build/ltsugar.m4'
+[ 2360s] libtoolize: copying file 'build/ltversion.m4'
+[ 2362s] libtoolize: copying file 'build/lt~obsolete.m4'
+[ 2396s] autoreconf: running: /usr/bin/autoconf --force
+[ 2409s] autoreconf: running: /usr/bin/autoheader --force
+[ 2421s] autoreconf: running: automake --add-missing --copy --force-missing
+[ 2444s] configure.ac:31: installing 'build/compile'
+[ 2444s] configure.ac:19: installing 'build/missing'
+[ 2447s] examples/Makefile.am: installing 'build/depcomp'
+[ 2454s] autoreconf: Leaving directory `.'
+[ 2454s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 2454s] + export CFLAGS
+[ 2454s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions'
+[ 2454s] + export CXXFLAGS
+[ 2454s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2454s] + export FFLAGS
+[ 2454s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2454s] + export FCFLAGS
+[ 2454s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2454s] + export LDFLAGS
+[ 2454s] + '[' 1 = 1 ']'
+[ 2454s] +++ dirname ./configure
+[ 2454s] ++ find . -name config.guess -o -name config.sub
+[ 2454s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 2454s] ++ basename ./build/config.guess
+[ 2455s] + '[' -f /usr/lib/rpm/openEuler/config.guess ']'
+[ 2455s] + /usr/bin/rm -f ./build/config.guess
+[ 2455s] ++ basename ./build/config.guess
+[ 2455s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.guess ./build/config.guess
+[ 2455s] '/usr/lib/rpm/openEuler/config.guess' -> './build/config.guess'
+[ 2455s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 2455s] ++ basename ./build/config.sub
+[ 2455s] + '[' -f /usr/lib/rpm/openEuler/config.sub ']'
+[ 2455s] + /usr/bin/rm -f ./build/config.sub
+[ 2455s] ++ basename ./build/config.sub
+[ 2455s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.sub ./build/config.sub
+[ 2455s] '/usr/lib/rpm/openEuler/config.sub' -> './build/config.sub'
+[ 2455s] + '[' 1 = 1 ']'
+[ 2455s] + '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld' ']'
+[ 2455s] ++ find . -name ltmain.sh
+[ 2455s] + for i in $(find . -name ltmain.sh)
+[ 2455s] + /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld"~' ./build/ltmain.sh
+[ 2455s] + ./configure --build=riscv64-openEuler-linux-gnu --host=riscv64-openEuler-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-gtk-doc --enable-introspection=yes
+[ 2466s] checking for a BSD-compatible install... /usr/bin/install -c
+[ 2466s] checking whether build environment is sane... yes
+[ 2466s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[ 2466s] checking for gawk... gawk
+[ 2467s] checking whether make sets $(MAKE)... yes
+[ 2467s] checking whether make supports nested variables... yes
+[ 2468s] checking whether make supports nested variables... (cached) yes
+[ 2469s] checking build system type... riscv64-openEuler-linux-gnu
+[ 2470s] checking host system type... riscv64-openEuler-linux-gnu
+[ 2470s] checking for riscv64-openEuler-linux-gnu-gcc... no
+[ 2470s] checking for gcc... gcc
+[ 2478s] checking whether the C compiler works... yes
+[ 2478s] checking for C compiler default output file name... a.out
+[ 2480s] checking for suffix of executables... 
+[ 2483s] checking whether we are cross compiling... no
+[ 2485s] checking for suffix of object files... o
+[ 2487s] checking whether we are using the GNU C compiler... yes
+[ 2488s] checking whether gcc accepts -g... yes
+[ 2491s] checking for gcc option to accept ISO C89... none needed
+[ 2494s] checking whether gcc understands -c and -o together... yes
+[ 2494s] checking whether make supports the include directive... yes (GNU style)
+[ 2494s] checking dependency style of gcc... none
+[ 2498s] checking for gcc option to accept ISO C99... none needed
+[ 2498s] checking for gcc option to accept ISO Standard C... (cached) none needed
+[ 2500s] checking for library containing strerror... none required
+[ 2503s] checking how to run the C preprocessor... gcc -E
+[ 2505s] checking for grep that handles long lines and -e... /usr/bin/grep
+[ 2506s] checking for egrep... /usr/bin/grep -E
+[ 2515s] checking for ANSI C header files... yes
+[ 2515s] checking how to print strings... printf
+[ 2515s] checking for a sed that does not truncate output... /usr/bin/sed
+[ 2515s] checking for fgrep... /usr/bin/grep -F
+[ 2516s] checking for ld used by gcc... /usr/bin/ld
+[ 2516s] checking if the linker (/usr/bin/ld) is GNU ld... yes
+[ 2516s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[ 2518s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[ 2518s] checking whether ln -s works... yes
+[ 2518s] checking the maximum length of command line arguments... 1572864
+[ 2518s] checking how to convert riscv64-openEuler-linux-gnu file names to riscv64-openEuler-linux-gnu format... func_convert_file_noop
+[ 2518s] checking how to convert riscv64-openEuler-linux-gnu file names to toolchain format... func_convert_file_noop
+[ 2518s] checking for /usr/bin/ld option to reload object files... -r
+[ 2518s] checking for riscv64-openEuler-linux-gnu-objdump... no
+[ 2518s] checking for objdump... objdump
+[ 2518s] checking how to recognize dependent libraries... pass_all
+[ 2518s] checking for riscv64-openEuler-linux-gnu-dlltool... no
+[ 2519s] checking for dlltool... no
+[ 2519s] checking how to associate runtime and link libraries... printf %s\n
+[ 2519s] checking for riscv64-openEuler-linux-gnu-ar... no
+[ 2519s] checking for ar... ar
+[ 2521s] checking for archiver @FILE support... @
+[ 2521s] checking for riscv64-openEuler-linux-gnu-strip... no
+[ 2521s] checking for strip... strip
+[ 2521s] checking for riscv64-openEuler-linux-gnu-ranlib... no
+[ 2521s] checking for ranlib... ranlib
+[ 2525s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[ 2525s] checking for sysroot... no
+[ 2526s] checking for a working dd... /usr/bin/dd
+[ 2526s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[ 2526s] checking for riscv64-openEuler-linux-gnu-mt... no
+[ 2526s] checking for mt... no
+[ 2526s] checking if : is a manifest tool... no
+[ 2528s] checking for sys/types.h... yes
+[ 2531s] checking for sys/stat.h... yes
+[ 2533s] checking for stdlib.h... yes
+[ 2535s] checking for string.h... yes
+[ 2537s] checking for memory.h... yes
+[ 2539s] checking for strings.h... yes
+[ 2542s] checking for inttypes.h... yes
+[ 2544s] checking for stdint.h... yes
+[ 2546s] checking for unistd.h... yes
+[ 2549s] checking for dlfcn.h... yes
+[ 2549s] checking for objdir... .libs
+[ 2556s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[ 2556s] checking for gcc option to produce PIC... -fPIC -DPIC
+[ 2557s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[ 2562s] checking if gcc static flag -static works... yes
+[ 2564s] checking if gcc supports -c -o file.o... yes
+[ 2564s] checking if gcc supports -c -o file.o... (cached) yes
+[ 2565s] checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+[ 2568s] checking whether -lc should be explicitly linked in... no
+[ 2573s] checking dynamic linker characteristics... GNU/Linux ld.so
+[ 2573s] checking how to hardcode library paths into programs... immediate
+[ 2573s] checking whether stripping libraries is possible... yes
+[ 2573s] checking if libtool supports shared libraries... yes
+[ 2573s] checking whether to build shared libraries... yes
+[ 2573s] checking whether to build static libraries... no
+[ 2573s] checking for riscv64-openEuler-linux-gnu-pkg-config... /usr/bin/riscv64-openEuler-linux-gnu-pkg-config
+[ 2573s] checking pkg-config is at least version 0.9.0... yes
+[ 2574s] checking for GLIB... yes
+[ 2575s] checking for SOUP... yes
+[ 2576s] checking for XML... yes
+[ 2577s] checking for GTHREAD... yes
+[ 2577s] checking whether to use the GNOME environment... yes
+[ 2578s] checking for SOUP_GNOME... yes
+[ 2579s] checking for gtk-doc... yes
+[ 2579s] checking for gtkdoc-check... gtkdoc-check.test
+[ 2579s] checking for gtkdoc-check... /usr/bin/gtkdoc-check
+[ 2579s] checking for gtkdoc-rebase... /usr/bin/gtkdoc-rebase
+[ 2579s] checking for gtkdoc-mkpdf... /usr/bin/gtkdoc-mkpdf
+[ 2579s] checking whether to build gtk-doc documentation... yes
+[ 2580s] checking for GTKDOC_DEPS... yes
+[ 2580s] checking for gobject-introspection... yes
+[ 2582s] checking for glib-mkenums... /usr/bin/glib-mkenums
+[ 2582s] checking for lcov... enable_gcov=no
+[ 2582s] checking whether to build with gcov testing... no
+[ 2582s] checking location of system Certificate Authority list... /etc/pki/tls/certs/ca-bundle.crt
+[ 2583s] checking that generated files are newer than configure... done
+[ 2583s] configure: creating ./config.status
+[ 2611s] config.status: creating Makefile
+[ 2612s] config.status: creating rest/Makefile
+[ 2613s] config.status: creating rest-extras/Makefile
+[ 2614s] config.status: creating examples/Makefile
+[ 2615s] config.status: creating docs/Makefile
+[ 2616s] config.status: creating docs/reference/Makefile
+[ 2617s] config.status: creating docs/reference/rest/Makefile
+[ 2618s] config.status: creating tests/Makefile
+[ 2619s] config.status: creating rest.pc
+[ 2620s] config.status: creating rest-extras.pc
+[ 2621s] config.status: creating config.h
+[ 2621s] config.status: executing depfiles commands
+[ 2621s] config.status: executing libtool commands
+[ 2622s] 
+[ 2622s]                  LibRest 0.8.1
+[ 2622s]                  =============
+[ 2622s] 
+[ 2622s]                    prefix:   /usr
+[ 2622s] 
+[ 2622s]             Documentation:   yes
+[ 2622s]        Introspection data:   yes
+[ 2622s] 
+[ 2624s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[ 2624s] /usr/bin/make  all-recursive
+[ 2625s] Making all in rest
+[ 2625s] /usr/bin/make  all-am
+[ 2641s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2641s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-params.lo `test -f 'rest-params.c' || echo './'`rest-params.c
+[ 2641s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-params.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-params.o
+[ 2641s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2641s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2641s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-glib-compat.lo `test -f 'glib-compat.c' || echo './'`glib-compat.c
+[ 2641s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c glib-compat.c  -fPIC -DPIC -o .libs/librest_0.7_la-glib-compat.o
+[ 2641s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2641s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2641s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-param.lo `test -f 'rest-param.c' || echo './'`rest-param.c
+[ 2641s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-param.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-param.o
+[ 2641s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2643s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2643s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-xml-node.lo `test -f 'rest-xml-node.c' || echo './'`rest-xml-node.c
+[ 2643s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-xml-node.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-xml-node.o
+[ 2643s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2646s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2646s] (cd . && /usr/bin/glib-mkenums \
+[ 2646s] 		--fhead "#ifndef __REST_ENUM_TYPES_H__\n#define __REST_ENUM_TYPES_H__\n\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n" \
+[ 2646s] 		--fprod "/* enumerations from \"@filename@\" */\n" \
+[ 2646s] 		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define REST_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+[ 2646s] 		--ftail "G_END_DECLS\n\n#endif /* __REST_ENUM_TYPES_H__ */" rest-proxy.h rest-proxy-call.h) >> xgen-gtbh \
+[ 2646s] && (cmp -s xgen-gtbh rest-enum-types.h || cp xgen-gtbh rest-enum-types.h ) \
+[ 2646s] && rm -f xgen-gtbh \
+[ 2646s] && echo timestamp > stamp-rest-enum-types.h
+[ 2646s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2648s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2648s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-xml-parser.lo `test -f 'rest-xml-parser.c' || echo './'`rest-xml-parser.c
+[ 2648s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-xml-parser.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-xml-parser.o
+[ 2648s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2648s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2648s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-proxy-auth.lo `test -f 'rest-proxy-auth.c' || echo './'`rest-proxy-auth.c
+[ 2648s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-proxy-auth.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-proxy-auth.o
+[ 2648s] rest-proxy-auth.c: In function 'rest_proxy_auth_class_init':
+[ 2648s] rest-proxy-auth.c:59:3: warning: 'g_type_class_add_private' is deprecated [-Wdeprecated-declarations]
+[ 2648s]    59 |   g_type_class_add_private (klass, sizeof (RestProxyAuthPrivate));
+[ 2648s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2648s] In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+[ 2648s]                  from /usr/include/glib-2.0/gobject/gbinding.h:29,
+[ 2648s]                  from /usr/include/glib-2.0/glib-object.h:22,
+[ 2648s]                  from ../rest/rest-proxy-auth.h:25,
+[ 2648s]                  from rest-proxy-auth.c:23:
+[ 2648s] /usr/include/glib-2.0/gobject/gtype.h:1304:10: note: declared here
+[ 2648s]  1304 | void     g_type_class_add_private       (gpointer                    g_class,
+[ 2648s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2648s] rest-proxy-auth.c: In function 'rest_proxy_auth_init':
+[ 2648s] rest-proxy-auth.c:67:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2648s]    67 |   proxy->priv = REST_PROXY_AUTH_GET_PRIVATE (proxy);
+[ 2648s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+[ 2648s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2650s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2650s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-proxy.lo `test -f 'rest-proxy.c' || echo './'`rest-proxy.c
+[ 2650s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-proxy.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-proxy.o
+[ 2650s] rest-proxy.c: In function 'rest_proxy_get_property':
+[ 2650s] rest-proxy.c:100:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   100 |   RestProxyPrivate *priv = GET_PRIVATE (object);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            
+[ 2650s] rest-proxy.c: In function 'rest_proxy_set_property':
+[ 2650s] rest-proxy.c:144:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   144 |   RestProxyPrivate *priv = GET_PRIVATE (object);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            
+[ 2650s] rest-proxy.c: In function 'rest_proxy_dispose':
+[ 2650s] rest-proxy.c:197:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   197 |   RestProxyPrivate *priv = GET_PRIVATE (object);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            
+[ 2650s] rest-proxy.c: In function 'authenticate':
+[ 2650s] rest-proxy.c:233:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   233 |   RestProxyPrivate *priv = GET_PRIVATE (self);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~              
+[ 2650s] rest-proxy.c: In function 'rest_proxy_constructed':
+[ 2650s] rest-proxy.c:247:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   247 |   RestProxyPrivate *priv = GET_PRIVATE (object);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            
+[ 2650s] rest-proxy.c: In function 'rest_proxy_finalize':
+[ 2650s] rest-proxy.c:277:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   277 |   RestProxyPrivate *priv = GET_PRIVATE (object);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            
+[ 2650s] rest-proxy.c: In function 'rest_proxy_class_init':
+[ 2650s] rest-proxy.c:298:3: warning: 'g_type_class_add_private' is deprecated [-Wdeprecated-declarations]
+[ 2650s]   298 |   g_type_class_add_private (klass, sizeof (RestProxyPrivate));
+[ 2650s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+[ 2650s]                  from /usr/include/glib-2.0/gobject/gbinding.h:29,
+[ 2650s]                  from /usr/include/glib-2.0/glib-object.h:22,
+[ 2650s]                  from /usr/include/glib-2.0/gio/gioenums.h:28,
+[ 2650s]                  from /usr/include/glib-2.0/gio/giotypes.h:28,
+[ 2650s]                  from /usr/include/glib-2.0/gio/gio.h:26,
+[ 2650s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2650s]                  from /usr/include/libsoup-2.4/libsoup/soup-address.h:11,
+[ 2650s]                  from /usr/include/libsoup-2.4/libsoup/soup.h:15,
+[ 2650s]                  from rest-proxy.c:26:
+[ 2650s] /usr/include/glib-2.0/gobject/gtype.h:1304:10: note: declared here
+[ 2650s]  1304 | void     g_type_class_add_private       (gpointer                    g_class,
+[ 2650s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] rest-proxy.c: In function 'rest_proxy_init':
+[ 2650s] rest-proxy.c:422:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   422 |   RestProxyPrivate *priv = GET_PRIVATE (self);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~              
+[ 2650s] rest-proxy.c:424:3: warning: 'soup_session_async_new' is deprecated: Use 'soup_session_new' instead [-Wdeprecated-declarations]
+[ 2650s]   424 |   priv->session = soup_session_async_new ();
+[ 2650s]       |   ^~~~
+[ 2650s] In file included from /usr/include/libsoup-2.4/libsoup/soup.h:50,
+[ 2650s]                  from rest-proxy.c:26:
+[ 2650s] /usr/include/libsoup-2.4/libsoup/soup-session-async.h:51:14: note: declared here
+[ 2650s]    51 | SoupSession *soup_session_async_new              (void);
+[ 2650s]       |              ^~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] rest-proxy.c:425:3: warning: 'soup_session_sync_new' is deprecated: Use 'soup_session_new' instead [-Wdeprecated-declarations]
+[ 2650s]   425 |   priv->session_sync = soup_session_sync_new ();
+[ 2650s]       |   ^~~~
+[ 2650s] In file included from /usr/include/libsoup-2.4/libsoup/soup.h:52,
+[ 2650s]                  from rest-proxy.c:26:
+[ 2650s] /usr/include/libsoup-2.4/libsoup/soup-session-sync.h:51:14: note: declared here
+[ 2650s]    51 | SoupSession *soup_session_sync_new              (void);
+[ 2650s]       |              ^~~~~~~~~~~~~~~~~~~~~
+[ 2650s] rest-proxy.c:446:37: warning: 'soup_proxy_resolver_gnome_get_type' is deprecated: Use 'SoupSession:proxy-resolver' instead [-Wdeprecated-declarations]
+[ 2650s]   446 |                                     SOUP_TYPE_PROXY_RESOLVER_GNOME);
+[ 2650s]       |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] In file included from /usr/include/libsoup-gnome-2.4/libsoup/soup-gnome.h:12,
+[ 2650s]                  from rest-proxy.c:28:
+[ 2650s] /usr/include/libsoup-gnome-2.4/libsoup/soup-gnome-features.h:15:7: note: declared here
+[ 2650s]    15 | GType soup_proxy_resolver_gnome_get_type (void);
+[ 2650s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] rest-proxy.c:448:37: warning: 'soup_proxy_resolver_gnome_get_type' is deprecated: Use 'SoupSession:proxy-resolver' instead [-Wdeprecated-declarations]
+[ 2650s]   448 |                                     SOUP_TYPE_PROXY_RESOLVER_GNOME);
+[ 2650s]       |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] In file included from /usr/include/libsoup-gnome-2.4/libsoup/soup-gnome.h:12,
+[ 2650s]                  from rest-proxy.c:28:
+[ 2650s] /usr/include/libsoup-gnome-2.4/libsoup/soup-gnome-features.h:15:7: note: declared here
+[ 2650s]    15 | GType soup_proxy_resolver_gnome_get_type (void);
+[ 2650s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2650s] rest-proxy.c: In function '_rest_proxy_bind_valist':
+[ 2650s] rest-proxy.c:510:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   510 |   RestProxyPrivate *priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             
+[ 2650s] rest-proxy.c: In function 'rest_proxy_get_user_agent':
+[ 2650s] rest-proxy.c:564:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   564 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function 'rest_proxy_add_soup_feature':
+[ 2650s] rest-proxy.c:597:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   597 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function '_rest_proxy_get_binding_required':
+[ 2650s] rest-proxy.c:640:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   640 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function '_rest_proxy_get_bound_url':
+[ 2650s] rest-proxy.c:652:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   652 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function '_rest_proxy_queue_message':
+[ 2650s] rest-proxy.c:739:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   739 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function '_rest_proxy_cancel_message':
+[ 2650s] rest-proxy.c:756:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   756 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] rest-proxy.c: In function '_rest_proxy_send_message':
+[ 2650s] rest-proxy.c:771:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2650s]   771 |   priv = GET_PRIVATE (proxy);
+[ 2650s]       |             ^~~~~~~~~~~~~~~~~                               
+[ 2650s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2655s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2655s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-proxy-call.lo `test -f 'rest-proxy-call.c' || echo './'`rest-proxy-call.c
+[ 2655s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-proxy-call.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-proxy-call.o
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_get_property':
+[ 2655s] rest-proxy-call.c:107:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   107 |   RestProxyCallPrivate *priv = GET_PRIVATE (object);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_set_property':
+[ 2655s] rest-proxy-call.c:124:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   124 |   RestProxyCallPrivate *priv = GET_PRIVATE (object);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_dispose':
+[ 2655s] rest-proxy-call.c:138:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   138 |   RestProxyCallPrivate *priv = GET_PRIVATE (object);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_finalize':
+[ 2655s] rest-proxy-call.c:176:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   176 |   RestProxyCallPrivate *priv = GET_PRIVATE (object);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_class_init':
+[ 2655s] rest-proxy-call.c:195:3: warning: 'g_type_class_add_private' is deprecated [-Wdeprecated-declarations]
+[ 2655s]   195 |   g_type_class_add_private (klass, sizeof (RestProxyCallPrivate));
+[ 2655s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2655s] In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+[ 2655s]                  from /usr/include/glib-2.0/gobject/gbinding.h:29,
+[ 2655s]                  from /usr/include/glib-2.0/glib-object.h:22,
+[ 2655s]                  from ../rest/rest-proxy.h:26,
+[ 2655s]                  from rest-proxy-call.c:23:
+[ 2655s] /usr/include/glib-2.0/gobject/gtype.h:1304:10: note: declared here
+[ 2655s]  1304 | void     g_type_class_add_private       (gpointer                    g_class,
+[ 2655s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_init':
+[ 2655s] rest-proxy-call.c:213:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   213 |   RestProxyCallPrivate *priv = GET_PRIVATE (self);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~          
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_set_method':
+[ 2655s] rest-proxy-call.c:245:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   245 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_get_method':
+[ 2655s] rest-proxy-call.c:267:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   267 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_set_function':
+[ 2655s] rest-proxy-call.c:290:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   290 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_get_function':
+[ 2655s] rest-proxy-call.c:314:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   314 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_add_header':
+[ 2655s] rest-proxy-call.c:337:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   337 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_lookup_header':
+[ 2655s] rest-proxy-call.c:407:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   407 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_remove_header':
+[ 2655s] rest-proxy-call.c:426:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   426 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_add_param':
+[ 2655s] rest-proxy-call.c:450:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   450 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_add_param_full':
+[ 2655s] rest-proxy-call.c:464:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   464 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_lookup_param':
+[ 2655s] rest-proxy-call.c:532:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   532 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_remove_param':
+[ 2655s] rest-proxy-call.c:552:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   552 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_get_params':
+[ 2655s] rest-proxy-call.c:574:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   574 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'finish_call':
+[ 2655s] rest-proxy-call.c:653:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   653 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function '_call_message_completed_cb':
+[ 2655s] rest-proxy-call.c:684:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   684 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function '_continuous_call_message_completed_cb':
+[ 2655s] rest-proxy-call.c:721:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   721 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'set_url':
+[ 2655s] rest-proxy-call.c:778:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   778 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'prepare_message':
+[ 2655s] rest-proxy-call.c:816:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   816 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function 'rest_proxy_call_async':
+[ 2655s] rest-proxy-call.c:970:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2655s]   970 |   priv = GET_PRIVATE (call);
+[ 2655s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2655s] rest-proxy-call.c: In function '_call_message_call_completed_cb':
+[ 2655s] rest-proxy-call.c:1029:5: warning: 'g_simple_async_result_take_error' is deprecated [-Wdeprecated-declarations]
+[ 2655s]  1029 |     g_simple_async_result_take_error (result, error);
+[ 2655s]       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2655s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2655s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2655s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2655s]                  from ../rest/rest-proxy.h:27,
+[ 2655s]                  from rest-proxy-call.c:23:
+[ 2655s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:116:21: note: declared here
+[ 2655s]   116 | void                g_simple_async_result_take_error       (GSimpleAsyncResult      *simple,
+[ 2655s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2655s] rest-proxy-call.c:1031:5: warning: 'g_simple_async_result_set_op_res_gboolean' is deprecated [-Wdeprecated-declarations]
+[ 2655s]  1031 |     g_simple_async_result_set_op_res_gboolean (result, TRUE);
+[ 2656s]       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:88:21: note: declared here
+[ 2656s]    88 | void                g_simple_async_result_set_op_res_gboolean (GSimpleAsyncResult      *simple,
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c:1033:3: warning: 'g_simple_async_result_complete' is deprecated [-Wdeprecated-declarations]
+[ 2656s]  1033 |   g_simple_async_result_complete (result);
+[ 2656s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:104:21: note: declared here
+[ 2656s]   104 | void                g_simple_async_result_complete         (GSimpleAsyncResult      *simple);
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_invoke_async':
+[ 2656s] rest-proxy-call.c:1061:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1061 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c:1067:7: warning: 'g_simple_async_report_take_gerror_in_idle' is deprecated: Use 'g_task_report_error' instead [-Wdeprecated-declarations]
+[ 2656s]  1067 |       g_simple_async_report_take_gerror_in_idle (G_OBJECT (call), callback,
+[ 2656s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:153:6: note: declared here
+[ 2656s]   153 | void g_simple_async_report_take_gerror_in_idle (GObject            *object,
+[ 2656s]       |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c:1072:3: warning: 'g_simple_async_result_new' is deprecated: Use 'g_task_new' instead [-Wdeprecated-declarations]
+[ 2656s]  1072 |   result = g_simple_async_result_new (G_OBJECT (call), callback,
+[ 2656s]       |   ^~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:51:21: note: declared here
+[ 2656s]    51 | GSimpleAsyncResult *g_simple_async_result_new              (GObject                 *source_object,
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_invoke_finish':
+[ 2656s] rest-proxy-call.c:1108:3: warning: 'g_simple_async_result_is_valid' is deprecated [-Wdeprecated-declarations]
+[ 2656s]  1108 |   g_return_val_if_fail (g_simple_async_result_is_valid (result,
+[ 2656s]       |   ^~~~~~~~~~~~~~~~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:135:21: note: declared here
+[ 2656s]   135 | gboolean            g_simple_async_result_is_valid         (GAsyncResult            *result,
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c:1111:3: warning: 'g_simple_async_result_propagate_error' is deprecated [-Wdeprecated-declarations]
+[ 2656s]  1111 |   if (g_simple_async_result_propagate_error (simple, error))
+[ 2656s]       |   ^~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:119:21: note: declared here
+[ 2656s]   119 | gboolean            g_simple_async_result_propagate_error  (GSimpleAsyncResult      *simple,
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c:1114:3: warning: 'g_simple_async_result_get_op_res_gboolean' is deprecated [-Wdeprecated-declarations]
+[ 2656s]  1114 |   return g_simple_async_result_get_op_res_gboolean (simple);
+[ 2656s]       |   ^~~~~~
+[ 2656s] In file included from /usr/include/glib-2.0/gio/gio.h:136,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-types.h:9,
+[ 2656s]                  from /usr/include/libsoup-2.4/libsoup/soup-session-feature.h:9,
+[ 2656s]                  from ../rest/rest-proxy.h:27,
+[ 2656s]                  from rest-proxy-call.c:23:
+[ 2656s] /usr/include/glib-2.0/gio/gsimpleasyncresult.h:91:21: note: declared here
+[ 2656s]    91 | gboolean            g_simple_async_result_get_op_res_gboolean (GSimpleAsyncResult      *simple);
+[ 2656s]       |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_continuous':
+[ 2656s] rest-proxy-call.c:1165:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1165 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function '_upload_call_message_completed_cb':
+[ 2656s] rest-proxy-call.c:1222:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1222 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_upload':
+[ 2656s] rest-proxy-call.c:1298:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1298 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_cancel':
+[ 2656s] rest-proxy-call.c:1359:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1359 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_sync':
+[ 2656s] rest-proxy-call.c:1456:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1456 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_lookup_response_header':
+[ 2656s] rest-proxy-call.c:1487:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1487 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_get_response_headers':
+[ 2656s] rest-proxy-call.c:1512:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1512 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_get_payload_length':
+[ 2656s] rest-proxy-call.c:1537:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1537 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_get_payload':
+[ 2656s] rest-proxy-call.c:1558:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1558 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_get_status_code':
+[ 2656s] rest-proxy-call.c:1576:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1576 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] rest-proxy-call.c: In function 'rest_proxy_call_get_status_message':
+[ 2656s] rest-proxy-call.c:1597:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2656s]  1597 |   priv = GET_PRIVATE (call);
+[ 2656s]       |             ^~~~~~~~~~~~~~~~                                
+[ 2656s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2660s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2660s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-main.lo `test -f 'rest-main.c' || echo './'`rest-main.c
+[ 2660s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-main.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-main.o
+[ 2660s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2661s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2661s] (cd . && /usr/bin/glib-mkenums \
+[ 2661s] 		--fhead "#include \"rest-proxy.h\"\n#include \"rest-proxy-call.h\"\n#include \"rest-enum-types.h\"" \
+[ 2661s] 		--fprod "\n/* enumerations from \"@filename@\" */" \
+[ 2661s] 		--vhead "GType\n@enum_name@_get_type (void)\n{\n  static GType etype = 0;\n  if (etype == 0) {\n    static const G@Type@Value values[] = {" \
+[ 2661s] 		--vprod "      { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+[ 2661s] 		--vtail "      { 0, NULL, NULL }\n    };\n    etype = g_@type@_register_static (\"@EnumName@\", values);\n  }\n  return etype;\n}\n" \
+[ 2661s] 	rest-proxy.h rest-proxy-call.h) > xgen-gtbc \
+[ 2661s] && cp xgen-gtbc rest-enum-types.c  \
+[ 2661s] && rm -f xgen-gtbc
+[ 2661s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2663s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2663s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-sha1.lo `test -f 'sha1.c' || echo './'`sha1.c
+[ 2663s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c sha1.c  -fPIC -DPIC -o .libs/librest_0.7_la-sha1.o
+[ 2663s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2664s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2664s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-marshal.lo `test -f 'rest-marshal.c' || echo './'`rest-marshal.c
+[ 2664s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-marshal.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-marshal.o
+[ 2664s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2665s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2665s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-oauth-proxy-call.lo `test -f 'oauth-proxy-call.c' || echo './'`oauth-proxy-call.c
+[ 2665s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c oauth-proxy-call.c  -fPIC -DPIC -o .libs/librest_0.7_la-oauth-proxy-call.o
+[ 2665s] oauth-proxy-call.c: In function 'sign_hmac':
+[ 2665s] oauth-proxy-call.c:130:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2665s]   130 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2665s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2665s] oauth-proxy-call.c: In function '_prepare':
+[ 2665s] oauth-proxy-call.c:262:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2665s]   262 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2665s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2665s] oauth-proxy-call.c: In function 'oauth_proxy_call_parse_token_response':
+[ 2665s] oauth-proxy-call.c:339:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2665s]   339 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2665s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2665s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-oauth2-proxy-call.lo `test -f 'oauth2-proxy-call.c' || echo './'`oauth2-proxy-call.c
+[ 2666s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c oauth2-proxy-call.c  -fPIC -DPIC -o .libs/librest_0.7_la-oauth2-proxy-call.o
+[ 2666s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-oauth-proxy.lo `test -f 'oauth-proxy.c' || echo './'`oauth-proxy.c
+[ 2666s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c oauth-proxy.c  -fPIC -DPIC -o .libs/librest_0.7_la-oauth-proxy.o
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_get_property':
+[ 2666s] oauth-proxy.c:57:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]    57 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (object);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_set_property':
+[ 2666s] oauth-proxy.c:87:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]    87 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (object);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_finalize':
+[ 2666s] oauth-proxy.c:126:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   126 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (object);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_class_init':
+[ 2666s] oauth-proxy.c:149:3: warning: 'g_type_class_add_private' is deprecated [-Wdeprecated-declarations]
+[ 2666s]   149 |   g_type_class_add_private (klass, sizeof (OAuthProxyPrivate));
+[ 2666s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2666s] In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+[ 2666s]                  from /usr/include/glib-2.0/gobject/gbinding.h:29,
+[ 2666s]                  from /usr/include/glib-2.0/glib-object.h:22,
+[ 2666s]                  from ../rest/rest-proxy.h:26,
+[ 2666s]                  from oauth-proxy.c:23:
+[ 2666s] /usr/include/glib-2.0/gobject/gtype.h:1304:10: note: declared here
+[ 2666s]  1304 | void     g_type_class_add_private       (gpointer                    g_class,
+[ 2666s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_init':
+[ 2666s] oauth-proxy.c:204:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   204 |   PROXY_GET_PRIVATE (self)->method = HMAC_SHA1;
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             
+[ 2666s] oauth-proxy.c: In function 'auth_callback':
+[ 2666s] oauth-proxy.c:299:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   299 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_auth_step':
+[ 2666s] oauth-proxy.c:368:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   368 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_get_token':
+[ 2666s] oauth-proxy.c:638:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   638 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_set_token':
+[ 2666s] oauth-proxy.c:655:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   655 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_get_token_secret':
+[ 2666s] oauth-proxy.c:675:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   675 |   OAuthProxyPrivate *priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_set_token_secret':
+[ 2666s] oauth-proxy.c:692:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   692 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_is_oauth10a':
+[ 2666s] oauth-proxy.c:715:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   715 |   return PROXY_GET_PRIVATE (proxy)->oauth_10a;
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~              
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_get_signature_host':
+[ 2666s] oauth-proxy.c:733:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   733 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_set_signature_host':
+[ 2666s] oauth-proxy.c:752:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   752 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c: In function 'oauth_proxy_new_echo_proxy':
+[ 2666s] oauth-proxy.c:786:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   786 |   priv = PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~                         
+[ 2666s] oauth-proxy.c:797:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   797 |   echo_priv = PROXY_GET_PRIVATE (echo_proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~               
+[ 2666s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2666s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-oauth2-proxy.lo `test -f 'oauth2-proxy.c' || echo './'`oauth2-proxy.c
+[ 2666s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c oauth2-proxy.c  -fPIC -DPIC -o .libs/librest_0.7_la-oauth2-proxy.o
+[ 2666s] oauth2-proxy.c: In function 'oauth2_proxy_class_init':
+[ 2666s] oauth2-proxy.c:129:3: warning: 'g_type_class_add_private' is deprecated [-Wdeprecated-declarations]
+[ 2666s]   129 |   g_type_class_add_private (klass, sizeof (OAuth2ProxyPrivate));
+[ 2666s]       |   ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2666s] In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+[ 2666s]                  from /usr/include/glib-2.0/gobject/gbinding.h:29,
+[ 2666s]                  from /usr/include/glib-2.0/glib-object.h:22,
+[ 2666s]                  from ../rest/rest-proxy.h:26,
+[ 2666s]                  from oauth2-proxy.c:24:
+[ 2666s] /usr/include/glib-2.0/gobject/gtype.h:1304:10: note: declared here
+[ 2666s]  1304 | void     g_type_class_add_private       (gpointer                    g_class,
+[ 2666s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2666s] oauth2-proxy.c: In function 'oauth2_proxy_init':
+[ 2666s] oauth2-proxy.c:162:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2666s]   162 |   proxy->priv = OAUTH2_PROXY_GET_PRIVATE (proxy);
+[ 2666s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~           
+[ 2666s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2673s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2673s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o librest_0.7_la-rest-enum-types.lo `test -f 'rest-enum-types.c' || echo './'`rest-enum-types.c
+[ 2673s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2 -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread -I/usr/include/libxml2 -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rest-enum-types.c  -fPIC -DPIC -o .libs/librest_0.7_la-rest-enum-types.o
+[ 2673s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2684s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2684s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include  -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -pthread -I/usr/include/libxml2  -I/usr/include/libsoup-gnome-2.4 -I/usr/include/libsoup-2.4 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-4 -I/usr/include/libxml2 -pthread  -I/usr/include/libxml2   -I.. -Wall -DG_LOG_DOMAIN=\"Rest\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -no-undefined -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o librest-0.7.la -rpath /usr/lib64 librest_0.7_la-glib-compat.lo librest_0.7_la-rest-param.lo librest_0.7_la-rest-params.lo librest_0.7_la-rest-proxy.lo librest_0.7_la-rest-proxy-auth.lo librest_0.7_la-rest-proxy-call.lo librest_0.7_la-rest-xml-node.lo librest_0.7_la-rest-xml-parser.lo librest_0.7_la-rest-main.lo librest_0.7_la-rest-enum-types.lo librest_0.7_la-oauth-proxy.lo librest_0.7_la-oauth-proxy-call.lo librest_0.7_la-oauth2-proxy.lo librest_0.7_la-oauth2-proxy-call.lo librest_0.7_la-sha1.lo  librest_0.7_la-rest-marshal.lo -lglib-2.0  -lgthread-2.0 -pthread -lglib-2.0  -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0  -lsoup-gnome-2.4 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0  -lxml2   
+[ 2684s] libtool: link: gcc -shared  -fPIC -DPIC  .libs/librest_0.7_la-glib-compat.o .libs/librest_0.7_la-rest-param.o .libs/librest_0.7_la-rest-params.o .libs/librest_0.7_la-rest-proxy.o .libs/librest_0.7_la-rest-proxy-auth.o .libs/librest_0.7_la-rest-proxy-call.o .libs/librest_0.7_la-rest-xml-node.o .libs/librest_0.7_la-rest-xml-parser.o .libs/librest_0.7_la-rest-main.o .libs/librest_0.7_la-rest-enum-types.o .libs/librest_0.7_la-oauth-proxy.o .libs/librest_0.7_la-oauth-proxy-call.o .libs/librest_0.7_la-oauth2-proxy.o .libs/librest_0.7_la-oauth2-proxy-call.o .libs/librest_0.7_la-sha1.o .libs/librest_0.7_la-rest-marshal.o   -lgthread-2.0 -lsoup-gnome-2.4 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lxml2 -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -pthread -pthread -pthread -O2 -g -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -pthread   -pthread -Wl,-soname -Wl,librest-0.7.so.0 -o .libs/librest-0.7.so.0.0.0
+[ 2684s] libtool: link: (cd ".libs" && rm -f "librest-0.7.so.0" && ln -s "librest-0.7.so.0.0.0" "librest-0.7.so.0")
+[ 2684s] libtool: link: (cd ".libs" && rm -f "librest-0.7.so" && ln -s "librest-0.7.so.0.0.0" "librest-0.7.so")
+[ 2684s] libtool: link: ( cd ".libs" && rm -f "librest-0.7.la" && ln -s "../librest-0.7.la" "librest-0.7.la" )
+[ 2684s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2689s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2689s] CPPFLAGS="" CFLAGS="-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection" LDFLAGS="-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld" CC="gcc" PKG_CONFIG="/usr/bin/riscv64-openEuler-linux-gnu-pkg-config" GI_HOST_OS="" DLLTOOL="false"  /usr/bin/g-ir-scanner  --c-include='rest/rest-param.h' --c-include='rest/rest-params.h' --c-include='rest/rest-proxy.h' --c-include='rest/rest-proxy-auth.h' --c-include='rest/rest-proxy-call.h' --c-include='rest/rest-enum-types.h' --c-include='rest/oauth-proxy.h' --c-include='rest/oauth-proxy-call.h' --c-include='rest/oauth2-proxy.h' --c-include='rest/oauth2-proxy-call.h' --c-include='rest/rest-xml-node.h' --c-include='rest/rest-xml-parser.h' --namespace=Rest --nsversion=0.7 --libtool="/bin/sh ../libtool" --pkg=gobject-2.0 --pkg=libsoup-2.4 --pkg=libxml-2.0 --pkg=gio-2.0 --include=GObject-2.0 --include=Gio-2.0 --include=Soup-2.4 --pkg-export=rest-0.7   --library=librest-0.7.la --accept-unprefixed --warn-all --cflags-begin -I.. --cflags-end  rest-param.h rest-params.h rest-proxy.h rest-proxy-auth.h rest-proxy-call.h rest-enum-types.h oauth-proxy.h oauth-proxy-call.h oauth2-proxy.h oauth2-proxy-call.h rest-xml-node.h rest-xml-parser.h glib-compat.h glib-compat.c rest-param.c rest-params.c rest-proxy.c rest-proxy-auth.c rest-proxy-call.c rest-xml-node.c rest-xml-parser.c rest-main.c rest-enum-types.c oauth-proxy.c oauth-proxy-call.c oauth2-proxy.c oauth2-proxy-call.c sha1.c sha1.h librest-0.7.la Makefile --output Rest-0.7.gir
+[ 2689s] Traceback (most recent call last):
+[ 2689s]   File "/usr/bin/g-ir-scanner", line 98, in <module>
+[ 2689s]     from giscanner.scannermain import scanner_main
+[ 2689s]   File "/usr/lib64/gobject-introspection/giscanner/scannermain.py", line 35, in <module>
+[ 2689s]     from giscanner.ast import Include, Namespace
+[ 2689s]   File "/usr/lib64/gobject-introspection/giscanner/ast.py", line 29, in <module>
+[ 2689s]     from .sourcescanner import CTYPE_TYPEDEF, CSYMBOL_TYPE_TYPEDEF
+[ 2689s]   File "/usr/lib64/gobject-introspection/giscanner/sourcescanner.py", line 35, in <module>
+[ 2689s]     from giscanner._giscanner import SourceScanner as CSourceScanner
+[ 2689s] ModuleNotFoundError: No module named 'giscanner._giscanner'
+[ 2689s] make[3]: *** [/usr/share/gobject-introspection-1.0/Makefile.introspection:156: Rest-0.7.gir] Error 1
+[ 2689s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/rest-0.8.1/rest'
+[ 2689s] make[2]: *** [Makefile:726: all] Error 2
+[ 2689s] make[1]: *** [Makefile:495: all-recursive] Error 1
+[ 2689s] make: *** [Makefile:402: all] Error 2
+[ 2689s] error: Bad exit status from /var/tmp/rpm-tmp.hSxJvF (%build)
+[ 2689s] 
+[ 2689s] 
+[ 2689s] RPM build errors:
+[ 2689s]     Bad exit status from /var/tmp/rpm-tmp.hSxJvF (%build)
+[ 2690s] 
+[ 2690s] oe-RISCV-worker25 failed "build rest.spec" at Fri Apr 15 02:48:18 UTC 2022.
+[ 2690s] 

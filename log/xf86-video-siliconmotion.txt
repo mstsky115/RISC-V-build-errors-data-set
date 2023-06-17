@@ -1,0 +1,880 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_10/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_10/root
+[    0s] 
+[    0s] 
+[    0s] lamb03 started "build xf86-video-siliconmotion.spec" at Tue Jan 21 20:05:51 UTC 2020.
+[    0s] 
+[    0s] Building xf86-video-siliconmotion for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '94128c9a1ca8fc60a4d2f5822aaa8b28'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_10/.build-srcdir/xf86-video-siliconmotion.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_10/.build-srcdir/xf86-video-siliconmotion.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/10/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_10/.build.rpmlist /var/cache/obs/worker/root_10/.build-srcdir/xf86-video-siliconmotion.spec build ...
+[    7s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [2f6a9fd75fd72a3d22a4038712a0c994]
+[   14s] ....................
+[   15s] 
+[   15s] copying packages...
+[   23s] reordering...cycle: Mesa -> Mesa-libGL1
+[   23s]   breaking dependency Mesa-libGL1 -> Mesa
+[   23s] cycle: fontconfig -> libfontconfig1
+[   23s]   breaking dependency libfontconfig1 -> fontconfig
+[   23s] done
+[   25s] booting kvm...
+[   25s] ### VM INTERACTION START ###
+[   25s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_10/.mount/boot/kernel -initrd /var/cache/obs/worker/root_10/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 kpti=off pti=off spectre_v2=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_10/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_10/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_10/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   26s] c[?7l[2J[0mSeaBIOS (version rel-1.12.0-0-ga698c89-rebuilt.opensuse.org)
+[   34s] Booting from ROM..c[?7l[2J[    5.767019] dracut-pre-udev[312]: modprobe: FATAL: Module kqemu not found in directory /lib/modules/5.4.12-1-default
+[   34s] [    5.898499] dracut-pre-udev[314]: modprobe: FATAL: Module ext2 not found in directory /lib/modules/5.4.12-1-default
+[   34s] [    5.913905] dracut-pre-udev[315]: modprobe: FATAL: Module ext3 not found in directory /lib/modules/5.4.12-1-default
+[   36s] [    7.342422] dracut-pre-udev[325]: modprobe: FATAL: Module nf_conntrack_ipv6 not found in directory /lib/modules/5.4.12-1-default
+[   36s] [    7.838974] dracut-pre-udev[336]: modprobe: FATAL: Module ibmvscsi not found in directory /lib/modules/5.4.12-1-default
+[   36s] [    7.908074] dracut-pre-udev[339]: modprobe: FATAL: Module ibmveth not found in directory /lib/modules/5.4.12-1-default
+[   38s] No such file or directory
+[   40s] ### VM INTERACTION END ###
+[   40s] 2nd stage started in virtual machine
+[   41s] machine type: riscv64
+[   41s] Linux version: 5.4.12-1-default #1 SMP Wed Jan 15 09:29:49 UTC 2020 (7f4459b)
+[   41s] Increasing log level from now on...
+[   41s] [   13.001624] sysrq: Changing Loglevel
+[   41s] [   13.032943] sysrq: Loglevel set to 4
+[   43s] Unsupported ioctl: cmd=0x5331 (0)
+[   43s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   43s] no label, UUID=bdcdb545-ee13-46ae-b68b-d60c7e4b57b8
+[   43s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   43s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   43s] swapon /dev/vdb
+[   43s] WARNING: udev not running, creating extra device nodes
+[   44s] logging output to //.build.log...
+[   45s] processing recipe /.build-srcdir/xf86-video-siliconmotion.spec ...
+[   45s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/xf86-video-siliconmotion.spec build ...
+[   47s] initializing rpm db...
+[   48s] querying package ids...
+[   90s] [1/247] cumulate Mesa-libglapi0-19.3.2-236.1
+[   90s] [2/247] preinstalled aaa_base-84.87+git20200116.59482ba-1.1
+[   90s] [3/247] preinstalled aaa_base-malloccheck-84.87+git20200116.59482ba-1.1
+[   90s] [4/247] preinstalled attr-2.4.48-3.1
+[   90s] [5/247] preinstalled bash-5.0.11-3.1
+[   90s] [6/247] preinstalled binutils-2.33.1-3.1
+[   90s] [7/247] preinstalled brp-check-suse-84.87+git20191016.914fe67-1.1
+[   90s] [8/247] preinstalled build-compare-20200109T124459.beb05d0-1.1
+[   90s] [9/247] preinstalled build-mkbaselibs-20200107-1.1
+[   90s] [10/247] preinstalled bzip2-1.0.8-2.1
+[   90s] [11/247] preinstalled chkstat-1550_20191205-9.1
+[   90s] [12/247] preinstalled coreutils-8.31-2.1
+[   90s] [13/247] preinstalled cpio-2.12-8.1
+[   90s] [14/247] preinstalled cpp-9-1.1
+[   90s] [15/247] preinstalled cpp9-9.2.1+r280037-1.2
+[   90s] [16/247] preinstalled cracklib-2.9.6-2.2
+[   90s] [17/247] preinstalled diffutils-3.7-3.1
+[   90s] [18/247] preinstalled dwz-0.13-4.1
+[   90s] [19/247] preinstalled file-5.38-2.1
+[   90s] [20/247] preinstalled file-magic-5.38-2.1
+[   90s] [21/247] preinstalled filesystem-15.5-29.1
+[   90s] [22/247] preinstalled fillup-1.42-274.2
+[   90s] [23/247] preinstalled findutils-4.7.0-2.1
+[   90s] [24/247] preinstalled gawk-5.0.1-3.1
+[   90s] [25/247] preinstalled gcc-9-1.1
+[   90s] [26/247] preinstalled gcc-PIE-9-1.1
+[   90s] [27/247] preinstalled gcc9-9.2.1+r280037-1.2
+[   90s] [28/247] preinstalled gettext-runtime-mini-0.19.8.1-13.1
+[   90s] [29/247] preinstalled gettext-tools-mini-0.19.8.1-13.1
+[   90s] [30/247] preinstalled glibc-2.30-2.1
+[   90s] [31/247] preinstalled glibc-devel-2.30-2.1
+[   90s] [32/247] preinstalled glibc-locale-2.30-2.1
+[   90s] [33/247] preinstalled glibc-locale-base-2.30-2.1
+[   90s] [34/247] preinstalled grep-3.3-3.1
+[   90s] [35/247] preinstalled gzip-1.10-3.1
+[   90s] [36/247] preinstalled hostname-3.21-1.1
+[   91s] [37/247] preinstalled info-6.7-1.2
+[   91s] [38/247] preinstalled iproute2-5.4-2.1
+[   91s] [39/247] preinstalled kernel-obs-build-5.4.12-1.1
+[   91s] [40/247] preinstalled krb5-mini-1.17.1-1.1
+[   91s] [41/247] cumulate libICE6-1.0.10-1.1
+[   91s] [42/247] cumulate libX11-data-1.6.9-1.1
+[   91s] [43/247] cumulate libXau6-1.0.9-1.1
+[   91s] [44/247] cumulate libXdmcp6-1.1.3-1.1
+[   91s] [45/247] preinstalled libacl1-2.2.53-3.1
+[   91s] [46/247] preinstalled libatomic1-9.2.1+r280037-1.2
+[   91s] [47/247] preinstalled libattr1-2.4.48-3.1
+[   91s] [48/247] preinstalled libaudit1-2.8.4-2.1
+[   91s] [49/247] preinstalled libblkid1-2.34-4.1
+[   91s] [50/247] preinstalled libbz2-1-1.0.8-2.1
+[   91s] [51/247] cumulate libbz2-devel-1.0.8-2.1
+[   91s] [52/247] preinstalled libcap-ng0-0.7.9-2.1
+[   91s] [53/247] preinstalled libcap2-2.25-5.1
+[   91s] [54/247] preinstalled libcom_err2-1.45.5-1.1
+[   91s] [55/247] preinstalled libcrack2-2.9.6-2.2
+[   91s] [56/247] preinstalled libcrypt1-4.4.10-2.1
+[   91s] [57/247] preinstalled libdb-4_8-4.8.30-38.1
+[   91s] [58/247] cumulate libdrm2-2.4.100-5.1
+[   91s] [59/247] preinstalled libdw1-0.177-3.1
+[   91s] [60/247] preinstalled libebl-plugins-0.177-3.1
+[   91s] [61/247] preinstalled libeconf0-0.3.3+git20191028.3ac14ce-1.1
+[   91s] [62/247] preinstalled libelf1-0.177-3.1
+[   91s] [63/247] cumulate libepoxy0-1.5.4-1.1
+[   91s] [64/247] cumulate libevdev2-1.4.5-2.2
+[   91s] [65/247] cumulate libexpat-devel-2.2.9-1.1
+[   91s] [66/247] preinstalled libexpat1-2.2.9-1.1
+[   91s] [67/247] preinstalled libfdisk1-2.34-4.1
+[   91s] [68/247] preinstalled libffi7-3.2.1.git505-2.1
+[   91s] [69/247] cumulate libfontenc1-1.1.4-1.1
+[   91s] [70/247] preinstalled libgcc_s1-9.2.1+r280037-1.2
+[   91s] [71/247] preinstalled libgdbm6-1.18.1-1.1
+[   91s] [72/247] preinstalled libgdbm_compat4-1.18.1-1.1
+[   91s] [73/247] preinstalled libgmp10-6.1.2-4.1
+[   91s] [74/247] preinstalled libgomp1-9.2.1+r280037-1.2
+[   91s] [75/247] preinstalled libisl22-0.22-1.1
+[   91s] [76/247] preinstalled libkeyutils1-1.6-1.1
+[   91s] [77/247] cumulate libltdl7-2.4.6-8.1
+[   91s] [78/247] preinstalled liblua5_3-5-5.3.5-2.1
+[   91s] [79/247] preinstalled liblzma5-5.2.4-4.1
+[   91s] [80/247] preinstalled libmagic1-5.38-2.1
+[   91s] [81/247] preinstalled libmnl0-1.0.4-1.2
+[   91s] [82/247] preinstalled libmount1-2.34-4.1
+[   91s] [83/247] preinstalled libmpc3-1.1.0-2.1
+[   91s] [84/247] preinstalled libmpfr6-4.0.2-2.1
+[   91s] [85/247] cumulate libmtdev1-1.1.5-1.2
+[   91s] [86/247] preinstalled libncurses6-6.1-24.1
+[   91s] [87/247] preinstalled libnsl2-1.2.0-2.1
+[   91s] [88/247] preinstalled libopenssl1_1-1.1.1d-3.1
+[   91s] [89/247] cumulate libpciaccess0-0.16-1.1
+[   91s] [90/247] preinstalled libpcre1-8.42-3.1
+[   91s] [91/247] cumulate libpixman-1-0-0.36.0-1.1
+[   91s] [92/247] preinstalled libpkgconf3-1.6.3-1.1
+[   91s] [93/247] cumulate libpng16-16-1.6.37-1.1
+[   91s] [94/247] preinstalled libpopt0-1.16-31.1
+[   91s] [95/247] preinstalled libpython3_7m1_0-3.7.3-21.2
+[   91s] [96/247] preinstalled libreadline8-8.0-3.1
+[   91s] [97/247] preinstalled librpmbuild9-4.15.1-1.1
+[   91s] [98/247] preinstalled libselinux1-2.9-7.1
+[   91s] [99/247] preinstalled libsemanage1-2.9-3.1
+[   91s] [100/247] preinstalled libsepol1-2.9-2.1
+[   91s] [101/247] preinstalled libsmartcols1-2.34-4.1
+[   91s] [102/247] preinstalled libstdc++6-9.2.1+r280037-1.2
+[   91s] [103/247] cumulate libsystemd0-mini-244-1.1
+[   91s] [104/247] preinstalled libtirpc-netconfig-1.2.5-1.1
+[   91s] [105/247] preinstalled libtirpc3-1.2.5-1.1
+[   91s] [106/247] cumulate libudev-mini1-244-1.1
+[   91s] [107/247] preinstalled libutempter0-1.1.6-10.1
+[   91s] [108/247] cumulate libuuid-devel-2.34-4.1
+[   91s] [109/247] preinstalled libuuid1-2.34-4.1
+[   91s] [110/247] preinstalled libverto1-0.2.6-7.1
+[   91s] [111/247] cumulate libwayland-client0-1.17.0-1.1
+[   91s] [112/247] cumulate libwayland-server0-1.17.0-1.1
+[   91s] [113/247] preinstalled libxcrypt-devel-4.4.10-2.1
+[   91s] [114/247] cumulate libxshmfence1-1.3-1.1
+[   91s] [115/247] preinstalled libz1-1.2.11-12.1
+[   91s] [116/247] preinstalled libzio1-1.06-4.1
+[   91s] [117/247] preinstalled libzstd1-1.4.4-1.1
+[   91s] [118/247] preinstalled linux-glibc-devel-5.4-1.1
+[   91s] [119/247] cumulate m4-1.4.18-4.1
+[   91s] [120/247] preinstalled make-4.2.1-7.1
+[   91s] [121/247] preinstalled ncurses-utils-6.1-24.1
+[   91s] [122/247] preinstalled pam-1.3.1+git20190923.ea78d67-1.1
+[   91s] [123/247] preinstalled patch-2.7.6-3.1
+[   91s] [124/247] preinstalled perl-5.30.1-3.1
+[   91s] [125/247] preinstalled perl-base-5.30.1-3.1
+[   91s] [126/247] preinstalled permissions-20191205-9.1
+[   91s] [127/247] preinstalled permissions-config-1550_20191205-9.1
+[   91s] [128/247] preinstalled pkgconf-1.6.3-1.1
+[   91s] [129/247] preinstalled pkgconf-m4-1.6.3-1.1
+[   91s] [130/247] preinstalled pkgconf-pkg-config-1.6.3-1.1
+[   91s] [131/247] preinstalled post-build-checks-84.87+git20200110.2d02f07-1.1
+[   91s] [132/247] cumulate printproto-devel-1.0.5-4.2
+[   91s] [133/247] cumulate pthread-stubs-devel-0.4-1.2
+[   91s] [134/247] preinstalled python-rpm-macros-20191104.08e6493-1.1
+[   91s] [135/247] preinstalled python3-base-3.7.3-21.2
+[   91s] [136/247] preinstalled qemu-linux-user-4.2.0-85.1
+[   91s] [137/247] preinstalled rpm-4.15.1-1.1
+[   91s] [138/247] preinstalled rpm-build-4.15.1-1.1
+[   91s] [139/247] preinstalled rpm-config-SUSE-0.g45-1.1
+[   91s] [140/247] preinstalled rpmlint-Factory-1.0-96.1
+[   91s] [141/247] preinstalled rpmlint-Factory-strict-1.0-96.1
+[   91s] [142/247] preinstalled rpmlint-mini-1.10-14.1
+[   91s] [143/247] preinstalled sed-4.7-3.1
+[   91s] [144/247] preinstalled shadow-4.7-4.1
+[   91s] [145/247] preinstalled system-group-hardware-20170617-8.1
+[   91s] [146/247] preinstalled system-user-root-20190513-1.1
+[   91s] [147/247] preinstalled systemd-rpm-macros-4-2.1
+[   91s] [148/247] preinstalled sysuser-shadow-3.0-2.1
+[   91s] [149/247] preinstalled tar-1.32-1.1
+[   91s] [150/247] preinstalled terminfo-base-6.1-24.1
+[   91s] [151/247] preinstalled update-alternatives-1.19.0.5-5.1
+[   91s] [152/247] preinstalled util-linux-2.34-4.1
+[   91s] [153/247] cumulate util-macros-devel-1.19.2-2.1
+[   91s] [154/247] preinstalled which-2.21-4.1
+[   91s] [155/247] cumulate xbitmaps-1.1.2-1.1
+[   91s] [156/247] cumulate xbitmaps-devel-1.1.2-1.1
+[   91s] [157/247] cumulate xkeyboard-config-2.27-1.1
+[   91s] [158/247] cumulate xorgproto-devel-2019.2-1.1
+[   91s] [159/247] cumulate xtrans-1.4.0-2.1
+[   91s] [160/247] preinstalled xz-5.2.4-4.1
+[   91s] [161/247] cumulate zlib-devel-1.2.11-12.1
+[   91s] [162/247] cumulate autoconf-2.69-17.1
+[   91s] [163/247] cumulate libSM6-1.2.3-1.1
+[   91s] [164/247] cumulate libX11-xcb1-1.6.9-1.1
+[   91s] [165/247] cumulate libdbus-1-3-1.12.16-1.1
+[   91s] [166/247] cumulate libdrm_amdgpu1-2.4.100-5.1
+[   91s] [167/247] cumulate libdrm_nouveau2-2.4.100-5.1
+[   91s] [168/247] cumulate libdrm_radeon1-2.4.100-5.1
+[   91s] [169/247] cumulate libevdev-devel-1.4.5-2.2
+[   91s] [170/247] cumulate libfontenc-devel-1.1.4-1.1
+[   91s] [171/247] cumulate libfreetype6-2.10.1-2.1
+[   91s] [172/247] cumulate libpciaccess-devel-0.16-1.1
+[   91s] [173/247] cumulate libpixman-1-0-devel-0.36.0-1.1
+[   91s] [174/247] cumulate libudev-mini-devel-244-1.1
+[   91s] [175/247] cumulate libxcb1-1.13.1-1.1
+[   91s] [176/247] cumulate mtdev-devel-1.1.5-1.2
+[   91s] [177/247] cumulate libICE-devel-1.0.10-1.1
+[   91s] [178/247] cumulate libXau-devel-1.0.9-1.1
+[   91s] [179/247] cumulate libXdmcp-devel-1.1.3-1.1
+[   91s] [180/247] cumulate libgbm1-19.3.2-236.1
+[   91s] [181/247] cumulate automake-1.16.1-5.1
+[   91s] [182/247] cumulate libxcb-composite0-1.13.1-1.1
+[   91s] [183/247] cumulate libxcb-damage0-1.13.1-1.1
+[   91s] [184/247] cumulate libxcb-dpms0-1.13.1-1.1
+[   91s] [185/247] cumulate libxcb-dri2-0-1.13.1-1.1
+[   91s] [186/247] cumulate libxcb-dri3-0-1.13.1-1.1
+[   91s] [187/247] cumulate libxcb-glx0-1.13.1-1.1
+[   91s] [188/247] cumulate libxcb-present0-1.13.1-1.1
+[   91s] [189/247] cumulate libxcb-randr0-1.13.1-1.1
+[   91s] [190/247] cumulate libxcb-record0-1.13.1-1.1
+[   91s] [191/247] cumulate libxcb-render0-1.13.1-1.1
+[   91s] [192/247] cumulate libxcb-res0-1.13.1-1.1
+[   91s] [193/247] cumulate libxcb-screensaver0-1.13.1-1.1
+[   91s] [194/247] cumulate libxcb-shape0-1.13.1-1.1
+[   91s] [195/247] cumulate libxcb-shm0-1.13.1-1.1
+[   91s] [196/247] cumulate libxcb-sync1-1.13.1-1.1
+[   91s] [197/247] cumulate libxcb-xf86dri0-1.13.1-1.1
+[   91s] [198/247] cumulate libxcb-xfixes0-1.13.1-1.1
+[   91s] [199/247] cumulate libxcb-xinerama0-1.13.1-1.1
+[   91s] [200/247] cumulate libxcb-xinput0-1.13.1-1.1
+[   91s] [201/247] cumulate libxcb-xkb1-1.13.1-1.1
+[   91s] [202/247] cumulate libxcb-xtest0-1.13.1-1.1
+[   91s] [203/247] cumulate libxcb-xv0-1.13.1-1.1
+[   91s] [204/247] cumulate libxcb-xvmc0-1.13.1-1.1
+[   91s] [205/247] cumulate libX11-6-1.6.9-1.1
+[   91s] [206/247] cumulate libXfont2-2-2.0.4-1.1
+[   91s] [207/247] cumulate freetype2-devel-2.10.1-2.1
+[   91s] [208/247] cumulate libSM-devel-1.2.3-1.1
+[   91s] [209/247] cumulate libdrm-devel-2.4.100-5.1
+[   91s] [210/247] cumulate libXdamage1-1.1.5-1.1
+[   91s] [211/247] cumulate libXext6-1.3.4-1.1
+[   91s] [212/247] cumulate libXfixes3-5.0.3-1.2
+[   91s] [213/247] cumulate libXmuu1-1.1.3-1.1
+[   91s] [214/247] cumulate libXpm4-3.5.13-1.1
+[   91s] [215/247] cumulate libXrender1-0.9.10-1.2
+[   91s] [216/247] cumulate libglvnd-1.2.0-4.1
+[   91s] [217/247] cumulate libxkbfile1-1.1.0-1.1
+[   91s] [218/247] cumulate libXt6-1.2.0-1.1
+[   91s] [219/247] cumulate libtool-2.4.6-8.1
+[   91s] [220/247] cumulate libxcb-devel-1.13.1-1.1
+[   91s] [221/247] cumulate libXv1-1.0.11-1.2
+[   91s] [222/247] cumulate libXxf86vm1-1.1.4-1.2
+[   91s] [223/247] cumulate xkbcomp-1.4.2-1.1
+[   91s] [224/247] cumulate libXp6-1.0.3-1.2
+[   91s] [225/247] cumulate libX11-devel-1.6.9-1.1
+[   91s] [226/247] cumulate libXmu6-1.1.3-1.1
+[   91s] [227/247] cumulate Mesa-libEGL1-19.3.2-236.1
+[   91s] [228/247] cumulate libXpm-devel-3.5.13-1.1
+[   91s] [229/247] cumulate libXprintUtil1-1.0.1-12.2
+[   91s] [230/247] cumulate libXext-devel-1.3.4-1.1
+[   91s] [231/247] cumulate libXfixes-devel-5.0.3-1.2
+[   91s] [232/247] cumulate libXrender-devel-0.9.10-1.2
+[   91s] [233/247] cumulate libxkbfile-devel-1.1.0-1.1
+[   91s] [234/247] cumulate libXt-devel-1.2.0-1.1
+[   91s] [235/247] cumulate libXv-devel-1.0.11-1.2
+[   91s] [236/247] cumulate libXp-devel-1.0.3-1.2
+[   91s] [237/247] cumulate libXmu-devel-1.1.3-1.1
+[   91s] [238/247] cumulate libXprintUtil-devel-1.0.1-12.2
+[   91s] [239/247] cumulate libfontconfig1-2.13.1-2.1
+[   91s] [240/247] cumulate Mesa-libGL1-19.3.2-236.1
+[   91s] [241/247] cumulate fontconfig-2.13.1-2.1
+[   91s] [242/247] cumulate Mesa-19.3.2-236.1
+[   91s] [243/247] cumulate fontconfig-devel-2.13.1-2.1
+[   91s] [244/247] cumulate Mesa-dri-devel-19.3.2-236.1
+[   92s] [245/247] cumulate xorg-x11-server-Xvfb-1.20.7+0-1.1
+[   92s] [246/247] cumulate xorg-x11-server-1.20.7+0-1.1
+[   92s] [247/247] cumulate xorg-x11-server-sdk-1.20.7+0-1.1
+[   92s] now installing cumulated packages
+[   93s] Preparing...                          ########################################
+[   93s] Updating / installing...
+[   95s] xorgproto-devel-2019.2-1.1            ########################################
+[   95s] libdrm2-2.4.100-5.1                   ########################################
+[   95s] libXau6-1.0.9-1.1                     ########################################
+[   95s] libxcb1-1.13.1-1.1                    ########################################
+[   95s] libxcb-dri2-0-1.13.1-1.1              ########################################
+[   95s] libxcb-dri3-0-1.13.1-1.1              ########################################
+[   95s] libxcb-present0-1.13.1-1.1            ########################################
+[   96s] libxcb-sync1-1.13.1-1.1               ########################################
+[   96s] libXau-devel-1.0.9-1.1                ########################################
+[   97s] xkeyboard-config-2.27-1.1             ########################################
+[   97s] libxshmfence1-1.3-1.1                 ########################################
+[   97s] libsystemd0-mini-244-1.1              ########################################
+[   98s] libpixman-1-0-0.36.0-1.1              ########################################
+[   98s] libXdmcp6-1.1.3-1.1                   ########################################
+[   98s] libICE6-1.0.10-1.1                    ########################################
+[   98s] libICE-devel-1.0.10-1.1               ########################################
+[   98s] libSM6-1.2.3-1.1                      ########################################
+[   99s] libSM-devel-1.2.3-1.1                 ########################################
+[   99s] libxcb-glx0-1.13.1-1.1                ########################################
+[   99s] libxcb-xfixes0-1.13.1-1.1             ########################################
+[   99s] printproto-devel-1.0.5-4.2            ########################################
+[   99s] m4-1.4.18-4.1                         ########################################
+[  100s] autoconf-2.69-17.1                    ########################################
+[  101s] automake-1.16.1-5.1                   ########################################
+[  102s] install-info: warning: no info dir entry in `/usr/share/info/automake-history.info.gz'
+[  102s] libwayland-server0-1.17.0-1.1         ########################################
+[  102s] libgbm1-19.3.2-236.1                  ########################################
+[  103s] libudev-mini1-244-1.1                 ########################################
+[  103s] libpciaccess0-0.16-1.1                ########################################
+[  103s] libfontenc1-1.1.4-1.1                 ########################################
+[  104s] libX11-data-1.6.9-1.1                 ########################################
+[  104s] libX11-6-1.6.9-1.1                    ########################################
+[  104s] libXext6-1.3.4-1.1                    ########################################
+[  105s] libglvnd-1.2.0-4.1                    ########################################
+[  105s] libX11-xcb1-1.6.9-1.1                 ########################################
+[  105s] libXp6-1.0.3-1.2                      ########################################
+[  106s] libXfixes3-5.0.3-1.2                  ########################################
+[  106s] libxkbfile1-1.1.0-1.1                 ########################################
+[  106s] xkbcomp-1.4.2-1.1                     ########################################
+[  106s] libXt6-1.2.0-1.1                      ########################################
+[  106s] Mesa-libglapi0-19.3.2-236.1           ########################################
+[  106s] libXprintUtil1-1.0.1-12.2             ########################################
+[  107s] libXv1-1.0.11-1.2                     ########################################
+[  107s] libXxf86vm1-1.1.4-1.2                 ########################################
+[  107s] libXdamage1-1.1.5-1.1                 ########################################
+[  107s] libXmuu1-1.1.3-1.1                    ########################################
+[  107s] libXpm4-3.5.13-1.1                    ########################################
+[  107s] libXrender1-0.9.10-1.2                ########################################
+[  108s] libfontenc-devel-1.1.4-1.1            ########################################
+[  108s] libpciaccess-devel-0.16-1.1           ########################################
+[  108s] libudev-mini-devel-244-1.1            ########################################
+[  108s] libXdmcp-devel-1.1.3-1.1              ########################################
+[  108s] libpixman-1-0-devel-0.36.0-1.1        ########################################
+[  108s] libdbus-1-3-1.12.16-1.1               ########################################
+[  108s] libxcb-composite0-1.13.1-1.1          ########################################
+[  108s] libxcb-damage0-1.13.1-1.1             ########################################
+[  108s] libxcb-dpms0-1.13.1-1.1               ########################################
+[  108s] libxcb-randr0-1.13.1-1.1              ########################################
+[  109s] libxcb-record0-1.13.1-1.1             ########################################
+[  109s] libxcb-render0-1.13.1-1.1             ########################################
+[  109s] libxcb-res0-1.13.1-1.1                ########################################
+[  109s] libxcb-screensaver0-1.13.1-1.1        ########################################
+[  109s] libxcb-shape0-1.13.1-1.1              ########################################
+[  109s] libxcb-shm0-1.13.1-1.1                ########################################
+[  109s] libxcb-xf86dri0-1.13.1-1.1            ########################################
+[  109s] libxcb-xinerama0-1.13.1-1.1           ########################################
+[  110s] libxcb-xinput0-1.13.1-1.1             ########################################
+[  110s] libxcb-xkb1-1.13.1-1.1                ########################################
+[  110s] libxcb-xtest0-1.13.1-1.1              ########################################
+[  110s] libxcb-xv0-1.13.1-1.1                 ########################################
+[  110s] libxcb-xvmc0-1.13.1-1.1               ########################################
+[  110s] libdrm_amdgpu1-2.4.100-5.1            ########################################
+[  110s] libdrm_nouveau2-2.4.100-5.1           ########################################
+[  111s] libdrm_radeon1-2.4.100-5.1            ########################################
+[  111s] libdrm-devel-2.4.100-5.1              ########################################
+[  111s] zlib-devel-1.2.11-12.1                ########################################
+[  112s] xtrans-1.4.0-2.1                      ########################################
+[  112s] xbitmaps-devel-1.1.2-1.1              ########################################
+[  112s] xbitmaps-1.1.2-1.1                    ########################################
+[  112s] libXmu6-1.1.3-1.1                     ########################################
+[  112s] util-macros-devel-1.19.2-2.1          ########################################
+[  112s] pthread-stubs-devel-0.4-1.2           ########################################
+[  112s] libxcb-devel-1.13.1-1.1               ########################################
+[  115s] libX11-devel-1.6.9-1.1                ########################################
+[  115s] libXext-devel-1.3.4-1.1               ########################################
+[  116s] libXt-devel-1.2.0-1.1                 ########################################
+[  116s] libXp-devel-1.0.3-1.2                 ########################################
+[  116s] libXprintUtil-devel-1.0.1-12.2        ########################################
+[  116s] libXmu-devel-1.1.3-1.1                ########################################
+[  116s] libXv-devel-1.0.11-1.2                ########################################
+[  116s] libXpm-devel-3.5.13-1.1               ########################################
+[  116s] libXfixes-devel-5.0.3-1.2             ########################################
+[  116s] libXrender-devel-0.9.10-1.2           ########################################
+[  116s] libxkbfile-devel-1.1.0-1.1            ########################################
+[  116s] libwayland-client0-1.17.0-1.1         ########################################
+[  116s] Mesa-libEGL1-19.3.2-236.1             ########################################
+[  116s] Mesa-19.3.2-236.1                     ########################################
+[  117s] Mesa-libGL1-19.3.2-236.1              ########################################
+[  117s] Mesa-dri-devel-19.3.2-236.1           ########################################
+[  117s] libuuid-devel-2.34-4.1                ########################################
+[  117s] libpng16-16-1.6.37-1.1                ########################################
+[  118s] libfreetype6-2.10.1-2.1               ########################################
+[  118s] libXfont2-2-2.0.4-1.1                 ########################################
+[  118s] libfontconfig1-2.13.1-2.1             ########################################
+[  119s] fontconfig-2.13.1-2.1                 ########################################
+[  119s] xorg-x11-server-Xvfb-1.20.7+0-1.1     ########################################
+[  119s] libmtdev1-1.1.5-1.2                   ########################################
+[  119s] mtdev-devel-1.1.5-1.2                 ########################################
+[  120s] libltdl7-2.4.6-8.1                    ########################################
+[  121s] libtool-2.4.6-8.1                     ########################################
+[  122s] libexpat-devel-2.2.9-1.1              ########################################
+[  122s] libevdev2-1.4.5-2.2                   ########################################
+[  122s] libevdev-devel-1.4.5-2.2              ########################################
+[  123s] libepoxy0-1.5.4-1.1                   ########################################
+[  124s] xorg-x11-server-1.20.7+0-1.1          ########################################
+[  124s] Updating /etc/sysconfig/displaymanager ...
+[  125s] update-alternatives: using /usr/lib64/xorg/modules/extensions/xorg/xorg-libglx.so to provide /usr/lib64/xorg/modules/extensions/libglx.so (libglx.so) in auto mode
+[  125s] libbz2-devel-1.0.8-2.1                ########################################
+[  127s] freetype2-devel-2.10.1-2.1            ########################################
+[  127s] fontconfig-devel-2.13.1-2.1           ########################################
+[  127s] xorg-x11-server-sdk-1.20.7+0-1.1      ########################################
+[  139s] removing nis flags from //etc/nsswitch.conf...
+[  140s] now finalizing build dir...
+[  144s] RTNETLINK answers: File exists
+[  144s] RTNETLINK answers: File exists
+[  160s] build target is riscv64-suse-linux
+[  161s] -----------------------------------------------------------------
+[  161s] I have the following modifications for xf86-video-siliconmotion.spec:
+[  161s] 21c21
+[  161s] < Release:        0
+[  161s] ---
+[  161s] > Release:        4.1
+[  161s] 30c30
+[  161s] < BuildRequires:  pkg-config
+[  161s] ---
+[  161s] > BuildRequires:  pkgconf-pkg-config
+[  161s] -----------------------------------------------------------------
+[  161s] ----- building xf86-video-siliconmotion.spec (user abuild)
+[  161s] -----------------------------------------------------------------
+[  161s] -----------------------------------------------------------------
+[  168s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/94128c9a1ca8fc60a4d2f5822aaa8b28-xf86-video-siliconmotion' /home/abuild/rpmbuild/SOURCES/xf86-video-siliconmotion.spec
+[  168s] warning: Macro expanded in comment on line 27: %{name}-%{version}.tar.bz2.sig
+[  168s] 
+[  168s] Building target platforms: riscv64-suse-linux
+[  168s] Building for target riscv64-suse-linux
+[  168s] setting SOURCE_DATE_EPOCH=1579478400
+[  169s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.tQXDDi
+[  169s] + umask 022
+[  169s] + cd /home/abuild/rpmbuild/BUILD
+[  169s] + cd /home/abuild/rpmbuild/BUILD
+[  169s] + rm -rf xf86-video-siliconmotion-1.7.9
+[  169s] + /usr/bin/bzip2 -dc /home/abuild/rpmbuild/SOURCES/xf86-video-siliconmotion-1.7.9.tar.bz2
+[  169s] + /usr/bin/tar -xof -
+[  170s] + STATUS=0
+[  170s] + '[' 0 -ne 0 ']'
+[  170s] + cd xf86-video-siliconmotion-1.7.9
+[  170s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  170s] + echo 'Patch #0 (u_siliconmotion_fix_segfault_on_xorg_server_1.19.patch):'
+[  170s] Patch #0 (u_siliconmotion_fix_segfault_on_xorg_server_1.19.patch):
+[  170s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  170s] patching file src/smi_driver.c
+[  170s] + RPM_EC=0
+[  170s] ++ jobs -p
+[  170s] + exit 0
+[  170s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.qDnJoi
+[  171s] + umask 022
+[  171s] + cd /home/abuild/rpmbuild/BUILD
+[  171s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/xf86-video-siliconmotion-1.7.9-4.1.riscv64
+[  171s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/xf86-video-siliconmotion-1.7.9-4.1.riscv64
+[  171s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  171s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/xf86-video-siliconmotion-1.7.9-4.1.riscv64
+[  171s] + cd xf86-video-siliconmotion-1.7.9
+[  171s] + ref=/usr/lib/rpm
+[  171s] + for s in guess sub
+[  171s] ++ find -maxdepth 8 -name config.guess
+[  171s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  171s] + grep -q config-patches@ ./config.guess
+[  171s] + grep -q aarch64 ./config.guess
+[  171s] + grep -q ppc64le ./config.guess
+[  172s] + grep -q 'riscv64[-:]' ./config.guess
+[  172s] + install -m 755 /usr/lib/rpm/config.guess ./config.guess
+[  172s] + for s in guess sub
+[  172s] ++ find -maxdepth 8 -name config.sub
+[  172s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  172s] + grep -q config-patches@ ./config.sub
+[  172s] + grep -q aarch64 ./config.sub
+[  172s] + grep -q ppc64le ./config.sub
+[  173s] + grep -q 'riscv64[-:]' ./config.sub
+[  173s] + CFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  173s] + export CFLAGS
+[  173s] + CXXFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  173s] + export CXXFLAGS
+[  173s] + FFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  173s] + export FFLAGS
+[  173s] + FCFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  173s] + export FCFLAGS
+[  173s] + LDFLAGS=-flto=auto
+[  173s] + export LDFLAGS
+[  173s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/lib --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking
+[  185s] checking for a BSD-compatible install... /usr/bin/install -c
+[  185s] checking for riscv64-suse-linux-gnu-gcc... no
+[  185s] checking for gcc... gcc
+[  192s] checking whether the C compiler works... yes
+[  192s] checking for C compiler default output file name... a.out
+[  197s] checking for suffix of executables... 
+[  203s] checking whether we are cross compiling... no
+[  205s] checking for suffix of object files... o
+[  206s] checking whether we are using the GNU C compiler... yes
+[  208s] checking whether gcc accepts -g... yes
+[  210s] checking for gcc option to accept ISO C89... none needed
+[  212s] checking whether gcc understands -c and -o together... yes
+[  215s] checking for gcc option to accept ISO C99... none needed
+[  217s] checking how to run the C preprocessor... gcc -E
+[  219s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  219s] checking for egrep... /usr/bin/grep -E
+[  229s] checking for ANSI C header files... yes
+[  231s] checking for sys/types.h... yes
+[  234s] checking for sys/stat.h... yes
+[  236s] checking for stdlib.h... yes
+[  238s] checking for string.h... yes
+[  240s] checking for memory.h... yes
+[  243s] checking for strings.h... yes
+[  245s] checking for inttypes.h... yes
+[  246s] checking for stdint.h... yes
+[  249s] checking for unistd.h... yes
+[  251s] checking whether __clang__ is declared... no
+[  253s] checking whether __INTEL_COMPILER is declared... no
+[  255s] checking whether __SUNPRO_C is declared... no
+[  255s] checking for riscv64-suse-linux-gnu-pkg-config... /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[  256s] checking pkg-config is at least version 0.9.0... yes
+[  257s] checking build system type... riscv64-suse-linux-gnu
+[  258s] checking host system type... riscv64-suse-linux-gnu
+[  258s] checking for a sed that does not truncate output... /usr/bin/sed
+[  259s] checking if gcc supports -Werror=unknown-warning-option... no
+[  261s] checking if gcc supports -Werror=unused-command-line-argument... no
+[  265s] checking if gcc supports -Wall... yes
+[  271s] checking if gcc supports -Wpointer-arith... yes
+[  275s] checking if gcc supports -Wmissing-declarations... yes
+[  281s] checking if gcc supports -Wformat=2... yes
+[  286s] checking if gcc supports -Wstrict-prototypes... yes
+[  291s] checking if gcc supports -Wmissing-prototypes... yes
+[  296s] checking if gcc supports -Wnested-externs... yes
+[  301s] checking if gcc supports -Wbad-function-cast... yes
+[  307s] checking if gcc supports -Wold-style-definition... yes
+[  311s] checking if gcc supports -Wdeclaration-after-statement... yes
+[  316s] checking if gcc supports -Wunused... yes
+[  321s] checking if gcc supports -Wuninitialized... yes
+[  326s] checking if gcc supports -Wshadow... yes
+[  331s] checking if gcc supports -Wmissing-noreturn... yes
+[  336s] checking if gcc supports -Wmissing-format-attribute... yes
+[  340s] checking if gcc supports -Wredundant-decls... yes
+[  345s] checking if gcc supports -Wlogical-op... yes
+[  349s] checking if gcc supports -Werror=implicit... yes
+[  354s] checking if gcc supports -Werror=nonnull... yes
+[  359s] checking if gcc supports -Werror=init-self... yes
+[  363s] checking if gcc supports -Werror=main... yes
+[  367s] checking if gcc supports -Werror=missing-braces... yes
+[  371s] checking if gcc supports -Werror=sequence-point... yes
+[  376s] checking if gcc supports -Werror=return-type... yes
+[  381s] checking if gcc supports -Werror=trigraphs... yes
+[  385s] checking if gcc supports -Werror=array-bounds... yes
+[  390s] checking if gcc supports -Werror=write-strings... yes
+[  393s] checking if gcc supports -Werror=address... yes
+[  397s] checking if gcc supports -Werror=int-to-pointer-cast... yes
+[  401s] checking if gcc supports -Werror=pointer-to-int-cast... yes
+[  405s] checking if gcc supports -pedantic... yes
+[  408s] checking if gcc supports -Werror... yes
+[  412s] checking if gcc supports -Werror=attributes... yes
+[  413s] checking whether make supports nested variables... yes
+[  413s] checking whether build environment is sane... yes
+[  414s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  414s] checking for gawk... gawk
+[  414s] checking whether make sets $(MAKE)... yes
+[  415s] checking for style of include used by make... GNU
+[  415s] checking dependency style of gcc... none
+[  415s] checking whether to enable maintainer-specific portions of Makefiles... no
+[  415s] checking how to print strings... printf
+[  415s] checking for a sed that does not truncate output... (cached) /usr/bin/sed
+[  415s] checking for fgrep... /usr/bin/grep -F
+[  417s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  417s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  417s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  418s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  418s] checking whether ln -s works... yes
+[  419s] checking the maximum length of command line arguments... 1572864
+[  419s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  419s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  419s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  419s] checking for riscv64-suse-linux-gnu-objdump... no
+[  419s] checking for objdump... objdump
+[  419s] checking how to recognize dependent libraries... pass_all
+[  419s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  419s] checking for dlltool... no
+[  419s] checking how to associate runtime and link libraries... printf %s\n
+[  419s] checking for riscv64-suse-linux-gnu-ar... no
+[  419s] checking for ar... ar
+[  420s] checking for archiver @FILE support... @
+[  420s] checking for riscv64-suse-linux-gnu-strip... no
+[  420s] checking for strip... strip
+[  420s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  420s] checking for ranlib... ranlib
+[  427s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  427s] checking for sysroot... no
+[  427s] checking for a working dd... /usr/bin/dd
+[  427s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[  427s] checking for riscv64-suse-linux-gnu-mt... no
+[  427s] checking for mt... no
+[  428s] checking if : is a manifest tool... no
+[  429s] checking for dlfcn.h... yes
+[  429s] checking for objdir... .libs
+[  434s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  434s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  436s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  437s] checking if gcc static flag -static works... no
+[  438s] checking if gcc supports -c -o file.o... yes
+[  438s] checking if gcc supports -c -o file.o... (cached) yes
+[  439s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  441s] checking whether -lc should be explicitly linked in... no
+[  445s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  445s] checking how to hardcode library paths into programs... immediate
+[  445s] checking whether stripping libraries is possible... yes
+[  445s] checking if libtool supports shared libraries... yes
+[  445s] checking whether to build shared libraries... yes
+[  445s] checking whether to build static libraries... no
+[  447s] checking if XV is defined... yes
+[  448s] checking if DPMSExtension is defined... yes
+[  448s] checking for XORG... yes
+[  449s] checking for XEXT... yes
+[  450s] checking whether XSERVER_LIBPCIACCESS is declared... yes
+[  452s] checking for xf86Modes.h... yes
+[  453s] checking for PCIACCESS... yes
+[  454s] checking xaa.h usability... no
+[  454s] checking xaa.h presence... no
+[  454s] checking for xaa.h... no
+[  454s] checking whether to include XAA support... no
+[  455s] checking that generated files are newer than configure... done
+[  455s] configure: creating ./config.status
+[  477s] config.status: creating Makefile
+[  478s] config.status: creating src/Makefile
+[  479s] config.status: creating man/Makefile
+[  480s] config.status: creating config.h
+[  481s] config.status: executing depfiles commands
+[  481s] config.status: executing libtool commands
+[  483s] + make -j8
+[  483s] make  all-recursive
+[  484s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/xf86-video-siliconmotion-1.7.9'
+[  484s] Making all in src
+[  484s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xf86-video-siliconmotion-1.7.9/src'
+[  484s]   CC       smi_xaa.lo
+[  484s]   CC       smi_exa.lo
+[  484s]   CC       smi_501.lo
+[  484s]   CC       smi_dac.lo
+[  484s]   CC       smi_accel.lo
+[  484s]   CC       smi_video.lo
+[  484s]   CC       smi_driver.lo
+[  484s]   CC       smi_i2c.lo
+[  487s] In file included from smi.h:318,
+[  487s]                  from smi_driver.c:44:
+[  487s] regsmi.h: In function 'VGAIN8_INDEX':
+[  487s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  487s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  487s]       |  ^~~~
+[  487s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  487s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  487s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  487s]       |         ^~~
+[  487s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  487s] In file included from smi.h:318,
+[  487s]                  from smi_dac.c:34:
+[  487s] regsmi.h: In function 'VGAIN8_INDEX':
+[  487s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  487s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  487s]       |  ^~~~
+[  487s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  487s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  487s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  487s]       |         ^~~
+[  487s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  487s] In file included from smi.h:318,
+[  487s]                  from smi_exa.c:28:
+[  487s] regsmi.h: In function 'VGAIN8_INDEX':
+[  487s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  487s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  487s]       |  ^~~~
+[  487s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  487s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  487s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  487s]       |         ^~~
+[  487s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  487s] In file included from smi.h:318,
+[  487s]                  from smi_accel.c:34:
+[  487s] regsmi.h: In function 'VGAIN8_INDEX':
+[  487s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  487s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  487s]       |  ^~~~
+[  487s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  487s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  487s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  487s]       |         ^~~
+[  487s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  488s] smi_exa.c: In function 'SMI_PrepareComposite':
+[  488s] smi_exa.c:630:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+[  488s]   630 |     int src_pitch = exaGetPixmapPitch(pSrc) / (pSrc->drawable.bitsPerPixel >> 3);
+[  488s]       |     ^~~
+[  488s] In file included from smi.h:318,
+[  488s]                  from smi_501.c:33:
+[  488s] regsmi.h: In function 'VGAIN8_INDEX':
+[  488s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  488s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  488s]       |  ^~~~
+[  488s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  488s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  488s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  488s]       |         ^~~
+[  488s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  488s] In file included from smi.h:318,
+[  488s]                  from smi_i2c.c:40:
+[  488s] regsmi.h: In function 'VGAIN8_INDEX':
+[  488s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  488s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  488s]       |  ^~~~
+[  488s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  488s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  488s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  488s]       |         ^~~
+[  488s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  488s] smi_i2c.c: In function 'SMI_I2CInit':
+[  488s] smi_i2c.c:74:21: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]    74 |  I2CPtr->BusName    = "I2C bus";
+[  488s]       |                     ^
+[  488s] In file included from smi.h:318,
+[  488s]                  from smi_video.c:56:
+[  488s] regsmi.h: In function 'VGAIN8_INDEX':
+[  488s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  488s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  488s]       |  ^~~~
+[  488s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  488s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  488s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  488s]       |         ^~~
+[  488s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  488s] In file included from smi.h:318,
+[  488s]                  from smi_xaa.c:32:
+[  488s] regsmi.h: In function 'VGAIN8_INDEX':
+[  488s] regsmi.h:67:2: error: implicit declaration of function 'outb' [-Werror=implicit-function-declaration]
+[  488s]    67 |  outb(pSmi->PIOBase + indexPort, index);
+[  488s]       |  ^~~~
+[  488s] regsmi.h:67:2: warning: nested extern declaration of 'outb' [-Wnested-externs]
+[  488s] regsmi.h:68:9: error: implicit declaration of function 'inb' [-Werror=implicit-function-declaration]
+[  488s]    68 |  return(inb(pSmi->PIOBase + dataPort));
+[  488s]       |         ^~~
+[  488s] regsmi.h:68:9: warning: nested extern declaration of 'inb' [-Wnested-externs]
+[  488s] smi_video.c: At top level:
+[  488s] smi_video.c:189:7: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   189 |     { "composite" },
+[  488s]       |       ^~~~~~~~~~~
+[  488s] smi_video.c:190:7: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   190 |     { "svideo" }
+[  488s]       |       ^~~~~~~~
+[  488s] smi_video.c:215:6: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   215 |     {"pal", 864, 704, 625, 576, 16, 16, { 1, 50 }},
+[  488s]       |      ^~~~~
+[  488s] smi_video.c:217:6: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   217 |     {"ntsc", 858, 704, 525, 480, 21, 8, { 1001, 60000 }},
+[  488s]       |      ^~~~~~
+[  488s] smi_video.c:219:6: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   219 |     {"secam", 864, 7040, 625, 576, 31, 16, { 1, 50 }},
+[  488s]       |      ^~~~~~~
+[  488s] smi_video.c:244:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   244 | #define XV_ENCODING_NAME        "XV_ENCODING"
+[  488s]       |                                 ^~~~~~~~~~~~~
+[  488s] smi_video.c:256:56: note: in expansion of macro 'XV_ENCODING_NAME'
+[  488s]   256 |     {XvSettable | XvGettable,        0, N_ENCODINGS-1, XV_ENCODING_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~
+[  488s] smi_video.c:245:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   245 | #define XV_BRIGHTNESS_NAME      "XV_BRIGHTNESS"
+[  488s]       |                                 ^~~~~~~~~~~~~~~
+[  488s] smi_video.c:257:56: note: in expansion of macro 'XV_BRIGHTNESS_NAME'
+[  488s]   257 |     {XvSettable | XvGettable,        0,           255, XV_BRIGHTNESS_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:246:41: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   246 | #define XV_CAPTURE_BRIGHTNESS_NAME      "XV_CAPTURE_BRIGHTNESS"
+[  488s]       |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:258:56: note: in expansion of macro 'XV_CAPTURE_BRIGHTNESS_NAME'
+[  488s]   258 |     {XvSettable | XvGettable,        0,           255, XV_CAPTURE_BRIGHTNESS_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:247:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   247 | #define XV_CONTRAST_NAME        "XV_CONTRAST"
+[  488s]       |                                 ^~~~~~~~~~~~~
+[  488s] smi_video.c:259:56: note: in expansion of macro 'XV_CONTRAST_NAME'
+[  488s]   259 |     {XvSettable | XvGettable,        0,           127, XV_CONTRAST_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~
+[  488s] smi_video.c:248:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   248 | #define XV_SATURATION_NAME      "XV_SATURATION"
+[  488s]       |                                 ^~~~~~~~~~~~~~~
+[  488s] smi_video.c:260:56: note: in expansion of macro 'XV_SATURATION_NAME'
+[  488s]   260 |     {XvSettable | XvGettable,        0,           127, XV_SATURATION_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:249:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   249 | #define XV_HUE_NAME             "XV_HUE"
+[  488s]       |                                 ^~~~~~~~
+[  488s] smi_video.c:261:56: note: in expansion of macro 'XV_HUE_NAME'
+[  488s]   261 |     {XvSettable | XvGettable,     -128,           127, XV_HUE_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~
+[  488s] smi_video.c:250:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   250 | #define XV_COLORKEY_NAME        "XV_COLORKEY"
+[  488s]       |                                 ^~~~~~~~~~~~~
+[  488s] smi_video.c:262:56: note: in expansion of macro 'XV_COLORKEY_NAME'
+[  488s]   262 |     {XvSettable | XvGettable, 0x000000,      0xFFFFFF, XV_COLORKEY_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~
+[  488s] smi_video.c:251:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   251 | #define XV_INTERLACED_NAME      "XV_INTERLACED"
+[  488s]       |                                 ^~~~~~~~~~~~~~~
+[  488s] smi_video.c:263:56: note: in expansion of macro 'XV_INTERLACED_NAME'
+[  488s]   263 |     {XvSettable | XvGettable,        0,             1, XV_INTERLACED_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:245:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   245 | #define XV_BRIGHTNESS_NAME      "XV_BRIGHTNESS"
+[  488s]       |                                 ^~~~~~~~~~~~~~~
+[  488s] smi_video.c:267:56: note: in expansion of macro 'XV_BRIGHTNESS_NAME'
+[  488s]   267 |     {XvSettable | XvGettable,        0,           255, XV_BRIGHTNESS_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~~~
+[  488s] smi_video.c:250:33: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   250 | #define XV_COLORKEY_NAME        "XV_COLORKEY"
+[  488s]       |                                 ^~~~~~~~~~~~~
+[  488s] smi_video.c:268:56: note: in expansion of macro 'XV_COLORKEY_NAME'
+[  488s]   268 |     {XvSettable | XvGettable, 0x000000,      0xFFFFFF, XV_COLORKEY_NAME},
+[  488s]       |                                                        ^~~~~~~~~~~~~~~~
+[  488s] smi_video.c: In function 'SMI_AddEncoding':
+[  488s] smi_video.c:531:19: warning: passing argument 1 of 'sprintf' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  488s]   531 |     sprintf(enc[i].name,"%s-%s-%s", norm_string, input_string, channel_string);
+[  488s]       |             ~~~~~~^~~~~
+[  488s] In file included from /usr/include/features.h:450,
+[  488s]                  from /usr/include/bits/libc-header-start.h:33,
+[  488s]                  from /usr/include/string.h:26,
+[  488s]                  from smi.h:35,
+[  488s]                  from smi_video.c:56:
+[  488s] /usr/include/bits/stdio2.h:34:1: note: expected 'char * restrict' but argument is of type 'const char *'
+[  488s]    34 | __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
+[  488s]       | ^~~~~
+[  488s] smi_video.c: In function 'SMI_PutVideo':
+[  488s] smi_video.c:1019:30: warning: variable 'fbPitch' set but not used [-Wunused-but-set-variable]
+[  488s]  1019 |     int size, width, height, fbPitch;
+[  488s]       |                              ^~~~~~~
+[  488s] cc1: some warnings being treated as errors
+[  488s] cc1: some warnings being treated as errors
+[  488s] make[2]: *** [Makefile:520: smi_dac.lo] Error 1
+[  488s] make[2]: *** Waiting for unfinished jobs....
+[  488s] make[2]: *** [Makefile:520: smi_xaa.lo] Error 1
+[  489s] cc1: some warnings being treated as errors
+[  489s] make[2]: *** [Makefile:520: smi_i2c.lo] Error 1
+[  489s] cc1: some warnings being treated as errors
+[  489s] make[2]: *** [Makefile:520: smi_accel.lo] Error 1
+[  489s] cc1: some warnings being treated as errors
+[  489s] make[2]: *** [Makefile:520: smi_exa.lo] Error 1
+[  489s] cc1: some warnings being treated as errors
+[  489s] make[2]: *** [Makefile:520: smi_501.lo] Error 1
+[  490s] cc1: some warnings being treated as errors
+[  490s] make[2]: *** [Makefile:520: smi_driver.lo] Error 1
+[  490s] cc1: some warnings being treated as errors
+[  490s] make[2]: *** [Makefile:520: smi_video.lo] Error 1
+[  490s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xf86-video-siliconmotion-1.7.9/src'
+[  490s] make[1]: *** [Makefile:443: all-recursive] Error 1
+[  490s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/xf86-video-siliconmotion-1.7.9'
+[  490s] make: *** [Makefile:375: all] Error 2
+[  490s] error: Bad exit status from /var/tmp/rpm-tmp.qDnJoi (%build)
+[  490s] 
+[  490s] 
+[  490s] RPM build errors:
+[  490s]     Macro expanded in comment on line 27: %{name}-%{version}.tar.bz2.sig
+[  490s] 
+[  490s]     Bad exit status from /var/tmp/rpm-tmp.qDnJoi (%build)
+[  491s] 
+[  491s] lamb03 failed "build xf86-video-siliconmotion.spec" at Tue Jan 21 20:14:01 UTC 2020.
+[  491s] 
+[  491s] ### VM INTERACTION START ###
+[  494s] [  465.499886] sysrq: Power Off
+[  494s] [  465.532255] reboot: Power down
+[  494s] ### VM INTERACTION END ###

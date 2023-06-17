@@ -1,0 +1,729 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_11/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_11/root
+[    0s] 
+[    0s] 
+[    0s] lamb58 started "build pound.spec" at Sat Feb  4 22:47:13 UTC 2023.
+[    0s] 
+[    0s] Building pound for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '313a33b8e439a8187ad388d009d549dc'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_11/.build-srcdir/pound.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_11/.build-srcdir/pound.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/11/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_11/.build.rpmlist /var/cache/obs/worker/root_11/.build-srcdir/pound.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [d2b144e8b13e7ca9b822e439150d14f2]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: openssl -> openssl-3
+[    3s]   breaking dependency openssl-3 -> openssl
+[    3s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_11/.mount/boot/kernel -initrd /var/cache/obs/worker/root_11/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_11/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_11/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_11/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.8-1-default #1 SMP PREEMPT_DYNAMIC Tue Jan 24 06:29:25 UTC 2023 (baebfe0)
+[    9s] Increasing log level from now on...
+[    9s] [    4.823079][  T410] sysrq: Changing Loglevel
+[    9s] [    4.823329][  T410] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=94a7a395-4702-4786-8f66-b3df30490c33
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/pound.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/pound.spec build ...
+[   12s] initializing rpm db...
+[   12s] querying package ids...
+[   33s] [1/133] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   33s] [2/133] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   33s] [3/133] preinstalled attr-2.5.1-1.1
+[   33s] [4/133] preinstalled bash-5.2.15-8.1
+[   33s] [5/133] preinstalled bash-sh-5.2.15-8.1
+[   33s] [6/133] preinstalled binutils-2.39-3.1
+[   33s] [7/133] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   33s] [8/133] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   33s] [9/133] preinstalled build-mkbaselibs-20230105-1.1
+[   33s] [10/133] preinstalled bzip2-1.0.8-4.1
+[   33s] [11/133] preinstalled chkstat-1599_20221220-1.2
+[   33s] [12/133] preinstalled compat-usrmerge-build-84.87-5.1
+[   33s] [13/133] preinstalled compat-usrmerge-tools-84.87-5.1
+[   33s] [14/133] preinstalled coreutils-9.1-5.1
+[   33s] [15/133] preinstalled cpio-2.13-5.1
+[   33s] [16/133] preinstalled cpp-12-2.1
+[   33s] [17/133] preinstalled cpp12-12.2.1+git749-4.1
+[   33s] [18/133] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   33s] [19/133] preinstalled debugedit-5.0-5.1
+[   33s] [20/133] preinstalled diffutils-3.9-1.1
+[   33s] [21/133] preinstalled dwz-0.15-2.1
+[   33s] [22/133] preinstalled elfutils-0.188-3.2
+[   33s] [23/133] preinstalled file-5.44-1.1
+[   33s] [24/133] preinstalled file-magic-5.44-1.1
+[   33s] [25/133] preinstalled filesystem-84.87-11.1
+[   33s] [26/133] preinstalled fillup-1.42-279.1
+[   33s] [27/133] preinstalled findutils-4.9.0-2.1
+[   33s] [28/133] preinstalled gawk-5.2.1-2.1
+[   33s] [29/133] preinstalled gcc-12-2.1
+[   33s] [30/133] preinstalled gcc-PIE-12-2.1
+[   33s] [31/133] preinstalled gcc12-12.2.1+git749-4.1
+[   33s] [32/133] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   33s] [33/133] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   33s] [34/133] preinstalled gettext-tools-mini-0.21.1-1.1
+[   33s] [35/133] preinstalled glibc-2.36-9.1
+[   33s] [36/133] preinstalled glibc-devel-2.36-9.1
+[   33s] [37/133] preinstalled glibc-locale-base-2.36-9.1
+[   33s] [38/133] preinstalled grep-3.8-3.1
+[   33s] [39/133] preinstalled gzip-1.12-3.1
+[   33s] [40/133] preinstalled kernel-obs-build-6.1.8-1.2
+[   33s] [41/133] preinstalled libacl1-2.3.1-2.1
+[   33s] [42/133] preinstalled libasan8-13.0.1+git5428-6.1
+[   33s] [43/133] preinstalled libasm1-0.188-3.2
+[   33s] [44/133] preinstalled libatomic1-13.0.1+git5428-6.1
+[   33s] [45/133] preinstalled libattr1-2.5.1-1.1
+[   33s] [46/133] preinstalled libaudit1-3.0.6-4.1
+[   33s] [47/133] preinstalled libblkid1-2.38.1-6.1
+[   33s] [48/133] preinstalled libbz2-1-1.0.8-4.1
+[   33s] [49/133] preinstalled libcap-ng0-0.8.3-1.1
+[   33s] [50/133] preinstalled libcap2-2.66-1.1
+[   33s] [51/133] preinstalled libcrypt1-4.4.33-1.1
+[   33s] [52/133] preinstalled libctf-nobfd0-2.39-3.1
+[   33s] [53/133] preinstalled libctf0-2.39-3.1
+[   33s] [54/133] preinstalled libdb-4_8-4.8.30-39.1
+[   33s] [55/133] preinstalled libdw1-0.188-3.2
+[   33s] [56/133] preinstalled libeconf0-0.5.1-1.1
+[   33s] [57/133] preinstalled libelf1-0.188-3.2
+[   33s] [58/133] preinstalled libfdisk1-2.38.1-6.1
+[   33s] [59/133] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   33s] [60/133] preinstalled libgcrypt20-1.10.1-1.1
+[   33s] [61/133] preinstalled libgdbm6-1.23-1.1
+[   33s] [62/133] preinstalled libgdbm_compat4-1.23-1.1
+[   33s] [63/133] preinstalled libgmp10-6.2.1-4.1
+[   33s] [64/133] preinstalled libgomp1-13.0.1+git5428-6.1
+[   33s] [65/133] preinstalled libgpg-error0-1.46-1.1
+[   33s] [66/133] preinstalled libisl23-0.25-1.1
+[   33s] [67/133] preinstalled liblua5_4-5-5.4.4-8.1
+[   33s] [68/133] preinstalled liblzma5-5.4.1-1.1
+[   33s] [69/133] preinstalled libmagic1-5.44-1.1
+[   33s] [70/133] preinstalled libmount1-2.38.1-6.1
+[   33s] [71/133] preinstalled libmpc3-1.3.1-1.2
+[   33s] [72/133] preinstalled libmpfr6-4.2.0-1.1
+[   33s] [73/133] preinstalled libncurses6-6.4.20230121-3.1
+[   33s] [74/133] preinstalled libpcre2-8-0-10.42-3.2
+[   33s] [75/133] preinstalled libpkgconf3-1.8.0-2.1
+[   33s] [76/133] preinstalled libpopt0-1.19-1.1
+[   33s] [77/133] preinstalled libreadline8-8.2-2.1
+[   33s] [78/133] preinstalled librpmbuild9-4.18.0-3.1
+[   33s] [79/133] preinstalled libseccomp2-2.5.4-2.1
+[   33s] [80/133] preinstalled libselinux1-3.4-2.1
+[   33s] [81/133] preinstalled libsemanage-conf-3.4-1.1
+[   33s] [82/133] preinstalled libsemanage2-3.4-1.1
+[   33s] [83/133] preinstalled libsepol2-3.4-1.1
+[   33s] [84/133] preinstalled libsmartcols1-2.38.1-6.1
+[   33s] [85/133] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   33s] [86/133] preinstalled libsubid4-4.13-3.1
+[   33s] [87/133] preinstalled libubsan1-13.0.1+git5428-6.1
+[   34s] [88/133] preinstalled libutempter0-1.2.0-3.2
+[   34s] [89/133] preinstalled libuuid1-2.38.1-6.1
+[   34s] [90/133] preinstalled libxcrypt-devel-4.4.33-1.1
+[   34s] [91/133] preinstalled libz1-1.2.13-2.1
+[   34s] [92/133] preinstalled libzstd1-1.5.2-2.1
+[   34s] [93/133] preinstalled linux-glibc-devel-6.1-1.1
+[   34s] [94/133] preinstalled login_defs-4.13-3.1
+[   34s] [95/133] preinstalled lua54-5.4.4-8.1
+[   34s] [96/133] preinstalled make-4.4-2.1
+[   34s] [97/133] preinstalled ncurses-utils-6.4.20230121-3.1
+[   34s] [98/133] preinstalled pam-1.5.2-12.1
+[   34s] [99/133] preinstalled patch-2.7.6-6.1
+[   34s] [100/133] preinstalled perl-5.36.0-4.1
+[   34s] [101/133] preinstalled perl-base-5.36.0-4.1
+[   34s] [102/133] preinstalled permissions-1599_20221220-1.2
+[   34s] [103/133] preinstalled permissions-config-1599_20221220-1.2
+[   34s] [104/133] preinstalled pkgconf-1.8.0-2.1
+[   34s] [105/133] preinstalled pkgconf-m4-1.8.0-2.1
+[   34s] [106/133] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   34s] [107/133] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   34s] [108/133] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   34s] [109/133] preinstalled qemu-linux-user-7.1.0-48.1
+[   34s] [110/133] preinstalled rpm-4.18.0-3.1
+[   34s] [111/133] preinstalled rpm-build-4.18.0-3.1
+[   34s] [112/133] preinstalled rpm-build-perl-4.18.0-3.1
+[   34s] [113/133] preinstalled rpm-config-SUSE-20220926-1.1
+[   34s] [114/133] preinstalled rpmlint-mini-2.4.0+git20230125.20e5b58-8.54
+[   34s] [115/133] preinstalled rpmlint-strict-2.4.0+git20230125.20e5b58-1.1
+[   34s] [116/133] preinstalled sed-4.9-2.1
+[   34s] [117/133] preinstalled shadow-4.13-3.1
+[   34s] [118/133] preinstalled system-group-hardware-20170617-24.1
+[   34s] [119/133] preinstalled system-user-root-20190513-2.1
+[   34s] [120/133] preinstalled systemd-rpm-macros-19-1.1
+[   34s] [121/133] preinstalled sysuser-shadow-3.1-5.1
+[   34s] [122/133] preinstalled tar-1.34-9.1
+[   34s] [123/133] preinstalled terminfo-base-6.4.20230121-3.1
+[   34s] [124/133] preinstalled update-alternatives-1.21.8-1.1
+[   34s] [125/133] preinstalled util-linux-2.38.1-6.1
+[   34s] [126/133] preinstalled which-2.21-5.1
+[   34s] [127/133] preinstalled xz-5.4.1-1.1
+[   34s] [128/133] cumulate zlib-devel-1.2.13-2.1
+[   34s] [129/133] cumulate libopenssl3-3.0.7-3.1
+[   34s] [130/133] cumulate openssl-3-3.0.7-3.1
+[   34s] [131/133] cumulate openssl-3.0.7-1.1
+[   34s] [132/133] cumulate libopenssl-devel-3.0.7-1.1
+[   34s] [133/133] cumulate libopenssl-3-devel-3.0.7-3.1
+[   34s] now installing cumulated packages
+[   34s] Preparing...                          ########################################
+[   34s] Updating / installing...
+[   34s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   35s] libopenssl3-3.0.7-3.1                 ########################################
+[   35s] openssl-3.0.7-1.1                     ########################################
+[   35s] openssl-3-3.0.7-3.1                   ########################################
+[   35s] zlib-devel-1.2.13-2.1                 ########################################
+[   37s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   39s] libopenssl-devel-3.0.7-1.1            ########################################
+[   40s] now finalizing build dir...
+[   40s] ... running 01-add_abuild_user_to_trusted_group
+[   40s] ... running 02-set_timezone_to_utc
+[   40s] ... running 03-set-permissions-secure
+[   41s] ... running 11-hack_uname_version_to_kernel_version
+[   49s] -----------------------------------------------------------------
+[   49s] I have the following modifications for pound.spec:
+[   49s] 26c26
+[   49s] < Release:        0
+[   49s] ---
+[   49s] > Release:        3.3
+[   55s] build target is riscv64-suse-linux
+[   55s] -----------------------------------------------------------------
+[   55s] ----- building pound.spec (user abuild)
+[   55s] -----------------------------------------------------------------
+[   55s] -----------------------------------------------------------------
+[   59s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/313a33b8e439a8187ad388d009d549dc-pound' /home/abuild/rpmbuild/SOURCES/pound.spec
+[   59s] Building target platforms: riscv64-suse-linux
+[   59s] Building for target riscv64-suse-linux
+[   59s] setting SOURCE_DATE_EPOCH=1556236800
+[   60s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.MUEmdA
+[   60s] + umask 022
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + rm -rf Pound-2.8
+[   60s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/Pound-2.8.tgz
+[   60s] + STATUS=0
+[   60s] + '[' 0 -ne 0 ']'
+[   60s] + cd Pound-2.8
+[   60s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   60s] + echo 'Patch #0 (pound.diff):'
+[   60s] Patch #0 (pound.diff):
+[   60s] + /usr/bin/patch --no-backup-if-mismatch -f -p0 --fuzz=0
+[   60s] patching file Makefile.in
+[   60s] Hunk #1 succeeded at 58 (offset 8 lines).
+[   60s] + echo 'Patch #1 (add-openssl_1.1-support.patch):'
+[   60s] Patch #1 (add-openssl_1.1-support.patch):
+[   60s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   60s] patching file config.c
+[   60s] patching file http.c
+[   60s] patching file pound.h
+[   60s] patching file svc.c
+[   60s] Hunk #10 succeeded at 1283 (offset -3 lines).
+[   60s] Hunk #11 succeeded at 1320 (offset -3 lines).
+[   60s] Hunk #12 succeeded at 1376 (offset -3 lines).
+[   60s] Hunk #13 succeeded at 1467 (offset -3 lines).
+[   60s] Hunk #14 succeeded at 1481 (offset -3 lines).
+[   60s] Hunk #15 succeeded at 1717 (offset -3 lines).
+[   60s] + RPM_EC=0
+[   60s] ++ jobs -p
+[   60s] + exit 0
+[   60s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ILftva
+[   61s] + umask 022
+[   61s] + cd /home/abuild/rpmbuild/BUILD
+[   61s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/pound-2.8-3.3.riscv64
+[   61s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/pound-2.8-3.3.riscv64
+[   61s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   61s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/pound-2.8-3.3.riscv64
+[   61s] + cd Pound-2.8
+[   61s] + ref=/usr/lib/rpm
+[   61s] + mints=0
+[   61s] + case $(uname -m) in
+[   61s] ++ uname -m
+[   61s] + mints=20160911
+[   61s] + for s in guess sub
+[   61s] ++ find -maxdepth 8 -name config.guess
+[   61s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   61s] + grep -q config-patches@ ./config.guess
+[   61s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.guess
+[   61s] + timestamp=20030509
+[   61s] + test -n 20030509
+[   61s] + test 20030509 -ge 20160911
+[   61s] + install -m 755 /usr/lib/rpm/config.guess ./config.guess
+[   61s] + for s in guess sub
+[   61s] ++ find -maxdepth 8 -name config.sub
+[   61s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   61s] + grep -q config-patches@ ./config.sub
+[   62s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.sub
+[   62s] + timestamp=20030509
+[   62s] + test -n 20030509
+[   62s] + test 20030509 -ge 20160911
+[   62s] + install -m 755 /usr/lib/rpm/config.sub ./config.sub
+[   62s] + CONFIG_SHELL=/usr/bin/bash
+[   62s] + export CONFIG_SHELL
+[   62s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   62s] + export CFLAGS
+[   62s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   62s] + export CXXFLAGS
+[   62s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   62s] + export FFLAGS
+[   62s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   62s] + export FCFLAGS
+[   62s] + LDFLAGS=-flto=auto
+[   62s] + export LDFLAGS
+[   62s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-msdav --with-ssl=/usr/include/openssl --with-owner=pound --with-group=pound
+[   66s] configure: WARNING: unrecognized options: --disable-dependency-tracking, --enable-msdav
+[   69s] checking for riscv64-suse-linux-gnu-gcc... no
+[   69s] checking for gcc... gcc
+[   74s] checking whether the C compiler works... yes
+[   74s] checking for C compiler default output file name... a.out
+[   77s] checking for suffix of executables... 
+[   82s] checking whether we are cross compiling... no
+[   84s] checking for suffix of object files... o
+[   85s] checking whether we are using the GNU C compiler... yes
+[   86s] checking whether gcc accepts -g... yes
+[   88s] checking for gcc option to accept ISO C89... none needed
+[   90s] checking whether gcc understands -c and -o together... yes
+[   90s] checking for a BSD-compatible install... /usr/bin/install -c
+[   91s] checking build system type... riscv64-suse-linux-gnu
+[   91s] checking host system type... riscv64-suse-linux-gnu
+[   91s] checking target system type... riscv64-suse-linux-gnu
+[   94s] checking gcc arguments... -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe
+[   94s] configure: *** Checking for threads library and/or flags ***
+[   96s] checking for the pthreads library -lpthreads... no
+[  100s] checking whether pthreads work without any flags... yes
+[  103s] checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+[  103s] checking if more special flags are required for pthreads... no
+[  103s] checking for cc_r... gcc
+[  103s] configure: *** Parsing options ***
+[  103s] configure: *** Checking for libraries ***
+[  107s] checking for dlopen in -ldl... yes
+[  109s] checking for socket in -lsocket... no
+[  113s] checking for hstrerror in -lresolv... yes
+[  117s] checking for BIO_new in -lcrypto... yes
+[  121s] checking for SSL_CTX_new in -lssl... yes
+[  122s] checking for regcomp in -lpcreposix... no
+[  124s] checking for regexec in -lpcreposix... no
+[  126s] checking for malloc in -ltcmalloc... no
+[  129s] checking for pthread_attr_setstacksize in LIBS=-lssl -lcrypto -lresolv -ldl   -lm with CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe  -DUPER... OK
+[  129s] configure: *** Checking for header files ***
+[  131s] checking how to run the C preprocessor... gcc -E
+[  132s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  132s] checking for egrep... /usr/bin/grep -E
+[  140s] checking for ANSI C header files... yes
+[  141s] checking for sys/types.h... yes
+[  142s] checking for sys/stat.h... yes
+[  144s] checking for stdlib.h... yes
+[  145s] checking for string.h... yes
+[  146s] checking for memory.h... yes
+[  148s] checking for strings.h... yes
+[  149s] checking for inttypes.h... yes
+[  150s] checking for stdint.h... yes
+[  152s] checking for unistd.h... yes
+[  153s] checking arpa/inet.h usability... yes
+[  154s] checking arpa/inet.h presence... yes
+[  154s] checking for arpa/inet.h... yes
+[  155s] checking errno.h usability... yes
+[  156s] checking errno.h presence... yes
+[  156s] checking for errno.h... yes
+[  157s] checking netdb.h usability... yes
+[  158s] checking netdb.h presence... yes
+[  158s] checking for netdb.h... yes
+[  160s] checking netinet/in.h usability... yes
+[  160s] checking netinet/in.h presence... yes
+[  160s] checking for netinet/in.h... yes
+[  162s] checking netinet/tcp.h usability... yes
+[  162s] checking netinet/tcp.h presence... yes
+[  162s] checking for netinet/tcp.h... yes
+[  162s] checking for stdlib.h... (cached) yes
+[  163s] checking for string.h... (cached) yes
+[  164s] checking sys/socket.h usability... yes
+[  165s] checking sys/socket.h presence... yes
+[  165s] checking for sys/socket.h... yes
+[  166s] checking sys/un.h usability... yes
+[  167s] checking sys/un.h presence... yes
+[  167s] checking for sys/un.h... yes
+[  168s] checking sys/time.h usability... yes
+[  169s] checking sys/time.h presence... yes
+[  169s] checking for sys/time.h... yes
+[  169s] checking for unistd.h... (cached) yes
+[  170s] checking getopt.h usability... yes
+[  171s] checking getopt.h presence... yes
+[  171s] checking for getopt.h... yes
+[  172s] checking pthread.h usability... yes
+[  173s] checking pthread.h presence... yes
+[  173s] checking for pthread.h... yes
+[  173s] checking for sys/types.h... (cached) yes
+[  175s] checking sys/poll.h usability... yes
+[  175s] checking sys/poll.h presence... yes
+[  175s] checking for sys/poll.h... yes
+[  178s] checking openssl/ssl.h usability... yes
+[  179s] checking openssl/ssl.h presence... yes
+[  179s] checking for openssl/ssl.h... yes
+[  182s] checking openssl/engine.h usability... yes
+[  183s] checking openssl/engine.h presence... yes
+[  183s] checking for openssl/engine.h... yes
+[  185s] checking time.h usability... yes
+[  185s] checking time.h presence... yes
+[  185s] checking for time.h... yes
+[  187s] checking pwd.h usability... yes
+[  187s] checking pwd.h presence... yes
+[  187s] checking for pwd.h... yes
+[  189s] checking grp.h usability... yes
+[  189s] checking grp.h presence... yes
+[  189s] checking for grp.h... yes
+[  191s] checking signal.h usability... yes
+[  191s] checking signal.h presence... yes
+[  191s] checking for signal.h... yes
+[  193s] checking regex.h usability... yes
+[  193s] checking regex.h presence... yes
+[  193s] checking for regex.h... yes
+[  195s] checking ctype.h usability... yes
+[  195s] checking ctype.h presence... yes
+[  195s] checking for ctype.h... yes
+[  197s] checking wait.h usability... yes
+[  197s] checking wait.h presence... yes
+[  197s] checking for wait.h... yes
+[  199s] checking sys/wait.h usability... yes
+[  199s] checking sys/wait.h presence... yes
+[  199s] checking for sys/wait.h... yes
+[  200s] checking for sys/stat.h... (cached) yes
+[  201s] checking fcntl.h usability... yes
+[  202s] checking fcntl.h presence... yes
+[  202s] checking for fcntl.h... yes
+[  203s] checking stdarg.h usability... yes
+[  204s] checking stdarg.h presence... yes
+[  204s] checking for stdarg.h... yes
+[  205s] checking pcreposix.h usability... no
+[  206s] checking pcreposix.h presence... no
+[  206s] checking for pcreposix.h... no
+[  207s] checking pcre/pcreposix.h usability... no
+[  208s] checking pcre/pcreposix.h presence... no
+[  208s] checking for pcre/pcreposix.h... no
+[  209s] checking fnmatch.h usability... yes
+[  210s] checking fnmatch.h presence... yes
+[  210s] checking for fnmatch.h... yes
+[  210s] configure: *** Checking for additonal information ***
+[  214s] checking for facilitynames presence... yes
+[  215s] checking return type of signal handlers... void
+[  216s] checking for an ANSI C-conforming const... yes
+[  217s] checking for uid_t in sys/types.h... yes
+[  220s] checking for pid_t... yes
+[  221s] checking whether time.h and sys/time.h may both be included... yes
+[  225s] checking for unsigned long long int... yes
+[  229s] checking for long long int... yes
+[  231s] checking for in_addr_t... yes
+[  233s] checking for in_port_t... yes
+[  235s] checking for time_t... yes
+[  237s] checking vfork.h usability... no
+[  238s] checking vfork.h presence... no
+[  238s] checking for vfork.h... no
+[  241s] checking for fork... yes
+[  245s] checking for vfork... yes
+[  249s] checking for working fork... yes
+[  249s] checking for working vfork... (cached) yes
+[  254s] checking for working memcmp... yes
+[  256s] checking sys/select.h usability... yes
+[  256s] checking sys/select.h presence... yes
+[  256s] checking for sys/select.h... yes
+[  256s] checking for sys/socket.h... (cached) yes
+[  258s] checking types of arguments for select... int,fd_set *,struct timeval *
+[  258s] checking return type of signal handlers... (cached) void
+[  263s] checking whether lstat correctly handles trailing slash... yes
+[  267s] checking whether stat accepts an empty string... no
+[  271s] checking for strftime... yes
+[  275s] checking for getaddrinfo... yes
+[  279s] checking for inet_ntop... yes
+[  283s] checking for memset... yes
+[  287s] checking for regcomp... yes
+[  291s] checking for poll... yes
+[  295s] checking for socket... yes
+[  299s] checking for strcasecmp... yes
+[  303s] checking for strchr... yes
+[  307s] checking for strdup... yes
+[  311s] checking for strerror... yes
+[  315s] checking for strncasecmp... yes
+[  319s] checking for strspn... yes
+[  323s] checking for strtol... yes
+[  327s] checking for setsid... yes
+[  331s] checking for X509_STORE_set_flags... yes
+[  335s] checking for localtime_r... yes
+[  339s] checking for gettimeofday... yes
+[  339s] configure: creating ./config.status
+[  343s] config.status: creating Makefile
+[  343s] config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+[  343s] config.status: creating config.h
+[  344s] configure: WARNING: unrecognized options: --disable-dependency-tracking, --enable-msdav
+[  344s] + make -j8
+[  344s] gcc -DF_CONF=\"/etc/pound.cfg\" -DVERSION=\"2.8\" -DC_SSL=\"/usr/include/openssl\" -DC_T_RSA=\"0\" -DC_DH_LEN=\"2048\" -DC_MAXBUF=\"0\" -DC_OWNER=\"pound\" -DC_GROUP=\"pound\" -DC_SUPER=\"0\" -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe  -DUPER -DNEED_STACK -DHAVE_SYSLOG_H=1  -DDH_LEN=2048 -I/usr/include/openssl/include  -D_REENTRANT -D_THREAD_SAFE   -c -o pound.o pound.c
+[  344s] gcc -DF_CONF=\"/etc/pound.cfg\" -DVERSION=\"2.8\" -DC_SSL=\"/usr/include/openssl\" -DC_T_RSA=\"0\" -DC_DH_LEN=\"2048\" -DC_MAXBUF=\"0\" -DC_OWNER=\"pound\" -DC_GROUP=\"pound\" -DC_SUPER=\"0\" -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe  -DUPER -DNEED_STACK -DHAVE_SYSLOG_H=1  -DDH_LEN=2048 -I/usr/include/openssl/include  -D_REENTRANT -D_THREAD_SAFE   -c -o http.o http.c
+[  344s] gcc -DF_CONF=\"/etc/pound.cfg\" -DVERSION=\"2.8\" -DC_SSL=\"/usr/include/openssl\" -DC_T_RSA=\"0\" -DC_DH_LEN=\"2048\" -DC_MAXBUF=\"0\" -DC_OWNER=\"pound\" -DC_GROUP=\"pound\" -DC_SUPER=\"0\" -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe  -DUPER -DNEED_STACK -DHAVE_SYSLOG_H=1  -DDH_LEN=2048 -I/usr/include/openssl/include  -D_REENTRANT -D_THREAD_SAFE   -c -o config.o config.c
+[  344s] openssl dhparam -5 -C -noout 512 > dh512.h
+[  344s] openssl dhparam -5 -C -noout 2048 > dh2048.h
+[  344s] gcc -DF_CONF=\"/etc/pound.cfg\" -DVERSION=\"2.8\" -DC_SSL=\"/usr/include/openssl\" -DC_T_RSA=\"0\" -DC_DH_LEN=\"2048\" -DC_MAXBUF=\"0\" -DC_OWNER=\"pound\" -DC_GROUP=\"pound\" -DC_SUPER=\"0\" -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wstrict-prototypes -Wno-unused-result -pipe  -DUPER -DNEED_STACK -DHAVE_SYSLOG_H=1  -DDH_LEN=2048 -I/usr/include/openssl/include  -D_REENTRANT -D_THREAD_SAFE   -c -o poundctl.o poundctl.c
+[  345s] dhparam: Unknown option: -C
+[  345s] dhparam: Use -help for summary.
+[  345s] dhparam: Unknown option: -C
+[  345s] dhparam: Use -help for summary.
+[  345s] make: *** [Makefile:52: dh2048.h] Error 1
+[  345s] make: *** Waiting for unfinished jobs....
+[  345s] make: *** [Makefile:49: dh512.h] Error 1
+[  347s] pound.c: In function 'l_lock':
+[  347s] pound.c:93:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+[  347s]    93 |         if(ret_val = pthread_mutex_lock(&l_array[n]))
+[  347s]       |            ^~~~~~~
+[  347s] pound.c:96:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+[  347s]    96 |         if(ret_val = pthread_mutex_unlock(&l_array[n]))
+[  347s]       |            ^~~~~~~
+[  347s] pound.c: In function 'main':
+[  347s] pound.c:237:25: warning: unused variable 'sp' [-Wunused-variable]
+[  347s]   237 |     struct sched_param  sp;
+[  347s]       |                         ^~
+[  347s] poundctl.c: In function 'sess_prt':
+[  347s] poundctl.c:133:36: warning: unused variable 'escaped' [-Wunused-variable]
+[  347s]   133 |     char        buf[KEY_SIZE + 1], escaped[KEY_SIZE * 2 + 1];
+[  347s]       |                                    ^~~~~~~
+[  347s] poundctl.c: In function 'main':
+[  347s] poundctl.c:350:11: warning: suggest explicit braces to avoid ambiguous 'else' [-Wdangling-else]
+[  347s]   350 |         if(read(sock, &n, sizeof(n)) == sizeof(n))
+[  347s]       |           ^
+[  347s] poundctl.c:223:17: warning: unused variable 'sess' [-Wunused-variable]
+[  347s]   223 |     TABNODE     sess;
+[  347s]       |                 ^~~~
+[  347s] poundctl.c:222:17: warning: unused variable 'be' [-Wunused-variable]
+[  347s]   222 |     BACKEND     be;
+[  347s]       |                 ^~
+[  347s] poundctl.c:221:17: warning: unused variable 'svc' [-Wunused-variable]
+[  347s]   221 |     SERVICE     svc;
+[  347s]       |                 ^~~
+[  347s] poundctl.c:218:36: warning: unused variable 'buf' [-Wunused-variable]
+[  347s]   218 |     char        *arg0, *sock_name, buf[KEY_SIZE + 1];
+[  347s]       |                                    ^~~
+[  347s] poundctl.c:217:44: warning: unused variable 'n_sess' [-Wunused-variable]
+[  347s]   217 |     int         sock, n_lstn, n_svc, n_be, n_sess, i;
+[  347s]       |                                            ^~~~~~
+[  347s] poundctl.c:217:38: warning: unused variable 'n_be' [-Wunused-variable]
+[  347s]   217 |     int         sock, n_lstn, n_svc, n_be, n_sess, i;
+[  347s]       |                                      ^~~~
+[  347s] poundctl.c:217:31: warning: unused variable 'n_svc' [-Wunused-variable]
+[  347s]   217 |     int         sock, n_lstn, n_svc, n_be, n_sess, i;
+[  347s]       |                               ^~~~~
+[  347s] http.c: In function 'get_line':
+[  347s] http.c:142:15: warning: suggest explicit braces to avoid ambiguous 'else' [-Wdangling-else]
+[  347s]   142 |             if(seen_cr)
+[  347s]       |               ^
+[  347s] config.c: In function 'get_subjectaltnames':
+[  347s] http.c:130:16: warning: unused variable 'n_read' [-Wunused-variable]
+[  347s]   130 |     int     i, n_read, seen_cr;
+[  347s]       |                ^~~~~~
+[  347s] config.c:179:17: warning: pointer targets in passing argument 1 of 'strndup' differ in signedness [-Wpointer-sign]
+[  347s]   179 |         strndup(ASN1_STRING_get0_data(n->d.dNSName),    \
+[  347s]       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  347s]       |                 |
+[  347s]       |                 const unsigned char *
+[  347s] config.c:207:37: note: in expansion of macro 'general_name_string'
+[  347s]   207 |                 temp[local_count] = general_name_string(name);
+[  347s]       |                                     ^~~~~~~~~~~~~~~~~~~
+[  347s] In file included from pound.h:55,
+[  347s]                  from config.c:32:
+[  347s] /usr/include/string.h:195:35: note: expected 'const char *' but argument is of type 'const unsigned char *'
+[  347s]   195 | extern char *strndup (const char *__string, size_t __n)
+[  347s]       |                       ~~~~~~~~~~~~^~~~~~~~
+[  347s] config.c:207:35: warning: pointer targets in assignment from 'char *' to 'unsigned char *' differ in signedness [-Wpointer-sign]
+[  347s]   207 |                 temp[local_count] = general_name_string(name);
+[  347s]       |                                   ^
+[  347s] config.c:222:49: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+[  347s]   222 |         result[i] = strndup(temp[i], strlen(temp[i])+1);
+[  347s]       |                                             ~~~~^~~
+[  347s]       |                                                 |
+[  347s]       |                                                 unsigned char *
+[  347s] /usr/include/string.h:407:35: note: expected 'const char *' but argument is of type 'unsigned char *'
+[  347s]   407 | extern size_t strlen (const char *__s)
+[  347s]       |                       ~~~~~~~~~~~~^~~
+[  347s] config.c:222:33: warning: pointer targets in passing argument 1 of 'strndup' differ in signedness [-Wpointer-sign]
+[  347s]   222 |         result[i] = strndup(temp[i], strlen(temp[i])+1);
+[  347s]       |                             ~~~~^~~
+[  347s]       |                                 |
+[  347s]       |                                 unsigned char *
+[  347s] /usr/include/string.h:195:35: note: expected 'const char *' but argument is of type 'unsigned char *'
+[  347s]   195 | extern char *strndup (const char *__string, size_t __n)
+[  347s]       |                       ~~~~~~~~~~~~^~~~~~~~
+[  347s] config.c:222:19: warning: pointer targets in assignment from 'char *' to 'unsigned char *' differ in signedness [-Wpointer-sign]
+[  347s]   222 |         result[i] = strndup(temp[i], strlen(temp[i])+1);
+[  347s]       |                   ^
+[  347s] pound.c: At top level:
+[  347s] pound.c:103:1: warning: 'l_id' defined but not used [-Wunused-function]
+[  347s]   103 | l_id(void)
+[  347s]       | ^~~~
+[  347s] pound.c:88:1: warning: 'l_lock' defined but not used [-Wunused-function]
+[  347s]    88 | l_lock(const int mode, const int n, /* unused */ const char *file, /* unused */ int line)
+[  347s]       | ^~~~~~
+[  347s] http.c: In function 'get_headers':
+[  347s] http.c:418:21: warning: unused variable 'has_eol' [-Wunused-variable]
+[  347s]   418 |     int     res, n, has_eol;
+[  347s]       |                     ^~~~~~~
+[  347s] config.c: In function 'parse_be':
+[  347s] config.c:371:13: warning: 'SSL_CTX_set_tmp_dh_callback' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   371 |             SSL_CTX_set_tmp_dh_callback(res->ctx, DH_tmp_callback);
+[  347s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  347s] In file included from pound.h:136:
+[  347s] /usr/include/openssl/ssl.h:2237:6: note: declared here
+[  347s]  2237 | void SSL_CTX_set_tmp_dh_callback(SSL_CTX *ctx,
+[  347s]       |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  347s] config.c:376:13: warning: 'EC_KEY_new_by_curve_name' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   376 |             if((ecdh = EC_KEY_new_by_curve_name(EC_nid)) == NULL)
+[  347s]       |             ^~
+[  347s] In file included from /usr/include/openssl/x509.h:33,
+[  347s]                  from /usr/include/openssl/ssl.h:31:
+[  347s] /usr/include/openssl/ec.h:998:31: note: declared here
+[  347s]   998 | OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new_by_curve_name(int nid);
+[  347s]       |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+[  347s] config.c:380:13: warning: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   380 |             EC_KEY_free(ecdh);
+[  347s]       |             ^~~~~~~~~~~
+[  347s] /usr/include/openssl/ec.h:1003:28: note: declared here
+[  347s]  1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+[  347s]       |                            ^~~~~~~~~~~
+[  347s] http.c: In function 'do_http':
+[  347s] http.c:614:5: warning: 'BIO_set_callback' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  347s]   614 |     BIO_set_callback(cl, bio_callback);
+[  347s]       |     ^~~~~~~~~~~~~~~~
+[  347s] In file included from /usr/include/openssl/ssl.h:29,
+[  347s]                  from pound.h:136,
+[  347s]                  from http.c:28:
+[  347s] /usr/include/openssl/bio.h:279:28: note: declared here
+[  347s]   279 | OSSL_DEPRECATEDIN_3_0 void BIO_set_callback(BIO *b, BIO_callback_fn callback);
+[  347s]       |                            ^~~~~~~~~~~~~~~~
+[  347s] config.c:243:26: warning: unused variable 'host' [-Wunused-variable]
+[  347s]   243 |     struct hostent      *host;
+[  347s]       |                          ^~~~
+[  348s] http.c:968:17: warning: 'BIO_set_callback' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]   968 |                 BIO_set_callback(be, bio_callback);
+[  348s]       |                 ^~~~~~~~~~~~~~~~
+[  348s] /usr/include/openssl/bio.h:279:28: note: declared here
+[  348s]   279 | OSSL_DEPRECATEDIN_3_0 void BIO_set_callback(BIO *b, BIO_callback_fn callback);
+[  348s]       |                            ^~~~~~~~~~~~~~~~
+[  348s] config.c: In function 'SNI_server_name':
+[  348s] config.c:921:47: warning: pointer targets in passing argument 1 of 'fnmatch' differ in signedness [-Wpointer-sign]
+[  348s]   921 |                 if(fnmatch(pc->subjectAltNames[i], server_name, 0) == 0) {
+[  348s]       |                            ~~~~~~~~~~~~~~~~~~~^~~
+[  348s]       |                                               |
+[  348s]       |                                               unsigned char *
+[  348s] In file included from pound.h:235:
+[  348s] /usr/include/fnmatch.h:56:33: note: expected 'const char *' but argument is of type 'unsigned char *'
+[  348s]    56 | extern int fnmatch (const char *__pattern, const char *__name, int __flags);
+[  348s]       |                     ~~~~~~~~~~~~^~~~~~~~~
+[  348s] config.c: In function 'parse_HTTPS':
+[  348s] config.c:1051:47: warning: unused variable 'cp' [-Wunused-variable]
+[  348s]  1051 |             char        server_name[MAXBUF], *cp;
+[  348s]       |                                               ^~
+[  348s] config.c:1277:17: warning: 'SSL_CTX_set_tmp_dh_callback' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1277 |                 SSL_CTX_set_tmp_dh_callback(pc->ctx, DH_tmp_callback);
+[  348s]       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  348s] /usr/include/openssl/ssl.h:2237:6: note: declared here
+[  348s]  2237 | void SSL_CTX_set_tmp_dh_callback(SSL_CTX *ctx,
+[  348s]       |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  348s] config.c:1283:17: warning: 'EC_KEY_new_by_curve_name' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1283 |                 if((ecdh = EC_KEY_new_by_curve_name(EC_nid)) == NULL)
+[  348s]       |                 ^~
+[  348s] /usr/include/openssl/ec.h:998:31: note: declared here
+[  348s]   998 | OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new_by_curve_name(int nid);
+[  348s]       |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+[  348s] config.c:1287:17: warning: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1287 |                 EC_KEY_free(ecdh);
+[  348s]       |                 ^~~~~~~~~~~
+[  348s] /usr/include/openssl/ec.h:1003:28: note: declared here
+[  348s]  1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+[  348s]       |                            ^~~~~~~~~~~
+[  348s] config.c:1259:26: warning: unused variable 'store' [-Wunused-variable]
+[  348s]  1259 |             X509_STORE  *store;
+[  348s]       |                          ^~~~~
+[  348s] config.c:947:26: warning: unused variable 'host' [-Wunused-variable]
+[  348s]   947 |     struct hostent      *host;
+[  348s]       |                          ^~~~
+[  348s] config.c: In function 'parse_file':
+[  348s] config.c:1370:13: warning: 'ENGINE_load_builtin_engines' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1370 |             ENGINE_load_builtin_engines();
+[  348s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  348s] In file included from pound.h:153:
+[  348s] /usr/include/openssl/engine.h:358:28: note: declared here
+[  348s]   358 | OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
+[  348s]       |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  348s] config.c:1372:13: warning: 'ENGINE_by_id' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1372 |             if (!(e = ENGINE_by_id(lin + matches[1].rm_so)))
+[  348s]       |             ^~
+[  348s] /usr/include/openssl/engine.h:336:31: note: declared here
+[  348s]   336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
+[  348s]       |                               ^~~~~~~~~~~~
+[  348s] config.c:1374:13: warning: 'ENGINE_init' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1374 |             if(!ENGINE_init(e)) {
+[  348s]       |             ^~
+[  348s] /usr/include/openssl/engine.h:620:27: note: declared here
+[  348s]   620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
+[  348s]       |                           ^~~~~~~~~~~
+[  348s] config.c:1375:17: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1375 |                 ENGINE_free(e);
+[  348s]       |                 ^~~~~~~~~~~
+[  348s] /usr/include/openssl/engine.h:493:27: note: declared here
+[  348s]   493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+[  348s]       |                           ^~~~~~~~~~~
+[  348s] config.c:1378:13: warning: 'ENGINE_set_default' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1378 |             if(!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
+[  348s]       |             ^~
+[  348s] /usr/include/openssl/engine.h:708:27: note: declared here
+[  348s]   708 | OSSL_DEPRECATEDIN_3_0 int ENGINE_set_default(ENGINE *e, unsigned int flags);
+[  348s]       |                           ^~~~~~~~~~~~~~~~~~
+[  348s] config.c:1379:17: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1379 |                 ENGINE_free(e);
+[  348s]       |                 ^~~~~~~~~~~
+[  348s] /usr/include/openssl/engine.h:493:27: note: declared here
+[  348s]   493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+[  348s]       |                           ^~~~~~~~~~~
+[  348s] config.c:1382:13: warning: 'ENGINE_finish' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1382 |             ENGINE_finish(e);
+[  348s]       |             ^~~~~~~~~~~~~
+[  348s] /usr/include/openssl/engine.h:628:27: note: declared here
+[  348s]   628 | OSSL_DEPRECATEDIN_3_0 int ENGINE_finish(ENGINE *e);
+[  348s]       |                           ^~~~~~~~~~~~~
+[  348s] config.c:1383:13: warning: 'ENGINE_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  348s]  1383 |             ENGINE_free(e);
+[  348s]       |             ^~~~~~~~~~~
+[  348s] /usr/include/openssl/engine.h:493:27: note: declared here
+[  348s]   493 | OSSL_DEPRECATEDIN_3_0 int ENGINE_free(ENGINE *e);
+[  348s]       |                           ^~~~~~~~~~~
+[  348s] config.c: In function 'config_parse':
+[  348s] config.c:1439:14: warning: unused variable 'f_conf' [-Wunused-variable]
+[  348s]  1439 |     FILE    *f_conf;
+[  348s]       |              ^~~~~~
+[  348s] http.c: At top level:
+[  348s] http.c:34:14: warning: 'h414' defined but not used [-Wunused-variable]
+[  348s]    34 |             *h414 = "414 Request URI too long",
+[  348s]       |              ^~~~
+[  348s] In file included from /usr/include/openssl/x509_vfy.h:32,
+[  348s]                  from /usr/include/openssl/x509.h:479:
+[  348s] config.c: At top level:
+[  348s] config.c:552:32: warning: 't_LHASH_COMP' defined but not used [-Wunused-function]
+[  348s]   552 | static IMPLEMENT_LHASH_COMP_FN(t, TABNODE)
+[  348s]       |                                ^
+[  348s] config.c:540:32: warning: 't_LHASH_HASH' defined but not used [-Wunused-function]
+[  348s]   540 | static IMPLEMENT_LHASH_HASH_FN(t, TABNODE)
+[  348s]       |                                ^
+[  351s] error: Bad exit status from /var/tmp/rpm-tmp.ILftva (%build)
+[  351s] 
+[  351s] RPM build errors:
+[  351s]     Bad exit status from /var/tmp/rpm-tmp.ILftva (%build)
+[  351s] ### VM INTERACTION START ###
+[  351s] [  346.689495][    T1] sysrq: Power Off
+[  351s] [  346.694391][   T18] reboot: Power down
+[  351s] ### VM INTERACTION END ###
+[  351s] 
+[  351s] lamb58 failed "build pound.spec" at Sat Feb  4 22:53:04 UTC 2023.
+[  351s] 

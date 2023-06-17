@@ -1,0 +1,1722 @@
+[    0s] Memory limit set to 10955196KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    4s] 
+[    4s] oe-RISCV-worker28 started "build _service:extract_file:samba.spec" at Thu Apr 14 21:27:00 UTC 2022.
+[    4s] 
+[    4s] Building samba for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '717e641aebb6fac648deb51b0161d87f'
+[    4s] 
+[    4s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:samba.spec ...
+[    8s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:samba.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:samba.spec build ...
+[   98s] cycle: coreutils -> bash
+[   98s]   breaking dependency coreutils -> bash
+[   98s] cycle: coreutils -> info
+[   98s]   breaking dependency coreutils -> info
+[   98s] cycle: glibc -> filesystem -> coreutils
+[   98s]   breaking dependency coreutils -> glibc
+[   98s] cycle: glibc -> filesystem -> coreutils -> libacl
+[   98s]   breaking dependency coreutils -> libacl
+[   98s] cycle: glibc -> filesystem -> coreutils -> attr
+[   98s]   breaking dependency coreutils -> attr
+[   98s] cycle: coreutils -> libcap
+[   98s]   breaking dependency coreutils -> libcap
+[   98s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[   98s]   breaking dependency coreutils -> openssl-libs
+[   98s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[   98s]   breaking dependency libselinux -> glibc
+[   98s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[   98s]   breaking dependency pcre2 -> glibc
+[   98s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[   98s]   breaking dependency readline -> glibc
+[   98s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   98s]   breaking dependency filesystem -> coreutils
+[   98s] cycle: glibc -> filesystem -> bash -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[   98s]   breaking dependency filesystem -> bash
+[   98s] cycle: perl-Carp -> perl-libs
+[   98s]   breaking dependency perl-libs -> perl-Carp
+[   98s] cycle: perl-libs -> perl-Exporter
+[   98s]   breaking dependency perl-libs -> perl-Exporter
+[   98s] cycle: perl-Carp -> perl-Exporter
+[   98s]   breaking dependency perl-Exporter -> perl-Carp
+[   98s] cycle: nss-util -> nss
+[   98s]   breaking dependency nss -> nss-util
+[   98s] cycle: nss-softokn -> nss-util -> nss
+[   98s]   breaking dependency nss -> nss-softokn
+[   98s] cycle: systemd -> cryptsetup -> device-mapper
+[   98s]   breaking dependency systemd -> cryptsetup
+[   98s] cycle: audit -> systemd -> pam
+[   98s]   breaking dependency systemd -> pam
+[   98s] [1/84] preinstalling dbus...
+[   99s] [2/84] preinstalling libffi-devel...
+[  100s] [3/84] preinstalling nodejs-source-map...
+[  101s] [4/84] preinstalling python3-pip...
+[  104s] [5/84] preinstalling python3-setuptools_scm...
+[  105s] [6/84] preinstalling filesystem...
+[  108s] [7/84] preinstalling glibc...
+[  112s] [8/84] preinstalling libgcc...
+[  113s] [9/84] preinstalling diffutils...
+[  114s] [10/84] preinstalling libcap-ng...
+[  115s] [11/84] preinstalling libgpg-error...
+[  116s] [12/84] preinstalling libpcap...
+[  117s] [13/84] preinstalling libsmartcols...
+[  118s] [14/84] preinstalling libuuid...
+[  119s] [15/84] preinstalling libxcrypt...
+[  120s] [16/84] preinstalling lz4...
+[  121s] [17/84] preinstalling m4...
+[  121s] [18/84] preinstalling ncurses-libs...
+[  123s] [19/84] preinstalling nspr...
+[  124s] [20/84] preinstalling xz-libs...
+[  124s] [21/84] preinstalling zlib...
+[  125s] [22/84] preinstalling attr...
+[  126s] [23/84] preinstalling libdb...
+[  130s] [24/84] preinstalling zstd...
+[  132s] [25/84] preinstalling audit-libs...
+[  133s] [26/84] preinstalling file...
+[  133s] [27/84] preinstalling iptables-libs...
+[  134s] [28/84] preinstalling libacl...
+[  135s] [29/84] preinstalling libgcrypt...
+[  136s] [30/84] preinstalling openssl-libs...
+[  139s] [31/84] preinstalling readline...
+[  140s] [32/84] preinstalling ncurses...
+[  146s] [33/84] preinstalling cmake...
+[  157s] [34/84] preinstalling perl-libs...
+[  160s] [35/84] preinstalling pcre2...
+[  162s] [36/84] preinstalling perl-Exporter...
+[  162s] [37/84] preinstalling pcre...
+[  164s] [38/84] preinstalling acl...
+[  164s] [39/84] preinstalling sqlite...
+[  166s] [40/84] preinstalling libselinux...
+[  167s] [41/84] preinstalling perl-Carp...
+[  168s] [42/84] preinstalling perl-Digest-MD5...
+[  169s] [43/84] preinstalling sed...
+[  170s] [44/84] preinstalling coreutils...
+[  174s] [45/84] preinstalling bash...
+[  177s] [46/84] preinstalling openssl...
+[  178s] [47/84] preinstalling dnf...
+[  179s] [48/84] preinstalling bzip2...
+[  180s] [49/84] preinstalling elfutils...
+[  181s] [50/84] preinstalling hostname...
+[  182s] [51/84] preinstalling libcap...
+[  183s] [52/84] preinstalling popt...
+[  183s] [53/84] preinstalling grep...
+[  185s] [54/84] preinstalling libblkid...
+[  186s] [55/84] preinstalling perl-constant...
+[  187s] [56/84] preinstalling tar...
+[  188s] [57/84] preinstalling info...
+[  189s] [58/84] preinstalling libgcrypt-devel...
+[  190s] [59/84] preinstalling lua...
+[  191s] [60/84] preinstalling nss...
+[  192s] [61/84] preinstalling chkconfig...
+[  193s] [62/84] preinstalling copy-jdk-configs...
+[  194s] [63/84] preinstalling libfdisk...
+[  195s] [64/84] preinstalling libmount...
+[  196s] [65/84] preinstalling libsemanage...
+[  197s] [66/84] preinstalling nss-util...
+[  198s] [67/84] preinstalling findutils...
+[  200s] [68/84] preinstalling perl-Getopt-Long...
+[  200s] [69/84] preinstalling xz...
+[  201s] [70/84] preinstalling perl-Data-Dumper...
+[  202s] [71/84] preinstalling systemd-libs...
+[  204s] [72/84] preinstalling rpm-libs...
+[  205s] [73/84] preinstalling dbus-libs...
+[  206s] [74/84] preinstalling nss-softokn...
+[  208s] [75/84] preinstalling glib2...
+[  211s] [76/84] preinstalling systemd...
+[  216s] [77/84] preinstalling audit...
+[  217s] [78/84] preinstalling rpm...
+[  218s] [79/84] preinstalling openEuler-rpm-config...
+[  219s] [80/84] preinstalling pam...
+[  221s] [81/84] preinstalling util-linux...
+[  225s] [82/84] preinstalling device-mapper...
+[  227s] [83/84] preinstalling cryptsetup...
+[  229s] [84/84] preinstalling lvm2...
+[  231s] 
+[  234s] initializing rpm db...
+[  247s] reordering...cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[  247s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[  247s] cycle: bash -> coreutils
+[  247s]   breaking dependency coreutils -> bash
+[  247s] cycle: bash -> coreutils -> info
+[  247s]   breaking dependency coreutils -> info
+[  247s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  247s]   breaking dependency filesystem -> bash
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  247s]   breaking dependency coreutils -> gmp
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  247s]   breaking dependency coreutils -> glibc
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  247s]   breaking dependency coreutils -> libacl
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  247s]   breaking dependency coreutils -> attr
+[  247s] cycle: coreutils -> libcap -> bash
+[  247s]   breaking dependency coreutils -> libcap
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  247s]   breaking dependency openssl-libs -> glibc
+[  247s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  247s]   breaking dependency ca-certificates -> bash
+[  247s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  247s]   breaking dependency ca-certificates -> coreutils
+[  247s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  247s]   breaking dependency grep -> bash
+[  247s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  247s]   breaking dependency ca-certificates -> grep
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  247s]   breaking dependency p11-kit -> glibc
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  247s]   breaking dependency openssl-libs -> ca-certificates
+[  247s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  247s]   breaking dependency crypto-policies -> bash
+[  247s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  247s]   breaking dependency crypto-policies -> coreutils
+[  247s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency grep -> coreutils
+[  247s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency glibc -> basesystem
+[  247s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency glibc-common -> bash
+[  247s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency glibc-common -> coreutils
+[  247s] cycle: glibc -> glibc-common
+[  247s]   breaking dependency glibc-common -> glibc
+[  247s] cycle: glibc -> glibc-common -> libselinux
+[  247s]   breaking dependency libselinux -> glibc
+[  247s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  247s]   breaking dependency pcre2 -> glibc
+[  247s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  247s]   breaking dependency readline -> glibc
+[  247s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  247s]   breaking dependency libselinux -> pcre2
+[  247s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency bash -> coreutils
+[  247s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency libsepol -> bash
+[  247s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  247s]   breaking dependency coreutils -> openssl-libs
+[  247s] cycle: libselinux -> libsepol -> coreutils
+[  247s]   breaking dependency libsepol -> coreutils
+[  247s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  247s]   breaking dependency glibc -> glibc-common
+[  247s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  247s]   breaking dependency filesystem -> coreutils
+[  247s] cycle: filesystem -> setup
+[  247s]   breaking dependency filesystem -> setup
+[  247s] cycle: systemd -> cryptsetup -> device-mapper
+[  247s]   breaking dependency systemd -> cryptsetup
+[  247s] cycle: perl-libs -> perl-Carp
+[  247s]   breaking dependency perl-libs -> perl-Carp
+[  247s] cycle: perl-libs -> perl-Exporter
+[  247s]   breaking dependency perl-libs -> perl-Exporter
+[  247s] cycle: perl-Carp -> perl-Exporter
+[  247s]   breaking dependency perl-Exporter -> perl-Carp
+[  247s] cycle: perl -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-PathTools
+[  247s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  247s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  247s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-File-Path
+[  247s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  247s]   breaking dependency perl -> perl-Getopt-Long
+[  247s] cycle: perl -> perl-Locale-Maketext
+[  247s]   breaking dependency perl -> perl-Locale-Maketext
+[  247s] cycle: perl -> perl-Pod-Simple
+[  247s]   breaking dependency perl -> perl-Pod-Simple
+[  247s] cycle: perl -> perl-Socket
+[  247s]   breaking dependency perl -> perl-Socket
+[  247s] cycle: perl -> perl-Storable
+[  247s]   breaking dependency perl -> perl-Storable
+[  247s] cycle: perl -> perl-Text-Tabs+Wrap
+[  247s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  247s] cycle: perl -> perl-Time-Local -> perl-constant
+[  247s]   breaking dependency perl -> perl-Time-Local
+[  247s] cycle: perl -> perl-constant
+[  247s]   breaking dependency perl -> perl-constant
+[  247s] cycle: perl -> perl-threads
+[  247s]   breaking dependency perl -> perl-threads
+[  247s] cycle: perl -> perl-threads-shared
+[  247s]   breaking dependency perl -> perl-threads-shared
+[  247s] cycle: perl -> perl-Archive-Tar
+[  247s]   breaking dependency perl -> perl-Archive-Tar
+[  247s] cycle: perl -> perl-B-Debug
+[  247s]   breaking dependency perl -> perl-B-Debug
+[  247s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  247s]   breaking dependency perl -> perl-CPAN-Meta
+[  247s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  247s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  247s] cycle: perl -> perl-CPAN-Meta-YAML
+[  247s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  247s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  247s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  247s] cycle: perl -> perl-Compress-Raw-Zlib
+[  247s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  247s] cycle: perl -> perl-Config-Perl-V
+[  247s]   breaking dependency perl -> perl-Config-Perl-V
+[  247s] cycle: perl -> perl-DB_File
+[  247s]   breaking dependency perl -> perl-DB_File
+[  247s] cycle: perl -> perl-Data-Dumper
+[  247s]   breaking dependency perl -> perl-Data-Dumper
+[  247s] cycle: perl -> perl-Devel-PPPort
+[  247s]   breaking dependency perl -> perl-Devel-PPPort
+[  247s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  247s]   breaking dependency perl -> perl-Digest
+[  247s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  247s]   breaking dependency perl -> perl-Digest-MD5
+[  247s] cycle: perl -> perl-Digest-SHA
+[  247s]   breaking dependency perl -> perl-Digest-SHA
+[  247s] cycle: perl -> perl-Encode
+[  247s]   breaking dependency perl -> perl-Encode
+[  247s] cycle: perl -> perl-Env
+[  247s]   breaking dependency perl -> perl-Env
+[  247s] cycle: perl -> perl-ExtUtils-Command
+[  247s]   breaking dependency perl -> perl-ExtUtils-Command
+[  247s] cycle: perl -> perl-ExtUtils-Install
+[  247s]   breaking dependency perl -> perl-ExtUtils-Install
+[  247s] cycle: perl -> perl-ExtUtils-Manifest
+[  247s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  247s] cycle: perl -> perl-ExtUtils-ParseXS
+[  247s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  247s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-File-Fetch
+[  247s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-File-Temp
+[  247s] cycle: perl -> perl-Filter
+[  247s]   breaking dependency perl -> perl-Filter
+[  247s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  247s]   breaking dependency perl -> perl-Filter-Simple
+[  247s] cycle: perl -> perl-HTTP-Tiny
+[  247s]   breaking dependency perl -> perl-HTTP-Tiny
+[  247s] cycle: perl -> perl-IO-Compress
+[  247s]   breaking dependency perl -> perl-IO-Compress
+[  247s] cycle: perl -> perl-IO-Socket-IP
+[  247s]   breaking dependency perl -> perl-IO-Socket-IP
+[  247s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  247s]   breaking dependency perl -> perl-IPC-Cmd
+[  247s] cycle: perl -> perl-IPC-SysV
+[  247s]   breaking dependency perl -> perl-IPC-SysV
+[  247s] cycle: perl -> perl-JSON-PP
+[  247s]   breaking dependency perl -> perl-JSON-PP
+[  247s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  247s]   breaking dependency perl -> perl-Locale-Codes
+[  247s] cycle: perl -> perl-MIME-Base64
+[  247s]   breaking dependency perl -> perl-MIME-Base64
+[  247s] cycle: perl -> perl-Math-BigInt
+[  247s]   breaking dependency perl -> perl-Math-BigInt
+[  247s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  247s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  247s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  247s]   breaking dependency perl -> perl-Math-BigRat
+[  247s] cycle: perl -> perl-Module-CoreList
+[  247s]   breaking dependency perl -> perl-Module-CoreList
+[  247s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-Module-Load
+[  247s] cycle: perl -> perl-Module-Load-Conditional
+[  247s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  247s] cycle: perl -> perl-Module-Metadata
+[  247s]   breaking dependency perl -> perl-Module-Metadata
+[  247s] cycle: perl -> perl-Params-Check
+[  247s]   breaking dependency perl -> perl-Params-Check
+[  247s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  247s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  247s] cycle: perl -> perl-Pod-Checker
+[  247s]   breaking dependency perl -> perl-Pod-Checker
+[  247s] cycle: perl -> perl-Pod-Escapes
+[  247s]   breaking dependency perl -> perl-Pod-Escapes
+[  247s] cycle: perl -> perl-Pod-Parser
+[  247s]   breaking dependency perl -> perl-Pod-Parser
+[  247s] cycle: perl -> perl-Pod-Perldoc
+[  247s]   breaking dependency perl -> perl-Pod-Perldoc
+[  247s] cycle: perl -> perl-Pod-Usage
+[  247s]   breaking dependency perl -> perl-Pod-Usage
+[  247s] cycle: perl -> perl-Sys-Syslog
+[  247s]   breaking dependency perl -> perl-Sys-Syslog
+[  247s] cycle: perl -> perl-Term-Cap
+[  247s]   breaking dependency perl -> perl-Term-Cap
+[  247s] cycle: perl -> perl-Test-Harness
+[  247s]   breaking dependency perl -> perl-Test-Harness
+[  247s] cycle: perl -> perl-Test-Simple
+[  247s]   breaking dependency perl -> perl-Test-Simple
+[  247s] cycle: perl -> perl-Text-Balanced
+[  247s]   breaking dependency perl -> perl-Text-Balanced
+[  247s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  247s]   breaking dependency perl -> perl-Thread-Queue
+[  247s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  247s]   breaking dependency perl -> perl-Unicode-Collate
+[  247s] cycle: perl -> perl-autodie
+[  247s]   breaking dependency perl -> perl-autodie
+[  247s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  247s]   breaking dependency perl -> perl-bignum
+[  247s] cycle: perl -> perl-devel
+[  247s]   breaking dependency perl -> perl-devel
+[  247s] cycle: perl -> perl-Encode-devel
+[  247s]   breaking dependency perl -> perl-Encode-devel
+[  247s] cycle: perl -> perl-experimental
+[  247s]   breaking dependency perl -> perl-experimental
+[  247s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  247s]   breaking dependency perl -> perl-libnet
+[  247s] cycle: perl -> perl-podlators
+[  247s]   breaking dependency perl -> perl-podlators
+[  247s] cycle: perl -> perl-version
+[  247s]   breaking dependency perl -> perl-version
+[  247s] cycle: glib2 -> gamin
+[  247s]   breaking dependency glib2 -> gamin
+[  247s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  247s]   breaking dependency systemd -> gnutls
+[  247s] cycle: systemd -> pam -> audit
+[  247s]   breaking dependency systemd -> pam
+[  247s] cycle: systemd -> shadow -> pam -> audit
+[  247s]   breaking dependency systemd -> shadow
+[  247s] cycle: pam -> libpwquality
+[  247s]   breaking dependency pam -> libpwquality
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  247s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  247s]   breaking dependency perl-podlators -> perl-Encode
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  247s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  247s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  247s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  247s] cycle: perl-Pod-Usage -> perl-podlators
+[  247s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  247s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  247s]   breaking dependency groff -> perl-Getopt-Long
+[  247s] cycle: glibc-devel -> libxcrypt-devel
+[  247s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  247s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  247s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[  247s] cycle: fontconfig -> urw-base35-bookman-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[  247s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[  247s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[  247s] cycle: fontconfig -> urw-base35-z003-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[  247s] cycle: fontconfig -> urw-base35-c059-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[  247s] cycle: fontconfig -> urw-base35-gothic-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[  247s] cycle: fontconfig -> urw-base35-p052-fonts
+[  247s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[  247s] cycle: nss -> nss-util
+[  247s]   breaking dependency nss -> nss-util
+[  247s] cycle: nss -> nss-softokn -> nss-util
+[  247s]   breaking dependency nss -> nss-softokn
+[  247s] cycle: bind -> bind-libs -> bind-libs-lite
+[  247s]   breaking dependency bind -> bind-libs
+[  247s] cycle: bind -> bind-libs-lite
+[  247s]   breaking dependency bind -> bind-libs-lite
+[  247s] cycle: python3-bind -> bind
+[  247s]   breaking dependency bind -> python3-bind
+[  247s] cycle: cmake-data -> cmake
+[  247s]   breaking dependency cmake -> cmake-data
+[  247s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  247s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  247s] cycle: cups -> cups-filters
+[  247s]   breaking dependency cups-filters -> cups
+[  247s] cycle: openssh -> openssh-server
+[  247s]   breaking dependency openssh-server -> openssh
+[  247s] cycle: git -> perl-Git
+[  247s]   breaking dependency git -> perl-Git
+[  247s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  247s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  248s] done
+[  248s] querying package ids...
+[  292s] [1/528] installing adobe-mappings-pdf-20190401-2.oe1
+[  295s] [2/528] installing cmake-filesystem-3.22.0-1.oe1
+[  297s] [3/528] installing fonts-filesystem-2.0.2-2.oe1
+[  298s] [4/528] installing fuse-common-3.9.2-5.oe1
+[  299s] [5/528] installing kernel-headers-5.10-3.oe1
+[  306s] [6/528] installing libreport-filesystem-2.13.1-5.oe1
+[  307s] [7/528] installing ncurses-base-6.1-14.oe1
+[  308s] [8/528] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  311s] [9/528] installing poppler-data-0.4.10-1.oe1
+[  317s] [10/528] installing python-ldb-devel-common-2.1.4-2.oe1
+[  318s] [11/528] installing python-setuptools-59.4.0-3.oe1
+[  319s] [12/528] installing qt5-srpm-macros-5.15.2-1.oe1
+[  320s] [13/528] installing rpcsvc-proto-devel-1.4-2.oe1
+[  321s] [14/528] installing tzdata-2021a-2.oe1
+[  328s] [15/528] installing words-3.0-32.oe1
+[  332s] [16/528] installing xkeyboard-config-2.30-1.oe1
+[  336s] [17/528] installing dnf-data-4.10.0-1.oe1
+[  337s] [18/528] installing google-droid-sans-fonts-20120715-15.oe1
+[  341s] [19/528] installing liberation-fonts-1:2.00.5-2.oe1
+[  344s] [20/528] installing openEuler-repos-1.0-2.5.oe1
+[  345s] [21/528] installing openEuler-release-20.03LTS-40.oe1
+[  346s] [22/528] installing adobe-mappings-cmap-lang-20190730-3.oe1
+[  353s] [23/528] installing filesystem-3.9-3.oe1
+[  365s] warning: group mail does not exist - using root
+[  365s] [24/528] installing adobe-mappings-cmap-20190730-3.oe1
+[  366s] [25/528] installing emacs-filesystem-1:27.1-5.oe1
+[  367s] [26/528] installing libgcc-10.3.1-20220105.6.oe1
+[  371s] [27/528] installing setup-2.13.3-4.oe1
+[  372s] [28/528] installing urw-base35-fonts-common-20170801-11
+[  374s] [29/528] installing glibc-2.34-64.oe1
+[  381s] [30/528] installing brotli-1.0.9-2.oe1
+[  383s] [31/528] installing chrpath-0.16-12.oe1
+[  384s] [32/528] installing cpio-2.13-4.oe1
+[  386s] [33/528] installing diffutils-3.7-4.oe1
+[  387s] [34/528] installing expat-2.2.10-1.oe1
+[  389s] [35/528] installing fribidi-1.0.10-1.oe1
+[  390s] [36/528] installing jansson-2.11-4.oe1
+[  391s] [37/528] installing jbig2dec-0.19-2.oe1
+[  393s] [38/528] installing jbigkit-libs-2.1-17.oe1
+[  394s] [39/528] installing json-c-0.15-1.oe1
+[  395s] [40/528] installing keyutils-libs-1.6.3-3.oe1
+[  396s] [41/528] installing lcms2-2.11-2.oe1
+[  397s] [42/528] installing libICE-1.0.10-2.oe1
+[  398s] [43/528] installing libXau-1.0.9-2.oe1
+[  399s] [44/528] installing libaio-0.3.112-1.oe1
+[  401s] [45/528] installing libargon2-20190702-1.oe1
+[  402s] [46/528] installing libatomic-10.3.1-20220105.6.oe1
+[  403s] [47/528] installing libcap-ng-0.7.11-1.oe1
+[  404s] [48/528] installing libcmocka-1.1.5-3.oe1
+[  406s] [49/528] installing libdaemon-0.14-20.oe1
+[  407s] [50/528] installing libdatrie-0.2.12-1.oe1
+[  408s] [51/528] installing libepoxy-1.5.3-2
+[  409s] [52/528] installing libev-4.24-11.oe1
+[  410s] [53/528] installing libffi-3.3-31.oe1
+[  412s] [54/528] installing libgomp-10.3.1-20220105.6.oe1
+[  413s] [55/528] installing libgpg-error-1.41-1.oe1
+[  415s] [56/528] installing libijs-0.35-9.oe1
+[  416s] [57/528] installing libjpeg-turbo-2.0.6-1.oe1
+[  417s] [58/528] installing libnghttp2-1.42.0-1.oe1
+[  418s] [59/528] installing libnl3-3.5.0-4.oe1
+[  420s] [60/528] installing libpcap-14:1.9.1-7.oe1
+[  421s] [61/528] installing libpipeline-1.5.3-1.oe1
+[  422s] [62/528] installing libsigsegv-2.11-10.oe1
+[  424s] [63/528] installing libsmartcols-2.36.1-3.oe1
+[  426s] [64/528] installing libtalloc-2.3.1-1.oe1
+[  427s] [65/528] installing libtasn1-4.16.0-2.oe1
+[  428s] [66/528] installing libtdb-1.4.3-1.oe1
+[  429s] [67/528] installing libtool-ltdl-2.4.6-34.oe1
+[  430s] [68/528] installing libunistring-0.9.10-8.oe1
+[  432s] [69/528] installing libuuid-2.36.1-3.oe1
+[  433s] [70/528] installing libuv-1:1.40.0-1.oe1
+[  434s] [71/528] installing libxcrypt-4.4.8-4.oe1
+[  436s] [72/528] installing libyaml-0.2.5-1.oe1
+[  437s] [73/528] installing lmdb-0.9.27-1.oe1
+[  438s] [74/528] installing lz4-1.9.3-1.oe1
+[  439s] [75/528] installing m4-1.4.18-14.oe1
+[  441s] [76/528] installing mcpp-2.7.2-25.oe1
+[  442s] [77/528] installing nspr-4.32.0-1.oe1
+[  443s] [78/528] installing openjpeg2-2.3.1-6.oe1
+[  445s] [79/528] installing pixman-0.38.0-1.oe1
+[  446s] [80/528] installing pkgconf-1.7.3-1.oe1
+[  447s] [81/528] installing rhash-1.3.5-5.oe1
+[  449s] [82/528] installing rpcgen-1.4-2.oe1
+[  450s] [83/528] installing which-2.21-14.oe1
+[  451s] [84/528] installing xz-libs-5.2.5-1.oe1
+[  452s] [85/528] installing zlib-1.2.11-18.oe1
+[  453s] [86/528] installing attr-2.4.48-12.oe1
+[  455s] [87/528] installing basesystem-12-2.oe1
+[  456s] [88/528] installing libidn-1.36-1.oe1
+[  458s] [89/528] installing libstdc++-10.3.1-20220105.6.oe1
+[  460s] [90/528] installing ncurses-libs-6.1-14.oe1
+[  461s] [91/528] installing libsepol-3.1-4.oe1
+[  463s] [92/528] installing libaio-devel-0.3.112-1.oe1
+[  464s] [93/528] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  472s] [94/528] installing audit-libs-1:3.0-2.oe1
+[  474s] [95/528] installing elfutils-libelf-0.185-3.oe1
+[  475s] [96/528] installing file-libs-5.39-6.oe1
+[  479s] [97/528] installing gmp-1:6.2.1-3.oe1
+[  481s] [98/528] installing iptables-libs-1.8.1-4.oe1
+[  482s] [99/528] installing jansson-devel-2.11-4.oe1
+[  483s] [100/528] installing keyutils-libs-devel-1.6.3-3.oe1
+[  484s] [101/528] installing less-563-2.oe1
+[  485s] [102/528] installing libacl-2.2.53-7.oe1
+[  487s] [103/528] installing libassuan-2.5.4-1.oe1
+[  488s] [104/528] installing libedit-3.1-27.oe1
+[  489s] [105/528] installing libffi-devel-3.3-31.oe1
+[  490s] [106/528] installing libfontenc-1.1.4-2.oe1
+[  491s] [107/528] installing libgcrypt-1.8.7-1.oe1
+[  493s] [108/528] installing libpng-2:1.6.37-1.oe1
+[  494s] [109/528] installing libsepol-devel-3.1-4.oe1
+[  497s] [110/528] installing libtalloc-devel-2.3.1-1.oe1
+[  498s] [111/528] installing libtdb-devel-1.4.3-1.oe1
+[  499s] [112/528] installing libtevent-0.10.2-1.oe1
+[  501s] [113/528] installing libthai-0.1.28-4.oe1
+[  502s] [114/528] installing libxcb-1.14-1.oe1
+[  504s] [115/528] installing readline-8.0-2.oe1
+[  505s] [116/528] installing tdb-tools-1.4.3-1.oe1
+[  506s] [117/528] installing wayland-1.18.0-1.oe1
+[  508s] [118/528] installing zlib-devel-1.2.11-18.oe1
+[  509s] [119/528] installing fuse-2.9.9-6.oe1
+[  510s] [120/528] installing gc-8.0.4-2.oe1
+[  512s] [121/528] installing libSM-1.2.3-2.oe1
+[  513s] [122/528] installing libcmocka-devel-1.1.5-3.oe1
+[  515s] [123/528] installing libdb-5.3.28-35.oe1
+[  520s] [124/528] installing libicu-62.1-5.oe1
+[  533s] [125/528] installing libselinux-3.1-3.oe1
+[  534s] [126/528] installing libxml2-2.9.12-5.oe1
+[  536s] [127/528] installing bash-5.1-1.oe1
+[  540s] [128/528] installing perl-libs-4:5.28.0-435.oe1
+[  546s] [129/528] installing zstd-1.4.8-2.oe1
+[  549s] [130/528] installing ncurses-6.1-14.oe1
+[  559s] [131/528] installing thin-provisioning-tools-0.8.5-1.oe1
+[  561s] [132/528] installing libtiff-4.2.0-1.oe1
+[  563s] [133/528] installing perl-Fedora-VSP-0.001-10.oe1
+[  565s] [134/528] installing perl-parent-1:0.237-4.oe1
+[  566s] [135/528] installing perl-perlfaq-5.20180915-5.oe1
+[  567s] [136/528] installing libX11-1.6.9-2.oe1
+[  570s] [137/528] installing mpfr-4.1.0-1.oe1
+[  572s] [138/528] installing nettle-3.6-6.oe1
+[  574s] [139/528] installing pcre2-10.36-1.oe1
+[  576s] [140/528] installing perl-Exporter-5.74-1.oe1
+[  577s] [141/528] installing file-5.39-6.oe1
+[  578s] [142/528] installing gdbm-1:1.18.1-1.oe1
+[  580s] [143/528] installing libtevent-devel-0.10.2-1.oe1
+[  581s] [144/528] installing libxkbcommon-1.0.3-1.oe1
+[  582s] [145/528] installing patch-2.7.6-12.oe1
+[  583s] [146/528] installing qrencode-4.1.1-1
+[  584s] [147/528] installing sed-4.8-2.oe1
+[  586s] [148/528] installing acl-2.2.53-7.oe1
+[  588s] [149/528] installing libcomps-0.1.15-1.oe1
+[  589s] [150/528] installing pcre-8.44-1.oe1
+[  590s] [151/528] installing glibc-common-2.34-64.oe1
+[  602s] [152/528] installing gmp-c++-1:6.2.1-3.oe1
+[  604s] [153/528] installing coreutils-8.31-4.oe1
+[  611s] [154/528] installing adwaita-icon-theme-3.38.0-1.oe1
+[  644s] [155/528] installing crontabs-1.11-21.oe1
+[  645s] [156/528] installing elfutils-default-yama-scope-0.185-3.oe1
+[  647s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  647s] [157/528] installing gmp-devel-1:6.2.1-3.oe1
+[  650s] [158/528] installing hicolor-icon-theme-0.17-4.oe1
+[  653s] [159/528] installing libXcomposite-0.4.5-1.oe1
+[  655s] [160/528] installing libXext-1.3.4-2.oe1
+[  656s] [161/528] installing libXfixes-5.0.3-11.oe1
+[  659s] [162/528] installing libXpm-3.5.12-11.oe1
+[  661s] [163/528] installing libXrender-0.9.10-10.oe1
+[  662s] [164/528] installing perl-Carp-1.50-418.oe1
+[  664s] [165/528] installing perl-Perl-OSType-1.010-421.oe1
+[  665s] [166/528] installing perl-Term-ANSIColor-4.06-511.oe1
+[  666s] [167/528] installing publicsuffix-list-20200718-1.oe1
+[  668s] [168/528] installing uname-build-checks-1.0-0.4.oe1
+[  669s] [169/528] installing bzip2-1.0.8-3.oe1
+[  671s] [170/528] installing checkpolicy-3.1-1.oe1
+[  674s] [171/528] installing gzip-1.10-1.oe1
+[  676s] [172/528] installing hostname-3.21-2.oe1
+[  677s] [173/528] installing libcap-2.32-2.oe1
+[  679s] [174/528] installing libmpc-1.2.0-2.oe1
+[  681s] [175/528] installing libpaper-1.1.24-25.oe1
+[  682s] [176/528] installing libseccomp-2.4.3-2.oe1
+[  685s] [177/528] installing npth-1.5-7.oe1
+[  686s] [178/528] installing popt-1.18-1.oe1
+[  689s] [179/528] installing sgml-common-0.6.3-51.oe1
+[  691s] [180/528] installing grep-3.6-1.oe1
+[  694s] [181/528] installing libXt-1.2.0-0.oe1
+[  696s] [182/528] installing libblkid-2.36.1-3.oe1
+[  698s] [183/528] installing libidn2-2.3.0-1.oe1
+[  700s] [184/528] installing libksba-1.3.5-12.oe1
+[  702s] [185/528] installing pcre-devel-8.44-1.oe1
+[  705s] [186/528] installing pcre2-devel-10.36-1.oe1
+[  709s] [187/528] installing tar-2:1.32-3.oe1
+[  712s] [188/528] installing tcl-1:8.6.10-3.oe1
+[  717s] [189/528] installing graphite2-1.3.13-2.oe1
+[  719s] [190/528] installing info-6.7-2.oe1
+[  721s] [191/528] installing jsoncpp-1.9.4-1.oe1
+[  723s] [192/528] installing libgpg-error-devel-1.41-1.oe1
+[  725s] [193/528] installing lua-5.3.5-6.oe1
+[  727s] [194/528] installing ncurses-devel-6.1-14.oe1
+[  734s] [195/528] installing slang-2.3.2-8.oe1
+[  737s] [196/528] installing gawk-5.0.1-2.oe1
+[  739s] [197/528] installing libxslt-1.1.32-7.oe1
+[  742s] [198/528] installing libicu-devel-62.1-5.oe1
+[  747s] [199/528] installing guile-5:2.0.14-15.oe1
+[  756s] [200/528] installing bison-3.7.4-2.oe1
+[  758s] [201/528] installing libcap-devel-2.32-2.oe1
+[  759s] [202/528] installing libidn2-devel-2.3.0-1.oe1
+[  761s] [203/528] installing popt-devel-1.18-1.oe1
+[  762s] [204/528] installing zip-3.0-29.oe1
+[  764s] [205/528] installing libXdamage-1.1.5-1.oe1
+[  765s] [206/528] installing libXi-1.7.10-1.oe1
+[  767s] [207/528] installing libXinerama-1.1.4-5.oe1
+[  769s] [208/528] installing libXxf86misc-1.0.4-4.oe1
+[  771s] [209/528] installing libXxf86vm-1.1.4-13.oe1
+[  773s] [210/528] installing libfdisk-2.36.1-3.oe1
+[  776s] [211/528] installing libtasn1-devel-4.16.0-2.oe1
+[  777s] [212/528] installing nettle-devel-3.6-6.oe1
+[  780s] [213/528] installing newt-0.52.21-4.oe1
+[  783s] [214/528] installing perl-Text-ParseWords-3.30-419.oe1
+[  784s] [215/528] installing readline-devel-8.0-2.oe1
+[  786s] [216/528] installing bc-1.07.1-10.oe1
+[  788s] [217/528] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  795s] [218/528] installing elfutils-libs-0.185-3.oe1
+[  797s] [219/528] installing libXcursor-1.2.0-1.oe1
+[  798s] [220/528] installing libXmu-1.1.3-1.oe1
+[  800s] [221/528] installing libXrandr-1.5.2-1.oe1
+[  802s] [222/528] installing libmount-2.36.1-3.oe1
+[  804s] [223/528] installing libselinux-devel-3.1-3.oe1
+[  806s] [224/528] installing lua-posix-33.3.1-12.oe1
+[  809s] [225/528] installing unzip-6.0-47.oe1
+[  811s] [226/528] installing cracklib-2.9.7-6.oe1
+[  817s] [227/528] installing docbook-dtds-1.0-78.oe1
+[  841s] [228/528] installing e2fsprogs-1.45.6-3.oe1
+[  845s] [229/528] installing findutils-2:4.7.0-7.oe1
+[  847s] [230/528] installing flex-2.6.4-3.oe1
+[  850s] [231/528] installing libsemanage-3.1-4.oe1
+[  854s] [232/528] installing make-1:4.2.1-15.oe1
+[  856s] [233/528] installing sqlite-3.24.0-9.oe1
+[  859s] [234/528] installing xz-5.2.5-1.oe1
+[  861s] [235/528] installing logrotate-3.15.1-2.oe1
+[  862s] [236/528] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  865s] [237/528] installing perl-Time-HiRes-1.9760-2.oe1
+[  867s] [238/528] installing perl-Unicode-Normalize-1.26-419.oe1
+[  869s] [239/528] installing freetype-2.10.2-3.oe1
+[  871s] [240/528] installing glibc-devel-2.34-64.oe1
+[  882s] [241/528] installing libgcrypt-devel-1.8.7-1.oe1
+[  884s] [242/528] installing cpp-10.3.1-20220105.6.oe1
+[  894s] [243/528] installing gnupg2-2.2.27-2.oe1
+[  900s] [244/528] installing systemd-libs-243-22.oe1
+[  903s] [245/528] installing dbus-libs-1:1.12.20-3.oe1
+[  906s] [246/528] installing libattr-devel-2.4.48-12.oe1
+[  908s] [247/528] installing libusbx-1.0.23-3.oe1
+[  910s] [248/528] installing libxcrypt-devel-4.4.8-4.oe1
+[  912s] [249/528] installing p11-kit-0.23.22-1.oe1
+[  915s] [250/528] installing procps-ng-3.3.16-15.oe1
+[  917s] [251/528] installing copy-jdk-configs-4.0-1.oe1
+[  920s] [252/528] installing gpgme-1.15.1-1.oe1
+[  923s] [253/528] installing libXtst-1.2.3-10.oe1
+[  925s] [254/528] installing openssl-libs-1:1.1.1f-2.oe1
+[  929s] [255/528] installing chkconfig-1.14-2.oe1
+[  932s] [256/528] installing docbook-style-xsl-1.79.2-9.oe1
+[  944s] [257/528] installing e2fsprogs-devel-1.45.6-3.oe1
+[  947s] [258/528] installing elfutils-0.185-3.oe1
+[  950s] [259/528] installing libXaw-1.0.13-13.oe1
+[  952s] [260/528] installing xorg-x11-font-utils-1:7.5-43.oe1
+[  954s] [261/528] installing glib2-2.66.8-1.oe1
+[  961s] [262/528] installing xorg-x11-server-utils-7.7-28
+[  963s] [263/528] installing fontconfig-2.13.92-1.oe1
+[  970s] [264/528] installing atk-2.36.0-1.oe1
+[  973s] [265/528] installing dbus-tools-1:1.12.20-3.oe1
+[  974s] [266/528] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  976s] [267/528] installing libevent-2.1.12-4
+[  978s] [268/528] installing p11-kit-devel-0.23.22-1.oe1
+[  981s] [269/528] installing libacl-devel-2.2.53-7.oe1
+[  983s] [270/528] installing libcroco-0.6.12-13.oe1
+[  985s] [271/528] installing libgusb-0.3.0-5.oe1
+[  987s] [272/528] installing fipscheck-1.5.0-7.oe1
+[  989s] [273/528] installing gamin-0.1.10-38.oe1
+[  992s] [274/528] installing kmod-libs-27-4.oe1
+[  994s] [275/528] installing libsecret-0.18.6-5.oe1
+[  997s] [276/528] installing obs-env-1.0-5.oe1
+[ 1004s] [277/528] installing dbus-devel-1:1.12.20-3.oe1
+[ 1006s] [278/528] installing kmod-27-4.oe1
+[ 1008s] [279/528] installing libXft-2.3.3-1.oe1
+[ 1010s] [280/528] installing shared-mime-info-1.10-4.oe1
+[ 1027s] [281/528] installing binutils-2.37-6.oe1
+[ 1037s] [282/528] installing urw-base35-bookman-fonts-20170801-11
+[ 1040s] [283/528] installing urw-base35-c059-fonts-20170801-11
+[ 1043s] [284/528] installing urw-base35-d050000l-fonts-20170801-11
+[ 1046s] [285/528] installing urw-base35-gothic-fonts-20170801-11
+[ 1049s] [286/528] installing urw-base35-nimbus-mono-ps-fonts-20170801-11
+[ 1053s] [287/528] installing urw-base35-nimbus-roman-fonts-20170801-11
+[ 1057s] [288/528] installing urw-base35-nimbus-sans-fonts-20170801-11
+[ 1062s] [289/528] installing urw-base35-p052-fonts-20170801-11
+[ 1066s] [290/528] installing urw-base35-standard-symbols-ps-fonts-20170801-11
+[ 1069s] [291/528] installing urw-base35-z003-fonts-20170801-11
+[ 1073s] [292/528] installing harfbuzz-2.7.4-1.oe1
+[ 1075s] [293/528] installing p11-kit-trust-0.23.22-1.oe1
+[ 1077s] [294/528] installing babeltrace-1.5.8-1.oe1
+[ 1080s] [295/528] installing gpgme-devel-1.15.1-1.oe1
+[ 1082s] [296/528] installing libarchive-3.5.1-1.oe1
+[ 1085s] [297/528] installing nodejs-libs-1:16.10.0-1.oe1
+[ 1122s] [298/528] installing cairo-1.16.0-6.fc32
+[ 1125s] [299/528] installing libarchive-devel-3.5.1-1.oe1
+[ 1129s] [300/528] installing avahi-libs-0.8-6.oe1
+[ 1131s] [301/528] installing libevent-devel-2.1.12-4
+[ 1133s] [302/528] installing libverto-0.3.1-2.oe1
+[ 1135s] [303/528] installing colord-libs-1.4.3-6.oe1
+[ 1137s] [304/528] installing ca-certificates-2020.2.46-2.oe1
+[ 1147s] [305/528] installing gdk-pixbuf2-2.42.6-1.oe1
+[ 1150s] [306/528] installing tk-1:8.6.10-2.oe1
+[ 1154s] [307/528] installing gettext-0.20.1-2.oe1
+[ 1159s] [308/528] installing pango-1.47.0-1.oe1
+[ 1162s] [309/528] installing urw-base35-fonts-20170801-11
+[ 1163s] [310/528] installing cairo-gobject-1.16.0-6.fc32
+[ 1164s] [311/528] installing gcc-10.3.1-20220105.6.oe1
+[ 1188s] [312/528] installing rpm-libs-4.15.1-25.oe1
+[ 1190s] [313/528] installing python-pip-wheel-19.2.3-2.fc32
+[ 1191s] [314/528] installing libverto-devel-0.3.1-2.oe1
+[ 1193s] [315/528] installing avahi-glib-0.8-6.oe1
+[ 1195s] [316/528] installing gdk-pixbuf2-modules-2.42.6-1.oe1
+[ 1197s] [317/528] installing libmodulemd-2.13.0-1.oe1
+[ 1199s] [318/528] installing gcc-c++-10.3.1-20220105.6.oe1
+[ 1210s] [319/528] installing krb5-libs-1.18.2-3.oe1
+[ 1214s] [320/528] installing libtirpc-1.3.1-1.oe1
+[ 1216s] [321/528] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1217s] [322/528] installing krb5-1.18.2-3.oe1
+[ 1220s] [323/528] installing libssh-0.9.5-1.oe1
+[ 1222s] [324/528] installing krb5-devel-1.18.2-3.oe1
+[ 1224s] [325/528] installing openldap-2.4.46-15.oe1
+[ 1226s] [326/528] installing libnsl2-1.3.0-2.oe1
+[ 1229s] [327/528] installing libldb-2.1.4-2.oe1
+[ 1231s] [328/528] installing python3-3.8.5-13.oe1
+[ 1256s] [329/528] installing python3-IPy-0.81-28.fc32
+[ 1258s] [330/528] installing python3-iso8601-0.1.11-16.fc32
+[ 1260s] [331/528] installing python3-ply-3.11-6.fc32
+[ 1262s] [332/528] installing python3-pyparsing-2.4.5-1.fc32
+[ 1264s] [333/528] installing python3-setuptools-59.4.0-3.oe1
+[ 1269s] [334/528] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1272s] [335/528] installing python3-gpgme-1.15.1-1.oe1
+[ 1277s] [336/528] installing python3-libselinux-3.1-3.oe1
+[ 1279s] [337/528] installing python3-talloc-2.3.1-1.oe1
+[ 1280s] [338/528] installing python3-tdb-1.4.3-1.oe1
+[ 1282s] [339/528] installing libldb-devel-2.1.4-2.oe1
+[ 1284s] [340/528] installing python3-tevent-0.10.2-1.oe1
+[ 1285s] [341/528] installing python3-libcomps-0.1.15-1.oe1
+[ 1287s] [342/528] installing libpsl-0.21.1-1.oe1
+[ 1290s] [343/528] installing gdb-headless-9.2-5.oe1
+[ 1296s] [344/528] installing python3-markdown-3.1.1-6.fc32
+[ 1298s] [345/528] installing python3-talloc-devel-2.3.1-1.oe1
+[ 1300s] [346/528] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1301s] [347/528] installing gdb-9.2-5.oe1
+[ 1303s] [348/528] installing python3-pip-19.2.3-2.fc32
+[ 1311s] [349/528] installing python3-rpm-generators-10-2.fc32
+[ 1313s] [350/528] installing python3-libsemanage-3.1-4.oe1
+[ 1315s] [351/528] installing python3-setools-4.3.0-5.oe1
+[ 1320s] [352/528] installing python3-ldb-2.1.4-2.oe1
+[ 1322s] [353/528] installing libcurl-7.79.1-1.oe1
+[ 1323s] [354/528] installing curl-7.79.1-1.oe1
+[ 1325s] [355/528] installing python3-ldb-devel-2.1.4-2.oe1
+[ 1326s] [356/528] installing librepo-1.14.2-2.oe1
+[ 1329s] [357/528] installing rpm-4.15.1-25.oe1
+[ 1332s] [358/528] installing efi-srpm-macros-4-3.oe1
+[ 1334s] [359/528] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1336s] [360/528] installing libsolv-0.7.20-1.oe1
+[ 1338s] [361/528] installing python3-rpm-4.15.1-25.oe1
+[ 1340s] [362/528] installing openEuler-rpm-config-30-22.oe1
+[ 1342s] [363/528] installing cmake-3.22.0-1.oe1
+[ 1357s] [364/528] installing libdnf-0.65.0-2.oe1
+[ 1361s] [365/528] installing cmake-data-3.22.0-1.oe1
+[ 1377s] [366/528] installing python3-devel-3.8.5-13.oe1
+[ 1419s] [367/528] installing python3-libdnf-0.65.0-2.oe1
+[ 1423s] [368/528] installing perl-4:5.28.0-435.oe1
+[ 1430s] [369/528] installing perl-B-Debug-1.26-4.oe1
+[ 1432s] [370/528] installing perl-Env-1.04-397.oe1
+[ 1433s] [371/528] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1435s] [372/528] installing perl-Parse-Yapp-1.21-5.oe1
+[ 1436s] [373/528] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1437s] [374/528] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1438s] [375/528] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1440s] [376/528] installing perl-Params-Check-1:0.38-418.oe1
+[ 1441s] [377/528] installing perl-Term-Cap-1.17-510.oe1
+[ 1443s] [378/528] installing perl-TermReadKey-2.38-2.oe1
+[ 1444s] [379/528] installing perl-Text-Balanced-2.03-420.oe1
+[ 1446s] [380/528] installing perl-generators-1.10-11.oe1
+[ 1447s] [381/528] installing perl-threads-1:2.22-419.oe1
+[ 1449s] [382/528] installing openssl-1:1.1.1f-2.oe1
+[ 1451s] [383/528] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1453s] [384/528] installing perl-Error-1:0.17029-1.oe1
+[ 1455s] [385/528] installing perl-Filter-2:1.59-2.oe1
+[ 1457s] [386/528] installing perl-IPC-SysV-2.07-5.oe1
+[ 1459s] [387/528] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1461s] [388/528] installing perl-constant-1.33-421.oe1
+[ 1463s] [389/528] installing perl-MIME-Base64-3.15-418.oe1
+[ 1465s] [390/528] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1467s] [391/528] installing perl-Socket-4:2.029-2.oe1
+[ 1469s] [392/528] installing perl-Storable-1:3.15-2.oe1
+[ 1471s] [393/528] installing qpdf-8.4.2-2.oe1
+[ 1475s] [394/528] installing python3-hawkey-0.65.0-2.oe1
+[ 1477s] [395/528] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1478s] [396/528] installing perl-Digest-1.17-419.oe1
+[ 1480s] [397/528] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1481s] [398/528] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1482s] [399/528] installing perl-Text-Diff-1.45-7.oe1
+[ 1484s] [400/528] installing perl-Time-Local-2:1.280-6.oe1
+[ 1485s] [401/528] installing perl-version-8:0.99.24-3.oe1
+[ 1487s] [402/528] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1488s] [403/528] installing perl-threads-shared-1.59-2.oe1
+[ 1490s] [404/528] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1492s] [405/528] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1495s] [406/528] installing perl-Locale-Codes-3.58-2.oe1
+[ 1498s] [407/528] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1500s] [408/528] installing perl-PathTools-3.75-4.oe1
+[ 1501s] [409/528] installing python3-dnf-4.10.0-1.oe1
+[ 1504s] [410/528] installing perl-Data-Dumper-2.172-3.oe1
+[ 1506s] [411/528] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1508s] [412/528] installing perl-Encode-4:2.98-9.oe1
+[ 1513s] [413/528] installing autogen-5.18.16-1.oe1
+[ 1516s] [414/528] installing nodejs-1:16.10.0-1.oe1
+[ 1518s] [415/528] installing systemd-243-22.oe1
+[ 1535s] /var/tmp/rpm-tmp.BqyjPP: line 8: groupadd: command not found
+[ 1535s] /var/tmp/rpm-tmp.BqyjPP: line 10: groupadd: command not found
+[ 1535s] /var/tmp/rpm-tmp.BqyjPP: line 13: groupadd: command not found
+[ 1535s] /var/tmp/rpm-tmp.BqyjPP: line 16: groupadd: command not found
+[ 1535s] [416/528] installing dbus-common-1:1.12.20-3.oe1
+[ 1537s] [417/528] installing nodejs-source-map-0.5.6-1.oe1
+[ 1539s] [418/528] installing perl-Module-Load-1:0.32-418.oe1
+[ 1540s] [419/528] installing systemd-devel-243-22.oe1
+[ 1544s] [420/528] installing nodejs-packaging-20-1.oe1
+[ 1546s] [421/528] installing dnf-4.10.0-1.oe1
+[ 1549s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1549s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1549s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1549s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1549s] [422/528] installing perl-File-Which-1.23-1.oe1
+[ 1551s] [423/528] installing perl-Thread-Queue-3.13-3.oe1
+[ 1552s] [424/528] installing perl-experimental-0.020-2.oe1
+[ 1554s] [425/528] installing perl-Digest-MD5-2.55-419.oe1
+[ 1556s] [426/528] installing perl-File-Path-2.16-4.oe1
+[ 1557s] [427/528] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1559s] [428/528] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1560s] [429/528] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1562s] [430/528] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1564s] [431/528] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1566s] [432/528] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1567s] [433/528] installing audit-1:3.0-2.oe1
+[ 1571s] [434/528] installing perl-DB_File-1.842-2.oe1
+[ 1573s] [435/528] installing perl-autodie-2.29-398.oe1
+[ 1574s] [436/528] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1581s] [437/528] installing perl-IO-Compress-2.081-6.oe1
+[ 1582s] [438/528] installing perl-podlators-1:4.14-1.oe1
+[ 1584s] [439/528] installing krb5-server-1.18.2-3.oe1
+[ 1587s] Running in chroot, ignoring request: daemon-reload
+[ 1587s] [440/528] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1588s] [441/528] installing python3-audit-1:3.0-2.oe1
+[ 1590s] [442/528] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1591s] [443/528] installing perl-bignum-0.50-4.oe1
+[ 1593s] [444/528] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1594s] [445/528] installing perl-libnet-3.11-420.oe1
+[ 1596s] [446/528] installing pam-1.5.1-1.oe1
+[ 1601s] [447/528] installing pam-devel-1.5.1-1.oe1
+[ 1603s] [448/528] installing libpwquality-1.4.4-1.oe1
+[ 1606s] [449/528] installing perl-File-HomeDir-1.004-4.oe1
+[ 1608s] [450/528] installing shadow-2:4.8.1-5.oe1
+[ 1611s] [451/528] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1613s] [452/528] installing libutempter-1.1.6-16.oe1
+[ 1616s] [453/528] installing unbound-libs-1.10.1-4.oe1
+[ 1620s] [454/528] installing rpcbind-1.2.5-2.oe1
+[ 1625s] Created symlink /etc/systemd/system/multi-user.target.wants/rpcbind.service -> /usr/lib/systemd/system/rpcbind.service.
+[ 1625s] Created symlink /etc/systemd/system/sockets.target.wants/rpcbind.socket -> /usr/lib/systemd/system/rpcbind.socket.
+[ 1625s] [455/528] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1630s] [456/528] installing openssh-server-8.2p1-10.oe1
+[ 1634s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1634s] [457/528] installing groff-1.22.4-4.oe1
+[ 1642s] [458/528] installing dbus-1:1.12.20-3.oe1
+[ 1643s] [459/528] installing quota-1:4.06-2.oe1
+[ 1647s] [460/528] installing man-db-2.9.3-2.oe1
+[ 1652s] [461/528] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1653s] [462/528] installing gnutls-3.6.15-3.oe1
+[ 1657s] [463/528] installing util-linux-2.36.1-3.oe1
+[ 1664s] [464/528] installing nss-help-3.72.0-2.oe1
+[ 1667s] [465/528] installing quota-devel-1:4.06-2.oe1
+[ 1668s] [466/528] installing util-linux-devel-2.36.1-3.oe1
+[ 1670s] [467/528] installing libtirpc-devel-1.3.1-1.oe1
+[ 1674s] [468/528] installing gnutls-devel-3.6.15-3.oe1
+[ 1677s] [469/528] installing at-spi2-core-2.39.1-1.oe1
+[ 1681s] [470/528] installing cups-libs-1:2.3.3-6.oe1
+[ 1683s] [471/528] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1685s] [472/528] installing device-mapper-8:1.02.172-1.oe1
+[ 1688s] [473/528] installing avahi-0.8-6.oe1
+[ 1693s] Created symlink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket -> /usr/lib/systemd/system/avahi-daemon.socket.
+[ 1693s] Created symlink /etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[ 1693s] Created symlink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service -> /usr/lib/systemd/system/avahi-daemon.service.
+[ 1693s] [474/528] installing openssh-8.2p1-10.oe1
+[ 1696s] [475/528] installing cyrus-sasl-2.1.27-10.oe1
+[ 1700s] [476/528] installing policycoreutils-3.1-7.oe1
+[ 1704s] Created symlink /etc/systemd/system/multi-user.target.wants/restorecond.service -> /usr/lib/systemd/system/restorecond.service.
+[ 1704s] [477/528] installing libnsl2-devel-1.3.0-2.oe1
+[ 1706s] [478/528] installing at-spi2-atk-2.38.0-1.oe1
+[ 1709s] [479/528] installing selinux-policy-3.14.2-69.oe1
+[ 1712s] [480/528] installing xfsprogs-5.9.0-1.oe1
+[ 1716s] [481/528] installing cyrus-sasl-devel-2.1.27-10.oe1
+[ 1718s] [482/528] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1720s] [483/528] installing python3-policycoreutils-3.1-7.oe1
+[ 1724s] [484/528] installing cryptsetup-2.3.3-3.oe1
+[ 1729s] [485/528] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1731s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1732s] [486/528] installing nss-3.72.0-2.oe1
+[ 1741s] [487/528] installing glib2-devel-2.66.8-1.oe1
+[ 1763s] [488/528] installing openssh-clients-8.2p1-10.oe1
+[ 1766s] [489/528] installing openldap-devel-2.4.46-15.oe1
+[ 1768s] [490/528] installing policycoreutils-python-utils-3.1-7.oe1
+[ 1769s] [491/528] installing xfsprogs-devel-5.9.0-1.oe1
+[ 1771s] [492/528] installing nss-util-3.72.0-2.oe1
+[ 1774s] [493/528] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1776s] [494/528] installing avahi-devel-0.8-6.oe1
+[ 1778s] [495/528] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1780s] [496/528] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1783s] [497/528] installing perl-Pod-Parser-1.63-397.oe1
+[ 1784s] [498/528] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1786s] [499/528] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1790s] [500/528] installing perl-Archive-Tar-2.30-421.oe1
+[ 1792s] [501/528] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1794s] [502/528] installing lvm2-8:2.03.11-1.oe1
+[ 1801s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1801s] [503/528] installing poppler-0.67.0-7.oe1
+[ 1804s] [504/528] installing autoconf-2.69-30.oe1
+[ 1807s] [505/528] installing git-2.23.0-12.oe1
+[ 1819s] [506/528] installing gtk3-3.24.30-2.oe1
+[ 1829s] [507/528] installing poppler-cpp-0.67.0-7.oe1
+[ 1831s] [508/528] installing nss-softokn-3.72.0-2.oe1
+[ 1834s] [509/528] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1836s] [510/528] installing perl-Git-2.23.0-12.oe1
+[ 1838s] [511/528] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1840s] [512/528] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1842s] [513/528] installing automake-1.16.1-6.oe1
+[ 1845s] [514/528] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1847s] [515/528] installing bind-32:9.11.21-11.oe1
+[ 1853s] [516/528] installing ghostscript-9.52-5.oe1
+[ 1863s] [517/528] installing python3-bind-32:9.11.21-11.oe1
+[ 1866s] [518/528] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1868s] [519/528] installing bind-libs-lite-32:9.11.21-11.oe1
+[ 1871s] [520/528] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1873s] [521/528] installing cups-filters-1.26.1-2
+[ 1878s] [522/528] installing rpm-build-4.15.1-25.oe1
+[ 1880s] [523/528] installing gcc_secure-1.0-0.9.oe1
+[ 1884s] [524/528] installing perl-File-Fetch-0.56-4.oe1
+[ 1885s] [525/528] installing bind-libs-32:9.11.21-11.oe1
+[ 1888s] [526/528] installing perl-devel-4:5.28.0-435.oe1
+[ 1900s] [527/528] installing cups-1:2.3.3-6.oe1
+[ 1909s] Created symlink /etc/systemd/system/multi-user.target.wants/cups.path -> /usr/lib/systemd/system/cups.path.
+[ 1909s] Created symlink /etc/systemd/system/sockets.target.wants/cups.socket -> /usr/lib/systemd/system/cups.socket.
+[ 1909s] Created symlink /etc/systemd/system/printer.target.wants/cups.service -> /usr/lib/systemd/system/cups.service.
+[ 1909s] Created symlink /etc/systemd/system/multi-user.target.wants/cups.service -> /usr/lib/systemd/system/cups.service.
+[ 1909s] [528/528] installing cups-devel-1:2.3.3-6.oe1
+[ 1911s] removing nis flags from /var/cache/obs/worker/root_1/etc/nsswitch.conf...
+[ 1912s] now finalizing build dir...
+[ 1927s] Running build time source services...
+[ 1932s] Warning: spec file parser line 226: can't expand %(...)
+[ 1932s] Warning: spec file parser line 383: can't expand %(...)
+[ 1944s] -----------------------------------------------------------------
+[ 1944s] ----- building samba.spec (user abuild)
+[ 1944s] -----------------------------------------------------------------
+[ 1944s] -----------------------------------------------------------------
+[ 1952s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/717e641aebb6fac648deb51b0161d87f-samba' /home/abuild/rpmbuild/SOURCES/samba.spec
+[ 1952s] warning: line 177: It's not recommended to have unversioned Obsoletes: Obsoletes: samba4-client < 4.12.5-10.oe1 samba-client-libs
+[ 1952s] warning: line 178: It's not recommended to have unversioned Obsoletes: Obsoletes: python2-samba
+[ 1952s] warning: line 199: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-common < 4.12.5-10.oe1 samba-common-libs
+[ 1952s] error: incorrect format: unknown tag: "version
+[ 1952s] "
+[ 1952s] warning: line 229: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-dc < 4.12.5-10.oe1 samba-dc-libs samba4-dc-libs < 4.12.5-10.oe1
+[ 1952s] warning: line 308: It's not recommended to have unversioned Obsoletes: Obsoletes: 		python2-samba
+[ 1952s] warning: line 347: It's not recommended to have unversioned Obsoletes: Obsoletes:	python2-samba
+[ 1953s] warning: line 412: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-test < 4.12.5-10.oe1 samba-test-libs samba-test-devel < 4.12.5-10.oe1
+[ 2710s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Lrb44X
+[ 2710s] + umask 022
+[ 2710s] + cd /home/abuild/rpmbuild/BUILD
+[ 2710s] + zcat /home/abuild/rpmbuild/SOURCES/samba-4.12.5.tar.gz
+[ 2710s] + gpgv2 --quiet --keyring /home/abuild/rpmbuild/SOURCES/gpgkey-52FBC0B86D954B0843324CDC6F33915B6568B7EA.gpg /home/abuild/rpmbuild/SOURCES/samba-4.12.5.tar.asc -
+[ 2718s] gpgv: Signature made Thu Jul  2 11:13:34 2020 UTC
+[ 2718s] gpgv:                using DSA key 52FBC0B86D954B0843324CDC6F33915B6568B7EA
+[ 2718s] gpgv:                issuer "samba-bugs@samba.org"
+[ 2718s] gpgv: Good signature from "Samba Distribution Verification Key <samba-bugs@samba.org>"
+[ 2718s] + cd /home/abuild/rpmbuild/BUILD
+[ 2718s] + rm -rf samba-4.12.5
+[ 2718s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/samba-4.12.5.tar.gz
+[ 2718s] + /usr/bin/tar -xof -
+[ 2734s] + STATUS=0
+[ 2734s] + '[' 0 -ne 0 ']'
+[ 2734s] + cd samba-4.12.5
+[ 2734s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2737s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2737s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2020-1472.patch
+[ 2737s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0001-CVE-2020-14383.patch
+[ 2737s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0002-CVE-2020-14383.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2020-14318.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2020-14323.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] patch unexpectedly ends in middle of line
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2021-20277.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2020-27840.patch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/CVE-2021-20254.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-CVE-2021-3671.patch
+[ 2738s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-lzxpress-add-bounds-checking-to-lzxpress_decompress.patch
+[ 2738s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-librpc-ndr-NDR_PULL_ALIGN-check-for-unsigned-overflow.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-librpc-ndr-add-recursion-check-macros.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-librpc-ndr-Heap-buffer-overflow-in-lzxpress_decompress.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-pidl-Add-recursive-depth-checks.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-idl-drsuapi_DsaAddressListItem_V1-limit-recursion.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2739s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-idl-limit-recurion-on-recursive-elements.patch
+[ 2739s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-lib-ldb-Limit-depth-of-ldb_parse_tree.patch
+[ 2740s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-witness-idl-fix-length-calculation-for-witness_IPaddrInfoList.patch
+[ 2740s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-lzxpress-avoid-technically-undefined-shift.patch
+[ 2740s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-utils-asn1-avoid-undefined-behaviour.patch
+[ 2740s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/backport-fix-undefined-shift-in-put_res_rec.patch
+[ 2740s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2740s] + RPM_EC=0
+[ 2740s] ++ jobs -p
+[ 2740s] + exit 0
+[ 2740s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.Zyb0a8
+[ 2740s] + umask 022
+[ 2740s] + cd /home/abuild/rpmbuild/BUILD
+[ 2740s] + cd samba-4.12.5
+[ 2740s] ++ echo -Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld
+[ 2740s] ++ sed -e s/-Wl,-z,defs//g
+[ 2740s] + export 'python_LDFLAGS=-Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2740s] + python_LDFLAGS='-Wl,-z,relro -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2740s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 2740s] + export CFLAGS
+[ 2740s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions'
+[ 2740s] + export CXXFLAGS
+[ 2740s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2740s] + export FFLAGS
+[ 2740s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2740s] + export FCFLAGS
+[ 2740s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2740s] + export LDFLAGS
+[ 2740s] + '[' 1 = 1 ']'
+[ 2741s] +++ dirname ./configure
+[ 2741s] ++ find . -name config.guess -o -name config.sub
+[ 2742s] + '[' 1 = 1 ']'
+[ 2742s] + '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld' ']'
+[ 2742s] ++ find . -name ltmain.sh
+[ 2744s] + ./configure --build=riscv64-openEuler-linux-gnu --host=riscv64-openEuler-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-fhs --with-piddir=/run --with-sockets-dir=/run/samba --with-modulesdir=/usr/lib64/samba --with-pammodulesdir=/usr/lib64/security --with-lockdir=/var/lib/samba/lock --with-statedir=/var/lib/samba --with-cachedir=/var/lib/samba --disable-rpath-install --with-shared-modules=idmap_ad,idmap_rid,idmap_ldap,idmap_hash,idmap_tdb2,pdb_tdbsam,pdb_ldap,pdb_smbpasswd,pdb_wbc_sam,pdb_samba4,auth_wbc,auth_unix,auth_server,auth_samba4,vfs_dfs_samba4 '--bundled-libraries=!zlib,!popt,!talloc,!pytalloc,!pytalloc-util,!tevent,!pytevent,!tdb,!pytdb,!ldb,!pyldb,!pyldb-util' --with-pam --with-pie --with-relro --without-fam --with-system-mitkrb5 --with-experimental-mit-ad-dc --disable-glusterfs --with-cluster-support --with-profiling-data --with-systemd --systemd-install-services --with-systemddir=/usr/lib/systemd/system --systemd-smb-extra=Environment=KRB5CCNAME=FILE:/run/samba/krb5cc_samba --systemd-nmb-extra=Environment=KRB5CCNAME=FILE:/run/samba/krb5cc_samba --systemd-winbind-extra=Environment=KRB5CCNAME=FILE:/run/samba/krb5cc_samba --systemd-samba-extra=Environment=KRB5CCNAME=FILE:/run/samba/krb5cc_samba
+[ 2757s] Setting top to                           : /home/abuild/rpmbuild/BUILD/samba-4.12.5 
+[ 2757s] Setting out to                           : /home/abuild/rpmbuild/BUILD/samba-4.12.5/bin 
+[ 2762s] Checking for 'gcc' (C compiler)          : /usr/bin/gcc 
+[ 2763s] Checking for program 'git'               : /usr/bin/git 
+[ 2765s] Checking for c flags '-MMD'              : yes 
+[ 2765s] Checking for program 'gdb'               : /usr/bin/gdb 
+[ 2767s] Checking for header sys/utsname.h        : yes 
+[ 2770s] Checking uname sysname type              : Linux 
+[ 2773s] Checking uname machine type              : riscv64 
+[ 2776s] Checking uname release type              : 5.10.0 
+[ 2779s] Checking uname version type              : #80 SMP Fri Dec 3 17:27:59 CST 2021 
+[ 2781s] Checking for header stdio.h              : yes 
+[ 2784s] Checking simple C program                : ok 
+[ 2786s] Checking compiler accepts ['-Werror']    : yes 
+[ 2788s] Checking linker accepts ['-Wl,-rpath,.'] : yes 
+[ 2796s] Checking for rpath library support       : yes 
+[ 2802s] Checking for -Wl,--version-script support : yes 
+[ 2803s] Checking compiler accepts ['-fvisibility=hidden'] : yes 
+[ 2806s] Checking for HAVE_VISIBILITY_ATTR                 : ok 
+[ 2809s] Checking for library constructor support          : ok 
+[ 2812s] Checking for library destructor support           : ok 
+[ 2815s] Checking for __attribute__                        : ok 
+[ 2816s] Checking compiler accepts ['-fPIC']               : yes 
+[ 2817s] Checking for inline                               : inline 
+[ 2817s] Checking for program 'pkg-config'                 : /usr/bin/pkg-config 
+[ 2817s] Checking for pkg-config version >= '0.0.0'        : yes 
+[ 2818s] Checking compiler accepts ['-D__STDC_WANT_LIB_EXT1__=1'] : yes 
+[ 2820s] Checking compiler accepts ['']                           : yes 
+[ 2823s] Checking for header sys/types.h                          : yes 
+[ 2824s] Checking for header sys/stat.h                           : yes 
+[ 2826s] Checking for header stdlib.h                             : yes 
+[ 2828s] Checking for header stddef.h                             : yes 
+[ 2830s] Checking for header memory.h                             : yes 
+[ 2831s] Checking for header string.h                             : yes 
+[ 2833s] Checking for header strings.h                            : yes 
+[ 2835s] Checking for header inttypes.h                           : yes 
+[ 2837s] Checking for header stdint.h                             : yes 
+[ 2839s] Checking for header unistd.h                             : yes 
+[ 2841s] Checking for header minix/config.h                       : no 
+[ 2843s] Checking for header ctype.h                              : yes 
+[ 2845s] Checking for header standards.h                          : no 
+[ 2847s] Checking for header stdbool.h                            : yes 
+[ 2849s] Checking for header stdarg.h                             : yes 
+[ 2851s] Checking for header vararg.h                             : no 
+[ 2854s] Checking for header limits.h                             : yes 
+[ 2855s] Checking for header assert.h                             : yes 
+[ 2856s] Checking getconf LFS_CFLAGS                              : not found 
+[ 2860s] Checking getconf large file support flags work           : ok 
+[ 2863s] Checking for large file support without additional flags : ok 
+[ 2867s] Checking for header sys/time.h                           : yes 
+[ 2869s] Checking for header time.h                               : yes 
+[ 2871s] Checking for header endian.h                             : yes 
+[ 2873s] Checking for header sys/endian.h                         : no 
+[ 2877s] Checking for HAVE_LITTLE_ENDIAN                          : ok 
+[ 2879s] Checking for HAVE_BIG_ENDIAN                             : not found 
+[ 2881s] Checking for header signal.h                             : yes 
+[ 2883s] Checking if signal handlers return int                   : not found 
+[ 2885s] Checking for variable __FUNCTION__                       : ok 
+[ 2889s] Checking for va_copy                                     : ok 
+[ 2892s] Checking for HAVE__VA_ARGS__MACRO                        : ok 
+[ 2894s] Checking for header linux/types.h                        : yes 
+[ 2896s] Checking for header crypt.h                              : yes 
+[ 2900s] Checking for header locale.h                             : yes 
+[ 2902s] Checking for header acl/libacl.h                         : yes 
+[ 2904s] Checking for header compat.h                             : no 
+[ 2906s] Checking for header attr/xattr.h                         : yes 
+[ 2908s] Checking for header dustat.h                             : no 
+[ 2910s] Checking for header fcntl.h                              : yes 
+[ 2912s] Checking for header fnmatch.h                            : yes 
+[ 2914s] Checking for header glob.h                               : yes 
+[ 2916s] Checking for header history.h                            : no 
+[ 2918s] Checking for header krb5.h                               : yes 
+[ 2920s] Checking for header langinfo.h                           : yes 
+[ 2922s] Checking for header ndir.h                               : no 
+[ 2924s] Checking for header pwd.h                                : yes 
+[ 2928s] Checking for header shadow.h                             : yes 
+[ 2930s] Checking for header sys/acl.h                            : yes 
+[ 2932s] Checking for header sys/attributes.h                     : no 
+[ 2934s] Checking for header attr/attributes.h                    : yes 
+[ 2936s] Checking for header sys/capability.h                     : yes 
+[ 2939s] Checking for header sys/dir.h                            : yes 
+[ 2941s] Checking for header sys/epoll.h                          : yes 
+[ 2943s] Checking for header port.h                               : no 
+[ 2945s] Checking for header sys/fcntl.h                          : yes 
+[ 2947s] Checking for header sys/filio.h                          : no 
+[ 2948s] Checking for header sys/filsys.h                         : no 
+[ 2951s] Checking for header sys/fs/s5param.h                     : no 
+[ 2953s] Checking for header sys/id.h                             : no 
+[ 2955s] Checking for header sys/ioctl.h                          : yes 
+[ 2957s] Checking for header sys/ipc.h                            : yes 
+[ 2959s] Checking for header sys/mman.h                           : yes 
+[ 2961s] Checking for header sys/mode.h                           : no 
+[ 2963s] Checking for header sys/ndir.h                           : no 
+[ 2965s] Checking for header sys/priv.h                           : no 
+[ 2967s] Checking for header sys/resource.h                       : yes 
+[ 2969s] Checking for header sys/security.h                       : no 
+[ 2970s] Checking for header sys/shm.h                            : yes 
+[ 2972s] Checking for header sys/statfs.h                         : yes 
+[ 2974s] Checking for header sys/statvfs.h                        : yes 
+[ 2976s] Checking for header sys/termio.h                         : no 
+[ 2979s] Checking for header sys/vfs.h                            : yes 
+[ 2982s] Checking for header sys/xattr.h                          : yes 
+[ 2984s] Checking for header termio.h                             : yes 
+[ 2986s] Checking for header termios.h                            : yes 
+[ 2988s] Checking for header sys/file.h                           : yes 
+[ 2990s] Checking for header sys/ucontext.h                       : yes 
+[ 2992s] Checking for header sys/wait.h                           : yes 
+[ 2994s] Checking for declaration of malloc                       : ok 
+[ 2996s] Checking for header grp.h                                : yes 
+[ 2997s] Checking for header sys/select.h                         : yes 
+[ 3000s] Checking for header setjmp.h                             : yes 
+[ 3001s] Checking for header utime.h                              : yes 
+[ 3004s] Checking for header sys/syslog.h                         : yes 
+[ 3006s] Checking for header syslog.h                             : yes 
+[ 3008s] Checking for header sys/mount.h                          : yes 
+[ 3010s] Checking for header mntent.h                             : yes 
+[ 3012s] Checking for header stropts.h                            : no 
+[ 3014s] Checking for header unix.h                               : no 
+[ 3016s] Checking for header sys/param.h                          : yes 
+[ 3018s] Checking for header sys/socket.h                         : yes 
+[ 3022s] Checking for header netinet/in.h                         : yes 
+[ 3024s] Checking for header netdb.h                              : yes 
+[ 3027s] Checking for header arpa/inet.h                          : yes 
+[ 3029s] Checking for header netinet/in_systm.h                   : yes 
+[ 3031s] Checking for header netinet/ip.h                         : yes 
+[ 3033s] Checking for header netinet/tcp.h                        : yes 
+[ 3035s] Checking for header netinet/in_ip.h                      : no 
+[ 3038s] Checking for header sys/sockio.h                         : no 
+[ 3040s] Checking for header sys/un.h                             : yes 
+[ 3042s] Checking for header sys/uio.h                            : yes 
+[ 3044s] Checking for header ifaddrs.h                            : yes 
+[ 3046s] Checking for header direct.h                             : no 
+[ 3048s] Checking for header dirent.h                             : yes 
+[ 3050s] Checking for header windows.h                            : no 
+[ 3052s] Checking for header winsock2.h                           : no 
+[ 3054s] Checking for header ws2tcpip.h                           : no 
+[ 3056s] Checking for header errno.h                              : yes 
+[ 3059s] Checking for header getopt.h                             : yes 
+[ 3061s] Checking for header iconv.h                              : yes 
+[ 3063s] Checking for header nss.h                                : yes 
+[ 3065s] Checking for header sasl/sasl.h                          : yes 
+[ 3072s] Checking for inotify_init                                : ok 
+[ 3074s] Checking for header security/pam_appl.h                  : yes 
+[ 3076s] Checking for header zlib.h                               : yes 
+[ 3078s] Checking for header asm/unistd.h                         : yes 
+[ 3080s] Checking for header sys/unistd.h                         : yes 
+[ 3082s] Checking for header alloca.h                             : yes 
+[ 3084s] Checking for header float.h                              : yes 
+[ 3086s] Checking for header rpc/rpc.h                            : no 
+[ 3088s] Checking for header rpc/nettype.h                        : no 
+[ 3090s] Checking for tirpc rpc headers in default system path    : not found 
+[ 3090s] Checking for libtirpc headers                            : yes 
+[ 3093s] Checking for header rpc/rpc.h                            : yes 
+[ 3097s] Checking for header rpc/nettype.h                        : yes 
+[ 3099s] Checking for header rpcsvc/yp_prot.h                     : yes 
+[ 3102s] Checking for header rpcsvc/nis.h                         : yes 
+[ 3104s] Checking for header rpcsvc/ypclnt.h                      : yes 
+[ 3106s] Checking for header sys/sysctl.h                         : not found 
+[ 3108s] Checking for header sys/fileio.h                         : no 
+[ 3110s] Checking for header sys/filesys.h                        : no 
+[ 3112s] Checking for header sys/dustat.h                         : no 
+[ 3114s] Checking for header sys/sysmacros.h                      : yes 
+[ 3116s] Checking for header xfs/libxfs.h                         : no 
+[ 3118s] Checking for header netgroup.h                           : no 
+[ 3120s] Checking for header valgrind.h                           : no 
+[ 3122s] Checking for header valgrind/valgrind.h                  : no 
+[ 3124s] Checking for header valgrind/memcheck.h                  : no 
+[ 3126s] Checking for header valgrind/helgrind.h                  : no 
+[ 3128s] Checking for header nss_common.h                         : no 
+[ 3131s] Checking for header nsswitch.h                           : no 
+[ 3133s] Checking for header ns_api.h                             : no 
+[ 3135s] Checking for header sys/extattr.h                        : no 
+[ 3137s] Checking for header sys/ea.h                             : no 
+[ 3140s] Checking for header sys/proplist.h                       : no 
+[ 3142s] Checking for header sys/cdefs.h                          : yes 
+[ 3144s] Checking for header utmp.h                               : yes 
+[ 3146s] Checking for header utmpx.h                              : yes 
+[ 3148s] Checking for header lastlog.h                            : yes 
+[ 3151s] Checking for header syscall.h                            : yes 
+[ 3152s] Checking for header sys/syscall.h                        : yes 
+[ 3155s] Checking for header sys/atomic.h                         : no 
+[ 3157s] Checking for header stdatomic.h                          : yes 
+[ 3160s] Checking for header libgen.h                             : yes 
+[ 3162s] Checking compiler accepts -Wno-format-truncation         : yes 
+[ 3163s] Checking compiler accepts -Wno-unused-function           : yes 
+[ 3164s] Checking compiler accepts -Wno-strict-overflow           : yes 
+[ 3166s] Checking for header sys/prctl.h                          : yes 
+[ 3169s] Checking for prctl syscall                               : ok 
+[ 3173s] Checking for O_DIRECT flag to open(2)                    : ok 
+[ 3175s] Checking for long long                                   : ok 
+[ 3177s] Checking for intptr_t                                    : ok 
+[ 3179s] Checking for uintptr_t                                   : ok 
+[ 3181s] Checking for ptrdiff_t                                   : ok 
+[ 3184s] Checking for comparison_fn_t                             : ok 
+[ 3186s] Checking for _Bool                                       : ok 
+[ 3188s] Checking for bool                                        : ok 
+[ 3190s] Checking for int8_t                                      : ok 
+[ 3192s] Checking for uint8_t                                     : ok 
+[ 3194s] Checking for int16_t                                     : ok 
+[ 3197s] Checking for uint16_t                                    : ok 
+[ 3200s] Checking for int32_t                                     : ok 
+[ 3202s] Checking for uint32_t                                    : ok 
+[ 3204s] Checking for int64_t                                     : ok 
+[ 3206s] Checking for uint64_t                                    : ok 
+[ 3209s] Checking for size_t                                      : ok 
+[ 3211s] Checking for ssize_t                                     : ok 
+[ 3213s] Checking for ino_t                                       : ok 
+[ 3215s] Checking for loff_t                                      : ok 
+[ 3217s] Checking for offset_t                                    : not found 
+[ 3219s] Checking for volatile int                                : ok 
+[ 3222s] Checking for uint_t                                      : not found 
+[ 3224s] Checking for blksize_t                                   : ok 
+[ 3227s] Checking for blkcnt_t                                    : ok 
+[ 3231s] Checking if size of bool == 1                            : ok 
+[ 3234s] Checking if size of char == 1                            : ok 
+[ 3236s] Checking if size of int == 1                             : not found 
+[ 3239s] Checking if size of int == 2                             : not found 
+[ 3242s] Checking if size of int == 4                             : ok 
+[ 3245s] Checking if size of long long == 1                       : not found 
+[ 3247s] Checking if size of long long == 2                       : not found 
+[ 3249s] Checking if size of long long == 4                       : not found 
+[ 3253s] Checking if size of long long == 8                       : ok 
+[ 3255s] Checking if size of long == 1                            : not found 
+[ 3257s] Checking if size of long == 2                            : not found 
+[ 3259s] Checking if size of long == 4                            : not found 
+[ 3262s] Checking if size of long == 8                            : ok 
+[ 3264s] Checking if size of short == 1                           : not found 
+[ 3269s] Checking if size of short == 2                           : ok 
+[ 3271s] Checking if size of size_t == 1                          : not found 
+[ 3274s] Checking if size of size_t == 2                          : not found 
+[ 3276s] Checking if size of size_t == 4                          : not found 
+[ 3279s] Checking if size of size_t == 8                          : ok 
+[ 3281s] Checking if size of ssize_t == 1                         : not found 
+[ 3283s] Checking if size of ssize_t == 2                         : not found 
+[ 3285s] Checking if size of ssize_t == 4                         : not found 
+[ 3288s] Checking if size of ssize_t == 8                         : ok 
+[ 3292s] Checking if size of int8_t == 1                          : ok 
+[ 3295s] Checking if size of uint8_t == 1                         : ok 
+[ 3297s] Checking if size of int16_t == 1                         : not found 
+[ 3302s] Checking if size of int16_t == 2                         : ok 
+[ 3304s] Checking if size of uint16_t == 1                        : not found 
+[ 3308s] Checking if size of uint16_t == 2                        : ok 
+[ 3310s] Checking if size of int32_t == 1                         : not found 
+[ 3312s] Checking if size of int32_t == 2                         : not found 
+[ 3316s] Checking if size of int32_t == 4                         : ok 
+[ 3318s] Checking if size of uint32_t == 1                        : not found 
+[ 3320s] Checking if size of uint32_t == 2                        : not found 
+[ 3323s] Checking if size of uint32_t == 4                        : ok 
+[ 3325s] Checking if size of int64_t == 1                         : not found 
+[ 3329s] Checking if size of int64_t == 2                         : not found 
+[ 3331s] Checking if size of int64_t == 4                         : not found 
+[ 3335s] Checking if size of int64_t == 8                         : ok 
+[ 3337s] Checking if size of uint64_t == 1                        : not found 
+[ 3339s] Checking if size of uint64_t == 2                        : not found 
+[ 3341s] Checking if size of uint64_t == 4                        : not found 
+[ 3345s] Checking if size of uint64_t == 8                        : ok 
+[ 3347s] Checking if size of void* == 1                           : not found 
+[ 3349s] Checking if size of void* == 2                           : not found 
+[ 3351s] Checking if size of void* == 4                           : not found 
+[ 3355s] Checking if size of void* == 8                           : ok 
+[ 3357s] Checking if size of off_t == 1                           : not found 
+[ 3359s] Checking if size of off_t == 2                           : not found 
+[ 3362s] Checking if size of off_t == 4                           : not found 
+[ 3366s] Checking if size of off_t == 8                           : ok 
+[ 3369s] Checking if size of dev_t == 1                           : not found 
+[ 3371s] Checking if size of dev_t == 2                           : not found 
+[ 3373s] Checking if size of dev_t == 4                           : not found 
+[ 3377s] Checking if size of dev_t == 8                           : ok 
+[ 3379s] Checking if size of ino_t == 1                           : not found 
+[ 3381s] Checking if size of ino_t == 2                           : not found 
+[ 3383s] Checking if size of ino_t == 4                           : not found 
+[ 3386s] Checking if size of ino_t == 8                           : ok 
+[ 3388s] Checking if size of time_t == 1                          : not found 
+[ 3390s] Checking if size of time_t == 2                          : not found 
+[ 3393s] Checking if size of time_t == 4                          : not found 
+[ 3396s] Checking if size of time_t == 8                          : ok 
+[ 3398s] Checking for socklen_t                                   : ok 
+[ 3401s] Checking for struct ifaddrs                              : ok 
+[ 3403s] Checking for struct addrinfo                             : ok 
+[ 3405s] Checking for struct sockaddr                             : ok 
+[ 3410s] Checking for HAVE_STRUCT_SOCKADDR_IN6                    : ok 
+[ 3412s] Checking for struct sockaddr_storage                     : ok 
+[ 3414s] Checking for sa_family_t                                 : ok 
+[ 3417s] Checking for sig_atomic_t                                : ok 
+[ 3419s] Checking for sigsetmask                                  : ok 
+[ 3422s] Checking for siggetmask                                  : ok 
+[ 3424s] Checking for sigprocmask                                 : ok 
+[ 3427s] Checking for sigblock                                    : ok 
+[ 3430s] Checking for sigaction                                   : ok 
+[ 3432s] Checking for sigset                                      : ok 
+[ 3435s] Checking for inet_ntoa                                   : ok 
+[ 3438s] Checking for inet_aton                                   : ok 
+[ 3441s] Checking for inet_ntop                                   : ok 
+[ 3445s] Checking for inet_pton                                   : ok 
+[ 3447s] Checking for connect                                     : ok 
+[ 3450s] Checking for gethostbyname                               : ok 
+[ 3453s] Checking for getaddrinfo                                 : ok 
+[ 3456s] Checking for getnameinfo                                 : ok 
+[ 3459s] Checking for freeaddrinfo                                : ok 
+[ 3461s] Checking for gai_strerror                                : ok 
+[ 3465s] Checking for socketpair                                  : ok 
+[ 3471s] Checking for memset_s                                    : not found 
+[ 3476s] Checking for memset_explicit                             : not found 
+[ 3480s] Checking for volatile memory protection                  : ok 
+[ 3482s] Checking for variable IPV6_V6ONLY                        : ok 
+[ 3485s] Checking for header net/if.h                             : yes 
+[ 3489s] Checking for HAVE_IPV6                                   : ok 
+[ 3492s] Checking whether we have ucontext_t                      : ok 
+[ 3496s] Checking for __sync_fetch_and_add compiler builtin       : ok 
+[ 3501s] Checking for atomic_add_32 compiler builtin              : not found 
+[ 3505s] Checking for atomic_thread_fence(memory_order_seq_cst) in stdatomic.h : ok 
+[ 3508s] Checking for fallthrough attribute                                    : ok 
+[ 3511s] Checking for strdup                                                   : ok 
+[ 3513s] Checking for memmem                                                   : ok 
+[ 3515s] Checking for printf                                                   : ok 
+[ 3517s] Checking for memset                                                   : ok 
+[ 3520s] Checking for memcpy                                                   : ok 
+[ 3522s] Checking for memmove                                                  : ok 
+[ 3524s] Checking for strcpy                                                   : ok 
+[ 3526s] Checking for strncpy                                                  : ok 
+[ 3528s] Checking for bzero                                                    : ok 
+[ 3534s] Checking for shl_load                                                 : not found 
+[ 3540s] Checking for shl_unload                                               : not found 
+[ 3545s] Checking for shl_findsym                                              : not found 
+[ 3547s] Checking for pipe                                                     : ok 
+[ 3550s] Checking for strftime                                                 : ok 
+[ 3553s] Checking for srandom                                                  : ok 
+[ 3556s] Checking for random                                                   : ok 
+[ 3559s] Checking for srand                                                    : ok 
+[ 3561s] Checking for rand                                                     : ok 
+[ 3566s] Checking for usleep                                                   : ok 
+[ 3569s] Checking for setbuffer                                                : ok 
+[ 3571s] Checking for lstat                                                    : ok 
+[ 3574s] Checking for getpgrp                                                  : ok 
+[ 3576s] Checking for utime                                                    : ok 
+[ 3579s] Checking for utimes                                                   : ok 
+[ 3582s] Checking for setuid                                                   : ok 
+[ 3584s] Checking for seteuid                                                  : ok 
+[ 3587s] Checking for setreuid                                                 : ok 
+[ 3590s] Checking for setresuid                                                : ok 
+[ 3594s] Checking for setgid                                                   : ok 
+[ 3597s] Checking for setegid                                                  : ok 
+[ 3600s] Checking for setregid                                                 : ok 
+[ 3602s] Checking for setresgid                                                : ok 
+[ 3605s] Checking for chroot                                                   : ok 
+[ 3609s] Checking for strerror                                                 : ok 
+[ 3612s] Checking for vsyslog                                                  : ok 
+[ 3615s] Checking for setlinebuf                                               : ok 
+[ 3617s] Checking for mktime                                                   : ok 
+[ 3620s] Checking for ftruncate                                                : ok 
+[ 3630s] Checking for chsize                                                   : not found 
+[ 3632s] Checking for rename                                                   : ok 
+[ 3635s] Checking for waitpid                                                  : ok 
+[ 3637s] Checking for wait4                                                    : ok 
+[ 3640s] Checking for initgroups                                               : ok 
+[ 3643s] Checking for pread                                                    : ok 
+[ 3646s] Checking for pwrite                                                   : ok 
+[ 3650s] Checking for strndup                                                  : ok 
+[ 3653s] Checking for strcasestr                                               : ok 
+[ 3656s] Checking for strsep                                                   : ok 
+[ 3659s] Checking for strtok_r                                                 : ok 
+[ 3661s] Checking for mkdtemp                                                  : ok 
+[ 3664s] Checking for dup2                                                     : ok 
+[ 3666s] Checking for dprintf                                                  : ok 
+[ 3669s] Checking for vdprintf                                                 : ok 
+[ 3672s] Checking for isatty                                                   : ok 
+[ 3674s] Checking for chown                                                    : ok 
+[ 3677s] Checking for lchown                                                   : ok 
+[ 3681s] Checking for link                                                     : ok 
+[ 3684s] Checking for readlink                                                 : ok 
+[ 3688s] Checking for symlink                                                  : ok 
+[ 3690s] Checking for realpath                                                 : ok 
+[ 3693s] Checking for snprintf                                                 : ok 
+[ 3698s] Checking for vsnprintf                                                : ok 
+[ 3701s] Checking for asprintf                                                 : ok 
+[ 3703s] Checking for vasprintf                                                : ok 
+[ 3706s] Checking for setenv                                                   : ok 
+[ 3708s] Checking for unsetenv                                                 : ok 
+[ 3711s] Checking for strnlen                                                  : ok 
+[ 3714s] Checking for strtoull                                                 : ok 
+[ 3720s] Checking for __strtoull                                               : not found 
+[ 3723s] Checking for strtouq                                                  : ok 
+[ 3726s] Checking for strtoll                                                  : ok 
+[ 3731s] Checking for __strtoll                                                : not found 
+[ 3734s] Checking for strtoq                                                   : ok 
+[ 3737s] Checking for memalign                                                 : ok 
+[ 3740s] Checking for posix_memalign                                           : ok 
+[ 3743s] Checking for fmemopen                                                 : ok 
+[ 3745s] Checking for header malloc.h                                          : yes 
+[ 3748s] Checking for declaration of memalign                                  : ok 
+[ 3752s] Checking for posix_fallocate-capable libc                             : ok 
+[ 3755s] Checking for posix_fallocate                                          : ok 
+[ 3755s] Checking for prctl                                                    : ok 
+[ 3758s] Checking for dirname                                                  : ok 
+[ 3760s] Checking for basename                                                 : ok 
+[ 3765s] Checking for strlcpy                                                  : not found 
+[ 3770s] Checking for strlcat                                                  : not found 
+[ 3777s] Checking for strlcpy                                                  : not found 
+[ 3783s] Checking for strlcat                                                  : not found 
+[ 3785s] Checking for library bsd                                              : no 
+[ 3798s] Checking for strlcpy                                                  : not found 
+[ 3810s] Checking for strlcat                                                  : not found 
+[ 3815s] Checking for getpeereid                                               : not found 
+[ 3817s] Checking for library bsd                                              : no 
+[ 3829s] Checking for getpeereid                                               : not found 
+[ 3832s] Checking for library setproctitle                                     : no 
+[ 3845s] Checking for setproctitle                                             : not found 
+[ 3848s] Checking for library bsd                                              : no 
+[ 3859s] Checking for setproctitle                                             : not found 
+[ 3864s] Checking for setproctitle_init                                        : not found 
+[ 3867s] Checking for library bsd                                              : no 
+[ 3878s] Checking for setproctitle_init                                        : not found 
+[ 3883s] Checking for closefrom                                                : ok 
+[ 3888s] Checking whether we can use SO_PEERCRED to get socket credentials     : ok 
+[ 3892s] Checking correct behavior of strtoll                                  : not found 
+[ 3895s] Checking for if_nametoindex                                           : ok 
+[ 3897s] Checking for strerror_r                                               : ok 
+[ 3901s] Checking for syslog                                                   : ok 
+[ 3901s] Checking for gai_strerror                                             : ok 
+[ 3904s] Checking for get_current_dir_name                                     : ok 
+[ 3907s] Checking for timegm                                                   : ok 
+[ 3910s] Checking for getifaddrs                                               : ok 
+[ 3913s] Checking for freeifaddrs                                              : ok 
+[ 3915s] Checking for mmap                                                     : ok 
+[ 3918s] Checking for setgroups                                                : ok 
+[ 3921s] Checking for syscall                                                  : ok 
+[ 3925s] Checking for setsid                                                   : ok 
+[ 3928s] Checking for getgrent_r                                               : ok 
+[ 3930s] Checking for getgrgid_r                                               : ok 
+[ 3933s] Checking for getgrnam_r                                               : ok 
+[ 3936s] Checking for getgrouplist                                             : ok 
+[ 3939s] Checking for getpagesize                                              : ok 
+[ 3941s] Checking for getpwent_r                                               : ok 
+[ 3945s] Checking for getpwnam_r                                               : ok 
+[ 3948s] Checking for getpwuid_r                                               : ok 
+[ 3950s] Checking for epoll_create                                             : ok 
+[ 3957s] Checking for port_create                                              : not found 
+[ 3962s] Checking for getprogname                                              : not found 
+[ 3965s] Checking for getxattr                                                 : ok 
+[ 3967s] Checking whether xattr interface takes additional options             : not found 
+[ 3974s] Checking for dlopen                                                   : ok 
+[ 3977s] Checking for dlsym                                                    : ok 
+[ 3980s] Checking for dlerror                                                  : ok 
+[ 3983s] Checking for dlclose                                                  : ok 
+[ 3985s] Checking for declaration of dlopen                                    : ok 
+[ 3987s] Checking C prototype for dlopen                                       : not found 
+[ 3990s] Checking for fdatasync                                                : ok 
+[ 3992s] Checking for declaration of fdatasync                                 : ok 
+[ 3995s] Checking for clock_gettime                                            : ok 
+[ 3999s] Checking whether the clock_gettime clock ID CLOCK_MONOTONIC is available : ok 
+[ 4004s] Checking whether the clock_gettime clock ID CLOCK_PROCESS_CPUTIME_ID is available : ok 
+[ 4008s] Checking whether the clock_gettime clock ID CLOCK_REALTIME is available           : ok 
+[ 4010s] Checking for struct timespec                                                      : ok 
+[ 4013s] Checking for header arpa/nameser.h                                                : yes 
+[ 4015s] Checking for header resolv.h                                                      : yes 
+[ 4018s] Checking for res_search                                                           : ok 
+[ 4020s] Checking for header libintl.h                                                     : yes 
+[ 4022s] Checking for library intl                                                         : no 
+[ 4024s] Checking for declaration of dgettext                                              : ok 
+[ 4026s] Checking for declaration of gettext                                               : ok 
+[ 4029s] Checking for declaration of bindtextdomain                                        : ok 
+[ 4031s] Checking for declaration of textdomain                                            : ok 
+[ 4033s] Checking for declaration of bind_textdomain_codeset                               : ok 
+[ 4035s] Checking for bindtextdomain                                                       : ok 
+[ 4038s] Checking for textdomain                                                           : ok 
+[ 4041s] Checking for bind_textdomain_codeset                                              : ok 
+[ 4044s] Checking for dgettext                                                             : ok 
+[ 4047s] Checking for gettext                                                              : ok 
+[ 4053s] Checking for pthread_create                                                       : ok 
+[ 4056s] Checking for pthread_attr_init                                                    : ok 
+[ 4059s] Checking for pthread_mutexattr_setrobust                                          : ok 
+[ 4061s] Checking for declaration of PTHREAD_MUTEX_ROBUST                                  : not found 
+[ 4064s] Checking for declaration of PTHREAD_MUTEX_ROBUST (as enum)                        : ok 
+[ 4067s] Checking for pthread_mutex_consistent                                             : ok 
+[ 4070s] Checking for __thread local storage                                               : ok 
+[ 4077s] Checking for crypt                                                                : not found 
+[ 4081s] Checking for library crypt                                                        : yes 
+[ 4084s] Checking for crypt in crypt                                                       : ok 
+[ 4090s] Checking for crypt_r                                                              : not found 
+[ 4092s] Checking for crypt_r in crypt                                                     : ok 
+[ 4095s] Checking for header readline.h                                                    : no 
+[ 4097s] Checking for header readline/readline.h                                           : yes 
+[ 4099s] Checking for header readline/history.h                                            : yes 
+[ 4102s] Checking for variable rl_event_hook                                               : ok 
+[ 4104s] Checking for variable program_invocation_short_name                               : ok 
+[ 4106s] Checking for declaration of snprintf                                              : ok 
+[ 4108s] Checking for declaration of vsnprintf                                             : ok 
+[ 4112s] Checking for declaration of asprintf                                              : ok 
+[ 4114s] Checking for declaration of vasprintf                                             : ok 
+[ 4116s] Checking for declaration of errno                                                 : ok 
+[ 4118s] Checking for declaration of EWOULDBLOCK                                           : ok 
+[ 4121s] Checking for declaration of environ                                               : ok 
+[ 4123s] Checking for declaration of getgrent_r                                            : ok 
+[ 4125s] Checking for declaration of getpwent_r                                            : ok 
+[ 4127s] Checking for declaration of pread                                                 : ok 
+[ 4130s] Checking for declaration of pwrite                                                : ok 
+[ 4132s] Checking for declaration of setenv                                                : ok 
+[ 4134s] Checking for declaration of setresgid                                             : ok 
+[ 4136s] Checking for declaration of setresuid                                             : ok 
+[ 4141s] Checking for eventfd                                                              : ok 
+[ 4143s] Checking for header poll.h                                                        : yes 
+[ 4146s] Checking for poll                                                                 : ok 
+[ 4149s] Checking for strptime                                                             : ok 
+[ 4153s] Checking for declaration of strptime                                              : ok 
+[ 4157s] Checking for working strptime                                                     : ok 
+[ 4159s] Checking for declaration of gettimeofday                                          : ok 
+[ 4161s] Checking C prototype for gettimeofday                                             : not found 
+[ 4164s] Checking C prototype for gettimeofday                                             : ok 
+[ 4168s] Checking for C99 vsnprintf                                                        : ok 
+[ 4174s] Checking for HAVE_SHARED_MMAP                                                     : ok 
+[ 4178s] Checking for HAVE_MREMAP                                                          : ok 
+[ 4182s] Checking for HAVE_INCOHERENT_MMAP                                                 : not found 
+[ 4187s] Checking for HAVE_IMMEDIATE_STRUCTURES                                            : ok 
+[ 4191s] Checking for HAVE_MKDIR_MODE                                                      : ok 
+[ 4193s] Checking for member st_mtim.tv_nsec in struct stat                                : ok 
+[ 4196s] Checking for member st_rdev in struct stat                                        : ok 
+[ 4198s] Checking for member st_rdev in struct stat                                        : ok 
+[ 4201s] Checking for member ss_family in struct sockaddr_storage                          : ok 
+[ 4203s] Checking for member __ss_family in struct sockaddr_storage                        : not found 
+[ 4206s] Checking for member sa_len in struct sockaddr                                     : not found 
+[ 4208s] Checking for member sin_len in struct sockaddr_in                                 : not found 
+[ 4210s] Checking for member sin6_len in struct sockaddr_in6                               : not found 
+[ 4214s] Checking for HAVE_UNIXSOCKET                                                      : ok 
+[ 4219s] Checking for HAVE_SECURE_MKSTEMP                                                  : ok 
+[ 4223s] Checking for HAVE_IFACE_GETIFADDRS                                                : not found 
+[ 4227s] Checking for HAVE_IFACE_AIX                                                       : not found 
+[ 4230s] Checking for HAVE_IFACE_IFCONF                                                    : not found 
+[ 4233s] Checking for HAVE_IFACE_IFREQ                                                     : not found 
+[ 4236s] Checking for declaration of getpwent_r                                            : ok 
+[ 4238s] Checking C prototype for getpwent_r                                               : not found 
+[ 4241s] Checking for declaration of getgrent_r                                            : ok 
+[ 4243s] Checking C prototype for getgrent_r                                               : not found 
+[ 4245s] Checking C prototype for getpwent_r                                               : not found 
+[ 4247s] Checking C prototype for getgrent_r                                               : not found 
+[ 4247s] Checking for strerror_r                                                           : ok 
+[ 4249s] Checking for XSI (rather than GNU) prototype for strerror_r                       : not found 
+[ 4252s] Checking for HAVE_FUSE_FUSE_LOWLEVEL_H                                            : not found 
+[ 4252s] Checking for program 'i386-mingw32-gcc'                                           : not found 
+[ 4252s] Checking for program 'i386-mingw32msvc-gcc'                                       : not found 
+[ 4252s] Checking for program 'i386-w64-mingw32-gcc'                                       : not found 
+[ 4252s] Checking for program 'i586-mingw32-gcc'                                           : not found 
+[ 4252s] Checking for program 'i586-mingw32msvc-gcc'                                       : not found 
+[ 4252s] Checking for program 'i586-w64-mingw32-gcc'                                       : not found 
+[ 4252s] Checking for program 'i686-mingw32-gcc'                                           : not found 
+[ 4252s] Checking for program 'i686-mingw32msvc-gcc'                                       : not found 
+[ 4252s] Checking for program 'i686-w64-mingw32-gcc'                                       : not found 
+[ 4252s] Checking for program 'x86_64-mingw32-gcc'                                         : not found 
+[ 4252s] Checking for program 'x86_64-mingw32msvc-gcc'                                     : not found 
+[ 4252s] Checking for program 'x86_64-w64-mingw32-gcc'                                     : not found 
+[ 4252s] Checking for program 'amd64-mingw32-gcc'                                          : not found 
+[ 4252s] Checking for program 'amd64-mingw32msvc-gcc'                                      : not found 
+[ 4252s] Checking for program 'amd64-w64-mingw32-gcc'                                      : not found 
+[ 4252s] Checking for program 'perl'                                                       : /usr/bin/perl 
+[ 4252s] Checking for program 'perl'                                                       : /usr/bin/perl 
+[ 4252s] Checking for minimum perl version 5.0.0                                           : 5.28.0 
+[ 4253s] Checking for perl $Config{vendorprefix}:                                          : '/usr' 
+[ 4254s] Checking for perl $Config{vendorarch}:                                            : '/usr/lib64/perl5/vendor_perl' 
+[ 4254s] PERL_ARCH_INSTALL_DIR:                                                            : '/usr/lib64/perl5/vendor_perl' 
+[ 4254s] Checking for perl $Config{vendorlib}:                                             : '/usr/share/perl5/vendor_perl' 
+[ 4254s] PERL_LIB_INSTALL_DIR:                                                             : '/usr/share/perl5/vendor_perl' 
+[ 4254s] PERL_INC:                                                                         : ['/usr/local/lib64/perl5', '/usr/local/share/perl5', '/usr/lib64/perl5/vendor_perl', '/usr/share/perl5/vendor_perl', '/usr/lib64/perl5', '/usr/share/perl5'] 
+[ 4254s] Checking for program 'xsltproc'                                                   : /usr/bin/xsltproc 
+[ 4254s] Checking for program 'python3'                                                    : /usr/bin/python3 
+[ 4254s] Checking for program 'python'                                                     : /usr/bin/python3 
+[ 4255s] Checking for program 'python3'                                                    : /usr/bin/python3 
+[ 4259s] Checking for python version >= 3.5.0                                              : 3.8.5 
+[ 4260s] python-config                                                                     : /usr/bin/python3-config 
+[ 4262s] Asking python-config for pyembed '--cflags --libs --ldflags --embed' flags        : yes 
+[ 4269s] Testing pyembed configuration                                                     : yes 
+[ 4270s] Asking python-config for pyext '--cflags --libs --ldflags' flags                  : yes 
+[ 4277s] Testing pyext configuration                                                       : yes 
+[ 4277s] Dynconfig[BINDIR]:                                                                : '/usr/bin' 
+[ 4277s] Dynconfig[SBINDIR]:                                                               : '/usr/sbin' 
+[ 4277s] Dynconfig[LIBDIR]:                                                                : '/usr/lib64' 
+[ 4277s] Dynconfig[LIBEXECDIR]:                                                            : '/usr/libexec' 
+[ 4277s] Dynconfig[DATADIR]:                                                               : '/usr/share' 
+[ 4277s] Dynconfig[SAMBA_DATADIR]:                                                         : '/usr/share/samba' 
+[ 4277s] Dynconfig[LOCALEDIR]:                                                             : '/usr/share/locale' 
+[ 4277s] Dynconfig[PYTHONDIR]:                                                             : '/usr/lib/python3.8/site-packages' 
+[ 4277s] Dynconfig[PYTHONARCHDIR]:                                                         : '/usr/lib64/python3.8/site-packages' 
+[ 4277s] Dynconfig[PERL_LIB_INSTALL_DIR]:                                                  : '/usr/share/perl5/vendor_perl' 
+[ 4277s] Dynconfig[PERL_ARCH_INSTALL_DIR]:                                                 : '/usr/lib64/perl5/vendor_perl' 
+[ 4277s] Dynconfig[INCLUDEDIR]:                                                            : '/usr/include/samba-4.0' 
+[ 4277s] Dynconfig[SCRIPTSBINDIR]:                                                         : '/usr/sbin' 
+[ 4277s] Dynconfig[SETUPDIR]:                                                              : '/usr/share/samba/setup' 
+[ 4277s] Dynconfig[PKGCONFIGDIR]:                                                          : '/usr/lib64/pkgconfig' 
+[ 4277s] Dynconfig[CODEPAGEDIR]:                                                           : '/usr/share/samba/codepages' 
+[ 4277s] Dynconfig[PRIVATELIBDIR]:                                                         : '/usr/lib64/samba' 
+[ 4277s] Dynconfig[MODULESDIR]:                                                            : '/usr/lib64/samba' 
+[ 4277s] Dynconfig[PAMMODULESDIR]:                                                         : '/usr/lib64/security' 
+[ 4277s] Dynconfig[CONFIGDIR]:                                                             : '/etc/samba' 
+[ 4277s] Dynconfig[PRIVATE_DIR]:                                                           : '/var/lib/samba/private' 
+[ 4277s] Dynconfig[BINDDNS_DIR]:                                                           : '/var/lib/samba/bind-dns' 
+[ 4277s] Dynconfig[LOCKDIR]:                                                               : '/var/lib/samba/lock' 
+[ 4277s] Dynconfig[PIDDIR]:                                                                : '/run' 
+[ 4277s] Dynconfig[STATEDIR]:                                                              : '/var/lib/samba' 
+[ 4277s] Dynconfig[CACHEDIR]:                                                              : '/var/lib/samba' 
+[ 4277s] Dynconfig[LOGFILEBASE]:                                                           : '/var/log/samba' 
+[ 4277s] Dynconfig[SOCKET_DIR]:                                                            : '/run/samba' 
+[ 4277s] Dynconfig[PRIVILEGED_SOCKET_DIR]:                                                 : '/var/lib/samba' 
+[ 4277s] Dynconfig[WINBINDD_SOCKET_DIR]:                                                   : '/run/samba/winbindd' 
+[ 4277s] Dynconfig[NMBDSOCKETDIR]:                                                         : '/run/samba/nmbd' 
+[ 4277s] Dynconfig[NTP_SIGND_SOCKET_DIR]:                                                  : '/var/lib/samba/ntp_signd' 
+[ 4277s] Dynconfig[NCALRPCDIR]:                                                            : '/run/samba/ncalrpc' 
+[ 4277s] Dynconfig[CONFIGFILE]:                                                            : '/etc/samba/smb.conf' 
+[ 4277s] Dynconfig[LMHOSTSFILE]:                                                           : '/etc/samba/lmhosts' 
+[ 4277s] Dynconfig[SMB_PASSWD_FILE]:                                                       : '/var/lib/samba/private/smbpasswd' 
+[ 4277s] Checking for 'zlib'                                                               : yes 
+[ 4280s] Checking for library z                                                            : yes 
+[ 4285s] Checking for inflateInit2 in z                                                    : not found 
+[ 4285s] Checking for third party Python module iso8601                                    : system 
+[ 4288s] Checking for longjmp                                                              : ok 
+[ 4291s] Checking for siglongjmp                                                           : ok 
+[ 4291s] Checking for system cmocka (>=1.1.3)                                              : yes 
+[ 4291s] Checking for system popt                                                          : yes 
+[ 4293s] Checking for header popt.h                                                        : yes 
+[ 4296s] Checking for library popt                                                         : yes 
+[ 4301s] Checking for poptGetContext                                                       : ok 
+[ 4301s] Checking for system tdb (>=1.4.3)                                                 : yes 
+[ 4301s] ERROR: Python module pytdb of version 1.4.3 not found, and bundling disabled
+[ 4301s] error: Bad exit status from /var/tmp/rpm-tmp.Zyb0a8 (%build)
+[ 4301s] 
+[ 4301s] 
+[ 4301s] RPM build errors:
+[ 4301s]     line 177: It's not recommended to have unversioned Obsoletes: Obsoletes: samba4-client < 4.12.5-10.oe1 samba-client-libs
+[ 4301s]     line 178: It's not recommended to have unversioned Obsoletes: Obsoletes: python2-samba
+[ 4301s]     line 199: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-common < 4.12.5-10.oe1 samba-common-libs
+[ 4301s]     line 229: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-dc < 4.12.5-10.oe1 samba-dc-libs samba4-dc-libs < 4.12.5-10.oe1
+[ 4301s]     line 308: It's not recommended to have unversioned Obsoletes: Obsoletes: 		python2-samba
+[ 4301s]     line 347: It's not recommended to have unversioned Obsoletes: Obsoletes:	python2-samba
+[ 4301s]     line 412: It's not recommended to have unversioned Obsoletes: Obsoletes:      samba4-test < 4.12.5-10.oe1 samba-test-libs samba-test-devel < 4.12.5-10.oe1
+[ 4301s]     Bad exit status from /var/tmp/rpm-tmp.Zyb0a8 (%build)
+[ 4302s] 
+[ 4302s] oe-RISCV-worker28 failed "build samba.spec" at Thu Apr 14 22:38:38 UTC 2022.
+[ 4302s] 

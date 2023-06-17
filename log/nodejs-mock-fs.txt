@@ -1,0 +1,1618 @@
+[    0s] Memory limit set to 21970666KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    4s] 
+[    4s] oe-RISCV-worker82 started "build _service:extract_file:nodejs-mock-fs.spec" at Sun Apr 17 09:13:52 UTC 2022.
+[    4s] 
+[    4s] Building nodejs-mock-fs for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '22788ccbef675458e37ab7680dbba947'
+[    4s] 
+[    4s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:nodejs-mock-fs.spec ...
+[    7s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:nodejs-mock-fs.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:nodejs-mock-fs.spec build ...
+[  108s] cycle: bash -> coreutils
+[  108s]   breaking dependency coreutils -> bash
+[  108s] cycle: bash -> coreutils -> info
+[  108s]   breaking dependency coreutils -> info
+[  108s] cycle: glibc -> filesystem -> bash -> coreutils
+[  108s]   breaking dependency filesystem -> bash
+[  108s] cycle: glibc -> filesystem -> coreutils
+[  108s]   breaking dependency coreutils -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  108s]   breaking dependency coreutils -> libacl
+[  108s] cycle: glibc -> filesystem -> coreutils -> attr
+[  108s]   breaking dependency coreutils -> attr
+[  108s] cycle: coreutils -> libcap -> bash
+[  108s]   breaking dependency coreutils -> libcap
+[  108s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  108s]   breaking dependency coreutils -> openssl-libs
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  108s]   breaking dependency libselinux -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  108s]   breaking dependency pcre2 -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  108s]   breaking dependency readline -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  108s]   breaking dependency coreutils -> libselinux
+[  108s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  108s]   breaking dependency ncurses -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  108s]   breaking dependency ncurses -> ncurses-libs
+[  108s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  108s]   breaking dependency ncurses -> libgcc
+[  108s] cycle: perl-Carp -> perl-libs
+[  108s]   breaking dependency perl-libs -> perl-Carp
+[  108s] cycle: perl-libs -> perl-Exporter
+[  108s]   breaking dependency perl-libs -> perl-Exporter
+[  108s] cycle: perl-Carp -> perl-Exporter
+[  108s]   breaking dependency perl-Exporter -> perl-Carp
+[  108s] cycle: nss-util -> nss
+[  108s]   breaking dependency nss -> nss-util
+[  108s] cycle: nss-softokn -> nss-util -> nss
+[  108s]   breaking dependency nss -> nss-softokn
+[  108s] cycle: systemd -> cryptsetup -> device-mapper
+[  108s]   breaking dependency systemd -> cryptsetup
+[  108s] cycle: audit -> systemd -> pam
+[  108s]   breaking dependency systemd -> pam
+[  108s] [1/84] preinstalling dbus...
+[  109s] [2/84] preinstalling libffi-devel...
+[  109s] [3/84] preinstalling nodejs-source-map...
+[  110s] [4/84] preinstalling python3-pip...
+[  113s] [5/84] preinstalling python3-setuptools_scm...
+[  114s] [6/84] preinstalling ncurses...
+[  119s] [7/84] preinstalling coreutils...
+[  123s] [8/84] preinstalling filesystem...
+[  126s] [9/84] preinstalling glibc...
+[  129s] [10/84] preinstalling libgcc...
+[  130s] [11/84] preinstalling diffutils...
+[  131s] [12/84] preinstalling libcap-ng...
+[  132s] [13/84] preinstalling libgpg-error...
+[  133s] [14/84] preinstalling libpcap...
+[  133s] [15/84] preinstalling libsmartcols...
+[  134s] [16/84] preinstalling libuuid...
+[  135s] [17/84] preinstalling libxcrypt...
+[  136s] [18/84] preinstalling lz4...
+[  137s] [19/84] preinstalling m4...
+[  137s] [20/84] preinstalling ncurses-libs...
+[  138s] [21/84] preinstalling nspr...
+[  139s] [22/84] preinstalling xz-libs...
+[  141s] [23/84] preinstalling zlib...
+[  142s] [24/84] preinstalling attr...
+[  142s] [25/84] preinstalling libdb...
+[  146s] [26/84] preinstalling zstd...
+[  147s] [27/84] preinstalling audit-libs...
+[  148s] [28/84] preinstalling file...
+[  149s] [29/84] preinstalling iptables-libs...
+[  150s] [30/84] preinstalling libacl...
+[  150s] [31/84] preinstalling libgcrypt...
+[  151s] [32/84] preinstalling openssl-libs...
+[  153s] [33/84] preinstalling readline...
+[  154s] [34/84] preinstalling bash...
+[  156s] [35/84] preinstalling cmake...
+[  165s] [36/84] preinstalling perl-libs...
+[  168s] [37/84] preinstalling dnf...
+[  169s] [38/84] preinstalling pcre2...
+[  170s] [39/84] preinstalling perl-Exporter...
+[  171s] [40/84] preinstalling bzip2...
+[  171s] [41/84] preinstalling elfutils...
+[  172s] [42/84] preinstalling hostname...
+[  173s] [43/84] preinstalling libcap...
+[  174s] [44/84] preinstalling pcre...
+[  175s] [45/84] preinstalling popt...
+[  176s] [46/84] preinstalling acl...
+[  176s] [47/84] preinstalling libblkid...
+[  177s] [48/84] preinstalling openssl...
+[  178s] [49/84] preinstalling sqlite...
+[  180s] [50/84] preinstalling tar...
+[  181s] [51/84] preinstalling info...
+[  182s] [52/84] preinstalling libgcrypt-devel...
+[  183s] [53/84] preinstalling lua...
+[  184s] [54/84] preinstalling libselinux...
+[  185s] [55/84] preinstalling perl-Carp...
+[  185s] [56/84] preinstalling copy-jdk-configs...
+[  186s] [57/84] preinstalling libfdisk...
+[  187s] [58/84] preinstalling perl-Digest-MD5...
+[  188s] [59/84] preinstalling grep...
+[  188s] [60/84] preinstalling rpm-libs...
+[  189s] [61/84] preinstalling chkconfig...
+[  190s] [62/84] preinstalling sed...
+[  191s] [63/84] preinstalling libmount...
+[  192s] [64/84] preinstalling libsemanage...
+[  193s] [65/84] preinstalling perl-constant...
+[  193s] [66/84] preinstalling findutils...
+[  194s] [67/84] preinstalling xz...
+[  195s] [68/84] preinstalling perl-Getopt-Long...
+[  196s] [69/84] preinstalling glib2...
+[  201s] [70/84] preinstalling nss...
+[  202s] [71/84] preinstalling perl-Data-Dumper...
+[  203s] [72/84] preinstalling systemd-libs...
+[  203s] [73/84] preinstalling systemd...
+[  207s] [74/84] preinstalling dbus-libs...
+[  208s] [75/84] preinstalling nss-util...
+[  209s] [76/84] preinstalling audit...
+[  210s] [77/84] preinstalling nss-softokn...
+[  212s] [78/84] preinstalling pam...
+[  213s] [79/84] preinstalling rpm...
+[  214s] [80/84] preinstalling openEuler-rpm-config...
+[  215s] [81/84] preinstalling util-linux...
+[  218s] [82/84] preinstalling device-mapper...
+[  219s] [83/84] preinstalling cryptsetup...
+[  221s] [84/84] preinstalling lvm2...
+[  223s] 
+[  225s] initializing rpm db...
+[  235s] reordering...cycle: bash -> coreutils
+[  235s]   breaking dependency coreutils -> bash
+[  235s] cycle: bash -> coreutils -> info
+[  235s]   breaking dependency coreutils -> info
+[  235s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  235s]   breaking dependency filesystem -> bash
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  235s]   breaking dependency coreutils -> gmp
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  235s]   breaking dependency coreutils -> glibc
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  235s]   breaking dependency coreutils -> libacl
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  235s]   breaking dependency coreutils -> attr
+[  235s] cycle: coreutils -> libcap -> bash
+[  235s]   breaking dependency coreutils -> libcap
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  235s]   breaking dependency openssl-libs -> glibc
+[  235s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  235s]   breaking dependency ca-certificates -> bash
+[  235s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  235s]   breaking dependency ca-certificates -> coreutils
+[  235s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  235s]   breaking dependency grep -> bash
+[  235s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  235s]   breaking dependency ca-certificates -> grep
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  235s]   breaking dependency p11-kit -> glibc
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  235s]   breaking dependency openssl-libs -> ca-certificates
+[  235s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  235s]   breaking dependency crypto-policies -> bash
+[  235s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  235s]   breaking dependency crypto-policies -> coreutils
+[  235s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency grep -> coreutils
+[  235s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency glibc -> basesystem
+[  235s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency glibc-common -> bash
+[  235s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency glibc-common -> coreutils
+[  235s] cycle: glibc -> glibc-common
+[  235s]   breaking dependency glibc-common -> glibc
+[  235s] cycle: glibc -> glibc-common -> libselinux
+[  235s]   breaking dependency libselinux -> glibc
+[  235s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  235s]   breaking dependency pcre2 -> glibc
+[  235s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  235s]   breaking dependency readline -> glibc
+[  235s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  235s]   breaking dependency libselinux -> pcre2
+[  235s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency bash -> coreutils
+[  235s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency libsepol -> bash
+[  235s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  235s]   breaking dependency coreutils -> openssl-libs
+[  235s] cycle: libselinux -> libsepol -> coreutils
+[  235s]   breaking dependency libsepol -> coreutils
+[  235s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  235s]   breaking dependency glibc -> glibc-common
+[  235s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  235s]   breaking dependency filesystem -> coreutils
+[  235s] cycle: filesystem -> setup
+[  235s]   breaking dependency filesystem -> setup
+[  235s] cycle: systemd -> cryptsetup -> device-mapper
+[  235s]   breaking dependency systemd -> cryptsetup
+[  235s] cycle: perl-libs -> perl-Carp
+[  235s]   breaking dependency perl-libs -> perl-Carp
+[  235s] cycle: perl-libs -> perl-Exporter
+[  235s]   breaking dependency perl-libs -> perl-Exporter
+[  235s] cycle: perl-Carp -> perl-Exporter
+[  235s]   breaking dependency perl-Exporter -> perl-Carp
+[  235s] cycle: perl -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-PathTools
+[  235s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  235s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  235s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-File-Path
+[  235s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  235s]   breaking dependency perl -> perl-Getopt-Long
+[  235s] cycle: perl -> perl-Locale-Maketext
+[  235s]   breaking dependency perl -> perl-Locale-Maketext
+[  235s] cycle: perl -> perl-Pod-Simple
+[  235s]   breaking dependency perl -> perl-Pod-Simple
+[  235s] cycle: perl -> perl-Socket
+[  235s]   breaking dependency perl -> perl-Socket
+[  235s] cycle: perl -> perl-Storable
+[  235s]   breaking dependency perl -> perl-Storable
+[  235s] cycle: perl -> perl-Text-Tabs+Wrap
+[  235s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  235s] cycle: perl -> perl-Time-Local -> perl-constant
+[  235s]   breaking dependency perl -> perl-Time-Local
+[  235s] cycle: perl -> perl-constant
+[  235s]   breaking dependency perl -> perl-constant
+[  235s] cycle: perl -> perl-threads
+[  235s]   breaking dependency perl -> perl-threads
+[  235s] cycle: perl -> perl-threads-shared
+[  235s]   breaking dependency perl -> perl-threads-shared
+[  235s] cycle: perl -> perl-Archive-Tar
+[  235s]   breaking dependency perl -> perl-Archive-Tar
+[  235s] cycle: perl -> perl-B-Debug
+[  235s]   breaking dependency perl -> perl-B-Debug
+[  235s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  235s]   breaking dependency perl -> perl-CPAN-Meta
+[  235s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  235s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  235s] cycle: perl -> perl-CPAN-Meta-YAML
+[  235s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  235s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  235s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  235s] cycle: perl -> perl-Compress-Raw-Zlib
+[  235s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  235s] cycle: perl -> perl-Config-Perl-V
+[  235s]   breaking dependency perl -> perl-Config-Perl-V
+[  235s] cycle: perl -> perl-DB_File
+[  235s]   breaking dependency perl -> perl-DB_File
+[  235s] cycle: perl -> perl-Data-Dumper
+[  235s]   breaking dependency perl -> perl-Data-Dumper
+[  235s] cycle: perl -> perl-Devel-PPPort
+[  235s]   breaking dependency perl -> perl-Devel-PPPort
+[  235s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  235s]   breaking dependency perl -> perl-Digest
+[  235s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  235s]   breaking dependency perl -> perl-Digest-MD5
+[  235s] cycle: perl -> perl-Digest-SHA
+[  235s]   breaking dependency perl -> perl-Digest-SHA
+[  235s] cycle: perl -> perl-Encode
+[  235s]   breaking dependency perl -> perl-Encode
+[  235s] cycle: perl -> perl-Env
+[  235s]   breaking dependency perl -> perl-Env
+[  235s] cycle: perl -> perl-ExtUtils-Command
+[  235s]   breaking dependency perl -> perl-ExtUtils-Command
+[  235s] cycle: perl -> perl-ExtUtils-Install
+[  235s]   breaking dependency perl -> perl-ExtUtils-Install
+[  235s] cycle: perl -> perl-ExtUtils-Manifest
+[  235s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  235s] cycle: perl -> perl-ExtUtils-ParseXS
+[  235s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  235s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-File-Fetch
+[  235s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-File-Temp
+[  235s] cycle: perl -> perl-Filter
+[  235s]   breaking dependency perl -> perl-Filter
+[  235s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  235s]   breaking dependency perl -> perl-Filter-Simple
+[  235s] cycle: perl -> perl-HTTP-Tiny
+[  235s]   breaking dependency perl -> perl-HTTP-Tiny
+[  235s] cycle: perl -> perl-IO-Compress
+[  235s]   breaking dependency perl -> perl-IO-Compress
+[  235s] cycle: perl -> perl-IO-Socket-IP
+[  235s]   breaking dependency perl -> perl-IO-Socket-IP
+[  235s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  235s]   breaking dependency perl -> perl-IPC-Cmd
+[  235s] cycle: perl -> perl-IPC-SysV
+[  235s]   breaking dependency perl -> perl-IPC-SysV
+[  235s] cycle: perl -> perl-JSON-PP
+[  235s]   breaking dependency perl -> perl-JSON-PP
+[  235s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  235s]   breaking dependency perl -> perl-Locale-Codes
+[  235s] cycle: perl -> perl-MIME-Base64
+[  235s]   breaking dependency perl -> perl-MIME-Base64
+[  235s] cycle: perl -> perl-Math-BigInt
+[  235s]   breaking dependency perl -> perl-Math-BigInt
+[  235s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  235s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  235s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  235s]   breaking dependency perl -> perl-Math-BigRat
+[  235s] cycle: perl -> perl-Module-CoreList
+[  235s]   breaking dependency perl -> perl-Module-CoreList
+[  235s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-Module-Load
+[  235s] cycle: perl -> perl-Module-Load-Conditional
+[  235s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  235s] cycle: perl -> perl-Module-Metadata
+[  235s]   breaking dependency perl -> perl-Module-Metadata
+[  235s] cycle: perl -> perl-Params-Check
+[  235s]   breaking dependency perl -> perl-Params-Check
+[  235s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  235s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  235s] cycle: perl -> perl-Pod-Checker
+[  235s]   breaking dependency perl -> perl-Pod-Checker
+[  235s] cycle: perl -> perl-Pod-Escapes
+[  235s]   breaking dependency perl -> perl-Pod-Escapes
+[  235s] cycle: perl -> perl-Pod-Parser
+[  235s]   breaking dependency perl -> perl-Pod-Parser
+[  235s] cycle: perl -> perl-Pod-Perldoc
+[  235s]   breaking dependency perl -> perl-Pod-Perldoc
+[  235s] cycle: perl -> perl-Pod-Usage
+[  235s]   breaking dependency perl -> perl-Pod-Usage
+[  235s] cycle: perl -> perl-Sys-Syslog
+[  235s]   breaking dependency perl -> perl-Sys-Syslog
+[  235s] cycle: perl -> perl-Term-Cap
+[  235s]   breaking dependency perl -> perl-Term-Cap
+[  235s] cycle: perl -> perl-Test-Harness
+[  235s]   breaking dependency perl -> perl-Test-Harness
+[  235s] cycle: perl -> perl-Test-Simple
+[  235s]   breaking dependency perl -> perl-Test-Simple
+[  235s] cycle: perl -> perl-Text-Balanced
+[  235s]   breaking dependency perl -> perl-Text-Balanced
+[  235s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  235s]   breaking dependency perl -> perl-Thread-Queue
+[  235s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  235s]   breaking dependency perl -> perl-Unicode-Collate
+[  235s] cycle: perl -> perl-autodie
+[  235s]   breaking dependency perl -> perl-autodie
+[  235s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  235s]   breaking dependency perl -> perl-bignum
+[  235s] cycle: perl -> perl-devel
+[  235s]   breaking dependency perl -> perl-devel
+[  235s] cycle: perl -> perl-Encode-devel
+[  235s]   breaking dependency perl -> perl-Encode-devel
+[  235s] cycle: perl -> perl-experimental
+[  235s]   breaking dependency perl -> perl-experimental
+[  235s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  235s]   breaking dependency perl -> perl-libnet
+[  235s] cycle: perl -> perl-podlators
+[  235s]   breaking dependency perl -> perl-podlators
+[  235s] cycle: perl -> perl-version
+[  235s]   breaking dependency perl -> perl-version
+[  235s] cycle: glib2 -> gamin
+[  235s]   breaking dependency glib2 -> gamin
+[  235s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  235s]   breaking dependency systemd -> gnutls
+[  235s] cycle: systemd -> pam -> audit
+[  235s]   breaking dependency systemd -> pam
+[  235s] cycle: systemd -> shadow -> pam -> audit
+[  235s]   breaking dependency systemd -> shadow
+[  235s] cycle: pam -> libpwquality
+[  235s]   breaking dependency pam -> libpwquality
+[  235s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  235s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  235s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  235s]   breaking dependency perl-podlators -> perl-Encode
+[  235s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  235s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  236s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  236s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  236s] cycle: perl-Pod-Usage -> perl-podlators
+[  236s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  236s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  236s]   breaking dependency groff -> perl-Getopt-Long
+[  236s] cycle: libxcrypt-devel -> glibc-devel
+[  236s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  236s] cycle: cmake-data -> cmake
+[  236s]   breaking dependency cmake -> cmake-data
+[  236s] cycle: nss-util -> nss
+[  236s]   breaking dependency nss -> nss-util
+[  236s] cycle: nss-softokn -> nss-util -> nss
+[  236s]   breaking dependency nss -> nss-softokn
+[  236s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  236s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  236s] cycle: openssh -> openssh-server
+[  236s]   breaking dependency openssh-server -> openssh
+[  236s] cycle: git -> perl-Git
+[  236s]   breaking dependency git -> perl-Git
+[  236s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  236s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  236s] done
+[  236s] querying package ids...
+[  269s] [1/405] installing cmake-filesystem-3.22.0-1.oe1
+[  271s] [2/405] installing fuse-common-3.9.2-5.oe1
+[  271s] [3/405] installing kernel-headers-5.10-3.oe1
+[  278s] [4/405] installing libreport-filesystem-2.13.1-5.oe1
+[  279s] [5/405] installing ncurses-base-6.1-14.oe1
+[  281s] [6/405] installing nodejs-assertion-error-1.1.0-1.oe1
+[  282s] [7/405] installing nodejs-balanced-match-1.0.0-1.oe1
+[  283s] [8/405] installing nodejs-clone-1.0.2-1.oe1
+[  283s] [9/405] installing nodejs-core-util-is-1.0.2-1.oe1
+[  284s] [10/405] installing nodejs-diff-1.0.8-1.oe1
+[  285s] [11/405] installing nodejs-isarray-0.0.1-1.oe1
+[  286s] [12/405] installing nodejs-string-3.1.1-1.oe1
+[  287s] [13/405] installing nodejs-string_decoder-0.10.31-1.oe1
+[  288s] [14/405] installing nodejs-type-detect-2.0.2-1.oe1
+[  289s] [15/405] installing nodejs-window-size-0.1.0-1.oe1
+[  290s] [16/405] installing nodejs-wrappy-1.0.2-1.oe1
+[  291s] [17/405] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  292s] [18/405] installing python-setuptools-59.4.0-3.oe1
+[  293s] [19/405] installing qt5-srpm-macros-5.15.2-1.oe1
+[  294s] [20/405] installing tzdata-2021a-2.oe1
+[  302s] [21/405] installing web-assets-5-9.oe1
+[  303s] [22/405] installing dnf-data-4.10.0-1.oe1
+[  303s] [23/405] installing js-uglify-2.8.22-1.oe1
+[  305s] [24/405] installing openEuler-repos-1.0-2.5.oe1
+[  305s] [25/405] installing openEuler-release-20.03LTS-40.oe1
+[  306s] [26/405] installing filesystem-3.9-3.oe1
+[  320s] warning: group mail does not exist - using root
+[  320s] [27/405] installing emacs-filesystem-1:27.1-5.oe1
+[  321s] [28/405] installing libgcc-10.3.1-20220105.6.oe1
+[  322s] [29/405] installing setup-2.13.3-4.oe1
+[  323s] [30/405] installing glibc-2.34-64.oe1
+[  329s] [31/405] installing brotli-1.0.9-2.oe1
+[  331s] [32/405] installing chrpath-0.16-12.oe1
+[  331s] [33/405] installing cpio-2.13-4.oe1
+[  333s] [34/405] installing diffutils-3.7-4.oe1
+[  335s] [35/405] installing expat-2.2.10-1.oe1
+[  336s] [36/405] installing json-c-0.15-1.oe1
+[  337s] [37/405] installing keyutils-libs-1.6.3-3.oe1
+[  338s] [38/405] installing libICE-1.0.10-2.oe1
+[  339s] [39/405] installing libXau-1.0.9-2.oe1
+[  340s] [40/405] installing libaio-0.3.112-1.oe1
+[  340s] [41/405] installing libargon2-20190702-1.oe1
+[  342s] [42/405] installing libatomic-10.3.1-20220105.6.oe1
+[  342s] [43/405] installing libcap-ng-0.7.11-1.oe1
+[  343s] [44/405] installing libev-4.24-11.oe1
+[  344s] [45/405] installing libffi-3.3-31.oe1
+[  345s] [46/405] installing libgomp-10.3.1-20220105.6.oe1
+[  346s] [47/405] installing libgpg-error-1.41-1.oe1
+[  348s] [48/405] installing libjpeg-turbo-2.0.6-1.oe1
+[  349s] [49/405] installing libnghttp2-1.42.0-1.oe1
+[  350s] [50/405] installing libpcap-14:1.9.1-7.oe1
+[  351s] [51/405] installing libpipeline-1.5.3-1.oe1
+[  352s] [52/405] installing libsigsegv-2.11-10.oe1
+[  353s] [53/405] installing libsmartcols-2.36.1-3.oe1
+[  355s] [54/405] installing libtasn1-4.16.0-2.oe1
+[  356s] [55/405] installing libtool-ltdl-2.4.6-34.oe1
+[  357s] [56/405] installing libunistring-0.9.10-8.oe1
+[  358s] [57/405] installing libuuid-2.36.1-3.oe1
+[  359s] [58/405] installing libuv-1:1.40.0-1.oe1
+[  360s] [59/405] installing libxcrypt-4.4.8-4.oe1
+[  361s] [60/405] installing libyaml-0.2.5-1.oe1
+[  362s] [61/405] installing lz4-1.9.3-1.oe1
+[  364s] [62/405] installing m4-1.4.18-14.oe1
+[  365s] [63/405] installing nspr-4.32.0-1.oe1
+[  366s] [64/405] installing pkgconf-1.7.3-1.oe1
+[  367s] [65/405] installing rhash-1.3.5-5.oe1
+[  369s] [66/405] installing which-2.21-14.oe1
+[  370s] [67/405] installing xz-libs-5.2.5-1.oe1
+[  371s] [68/405] installing zlib-1.2.11-18.oe1
+[  372s] [69/405] installing attr-2.4.48-12.oe1
+[  373s] [70/405] installing basesystem-12-2.oe1
+[  374s] [71/405] installing libstdc++-10.3.1-20220105.6.oe1
+[  375s] [72/405] installing ncurses-libs-6.1-14.oe1
+[  377s] [73/405] installing libsepol-3.1-4.oe1
+[  378s] [74/405] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  386s] [75/405] installing audit-libs-1:3.0-2.oe1
+[  387s] [76/405] installing elfutils-libelf-0.185-3.oe1
+[  389s] [77/405] installing file-libs-5.39-6.oe1
+[  392s] [78/405] installing gmp-1:6.2.1-3.oe1
+[  393s] [79/405] installing iptables-libs-1.8.1-4.oe1
+[  394s] [80/405] installing less-563-2.oe1
+[  395s] [81/405] installing libacl-2.2.53-7.oe1
+[  396s] [82/405] installing libassuan-2.5.4-1.oe1
+[  397s] [83/405] installing libedit-3.1-27.oe1
+[  398s] [84/405] installing libffi-devel-3.3-31.oe1
+[  399s] [85/405] installing libgcrypt-1.8.7-1.oe1
+[  401s] [86/405] installing libpng-2:1.6.37-1.oe1
+[  402s] [87/405] installing libxcb-1.14-1.oe1
+[  403s] [88/405] installing readline-8.0-2.oe1
+[  405s] [89/405] installing fuse-2.9.9-6.oe1
+[  406s] [90/405] installing gc-8.0.4-2.oe1
+[  407s] [91/405] installing libSM-1.2.3-2.oe1
+[  408s] [92/405] installing libdb-5.3.28-35.oe1
+[  413s] [93/405] installing libselinux-3.1-3.oe1
+[  414s] [94/405] installing libxml2-2.9.12-5.oe1
+[  416s] [95/405] installing bash-5.1-1.oe1
+[  419s] [96/405] installing perl-libs-4:5.28.0-435.oe1
+[  426s] [97/405] installing zstd-1.4.8-2.oe1
+[  430s] [98/405] installing ncurses-6.1-14.oe1
+[  441s] [99/405] installing thin-provisioning-tools-0.8.5-1.oe1
+[  443s] [100/405] installing perl-parent-1:0.237-4.oe1
+[  444s] [101/405] installing perl-perlfaq-5.20180915-5.oe1
+[  445s] [102/405] installing libX11-1.6.9-2.oe1
+[  448s] [103/405] installing mpfr-4.1.0-1.oe1
+[  450s] [104/405] installing nettle-3.6-6.oe1
+[  451s] [105/405] installing pcre2-10.36-1.oe1
+[  453s] [106/405] installing perl-Exporter-5.74-1.oe1
+[  454s] [107/405] installing file-5.39-6.oe1
+[  455s] [108/405] installing gdbm-1:1.18.1-1.oe1
+[  456s] [109/405] installing patch-2.7.6-12.oe1
+[  458s] [110/405] installing qrencode-4.1.1-1
+[  459s] [111/405] installing sed-4.8-2.oe1
+[  460s] [112/405] installing acl-2.2.53-7.oe1
+[  461s] [113/405] installing libcomps-0.1.15-1.oe1
+[  462s] [114/405] installing pcre-8.44-1.oe1
+[  464s] [115/405] installing glibc-common-2.34-64.oe1
+[  475s] [116/405] installing coreutils-8.31-4.oe1
+[  481s] [117/405] installing crontabs-1.11-21.oe1
+[  483s] [118/405] installing elfutils-default-yama-scope-0.185-3.oe1
+[  484s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  484s] [119/405] installing libXext-1.3.4-2.oe1
+[  486s] [120/405] installing libXpm-3.5.12-11.oe1
+[  487s] [121/405] installing perl-Carp-1.50-418.oe1
+[  488s] [122/405] installing perl-Perl-OSType-1.010-421.oe1
+[  489s] [123/405] installing perl-Term-ANSIColor-4.06-511.oe1
+[  490s] [124/405] installing publicsuffix-list-20200718-1.oe1
+[  491s] [125/405] installing uname-build-checks-1.0-0.4.oe1
+[  493s] [126/405] installing bzip2-1.0.8-3.oe1
+[  494s] [127/405] installing gzip-1.10-1.oe1
+[  495s] [128/405] installing hostname-3.21-2.oe1
+[  497s] [129/405] installing libcap-2.32-2.oe1
+[  499s] [130/405] installing libmpc-1.2.0-2.oe1
+[  500s] [131/405] installing libseccomp-2.4.3-2.oe1
+[  502s] [132/405] installing npth-1.5-7.oe1
+[  503s] [133/405] installing popt-1.18-1.oe1
+[  505s] [134/405] installing grep-3.6-1.oe1
+[  509s] [135/405] installing libXt-1.2.0-0.oe1
+[  511s] [136/405] installing libblkid-2.36.1-3.oe1
+[  512s] [137/405] installing libidn2-2.3.0-1.oe1
+[  514s] [138/405] installing libksba-1.3.5-12.oe1
+[  516s] [139/405] installing tar-2:1.32-3.oe1
+[  519s] [140/405] installing tcl-1:8.6.10-3.oe1
+[  523s] [141/405] installing info-6.7-2.oe1
+[  524s] [142/405] installing jsoncpp-1.9.4-1.oe1
+[  526s] [143/405] installing libgpg-error-devel-1.41-1.oe1
+[  527s] [144/405] installing lua-5.3.5-6.oe1
+[  529s] [145/405] installing slang-2.3.2-8.oe1
+[  532s] [146/405] installing gawk-5.0.1-2.oe1
+[  534s] [147/405] installing guile-5:2.0.14-15.oe1
+[  542s] [148/405] installing zip-3.0-29.oe1
+[  543s] [149/405] installing libfdisk-2.36.1-3.oe1
+[  545s] [150/405] installing newt-0.52.21-4.oe1
+[  547s] [151/405] installing perl-Text-ParseWords-3.30-419.oe1
+[  548s] [152/405] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  554s] [153/405] installing elfutils-libs-0.185-3.oe1
+[  556s] [154/405] installing libXmu-1.1.3-1.oe1
+[  558s] [155/405] installing libmount-2.36.1-3.oe1
+[  559s] [156/405] installing lua-posix-33.3.1-12.oe1
+[  562s] [157/405] installing unzip-6.0-47.oe1
+[  563s] [158/405] installing cracklib-2.9.7-6.oe1
+[  568s] [159/405] installing e2fsprogs-1.45.6-3.oe1
+[  571s] [160/405] installing findutils-2:4.7.0-7.oe1
+[  575s] [161/405] installing libsemanage-3.1-4.oe1
+[  576s] [162/405] installing make-1:4.2.1-15.oe1
+[  578s] [163/405] installing sqlite-3.24.0-9.oe1
+[  581s] [164/405] installing xz-5.2.5-1.oe1
+[  582s] [165/405] installing logrotate-3.15.1-2.oe1
+[  584s] [166/405] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  585s] [167/405] installing perl-Time-HiRes-1.9760-2.oe1
+[  587s] [168/405] installing perl-Unicode-Normalize-1.26-419.oe1
+[  590s] [169/405] installing glibc-devel-2.34-64.oe1
+[  605s] [170/405] installing libgcrypt-devel-1.8.7-1.oe1
+[  607s] [171/405] installing cpp-10.3.1-20220105.6.oe1
+[  618s] [172/405] installing gnupg2-2.2.27-2.oe1
+[  624s] [173/405] installing systemd-libs-243-22.oe1
+[  627s] [174/405] installing dbus-libs-1:1.12.20-3.oe1
+[  629s] [175/405] installing libxcrypt-devel-4.4.8-4.oe1
+[  631s] [176/405] installing p11-kit-0.23.22-1.oe1
+[  634s] [177/405] installing procps-ng-3.3.16-15.oe1
+[  637s] [178/405] installing copy-jdk-configs-4.0-1.oe1
+[  639s] [179/405] installing gpgme-1.15.1-1.oe1
+[  642s] [180/405] installing openssl-libs-1:1.1.1f-2.oe1
+[  646s] [181/405] installing chkconfig-1.14-2.oe1
+[  649s] [182/405] installing elfutils-0.185-3.oe1
+[  652s] [183/405] installing libXaw-1.0.13-13.oe1
+[  654s] [184/405] installing glib2-2.66.8-1.oe1
+[  660s] [185/405] installing dbus-tools-1:1.12.20-3.oe1
+[  661s] [186/405] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  663s] [187/405] installing libevent-2.1.12-4
+[  665s] [188/405] installing libcroco-0.6.12-13.oe1
+[  667s] [189/405] installing fipscheck-1.5.0-7.oe1
+[  669s] [190/405] installing gamin-0.1.10-38.oe1
+[  672s] [191/405] installing kmod-libs-27-4.oe1
+[  673s] [192/405] installing libsecret-0.18.6-5.oe1
+[  675s] [193/405] installing obs-env-1.0-5.oe1
+[  682s] [194/405] installing kmod-27-4.oe1
+[  683s] [195/405] installing shared-mime-info-1.10-4.oe1
+[  696s] [196/405] installing binutils-2.37-6.oe1
+[  704s] [197/405] installing p11-kit-trust-0.23.22-1.oe1
+[  705s] [198/405] installing babeltrace-1.5.8-1.oe1
+[  707s] [199/405] installing libarchive-3.5.1-1.oe1
+[  709s] [200/405] installing nodejs-libs-1:16.10.0-1.oe1
+[  741s] [201/405] installing libverto-0.3.1-2.oe1
+[  743s] [202/405] installing ca-certificates-2020.2.46-2.oe1
+[  750s] [203/405] installing gdk-pixbuf2-2.42.6-1.oe1
+[  753s] [204/405] installing gettext-0.20.1-2.oe1
+[  757s] [205/405] installing gcc-10.3.1-20220105.6.oe1
+[  778s] [206/405] installing rpm-libs-4.15.1-25.oe1
+[  780s] [207/405] installing python-pip-wheel-19.2.3-2.fc32
+[  781s] [208/405] installing libnotify-0.7.9-1.oe1
+[  782s] [209/405] installing libmodulemd-2.13.0-1.oe1
+[  784s] [210/405] installing gcc-c++-10.3.1-20220105.6.oe1
+[  793s] [211/405] installing krb5-libs-1.18.2-3.oe1
+[  795s] [212/405] installing libtirpc-1.3.1-1.oe1
+[  797s] [213/405] installing cyrus-sasl-lib-2.1.27-10.oe1
+[  798s] [214/405] installing libssh-0.9.5-1.oe1
+[  800s] [215/405] installing openldap-2.4.46-15.oe1
+[  802s] [216/405] installing libnsl2-1.3.0-2.oe1
+[  804s] [217/405] installing python3-3.8.5-13.oe1
+[  826s] [218/405] installing python3-pyparsing-2.4.5-1.fc32
+[  828s] [219/405] installing python3-setuptools-59.4.0-3.oe1
+[  833s] [220/405] installing python3-setuptools_scm-3.3.3-6.fc32
+[  834s] [221/405] installing python3-gpgme-1.15.1-1.oe1
+[  837s] [222/405] installing python3-libcomps-0.1.15-1.oe1
+[  839s] [223/405] installing libpsl-0.21.1-1.oe1
+[  841s] [224/405] installing gdb-headless-9.2-5.oe1
+[  847s] [225/405] installing systemtap-sdt-devel-4.1-3.oe1
+[  848s] [226/405] installing gdb-9.2-5.oe1
+[  849s] [227/405] installing python3-pip-19.2.3-2.fc32
+[  857s] [228/405] installing libcurl-7.79.1-1.oe1
+[  859s] [229/405] installing curl-7.79.1-1.oe1
+[  861s] [230/405] installing librepo-1.14.2-2.oe1
+[  863s] [231/405] installing rpm-4.15.1-25.oe1
+[  866s] [232/405] installing efi-srpm-macros-4-3.oe1
+[  868s] [233/405] installing cmake-rpm-macros-3.22.0-1.oe1
+[  870s] [234/405] installing libsolv-0.7.20-1.oe1
+[  872s] [235/405] installing python3-rpm-4.15.1-25.oe1
+[  873s] [236/405] installing openEuler-rpm-config-30-21.oe1
+[  875s] [237/405] installing cmake-3.22.0-1.oe1
+[  887s] [238/405] installing libdnf-0.65.0-2.oe1
+[  890s] [239/405] installing cmake-data-3.22.0-1.oe1
+[  906s] [240/405] installing python3-libdnf-0.65.0-2.oe1
+[  909s] [241/405] installing perl-4:5.28.0-435.oe1
+[  917s] [242/405] installing perl-B-Debug-1.26-4.oe1
+[  918s] [243/405] installing perl-Env-1.04-397.oe1
+[  920s] [244/405] installing perl-Devel-PPPort-3.42-4.oe1
+[  922s] [245/405] installing perl-Pod-Escapes-1:1.07-419.oe1
+[  923s] [246/405] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[  924s] [247/405] installing perl-Algorithm-Diff-1.1903-14.oe1
+[  925s] [248/405] installing perl-Params-Check-1:0.38-418.oe1
+[  927s] [249/405] installing perl-Term-Cap-1.17-510.oe1
+[  928s] [250/405] installing perl-TermReadKey-2.38-2.oe1
+[  930s] [251/405] installing perl-Text-Balanced-2.03-420.oe1
+[  931s] [252/405] installing perl-threads-1:2.22-419.oe1
+[  933s] [253/405] installing openssl-1:1.1.1f-2.oe1
+[  935s] [254/405] installing perl-Config-Perl-V-0.30-5.oe1
+[  936s] [255/405] installing perl-Error-1:0.17029-1.oe1
+[  938s] [256/405] installing perl-Filter-2:1.59-2.oe1
+[  940s] [257/405] installing perl-IPC-SysV-2.07-5.oe1
+[  941s] [258/405] installing perl-Locale-Maketext-1:1.28-1.oe1
+[  943s] [259/405] installing perl-constant-1.33-421.oe1
+[  945s] [260/405] installing perl-MIME-Base64-3.15-418.oe1
+[  946s] [261/405] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[  948s] [262/405] installing perl-Socket-4:2.029-2.oe1
+[  950s] [263/405] installing perl-Storable-1:3.15-2.oe1
+[  952s] [264/405] installing python3-hawkey-0.65.0-2.oe1
+[  954s] [265/405] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[  955s] [266/405] installing perl-Digest-1.17-419.oe1
+[  956s] [267/405] installing perl-Filter-Simple-1:0.94-1.oe1
+[  957s] [268/405] installing perl-IO-Socket-IP-0.39-420.oe1
+[  958s] [269/405] installing perl-Text-Diff-1.45-7.oe1
+[  960s] [270/405] installing perl-Time-Local-2:1.280-6.oe1
+[  961s] [271/405] installing perl-version-8:0.99.24-3.oe1
+[  963s] [272/405] installing perl-IPC-System-Simple-1.25-19.oe1
+[  964s] [273/405] installing perl-threads-shared-1.59-2.oe1
+[  966s] [274/405] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[  968s] [275/405] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[  970s] [276/405] installing perl-Locale-Codes-3.58-2.oe1
+[  972s] [277/405] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[  974s] [278/405] installing perl-PathTools-3.75-4.oe1
+[  976s] [279/405] installing python3-dnf-4.10.0-1.oe1
+[  979s] [280/405] installing perl-Data-Dumper-2.172-3.oe1
+[  981s] [281/405] installing perl-Sys-Syslog-0.35-420.oe1
+[  984s] [282/405] installing perl-Encode-4:2.98-9.oe1
+[  988s] [283/405] installing autogen-5.18.16-1.oe1
+[  991s] [284/405] installing nodejs-1:16.10.0-1.oe1
+[  993s] [285/405] installing systemd-243-22.oe1
+[ 1008s] /var/tmp/rpm-tmp.tsvGOj: line 8: groupadd: command not found
+[ 1008s] /var/tmp/rpm-tmp.tsvGOj: line 10: groupadd: command not found
+[ 1008s] /var/tmp/rpm-tmp.tsvGOj: line 13: groupadd: command not found
+[ 1008s] /var/tmp/rpm-tmp.tsvGOj: line 16: groupadd: command not found
+[ 1008s] [286/405] installing dbus-common-1:1.12.20-3.oe1
+[ 1009s] [287/405] installing nodejs-asap-2.0.3-1.oe1
+[ 1011s] [288/405] installing nodejs-async-1.5.2-1.oe1
+[ 1013s] [289/405] installing nodejs-brace-expansion-1.1.11-1.oe1
+[ 1015s] [290/405] installing nodejs-chai-3.5.0-1.oe1
+[ 1017s] [291/405] installing nodejs-character-parser-1.2.0-1.oe1
+[ 1019s] [292/405] installing nodejs-concat-map-0.0.1-2.oe1
+[ 1020s] [293/405] installing nodejs-constantinople-2.0.0-1.oe1
+[ 1022s] [294/405] installing nodejs-css-1.6.0-2.oe1
+[ 1024s] [295/405] installing nodejs-css-parse-1.7.0-2.oe1
+[ 1026s] [296/405] installing nodejs-css-stringify-1.4.1-2.oe1
+[ 1028s] [297/405] installing nodejs-debug-2.6.9-2.oe1
+[ 1030s] [298/405] installing nodejs-deep-eql-0.1.3-1.oe1
+[ 1031s] [299/405] installing nodejs-escape-string-regexp-1.0.5-2.oe1
+[ 1033s] [300/405] installing nodejs-graceful-fs-4.1.11-2.oe1
+[ 1035s] [301/405] installing nodejs-graceful-readlink-1.0.1-1.oe1
+[ 1036s] [302/405] installing nodejs-has-flag-2.0.0-1.oe1
+[ 1038s] [303/405] installing nodejs-minimatch-3.0.4-1.oe1
+[ 1040s] [304/405] installing nodejs-minimist-1.2.0-1.oe1
+[ 1042s] [305/405] installing nodejs-mkdirp-0.5.1-1.oe1
+[ 1044s] [306/405] installing nodejs-monocle-1.1.51-1.oe1
+[ 1045s] [307/405] installing nodejs-ms-2.0.0-1.oe1
+[ 1047s] [308/405] installing nodejs-once-1.3.3-1.oe1
+[ 1049s] [309/405] installing nodejs-path-is-absolute-1.0.0-1.oe1
+[ 1050s] [310/405] installing nodejs-process-nextick-args-2.0.0-1.oe1
+[ 1052s] [311/405] installing nodejs-promise-8.0.1-1.oe1
+[ 1054s] [312/405] installing nodejs-readable-stream-2.3.6-1.oe1
+[ 1057s] [313/405] installing nodejs-readdirp-2.1.0-2.oe1
+[ 1059s] [314/405] installing nodejs-safe-buffer-5.1.1-1.oe1
+[ 1061s] [315/405] installing nodejs-set-immediate-shim-1.0.1-1.oe1
+[ 1063s] [316/405] installing nodejs-source-map-0.5.6-1.oe1
+[ 1065s] [317/405] installing nodejs-supports-color-4.4.0-1.oe1
+[ 1067s] [318/405] installing nodejs-util-deprecate-1.0.2-1.oe1
+[ 1069s] [319/405] installing nodejs-with-3.0.0-1.oe1
+[ 1071s] [320/405] installing nodejs-wordwrap-1.0.0-1.oe1
+[ 1073s] [321/405] installing nodejs-growl-1.7.0-1.oe1
+[ 1074s] [322/405] installing nodejs-semver-5.3.0-1.oe1
+[ 1076s] [323/405] installing perl-Module-Load-1:0.32-418.oe1
+[ 1078s] [324/405] installing uglify-js-2.8.22-1.oe1
+[ 1080s] [325/405] installing nodejs-inherits-2.0.3-2.oe1
+[ 1082s] [326/405] installing nodejs-packaging-20-1.oe1
+[ 1084s] [327/405] installing dnf-4.10.0-1.oe1
+[ 1087s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1087s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1087s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1087s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1087s] [328/405] installing perl-File-Which-1.23-1.oe1
+[ 1088s] [329/405] installing perl-Thread-Queue-3.13-3.oe1
+[ 1090s] [330/405] installing perl-experimental-0.020-2.oe1
+[ 1092s] [331/405] installing perl-Digest-MD5-2.55-419.oe1
+[ 1094s] [332/405] installing perl-File-Path-2.16-4.oe1
+[ 1095s] [333/405] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1097s] [334/405] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1098s] [335/405] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1100s] [336/405] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1102s] [337/405] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1104s] [338/405] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1105s] [339/405] installing audit-1:3.0-2.oe1
+[ 1109s] [340/405] installing perl-DB_File-1.842-2.oe1
+[ 1111s] [341/405] installing perl-autodie-2.29-398.oe1
+[ 1112s] [342/405] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1116s] [343/405] installing perl-IO-Compress-2.081-6.oe1
+[ 1118s] [344/405] installing perl-podlators-1:4.14-1.oe1
+[ 1120s] [345/405] installing nodejs-commander-2.9.0-2.oe1
+[ 1122s] [346/405] installing nodejs-glob-6.0.4-2.oe1
+[ 1125s] [347/405] installing nodejs-yargs-3.2.1-1.oe1
+[ 1127s] [348/405] installing mocha-2.4.5-1.oe1
+[ 1130s] [349/405] installing nodejs-inflight-1.0.4-1.oe1
+[ 1132s] [350/405] installing nodejs-transformers-3.1.0-1.oe1
+[ 1134s] [351/405] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1135s] [352/405] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1136s] [353/405] installing perl-bignum-0.50-4.oe1
+[ 1138s] [354/405] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1139s] [355/405] installing perl-libnet-3.11-420.oe1
+[ 1141s] [356/405] installing pam-1.5.1-1.oe1
+[ 1145s] [357/405] installing libpwquality-1.4.4-1.oe1
+[ 1148s] [358/405] installing nodejs-jade-1.3.1-2.oe1
+[ 1150s] [359/405] installing perl-File-HomeDir-1.004-4.oe1
+[ 1152s] [360/405] installing shadow-2:4.8.1-5.oe1
+[ 1155s] [361/405] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1157s] [362/405] installing libutempter-1.1.6-16.oe1
+[ 1159s] [363/405] installing unbound-libs-1.10.1-4.oe1
+[ 1163s] [364/405] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1166s] [365/405] installing openssh-server-8.2p1-10.oe1
+[ 1170s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1170s] [366/405] installing groff-1.22.4-4.oe1
+[ 1176s] [367/405] installing dbus-1:1.12.20-3.oe1
+[ 1178s] [368/405] installing man-db-2.9.3-2.oe1
+[ 1183s] [369/405] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1185s] [370/405] installing gnutls-3.6.15-3.oe1
+[ 1188s] [371/405] installing util-linux-2.36.1-3.oe1
+[ 1196s] [372/405] installing nss-help-3.72.0-2.oe1
+[ 1199s] [373/405] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1200s] [374/405] installing device-mapper-8:1.02.172-1.oe1
+[ 1203s] [375/405] installing openssh-8.2p1-10.oe1
+[ 1206s] [376/405] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1208s] [377/405] installing cryptsetup-2.3.3-3.oe1
+[ 1212s] [378/405] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1214s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1214s] [379/405] installing nss-3.72.0-2.oe1
+[ 1222s] [380/405] installing openssh-clients-8.2p1-10.oe1
+[ 1225s] [381/405] installing nss-util-3.72.0-2.oe1
+[ 1228s] [382/405] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1230s] [383/405] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1231s] [384/405] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1234s] [385/405] installing perl-Pod-Parser-1.63-397.oe1
+[ 1236s] [386/405] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1237s] [387/405] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1240s] [388/405] installing perl-Archive-Tar-2.30-421.oe1
+[ 1241s] [389/405] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1243s] [390/405] installing lvm2-8:2.03.11-1.oe1
+[ 1249s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1249s] [391/405] installing autoconf-2.69-30.oe1
+[ 1252s] [392/405] installing git-2.23.0-12.oe1
+[ 1262s] [393/405] installing nss-softokn-3.72.0-2.oe1
+[ 1265s] [394/405] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1266s] [395/405] installing perl-Git-2.23.0-12.oe1
+[ 1268s] [396/405] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1270s] [397/405] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1273s] [398/405] installing automake-1.16.1-6.oe1
+[ 1276s] [399/405] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1278s] [400/405] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1279s] [401/405] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1281s] [402/405] installing rpm-build-4.15.1-25.oe1
+[ 1283s] [403/405] installing gcc_secure-1.0-0.9.oe1
+[ 1285s] [404/405] installing perl-File-Fetch-0.56-4.oe1
+[ 1286s] [405/405] installing perl-devel-4:5.28.0-435.oe1
+[ 1299s] removing nis flags from /var/cache/obs/worker/root_3/etc/nsswitch.conf...
+[ 1300s] now finalizing build dir...
+[ 1309s] Running build time source services...
+[ 1325s] -----------------------------------------------------------------
+[ 1325s] ----- building nodejs-mock-fs.spec (user abuild)
+[ 1325s] -----------------------------------------------------------------
+[ 1325s] -----------------------------------------------------------------
+[ 1331s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/22788ccbef675458e37ab7680dbba947-nodejs-mock-fs' /home/abuild/rpmbuild/SOURCES/nodejs-mock-fs.spec
+[ 1332s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.ckUkRE
+[ 1332s] + umask 022
+[ 1332s] + cd /home/abuild/rpmbuild/BUILD
+[ 1332s] + cd /home/abuild/rpmbuild/BUILD
+[ 1332s] + rm -rf mock-fs-4.12.0
+[ 1332s] + /usr/bin/tar -xof -
+[ 1332s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/nodejs-mock-fs-4.12.0.tar.gz
+[ 1333s] + STATUS=0
+[ 1333s] + '[' 0 -ne 0 ']'
+[ 1333s] + cd mock-fs-4.12.0
+[ 1333s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1333s] + rm -rf node_modules
+[ 1333s] + RPM_EC=0
+[ 1333s] ++ jobs -p
+[ 1333s] + exit 0
+[ 1333s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.y7S74v
+[ 1333s] + umask 022
+[ 1333s] + cd /home/abuild/rpmbuild/BUILD
+[ 1333s] + cd mock-fs-4.12.0
+[ 1333s] + RPM_EC=0
+[ 1333s] ++ jobs -p
+[ 1333s] + exit 0
+[ 1333s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.edKtXx
+[ 1333s] + umask 022
+[ 1333s] + cd /home/abuild/rpmbuild/BUILD
+[ 1333s] + '[' /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64 '!=' / ']'
+[ 1333s] + rm -rf /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64
+[ 1333s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64
+[ 1333s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[ 1333s] + mkdir /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64
+[ 1333s] + cd mock-fs-4.12.0
+[ 1333s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64/usr/lib/node_modules/mock-fs
+[ 1334s] + cp -pr package.json lib /home/abuild/rpmbuild/BUILDROOT/nodejs-mock-fs-4.12.0-1.oe1.riscv64/usr/lib/node_modules/mock-fs
+[ 1334s] + /usr/lib/rpm/nodejs-symlink-deps /usr/lib/node_modules
+[ 1335s] + /usr/lib/rpm/find-debuginfo.sh -j8 --strict-build-id -i --build-id-seed 4.12.0-1.oe1 --unique-debug-suffix -4.12.0-1.oe1.riscv64 --unique-debug-src-base nodejs-mock-fs-4.12.0-1.oe1.riscv64 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/mock-fs-4.12.0
+[ 1336s] find: 'debug': No such file or directory
+[ 1336s] + /usr/lib/rpm/check-buildroot
+[ 1336s] + /usr/lib/rpm/brp-ldconfig
+[ 1336s] + /usr/lib/rpm/brp-compress
+[ 1336s] + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+[ 1338s] + /usr/lib/rpm/brp-python-bytecompile /usr/bin/python 1 1
+[ 1338s] + /usr/lib/rpm/brp-python-hardlink
+[ 1338s] Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.qHJJr6
+[ 1338s] + umask 022
+[ 1338s] + cd /home/abuild/rpmbuild/BUILD
+[ 1338s] + cd mock-fs-4.12.0
+[ 1338s] + /usr/lib/rpm/nodejs-symlink-deps /usr/lib/node_modules --check
+[ 1339s] + /usr/lib/node_modules/mocha/bin/mocha --recursive test
+[ 1353s] 
+[ 1353s] 
+[ 1354s]   count(dir, callback)
+[ 1354s]     ✓ counts files in a directory (132ms)
+[ 1354s]     ✓ counts files in another directory
+[ 1354s]     ✓ counts files in an empty directory
+[ 1354s]     ✓ fails for bogus path
+[ 1354s] 
+[ 1354s]   Binding
+[ 1354s]     constructor
+[ 1354s]       ✓ creates a new instance
+[ 1354s]     #Stats
+[ 1354s]       ✓ is a stats constructor
+[ 1354s]     #stat()
+[ 1354s]       ✓ calls callback with a Stats instance
+[ 1354s]       ✓ returns a Stats instance when called synchronously
+[ 1354s]       ✓ identifies files (async)
+[ 1354s]       ✓ identifies files (sync)
+[ 1354s]       ✓ identifies directories (async)
+[ 1354s]       ✓ identifies directories (sync)
+[ 1354s]       ✓ includes atime, ctime, mtime and birthtime
+[ 1354s]       ✓ includes mode with file permissions (default)
+[ 1354s]       ✓ includes mode with file permissions (custom)
+[ 1354s]       ✓ includes size in bytes (async)
+[ 1354s]       ✓ includes size in bytes (sync)
+[ 1354s]       ✓ includes non-zero size for directories
+[ 1354s]       ✓ includes uid for files
+[ 1354s]       ✓ includes uid for directories
+[ 1354s]       ✓ includes gid for files
+[ 1355s]       ✓ includes gid for directories
+[ 1355s]       ✓ retrieves stats of files relative to symbolic linked directories
+[ 1355s]     #realpath()
+[ 1355s]       ✓ returns the real path for a regular file
+[ 1355s]       ✓ returns the real path for a directory
+[ 1355s]       ✓ returns the real path for a symlinked file
+[ 1355s]       ✓ returns the real path for a deeply symlinked file
+[ 1355s]       ✓ returns the real path for a symlinked directory
+[ 1355s]       ✓ returns the real path for a deeply symlinked directory
+[ 1355s]       ✓ returns the real path for a file in a symlinked directory
+[ 1355s]       ✓ accepts a buffer
+[ 1355s]       ✓ can return a buffer
+[ 1355s]       ✓ throws ENOENT for a non-existent file
+[ 1355s]       ✓ throws ENOTDIR for a file treated like a directory
+[ 1355s]     #fstat()
+[ 1355s]       ✓ calls callback with a Stats instance
+[ 1355s]       ✓ returns a Stats instance when called synchronously
+[ 1355s]       ✓ identifies files (async)
+[ 1355s]       ✓ identifies directories (async)
+[ 1355s]       ✓ includes size in bytes (async)
+[ 1355s]       ✓ includes size in bytes (sync)
+[ 1355s]       ✓ includes non-zero size for directories
+[ 1355s]     #readdir()
+[ 1355s]       ✓ calls callback with file list
+[ 1355s]       ✓ accepts "buffer" encoding
+[ 1355s]       ✓ returns a file list (sync)
+[ 1355s]       ✓ calls callback with file list for symbolic linked dir
+[ 1355s]       ✓ calls callback with file list for link to symbolic linked dir
+[ 1355s]       ✓ calls callback with file list for symbolic linked dir (sync)
+[ 1355s]       ✓ calls callback with error for bogus dir
+[ 1355s]       ✓ calls callback with error for file path
+[ 1355s]       ✓ calls callback with error for dead symbolic link
+[ 1355s]       ✓ calls callback with error for symbolic link to file
+[ 1355s]       ✓ calls callback with error for link to symbolic link to file
+[ 1355s]     #open()
+[ 1355s]       ✓ creates a file descriptor for reading (r)
+[ 1355s]       ✓ generates error if file does not exist (r)
+[ 1355s]       ✓ creates a file descriptor for reading and writing (r+)
+[ 1355s]       ✓ does not truncate (r+)
+[ 1355s]       ✓ generates error if file does not exist (r+)
+[ 1356s]       ✓ creates a file descriptor for reading (rs)
+[ 1356s]       ✓ generates error if file does not exist (rs)
+[ 1356s]       ✓ creates a file descriptor for reading and writing (rs+)
+[ 1356s]       ✓ generates error if file does not exist (rs+)
+[ 1356s]       ✓ opens a new file for writing (w)
+[ 1356s]       ✓ truncates an existing file for writing (w)
+[ 1356s]       ✓ generates error if file is directory (w)
+[ 1356s]       ✓ generates error if file exists (wx)
+[ 1356s]       ✓ opens a new file for reading and writing (w+)
+[ 1356s]       ✓ truncates an existing file for writing (w+)
+[ 1356s]       ✓ opens a new file for reading and writing (wx+)
+[ 1356s]       ✓ generates error if file exists (wx+)
+[ 1356s]       ✓ opens a new file for appending (a)
+[ 1356s]       ✓ opens an existing file for appending (a)
+[ 1356s]       ✓ generates error if file is directory (a)
+[ 1356s]       ✓ opens a new file for appending (ax)
+[ 1356s]       ✓ generates error if file exists (ax) (182ms)
+[ 1356s]       ✓ opens a new file for appending and reading (a+)
+[ 1356s]       ✓ opens an existing file for appending and reading (a+)
+[ 1356s]       ✓ opens a new file for appending and reading (ax+)
+[ 1356s]       ✓ opens an existing file for appending and reading (ax+)
+[ 1356s]     #close()
+[ 1356s]       ✓ closes an existing file descriptor
+[ 1356s]       ✓ fails for closed file descriptor
+[ 1356s]     #read()
+[ 1356s]       ✓ reads from a file
+[ 1356s]       ✓ reads into a Uint8Array
+[ 1356s]       ✓ interprets null position as current position
+[ 1356s]       ✓ reads from a symbolic link
+[ 1356s]       ✓ reads from a deeply linked symlink
+[ 1357s]       ✓ throws if not open for reading
+[ 1357s]       ✓ throws ENOTDIR when trying to open an incorrect path (nested under existing file)
+[ 1357s]     #write()
+[ 1357s]       ✓ writes to a file
+[ 1357s]       ✓ can take input from a Uint8Array
+[ 1357s]       ✓ can overwrite a file
+[ 1357s]       ✓ can append to a file
+[ 1357s]       ✓ can overwrite part of a file
+[ 1357s]       ✓ throws if not open for writing
+[ 1357s]     #writeBuffers()
+[ 1357s]       ✓ writes to a file
+[ 1357s]       ✓ can append to a file
+[ 1357s]       ✓ can overwrite part of a file
+[ 1357s]       ✓ throws if not open for writing
+[ 1357s]     #rename()
+[ 1357s]       ✓ allows files to be renamed
+[ 1357s]       ✓ allows files to be renamed (sync)
+[ 1357s]       ✓ replaces existing files (sync)
+[ 1357s]       ✓ allows directories to be renamed
+[ 1357s]       ✓ allows directories to be renamed (sync)
+[ 1357s]       ✓ calls callback with error for bogus old path
+[ 1357s]       ✓ calls callback with error for file->dir rename
+[ 1357s]       ✓ calls callback with error for dir->file rename
+[ 1357s]     #mkdir()
+[ 1357s]       ✓ creates a new directory
+[ 1357s]       ✓ fails if parent does not exist
+[ 1357s]       ✓ fails if directory exists
+[ 1357s]       ✓ fails if file exists
+[ 1357s]     #mkdir() recursive
+[ 1357s]       ✓ creates a new directory
+[ 1357s]       ✓ creates a new deep directory
+[ 1357s]       ✓ fails if permission does not allow recursive creation
+[ 1357s]       ✓ fails if one parent is not a folder
+[ 1358s]       ✓ fails if file exists
+[ 1358s]       ✓ passes silently if directory exists
+[ 1358s]     #mkdtemp()
+[ 1358s]       ✓ creates a new directory
+[ 1358s]       ✓ fails if parent does not exist
+[ 1358s]       ✓ fails if file exists
+[ 1358s]     #rmdir()
+[ 1358s]       ✓ removes an empty directory
+[ 1358s]       ✓ fails if directory is not empty
+[ 1358s]       ✓ fails if directory does not exist
+[ 1358s]       ✓ fails if a file exists
+[ 1358s]     #ftruncate()
+[ 1358s]       ✓ truncates a file
+[ 1358s]       ✓ fails if directory
+[ 1358s]       ✓ fails if not open for writing
+[ 1358s]     #chown()
+[ 1358s]       ✓ sets the uid and gid for a file
+[ 1358s]       ✓ sets the uid and gid for a directory
+[ 1358s]     #fchown()
+[ 1358s]       ✓ sets the uid and gid for a file
+[ 1358s]       ✓ sets the uid and gid for a directory
+[ 1358s]     #chmod()
+[ 1358s]       ✓ sets the mode for a file
+[ 1358s]       ✓ sets the mode for a directory
+[ 1358s]     #fchmod()
+[ 1358s]       ✓ sets the mode for a file
+[ 1358s]       ✓ sets the mode for a directory
+[ 1358s]     #unlink()
+[ 1358s]       ✓ deletes a file
+[ 1358s]       ✓ fails for directory
+[ 1358s]       ✓ fails for bogus path
+[ 1358s]     #utimes()
+[ 1358s]       ✓ updates atime and mtime for a file
+[ 1358s]       ✓ updates atime and mtime for a directory
+[ 1358s]       ✓ fails for a bogus path
+[ 1358s]     #futimes()
+[ 1358s]       ✓ updates atime and mtime for a file
+[ 1358s]       ✓ updates atime and mtime for a directory
+[ 1358s]     #fsync()
+[ 1358s]       ✓ synchronize file state (noop)
+[ 1358s]       ✓ fails for closed file descriptor
+[ 1358s]     #fdatasync()
+[ 1358s]       ✓ synchronize file state (noop)
+[ 1358s]       ✓ fails for closed file descriptor
+[ 1358s]     #link()
+[ 1358s]       ✓ creates a link to a file
+[ 1358s]       ✓ fails if dest exists
+[ 1358s]       ✓ fails if source is directory
+[ 1358s]     #symlink()
+[ 1358s]       ✓ creates a symbolic link to a file
+[ 1358s]       ✓ fails if dest exists
+[ 1358s]       ✓ works if source is directory
+[ 1358s]     #readlink()
+[ 1358s]       ✓ reads the symbolic link
+[ 1358s]       ✓ can return "buffer" encoding
+[ 1358s]       ✓ fails for regular files
+[ 1358s]       ✓ fails for directories
+[ 1358s]       ✓ fails for bogus paths
+[ 1358s]     #lstat()
+[ 1359s]       ✓ stats symbolic links
+[ 1359s]     #access()
+[ 1359s]       ✓ works if file exists
+[ 1359s]       ✓ throws for dead link
+[ 1359s]       ✓ fails in case of insufficient user permissions
+[ 1359s]       ✓ fails in case of insufficient group permissions
+[ 1359s]       ✓ fails in case of insufficient permissions
+[ 1359s]       ✓ fails for bogus paths
+[ 1359s] 
+[ 1359s]   FileDescriptor
+[ 1359s]     constructor
+[ 1359s]       ✓ creates a new descriptor
+[ 1359s]     #getPosition()
+[ 1359s]       ✓ returns zero by default
+[ 1359s]     #setPosition()
+[ 1359s]       ✓ updates the position
+[ 1359s]     #isAppend()
+[ 1359s]       ✓ not opened for appending (r)
+[ 1359s]       ✓ not opened for appending (r+)
+[ 1359s]       ✓ not opened for appending (rs)
+[ 1359s]       ✓ not opened for appending (rs+)
+[ 1359s]       ✓ not opened for appending (w)
+[ 1359s]       ✓ not opened for appending (wx)
+[ 1359s]       ✓ not opened for appending (w+)
+[ 1359s]       ✓ not opened for appending (wx+)
+[ 1359s]       ✓ opened for appending (a)
+[ 1359s]       ✓ opened for appending (ax)
+[ 1359s]       ✓ opened for appending (a+)
+[ 1359s]       ✓ opened for appending (ax+)
+[ 1359s]       ✓ not opened for appending (O_CREAT | O_RDONLY)
+[ 1359s]     #isTruncate()
+[ 1359s]       ✓ not opened for truncating (r)
+[ 1359s]       ✓ not opened for truncating (r+)
+[ 1359s]       ✓ not opened for truncating (rs)
+[ 1359s]       ✓ not opened for truncating (rs+)
+[ 1359s]       ✓ opened for truncating (w)
+[ 1359s]       ✓ opened for truncating (wx)
+[ 1359s]       ✓ opened for truncating (w+)
+[ 1359s]       ✓ opened for truncating (wx+)
+[ 1359s]       ✓ not opened for truncating (a)
+[ 1359s]       ✓ not opened for truncating (ax)
+[ 1359s]       ✓ not opened for truncating (a+)
+[ 1359s]       ✓ not opened for truncating (ax+)
+[ 1359s]       ✓ not opened for truncating (O_CREAT | O_RDONLY)
+[ 1359s]     #isCreate()
+[ 1359s]       ✓ not opened for creation (r)
+[ 1359s]       ✓ not opened for creation (r+)
+[ 1359s]       ✓ not opened for creation (rs)
+[ 1359s]       ✓ not opened for creation (rs+)
+[ 1359s]       ✓ opened for creation (w)
+[ 1359s]       ✓ opened for creation (wx)
+[ 1359s]       ✓ opened for creation (w+)
+[ 1359s]       ✓ opened for creation (wx+)
+[ 1359s]       ✓ opened for creation (a)
+[ 1359s]       ✓ opened for creation (ax)
+[ 1359s]       ✓ opened for creation (a+)
+[ 1359s]       ✓ opened for creation (ax+)
+[ 1359s]       ✓ opened for creation (O_CREAT | O_RDONLY)
+[ 1359s]     #isRead()
+[ 1359s]       ✓ opened for reading (r)
+[ 1359s]       ✓ opened for reading (r+)
+[ 1359s]       ✓ opened for reading (rs)
+[ 1359s]       ✓ opened for reading (rs+)
+[ 1359s]       ✓ not opened for reading (w)
+[ 1359s]       ✓ not opened for reading (wx)
+[ 1359s]       ✓ opened for reading (w+)
+[ 1359s]       ✓ opened for reading (wx+)
+[ 1359s]       ✓ not opened for reading (a)
+[ 1359s]       ✓ not opened for reading (ax)
+[ 1359s]       ✓ opened for reading (a+)
+[ 1359s]       ✓ opened for reading (ax+)
+[ 1359s]       ✓ opened for reading (O_CREAT | O_RDONLY)
+[ 1359s]     #isWrite()
+[ 1359s]       ✓ not opened for writing (r)
+[ 1359s]       ✓ opened for writing (r+)
+[ 1359s]       ✓ not opened for writing (rs)
+[ 1359s]       ✓ opened for writing (rs+)
+[ 1359s]       ✓ opened for writing (w)
+[ 1359s]       ✓ opened for writing (wx)
+[ 1359s]       ✓ opened for writing (w+)
+[ 1359s]       ✓ opened for writing (wx+)
+[ 1359s]       ✓ opened for writing (a)
+[ 1359s]       ✓ opened for writing (ax)
+[ 1359s]       ✓ opened for writing (a+)
+[ 1359s]       ✓ opened for writing (ax+)
+[ 1359s]       ✓ not opened for writing (O_CREAT | O_RDONLY)
+[ 1359s]     #isExclusive()
+[ 1359s]       ✓ not opened exclusive (r)
+[ 1359s]       ✓ not opened exclusive (r+)
+[ 1359s]       ✓ not opened exclusive (rs)
+[ 1359s]       ✓ not opened exclusive (rs+)
+[ 1359s]       ✓ not opened exclusive (w)
+[ 1359s]       ✓ opened exclusive (wx)
+[ 1359s]       ✓ not opened exclusive (w+)
+[ 1359s]       ✓ opened exclusive (wx+)
+[ 1359s]       ✓ not opened exclusive (a)
+[ 1359s]       ✓ opened exclusive (ax)
+[ 1359s]       ✓ not opened exclusive (a+)
+[ 1359s]       ✓ opened exclusive (ax+)
+[ 1359s]       ✓ not opened for exclusive (O_CREAT | O_RDONLY)
+[ 1359s] 
+[ 1359s]   Directory
+[ 1359s]     constructor
+[ 1359s]       ✓ creates a named directory
+[ 1359s]     #addItem()
+[ 1359s]       ✓ allows a directory to be added
+[ 1359s]       ✓ allows a file to be added
+[ 1359s]       ✓ returns the added item
+[ 1359s]     #getItem()
+[ 1359s]       ✓ retrieves a named directory
+[ 1359s]       ✓ retrieves a named file
+[ 1359s]       ✓ returns null for missing item
+[ 1359s]     #removeItem()
+[ 1360s]       ✓ allows a directory to be removed
+[ 1360s]       ✓ allows a file to be removed
+[ 1360s]       ✓ throws if item is not a child
+[ 1360s]     #list()
+[ 1360s]       ✓ lists all items in a directory
+[ 1360s]       ✓ works for empty dir
+[ 1360s]       ✓ lists one level deep
+[ 1360s] 
+[ 1360s]   File
+[ 1360s]     constructor
+[ 1360s]       ✓ creates a named file
+[ 1360s]     #getContent()
+[ 1360s]       ✓ gets the file content
+[ 1360s]       ✓ is initially empty
+[ 1360s]       ✓ updates the atime
+[ 1360s]     #setContent()
+[ 1360s]       ✓ accepts a string
+[ 1360s]       ✓ accepts a buffer
+[ 1360s]       ✓ throws for other types
+[ 1360s]       ✓ updates the ctime and mtime
+[ 1360s] 
+[ 1360s]   FileSystem
+[ 1360s]     constructor
+[ 1360s]       ✓ creates a new instance
+[ 1360s]       ✓ accepts a createCwd option
+[ 1360s]       ✓ accepts a createTmp option
+[ 1360s]     #getRoot()
+[ 1360s]       ✓ gets the root directory
+[ 1360s]     #getItem()
+[ 1360s]       ✓ gets an item
+[ 1360s]       ✓ returns null if not found
+[ 1360s]       ✓ gets an item traversing links to symbolic links
+[ 1360s] 
+[ 1360s]   FileSystem.file
+[ 1360s]     ✓ creates a factory for files
+[ 1360s]     ✓ accepts a content member
+[ 1360s] 
+[ 1360s]   FileSystem.directory
+[ 1360s]     ✓ creates a factory for directories
+[ 1360s] 
+[ 1360s]   FileSystem.create
+[ 1360s]     ✓ provides a convenient way to populate a file system
+[ 1360s]     ✓ passes options to the FileSystem constructor
+[ 1360s]     ✓ accepts file factory
+[ 1360s]     ✓ accepts file factory with uid & gid
+[ 1360s]     ✓ accepts directory factory (55ms)
+[ 1360s]     ✓ accepts directory factory with uid & gid
+[ 1360s]     ✓ accepts directory factory with additional items
+[ 1360s]     ✓ correctly generates link counts
+[ 1360s]     ✓ throws if item content is not valid type
+[ 1360s] 
+[ 1360s]   fs.access(path[, mode], callback)
+[ 1360s]     ✓ works for an accessible file
+[ 1360s]     ✓ supports Buffer input
+[ 1360s]     ✓ promise works for an accessible file
+[ 1360s]     ✓ works 000 (and no mode arg)
+[ 1360s]     ✓ promise works 000 (and no mode arg)
+[ 1360s]     ✓ works F_OK and 000
+[ 1360s]     ✓ promise works F_OK and 000
+[ 1360s]     ✓ generates EACCES for R_OK and 000
+[ 1360s]     ✓ promise generates EACCES for R_OK and 000
+[ 1360s]     ✓ generates EACCES for W_OK and 000
+[ 1360s]     ✓ promise generates EACCES for W_OK and 000
+[ 1360s]     ✓ generates EACCES for X_OK and 000
+[ 1360s]     ✓ promise generates EACCES for X_OK and 000
+[ 1360s]     ✓ works 111 (and no mode arg)
+[ 1360s]     ✓ promise works 111 (and no mode arg)
+[ 1361s]     ✓ works F_OK and 111
+[ 1361s]     ✓ promise works F_OK and 111
+[ 1361s]     ✓ works X_OK and 111
+[ 1361s]     ✓ promise works X_OK and 111
+[ 1361s]     ✓ generates EACCES for R_OK and 111
+[ 1361s]     ✓ promise generates EACCES for R_OK and 111
+[ 1361s]     ✓ generates EACCES for W_OK and 111
+[ 1361s]     ✓ promise generates EACCES for W_OK and 111
+[ 1361s]     ✓ works for 222 (and no mode arg)
+[ 1361s]     ✓ promise works for 222 (and no mode arg)
+[ 1361s]     ✓ works F_OK and 222
+[ 1361s]     ✓ promise works F_OK and 222
+[ 1361s]     ✓ works W_OK and 222
+[ 1361s]     ✓ promise works W_OK and 222
+[ 1361s]     ✓ generates EACCES for R_OK and 222
+[ 1361s]     ✓ promise generates EACCES for R_OK and 222
+[ 1361s]     ✓ generates EACCES for X_OK and 222
+[ 1361s]     ✓ promise generates EACCES for X_OK and 222
+[ 1361s]     ✓ works for 333 (and no mode arg)
+[ 1361s]     ✓ promise works for 333 (and no mode arg)
+[ 1361s]     ✓ works F_OK and 333
+[ 1361s]     ✓ promise works F_OK and 333
+[ 1361s]     ✓ works W_OK and 333
+[ 1361s]     ✓ promise works W_OK and 333
+[ 1361s]     ✓ works X_OK and 333
+[ 1361s]     ✓ promise works X_OK and 333
+[ 1361s]     ✓ works X_OK | W_OK and 333
+[ 1361s]     ✓ promise works X_OK | W_OK and 333
+[ 1361s]     ✓ generates EACCES for R_OK and 333
+[ 1361s]     ✓ promise generates EACCES for R_OK and 333
+[ 1361s]     ✓ works for 444 (and no mode arg)
+[ 1361s]     ✓ promise works for 444 (and no mode arg)
+[ 1361s]     ✓ works F_OK and 444
+[ 1361s]     ✓ promise works F_OK and 444
+[ 1361s]     ✓ works R_OK and 444
+[ 1361s]     ✓ promise works R_OK and 444
+[ 1361s]     ✓ generates EACCES for W_OK and 444
+[ 1361s]     ✓ promise generates EACCES for W_OK and 444
+[ 1361s]     ✓ generates EACCES for X_OK and 444
+[ 1362s]     ✓ promise generates EACCES for X_OK and 444
+[ 1362s]     ✓ works for 555 (and no mode arg)
+[ 1362s]     ✓ promise works for 555 (and no mode arg)
+[ 1362s]     ✓ works F_OK and 555
+[ 1362s]     ✓ promise works F_OK and 555
+[ 1362s]     ✓ works R_OK and 555
+[ 1362s]     ✓ promise works R_OK and 555
+[ 1362s]     ✓ works X_OK and 555
+[ 1362s]     ✓ promise works X_OK and 555
+[ 1362s]     ✓ works R_OK | X_OK and 555
+[ 1362s]     ✓ promise works R_OK | X_OK and 555
+[ 1362s]     ✓ generates EACCES for W_OK and 555
+[ 1362s]     ✓ promise generates EACCES for W_OK and 555
+[ 1362s]     ✓ works for 666 (and no mode arg)
+[ 1362s]     ✓ promise works for 666 (and no mode arg)
+[ 1362s]     ✓ works F_OK and 666
+[ 1362s]     ✓ promise works F_OK and 666
+[ 1362s]     ✓ works R_OK and 666
+[ 1362s]     ✓ promise works R_OK and 666
+[ 1362s]     ✓ works W_OK and 666
+[ 1362s]     ✓ promise works W_OK and 666
+[ 1362s]     ✓ works R_OK | W_OK and 666
+[ 1362s]     ✓ promise works R_OK | W_OK and 666
+[ 1362s]     ✓ generates EACCES for X_OK and 666
+[ 1362s]     ✓ promise generates EACCES for X_OK and 666
+[ 1362s]     ✓ works for 777 (and no mode arg)
+[ 1362s]     ✓ promise works for 777 (and no mode arg)
+[ 1362s]     ✓ works F_OK and 777
+[ 1362s]     ✓ promise works F_OK and 777
+[ 1362s]     ✓ works R_OK and 777
+[ 1362s]     ✓ promise works R_OK and 777
+[ 1362s]     ✓ works W_OK and 777
+[ 1363s]     ✓ promise works W_OK and 777
+[ 1363s]     ✓ works X_OK and 777
+[ 1363s]     ✓ promise works X_OK and 777
+[ 1363s]     ✓ works X_OK | W_OK and 777
+[ 1363s]     ✓ promise works X_OK | W_OK and 777
+[ 1363s]     ✓ works X_OK | R_OK and 777
+[ 1363s]     ✓ promise works X_OK | R_OK and 777
+[ 1363s]     ✓ works R_OK | W_OK and 777
+[ 1363s]     ✓ promise works R_OK | W_OK and 777
+[ 1363s]     ✓ works R_OK | W_OK | X_OK and 777
+[ 1363s]     ✓ promise works R_OK | W_OK | X_OK and 777
+[ 1363s]     ✓ generates EACCESS for F_OK and an unreadable parent
+[ 1363s]     ✓ promise generates EACCESS for F_OK and an unreadable parent
+[ 1363s] 
+[ 1363s]   fs.accessSync(path[, mode])
+[ 1363s]     ✓ works for an accessible file
+[ 1363s]     ✓ throws EACCESS for broken link
+[ 1363s]     ✓ throws ELOOP for circular link
+[ 1363s]     ✓ throws EACCESS for all but F_OK for 000 (50ms)
+[ 1363s] 
+[ 1363s]   fs.appendFile(filename, data, [options], callback)
+[ 1363s]     ✓ writes a string to a new file (39ms)
+[ 1363s]     ✓ promise writes a string to a new file (58ms)
+[ 1363s]     ✓ appends a string to an existing file
+[ 1363s]     ✓ promise appends a string to an existing file
+[ 1363s]     ✓ appends a buffer to a file
+[ 1363s]     ✓ promise appends a buffer to a file
+[ 1363s]     ✓ appends via a symbolic link file
+[ 1363s]     ✓ promise appends via a symbolic link file
+[ 1363s]     ✓ fails if directory does not exist
+[ 1363s]     ✓ promise fails if directory does not exist
+[ 1363s] 
+[ 1363s]   fs.appendFileSync(filename, data, [options]
+[ 1363s]     ✓ writes a string to a new file
+[ 1363s]     ✓ appends a string to an existing file
+[ 1363s]     ✓ fails if directory does not exist
+[ 1363s] 
+[ 1363s]   fs.chmod(path, mode, callback)
+[ 1363s]     ✓ changes permissions of a file
+[ 1363s]     ✓ supports Buffer input
+[ 1364s]     ✓ promise changes permissions of a file
+[ 1364s]     ✓ fails if file does not exist
+[ 1364s]     ✓ promise fails if file does not exist
+[ 1364s] 
+[ 1364s]   fs.chmodSync(path, mode)
+[ 1364s]     ✓ changes permissions of a file
+[ 1364s]     ✓ fails if file does not exist
+[ 1364s] 
+[ 1364s]   fs.fchmod(fd, mode, callback)
+[ 1364s]     ✓ changes permissions of a file
+[ 1364s]     ✓ promise changes permissions of a file
+[ 1364s] 
+[ 1364s]   fs.fchmodSync(fd, mode)
+[ 1364s]     ✓ changes permissions of a file
+[ 1364s] 
+[ 1364s]   fs.chown(path, uid, gid, callback)
+[ 1364s]     ✓ changes ownership of a file
+[ 1364s]     ✓ supports Buffer input
+[ 1364s]     ✓ promise changes ownership of a file
+[ 1364s]     ✓ fails if file does not exist
+[ 1364s]     ✓ promise fails if file does not exist
+[ 1364s] 
+[ 1364s]   fs.chownSync(path, uid, gid)
+[ 1364s]     ✓ changes ownership of a file
+[ 1364s]     ✓ fails if file does not exist
+[ 1364s] 
+[ 1364s]   fs.fchown(fd, uid, gid, callback)
+[ 1364s]     ✓ changes ownership of a file
+[ 1364s]     ✓ promise changes ownership of a file
+[ 1364s] 
+[ 1364s]   fs.fchownSync(fd, uid, gid)
+[ 1364s]     ✓ changes ownership of a file
+[ 1364s] 
+[ 1364s]   fs.copyFile(src, dest[, flags], callback)
+[ 1364s]     ✓ copies a file to an empty directory
+[ 1364s]     ✓ supports Buffer input
+[ 1364s]     ✓ promise copies a file to an empty directory
+[ 1364s]     ✓ truncates dest file if it exists
+[ 1364s]     ✓ promise truncates dest file if it exists
+[ 1364s]     ✓ throws if dest exists and exclusive
+[ 1364s]     ✓ promise throws if dest exists and exclusive
+[ 1364s]     ✓ fails if src does not exist
+[ 1364s]     ✓ promise fails if src does not exist
+[ 1364s]     ✓ fails if dest path does not exist
+[ 1364s]     ✓ promise fails if dest path does not exist
+[ 1364s]     ✓ fails if dest is a directory
+[ 1364s]     ✓ promise fails if dest is a directory
+[ 1364s] 
+[ 1364s]   fs.createReadStream(path, [options])
+[ 1364s]     ✓ creates a readable stream
+[ 1364s]     1) allows piping to a writable stream
+[ 1364s] 
+[ 1364s]   fs.createWriteStream(path[, options])
+[ 1364s]     2) provides a write stream for a file in buffered mode
+[ 1365s]     3) provides a write stream for a file
+[ 1365s]     4) works when write stream is corked
+[ 1365s] 
+[ 1365s]   fs.exists(path, callback)
+[ 1365s]     ✓ calls with true if file exists
+[ 1365s]     ✓ calls with true if directory exists
+[ 1365s]     ✓ calls with true if empty directory exists
+[ 1365s]     ✓ calls with true if nested directory exists
+[ 1365s]     ✓ calls with true if file exists
+[ 1365s]     ✓ calls with true if empty file exists
+[ 1365s]     ✓ calls with false for bogus path
+[ 1365s]     ✓ calls with false for bogus path (II)
+[ 1365s] 
+[ 1365s]   fs.existsSync(path)
+[ 1365s]     ✓ returns true if file exists
+[ 1365s]     ✓ returns true if directory exists
+[ 1365s]     ✓ returns true if empty directory exists
+[ 1365s]     ✓ returns true if nested directory exists
+[ 1365s]     ✓ returns true if file exists
+[ 1365s]     ✓ returns true if empty file exists
+[ 1365s]     ✓ returns false for bogus path
+[ 1365s]     ✓ returns false for bogus path (II)
+[ 1365s] 
+[ 1365s]   fs.link(srcpath, dstpath, callback)
+[ 1365s]     ✓ creates a link to a file
+[ 1365s]     ✓ supports Buffer input
+[ 1365s]     ✓ promise creates a link to a file
+[ 1365s]     ✓ works if original is renamed
+[ 1365s]     ✓ promise works if original is renamed
+[ 1365s]     ✓ works if original is removed
+[ 1365s]     ✓ promise works if original is removed
+[ 1365s]     ✓ fails if original is a directory
+[ 1365s]     ✓ promise fails if original is a directory
+[ 1365s] 
+[ 1365s]   fs.linkSync(srcpath, dstpath)
+[ 1365s]     ✓ creates a link to a file
+[ 1365s]     ✓ works if original is renamed
+[ 1365s]     ✓ works if original is removed
+[ 1365s]     ✓ fails if original is a directory
+[ 1365s] 
+[ 1365s]   fs.symlink(srcpath, dstpath, [type], callback)
+[ 1365s]     ✓ creates a symbolic link to a file
+[ 1365s]     ✓ supports Buffer input
+[ 1365s]     ✓ promise creates a symbolic link to a file
+[ 1365s]     ✓ breaks if original is renamed
+[ 1365s]     ✓ promise breaks if original is renamed
+[ 1365s]     ✓ works if original is a directory
+[ 1365s]     ✓ promise works if original is a directory
+[ 1365s] 
+[ 1365s]   fs.symlinkSync(srcpath, dstpath, [type])
+[ 1365s]     ✓ creates a symbolic link to a file
+[ 1365s]     ✓ breaks if original is renamed
+[ 1365s]     ✓ works if original is a directory
+[ 1365s] 
+[ 1365s]   fs.lstat(path, callback)
+[ 1365s]     ✓ stats a symbolic link
+[ 1365s]     ✓ suports Buffer input
+[ 1365s]     ✓ promise stats a symbolic link
+[ 1366s]     ✓ stats a regular file
+[ 1366s]     ✓ promise stats a regular file
+[ 1366s]     ✓ fails on file not exist
+[ 1366s]     ✓ promise fails on file not exist
+[ 1366s] 
+[ 1366s]   fs.lstatSync(path)
+[ 1366s]     ✓ stats a symbolic link
+[ 1366s]     ✓ stats a regular file
+[ 1366s]     ✓ fails on file not exist
+[ 1366s] 
+[ 1366s]   fs.mkdir(path, [mode], callback)
+[ 1366s]     ✓ creates a new directory
+[ 1366s]     ✓ supports Buffer input
+[ 1366s]     ✓ promise creates a new directory
+[ 1366s]     ✓ creates a new directory recursively
+[ 1366s]     ✓ promise creates a new directory recursively
+[ 1366s]     ✓ accepts dir mode
+[ 1366s]     ✓ promise accepts dir mode
+[ 1366s]     ✓ accepts dir mode recursively
+[ 1366s]     ✓ promise accepts dir mode recursively
+[ 1366s]     ✓ fails if parent does not exist
+[ 1366s]     ✓ promise fails if parent does not exist
+[ 1366s]     ✓ fails if one parent is not a folder in recursive creation
+[ 1366s]     ✓ promise fails if one parent is not a folder in recursive creation
+[ 1366s]     ✓ fails if permission does not allow recursive creation
+[ 1366s]     ✓ promise fails if permission does not allow recursive creation
+[ 1366s]     ✓ fails if directory already exists
+[ 1366s]     ✓ promise fails if directory already exists
+[ 1366s]     ✓ fails if file already exists
+[ 1366s]     ✓ promise fails if file already exists
+[ 1366s]     ✓ fails in recursive mode if file already exists
+[ 1366s]     ✓ promise fails in recursive mode if file already exists
+[ 1366s]     ✓ passes in recursive mode if directory already exists
+[ 1366s]     ✓ promise passes in recursive mode if directory already exists
+[ 1366s]     ✓ fails if parent is not writeable
+[ 1366s]     ✓ promise fails if parent is not writeable
+[ 1366s]     ✓ calls callback with a single argument on success
+[ 1366s]     ✓ calls callback with a single argument on failure
+[ 1366s] 
+[ 1366s]   fs.mkdirSync(path, [mode])
+[ 1366s]     ✓ creates a new directory
+[ 1366s]     ✓ creates a new directory recursively
+[ 1366s]     ✓ accepts dir mode
+[ 1366s]     ✓ accepts dir mode recursively
+[ 1366s]     ✓ fails if parent does not exist
+[ 1366s]     ✓ fails if one parent is not a folder in recursive creation
+[ 1366s]     ✓ fails if permission does not allow recursive creation
+[ 1366s]     ✓ fails if directory already exists
+[ 1366s]     ✓ fails if file already exists
+[ 1366s]     ✓ fails in recursive mode if file already exists
+[ 1366s]     ✓ passes in recursive mode if directory already exists
+[ 1366s]     ✓ fails if parent is not writeable
+[ 1366s] 
+[ 1366s]   fs.mkdtemp(prefix[, options], callback)
+[ 1366s]     ✓ creates a new directory
+[ 1367s]     ✓ promise creates a new directory
+[ 1367s]     ✓ accepts a "utf8" encoding argument
+[ 1367s]     ✓ promise accepts a "utf8" encoding argument
+[ 1367s]     ✓ accepts a "buffer" encoding argument
+[ 1367s]     ✓ promise accepts a "buffer" encoding argument
+[ 1367s]     ✓ accepts an options argument with "utf8" encoding
+[ 1367s]     ✓ promise accepts an options argument with "utf8" encoding
+[ 1367s]     ✓ accepts an options argument with "buffer" encoding
+[ 1367s]     ✓ promise accepts an options argument with "buffer" encoding
+[ 1367s]     ✓ fails if parent does not exist
+[ 1367s]     ✓ promise fails if parent does not exist
+[ 1367s]     ✓ fails if parent is a file
+[ 1367s]     ✓ promise fails if parent is a file
+[ 1367s]     ✓ fails if parent is not writeable
+[ 1367s]     ✓ promise fails if parent is not writeable
+[ 1367s] 
+[ 1367s]   fs.mkdtempSync(prefix[, options])
+[ 1367s]     ✓ creates a new directory
+[ 1367s]     ✓ accepts a "utf8" encoding argument
+[ 1367s]     ✓ accepts a "buffer" encoding argument
+[ 1367s]     ✓ accepts an options argument with "utf8" encoding
+[ 1367s]     ✓ accepts an options argument with "buffer" encoding
+[ 1367s]     ✓ fails if parent does not exist
+[ 1367s]     ✓ fails if parent is a file
+[ 1367s]     ✓ fails if parent is not writeable (61ms)
+[ 1367s] 
+[ 1367s]   fs.open(path, flags, [mode], callback)
+[ 1367s]     ✓ opens an existing file for reading (r)
+[ 1367s]     ✓ supports Buffer input
+[ 1367s]     ✓ promise opens an existing file for reading (r)
+[ 1367s]     ✓ fails if file does not exist (r)
+[ 1367s]     ✓ promise fails if file does not exist (r)
+[ 1367s]     ✓ creates a new file for writing (w)
+[ 1367s]     ✓ promise creates a new file for writing (w)
+[ 1367s]     ✓ opens an existing file for writing (w)
+[ 1367s]     ✓ promise opens an existing file for writing (w)
+[ 1367s]     ✓ fails if file exists (wx)
+[ 1367s]     ✓ promise fails if file exists (wx)
+[ 1367s] 
+[ 1367s]   fs.openSync(path, flags, [mode])
+[ 1367s]     ✓ opens an existing file for reading (r)
+[ 1367s]     ✓ fails if file does not exist (r)
+[ 1367s]     ✓ creates a new file for writing (w)
+[ 1367s]     ✓ opens an existing file for writing (w)
+[ 1367s]     ✓ fails if file exists (wx)
+[ 1367s] 
+[ 1367s]   fs.close(fd, callback)
+[ 1367s]     ✓ closes a file descriptor
+[ 1367s]     ✓ promise closes a file descriptor
+[ 1367s]     ✓ fails for closed file descriptors
+[ 1367s]     5) promise fails for closed file descriptors
+[ 1368s] 
+[ 1368s]   fs.closeSync(fd)
+[ 1368s]     ✓ closes a file descriptor
+[ 1368s]     ✓ fails for closed file descriptors
+[ 1368s] 
+[ 1368s]   fs.read(fd, buffer, offset, length, position, callback)
+[ 1368s]     ✓ allows file contents to be read
+[ 1368s]     ✓ promise allows file contents to be read
+[ 1368s]     ✓ allows file contents to be read w/ offset
+[ 1368s]     ✓ promise allows file contents to be read w/ offset
+[ 1368s]     ✓ allows file contents to be read w/ length
+[ 1368s]     ✓ promise allows file contents to be read w/ length
+[ 1368s]     ✓ allows file contents to be read w/ offset & length
+[ 1368s]     ✓ promise allows file contents to be read w/ offset & length
+[ 1368s]     ✓ allows file contents to be read w/ position
+[ 1368s]     ✓ promise allows file contents to be read w/ position
+[ 1368s]     ✓ allows read w/ offset, length, & position
+[ 1368s]     ✓ promise allows read w/ offset, length, & position
+[ 1368s]     ✓ fails for closed file descriptor
+[ 1368s]     ✓ promise fails for closed file descriptor
+[ 1368s]     ✓ fails if not open for reading
+[ 1368s]     ✓ promise fails if not open for reading
+[ 1368s] 
+[ 1368s]   fs.readSync(fd, buffer, offset, length, position)
+[ 1368s]     ✓ allows a file to be read synchronously
+[ 1368s]     ✓ allows a file to be read in two parts
+[ 1368s]     ✓ treats null position as current position
+[ 1368s] 
+[ 1368s]   fs.readFile(filename, [options], callback)
+[ 1375s] /var/tmp/rpm-tmp.qHJJr6: line 33: 149216 Aborted                 (core dumped) /usr/lib/node_modules/mocha/bin/mocha --recursive test
+[ 1375s] error: Bad exit status from /var/tmp/rpm-tmp.qHJJr6 (%check)
+[ 1375s] 
+[ 1375s] 
+[ 1375s] RPM build errors:
+[ 1375s]     Bad exit status from /var/tmp/rpm-tmp.qHJJr6 (%check)
+[ 1375s] 
+[ 1375s] oe-RISCV-worker82 failed "build nodejs-mock-fs.spec" at Sun Apr 17 09:36:43 UTC 2022.
+[ 1375s] 

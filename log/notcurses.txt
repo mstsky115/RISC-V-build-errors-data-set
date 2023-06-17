@@ -1,0 +1,989 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    1s] 
+[    1s] hci-snode2-m0 started "build notcurses.spec" at Tue Dec 13 20:27:08 UTC 2022.
+[    1s] 
+[    1s] Building notcurses for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'a0ce16ad8dddfa4bd4511017b9057a47'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/notcurses.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/notcurses.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/notcurses.spec build ...
+[    4s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [58d5f002ea8777bb000c40c4a8418b5a]
+[   10s] 
+[   10s] copying packages...
+[   11s] reordering...cycle: python310-base -> libpython3_10-1_0
+[   11s]   breaking dependency python310-base -> libpython3_10-1_0
+[   11s] cycle: fontconfig -> libfontconfig1
+[   11s]   breaking dependency libfontconfig1 -> fontconfig
+[   11s] done
+[   11s] Detected virtio-serial support
+[   14s] booting kvm...
+[   14s] ### VM INTERACTION START ###
+[   14s] Using virtio-serial support
+[   14s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   17s] [    1.074798][    T1] Non-volatile memory driver v1.3
+[   17s] [    1.075228][    T1] Linux agpgart interface v0.103
+[   17s] [    1.075678][    T1] ACPI: bus type drm_connector registered
+[   17s] [    1.077642][    T1] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[   17s] [    1.079387][    T1] serio: i8042 KBD port at 0x60,0x64 irq 1
+[   17s] [    1.079783][    T1] serio: i8042 AUX port at 0x60,0x64 irq 12
+[   17s] [    1.080354][    T1] mousedev: PS/2 mouse device common for all mice
+[   17s] [    1.090201][    T1] rtc_cmos 00:03: RTC can wake from S4
+[   17s] [    1.102569][    T1] rtc_cmos 00:03: registered as rtc0
+[   17s] [    1.103016][    T1] rtc_cmos 00:03: setting system clock to 2022-12-13T20:27:24 UTC (1670963244)
+[   17s] [    1.103517][    T1] rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram
+[   17s] [    1.103975][    T1] intel_pstate: CPU model not supported
+[   17s] [    1.105017][   T98] input: AT Raw Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+[   17s] [    1.108402][    T1] ledtrig-cpu: registered to indicate activity on CPUs
+[   17s] [    1.108994][    T1] hid: raw HID events driver (C) Jiri Kosina
+[   17s] [    1.109452][    T1] drop_monitor: Initializing network drop monitor service
+[   17s] [    1.130632][    T1] NET: Registered PF_INET6 protocol family
+[   17s] [    1.159749][    T1] Segment Routing with IPv6
+[   17s] [    1.159899][    T1] RPL Segment Routing with IPv6
+[   17s] [    1.160147][    T1] In-situ OAM (IOAM) with IPv6
+[   17s] [    1.161631][    T1] No MBM correction factor available
+[   17s] [    1.161734][    T1] IPI shorthand broadcast: enabled
+[   17s] [    1.161903][    T1] sched_clock: Marking stable (1133079690, 28435910)->(1308843017, -147327417)
+[   17s] [    1.162684][    T1] registered taskstats version 1
+[   17s] [    1.163322][    T1] Loading compiled-in X.509 certificates
+[   17s] [    1.169561][    T1] Loaded X.509 cert 'openSUSE Secure Boot Signkey: fd9f2c12e599d67cc7f9067541adf426b712469e'
+[   17s] [    1.178152][    T1] zswap: loaded using pool lzo/zbud
+[   17s] [    1.178872][    T1] page_owner is disabled
+[   17s] [    1.179649][    T1] Key type .fscrypt registered
+[   17s] [    1.179742][    T1] Key type fscrypt-provisioning registered
+[   17s] [    1.190415][    T1] Key type encrypted registered
+[   17s] [    1.190575][    T1] AppArmor: AppArmor sha1 policy hashing enabled
+[   17s] [    1.190825][    T1] ima: No TPM chip found, activating TPM-bypass!
+[   17s] [    1.190953][    T1] Loading compiled-in module X.509 certificates
+[   17s] [    1.191126][    T1] Loaded X.509 cert 'openSUSE Secure Boot Signkey: fd9f2c12e599d67cc7f9067541adf426b712469e'
+[   17s] [    1.191244][    T1] ima: Allocated hash algorithm: sha256
+[   17s] [    1.191380][    T1] ima: No architecture policies found
+[   17s] [    1.191502][    T1] evm: Initialising EVM extended attributes:
+[   17s] [    1.191605][    T1] evm: security.selinux
+[   17s] [    1.191706][    T1] evm: security.SMACK64 (disabled)
+[   17s] [    1.191817][    T1] evm: security.SMACK64EXEC (disabled)
+[   17s] [    1.191929][    T1] evm: security.SMACK64TRANSMUTE (disabled)
+[   17s] [    1.192055][    T1] evm: security.SMACK64MMAP (disabled)
+[   17s] [    1.192170][    T1] evm: security.apparmor
+[   17s] [    1.192203][    T1] evm: security.ima
+[   17s] [    1.192233][    T1] evm: security.capability
+[   17s] [    1.192275][    T1] evm: HMAC attrs: 0x1
+[   17s] [    1.720731][    T1] PM:   Magic number: 2:64:498
+[   17s] [    1.738460][    T1] RAS: Correctable Errors collector initialized.
+[   17s] [    1.748142][    T1] Freeing unused decrypted memory: 2036K
+[   17s] [    1.758047][    T1] Freeing unused kernel image (initmem) memory: 2928K
+[   17s] [    1.772893][    T1] Write protecting the kernel read-only data: 28672k
+[   17s] [    1.783711][    T1] Freeing unused kernel image (text/rodata gap) memory: 2040K
+[   17s] [    1.784949][    T1] Freeing unused kernel image (rodata/data gap) memory: 1012K
+[   17s] [    1.785479][    T1] Run /init as init process
+[   17s] [    1.807195][    T1] systemd[1]: systemd 252.3+suse.40.gbf3fef9988 running in system mode (+PAM -AUDIT -SELINUX -APPARMOR -IMA -SMACK -SECCOMP -GCRYPT -GNUTLS -OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC -KMOD -LIBCRYPTSETUP -LIBFDISK +PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB -ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP -SYSVINIT default-hierarchy=unified)
+[   17s] [    1.809689][    T1] systemd[1]: Detected virtualization kvm.
+[   17s] [    1.810124][    T1] systemd[1]: Detected architecture x86-64.
+[   17s] [    1.810521][    T1] systemd[1]: Running in initrd.
+[   17s] 
+[   17s] Welcome to [1mopenSUSE Dummy dracut-057+suse.344.g021aead9-1.1 (Initramfs)[0m!
+[   17s] 
+[   17s] [    1.811663][    T1] systemd[1]: No hostname configured, using default hostname.
+[   17s] [    1.812257][    T1] systemd[1]: Hostname set to <localhost>.
+[   17s] [    1.812874][    T1] systemd[1]: Initializing machine ID from random generator.
+[   18s] [    1.958372][    T1] systemd[1]: Queued start job for default target Initrd Default Target.
+[   18s] [    1.959429][    T1] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[   18s] [[0;32m  OK  [0m] Started [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+[   18s] [    1.960435][    T1] systemd[1]: Reached target Initrd /usr File System.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mInitrd /usr File System[0m.
+[   18s] [    1.961185][    T1] systemd[1]: Reached target Local File Systems.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mLocal File Systems[0m.
+[   18s] [    1.961855][    T1] systemd[1]: Reached target Path Units.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mPath Units[0m.
+[   18s] [    1.962451][    T1] systemd[1]: Reached target Slice Units.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mSlice Units[0m.
+[   18s] [    1.963046][    T1] systemd[1]: Reached target Swaps.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mSwaps[0m.
+[   18s] [    1.963632][    T1] systemd[1]: Reached target Timer Units.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mTimer Units[0m.
+[   18s] [    1.964428][    T1] systemd[1]: Listening on Journal Socket (/dev/log).
+[   18s] [[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket (/dev/log)[0m.
+[   18s] [    1.965284][    T1] systemd[1]: Listening on Journal Socket.
+[   18s] [[0;32m  OK  [0m] Listening on [0;1;39mJournal Socket[0m.
+[   18s] [    1.966051][    T1] systemd[1]: Listening on udev Control Socket.
+[   18s] [[0;32m  OK  [0m] Listening on [0;1;39mudev Control Socket[0m.
+[   18s] [    1.975037][    T1] systemd[1]: Listening on udev Kernel Socket.
+[   18s] [[0;32m  OK  [0m] Listening on [0;1;39mudev Kernel Socket[0m.
+[   18s] [    1.975736][    T1] systemd[1]: Reached target Socket Units.
+[   18s] [[0;32m  OK  [0m] Reached target [0;1;39mSocket Units[0m.
+[   18s] [    1.996442][    T1] systemd[1]: Starting Journal Service...
+[   18s]          Starting [0;1;39mJournal Service[0m...
+[   18s] [    2.010950][    T1] systemd[1]: Starting Apply Kernel Variables...
+[   18s]          Starting [0;1;39mApply Kernel Variables[0m...
+[   18s] [    2.021187][    T1] systemd[1]: Starting Create Static Device Nodes in /dev...
+[   18s]          Starting [0;1;39mCreate Static Device Nodes in /dev[0m...
+[   18s] [    2.023423][    T1] systemd[1]: Starting Setup Virtual Console...
+[   18s]          Starting [0;1;39mSetup Virtual Console[0m...
+[   18s] [    2.042332][    T1] systemd[1]: Finished Apply Kernel Variables.
+[   18s] [[0;32m  OK  [0m] Finished [0;1;39mApply Kernel Variables[0m.
+[   18s] [    2.043435][    T1] systemd[1]: Started Journal Service.
+[   18s] [[0;32m  OK  [0m] Started [0;1;39mJournal Service[0m.
+[   18s] [[0;32m  OK  [0m] Finished [0;1;39mSetup Virtual Console[0m.
+[   18s] [[0;32m  OK  [0m] Finished [0;1;39mCreate Static Device Nodes in /dev[0m.
+[   18s]          Starting [0;1;39mdracut cmdline hook[0m...
+[   18s]          Starting [0;1;39mCreate Volatile Files and Directories[0m...
+[   18s] [[0;32m  OK  [0m] Finished [0;1;39mCreate Volatile Files and Directories[0m.
+[   18s] [[0;32m  OK  [0m] Finished [0;1;39mdracut cmdline hook[0m.
+[   18s] [    2.170787][   T98] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input2
+[   18s]          Starting [0;1;39mdracut pre-udev hook[0m...
+[   18s] [    2.292999][  T297] loop: module loaded
+[   18s] [    2.342801][  T303] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[   18s] [    2.343106][  T303] device-mapper: uevent: version 1.0.3
+[   18s] [    2.354065][  T303] device-mapper: ioctl: 4.47.0-ioctl (2022-07-28) initialised: dm-devel@redhat.com
+[   18s] [    2.487356][  T309] fuse: init (API version 7.36)
+[   18s] [    2.519086][  T311] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[   19s] [    2.932915][  T317] raid6: avx2x4   gen()  5993 MB/s
+[   19s] [    3.004904][  T317] raid6: avx2x2   gen()  5979 MB/s
+[   19s] [    3.072905][  T317] raid6: avx2x1   gen()  5259 MB/s
+[   19s] [    3.073318][  T317] raid6: using algorithm avx2x4 gen() 5993 MB/s
+[   19s] [    3.149140][  T317] raid6: .... xor() 2735 MB/s, rmw enabled
+[   19s] [    3.149317][  T317] raid6: using avx2x2 recovery algorithm
+[   19s] [    3.151755][  T317] xor: automatically using best checksumming function   avx       
+[   19s] [    3.662470][  T317] Btrfs loaded, crc32c=crc32c-intel, assert=on, zoned=yes, fsverity=yes
+[   20s] [    4.345234][  T322] SGI XFS with ACLs, security attributes, realtime, quota, no debug enabled
+[   20s] [    4.402660][  T329] virtio_blk virtio1: 8/0/0 default/read/poll queues
+[   20s] [    4.407965][  T329] virtio_blk virtio1: [vda] 83886080 512-byte logical blocks (42.9 GB/40.0 GiB)
+[   20s] [    4.412774][  T329] virtio_blk virtio2: 8/0/0 default/read/poll queues
+[   20s] [    4.423382][  T329] virtio_blk virtio2: [vdb] 4194304 512-byte logical blocks (2.15 GB/2.00 GiB)
+[   20s] [    4.534976][  T339] e1000: Intel(R) PRO/1000 Network Driver
+[   20s] [    4.535454][  T339] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[   20s] [    4.614863][  T342] 9pnet: Installing 9P2000 support
+[   20s] [    4.682975][  T342] FS-Cache: Loaded
+[   20s] [    4.692304][  T342] 9p: Installing v9fs 9p2000 file system support
+[   20s] [[0;32m  OK  [0m] Finished [0;1;39mdracut pre-udev hook[0m.
+[   20s]          Starting [0;1;39mRule-based Manage…for Device Events and Files[0m...
+[   20s] [[0;32m  OK  [0m] Started [0;1;39mRule-based Manager for Device Events and Files[0m.
+[   20s]          Starting [0;1;39mColdplug All udev Devices[0m...
+[   21s] [[0;32m  OK  [0m] Found device [0;1;39m/dev/disk/by-id/virtio-0[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mInitrd Root Device[0m.
+[   21s] [[0;32m  OK  [0m] Finished [0;1;39mColdplug All udev Devices[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mSystem Initialization[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mBasic System[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mPreparation for Remote File Systems[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mRemote File Systems[0m.
+[   21s]          Starting [0;1;39mdracut pre-mount hook[0m...
+[   21s] [[0;32m  OK  [0m] Finished [0;1;39mdracut pre-mount hook[0m.
+[   21s]          Mounting [0;1;39m/sysroot[0m...
+[   21s] [    5.458099][  T403] EXT4-fs (vda): mounted filesystem without journal. Quota mode: none.
+[   21s] [[0;32m  OK  [0m] Mounted [0;1;39m/sysroot[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mInitrd Root File System[0m.
+[   21s]          Starting [0;1;39mMountpoints Configured in the Real Root[0m...
+[   21s] [[0;32m  OK  [0m] Finished [0;1;39mMountpoints Configured in the Real Root[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mInitrd File Systems[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mInitrd Default Target[0m.
+[   21s]          Starting [0;1;39mCleaning Up and Shutting Down Daemons[0m...
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mInitrd Default Target[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mBasic System[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mInitrd Root Device[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mInitrd /usr File System[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mPath Units[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mDispatch Password …ts to Console Directory Watch[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mRemote File Systems[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mPreparation for Remote File Systems[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mSlice Units[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mSocket Units[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mSystem Initialization[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mSwaps[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mTimer Units[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mdracut pre-mount hook[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mApply Kernel Variables[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mCreate Volatile Files and Directories[0m.
+[   21s] [[0;32m  OK  [0m] Stopped target [0;1;39mLocal File Systems[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mColdplug All udev Devices[0m.
+[   21s]          Stopping [0;1;39mRule-based Manage…for Device Events and Files[0m...
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mSetup Virtual Console[0m.
+[   21s] [[0;32m  OK  [0m] Finished [0;1;39mCleaning Up and Shutting Down Daemons[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mRule-based Manager for Device Events and Files[0m.
+[   21s] [[0;32m  OK  [0m] Closed [0;1;39mudev Control Socket[0m.
+[   21s] [[0;32m  OK  [0m] Closed [0;1;39mudev Kernel Socket[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mdracut pre-udev hook[0m.
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mdracut cmdline hook[0m.
+[   21s]          Starting [0;1;39mCleanup udev Database[0m...
+[   21s] [[0;32m  OK  [0m] Stopped [0;1;39mCreate Static Device Nodes in /dev[0m.
+[   21s] [[0;32m  OK  [0m] Finished [0;1;39mCleanup udev Database[0m.
+[   21s] [[0;32m  OK  [0m] Reached target [0;1;39mSwitch Root[0m.
+[   21s]          Starting [0;1;39mSwitch Root[0m...
+[   21s] [    5.681569][  T213] systemd-journald[213]: Received SIGTERM from PID 1 (systemd).
+[   24s] ### VM INTERACTION END ###
+[   24s] 2nd stage started in virtual machine
+[   25s] machine type: riscv64
+[   25s] Linux version: 6.0.12-1-default #1 SMP PREEMPT_DYNAMIC Thu Dec 8 10:49:09 UTC 2022 (523a283)
+[   25s] Increasing log level from now on...
+[   25s] [    9.612417][  T415] sysrq: Changing Loglevel
+[   25s] [    9.612656][  T415] sysrq: Loglevel set to 4
+[   25s] Enable sysrq operations
+[   26s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   26s] no label, UUID=3bc14475-f76b-4e58-8713-87e321bf12bc
+[   26s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   26s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   26s] swapon /dev/vdb
+[   26s] WARNING: udev not running, creating extra device nodes
+[   27s] logging output to //.build.log...
+[   28s] processing recipe /.build-srcdir/notcurses.spec ...
+[   28s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/notcurses.spec build ...
+[   29s] initializing rpm db...
+[   30s] querying package ids...
+[   89s] [1/238] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   89s] [2/238] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   89s] [3/238] preinstalled attr-2.5.1-1.1
+[   89s] [4/238] preinstalled bash-5.2.12-6.1
+[   89s] [5/238] preinstalled bash-sh-5.2.12-6.1
+[   89s] [6/238] preinstalled binutils-2.39-1.1
+[   90s] [7/238] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   90s] [8/238] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   90s] [9/238] preinstalled build-mkbaselibs-20221118-1.1
+[   90s] [10/238] preinstalled bzip2-1.0.8-4.1
+[   90s] [11/238] preinstalled chkstat-1599_20220912-2.1
+[   90s] [12/238] preinstalled compat-usrmerge-build-84.87-5.1
+[   90s] [13/238] preinstalled compat-usrmerge-tools-84.87-5.1
+[   90s] [14/238] preinstalled coreutils-9.1-5.1
+[   90s] [15/238] preinstalled cpio-2.13-4.1
+[   90s] [16/238] preinstalled cpp-12-2.1
+[   90s] [17/238] preinstalled cpp12-12.2.1+git537-1.1
+[   90s] [18/238] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   90s] [19/238] preinstalled debugedit-5.0-5.1
+[   90s] [20/238] preinstalled diffutils-3.8-3.1
+[   90s] [21/238] cumulate doctest-devel-2.4.9-1.1
+[   90s] [22/238] preinstalled dwz-0.15-2.1
+[   90s] [23/238] preinstalled elfutils-0.188-2.1
+[   90s] [24/238] cumulate fdupes-2.2.1-1.1
+[   90s] [25/238] preinstalled file-5.43-1.1
+[   90s] [26/238] preinstalled file-magic-5.43-1.1
+[   90s] [27/238] preinstalled filesystem-84.87-10.1
+[   90s] [28/238] preinstalled fillup-1.42-278.1
+[   90s] [29/238] preinstalled findutils-4.9.0-1.1
+[   90s] [30/238] preinstalled gawk-5.2.1-1.1
+[   90s] [31/238] preinstalled gcc-12-2.1
+[   90s] [32/238] preinstalled gcc-PIE-12-2.1
+[   90s] [33/238] preinstalled gcc12-12.2.1+git537-1.1
+[   90s] [34/238] preinstalled gcc12-PIE-12.2.1+git537-1.1
+[   90s] [35/238] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   90s] [36/238] preinstalled gettext-tools-mini-0.21.1-1.1
+[   90s] [37/238] preinstalled glibc-2.36-8.1
+[   90s] [38/238] preinstalled glibc-devel-2.36-8.1
+[   90s] [39/238] preinstalled glibc-locale-base-2.36-8.1
+[   90s] [40/238] preinstalled grep-3.8-2.1
+[   90s] [41/238] preinstalled gzip-1.12-2.1
+[   90s] [42/238] preinstalled kernel-obs-build-6.0.12-1.1
+[   90s] [43/238] cumulate libX11-data-1.8.1-4.1
+[   90s] [44/238] cumulate libXau6-1.0.10-1.1
+[   90s] [45/238] preinstalled libacl1-2.3.1-2.1
+[   90s] [46/238] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   90s] [47/238] cumulate libaom3-3.5.0-1.1
+[   90s] [48/238] preinstalled libasan8-12.2.1+git537-1.1
+[   90s] [49/238] preinstalled libasm1-0.188-2.1
+[   90s] [50/238] preinstalled libatomic1-12.2.1+git537-1.1
+[   90s] [51/238] preinstalled libattr1-2.5.1-1.1
+[   90s] [52/238] preinstalled libaudit1-3.0.6-4.1
+[   90s] [53/238] preinstalled libblkid1-2.37.4-4.1
+[   90s] [54/238] cumulate libbrotlicommon1-1.0.9-1.1
+[   90s] [55/238] preinstalled libbz2-1-1.0.8-4.1
+[   90s] [56/238] preinstalled libcap-ng0-0.8.3-1.1
+[   90s] [57/238] preinstalled libcap2-2.66-1.1
+[   90s] [58/238] cumulate libcodec2-1_0-1.0.5-1.1
+[   90s] [59/238] cumulate libcom_err2-1.46.5-3.1
+[   90s] [60/238] preinstalled libcrypt1-4.4.33-1.1
+[   90s] [61/238] preinstalled libctf-nobfd0-2.39-1.1
+[   90s] [62/238] preinstalled libctf0-2.39-1.1
+[   90s] [63/238] cumulate libdav1d6-1.0.0-2.1
+[   90s] [64/238] preinstalled libdb-4_8-4.8.30-39.1
+[   90s] [65/238] cumulate libdeflate0-1.14-1.1
+[   90s] [66/238] cumulate libdrm2-2.4.114-3.1
+[   90s] [67/238] preinstalled libdw1-0.188-2.1
+[   90s] [68/238] preinstalled libeconf0-0.5.0-1.1
+[   90s] [69/238] preinstalled libelf1-0.188-2.1
+[   90s] [70/238] cumulate libexpat1-2.5.0-2.1
+[   90s] [71/238] preinstalled libfdisk1-2.37.4-4.1
+[   90s] [72/238] cumulate libffi8-3.4.4-1.1
+[   90s] [73/238] preinstalled libgcc_s1-12.2.1+git537-1.1
+[   90s] [74/238] preinstalled libgcrypt20-1.10.1-1.1
+[   90s] [75/238] preinstalled libgdbm6-1.23-1.1
+[   90s] [76/238] preinstalled libgdbm_compat4-1.23-1.1
+[   90s] [77/238] preinstalled libgmp10-6.2.1-4.1
+[   90s] [78/238] preinstalled libgomp1-12.2.1+git537-1.1
+[   90s] [79/238] preinstalled libgpg-error0-1.46-1.1
+[   90s] [80/238] cumulate libgsm1-1.0.22-1.1
+[   90s] [81/238] preinstalled libisl23-0.25-1.1
+[   90s] [82/238] cumulate libjitterentropy3-3.4.1-1.1
+[   90s] [83/238] cumulate libkeyutils1-1.6.3-4.1
+[   90s] [84/238] preinstalled liblua5_4-5-5.4.4-6.1
+[   90s] [85/238] preinstalled liblzma5-5.2.8-1.1
+[   90s] [86/238] preinstalled libmagic1-5.43-1.1
+[   90s] [87/238] preinstalled libmount1-2.37.4-4.1
+[   90s] [88/238] cumulate libmp3lame0-3.100-4.1
+[   90s] [89/238] preinstalled libmpc3-1.2.1-1.2
+[   90s] [90/238] cumulate libmpdec3-2.5.1-2.1
+[   90s] [91/238] preinstalled libmpfr6-4.1.1-3.1
+[   90s] [92/238] cumulate libmpg123-0-1.31.1-1.1
+[   90s] [93/238] preinstalled libncurses6-6.3.20221126-31.1
+[   90s] [94/238] cumulate libnettle8-3.8.1-1.1
+[   90s] [95/238] cumulate libnuma1-2.0.15.0.g01a39cb-1.1
+[   90s] [96/238] cumulate libogg0-1.3.5-1.1
+[   90s] [97/238] cumulate libopenjp2-7-2.5.0-2.1
+[   90s] [98/238] cumulate libopus0-1.3.1-3.2
+[   90s] [99/238] preinstalled libpcre2-8-0-10.42-1.1
+[   90s] [100/238] preinstalled libpkgconf3-1.8.0-1.1
+[   90s] [101/238] cumulate libpng16-16-1.6.39-1.1
+[   90s] [102/238] preinstalled libpopt0-1.19-1.1
+[   90s] [103/238] cumulate libqrcodegen1-1.6.0-1.5
+[   90s] [104/238] cumulate libqrcodegencpp1-1.6.0-1.5
+[   90s] [105/238] cumulate librav1e0-0.6.1+0-1.1
+[   90s] [106/238] preinstalled libreadline8-8.2-2.1
+[   90s] [107/238] cumulate librhash0-1.4.3-1.1
+[   90s] [108/238] cumulate librist4-0.2.7-2.1
+[   90s] [109/238] preinstalled librpmbuild9-4.18.0-1.1
+[   90s] [110/238] preinstalled libseccomp2-2.5.4-2.1
+[   90s] [111/238] preinstalled libselinux1-3.4-2.1
+[   90s] [112/238] preinstalled libsemanage-conf-3.4-1.1
+[   90s] [113/238] preinstalled libsemanage2-3.4-1.1
+[   90s] [114/238] preinstalled libsepol2-3.4-1.1
+[   90s] [115/238] preinstalled libsmartcols1-2.37.4-4.1
+[   90s] [116/238] cumulate libsodium23-1.0.18-2.2
+[   90s] [117/238] cumulate libsoxr0-0.1.3-2.2
+[   90s] [118/238] cumulate libspeex1-1.2.1-1.1
+[   90s] [119/238] cumulate libssh-config-0.10.4-1.1
+[   90s] [120/238] preinstalled libstdc++6-12.2.1+git537-1.1
+[   90s] [121/238] cumulate libstdc++6-devel-gcc12-12.2.1+git537-1.1
+[   90s] [122/238] preinstalled libsubid4-4.13-1.1
+[   90s] [123/238] cumulate libtasn1-6-4.19.0-1.1
+[   90s] [124/238] cumulate libtheoradec1-1.1.1-30.1
+[   90s] [125/238] cumulate libtwolame0-0.4.0-1.2
+[   90s] [126/238] preinstalled libubsan1-12.2.1+git537-1.1
+[   90s] [127/238] cumulate libunistring5-1.1-1.1
+[   90s] [128/238] cumulate libunwind8-1.6.2-4.1
+[   90s] [129/238] preinstalled libutempter0-1.2.0-3.2
+[   90s] [130/238] preinstalled libuuid1-2.37.4-4.1
+[   90s] [131/238] cumulate libuv1-1.44.2-2.1
+[   90s] [132/238] cumulate libva2-2.16.0-3.1
+[   90s] [133/238] cumulate libverto1-0.3.2-1.1
+[   90s] [134/238] cumulate libvpx7-1.12.0-1.1
+[   90s] [135/238] cumulate libwebp7-1.2.4-1.1
+[   90s] [136/238] preinstalled libxcrypt-devel-4.4.33-1.1
+[   90s] [137/238] cumulate libxml2-2-2.10.3-2.1
+[   90s] [138/238] cumulate libyaml-0-2-0.2.5-2.1
+[   90s] [139/238] preinstalled libz1-1.2.12-2.1
+[   90s] [140/238] preinstalled libzstd1-1.5.2-1.1
+[   90s] [141/238] preinstalled linux-glibc-devel-6.0-1.1
+[   90s] [142/238] preinstalled login_defs-4.13-1.1
+[   90s] [143/238] preinstalled lua54-5.4.4-6.1
+[   90s] [144/238] preinstalled make-4.4-2.1
+[   90s] [145/238] cumulate ncurses-devel-6.3.20221126-31.1
+[   90s] [146/238] preinstalled ncurses-utils-6.3.20221126-31.1
+[   90s] [147/238] preinstalled pam-1.5.2-10.1
+[   90s] [148/238] preinstalled pam_unix-1.5.2-10.1
+[   90s] [149/238] preinstalled patch-2.7.6-6.1
+[   90s] [150/238] preinstalled perl-5.36.0-3.1
+[   91s] [151/238] preinstalled perl-base-5.36.0-3.1
+[   91s] [152/238] preinstalled permissions-1599_20220912-2.1
+[   91s] [153/238] preinstalled permissions-config-1599_20220912-2.1
+[   91s] [154/238] preinstalled pkgconf-1.8.0-1.1
+[   91s] [155/238] preinstalled pkgconf-m4-1.8.0-1.1
+[   91s] [156/238] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   91s] [157/238] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   91s] [158/238] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   91s] [159/238] cumulate python-rpm-macros-20221117.8687578-1.1
+[   91s] [160/238] preinstalled qemu-linux-user-7.1.0-45.1
+[   91s] [161/238] preinstalled rpm-4.18.0-1.1
+[   91s] [162/238] preinstalled rpm-build-4.18.0-1.1
+[   91s] [163/238] preinstalled rpm-build-perl-4.18.0-1.1
+[   91s] [164/238] preinstalled rpm-config-SUSE-20220926-1.1
+[   91s] [165/238] preinstalled rpmlint-mini-2.4.0+git20221209.975098b-8.34
+[   91s] [166/238] preinstalled rpmlint-strict-2.4.0+git20221209.975098b-1.1
+[   91s] [167/238] preinstalled sed-4.9-1.1
+[   91s] [168/238] preinstalled shadow-4.13-1.1
+[   91s] [169/238] preinstalled system-group-hardware-20170617-24.1
+[   91s] [170/238] preinstalled system-user-root-20190513-2.1
+[   91s] [171/238] preinstalled systemd-rpm-macros-18-1.1
+[   91s] [172/238] preinstalled sysuser-shadow-3.1-5.1
+[   91s] [173/238] preinstalled tar-1.34-8.1
+[   91s] [174/238] preinstalled terminfo-base-6.3.20221126-31.1
+[   91s] [175/238] preinstalled update-alternatives-1.21.8-1.1
+[   91s] [176/238] preinstalled util-linux-2.37.4-4.1
+[   91s] [177/238] preinstalled which-2.21-5.1
+[   91s] [178/238] preinstalled xz-5.2.8-1.1
+[   91s] [179/238] cumulate zlib-devel-1.2.12-2.1
+[   91s] [180/238] cumulate alts-1.2+3.b848aad-3.1
+[   91s] [181/238] cumulate gcc12-c++-12.2.1+git537-1.1
+[   91s] [182/238] cumulate libbrotlidec1-1.0.9-1.1
+[   91s] [183/238] cumulate libdeflate-devel-1.14-1.1
+[   91s] [184/238] cumulate libhogweed6-3.8.1-1.1
+[   91s] [185/238] cumulate libidn2-0-2.3.4-1.1
+[   91s] [186/238] cumulate libopenssl1_1-1.1.1s-1.1
+[   91s] [187/238] cumulate libp11-kit0-0.24.1-2.1
+[   91s] [188/238] cumulate libtheoraenc1-1.1.1-30.1
+[   91s] [189/238] cumulate libunistring-devel-1.1-1.1
+[   91s] [190/238] cumulate libvorbis0-1.3.7-2.1
+[   91s] [191/238] cumulate libwebpmux3-1.2.4-1.1
+[   91s] [192/238] cumulate libxcb1-1.15-1.1
+[   91s] [193/238] cumulate readline-devel-8.2-2.1
+[   91s] [194/238] cumulate QR-Code-generator-devel-1.6.0-1.5
+[   91s] [195/238] cumulate libva-drm2-2.16.0-3.1
+[   91s] [196/238] cumulate libzmq5-4.3.4-9.1
+[   91s] [197/238] cumulate krb5-mini-1.20.1-1.1
+[   91s] [198/238] cumulate pandoc-2.18-1.1
+[   91s] [199/238] cumulate gcc-c++-12-2.1
+[   91s] [200/238] cumulate libsrt1_4-1.4.4-1.1
+[   91s] [201/238] cumulate libvorbisenc2-1.3.7-2.1
+[   91s] [202/238] cumulate libX11-6-1.8.1-4.1
+[   91s] [203/238] cumulate libfreetype6-2.12.1-3.1
+[   91s] [204/238] cumulate libvorbisfile3-1.3.7-2.1
+[   91s] [205/238] cumulate libssh4-0.10.4-1.1
+[   91s] [206/238] cumulate libgnutls30-3.7.8-1.1
+[   91s] [207/238] cumulate libXext6-1.3.5-1.1
+[   91s] [208/238] cumulate libXfixes3-6.0.0-2.1
+[   91s] [209/238] cumulate libopenmpt0-0.6.6-1.1
+[   91s] [210/238] cumulate libvdpau1-1.5-1.1
+[   91s] [211/238] cumulate libva-x11-2-2.16.0-3.1
+[   91s] [212/238] cumulate libavutil57-5.1.2-5.1
+[   91s] [213/238] cumulate ffmpeg-5-libavutil-devel-5.1.2-5.1
+[   91s] [214/238] cumulate libswscale6-5.1.2-5.1
+[   91s] [215/238] cumulate libswresample4-5.1.2-5.1
+[   91s] [216/238] cumulate ffmpeg-5-libswresample-devel-5.1.2-5.1
+[   91s] [217/238] cumulate ffmpeg-5-libswscale-devel-5.1.2-5.1
+[   91s] [218/238] cumulate libavcodec59-5.1.2-5.1
+[   91s] [219/238] cumulate ffmpeg-5-libavcodec-devel-5.1.2-5.1
+[   91s] [220/238] cumulate libfontconfig1-2.14.1-1.1
+[   91s] [221/238] cumulate python310-base-3.10.9-1.2
+[   91s] [222/238] cumulate libpython3_10-1_0-3.10.9-1.2
+[   91s] [223/238] cumulate python310-pycparser-2.21-1.4
+[   91s] [224/238] cumulate python310-pyparsing-3.0.9-2.1
+[   91s] [225/238] cumulate python310-setuptools-65.6.3-1.1
+[   91s] [226/238] cumulate fontconfig-2.14.1-1.1
+[   91s] [227/238] cumulate libbluray2-1.3.4-1.1
+[   91s] [228/238] cumulate cmake-mini-3.25.1-1.1
+[   91s] [229/238] cumulate cmake-3.25.1-1.1
+[   91s] [230/238] cumulate python310-devel-3.10.9-1.2
+[   91s] [231/238] cumulate python310-packaging-21.3-4.1
+[   91s] [232/238] cumulate python310-cffi-1.15.1-2.1
+[   91s] [233/238] cumulate python310-pip-22.3.1-1.1
+[   91s] [234/238] cumulate python310-wheel-0.38.4-1.1
+[   91s] [235/238] cumulate libavformat59-5.1.2-5.1
+[   91s] [236/238] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   91s] [237/238] cumulate ffmpeg-5-libavformat-devel-5.1.2-5.1
+[   91s] [238/238] cumulate python310-pypandoc-1.6.4-3.1
+[   91s] now installing cumulated packages
+[   93s] Preparing...                          ########################################
+[   94s] Updating / installing...
+[   94s] libva2-2.16.0-3.1                     ########################################
+[   94s] libffi8-3.4.4-1.1                     ########################################
+[   95s] libunistring5-1.1-1.1                 ########################################
+[   95s] libogg0-1.3.5-1.1                     ########################################
+[   95s] libvorbis0-1.3.7-2.1                  ########################################
+[   95s] libexpat1-2.5.0-2.1                   ########################################
+[   96s] libdrm2-2.4.114-3.1                   ########################################
+[   96s] libxml2-2-2.10.3-2.1                  ########################################
+[   97s] libwebp7-1.2.4-1.1                    ########################################
+[   97s] libnettle8-3.8.1-1.1                  ########################################
+[   97s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   98s] libopenssl1_1-1.1.1s-1.1              ########################################
+[   99s] libsrt1_4-1.4.4-1.1                   ########################################
+[   99s] libhogweed6-3.8.1-1.1                 ########################################
+[   99s] libwebpmux3-1.2.4-1.1                 ########################################
+[   99s] libva-drm2-2.16.0-3.1                 ########################################
+[  100s] libvorbisenc2-1.3.7-2.1               ########################################
+[  100s] libvorbisfile3-1.3.7-2.1              ########################################
+[  100s] libtheoraenc1-1.1.1-30.1              ########################################
+[  100s] libidn2-0-2.3.4-1.1                   ########################################
+[  101s] libp11-kit0-0.24.1-2.1                ########################################
+[  101s] python-rpm-macros-20221117.8687578-1.1########################################
+[  102s] ncurses-devel-6.3.20221126-31.1       ########################################
+[  102s] libyaml-0-2-0.2.5-2.1                 ########################################
+[  103s] libvpx7-1.12.0-1.1                    ########################################
+[  103s] libverto1-0.3.2-1.1                   ########################################
+[  103s] libuv1-1.44.2-2.1                     ########################################
+[  103s] libunwind8-1.6.2-4.1                  ########################################
+[  103s] libtwolame0-0.4.0-1.2                 ########################################
+[  103s] libtheoradec1-1.1.1-30.1              ########################################
+[  103s] libtasn1-6-4.19.0-1.1                 ########################################
+[  127s] libstdc++6-devel-gcc12-12.2.1+git537-1########################################
+[  134s] gcc12-c++-12.2.1+git537-1.1           ########################################
+[  134s] libssh-config-0.10.4-1.1              ########################################
+[  134s] libspeex1-1.2.1-1.1                   ########################################
+[  135s] libsoxr0-0.1.3-2.2                    ########################################
+[  135s] libsodium23-1.0.18-2.2                ########################################
+[  135s] libzmq5-4.3.4-9.1                     ########################################
+[  136s] librist4-0.2.7-2.1                    ########################################
+[  136s] librhash0-1.4.3-1.1                   ########################################
+[  137s] librav1e0-0.6.1+0-1.1                 ########################################
+[  137s] libqrcodegencpp1-1.6.0-1.5            ########################################
+[  137s] libqrcodegen1-1.6.0-1.5               ########################################
+[  137s] libpng16-16-1.6.39-1.1                ########################################
+[  137s] libopus0-1.3.1-3.2                    ########################################
+[  138s] libopenjp2-7-2.5.0-2.1                ########################################
+[  138s] libnuma1-2.0.15.0.g01a39cb-1.1        ########################################
+[  193s] pandoc-2.18-1.1                       ########################################
+[  194s] libmpg123-0-1.31.1-1.1                ########################################
+[  195s] libopenmpt0-0.6.6-1.1                 ########################################
+[  195s] libmpdec3-2.5.1-2.1                   ########################################
+[  196s] libpython3_10-1_0-3.10.9-1.2          ########################################
+[  206s] python310-base-3.10.9-1.2             ########################################
+[  208s] python310-setuptools-65.6.3-1.1       ########################################
+[  209s] python310-pycparser-2.21-1.4          ########################################
+[  209s] python310-pyparsing-3.0.9-2.1         ########################################
+[  209s] python310-packaging-21.3-4.1          ########################################
+[  222s] cmake-mini-3.25.1-1.1                 ########################################
+[  222s] libmp3lame0-3.100-4.1                 ########################################
+[  222s] libkeyutils1-1.6.3-4.1                ########################################
+[  223s] libjitterentropy3-3.4.1-1.1           ########################################
+[  223s] libgnutls30-3.7.8-1.1                 ########################################
+[  223s] libgsm1-1.0.22-1.1                    ########################################
+[  224s] libdeflate0-1.14-1.1                  ########################################
+[  224s] libdav1d6-1.0.0-2.1                   ########################################
+[  224s] libcom_err2-1.46.5-3.1                ########################################
+[  226s] krb5-mini-1.20.1-1.1                  ########################################
+[  226s] Updating /etc/sysconfig/kadmind ...
+[  226s] Updating /etc/sysconfig/krb5kdc ...
+[  227s] libssh4-0.10.4-1.1                    ########################################
+[  227s] libcodec2-1_0-1.0.5-1.1               ########################################
+[  228s] libbrotlicommon1-1.0.9-1.1            ########################################
+[  228s] libbrotlidec1-1.0.9-1.1               ########################################
+[  228s] libfreetype6-2.12.1-3.1               ########################################
+[  229s] libfontconfig1-2.14.1-1.1             ########################################
+[  229s] fontconfig-2.14.1-1.1                 ########################################
+[  229s] libbluray2-1.3.4-1.1                  ########################################
+[  230s] libaom3-3.5.0-1.1                     ########################################
+[  230s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  230s] alts-1.2+3.b848aad-3.1                ########################################
+[  235s] python310-pip-22.3.1-1.1              ########################################
+[  236s] python310-wheel-0.38.4-1.1            ########################################
+[  236s] libXau6-1.0.10-1.1                    ########################################
+[  236s] libxcb1-1.15-1.1                      ########################################
+[  237s] libX11-data-1.8.1-4.1                 ########################################
+[  237s] libX11-6-1.8.1-4.1                    ########################################
+[  238s] libXext6-1.3.5-1.1                    ########################################
+[  238s] libvdpau1-1.5-1.1                     ########################################
+[  238s] libXfixes3-6.0.0-2.1                  ########################################
+[  238s] libva-x11-2-2.16.0-3.1                ########################################
+[  239s] libavutil57-5.1.2-5.1                 ########################################
+[  239s] ffmpeg-5-libavutil-devel-5.1.2-5.1    ########################################
+[  239s] libswresample4-5.1.2-5.1              ########################################
+[  239s] ffmpeg-5-libswresample-devel-5.1.2-5.1########################################
+[  241s] libavcodec59-5.1.2-5.1                ########################################
+[  241s] ffmpeg-5-libavcodec-devel-5.1.2-5.1   ########################################
+[  242s] libavformat59-5.1.2-5.1               ########################################
+[  243s] libswscale6-5.1.2-5.1                 ########################################
+[  243s] ffmpeg-5-libswscale-devel-5.1.2-5.1   ########################################
+[  243s] ffmpeg-5-libavformat-devel-5.1.2-5.1  ########################################
+[  243s] python310-pypandoc-1.6.4-3.1          ########################################
+[  243s] libdeflate-devel-1.14-1.1             ########################################
+[  243s] cmake-3.25.1-1.1                      ########################################
+[  243s] python-rpm-packaging-20210526+a18ca48-########################################
+[  244s] python310-cffi-1.15.1-2.1             ########################################
+[  244s] python310-devel-3.10.9-1.2            ########################################
+[  244s] QR-Code-generator-devel-1.6.0-1.5     ########################################
+[  244s] gcc-c++-12-2.1                        ########################################
+[  244s] readline-devel-8.2-2.1                ########################################
+[  244s] libunistring-devel-1.1-1.1            ########################################
+[  244s] zlib-devel-1.2.12-2.1                 ########################################
+[  244s] fdupes-2.2.1-1.1                      ########################################
+[  245s] doctest-devel-2.4.9-1.1               ########################################
+[  254s] now finalizing build dir...
+[  255s] ... running 01-add_abuild_user_to_trusted_group
+[  255s] ... running 02-set_timezone_to_utc
+[  256s] ... running 03-set-permissions-secure
+[  256s] ... running 11-hack_uname_version_to_kernel_version
+[  278s] build target is riscv64-suse-linux
+[  278s] -----------------------------------------------------------------
+[  278s] I have the following modifications for notcurses.spec:
+[  279s] 28c28
+[  279s] < Release:        0
+[  279s] ---
+[  279s] > Release:        1.1
+[  279s] -----------------------------------------------------------------
+[  279s] ----- building notcurses.spec (user abuild)
+[  279s] -----------------------------------------------------------------
+[  279s] -----------------------------------------------------------------
+[  287s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/a0ce16ad8dddfa4bd4511017b9057a47-notcurses' /home/abuild/rpmbuild/SOURCES/notcurses.spec
+[  290s] Building target platforms: riscv64-suse-linux
+[  290s] Building for target riscv64-suse-linux
+[  290s] setting SOURCE_DATE_EPOCH=1670630400
+[  291s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.8jxiBB
+[  291s] + umask 022
+[  291s] + cd /home/abuild/rpmbuild/BUILD
+[  291s] + cd /home/abuild/rpmbuild/BUILD
+[  291s] + rm -rf notcurses-3.0.9
+[  291s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/notcurses-3.0.9.tar.gz
+[  294s] + STATUS=0
+[  294s] + '[' 0 -ne 0 ']'
+[  294s] + cd notcurses-3.0.9
+[  294s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  294s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  294s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/notcurses-3.0.8-skip-xray.diff
+[  294s] + RPM_EC=0
+[  294s] ++ jobs -p
+[  294s] + exit 0
+[  295s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Fnurz5
+[  295s] + umask 022
+[  295s] + cd /home/abuild/rpmbuild/BUILD
+[  295s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/notcurses-3.0.9-1.1.riscv64
+[  295s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/notcurses-3.0.9-1.1.riscv64
+[  295s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  295s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/notcurses-3.0.9-1.1.riscv64
+[  295s] + cd notcurses-3.0.9
+[  295s] + ref=/usr/lib/rpm
+[  295s] + mints=0
+[  295s] + case $(uname -m) in
+[  295s] ++ uname -m
+[  295s] + mints=20160911
+[  295s] + for s in guess sub
+[  295s] ++ find -maxdepth 8 -name config.guess
+[  296s] + for s in guess sub
+[  296s] ++ find -maxdepth 8 -name config.sub
+[  296s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  296s] + mkdir -p build
+[  296s] + cd build
+[  296s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/notcurses -DUSE_DOCTEST=OFF -DUSE_STATIC=OFF -DDFSG_BUILD=ON -DUSE_QRCODEGEN=ON -DUSE_PANDOC=ON
+[  304s] -- The C compiler identification is GNU 12.2.1
+[  305s] -- Detecting C compiler ABI info
+[  312s] -- Detecting C compiler ABI info - done
+[  313s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  313s] -- Detecting C compile features
+[  313s] -- Detecting C compile features - done
+[  320s] -- The CXX compiler identification is GNU 12.2.1
+[  320s] -- Detecting CXX compiler ABI info
+[  327s] -- Detecting CXX compiler ABI info - done
+[  328s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  328s] -- Detecting CXX compile features
+[  328s] -- Detecting CXX compile features - done
+[  328s] -- Requested multimedia engine: ffmpeg
+[  328s] -- Requested build mode: RelWithDebInfo
+[  328s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[  328s] -- Checking for one of the modules 'tinfo>=6.1;ncursesw>=6.1'
+[  334s] -- Checking for module 'libavcodec>=57.0'
+[  336s] --   Found libavcodec, version 59.37.100
+[  341s] -- Checking for module 'libavformat>=57.0'
+[  343s] --   Found libavformat, version 59.27.100
+[  348s] -- Checking for module 'libavutil>=56.0'
+[  350s] --   Found libavutil, version 57.28.100
+[  355s] -- Checking for module 'libswscale>=5.0'
+[  356s] --   Found libswscale, version 6.7.100
+[  362s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[  373s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[  373s] -- Found Threads: TRUE  
+[  373s] -- Looking for unigbrk.h
+[  384s] -- Looking for unigbrk.h - found
+[  384s] -- Looking for libdeflate.h
+[  394s] -- Looking for libdeflate.h - found
+[  394s] -- Looking for qrcodegen/qrcodegen.h
+[  405s] -- Looking for qrcodegen/qrcodegen.h - found
+[  405s] -- The following OPTIONAL packages have been found:
+[  405s] 
+[  405s]  * FFMpeg
+[  405s]  * qrcodegen
+[  405s] 
+[  405s] -- The following REQUIRED packages have been found:
+[  405s] 
+[  405s]  * PkgConfig
+[  405s]  * terminfo
+[  405s]  * Threads
+[  405s]  * libunistring
+[  405s]  * libdeflate
+[  405s] 
+[  406s] -- Configuring done
+[  415s] -- Generating done
+[  415s] CMake Warning:
+[  415s]   Manually-specified variables were not used by the project:
+[  415s] 
+[  415s]     BUILD_STATIC_LIBS
+[  415s]     CMAKE_Fortran_FLAGS
+[  415s]     CMAKE_INSTALL_DO_STRIP
+[  415s]     CMAKE_MODULES_INSTALL_DIR
+[  415s]     INCLUDE_INSTALL_DIR
+[  415s]     LIB_INSTALL_DIR
+[  415s]     LIB_SUFFIX
+[  415s]     SHARE_INSTALL_PREFIX
+[  415s]     SYSCONF_INSTALL_DIR
+[  415s] 
+[  415s] 
+[  415s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build
+[  416s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  458s] /usr/bin/cmake -P /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/VerifyGlobs.cmake
+[  458s] -- GLOB mismatch!
+[  458s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -B/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  458s] Re-run cmake file: Makefile older than: CMakeFiles/cmake.verify_globs
+[  458s] -- Requested multimedia engine: ffmpeg
+[  458s] -- Requested build mode: RelWithDebInfo
+[  458s] -- Looking for unigbrk.h
+[  458s] -- Looking for unigbrk.h - found
+[  458s] -- Looking for libdeflate.h
+[  458s] -- Looking for libdeflate.h - found
+[  458s] -- Looking for qrcodegen/qrcodegen.h
+[  458s] -- Looking for qrcodegen/qrcodegen.h - found
+[  458s] -- The following OPTIONAL packages have been found:
+[  458s] 
+[  458s]  * FFMpeg
+[  458s]  * qrcodegen
+[  458s] 
+[  458s] -- The following REQUIRED packages have been found:
+[  458s] 
+[  458s]  * PkgConfig
+[  458s]  * terminfo
+[  458s]  * Threads
+[  458s]  * libunistring
+[  458s]  * libdeflate
+[  458s] 
+[  458s] -- Configuring done
+[  458s] -- Generating done
+[  458s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build
+[  458s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build//CMakeFiles/progress.marks
+[  458s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses-core.dir/build.make CMakeFiles/notcurses-core.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses.3.man.dir/build.make CMakeFiles/notcurses.3.man.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses.3.html5.dir/build.make CMakeFiles/notcurses.3.html5.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses_capabilities.3.man.dir/build.make CMakeFiles/notcurses_capabilities.3.man.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses_capabilities.3.html5.dir/build.make CMakeFiles/notcurses_capabilities.3.html5.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses_cell.3.man.dir/build.make CMakeFiles/notcurses_cell.3.man.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses_cell.3.html5.dir/build.make CMakeFiles/notcurses_cell.3.html5.dir/depend
+[  459s] /usr/bin/make  -f CMakeFiles/notcurses_channels.3.man.dir/build.make CMakeFiles/notcurses_channels.3.man.dir/depend
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses-core.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses.3.man.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses-core.dir/build.make CMakeFiles/notcurses-core.dir/build
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses.3.man.dir/build.make CMakeFiles/notcurses.3.man.dir/build
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses_channels.3.man.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses.3.html5.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses_channels.3.man.dir/build.make CMakeFiles/notcurses_channels.3.man.dir/build
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses.3.html5.dir/build.make CMakeFiles/notcurses.3.html5.dir/build
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses_cell.3.man.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses_capabilities.3.man.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses_capabilities.3.man.dir/build.make CMakeFiles/notcurses_capabilities.3.man.dir/build
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses_cell.3.man.dir/build.make CMakeFiles/notcurses_cell.3.man.dir/build
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses_cell.3.html5.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses_cell.3.html5.dir/build.make CMakeFiles/notcurses_cell.3.html5.dir/build
+[  460s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] cd /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9 /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/CMakeFiles/notcurses_capabilities.3.html5.dir/DependInfo.cmake
+[  460s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  460s] /usr/bin/make  -f CMakeFiles/notcurses_capabilities.3.html5.dir/build.make CMakeFiles/notcurses_capabilities.3.html5.dir/build
+[  478s] [  462.053415][ T5109] Out of memory: Killed process 5094 (pandoc) total-vm:1075786896kB, anon-rss:1256180kB, file-rss:0kB, shmem-rss:0kB, UID:399 pgtables:3280kB oom_score_adj:0
+[  478s] make[2]: *** Deleting file 'notcurses_channels.3'
+[  478s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  478s] [  0%] Building man page notcurses_channels.3
+[  478s] /usr/bin/pandoc --to man --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses_channels.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses_channels.3
+[  478s] make[2]: *** [CMakeFiles/notcurses_channels.3.man.dir/build.make:76: notcurses_channels.3] Error 137
+[  478s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  479s] make[1]: *** [CMakeFiles/Makefile2:2838: CMakeFiles/notcurses_channels.3.man.dir/all] Error 2
+[  479s] make[1]: *** Waiting for unfinished jobs....
+[  480s] [  464.020043][ T5109] Out of memory: Killed process 5091 (pandoc) total-vm:1075971444kB, anon-rss:1383196kB, file-rss:0kB, shmem-rss:0kB, UID:399 pgtables:3648kB oom_score_adj:0
+[  481s] make[2]: *** Deleting file 'notcurses.3'
+[  481s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  481s] [  0%] Building man page notcurses.3
+[  481s] /usr/bin/pandoc --to man --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses.3
+[  481s] make[2]: *** [CMakeFiles/notcurses.3.man.dir/build.make:76: notcurses.3] Error 137
+[  481s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  482s] make[1]: *** [CMakeFiles/Makefile2:2682: CMakeFiles/notcurses.3.man.dir/all] Error 2
+[  482s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  482s] [  0%] Building C object CMakeFiles/notcurses-core.dir/src/lib/automaton.c.o
+[  482s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/automaton.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/automaton.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/automaton.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/automaton.c
+[  482s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  483s] [  467.633418][ T5108] Out of memory: Killed process 5109 (pandoc) total-vm:1076148960kB, anon-rss:1561288kB, file-rss:4kB, shmem-rss:0kB, UID:399 pgtables:4116kB oom_score_adj:0
+[  484s] make[2]: *** Deleting file 'notcurses_capabilities.3'
+[  484s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  484s] [  0%] Building man page notcurses_capabilities.3
+[  484s] /usr/bin/pandoc --to man --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses_capabilities.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses_capabilities.3
+[  484s] make[2]: *** [CMakeFiles/notcurses_capabilities.3.man.dir/build.make:76: notcurses_capabilities.3] Error 137
+[  484s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  484s] make[1]: *** [CMakeFiles/Makefile2:2734: CMakeFiles/notcurses_capabilities.3.man.dir/all] Error 2
+[  486s] [  470.654968][ T5100] Out of memory: Killed process 5122 (pandoc) total-vm:1076718672kB, anon-rss:1994308kB, file-rss:4kB, shmem-rss:0kB, UID:399 pgtables:5108kB oom_score_adj:0
+[  487s] make[2]: *** Deleting file 'notcurses_capabilities.3.html'
+[  487s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  487s] [  1%] Building HTML5 notcurses_capabilities.3.html
+[  487s] /usr/bin/pandoc -H /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/analytics-header.html --to html --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses_capabilities.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses_capabilities.3.html
+[  487s] make[2]: *** [CMakeFiles/notcurses_capabilities.3.html5.dir/build.make:77: notcurses_capabilities.3.html] Error 137
+[  487s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  487s] make[1]: *** [CMakeFiles/Makefile2:2760: CMakeFiles/notcurses_capabilities.3.html5.dir/all] Error 2
+[  491s] [  475.793917][ T5231] Out of memory: Killed process 5118 (pandoc) total-vm:1077456712kB, anon-rss:2630452kB, file-rss:4kB, shmem-rss:0kB, UID:399 pgtables:6668kB oom_score_adj:0
+[  492s] make[2]: *** Deleting file 'notcurses_cell.3.html'
+[  492s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  492s] [  0%] Building HTML5 notcurses_cell.3.html
+[  492s] /usr/bin/pandoc -H /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/analytics-header.html --to html --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses_cell.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses_cell.3.html
+[  492s] make[2]: *** [CMakeFiles/notcurses_cell.3.html5.dir/build.make:77: notcurses_cell.3.html] Error 137
+[  492s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  492s] make[1]: *** [CMakeFiles/Makefile2:2812: CMakeFiles/notcurses_cell.3.html5.dir/all] Error 2
+[  496s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  496s] [  2%] Building C object CMakeFiles/notcurses-core.dir/src/lib/banner.c.o
+[  496s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/banner.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/banner.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/banner.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/banner.c
+[  496s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  498s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  498s] [  2%] Building C object CMakeFiles/notcurses-core.dir/src/lib/debug.c.o
+[  498s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/debug.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/debug.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/debug.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/debug.c
+[  498s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  500s] [  484.684816][ T5108] Out of memory: Killed process 5108 (pandoc) total-vm:1079059164kB, anon-rss:3871704kB, file-rss:0kB, shmem-rss:0kB, UID:399 pgtables:9828kB oom_score_adj:0
+[  502s] make[2]: *** Deleting file 'notcurses.3.html'
+[  502s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  502s] [  0%] Building HTML5 notcurses.3.html
+[  502s] /usr/bin/pandoc -H /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/analytics-header.html --to html --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses.3.html
+[  502s] make[2]: *** [CMakeFiles/notcurses.3.html5.dir/build.make:77: notcurses.3.html] Error 137
+[  502s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  502s] make[1]: *** [CMakeFiles/Makefile2:2708: CMakeFiles/notcurses.3.html5.dir/all] Error 2
+[  503s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  503s] [  2%] Building C object CMakeFiles/notcurses-core.dir/src/lib/blit.c.o
+[  503s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/blit.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/blit.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/blit.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/blit.c
+[  503s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  503s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  503s] [  3%] Building C object CMakeFiles/notcurses-core.dir/src/lib/fade.c.o
+[  503s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/fade.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/fade.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/fade.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/fade.c
+[  503s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  506s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  506s] [  3%] Building C object CMakeFiles/notcurses-core.dir/src/lib/fd.c.o
+[  506s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/fd.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/fd.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/fd.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/fd.c
+[  506s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  509s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  509s] [  4%] Building C object CMakeFiles/notcurses-core.dir/src/lib/gpm.c.o
+[  509s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/gpm.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/gpm.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/gpm.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/gpm.c
+[  509s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  509s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  509s] [  3%] Building C object CMakeFiles/notcurses-core.dir/src/lib/direct.c.o
+[  509s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/direct.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/direct.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/direct.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/direct.c
+[  509s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  515s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  515s] [  4%] Building C object CMakeFiles/notcurses-core.dir/src/lib/fill.c.o
+[  515s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/fill.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/fill.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/fill.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/fill.c
+[  515s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  516s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  516s] [  5%] Building C object CMakeFiles/notcurses-core.dir/src/lib/layout.c.o
+[  516s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/layout.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/layout.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/layout.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/layout.c
+[  516s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  520s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  520s] [  4%] Building C object CMakeFiles/notcurses-core.dir/src/lib/kitty.c.o
+[  520s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/kitty.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/kitty.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/kitty.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/kitty.c
+[  520s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  521s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  521s] [  7%] Building C object CMakeFiles/notcurses-core.dir/src/lib/metric.c.o
+[  521s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/metric.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/metric.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/metric.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/metric.c
+[  521s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  522s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  522s] [  5%] Building C object CMakeFiles/notcurses-core.dir/src/lib/linux.c.o
+[  522s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/linux.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/linux.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/linux.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/linux.c
+[  522s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  524s] [  4%] Building C object CMakeFiles/notcurses-core.dir/src/lib/in.c.o
+[  524s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/in.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/in.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/in.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/in.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  525s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  525s] [  5%] Building C object CMakeFiles/notcurses-core.dir/src/lib/menu.c.o
+[  525s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/menu.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/menu.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/menu.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/menu.c
+[  525s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  526s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  526s] [  7%] Building C object CMakeFiles/notcurses-core.dir/src/lib/mice.c.o
+[  526s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/mice.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/mice.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/mice.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/mice.c
+[  526s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  535s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  535s] [  8%] Building C object CMakeFiles/notcurses-core.dir/src/lib/progbar.c.o
+[  535s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/progbar.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/progbar.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/progbar.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/progbar.c
+[  535s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  537s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  537s] [  8%] Building C object CMakeFiles/notcurses-core.dir/src/lib/reader.c.o
+[  537s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/reader.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/reader.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/reader.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/reader.c
+[  537s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  539s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  539s] [  8%] Building C object CMakeFiles/notcurses-core.dir/src/lib/reel.c.o
+[  539s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/reel.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/reel.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/reel.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/reel.c
+[  539s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  542s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  542s] [  8%] Building C object CMakeFiles/notcurses-core.dir/src/lib/plot.c.o
+[  542s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/plot.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/plot.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/plot.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/plot.c
+[  542s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  545s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  545s] [  9%] Building C object CMakeFiles/notcurses-core.dir/src/lib/selector.c.o
+[  545s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/selector.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/selector.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/selector.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/selector.c
+[  545s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  548s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  548s] [  7%] Building C object CMakeFiles/notcurses-core.dir/src/lib/notcurses.c.o
+[  548s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/notcurses.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/notcurses.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/notcurses.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/notcurses.c
+[  548s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  550s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  550s] [ 10%] Building C object CMakeFiles/notcurses-core.dir/src/lib/sprite.c.o
+[  550s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/sprite.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/sprite.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/sprite.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/sprite.c
+[  550s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  550s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  550s] [  9%] Building C object CMakeFiles/notcurses-core.dir/src/lib/render.c.o
+[  550s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/render.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/render.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/render.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/render.c
+[  550s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  552s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  552s] [ 10%] Building C object CMakeFiles/notcurses-core.dir/src/lib/stats.c.o
+[  552s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/stats.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/stats.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/stats.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/stats.c
+[  552s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  556s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  556s] [ 10%] Building C object CMakeFiles/notcurses-core.dir/src/lib/tabbed.c.o
+[  556s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/tabbed.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/tabbed.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/tabbed.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/tabbed.c
+[  556s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  556s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  556s] [  9%] Building C object CMakeFiles/notcurses-core.dir/src/lib/sixel.c.o
+[  556s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/sixel.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/sixel.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/sixel.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/sixel.c
+[  556s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  560s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  560s] [ 11%] Building C object CMakeFiles/notcurses-core.dir/src/lib/unixsig.c.o
+[  560s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/unixsig.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/unixsig.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/unixsig.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/unixsig.c
+[  560s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  561s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  561s] [ 13%] Building C object CMakeFiles/notcurses-core.dir/src/lib/util.c.o
+[  561s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/util.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/util.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/util.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/util.c
+[  561s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  562s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  562s] [ 11%] Building C object CMakeFiles/notcurses-core.dir/src/lib/termdesc.c.o
+[  562s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/termdesc.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/termdesc.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/termdesc.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/termdesc.c
+[  562s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  563s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  563s] [ 11%] Building C object CMakeFiles/notcurses-core.dir/src/lib/tree.c.o
+[  563s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/tree.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/tree.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/tree.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/tree.c
+[  563s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  564s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  564s] [ 13%] Building C object CMakeFiles/notcurses-core.dir/src/compat/compat.c.o
+[  564s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/compat/compat.c.o -MF CMakeFiles/notcurses-core.dir/src/compat/compat.c.o.d -o CMakeFiles/notcurses-core.dir/src/compat/compat.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/compat/compat.c
+[  564s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  564s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  564s] [ 13%] Building C object CMakeFiles/notcurses-core.dir/src/lib/windows.c.o
+[  564s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/windows.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/windows.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/windows.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/windows.c
+[  564s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  571s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  571s] [ 13%] Building C object CMakeFiles/notcurses-core.dir/src/lib/visual.c.o
+[  571s] /usr/bin/cc -D_DEFAULT_SOURCE -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -Dnotcurses_core_EXPORTS -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/include -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9 -I/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/include -I/usr/include/ncurses -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wformat -Werror=format-security -Wall -Wextra -W -Wshadow -Wvla -Wstrict-aliasing=2 -fno-signed-zeros -fno-trapping-math -fassociative-math -fno-math-errno -freciprocal-math -funsafe-math-optimizations -fexceptions -fstrict-aliasing -fPIC -std=gnu11 -MD -MT CMakeFiles/notcurses-core.dir/src/lib/visual.c.o -MF CMakeFiles/notcurses-core.dir/src/lib/visual.c.o.d -o CMakeFiles/notcurses-core.dir/src/lib/visual.c.o -c /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/src/lib/visual.c
+[  571s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  575s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  575s] [  0%] Building man page notcurses_cell.3
+[  575s] /usr/bin/pandoc --to man --standalone --from markdown-smart /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/doc/man/man3/notcurses_cell.3.md > /home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build/notcurses_cell.3
+[  575s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  575s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  575s] [ 14%] Built target notcurses_cell.3.man
+[  575s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  688s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  688s] [ 14%] Linking C shared library libnotcurses-core.so
+[  688s] /usr/bin/cmake -E cmake_link_script CMakeFiles/notcurses-core.dir/link.txt --verbose=1
+[  688s] /usr/bin/cc -fPIC -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now -shared -Wl,-soname,libnotcurses-core.so.3 -o libnotcurses-core.so.3.0.9 "CMakeFiles/notcurses-core.dir/src/lib/automaton.c.o" "CMakeFiles/notcurses-core.dir/src/lib/banner.c.o" "CMakeFiles/notcurses-core.dir/src/lib/blit.c.o" "CMakeFiles/notcurses-core.dir/src/lib/debug.c.o" "CMakeFiles/notcurses-core.dir/src/lib/direct.c.o" "CMakeFiles/notcurses-core.dir/src/lib/fade.c.o" "CMakeFiles/notcurses-core.dir/src/lib/fd.c.o" "CMakeFiles/notcurses-core.dir/src/lib/fill.c.o" "CMakeFiles/notcurses-core.dir/src/lib/gpm.c.o" "CMakeFiles/notcurses-core.dir/src/lib/in.c.o" "CMakeFiles/notcurses-core.dir/src/lib/kitty.c.o" "CMakeFiles/notcurses-core.dir/src/lib/layout.c.o" "CMakeFiles/notcurses-core.dir/src/lib/linux.c.o" "CMakeFiles/notcurses-core.dir/src/lib/menu.c.o" "CMakeFiles/notcurses-core.dir/src/lib/metric.c.o" "CMakeFiles/notcurses-core.dir/src/lib/mice.c.o" "CMakeFiles/notcurses-core.dir/src/lib/notcurses.c.o" "CMakeFiles/notcurses-core.dir/src/lib/plot.c.o" "CMakeFiles/notcurses-core.dir/src/lib/progbar.c.o" "CMakeFiles/notcurses-core.dir/src/lib/reader.c.o" "CMakeFiles/notcurses-core.dir/src/lib/reel.c.o" "CMakeFiles/notcurses-core.dir/src/lib/render.c.o" "CMakeFiles/notcurses-core.dir/src/lib/selector.c.o" "CMakeFiles/notcurses-core.dir/src/lib/sixel.c.o" "CMakeFiles/notcurses-core.dir/src/lib/sprite.c.o" "CMakeFiles/notcurses-core.dir/src/lib/stats.c.o" "CMakeFiles/notcurses-core.dir/src/lib/tabbed.c.o" "CMakeFiles/notcurses-core.dir/src/lib/termdesc.c.o" "CMakeFiles/notcurses-core.dir/src/lib/tree.c.o" "CMakeFiles/notcurses-core.dir/src/lib/unixsig.c.o" "CMakeFiles/notcurses-core.dir/src/lib/util.c.o" "CMakeFiles/notcurses-core.dir/src/lib/visual.c.o" "CMakeFiles/notcurses-core.dir/src/lib/windows.c.o" "CMakeFiles/notcurses-core.dir/src/compat/compat.c.o"   -L/home/abuild/rpmbuild/BUILD/notcurses-3.0.9  -Wl,-rpath,/home/abuild/rpmbuild/BUILD/notcurses-3.0.9: /usr/lib64/libdeflate.so -ltinfo /usr/lib64/libm.so /usr/lib64/libunistring.so /usr/lib64/librt.a -lqrcodegen 
+[  688s] /usr/bin/cmake -E cmake_symlink_library libnotcurses-core.so.3.0.9 libnotcurses-core.so.3 libnotcurses-core.so
+[  688s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  689s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  689s] [ 14%] Built target notcurses-core
+[  689s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/notcurses-3.0.9/build'
+[  689s] make: *** [Makefile:149: all] Error 2
+[  689s] error: Bad exit status from /var/tmp/rpm-tmp.Fnurz5 (%build)
+[  689s] 
+[  689s] RPM build errors:
+[  689s]     Bad exit status from /var/tmp/rpm-tmp.Fnurz5 (%build)
+[  690s] ### VM INTERACTION START ###
+[  691s] [  674.984209][    T1] sysrq: Power Off
+[  691s] [  674.993639][   T18] reboot: Power down
+[  691s] ### VM INTERACTION END ###
+[  691s] 
+[  691s] hci-snode2-m0 failed "build notcurses.spec" at Tue Dec 13 20:38:38 UTC 2022.
+[  691s] 

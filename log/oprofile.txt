@@ -1,0 +1,1095 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] hci-cnode1-m0 started "build oprofile.spec" at Mon Jan 18 14:26:53 UTC 2021.
+[    0s] 
+[    0s] Building oprofile for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f842a1e956c9c7dd086baae2334a6671'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/oprofile.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/oprofile.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/oprofile.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7aef6ff0580d7548e303b5a8b52a31f6]
+[    6s] .................
+[    6s] 
+[    6s] copying packages...
+[    7s] reordering...cycle: libtasn1 -> libtasn1-6
+[    7s]   breaking dependency libtasn1-6 -> libtasn1
+[    7s] cycle: fontconfig -> libfontconfig1
+[    7s]   breaking dependency libfontconfig1 -> fontconfig
+[    7s] cycle: mozilla-nss -> libsoftokn3
+[    7s]   breaking dependency mozilla-nss -> libsoftokn3
+[    7s] done
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using UART console
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 mitigations=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    8s] c[?7l[2J[0mSeaBIOS (version rel-1.12.0-59-gc9ba527-rebuilt.opensuse.org)
+[   14s] Booting from ROM..c[?7l[2JNo such file or directory
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   15s] Linux version: 5.10.7-1-default #1 SMP Wed Jan 13 06:08:43 UTC 2021 (1c33a89)
+[   15s] Increasing log level from now on...
+[   15s] [    6.159623] sysrq: Changing Loglevel
+[   15s] [    6.160160] sysrq: Loglevel set to 4
+[   15s] Enable sysrq operations
+[   15s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   15s] no label, UUID=186dadd7-95fc-489b-981c-aea63f0e47e8
+[   15s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   15s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   15s] swapon /dev/vdb
+[   15s] WARNING: udev not running, creating extra device nodes
+[   16s] logging output to //.build.log...
+[   16s] processing recipe /.build-srcdir/oprofile.spec ...
+[   16s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/oprofile.spec build ...
+[   16s] initializing rpm db...
+[   17s] querying package ids...
+[   31s] [1/203] preinstalled aaa_base-84.87+git20201123.4f16b16-1.1
+[   31s] [2/203] preinstalled aaa_base-malloccheck-84.87+git20201123.4f16b16-1.1
+[   31s] [3/203] preinstalled attr-2.4.48-3.2
+[   31s] [4/203] preinstalled bash-5.0.18-3.1
+[   31s] [5/203] preinstalled binutils-2.35.1-1.1
+[   31s] [6/203] preinstalled brp-check-suse-84.87+git20201201.9bbfade-1.1
+[   31s] [7/203] preinstalled build-compare-20200727T175347.d95eb35-1.2
+[   31s] [8/203] preinstalled build-mkbaselibs-20200828-1.1
+[   31s] [9/203] preinstalled bzip2-1.0.8-2.2
+[   31s] [10/203] preinstalled chkstat-1550_20201111-29.1
+[   31s] [11/203] preinstalled coreutils-8.32-6.1
+[   31s] [12/203] preinstalled cpio-2.13-2.1
+[   31s] [13/203] preinstalled cpp-10-3.1
+[   31s] [14/203] preinstalled cpp10-10.2.1+git1030-1.2
+[   31s] [15/203] preinstalled diffutils-3.7-4.1
+[   31s] [16/203] preinstalled dwz-0.13-7.2
+[   31s] [17/203] cumulate fdupes-2.1.2-1.2
+[   31s] [18/203] preinstalled file-5.39-1.2
+[   31s] [19/203] preinstalled file-magic-5.39-1.2
+[   31s] [20/203] preinstalled filesystem-15.5-35.1
+[   31s] [21/203] preinstalled fillup-1.42-276.1
+[   31s] [22/203] preinstalled findutils-4.7.0-6.1
+[   31s] [23/203] preinstalled gawk-5.1.0-1.3
+[   31s] [24/203] preinstalled gcc-10-3.1
+[   31s] [25/203] preinstalled gcc-PIE-10-3.1
+[   31s] [26/203] preinstalled gcc10-10.2.1+git1030-1.2
+[   31s] [27/203] preinstalled gettext-runtime-mini-0.21-1.1
+[   31s] [28/203] preinstalled gettext-tools-mini-0.21-1.1
+[   31s] [29/203] preinstalled glibc-2.32-4.1
+[   31s] [30/203] preinstalled glibc-devel-2.32-4.1
+[   31s] [31/203] preinstalled glibc-locale-2.32-4.1
+[   31s] [32/203] preinstalled glibc-locale-base-2.32-4.1
+[   31s] [33/203] preinstalled grep-3.6-2.1
+[   31s] [34/203] preinstalled gzip-1.10-5.1
+[   31s] [35/203] preinstalled hostname-3.23-1.1
+[   31s] [36/203] preinstalled iproute2-5.9.0-2.1
+[   31s] [37/203] cumulate javapackages-filesystem-5.3.1-4.1
+[   31s] [38/203] preinstalled kernel-obs-build-5.10.7-1.2
+[   31s] [39/203] preinstalled krb5-mini-1.18.3-1.1
+[   31s] [40/203] cumulate libICE6-1.0.10-1.2
+[   31s] [41/203] cumulate libX11-data-1.7.0-1.1
+[   31s] [42/203] cumulate libXau6-1.0.9-1.2
+[   31s] [43/203] preinstalled libacl1-2.2.53-4.1
+[   31s] [44/203] preinstalled libasan6-10.2.1+git1030-1.2
+[   31s] [45/203] cumulate libasound2-1.2.4-2.1
+[   31s] [46/203] preinstalled libatomic1-10.2.1+git1030-1.2
+[   31s] [47/203] preinstalled libattr1-2.4.48-3.2
+[   31s] [48/203] preinstalled libaudit1-2.8.5-4.1
+[   31s] [49/203] preinstalled libblkid1-2.35.1-2.2
+[   31s] [50/203] cumulate libbrotlicommon1-1.0.9-1.1
+[   31s] [51/203] preinstalled libbz2-1-1.0.8-2.2
+[   31s] [52/203] preinstalled libcap-ng0-0.7.10-1.2
+[   31s] [53/203] preinstalled libcap2-2.44-5.1
+[   31s] [54/203] preinstalled libcom_err2-1.45.6-2.1
+[   31s] [55/203] preinstalled libcrypt1-4.4.17-1.1
+[   31s] [56/203] preinstalled libctf-nobfd0-2.35.1-1.1
+[   31s] [57/203] preinstalled libctf0-2.35.1-1.1
+[   31s] [58/203] preinstalled libdb-4_8-4.8.30-38.3
+[   31s] [59/203] preinstalled libdw1-0.182-2.1
+[   31s] [60/203] preinstalled libeconf0-0.3.8+git20200710.5126fff-2.1
+[   31s] [61/203] preinstalled libelf1-0.182-2.1
+[   31s] [62/203] preinstalled libexpat1-2.2.10-1.1
+[   31s] [63/203] preinstalled libfdisk1-2.35.1-2.2
+[   31s] [64/203] cumulate libffi8-3.3.git30-1.2
+[   31s] [65/203] cumulate libfreebl3-3.59.1-8.1
+[   31s] [66/203] preinstalled libgcc_s1-10.2.1+git1030-1.2
+[   31s] [67/203] preinstalled libgcrypt20-1.8.7-1.1
+[   31s] [68/203] preinstalled libgdbm6-1.19-1.1
+[   31s] [69/203] preinstalled libgdbm_compat4-1.19-1.1
+[   31s] [70/203] cumulate libgif7-5.2.1-1.2
+[   31s] [71/203] preinstalled libgmp10-6.2.1-2.1
+[   31s] [72/203] preinstalled libgomp1-10.2.1+git1030-1.2
+[   31s] [73/203] preinstalled libgpg-error0-1.39-1.1
+[   31s] [74/203] preinstalled libisl23-0.23-1.1
+[   31s] [75/203] cumulate libjpeg8-8.2.2-65.1
+[   31s] [76/203] preinstalled libkeyutils1-1.6.3-1.1
+[   31s] [77/203] cumulate liblcms2-2-2.11-1.1
+[   31s] [78/203] cumulate libltdl7-2.4.6-8.2
+[   31s] [79/203] preinstalled liblua5_3-5-5.3.6-1.1
+[   31s] [80/203] preinstalled liblzma5-5.2.5-1.1
+[   31s] [81/203] preinstalled libmagic1-5.39-1.2
+[   31s] [82/203] preinstalled libmnl0-1.0.4-2.2
+[   31s] [83/203] preinstalled libmount1-2.35.1-2.2
+[   31s] [84/203] preinstalled libmpc3-1.2.1-1.1
+[   31s] [85/203] preinstalled libmpfr6-4.1.0-1.2
+[   31s] [86/203] preinstalled libncurses6-6.2.20201205-12.1
+[   31s] [87/203] preinstalled libnsl2-1.3.0-1.2
+[   31s] [88/203] cumulate libogg0-1.3.4-1.2
+[   31s] [89/203] cumulate libopenssl1_1-1.1.1h-2.1
+[   31s] [90/203] preinstalled libpcre1-8.44-1.2
+[   31s] [91/203] cumulate libpcsclite1-1.9.0-1.2
+[   31s] [92/203] preinstalled libpkgconf3-1.7.3-2.2
+[   31s] [93/203] cumulate libpng16-16-1.6.37-1.2
+[   31s] [94/203] preinstalled libpopt0-1.18-2.1
+[   31s] [95/203] preinstalled libreadline8-8.0-6.1
+[   31s] [96/203] preinstalled librpmbuild9-4.16.0-1.1
+[   31s] [97/203] preinstalled libselinux1-3.1-2.1
+[   31s] [98/203] preinstalled libsemanage1-3.1-1.1
+[   31s] [99/203] preinstalled libsepol1-3.1-2.1
+[   31s] [100/203] preinstalled libsmartcols1-2.35.1-2.2
+[   31s] [101/203] cumulate libspeex1-1.2-1.3
+[   31s] [102/203] cumulate libsqlite3-0-3.34.0-6.1
+[   31s] [103/203] preinstalled libstdc++6-10.2.1+git1030-1.2
+[   31s] [104/203] cumulate libstdc++6-devel-gcc10-10.2.1+git1030-1.2
+[   31s] [105/203] cumulate libsystemd0-mini-246.9-1.1
+[   31s] [106/203] preinstalled libtirpc-netconfig-1.3.1-1.1
+[   31s] [107/203] preinstalled libtirpc3-1.3.1-1.1
+[   31s] [108/203] preinstalled libubsan1-10.2.1+git1030-1.2
+[   31s] [109/203] preinstalled libutempter0-1.2.0-3.1
+[   31s] [110/203] preinstalled libuuid1-2.35.1-2.2
+[   31s] [111/203] preinstalled libverto1-0.3.1-1.1
+[   31s] [112/203] preinstalled libxcrypt-devel-4.4.17-1.1
+[   31s] [113/203] cumulate libxml2-2-2.9.10-8.1
+[   31s] [114/203] preinstalled libz1-1.2.11-18.1
+[   31s] [115/203] preinstalled libzstd1-1.4.8-1.1
+[   31s] [116/203] preinstalled linux-glibc-devel-5.10-1.1
+[   31s] [117/203] cumulate m4-1.4.18-5.2
+[   31s] [118/203] preinstalled make-4.3-2.2
+[   31s] [119/203] cumulate mozilla-nspr-4.29-1.1
+[   31s] [120/203] preinstalled ncurses-utils-6.2.20201205-12.1
+[   31s] [121/203] preinstalled pam-1.5.1-2.1
+[   31s] [122/203] preinstalled patch-2.7.6-3.2
+[   31s] [123/203] preinstalled perl-5.32.0-2.1
+[   31s] [124/203] cumulate perl-SGMLS-1.1-1.4
+[   31s] [125/203] preinstalled perl-base-5.32.0-2.1
+[   31s] [126/203] preinstalled permissions-20201111.1550-29.1
+[   31s] [127/203] preinstalled permissions-config-1550_20201111-29.1
+[   31s] [128/203] preinstalled pkgconf-1.7.3-2.2
+[   31s] [129/203] preinstalled pkgconf-m4-1.7.3-2.2
+[   31s] [130/203] preinstalled pkgconf-pkg-config-1.7.3-2.2
+[   31s] [131/203] cumulate popt-devel-1.18-2.1
+[   31s] [132/203] preinstalled post-build-checks-84.87+git20200916.d341ab0-1.1
+[   31s] [133/203] preinstalled qemu-linux-user-5.2.0-52.2
+[   31s] [134/203] preinstalled rpm-4.16.0-1.1
+[   31s] [135/203] preinstalled rpm-build-4.16.0-1.1
+[   31s] [136/203] preinstalled rpm-build-perl-4.16.0-1.1
+[   31s] [137/203] preinstalled rpm-config-SUSE-0.g64-1.1
+[   31s] [138/203] preinstalled rpmlint-Factory-1.0-99.1
+[   31s] [139/203] preinstalled rpmlint-Factory-strict-1.0-99.1
+[   31s] [140/203] preinstalled rpmlint-mini-1.10-22.25
+[   31s] [141/203] preinstalled sed-4.8-3.1
+[   31s] [142/203] preinstalled shadow-4.8.1-5.1
+[   31s] [143/203] preinstalled system-group-hardware-20170617-15.1
+[   31s] [144/203] preinstalled system-user-root-20190513-1.2
+[   31s] [145/203] preinstalled systemd-rpm-macros-9-1.1
+[   31s] [146/203] preinstalled sysuser-shadow-3.0-6.1
+[   31s] [147/203] preinstalled tar-1.32-4.1
+[   31s] [148/203] preinstalled terminfo-base-6.2.20201205-12.1
+[   31s] [149/203] preinstalled update-alternatives-1.19.0.5-6.1
+[   31s] [150/203] preinstalled util-linux-2.35.1-2.2
+[   31s] [151/203] preinstalled which-2.21-4.3
+[   31s] [152/203] cumulate xorgproto-devel-2020.1-1.2
+[   31s] [153/203] preinstalled xz-5.2.5-1.1
+[   31s] [154/203] cumulate zlib-devel-1.2.11-18.1
+[   31s] [155/203] cumulate autoconf-2.69-17.2
+[   31s] [156/203] cumulate binutils-devel-2.35.1-1.1
+[   31s] [157/203] cumulate gcc10-c++-10.2.1+git1030-1.2
+[   31s] [158/203] cumulate javapackages-tools-5.3.1-4.1
+[   31s] [159/203] cumulate libFLAC8-1.3.3-1.2
+[   31s] [160/203] cumulate libbrotlidec1-1.0.9-1.1
+[   31s] [161/203] cumulate libdbus-1-3-1.12.20-3.1
+[   31s] [162/203] cumulate libp11-kit0-0.23.20-5.1
+[   31s] [163/203] cumulate libvorbis0-1.3.7-1.2
+[   31s] [164/203] cumulate libxcb1-1.14-1.2
+[   31s] [165/203] cumulate libxml2-tools-2.9.10-8.1
+[   31s] [166/203] cumulate libxslt1-1.1.34-1.2
+[   31s] [167/203] cumulate mozilla-nss-certs-3.59.1-8.1
+[   31s] [168/203] cumulate openssl-1_1-1.1.1h-2.1
+[   31s] [169/203] cumulate libICE-devel-1.0.10-1.2
+[   31s] [170/203] cumulate automake-1.16.2-1.2
+[   31s] [171/203] cumulate gcc-c++-10-3.1
+[   31s] [172/203] cumulate libvorbisenc2-1.3.7-1.2
+[   31s] [173/203] cumulate libX11-6-1.7.0-1.1
+[   31s] [174/203] cumulate libfreetype6-2.10.4-1.1
+[   31s] [175/203] cumulate libxslt-tools-1.1.34-1.2
+[   31s] [176/203] cumulate libXext6-1.3.4-1.2
+[   31s] [177/203] cumulate libXrender1-0.9.10-1.3
+[   31s] [178/203] cumulate sgml-skel-0.7.1-1.3
+[   31s] [179/203] cumulate libtool-2.4.6-8.2
+[   31s] [180/203] cumulate libsndfile1-1.0.28-10.2
+[   31s] [181/203] cumulate iso_ent-2000.11.03-828.4
+[   31s] [182/203] cumulate opensp-1.5.2-201.4
+[   31s] [183/203] cumulate libXi6-1.7.10-1.2
+[   31s] [184/203] cumulate libXtst6-1.2.3-2.1
+[   31s] [185/203] cumulate libpulse0-14.0-3.1
+[   31s] [186/203] cumulate openjade-1.3.2-372.4
+[   31s] [187/203] cumulate docbook_4-4.5-143.2
+[   31s] [188/203] cumulate docbook-xsl-stylesheets-1.79.2-2.2
+[   31s] [189/203] cumulate docbook_3-3.1-771.2
+[   31s] [190/203] cumulate docbook-dsssl-stylesheets-1.79-176.2
+[   31s] [191/203] cumulate docbook-utils-minimal-0.6.14-239.3
+[   31s] [192/203] cumulate libtasn1-6-4.16.0-1.2
+[   31s] [193/203] cumulate libfontconfig1-2.13.1-2.3
+[   31s] [194/203] cumulate mozilla-nss-3.59.1-8.1
+[   31s] [195/203] cumulate libtasn1-4.16.0-1.2
+[   31s] [196/203] cumulate fontconfig-2.13.1-2.3
+[   31s] [197/203] cumulate p11-kit-0.23.20-5.1
+[   31s] [198/203] cumulate p11-kit-tools-0.23.20-5.1
+[   31s] [199/203] cumulate libsoftokn3-3.59.1-8.1
+[   31s] [200/203] cumulate ca-certificates-2+git20210111.eeae41c-1.1
+[   31s] [201/203] cumulate java-11-openjdk-headless-11.0.9.1-14.1
+[   31s] [202/203] cumulate java-11-openjdk-11.0.9.1-14.1
+[   31s] [203/203] cumulate java-11-openjdk-devel-11.0.9.1-14.1
+[   31s] now installing cumulated packages
+[   31s] Preparing...                          ########################################
+[   31s] Updating / installing...
+[   31s] libtasn1-4.16.0-1.2                   ########################################
+[   32s] libtasn1-6-4.16.0-1.2                 ########################################
+[   32s] mozilla-nspr-4.29-1.1                 ########################################
+[   32s] libxml2-2-2.9.10-8.1                  ########################################
+[   32s] libxml2-tools-2.9.10-8.1              ########################################
+[   32s] libogg0-1.3.4-1.2                     ########################################
+[   32s] libvorbis0-1.3.7-1.2                  ########################################
+[   32s] m4-1.4.18-5.2                         ########################################
+[   32s] libsystemd0-mini-246.9-1.1            ########################################
+[   32s] libpng16-16-1.6.37-1.2                ########################################
+[   32s] libjpeg8-8.2.2-65.1                   ########################################
+[   32s] libfreebl3-3.59.1-8.1                 ########################################
+[   32s] libffi8-3.3.git30-1.2                 ########################################
+[   32s] libp11-kit0-0.23.20-5.1               ########################################
+[   32s] p11-kit-0.23.20-5.1                   ########################################
+[   32s] p11-kit-tools-0.23.20-5.1             ########################################
+[   32s] libdbus-1-3-1.12.20-3.1               ########################################
+[   33s] autoconf-2.69-17.2                    ########################################
+[   33s] automake-1.16.2-1.2                   ########################################
+[   33s] libvorbisenc2-1.3.7-1.2               ########################################
+[   33s] libFLAC8-1.3.3-1.2                    ########################################
+[   33s] libxslt1-1.1.34-1.2                   ########################################
+[   33s] libxslt-tools-1.1.34-1.2              ########################################
+[   33s] sgml-skel-0.7.1-1.3                   ########################################
+[   34s] iso_ent-2000.11.03-828.4              ########################################
+[   34s] docbook_4-4.5-143.2                   ########################################
+[   37s] docbook_3-3.1-771.2                   ########################################
+[   37s] opensp-1.5.2-201.4                    ########################################
+[   38s] openjade-1.3.2-372.4                  ########################################
+[   39s] docbook-dsssl-stylesheets-1.79-176.2  ########################################
+[   40s] mozilla-nss-certs-3.59.1-8.1          ########################################
+[   40s] zlib-devel-1.2.11-18.1                ########################################
+[   40s] xorgproto-devel-2020.1-1.2            ########################################
+[   40s] perl-SGMLS-1.1-1.4                    ########################################
+[   46s] libstdc++6-devel-gcc10-10.2.1+git1030-########################################
+[   48s] gcc10-c++-10.2.1+git1030-1.2          ########################################
+[   49s] libsqlite3-0-3.34.0-6.1               ########################################
+[   49s] libsoftokn3-3.59.1-8.1                ########################################
+[   49s] mozilla-nss-3.59.1-8.1                ########################################
+[   49s] libspeex1-1.2-1.3                     ########################################
+[   49s] libsndfile1-1.0.28-10.2               ########################################
+[   49s] libpcsclite1-1.9.0-1.2                ########################################
+[   50s] libopenssl1_1-1.1.1h-2.1              ########################################
+[   50s] openssl-1_1-1.1.1h-2.1                ########################################
+[   50s] ca-certificates-2+git20210111.eeae41c-########################################
+[   52s] libltdl7-2.4.6-8.2                    ########################################
+[   52s] liblcms2-2-2.11-1.1                   ########################################
+[   52s] libgif7-5.2.1-1.2                     ########################################
+[   52s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   52s] libbrotlidec1-1.0.9-1.1               ########################################
+[   52s] libfreetype6-2.10.4-1.1               ########################################
+[   52s] libfontconfig1-2.13.1-2.3             ########################################
+[   52s] fontconfig-2.13.1-2.3                 ########################################
+[   52s] libasound2-1.2.4-2.1                  ########################################
+[   52s] libXau6-1.0.9-1.2                     ########################################
+[   52s] libxcb1-1.14-1.2                      ########################################
+[   53s] libpulse0-14.0-3.1                    ########################################
+[   53s] libX11-data-1.7.0-1.1                 ########################################
+[   53s] libX11-6-1.7.0-1.1                    ########################################
+[   53s] libXext6-1.3.4-1.2                    ########################################
+[   53s] libXi6-1.7.10-1.2                     ########################################
+[   53s] libXtst6-1.2.3-2.1                    ########################################
+[   53s] libXrender1-0.9.10-1.3                ########################################
+[   53s] libICE6-1.0.10-1.2                    ########################################
+[   53s] javapackages-filesystem-5.3.1-4.1     ########################################
+[   53s] javapackages-tools-5.3.1-4.1          ########################################
+[   64s] java-11-openjdk-headless-11.0.9.1-14.1########################################
+[   64s] update-alternatives: using /usr/lib64/jvm/jre-11-openjdk/bin/java to provide /usr/bin/java (java) in auto mode
+[   64s] update-alternatives: using /usr/lib64/jvm/jre-11-openjdk to provide /usr/lib64/jvm/jre-openjdk (jre_openjdk) in auto mode
+[   64s] update-alternatives: using /usr/lib64/jvm/jre-11-openjdk to provide /usr/lib64/jvm/jre-11 (jre_11) in auto mode
+[   64s] java-11-openjdk-11.0.9.1-14.1         ########################################
+[   65s] java-11-openjdk-devel-11.0.9.1-14.1   ########################################
+[   65s] update-alternatives: using /usr/lib64/jvm/java-11-openjdk/bin/javac to provide /usr/bin/javac (javac) in auto mode
+[   65s] update-alternatives: using /usr/lib64/jvm/java-11-openjdk to provide /usr/lib64/jvm/java-openjdk (java_sdk_openjdk) in auto mode
+[   65s] update-alternatives: using /usr/lib64/jvm/java-11-openjdk to provide /usr/lib64/jvm/java-11 (java_sdk_11) in auto mode
+[   65s] libICE-devel-1.0.10-1.2               ########################################
+[   65s] libtool-2.4.6-8.2                     ########################################
+[   65s] gcc-c++-10-3.1                        ########################################
+[   65s] docbook-utils-minimal-0.6.14-239.3    ########################################
+[   69s] binutils-devel-2.35.1-1.1             ########################################
+[   70s] docbook-xsl-stylesheets-1.79.2-2.2    ########################################
+[   71s] popt-devel-1.18-2.1                   ########################################
+[   71s] fdupes-2.1.2-1.2                      ########################################
+[   75s] now finalizing build dir...
+[   75s] ... running 01-add_abuild_user_to_trusted_group
+[   75s] ... running 02-set_timezone_to_utc
+[   76s] ... running 11-hack_uname_version_to_kernel_version
+[   77s] RTNETLINK answers: File exists
+[   77s] RTNETLINK answers: File exists
+[   83s] build target is riscv64-suse-linux
+[   83s] -----------------------------------------------------------------
+[   83s] I have the following modifications for oprofile.spec:
+[   83s] 21c21
+[   83s] < Release:        0
+[   83s] ---
+[   83s] > Release:        1.1
+[   83s] -----------------------------------------------------------------
+[   83s] ----- building oprofile.spec (user abuild)
+[   83s] -----------------------------------------------------------------
+[   83s] -----------------------------------------------------------------
+[   85s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f842a1e956c9c7dd086baae2334a6671-oprofile' /home/abuild/rpmbuild/SOURCES/oprofile.spec
+[   86s] Building target platforms: riscv64-suse-linux
+[   86s] Building for target riscv64-suse-linux
+[   86s] setting SOURCE_DATE_EPOCH=1610755200
+[   86s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.4kH6aI
+[   86s] + umask 022
+[   86s] + cd /home/abuild/rpmbuild/BUILD
+[   86s] + cd /home/abuild/rpmbuild/BUILD
+[   86s] + rm -rf oprofile-1.4.0
+[   86s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/oprofile-1.4.0.tar.gz
+[   86s] + /usr/bin/tar -xof -
+[   86s] + STATUS=0
+[   86s] + '[' 0 -ne 0 ']'
+[   86s] + cd oprofile-1.4.0
+[   86s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   86s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/oprofile-no-libjvm-version.patch
+[   86s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[   86s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/oprofile-pfm-ppc.patch
+[   86s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[   87s] + mkdir -p java/include
+[   87s] + ln -s /usr/lib64/jvm/java/include/classfile_constants.h /usr/lib64/jvm/java/include/jawt.h /usr/lib64/jvm/java/include/jdwpTransport.h /usr/lib64/jvm/java/include/jni.h /usr/lib64/jvm/java/include/jvmti.h /usr/lib64/jvm/java/include/jvmticmlr.h /usr/lib64/jvm/java/include/linux java/include
+[   87s] + test -f java/include/jvmpi.h
+[   87s] + ln -s /home/abuild/rpmbuild/SOURCES/jvmpi.h java/include
+[   87s] + RPM_EC=0
+[   87s] ++ jobs -p
+[   87s] + exit 0
+[   87s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.EVIvfJ
+[   87s] + umask 022
+[   87s] + cd /home/abuild/rpmbuild/BUILD
+[   87s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/oprofile-1.4.0-1.1.riscv64
+[   87s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/oprofile-1.4.0-1.1.riscv64
+[   87s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   87s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/oprofile-1.4.0-1.1.riscv64
+[   87s] + cd oprofile-1.4.0
+[   87s] + ref=/usr/lib/rpm
+[   87s] ++ uname -m
+[   87s] + testarch=riscv64
+[   87s] + for s in guess sub
+[   87s] ++ find -maxdepth 8 -name config.guess
+[   87s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   87s] + grep -q config-patches@ ./config.guess
+[   87s] + grep -q 'riscv64[-:]' ./config.guess
+[   87s] + install -m 755 /usr/lib/rpm/config.guess ./config.guess
+[   87s] + for s in guess sub
+[   87s] ++ find -maxdepth 8 -name config.sub
+[   88s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   88s] + grep -q config-patches@ ./config.sub
+[   88s] + grep -q 'riscv64[-:]' ./config.sub
+[   88s] + install -m 755 /usr/lib/rpm/config.sub ./config.sub
+[   88s] + ./autogen.sh
+[  104s] Running aclocal -I m4 ...
+[  114s] Running autoheader ...
+[  120s] Running automake --foreign --add-missing --copy ...
+[  139s] Running autoconf ...
+[  144s] + CFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  144s] + export CFLAGS
+[  144s] + CXXFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  144s] + export CXXFLAGS
+[  144s] + FFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  144s] + export FFLAGS
+[  144s] + FCFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  144s] + export FCFLAGS
+[  144s] + LDFLAGS=-flto=auto
+[  144s] + export LDFLAGS
+[  144s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking --with-java=/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/java
+[  150s] checking for a BSD-compatible install... /usr/bin/install -c
+[  150s] checking whether build environment is sane... yes
+[  150s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  150s] checking for gawk... gawk
+[  150s] checking whether make sets $(MAKE)... yes
+[  150s] checking whether make supports nested variables... yes
+[  151s] checking whether make supports the include directive... yes (GNU style)
+[  151s] checking for riscv64-suse-linux-gnu-gcc... no
+[  151s] checking for gcc... gcc
+[  154s] checking whether the C compiler works... yes
+[  154s] checking for C compiler default output file name... a.out
+[  156s] checking for suffix of executables... 
+[  160s] checking whether we are cross compiling... no
+[  160s] checking for suffix of object files... o
+[  161s] checking whether we are using the GNU C compiler... yes
+[  162s] checking whether gcc accepts -g... yes
+[  163s] checking for gcc option to accept ISO C89... none needed
+[  164s] checking whether gcc understands -c and -o together... yes
+[  164s] checking dependency style of gcc... none
+[  165s] checking whether basename is declared... yes
+[  165s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  165s] checking for ranlib... ranlib
+[  166s] checking build system type... riscv64-suse-linux-gnu
+[  167s] checking host system type... riscv64-suse-linux-gnu
+[  167s] checking how to print strings... printf
+[  167s] checking for a sed that does not truncate output... /usr/bin/sed
+[  167s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  167s] checking for egrep... /usr/bin/grep -E
+[  167s] checking for fgrep... /usr/bin/grep -F
+[  168s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  168s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  168s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  169s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  169s] checking whether ln -s works... yes
+[  169s] checking the maximum length of command line arguments... 1572864
+[  169s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  169s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  169s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  169s] checking for riscv64-suse-linux-gnu-objdump... no
+[  169s] checking for objdump... objdump
+[  169s] checking how to recognize dependent libraries... pass_all
+[  169s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  169s] checking for dlltool... no
+[  169s] checking how to associate runtime and link libraries... printf %s\n
+[  169s] checking for riscv64-suse-linux-gnu-ar... no
+[  169s] checking for ar... ar
+[  170s] checking for archiver @FILE support... @
+[  170s] checking for riscv64-suse-linux-gnu-strip... no
+[  170s] checking for strip... strip
+[  170s] checking for riscv64-suse-linux-gnu-ranlib... ranlib
+[  174s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  174s] checking for sysroot... no
+[  174s] checking for a working dd... /usr/bin/dd
+[  174s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[  174s] checking for riscv64-suse-linux-gnu-mt... no
+[  174s] checking for mt... no
+[  174s] checking if : is a manifest tool... no
+[  175s] checking how to run the C preprocessor... gcc -E
+[  181s] checking for ANSI C header files... yes
+[  182s] checking for sys/types.h... yes
+[  183s] checking for sys/stat.h... yes
+[  184s] checking for stdlib.h... yes
+[  185s] checking for string.h... yes
+[  187s] checking for memory.h... yes
+[  188s] checking for strings.h... yes
+[  189s] checking for inttypes.h... yes
+[  190s] checking for stdint.h... yes
+[  191s] checking for unistd.h... yes
+[  192s] checking for dlfcn.h... yes
+[  192s] checking for objdir... .libs
+[  197s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  197s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  198s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  198s] checking if gcc static flag -static works... no
+[  200s] checking if gcc supports -c -o file.o... yes
+[  200s] checking if gcc supports -c -o file.o... (cached) yes
+[  200s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  202s] checking whether -lc should be explicitly linked in... no
+[  207s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  207s] checking how to hardcode library paths into programs... immediate
+[  207s] checking whether stripping libraries is possible... yes
+[  207s] checking if libtool supports shared libraries... yes
+[  207s] checking whether to build shared libraries... yes
+[  207s] checking whether to build static libraries... yes
+[  207s] checking for riscv64-suse-linux-gnu-pkg-config... /usr/bin/riscv64-suse-linux-gnu-pkg-config
+[  207s] checking pkg-config is at least version 0.9.0... yes
+[  207s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  209s] checking whether we are using the GNU C compiler... (cached) yes
+[  209s] checking whether gcc accepts -g... (cached) yes
+[  209s] checking for gcc option to accept ISO C89... (cached) none needed
+[  209s] checking whether gcc understands -c and -o together... (cached) yes
+[  209s] checking dependency style of gcc... (cached) none
+[  209s] checking how to run the C preprocessor... gcc -E
+[  210s] checking for riscv64-suse-linux-gnu-g++... no
+[  210s] checking for riscv64-suse-linux-gnu-c++... no
+[  210s] checking for riscv64-suse-linux-gnu-gpp... no
+[  210s] checking for riscv64-suse-linux-gnu-aCC... no
+[  210s] checking for riscv64-suse-linux-gnu-CC... no
+[  210s] checking for riscv64-suse-linux-gnu-cxx... no
+[  210s] checking for riscv64-suse-linux-gnu-cc++... no
+[  210s] checking for riscv64-suse-linux-gnu-cl.exe... no
+[  210s] checking for riscv64-suse-linux-gnu-FCC... no
+[  210s] checking for riscv64-suse-linux-gnu-KCC... no
+[  210s] checking for riscv64-suse-linux-gnu-RCC... no
+[  210s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[  210s] checking for riscv64-suse-linux-gnu-xlC... no
+[  210s] checking for g++... g++
+[  212s] checking whether we are using the GNU C++ compiler... yes
+[  213s] checking whether g++ accepts -g... yes
+[  213s] checking dependency style of g++... none
+[  214s] checking how to run the C++ preprocessor... g++ -E
+[  219s] checking for ld used by g++... /usr/riscv64-suse-linux/bin/ld
+[  219s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  219s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  221s] checking for g++ option to produce PIC... -fPIC -DPIC
+[  221s] checking if g++ PIC flag -fPIC -DPIC works... yes
+[  222s] checking if g++ static flag -static works... no
+[  223s] checking if g++ supports -c -o file.o... yes
+[  223s] checking if g++ supports -c -o file.o... (cached) yes
+[  223s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  223s] checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+[  223s] checking how to hardcode library paths into programs... immediate
+[  223s] checking for ld... /usr/riscv64-suse-linux/bin/ld
+[  225s] checking /usr/include/linux/perf_event.h usability... yes
+[  225s] checking /usr/include/linux/perf_event.h presence... yes
+[  225s] checking for /usr/include/linux/perf_event.h... yes
+[  227s] checking kernel supports perf_events... yes
+[  229s] checking whether PERF_RECORD_MISC_GUEST_KERNEL is defined in perf_event.h... yes
+[  232s] checking whether precise_ip is defined in perf_event.h... yes
+[  235s] checking whether binutils 2.34 is being used... yes
+[  235s] checking for "/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/java/include/jvmti.h"... yes
+[  235s] checking for "/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/java/include/jvmpi.h"... yes
+[  236s] checking whether malloc attribute is understood... no
+[  237s] checking whether __builtin_expect is understood... no
+[  240s] checking for sched_setaffinity... yes
+[  244s] checking for perfmonctl... no
+[  246s] checking for poptGetContext in -lpopt... yes
+[  247s] checking libiberty.h usability... yes
+[  248s] checking libiberty.h presence... yes
+[  248s] checking for libiberty.h... yes
+[  251s] checking for cplus_demangle in -liberty... yes
+[  254s] checking for xcalloc... yes
+[  256s] checking for xmemdup... yes
+[  258s] checking for dlopen in -ldl... yes
+[  259s] checking for main in -lintl... no
+[  265s] checking for bfd_openr in -lbfd... no
+[  267s] checking for compress in -lz... yes
+[  273s] checking for bfd_fdopenr in -lbfd... yes
+[  280s] checking whether bfd_get_synthetic_symtab() exists in BFD library... no
+[  281s] checking popt prototype... takes const char **
+[  288s] checking whether to use included sstream... no
+[  289s] checking whether bfd defines bool... no
+[  291s] checking type of size_t... unsigned long
+[  293s] checking type of ptrdiff_t... long
+[  295s] checking for X... no
+[  295s] checking for xsltproc... xsltproc
+[  296s] checking whether xsltproc works... yes
+[  297s] checking whether gcc -W is understood... yes
+[  298s] checking whether g++ -W is understood... yes
+[  298s] checking whether gcc -Wall is understood... yes
+[  299s] checking whether g++ -Wall is understood... yes
+[  300s] checking whether gcc -fno-common is understood... yes
+[  301s] checking whether g++ -fno-common is understood... yes
+[  302s] checking whether gcc -Wdeclaration-after-statement is understood... yes
+[  305s] checking for clock_gettime... yes
+[  305s] checking that generated files are newer than configure... done
+[  305s] configure: creating ./config.status
+[  324s] config.status: creating Makefile
+[  325s] config.status: creating pe_counting/Makefile
+[  325s] config.status: creating libpe_utils/Makefile
+[  326s] config.status: creating pe_profiling/Makefile
+[  326s] config.status: creating libperf_events/Makefile
+[  327s] config.status: creating m4/Makefile
+[  328s] config.status: creating libutil/Makefile
+[  328s] config.status: creating libutil/tests/Makefile
+[  329s] config.status: creating libutil++/Makefile
+[  330s] config.status: creating libutil++/tests/Makefile
+[  330s] config.status: creating libop/Makefile
+[  331s] config.status: creating libop/tests/Makefile
+[  332s] config.status: creating libopagent/Makefile
+[  333s] config.status: creating libopt++/Makefile
+[  333s] config.status: creating libdb/Makefile
+[  334s] config.status: creating libdb/tests/Makefile
+[  334s] config.status: creating libabi/Makefile
+[  335s] config.status: creating libabi/tests/Makefile
+[  336s] config.status: creating libregex/Makefile
+[  336s] config.status: creating libregex/tests/Makefile
+[  337s] config.status: creating libregex/stl.pat
+[  338s] config.status: creating libregex/tests/mangled-name
+[  338s] config.status: creating events/Makefile
+[  339s] config.status: creating utils/Makefile
+[  340s] config.status: creating doc/Makefile
+[  340s] config.status: creating doc/xsl/catalog-1.xml
+[  341s] config.status: creating doc/oprofile.1
+[  342s] config.status: creating doc/ophelp.1
+[  343s] config.status: creating doc/op-check-perfevents.1
+[  344s] config.status: creating doc/opreport.1
+[  344s] config.status: creating doc/opannotate.1
+[  345s] config.status: creating doc/opgprof.1
+[  346s] config.status: creating doc/oparchive.1
+[  347s] config.status: creating doc/opimport.1
+[  348s] config.status: creating doc/operf.1
+[  348s] config.status: creating doc/ocount.1
+[  349s] config.status: creating doc/opjitconv.1
+[  350s] config.status: creating doc/srcdoc/Doxyfile
+[  350s] config.status: creating libpp/Makefile
+[  351s] config.status: creating opjitconv/Makefile
+[  352s] config.status: creating pp/Makefile
+[  352s] config.status: creating agents/Makefile
+[  353s] config.status: creating agents/jvmti/Makefile
+[  353s] config.status: creating agents/jvmpi/Makefile
+[  354s] config.status: creating config.h
+[  355s] config.status: executing depfiles commands
+[  355s] config.status: executing libtool commands
+[  355s] Warning: The user account 'oprofile:oprofile' does not exist on the system.
+[  355s]          To profile JITed code, this special user account must exist.
+[  355s]          Please ask your system administrator to add the following user and group:
+[  355s]              user name : 'oprofile'
+[  355s]              group name: 'oprofile'
+[  355s]          The 'oprofile' group must be the default group for the 'oprofile' user.
+[  356s] ++ sed -n '/^----/n;s/ - .*$//;p;q' /home/abuild/rpmbuild/SOURCES/oprofile.changes
+[  356s] + modified='Sat Jan 16 18:21:11 UTC 2021'
+[  356s] ++ date -d 'Sat Jan 16 18:21:11 UTC 2021' '+%b %e %Y'
+[  356s] + DATE='"Jan 16 2021"'
+[  356s] ++ date -d 'Sat Jan 16 18:21:11 UTC 2021' +%R
+[  356s] + TIME='"18:21"'
+[  356s] + find . -type f -regex '.*\.c\|.*\.cpp\|.*\.h' -exec grep -E -e __DATE__ -e __TIME__ '{}' +
+[  356s] ./pe_counting/ocount.cpp:			cout << argv[0] << ": " << PACKAGE << " " << VERSION << " compiled on " << __DATE__
+[  356s] ./pe_counting/ocount.cpp:			     << " " << __TIME__ << endl;
+[  356s] ./libutil/op_version.c:	       __DATE__ " " __TIME__ "\n", app_name);
+[  356s] ./pe_profiling/operf.cpp:			cout << argv[0] << ": " << PACKAGE << " " << VERSION << " compiled on " << __DATE__
+[  356s] ./pe_profiling/operf.cpp:			     << " " << __TIME__ << endl;
+[  356s] + find . -type f -regex '.*\.c\|.*\.cpp\|.*\.h' -exec sed -i 's/__DATE__/"Jan 16 2021"/g;s/__TIME__/"18:21"/g' '{}' +
+[  357s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  361s] (CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh /home/abuild/rpmbuild/BUILD/oprofile-1.4.0/missing autoheader)
+[  361s] rm -f stamp-h1
+[  361s] touch config.h.in
+[  367s] cd . && /bin/sh ./config.status config.h
+[  367s] config.status: creating config.h
+[  367s] config.status: config.h is unchanged
+[  367s] /usr/bin/make  all-recursive
+[  367s] Making all in .
+[  368s] Making all in m4
+[  368s] make[2]: Nothing to be done for 'all'.
+[  368s] Making all in libutil
+[  368s] Making all in .
+[  370s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_get_time.o op_get_time.c
+[  370s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_libiberty.o op_libiberty.c
+[  370s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_string.o op_string.c
+[  370s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_popt.o op_popt.c
+[  370s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  370s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_lockfile.o op_lockfile.c
+[  371s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_deviceio.o op_deviceio.c
+[  371s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_fileio.o op_fileio.c
+[  371s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  371s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_file.o op_file.c
+[  371s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_version.o op_version.c
+[  372s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_cpufreq.o op_cpufreq.c
+[  372s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  372s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_growable_buffer.o op_growable_buffer.c
+[  372s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  373s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  373s] rm -f libutil.a
+[  373s] ar cru libutil.a op_deviceio.o op_lockfile.o op_file.o op_fileio.o op_get_time.o op_libiberty.o op_popt.o op_string.o op_cpufreq.o op_version.o op_growable_buffer.o 
+[  373s] ranlib libutil.a
+[  373s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil'
+[  373s] Making all in tests
+[  373s] make[3]: Nothing to be done for 'all'.
+[  373s] Making all in libop
+[  373s] Making all in .
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_xml_events.o op_xml_events.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_config.o op_config.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_parse_event.o op_parse_event.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_alloc_counter.o op_alloc_counter.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_mangle.o op_mangle.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  376s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_xml_out.o op_xml_out.c
+[  376s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_cpu_type.o op_cpu_type.c
+[  377s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_events.o op_events.c
+[  377s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  377s] gcc -DHAVE_CONFIG_H -I. -I..  -I../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_netburst.o op_netburst.c
+[  377s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  378s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  378s] rm -f libop.a
+[  378s] ar cru libop.a op_events.o op_parse_event.o op_cpu_type.o op_mangle.o op_alloc_counter.o op_config.o op_xml_events.o op_xml_out.o op_netburst.o 
+[  378s] ranlib libop.a
+[  378s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libop'
+[  378s] Making all in tests
+[  378s] make[3]: Nothing to be done for 'all'.
+[  378s] Making all in libopagent
+[  384s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopagent'
+[  384s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -fPIC -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o libopagent_la-opagent.lo `test -f 'opagent.c' || echo './'`opagent.c
+[  384s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I ../libop -I ../libutil -fPIC -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c opagent.c  -fPIC -DPIC -o .libs/libopagent_la-opagent.o
+[  384s] opagent.c: In function 'define_bfd_vars':
+[  384s] opagent.c:111:19: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  384s]   111 |  _bfd_target_name =  bfd->xvec->name;
+[  384s]       |                   ^
+[  384s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I ../libop -I ../libutil -fPIC -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c opagent.c -o libopagent_la-opagent.o >/dev/null 2>&1
+[  384s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopagent'
+[  396s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopagent'
+[  396s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fPIC -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -version-info  1:1:0 -Wl,--version-script=../libopagent/opagent_symbols.ver  -flto=auto -o libopagent.la -rpath /usr/lib64/oprofile libopagent_la-opagent.lo -lbfd -liberty -ldl  -lz 
+[  396s] libtool: link: gcc -shared  -fPIC -DPIC  .libs/libopagent_la-opagent.o   -lbfd -liberty -ldl -lz  -grecord-gcc-switches -O2 -fstack-protector-strong -flto=auto -g -Wl,--version-script=../libopagent/opagent_symbols.ver -flto=auto   -Wl,-soname -Wl,libopagent.so.1 -o .libs/libopagent.so.1.0.1
+[  396s] libtool: link: (cd ".libs" && rm -f "libopagent.so.1" && ln -s "libopagent.so.1.0.1" "libopagent.so.1")
+[  396s] libtool: link: (cd ".libs" && rm -f "libopagent.so" && ln -s "libopagent.so.1.0.1" "libopagent.so")
+[  396s] libtool: link: ar cru .libs/libopagent.a  libopagent_la-opagent.o
+[  396s] libtool: link: ranlib .libs/libopagent.a
+[  396s] libtool: link: ( cd ".libs" && rm -f "libopagent.la" && ln -s "../libopagent.la" "libopagent.la" )
+[  396s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopagent'
+[  396s] Making all in libdb
+[  397s] Making all in .
+[  398s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  398s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o db_travel.o db_travel.c
+[  398s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  398s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  398s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o db_stat.o db_stat.c
+[  398s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  398s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  398s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o db_insert.o db_insert.c
+[  398s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o db_debug.o db_debug.c
+[  399s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o db_manage.o db_manage.c
+[  399s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] rm -f libodb.a
+[  399s] ar cru libodb.a db_manage.o db_insert.o db_travel.o db_debug.o db_stat.o 
+[  399s] ranlib libodb.a
+[  399s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libdb'
+[  399s] Making all in tests
+[  399s] make[3]: Nothing to be done for 'all'.
+[  399s] Making all in libutil++
+[  400s] Making all in .
+[  409s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  409s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o stream_util.o stream_util.cpp
+[  409s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  409s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  409s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o glob_filter.o glob_filter.cpp
+[  409s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  409s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  409s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o path_filter.o path_filter.cpp
+[  409s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  411s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  411s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o string_filter.o string_filter.cpp
+[  411s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  411s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  411s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o file_manip.o file_manip.cpp
+[  411s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  413s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  413s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o string_manip.o string_manip.cpp
+[  413s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  415s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  415s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_exception.o op_exception.cpp
+[  415s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  415s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  415s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o bfd_support.o bfd_support.cpp
+[  415s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  419s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  419s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o child_reader.o child_reader.cpp
+[  419s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  419s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  419s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o xml_output.o xml_output.cpp
+[  419s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  420s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  420s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o cverb.o cverb.cpp
+[  420s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  422s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  422s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libop -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_bfd.o op_bfd.cpp
+[  422s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  422s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  422s] rm -f libutil++.a
+[  422s] ar cru libutil++.a op_bfd.o bfd_support.o string_filter.o glob_filter.o path_filter.o file_manip.o stream_util.o string_manip.o cverb.o op_exception.o child_reader.o xml_output.o 
+[  422s] ranlib libutil++.a
+[  422s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libutil++'
+[  422s] Making all in tests
+[  422s] make[3]: Nothing to be done for 'all'.
+[  422s] Making all in libopt++
+[  430s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopt++'
+[  430s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil++ -I ../libutil   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o popt_options.o popt_options.cpp
+[  430s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopt++'
+[  430s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopt++'
+[  430s] rm -f libopt++.a
+[  430s] ar cru libopt++.a popt_options.o 
+[  430s] ranlib libopt++.a
+[  430s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libopt++'
+[  430s] Making all in libabi
+[  430s] Making all in .
+[  432s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  432s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++    -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_abi.o op_abi.c
+[  432s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  439s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  439s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o abi.o abi.cpp
+[  439s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  439s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  439s] rm -f libabi.a
+[  439s] ar cru libabi.a abi.o op_abi.o 
+[  439s] ranlib libabi.a
+[  439s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  440s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  440s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opimport.o opimport.cpp
+[  440s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  453s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  453s] /bin/sh ../libtool  --tag=CXX   --mode=link g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o opimport opimport.o libabi.a ../libdb/libodb.a ../libopt++/libopt++.a ../libutil++/libutil++.a ../libutil/libutil.a -lpopt -liberty -ldl 
+[  453s] libtool: link: g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o opimport opimport.o  libabi.a ../libdb/libodb.a ../libopt++/libopt++.a ../libutil++/libutil++.a ../libutil/libutil.a -lpopt -liberty -ldl
+[  453s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libabi'
+[  453s] Making all in tests
+[  453s] make[3]: Nothing to be done for 'all'.
+[  453s] Making all in utils
+[  454s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  454s] gcc -DHAVE_CONFIG_H -I. -I..  -W -Wall -fno-common -Wdeclaration-after-statement   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_check_perfevents-op_perf_events_checker.o `test -f 'op_perf_events_checker.c' || echo './'`op_perf_events_checker.c
+[  454s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  455s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  455s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o ophelp.o ophelp.c
+[  455s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  459s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  459s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o op-check-perfevents op_check_perfevents-op_perf_events_checker.o  -lpopt -liberty -ldl 
+[  459s] libtool: link: gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o op-check-perfevents op_check_perfevents-op_perf_events_checker.o  -lpopt -liberty -ldl
+[  459s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  468s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  468s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o ophelp ophelp.o ../libop/libop.a ../libutil/libutil.a -lpopt -liberty -ldl 
+[  468s] libtool: link: gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o ophelp ophelp.o  ../libop/libop.a ../libutil/libutil.a -lpopt -liberty -ldl
+[  468s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/utils'
+[  468s] Making all in libregex
+[  468s] Making all in .
+[  473s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  473s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil++   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o demangle_java_symbol.o demangle_java_symbol.cpp
+[  473s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  474s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  474s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil++   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o demangle_symbol.o demangle_symbol.cpp
+[  474s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  478s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  478s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil++   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_regex.o op_regex.cpp
+[  478s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  478s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  478s] rm -f libop_regex.a
+[  478s] ar cru libop_regex.a op_regex.o demangle_symbol.o demangle_java_symbol.o 
+[  478s] ranlib libop_regex.a
+[  478s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libregex'
+[  478s] Making all in tests
+[  478s] make[3]: Nothing to be done for 'all'.
+[  478s] Making all in libpp
+[  485s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  485s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o filename_spec.o filename_spec.cpp
+[  485s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  486s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  486s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o image_errors.o image_errors.cpp
+[  486s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  488s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  488s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o name_storage.o name_storage.cpp
+[  488s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  488s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  488s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o locate_images.o locate_images.cpp
+[  488s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  489s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  489s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o diff_container.o diff_container.cpp
+[  489s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  497s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  497s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o symbol.o symbol.cpp
+[  497s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  499s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  499s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o parse_filename.o parse_filename.cpp
+[  499s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  500s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  500s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_header.o op_header.cpp
+[  500s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  500s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  500s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o profile.o profile.cpp
+[  500s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  501s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  501s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o arrange_profiles.o arrange_profiles.cpp
+[  501s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  502s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  502s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o populate.o populate.cpp
+[  502s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  502s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  502s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o format_output.o format_output.cpp
+[  502s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  503s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  503s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o callgraph_container.o callgraph_container.cpp
+[  503s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  510s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  510s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o symbol_functors.o symbol_functors.cpp
+[  510s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  513s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  513s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o symbol_container.o symbol_container.cpp
+[  513s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  513s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  513s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o sample_container.o sample_container.cpp
+[  513s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  516s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  516s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o profile_spec.o profile_spec.cpp
+[  516s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  517s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  517s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o symbol_sort.o symbol_sort.cpp
+[  517s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  519s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  519s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o profile_container.o profile_container.cpp
+[  519s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  522s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  522s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libop++ -I ../libregex   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o xml_utils.o xml_utils.cpp
+[  522s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  522s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  522s] rm -f libpp.a
+[  522s] ar cru libpp.a arrange_profiles.o callgraph_container.o diff_container.o filename_spec.o format_output.o image_errors.o locate_images.o name_storage.o op_header.o symbol.o parse_filename.o populate.o profile.o profile_container.o profile_spec.o sample_container.o symbol_container.o symbol_functors.o symbol_sort.o xml_utils.o 
+[  522s] ranlib libpp.a
+[  522s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpp'
+[  522s] Making all in opjitconv
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o conversion.o conversion.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o parse_dump.o parse_dump.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o create_bfd.o create_bfd.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o debug_line.o debug_line.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  524s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o jitsymbol.o jitsymbol.c
+[  524s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  525s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  525s] gcc -DHAVE_CONFIG_H -I. -I..  -I ../libopagent -I ../libutil   -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opjitconv.o opjitconv.c
+[  525s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  537s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  537s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o opjitconv opjitconv.o conversion.o parse_dump.o jitsymbol.o create_bfd.o debug_line.o ../libutil/libutil.a -lbfd -liberty -ldl  -lz
+[  537s] libtool: link: gcc -W -Wall -fno-common -Wdeclaration-after-statement -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o opjitconv opjitconv.o conversion.o parse_dump.o jitsymbol.o create_bfd.o debug_line.o  ../libutil/libutil.a -lbfd -liberty -ldl -lz
+[  537s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/opjitconv'
+[  537s] Making all in pp
+[  548s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  548s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o common_option.o common_option.cpp
+[  548s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  550s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  550s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o oparchive.o oparchive.cpp
+[  550s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  550s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  550s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opannotate_options.o opannotate_options.cpp
+[  550s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  551s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  551s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opgprof_options.o opgprof_options.cpp
+[  551s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  553s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  553s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opgprof.o opgprof.cpp
+[  553s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  556s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  556s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opannotate.o opannotate.cpp
+[  556s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  556s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  556s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opreport_options.o opreport_options.cpp
+[  556s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  560s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  560s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o oparchive_options.o oparchive_options.cpp
+[  560s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  560s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  560s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libop -I ../libutil -I ../libdb -I ../libopt++ -I ../libutil++ -I ../libregex -I ../libpp   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o opreport.o opreport.cpp
+[  560s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  598s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  598s] /bin/sh ../libtool  --tag=CXX   --mode=link g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o opgprof opgprof.o opgprof_options.o common_option.o ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl  -lz
+[  598s] libtool: link: g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o opgprof opgprof.o opgprof_options.o common_option.o  ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl -lz
+[  598s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  626s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  626s] /bin/sh ../libtool  --tag=CXX   --mode=link g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o oparchive oparchive.o oparchive_options.o common_option.o ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl  -lz
+[  626s] libtool: link: g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o oparchive oparchive.o oparchive_options.o common_option.o  ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl -lz
+[  626s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  630s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  630s] /bin/sh ../libtool  --tag=CXX   --mode=link g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o opannotate opannotate.o opannotate_options.o common_option.o ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl  -lz
+[  630s] libtool: link: g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o opannotate opannotate.o opannotate_options.o common_option.o  ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl -lz
+[  630s] ../libpp/populate.cpp: In function 'populate_for_image.constprop':
+[  630s] ../libpp/op_header.cpp:109:2: warning: 'header.mtime' may be used uninitialized in this function [-Wmaybe-uninitialized]
+[  630s]   109 |  if (!header.mtime) {
+[  630s]       |  ^
+[  630s] ../libpp/populate.cpp:80:13: note: 'header.mtime' was declared here
+[  630s]    80 |  opd_header header;
+[  630s]       |             ^
+[  630s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  649s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  649s] /bin/sh ../libtool  --tag=CXX   --mode=link g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o opreport opreport.o opreport_options.o common_option.o ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl  -lz
+[  649s] libtool: link: g++ -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o opreport opreport.o opreport_options.o common_option.o  ../libpp/libpp.a ../libopt++/libopt++.a ../libregex/libop_regex.a ../libutil++/libutil++.a ../libop/libop.a ../libutil/libutil.a ../libdb/libodb.a -lpopt -lbfd -liberty -ldl -lz
+[  649s] ../libpp/populate.cpp: In function 'populate_for_image.constprop':
+[  649s] ../libpp/op_header.cpp:109:2: warning: 'header.mtime' may be used uninitialized in this function [-Wmaybe-uninitialized]
+[  649s]   109 |  if (!header.mtime) {
+[  649s]       |  ^
+[  649s] ../libpp/populate.cpp:80:13: note: 'header.mtime' was declared here
+[  649s]    80 |  opd_header header;
+[  649s]       |             ^
+[  649s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/pp'
+[  649s] Making all in events
+[  649s] make[2]: Nothing to be done for 'all'.
+[  649s] Making all in doc
+[  649s] make[2]: Nothing to be done for 'all'.
+[  649s] Making all in libpe_utils
+[  660s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpe_utils'
+[  660s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libutil -I ../libutil++ -I ../libop -I ../libpe_utils -I ../libperf_events   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o op_pe_utils.o op_pe_utils.cpp
+[  660s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpe_utils'
+[  660s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpe_utils'
+[  660s] rm -f libpe_utils.a
+[  660s] ar cru libpe_utils.a op_pe_utils.o 
+[  660s] ranlib libpe_utils.a
+[  660s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libpe_utils'
+[  660s] Making all in libperf_events
+[  670s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  670s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_kernel.o operf_kernel.cpp
+[  670s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  672s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  672s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_mangling.o operf_mangling.cpp
+[  672s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  672s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  672s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_stats.o operf_stats.cpp
+[  672s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  673s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  673s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_sfile.o operf_sfile.cpp
+[  673s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  674s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  674s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_utils.o operf_utils.cpp
+[  674s] operf_utils.cpp: In function 'void OP_perf_utils::op_get_kernel_event_data(mmap_data*, operf_record*)':
+[  674s] operf_utils.cpp:1423:2: error: 'rmb' was not declared in this scope
+[  674s]  1423 |  rmb();
+[  674s]       |  ^~~
+[  674s] make[2]: *** [Makefile:471: operf_utils.o] Error 1
+[  674s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  674s] make[2]: *** Waiting for unfinished jobs....
+[  674s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  674s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_process_info.o operf_process_info.cpp
+[  674s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  681s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  681s] g++ -DHAVE_CONFIG_H -I. -I..  -I ../libabi -I ../libutil -I ../libutil++ -I ../libop -I ../libdb -I ../libperf_events -I ../libpe_utils   -W -Wall -fno-common -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o operf_counter.o operf_counter.cpp
+[  681s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/oprofile-1.4.0/libperf_events'
+[  681s] make[1]: *** [Makefile:488: all-recursive] Error 1
+[  681s] make: *** [Makefile:416: all] Error 2
+[  681s] error: Bad exit status from /var/tmp/rpm-tmp.EVIvfJ (%build)
+[  681s] 
+[  681s] 
+[  681s] RPM build errors:
+[  681s]     Bad exit status from /var/tmp/rpm-tmp.EVIvfJ (%build)
+[  681s] ### VM INTERACTION START ###
+[  685s] [  675.679403] sysrq: Power Off
+[  685s] [  675.688169] reboot: Power down
+[  685s] ### VM INTERACTION END ###
+[  685s] 
+[  685s] hci-cnode1-m0 failed "build oprofile.spec" at Mon Jan 18 14:38:18 UTC 2021.
+[  685s] 

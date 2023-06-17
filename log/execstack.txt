@@ -1,0 +1,621 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_11/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_11/root
+[    0s] 
+[    1s] 
+[    1s] goat07 started "build execstack.spec" at Tue Dec  7 00:56:06 UTC 2021.
+[    1s] 
+[    1s] Building execstack for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'ce0405dad49db81d8df2c00217090a75'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_11/.build-srcdir/execstack.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_11/.build-srcdir/execstack.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/11/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_11/.build.rpmlist /var/cache/obs/worker/root_11/.build-srcdir/execstack.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [5cb65a9f57e8f3d58792e026bec8b605]
+[    3s] ..................
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...done
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using UART console
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_11/.mount/boot/kernel -initrd /var/cache/obs/worker/root_11/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 mitigations=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/initvm.x86_64 -m 10240 -drive file=/var/cache/obs/worker/root_11/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_11/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_11/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    5s] c[?7l[2J[0mSeaBIOS (version rel-1.14.0-0-g155821a-rebuilt.opensuse.org)
+[   10s] Booting from ROM..c[?7l[2J### VM INTERACTION END ###
+[   10s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   10s] Increasing log level from now on...
+[   10s] [    5.162908][  T424] sysrq: Changing Loglevel
+[   10s] [    5.163506][  T424] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   10s] no label, UUID=fa9a6345-0311-4ce8-950d-81571074f372
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/execstack.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/execstack.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   24s] [1/168] preinstalled aaa_base-84.87+git20211124.5486aad-1.1
+[   24s] [2/168] preinstalled aaa_base-malloccheck-84.87+git20211124.5486aad-1.1
+[   24s] [3/168] preinstalled attr-2.5.1-1.1
+[   24s] [4/168] preinstalled bash-5.1.12-3.1
+[   24s] [5/168] preinstalled bash-sh-5.1.12-3.1
+[   24s] [6/168] preinstalled binutils-2.37-3.1
+[   24s] [7/168] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   24s] [8/168] preinstalled build-compare-20210921T214418.86d06d9-1.1
+[   24s] [9/168] preinstalled build-mkbaselibs-20211125-1.1
+[   24s] [10/168] preinstalled bzip2-1.0.8-3.1
+[   24s] [11/168] preinstalled chkstat-1550_20210901-32.1
+[   24s] [12/168] preinstalled compat-usrmerge-build-84.87-5.1
+[   24s] [13/168] preinstalled compat-usrmerge-tools-84.87-5.1
+[   24s] [14/168] preinstalled coreutils-9.0-2.1
+[   24s] [15/168] preinstalled cpio-2.13-4.1
+[   24s] [16/168] preinstalled cpp-11-4.1
+[   24s] [17/168] preinstalled cpp11-11.2.1+git1018-1.1
+[   24s] [18/168] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   24s] [19/168] preinstalled diffutils-3.8-2.1
+[   24s] [20/168] preinstalled dwz-0.14-1.1
+[   24s] [21/168] preinstalled file-5.41-1.1
+[   24s] [22/168] preinstalled file-magic-5.41-1.1
+[   24s] [23/168] preinstalled filesystem-84.87-3.1
+[   24s] [24/168] preinstalled fillup-1.42-276.2
+[   24s] [25/168] preinstalled findutils-4.8.0-3.1
+[   24s] [26/168] preinstalled gawk-5.1.1-6.1
+[   24s] [27/168] preinstalled gcc-11-4.1
+[   24s] [28/168] preinstalled gcc-PIE-11-4.1
+[   24s] [29/168] preinstalled gcc11-11.2.1+git1018-1.1
+[   24s] [30/168] preinstalled gettext-runtime-mini-0.21-2.1
+[   24s] [31/168] preinstalled gettext-tools-mini-0.21-2.1
+[   24s] [32/168] preinstalled glibc-2.34-4.1
+[   24s] [33/168] preinstalled glibc-devel-2.34-4.1
+[   24s] [34/168] preinstalled glibc-locale-2.34-4.1
+[   24s] [35/168] preinstalled glibc-locale-base-2.34-4.1
+[   24s] [36/168] preinstalled grep-3.7-1.1
+[   24s] [37/168] preinstalled gzip-1.11-1.1
+[   24s] [38/168] preinstalled hostname-3.23-2.2
+[   24s] [39/168] preinstalled iproute2-5.15-1.1
+[   24s] [40/168] preinstalled kernel-obs-build-5.14.2-1.3
+[   24s] [41/168] cumulate less-590-3.1
+[   24s] [42/168] preinstalled libacl1-2.3.1-1.1
+[   24s] [43/168] preinstalled libasan6-11.2.1+git1018-1.1
+[   24s] [44/168] preinstalled libatomic1-11.2.1+git1018-1.1
+[   24s] [45/168] preinstalled libattr1-2.5.1-1.1
+[   24s] [46/168] preinstalled libaudit1-3.0.6-2.1
+[   24s] [47/168] preinstalled libblkid1-2.37.2-1.1
+[   24s] [48/168] cumulate libbrotlicommon1-1.0.9-1.1
+[   24s] [49/168] preinstalled libbz2-1-1.0.8-3.1
+[   24s] [50/168] preinstalled libcap-ng0-0.7.10-1.3
+[   24s] [51/168] preinstalled libcap2-2.61-1.1
+[   24s] [52/168] cumulate libcbor0_8-0.8.0-1.1
+[   24s] [53/168] cumulate libcom_err2-1.46.4-3.1
+[   24s] [54/168] preinstalled libcrypt1-4.4.25-1.1
+[   24s] [55/168] preinstalled libctf-nobfd0-2.37-3.1
+[   24s] [56/168] preinstalled libctf0-2.37-3.1
+[   24s] [57/168] preinstalled libdb-4_8-4.8.30-38.3
+[   24s] [58/168] preinstalled libdw1-0.186-1.1
+[   24s] [59/168] preinstalled libeconf0-0.4.2+git20211111.c7a2c52-1.1
+[   24s] [60/168] cumulate libedit0-3.1.snap20180525-4.2
+[   24s] [61/168] preinstalled libelf1-0.186-1.1
+[   24s] [62/168] cumulate libexpat1-2.4.1-1.1
+[   24s] [63/168] preinstalled libfdisk1-2.37.2-1.1
+[   24s] [64/168] preinstalled libgcc_s1-11.2.1+git1018-1.1
+[   24s] [65/168] preinstalled libgcrypt20-1.9.4-1.1
+[   24s] [66/168] preinstalled libgdbm6-1.20-1.1
+[   24s] [67/168] preinstalled libgdbm_compat4-1.20-1.1
+[   24s] [68/168] preinstalled libgmp10-6.2.1-4.1
+[   24s] [69/168] preinstalled libgomp1-11.2.1+git1018-1.1
+[   24s] [70/168] preinstalled libgpg-error0-1.43-1.1
+[   24s] [71/168] preinstalled libisl23-0.24-1.1
+[   24s] [72/168] cumulate libkeyutils1-1.6.3-3.1
+[   24s] [73/168] preinstalled liblua5_4-5-5.4.3-5.1
+[   24s] [74/168] preinstalled liblzma5-5.2.5-2.2
+[   24s] [75/168] preinstalled libmagic1-5.41-1.1
+[   24s] [76/168] preinstalled libmnl0-1.0.4-2.2
+[   24s] [77/168] preinstalled libmount1-2.37.2-1.1
+[   24s] [78/168] preinstalled libmpc3-1.2.1-1.2
+[   24s] [79/168] preinstalled libmpfr6-4.1.0-2.1
+[   24s] [80/168] preinstalled libncurses6-6.3.20211120-5.1
+[   24s] [81/168] cumulate libnghttp2-14-1.43.0-7.1
+[   24s] [82/168] preinstalled libpcre1-8.45-1.1
+[   24s] [83/168] cumulate libpcre2-16-0-10.39-1.1
+[   24s] [84/168] cumulate libpcre2-32-0-10.39-1.1
+[   24s] [85/168] preinstalled libpcre2-8-0-10.39-1.1
+[   24s] [86/168] cumulate libpcre2-posix3-10.39-1.1
+[   24s] [87/168] preinstalled libpkgconf3-1.8.0-1.1
+[   24s] [88/168] preinstalled libpopt0-1.18-2.1
+[   24s] [89/168] preinstalled libreadline8-8.1-2.1
+[   24s] [90/168] preinstalled librpmbuild9-4.17.0-2.1
+[   24s] [91/168] cumulate libsasl2-3-2.1.27-5.5
+[   24s] [92/168] preinstalled libselinux1-3.3-1.1
+[   24s] [93/168] preinstalled libsemanage-conf-3.3-1.1
+[   24s] [94/168] preinstalled libsemanage2-3.3-1.1
+[   24s] [95/168] cumulate libsepol-devel-3.3-1.1
+[   24s] [96/168] preinstalled libsepol2-3.3-1.1
+[   24s] [97/168] cumulate libsha1detectcoll1-1.0.3-4.3
+[   24s] [98/168] preinstalled libsmartcols1-2.37.2-1.1
+[   24s] [99/168] cumulate libssh-config-0.9.6-2.1
+[   24s] [100/168] preinstalled libstdc++6-11.2.1+git1018-1.1
+[   24s] [101/168] cumulate libstdc++6-devel-gcc11-11.2.1+git1018-1.1
+[   24s] [102/168] preinstalled libubsan1-11.2.1+git1018-1.1
+[   24s] [103/168] cumulate libudev-mini1-249.7-1.1
+[   24s] [104/168] cumulate libunistring2-0.9.10-2.2
+[   24s] [105/168] preinstalled libutempter0-1.2.0-3.2
+[   24s] [106/168] preinstalled libuuid1-2.37.2-1.1
+[   24s] [107/168] cumulate libverto1-0.3.1-1.2
+[   24s] [108/168] preinstalled libxcrypt-devel-4.4.25-1.1
+[   24s] [109/168] preinstalled libz1-1.2.11-18.3
+[   24s] [110/168] preinstalled libzstd1-1.5.0-1.2
+[   24s] [111/168] preinstalled linux-glibc-devel-5.14-1.1
+[   24s] [112/168] preinstalled login_defs-4.9-2.1
+[   24s] [113/168] preinstalled lua54-5.4.3-5.1
+[   24s] [114/168] preinstalled make-4.3-2.3
+[   24s] [115/168] preinstalled ncurses-utils-6.3.20211120-5.1
+[   24s] [116/168] preinstalled pam-1.5.2-4.1
+[   24s] [117/168] preinstalled pam_unix-1.5.2-4.1
+[   24s] [118/168] preinstalled patch-2.7.6-4.1
+[   24s] [119/168] preinstalled perl-5.34.0-1.1
+[   24s] [120/168] cumulate perl-Error-0.17029-1.4
+[   24s] [121/168] preinstalled perl-base-5.34.0-1.1
+[   24s] [122/168] preinstalled permissions-20210901.1550-32.1
+[   24s] [123/168] preinstalled permissions-config-1550_20210901-32.1
+[   24s] [124/168] preinstalled pkgconf-1.8.0-1.1
+[   24s] [125/168] preinstalled pkgconf-m4-1.8.0-1.1
+[   24s] [126/168] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   24s] [127/168] preinstalled polkit-default-privs-1550+20211008.9751669-2.1
+[   24s] [128/168] preinstalled post-build-checks-84.87+git20210304.df696a0-1.1
+[   24s] [129/168] preinstalled qemu-linux-user-6.1.0-43.1
+[   24s] [130/168] preinstalled rpm-4.17.0-2.1
+[   24s] [131/168] preinstalled rpm-build-4.17.0-2.1
+[   24s] [132/168] preinstalled rpm-build-perl-4.17.0-2.1
+[   24s] [133/168] preinstalled rpm-config-SUSE-0.g89-1.1
+[   24s] [134/168] preinstalled rpmlint-mini-2.1+git20211126.ebc84d5-2.26
+[   24s] [135/168] preinstalled rpmlint-strict-2.1+git20211130.83af44b-1.1
+[   24s] [136/168] preinstalled sed-4.8-3.2
+[   24s] [137/168] cumulate selinux-tools-3.3-1.1
+[   24s] [138/168] preinstalled shadow-4.9-2.1
+[   24s] [139/168] preinstalled system-group-hardware-20170617-24.1
+[   24s] [140/168] preinstalled system-user-root-20190513-1.3
+[   24s] [141/168] preinstalled systemd-rpm-macros-14-1.1
+[   24s] [142/168] preinstalled sysuser-shadow-3.1-3.1
+[   24s] [143/168] preinstalled tar-1.34-5.1
+[   24s] [144/168] preinstalled terminfo-base-6.3.20211120-5.1
+[   24s] [145/168] preinstalled update-alternatives-1.20.9-1.1
+[   24s] [146/168] preinstalled util-linux-2.37.2-1.1
+[   24s] [147/168] preinstalled which-2.21-4.4
+[   24s] [148/168] preinstalled xz-5.2.5-2.2
+[   24s] [149/168] cumulate zlib-devel-1.2.11-18.3
+[   24s] [150/168] cumulate libbrotlidec1-1.0.9-1.1
+[   24s] [151/168] cumulate libelf-devel-0.186-1.1
+[   24s] [152/168] cumulate libhidapi-hidraw0-0.10.1-2.1
+[   24s] [153/168] cumulate libidn2-0-2.3.2-1.1
+[   24s] [154/168] cumulate libopenssl1_1-1.1.1l-8.1
+[   24s] [155/168] cumulate libstdc++-devel-11-4.1
+[   24s] [156/168] cumulate perl-Git-2.34.1-1.1
+[   24s] [157/168] cumulate krb5-mini-1.19.2-3.1
+[   24s] [158/168] cumulate openssh-common-8.8p1-1.3
+[   24s] [159/168] cumulate libldap-2_4-2-2.4.59-71.1
+[   24s] [160/168] cumulate libpsl5-0.21.1-1.2
+[   24s] [161/168] cumulate libssh4-0.9.6-2.1
+[   24s] [162/168] cumulate libfido2-1-1.9.0-1.1
+[   24s] [163/168] cumulate pcre2-devel-10.39-1.1
+[   24s] [164/168] cumulate libselinux-devel-3.3-1.1
+[   24s] [165/168] cumulate openssh-clients-8.8p1-1.3
+[   24s] [166/168] cumulate libcurl4-7.80.0-1.1
+[   24s] [167/168] cumulate git-core-2.34.1-1.1
+[   24s] [168/168] cumulate git-2.34.1-1.1
+[   24s] now installing cumulated packages
+[   24s] Preparing...                          ########################################
+[   24s] Updating / installing...
+[   24s] libunistring2-0.9.10-2.2              ########################################
+[   24s] libidn2-0-2.3.2-1.1                   ########################################
+[   24s] libudev-mini1-249.7-1.1               ########################################
+[   24s] libhidapi-hidraw0-0.10.1-2.1          ########################################
+[   24s] libpsl5-0.21.1-1.2                    ########################################
+[   24s] zlib-devel-1.2.11-18.3                ########################################
+[   24s] perl-Error-0.17029-1.4                ########################################
+[   24s] perl-Git-2.34.1-1.1                   ########################################
+[   24s] libverto1-0.3.1-1.2                   ########################################
+[   28s] libstdc++6-devel-gcc11-11.2.1+git1018-########################################
+[   28s] libstdc++-devel-11-4.1                ########################################
+[   28s] libssh-config-0.9.6-2.1               ########################################
+[   28s] libsha1detectcoll1-1.0.3-4.3          ########################################
+[   28s] libsepol-devel-3.3-1.1                ########################################
+[   28s] libsasl2-3-2.1.27-5.5                 ########################################
+[   28s] libpcre2-posix3-10.39-1.1             ########################################
+[   28s] libpcre2-32-0-10.39-1.1               ########################################
+[   28s] libpcre2-16-0-10.39-1.1               ########################################
+[   28s] pcre2-devel-10.39-1.1                 ########################################
+[   28s] libnghttp2-14-1.43.0-7.1              ########################################
+[   28s] libkeyutils1-1.6.3-3.1                ########################################
+[   28s] libexpat1-2.4.1-1.1                   ########################################
+[   28s] libedit0-3.1.snap20180525-4.2         ########################################
+[   28s] libcom_err2-1.46.4-3.1                ########################################
+[   29s] krb5-mini-1.19.2-3.1                  ########################################
+[   29s] Updating /etc/sysconfig/kadmind ...
+[   29s] Updating /etc/sysconfig/krb5kdc ...
+[   29s] libcbor0_8-0.8.0-1.1                  ########################################
+[   29s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   29s] libbrotlidec1-1.0.9-1.1               ########################################
+[   29s] less-590-3.1                          ########################################
+[   29s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   29s] libopenssl1_1-1.1.1l-8.1              ########################################
+[   29s] openssh-common-8.8p1-1.3              ########################################
+[   30s] libldap-2_4-2-2.4.59-71.1             ########################################
+[   30s] libssh4-0.9.6-2.1                     ########################################
+[   30s] libcurl4-7.80.0-1.1                   ########################################
+[   30s] libfido2-1-1.9.0-1.1                  ########################################
+[   30s] openssh-clients-8.8p1-1.3             ########################################
+[   31s] git-core-2.34.1-1.1                   ########################################
+[   31s] git-2.34.1-1.1                        ########################################
+[   31s] libselinux-devel-3.3-1.1              ########################################
+[   31s] libelf-devel-0.186-1.1                ########################################
+[   31s] selinux-tools-3.3-1.1                 ########################################
+[   32s] now finalizing build dir...
+[   32s] ... running 01-add_abuild_user_to_trusted_group
+[   33s] ... running 02-set_timezone_to_utc
+[   33s] ... running 11-hack_uname_version_to_kernel_version
+[   34s] RTNETLINK answers: File exists
+[   34s] RTNETLINK answers: File exists
+[   39s] build target is riscv64-suse-linux
+[   39s] -----------------------------------------------------------------
+[   39s] I have the following modifications for execstack.spec:
+[   39s] 22c22
+[   39s] < Release:        0%{?dist}
+[   39s] ---
+[   39s] > Release:        2.1
+[   39s] -----------------------------------------------------------------
+[   39s] ----- building execstack.spec (user abuild)
+[   39s] -----------------------------------------------------------------
+[   39s] -----------------------------------------------------------------
+[   40s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/ce0405dad49db81d8df2c00217090a75-execstack' /home/abuild/rpmbuild/SOURCES/execstack.spec
+[   41s] Building target platforms: riscv64-suse-linux
+[   41s] Building for target riscv64-suse-linux
+[   41s] setting SOURCE_DATE_EPOCH=1638489600
+[   41s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.j9rzDX
+[   41s] + umask 022
+[   41s] + cd /home/abuild/rpmbuild/BUILD
+[   41s] + cd /home/abuild/rpmbuild/BUILD
+[   41s] + rm -rf prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[   41s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/prelink-4c79120.tar.gz
+[   41s] + /usr/bin/tar -xof -
+[   41s] + STATUS=0
+[   41s] + '[' 0 -ne 0 ']'
+[   41s] + cd prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[   41s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   41s] + echo 'Patch #0 (Add-PL_ARCH-for-AArch64.patch):'
+[   41s] Patch #0 (Add-PL_ARCH-for-AArch64.patch):
+[   41s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   41s] patching file src/Makefile.am
+[   41s] patching file src/Makefile.in
+[   41s] patching file src/arch-aarch64.c
+[   41s] + echo 'Patch #1 (prelink_update_fsf_address.patch):'
+[   41s] Patch #1 (prelink_update_fsf_address.patch):
+[   41s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   41s] patching file COPYING
+[   41s] + RPM_EC=0
+[   41s] ++ jobs -p
+[   41s] + exit 0
+[   41s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.FWT8AB
+[   41s] + umask 022
+[   41s] + cd /home/abuild/rpmbuild/BUILD
+[   41s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64
+[   41s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64
+[   41s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   41s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64
+[   41s] + cd prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[   41s] + ref=/usr/lib/rpm
+[   41s] + mints=0
+[   41s] + case $(uname -m) in
+[   41s] ++ uname -m
+[   41s] + mints=20160911
+[   41s] + for s in guess sub
+[   41s] ++ find -maxdepth 8 -name config.guess
+[   41s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   41s] + grep -q config-patches@ ./config.guess
+[   42s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.guess
+[   42s] + timestamp=20020903
+[   42s] + test -n 20020903
+[   42s] + test 20020903 -ge 20160911
+[   42s] + install -m 755 /usr/lib/rpm/config.guess ./config.guess
+[   42s] + for s in guess sub
+[   42s] ++ find -maxdepth 8 -name config.sub
+[   42s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   42s] + grep -q config-patches@ ./config.sub
+[   42s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./config.sub
+[   42s] + timestamp=20020905
+[   42s] + test -n 20020905
+[   42s] + test 20020905 -ge 20160911
+[   42s] + install -m 755 /usr/lib/rpm/config.sub ./config.sub
+[   42s] + sed -i -e '/^prelink_LDADD/s/$/ -lpthread/' src/Makefile.am src/Makefile.in
+[   42s] + CFLAGS='-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   42s] + export CFLAGS
+[   42s] + CXXFLAGS='-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   42s] + export CXXFLAGS
+[   42s] + FFLAGS='-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   42s] + export FFLAGS
+[   42s] + FCFLAGS='-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   42s] + export FCFLAGS
+[   42s] + LDFLAGS=-flto=auto
+[   42s] + export LDFLAGS
+[   42s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking
+[   45s] checking build system type... riscv64-suse-linux-gnu
+[   46s] checking host system type... riscv64-suse-linux-gnu
+[   46s] checking for a BSD-compatible install... /usr/bin/install -c
+[   47s] checking whether build environment is sane... yes
+[   47s] checking for gawk... gawk
+[   47s] checking whether make sets $(MAKE)... yes
+[   47s] checking for riscv64-suse-linux-gnu-gcc... no
+[   47s] checking for gcc... gcc
+[   49s] checking for C compiler default output... a.out
+[   49s] checking whether the C compiler works... yes
+[   49s] checking whether we are cross compiling... no
+[   51s] checking for suffix of executables... 
+[   51s] checking for suffix of object files... o
+[   52s] checking whether we are using the GNU C compiler... yes
+[   53s] checking whether gcc accepts -g... yes
+[   53s] checking for gcc option to accept ANSI C... none needed
+[   54s] checking for style of include used by make... GNU
+[   54s] checking dependency style of gcc... none
+[   54s] checking for riscv64-suse-linux-gnu-g++... no
+[   54s] checking for riscv64-suse-linux-gnu-c++... no
+[   54s] checking for riscv64-suse-linux-gnu-gpp... no
+[   54s] checking for riscv64-suse-linux-gnu-aCC... no
+[   54s] checking for riscv64-suse-linux-gnu-CC... no
+[   54s] checking for riscv64-suse-linux-gnu-cxx... no
+[   54s] checking for riscv64-suse-linux-gnu-cc++... no
+[   54s] checking for riscv64-suse-linux-gnu-cl... no
+[   54s] checking for riscv64-suse-linux-gnu-FCC... no
+[   54s] checking for riscv64-suse-linux-gnu-KCC... no
+[   54s] checking for riscv64-suse-linux-gnu-RCC... no
+[   54s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[   54s] checking for riscv64-suse-linux-gnu-xlC... no
+[   54s] checking for g++... no
+[   54s] checking for c++... no
+[   54s] checking for gpp... no
+[   54s] checking for aCC... no
+[   54s] checking for CC... no
+[   54s] checking for cxx... no
+[   54s] checking for cc++... no
+[   54s] checking for cl... no
+[   54s] checking for FCC... no
+[   54s] checking for KCC... no
+[   54s] checking for RCC... no
+[   54s] checking for xlC_r... no
+[   54s] checking for xlC... no
+[   54s] checking whether we are using the GNU C++ compiler... no
+[   54s] checking whether g++ accepts -g... no
+[   55s] checking dependency style of g++... none
+[   56s] checking how to run the C preprocessor... gcc -E
+[   57s] checking for egrep... grep -E
+[   58s] checking whether gcc needs -traditional... no
+[   58s] checking for a sed that does not truncate output... /usr/bin/sed
+[   58s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[   58s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[   58s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[   58s] checking for BSD-compatible nm... nm
+[   58s] checking whether ln -s works... yes
+[   58s] checking how to recognise dependent libraries... file_magic ELF [0-9][0-9]*-bit [LM]SB (shared object|dynamic lib )
+[   62s] checking for ANSI C header files... yes
+[   63s] checking for sys/types.h... yes
+[   64s] checking for sys/stat.h... yes
+[   64s] checking for stdlib.h... yes
+[   65s] checking for string.h... yes
+[   66s] checking for memory.h... yes
+[   67s] checking for strings.h... yes
+[   68s] checking for inttypes.h... yes
+[   68s] checking for stdint.h... yes
+[   69s] checking for unistd.h... yes
+[   70s] checking dlfcn.h usability... yes
+[   71s] checking dlfcn.h presence... yes
+[   71s] checking for dlfcn.h... yes
+[   72s] checking how to run the C++ preprocessor... /lib/cpp
+[   73s] checking for riscv64-suse-linux-gnu-g77... no
+[   73s] checking for riscv64-suse-linux-gnu-f77... no
+[   73s] checking for riscv64-suse-linux-gnu-xlf... no
+[   73s] checking for riscv64-suse-linux-gnu-frt... no
+[   73s] checking for riscv64-suse-linux-gnu-pgf77... no
+[   73s] checking for riscv64-suse-linux-gnu-fl32... no
+[   73s] checking for riscv64-suse-linux-gnu-af77... no
+[   73s] checking for riscv64-suse-linux-gnu-fort77... no
+[   73s] checking for riscv64-suse-linux-gnu-f90... no
+[   73s] checking for riscv64-suse-linux-gnu-xlf90... no
+[   73s] checking for riscv64-suse-linux-gnu-pgf90... no
+[   73s] checking for riscv64-suse-linux-gnu-epcf90... no
+[   73s] checking for riscv64-suse-linux-gnu-f95... no
+[   73s] checking for riscv64-suse-linux-gnu-fort... no
+[   73s] checking for riscv64-suse-linux-gnu-xlf95... no
+[   73s] checking for riscv64-suse-linux-gnu-lf95... no
+[   73s] checking for riscv64-suse-linux-gnu-g95... no
+[   73s] checking for g77... no
+[   73s] checking for f77... no
+[   73s] checking for xlf... no
+[   73s] checking for frt... no
+[   73s] checking for pgf77... no
+[   73s] checking for fl32... no
+[   73s] checking for af77... no
+[   73s] checking for fort77... no
+[   73s] checking for f90... no
+[   73s] checking for xlf90... no
+[   73s] checking for pgf90... no
+[   73s] checking for epcf90... no
+[   73s] checking for f95... no
+[   73s] checking for fort... no
+[   73s] checking for xlf95... no
+[   73s] checking for lf95... no
+[   73s] checking for g95... no
+[   73s] checking whether we are using the GNU Fortran 77 compiler... no
+[   74s] checking whether  accepts -g... no
+[   86s] checking the maximum length of command line arguments... 32768
+[   88s] checking command to parse nm output from gcc object... failed
+[   88s] checking for objdir... .libs
+[   88s] checking for riscv64-suse-linux-gnu-ar... no
+[   88s] checking for ar... ar
+[   88s] checking for riscv64-suse-linux-gnu-ranlib... no
+[   88s] checking for ranlib... ranlib
+[   88s] checking for riscv64-suse-linux-gnu-strip... no
+[   88s] checking for strip... strip
+[   88s] checking for riscv64-suse-linux-gnu-file... no
+[   88s] checking for file... /usr/bin/file
+[   90s] checking if gcc static flag  works... yes
+[   90s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[   90s] checking for gcc option to produce PIC... -fPIC
+[   91s] checking if gcc PIC flag -fPIC works... yes
+[   91s] checking if gcc supports -c -o file.o... yes
+[   91s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[   93s] checking whether -lc should be explicitly linked in... no
+[   93s] checking how to hardcode library paths into programs... immediate
+[   93s] checking whether stripping libraries is possible... yes
+[   93s] checking dynamic linker characteristics... GNU/Linux ld.so
+[   93s] checking if libtool supports shared libraries... yes
+[   93s] checking whether to build shared libraries... yes
+[   93s] checking whether to build static libraries... yes
+[   96s] configure: creating libtool
+[   96s] appending configuration tag "CXX" to libtool
+[   96s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[   97s] libtool.m4: error: problem compiling CXX test program
+[   97s] checking for g++ option to produce PIC... 
+[   97s] checking if g++ supports -c -o file.o... no
+[   97s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[   97s] checking how to hardcode library paths into programs... immediate
+[   97s] checking whether stripping libraries is possible... yes
+[   97s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  100s] appending configuration tag "F77" to libtool
+[  101s] checking libelf.h usability... yes
+[  102s] checking libelf.h presence... yes
+[  102s] checking for libelf.h... yes
+[  102s] checking gelf.h usability... yes
+[  103s] checking gelf.h presence... yes
+[  103s] checking for gelf.h... yes
+[  105s] checking for elf_begin in -lelf... yes
+[  107s] checking for gelf_getvernaux... yes
+[  107s] checking whether FTW_ACTIONRETVAL is supported... yes
+[  109s] checking for is_selinux_enabled in -lselinux... yes
+[  110s] checking selinux/selinux.h usability... yes
+[  111s] checking selinux/selinux.h presence... yes
+[  111s] checking for selinux/selinux.h... yes
+[  111s] checking for special C compiler options needed for large files... no
+[  111s] checking for _FILE_OFFSET_BITS value needed for large files... no
+[  112s] checking for _LARGE_FILES value needed for large files... no
+[  115s] configure: creating ./config.status
+[  118s] config.status: creating Makefile
+[  118s] config.status: creating src/Makefile
+[  119s] config.status: creating gelfx/Makefile
+[  119s] config.status: creating gelfx32/Makefile
+[  119s] config.status: creating gelf/Makefile
+[  120s] config.status: creating m4/Makefile
+[  120s] config.status: creating patches/Makefile
+[  121s] config.status: creating doc/Makefile
+[  122s] config.status: creating testsuite/Makefile
+[  122s] config.status: creating config.h
+[  122s] config.status: executing depfiles commands
+[  123s] + make -j8 -C gelf
+[  123s] make: Entering directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelf'
+[  123s] /bin/sh ../libtool --mode=compile gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -I. -I. -I.. -I../gelfx   -Wall -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c -o gelf.lo `test -f 'gelf.c' || echo './'`gelf.c
+[  125s] mkdir .libs
+[  125s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -I. -I. -I.. -I../gelfx -Wall -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c gelf.c  -fPIC -DPIC -DPIC -o gelf.o
+[  126s] mv -f gelf.o .libs/gelf.lo
+[  127s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -I. -I. -I.. -I../gelfx -Wall -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c gelf.c -o gelf.o >/dev/null 2>&1
+[  128s] mv -f .libs/gelf.lo gelf.lo
+[  128s] /bin/sh ../libtool --mode=link gcc -Wall -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o libgelf.la   gelf.lo  -lselinux -lelf 
+[  129s] rm -fr .libs/libgelf.la .libs/libgelf.* .libs/libgelf.*
+[  129s] ar cru .libs/libgelf.al gelf.lo
+[  129s] ranlib .libs/libgelf.al
+[  129s] creating libgelf.la
+[  129s] (cd .libs && rm -f libgelf.la && ln -s ../libgelf.la libgelf.la)
+[  129s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelf'
+[  129s] + make -j8 -C gelfx
+[  129s] make: Entering directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelfx'
+[  129s] make: Nothing to be done for 'all'.
+[  129s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelfx'
+[  129s] + make -j8 -C gelfx32
+[  129s] make: Entering directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelfx32'
+[  129s] make: Nothing to be done for 'all'.
+[  129s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/gelfx32'
+[  129s] + make -j8 -C src execstack
+[  129s] make: Entering directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src'
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'execstack.c' || echo './'`execstack.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'checksum.c' || echo './'`checksum.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'data.c' || echo './'`data.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'dso.c' || echo './'`dso.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'dwarf2.c' || echo './'`dwarf2.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'fptr.c' || echo './'`fptr.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'hashtab.c' || echo './'`hashtab.c
+[  129s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'mdebug.c' || echo './'`mdebug.c
+[  130s] dso.c: In function 'fdopen_dso':
+[  130s] dso.c:274:16: warning: variable 'last' set but not used [-Wunused-but-set-variable]
+[  130s]   274 |   int i, j, k, last, *sections, *invsections;
+[  130s]       |                ^~~~
+[  130s] dso.c: In function 'set_security_context':
+[  130s] dso.c:1792:7: warning: 'security_context_t' is deprecated [-Wdeprecated-declarations]
+[  130s]  1792 |       security_context_t scontext;
+[  130s]       |       ^~~~~~~~~~~~~~~~~~
+[  130s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'stabs.c' || echo './'`stabs.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'crc32.c' || echo './'`crc32.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-i386.c' || echo './'`arch-i386.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-alpha.c' || echo './'`arch-alpha.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-ppc.c' || echo './'`arch-ppc.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-ppc64.c' || echo './'`arch-ppc64.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-sparc.c' || echo './'`arch-sparc.c
+[  131s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-sparc64.c' || echo './'`arch-sparc64.c
+[  132s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-x86_64.c' || echo './'`arch-x86_64.c
+[  132s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-mips.c' || echo './'`arch-mips.c
+[  132s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-s390.c' || echo './'`arch-s390.c
+[  132s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-s390x.c' || echo './'`arch-s390x.c
+[  132s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-arm.c' || echo './'`arch-arm.c
+[  133s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-sh.c' || echo './'`arch-sh.c
+[  133s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-ia64.c' || echo './'`arch-ia64.c
+[  133s] gcc -D_GNU_SOURCE -DHAVE_CONFIG_H -Wall -Wno-pointer-sign -I. -I. -I.. -I../gelfx -DSBINDIR='"/usr/sbin"'  -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -c `test -f 'arch-aarch64.c' || echo './'`arch-aarch64.c
+[  134s] /bin/sh ../libtool --mode=link gcc -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g  -flto=auto -o execstack  execstack.o checksum.o data.o dso.o dwarf2.o fptr.o hashtab.o mdebug.o stabs.o crc32.o arch-i386.o arch-alpha.o arch-ppc.o arch-ppc64.o arch-sparc.o arch-sparc64.o arch-x86_64.o arch-mips.o arch-s390.o arch-s390x.o arch-arm.o arch-sh.o arch-ia64.o arch-aarch64.o  -lselinux -lelf 
+[  135s] mkdir .libs
+[  136s] gcc -Wall -Wno-pointer-sign -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -flto=auto -o execstack execstack.o checksum.o data.o dso.o dwarf2.o fptr.o hashtab.o mdebug.o stabs.o crc32.o arch-i386.o arch-alpha.o arch-ppc.o arch-ppc64.o arch-sparc.o arch-sparc64.o arch-x86_64.o arch-mips.o arch-s390.o arch-s390x.o arch-arm.o arch-sh.o arch-ia64.o arch-aarch64.o  -lselinux -lelf
+[  149s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8/src'
+[  149s] + RPM_EC=0
+[  149s] ++ jobs -p
+[  149s] + exit 0
+[  150s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.tYRdkN
+[  150s] + umask 022
+[  150s] + cd /home/abuild/rpmbuild/BUILD
+[  150s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64
+[  150s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  150s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64
+[  150s] + cd prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[  150s] + install -D src/execstack /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64/usr/bin/execstack
+[  150s] + install -Dm0644 doc/execstack.8 /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64/usr/share/man/man8/execstack.8
+[  150s] + /usr/lib/rpm/find-debuginfo -j8 --build-id-seed 0.5.0-2.1 --unique-debug-suffix -0.5.0-2.1.riscv64 --unique-debug-src-base execstack-0.5.0-2.1.riscv64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[  150s] extracting debug info from /home/abuild/rpmbuild/BUILDROOT/execstack-0.5.0-2.1.riscv64/usr/bin/execstack
+[  151s] original debug info size: 736kB, size after compression: 604kB
+[  151s] /usr/lib/rpm/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+[  151s] 876 blocks
+[  151s] + /usr/lib/rpm/brp-compress
+[  152s] + /usr/lib/rpm/brp-suse
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-40-rootfs
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-45-tcl
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  152s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  153s] Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.rCvkFi
+[  153s] + umask 022
+[  153s] + cd /home/abuild/rpmbuild/BUILD
+[  153s] + cd prelink-4c79120bcdbde0616f592458ccde7035e92ca3d8
+[  153s] + cp src/execstack test
+[  153s] + src/execstack -q test
+[  153s] + grep '^-'
+[  153s] src/execstack: "test"'s architecture is not supported
+[  153s] error: Bad exit status from /var/tmp/rpm-tmp.rCvkFi (%check)
+[  153s] 
+[  153s] 
+[  153s] RPM build errors:
+[  153s]     Bad exit status from /var/tmp/rpm-tmp.rCvkFi (%check)
+[  153s] ### VM INTERACTION START ###
+[  156s] [  151.053684][  T424] sysrq: Power Off
+[  156s] [  151.056452][    T7] reboot: Power down
+[  156s] ### VM INTERACTION END ###
+[  156s] 
+[  156s] goat07 failed "build execstack.spec" at Tue Dec  7 00:58:41 UTC 2021.
+[  156s] 

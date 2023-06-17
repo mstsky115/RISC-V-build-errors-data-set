@@ -1,0 +1,1061 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_10/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_10/root
+[    0s] 
+[    0s] 
+[    0s] lamb01 started "build spindle.spec" at Tue Aug 18 11:57:14 UTC 2020.
+[    0s] 
+[    0s] Building spindle for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f0f5f139dec6c6a3bb62030c50c3d455'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_10/.build-srcdir/spindle.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_10/.build-srcdir/spindle.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/10/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_10/.build.rpmlist /var/cache/obs/worker/root_10/.build-srcdir/spindle.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [42c95d3e882f240886b6f897178bc84a]
+[    4s] .................
+[    4s] 
+[    4s] copying packages...
+[    5s] reordering...done
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using UART console
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_10/.mount/boot/kernel -initrd /var/cache/obs/worker/root_10/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 mitigations=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_10/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_10/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_10/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    6s] c[?7l[2J[0mSeaBIOS (version rel-1.12.0-59-gc9ba527-rebuilt.opensuse.org)
+[    9s] Booting from ROM..c[?7l[2J[    3.195177] dracut-pre-udev[260]: modprobe: FATAL: Module kqemu not found in directory /lib/modules/5.8.0-1-default
+[   10s] [    3.211720] dracut-pre-udev[262]: modprobe: FATAL: Module ext2 not found in directory /lib/modules/5.8.0-1-default
+[   10s] [    3.217079] dracut-pre-udev[263]: modprobe: FATAL: Module ext3 not found in directory /lib/modules/5.8.0-1-default
+[   10s] [    3.888543] dracut-pre-udev[275]: modprobe: FATAL: Module nf_conntrack_ipv6 not found in directory /lib/modules/5.8.0-1-default
+[   10s] [    3.995204] dracut-pre-udev[286]: modprobe: FATAL: Module ibmvscsi not found in directory /lib/modules/5.8.0-1-default
+[   10s] [    4.018848] dracut-pre-udev[289]: modprobe: FATAL: Module ibmveth not found in directory /lib/modules/5.8.0-1-default
+[   11s] No such file or directory
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 5.8.0-1-default #1 SMP Tue Aug 4 07:30:59 UTC 2020 (9bc0044)
+[   12s] Increasing log level from now on...
+[   12s] [    5.762417] sysrq: Changing Loglevel
+[   12s] [    5.763085] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   12s] no label, UUID=7a5ee60e-c2b6-48ff-a54b-4d7a41b7856d
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/spindle.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/spindle.spec build ...
+[   14s] initializing rpm db...
+[   14s] querying package ids...
+[   26s] [1/131] preinstalled aaa_base-84.87+git20200804.d7fb210-1.1
+[   26s] [2/131] preinstalled aaa_base-malloccheck-84.87+git20200804.d7fb210-1.1
+[   26s] [3/131] preinstalled attr-2.4.48-3.1
+[   26s] [4/131] preinstalled bash-5.0.18-1.1
+[   26s] [5/131] preinstalled binutils-2.34-1.2
+[   26s] [6/131] preinstalled brp-check-suse-84.87+git20200510.8ff16cf-1.1
+[   26s] [7/131] preinstalled build-compare-20200727T175347.d95eb35-1.1
+[   26s] [8/131] preinstalled build-mkbaselibs-20200520-1.1
+[   26s] [9/131] preinstalled bzip2-1.0.8-2.1
+[   26s] [10/131] preinstalled chkstat-1550_20200811-23.1
+[   26s] [11/131] preinstalled coreutils-8.32-4.1
+[   26s] [12/131] preinstalled cpio-2.12-9.2
+[   26s] [13/131] preinstalled cpp-10-1.1
+[   26s] [14/131] preinstalled cpp10-10.2.1+git501-1.1
+[   26s] [15/131] preinstalled diffutils-3.7-3.2
+[   26s] [16/131] preinstalled dwz-0.13-7.1
+[   26s] [17/131] preinstalled file-5.39-1.1
+[   26s] [18/131] preinstalled file-magic-5.39-1.1
+[   26s] [19/131] preinstalled filesystem-15.5-31.1
+[   26s] [20/131] preinstalled fillup-1.42-275.2
+[   26s] [21/131] preinstalled findutils-4.7.0-3.1
+[   26s] [22/131] preinstalled gawk-5.1.0-1.2
+[   26s] [23/131] preinstalled gcc-10-1.1
+[   26s] [24/131] preinstalled gcc-PIE-10-1.1
+[   26s] [25/131] preinstalled gcc10-10.2.1+git501-1.1
+[   26s] [26/131] preinstalled gettext-runtime-mini-0.20.2-2.1
+[   26s] [27/131] preinstalled gettext-tools-mini-0.20.2-2.1
+[   26s] [28/131] preinstalled glibc-2.31-6.1
+[   26s] [29/131] preinstalled glibc-devel-2.31-6.1
+[   26s] [30/131] preinstalled glibc-locale-2.31-6.1
+[   26s] [31/131] preinstalled glibc-locale-base-2.31-6.1
+[   26s] [32/131] preinstalled grep-3.4-2.1
+[   26s] [33/131] preinstalled gzip-1.10-3.2
+[   26s] [34/131] preinstalled hostname-3.21-3.1
+[   26s] [35/131] preinstalled iproute2-5.7.0-2.1
+[   26s] [36/131] preinstalled kernel-obs-build-5.8.0-1.1
+[   26s] [37/131] preinstalled krb5-mini-1.18.2-3.1
+[   26s] [38/131] preinstalled libacl1-2.2.53-3.1
+[   26s] [39/131] preinstalled libasan6-10.2.1+git501-1.1
+[   26s] [40/131] preinstalled libatomic1-10.2.1+git501-1.1
+[   26s] [41/131] preinstalled libattr1-2.4.48-3.1
+[   26s] [42/131] preinstalled libaudit1-2.8.5-2.1
+[   26s] [43/131] preinstalled libblkid1-2.35.1-2.1
+[   26s] [44/131] preinstalled libbz2-1-1.0.8-2.1
+[   26s] [45/131] preinstalled libcap-ng0-0.7.10-1.1
+[   26s] [46/131] preinstalled libcap2-2.42-5.1
+[   26s] [47/131] preinstalled libcom_err2-1.45.6-1.2
+[   26s] [48/131] preinstalled libcrypt1-4.4.15-1.1
+[   26s] [49/131] preinstalled libctf-nobfd0-2.34-1.2
+[   26s] [50/131] preinstalled libctf0-2.34-1.2
+[   26s] [51/131] preinstalled libdb-4_8-4.8.30-38.2
+[   26s] [52/131] preinstalled libdw1-0.179-1.1
+[   26s] [53/131] preinstalled libeconf0-0.3.8+git20200710.5126fff-1.1
+[   26s] [54/131] preinstalled libelf1-0.179-1.1
+[   26s] [55/131] preinstalled libexpat1-2.2.9-1.1
+[   26s] [56/131] preinstalled libfdisk1-2.35.1-2.1
+[   26s] [57/131] preinstalled libgcc_s1-10.2.1+git501-1.1
+[   26s] [58/131] preinstalled libgcrypt20-1.8.6-1.1
+[   26s] [59/131] preinstalled libgdbm6-1.18.1-3.1
+[   26s] [60/131] preinstalled libgdbm_compat4-1.18.1-3.1
+[   26s] [61/131] preinstalled libgmp10-6.2.0-3.1
+[   26s] [62/131] preinstalled libgomp1-10.2.1+git501-1.1
+[   26s] [63/131] preinstalled libgpg-error0-1.38-1.1
+[   26s] [64/131] preinstalled libisl22-0.22.1-1.1
+[   26s] [65/131] preinstalled libkeyutils1-1.6-1.2
+[   26s] [66/131] preinstalled liblua5_3-5-5.3.5-2.2
+[   26s] [67/131] preinstalled liblzma5-5.2.5-1.1
+[   26s] [68/131] preinstalled libmagic1-5.39-1.1
+[   26s] [69/131] preinstalled libmnl0-1.0.4-2.1
+[   26s] [70/131] preinstalled libmount1-2.35.1-2.1
+[   26s] [71/131] preinstalled libmpc3-1.1.0-2.1
+[   26s] [72/131] preinstalled libmpfr6-4.1.0-1.1
+[   26s] [73/131] cumulate libmunge2-0.5.14-1.1
+[   26s] [74/131] preinstalled libncurses6-6.2.20200711-7.1
+[   26s] [75/131] preinstalled libnsl2-1.3.0-1.1
+[   26s] [76/131] preinstalled libpcre1-8.44-1.1
+[   26s] [77/131] preinstalled libpkgconf3-1.7.3-2.1
+[   26s] [78/131] preinstalled libpopt0-1.16-32.1
+[   26s] [79/131] preinstalled libreadline8-8.0-5.1
+[   26s] [80/131] preinstalled librpmbuild9-4.15.1-6.2
+[   26s] [81/131] preinstalled libselinux1-3.0-2.1
+[   26s] [82/131] preinstalled libsemanage1-3.0-2.2
+[   26s] [83/131] preinstalled libsepol1-3.0-2.2
+[   26s] [84/131] preinstalled libsmartcols1-2.35.1-2.1
+[   26s] [85/131] preinstalled libstdc++6-10.2.1+git501-1.1
+[   26s] [86/131] cumulate libstdc++6-devel-gcc10-10.2.1+git501-1.1
+[   26s] [87/131] preinstalled libtirpc-netconfig-1.2.6-1.2
+[   26s] [88/131] preinstalled libtirpc3-1.2.6-1.2
+[   26s] [89/131] preinstalled libubsan1-10.2.1+git501-1.1
+[   26s] [90/131] preinstalled libutempter0-1.2.0-1.1
+[   26s] [91/131] preinstalled libuuid1-2.35.1-2.1
+[   26s] [92/131] preinstalled libverto1-0.2.6-7.1
+[   26s] [93/131] preinstalled libxcrypt-devel-4.4.15-1.1
+[   26s] [94/131] preinstalled libz1-1.2.11-14.1
+[   26s] [95/131] preinstalled libzstd1-1.4.5-2.1
+[   26s] [96/131] preinstalled linux-glibc-devel-5.7-1.1
+[   26s] [97/131] preinstalled make-4.3-2.1
+[   26s] [98/131] preinstalled ncurses-utils-6.2.20200711-7.1
+[   26s] [99/131] preinstalled pam-1.4.0-1.1
+[   26s] [100/131] preinstalled patch-2.7.6-3.1
+[   26s] [101/131] preinstalled perl-5.30.1-4.1
+[   26s] [102/131] preinstalled perl-base-5.30.1-4.1
+[   26s] [103/131] preinstalled permissions-20200811.1550-23.1
+[   26s] [104/131] preinstalled permissions-config-1550_20200811-23.1
+[   26s] [105/131] preinstalled pkgconf-1.7.3-2.1
+[   26s] [106/131] preinstalled pkgconf-m4-1.7.3-2.1
+[   26s] [107/131] preinstalled pkgconf-pkg-config-1.7.3-2.1
+[   26s] [108/131] preinstalled post-build-checks-84.87+git20200323.45c6eba-1.1
+[   26s] [109/131] preinstalled qemu-linux-user-5.1.0-97.1
+[   26s] [110/131] preinstalled rpm-4.15.1-6.2
+[   26s] [111/131] preinstalled rpm-build-4.15.1-6.2
+[   26s] [112/131] preinstalled rpm-build-perl-4.15.1-6.2
+[   26s] [113/131] preinstalled rpm-config-SUSE-0.g56-1.1
+[   26s] [114/131] preinstalled rpmlint-Factory-1.0-98.1
+[   26s] [115/131] preinstalled rpmlint-Factory-strict-1.0-98.1
+[   26s] [116/131] preinstalled rpmlint-mini-1.10-21.1
+[   26s] [117/131] preinstalled sed-4.8-1.2
+[   26s] [118/131] preinstalled shadow-4.8.1-2.1
+[   26s] [119/131] preinstalled system-group-hardware-20170617-11.1
+[   26s] [120/131] preinstalled system-user-root-20190513-1.1
+[   26s] [121/131] preinstalled systemd-rpm-macros-4-2.1
+[   26s] [122/131] preinstalled sysuser-shadow-3.0-3.1
+[   26s] [123/131] preinstalled tar-1.32-3.2
+[   26s] [124/131] preinstalled terminfo-base-6.2.20200711-7.1
+[   26s] [125/131] preinstalled update-alternatives-1.19.0.5-5.1
+[   26s] [126/131] preinstalled util-linux-2.35.1-2.1
+[   26s] [127/131] preinstalled which-2.21-4.2
+[   26s] [128/131] preinstalled xz-5.2.5-1.1
+[   26s] [129/131] cumulate gcc10-c++-10.2.1+git501-1.1
+[   26s] [130/131] cumulate munge-devel-0.5.14-1.1
+[   26s] [131/131] cumulate gcc-c++-10-1.1
+[   26s] now installing cumulated packages
+[   27s] Preparing...                          ########################################
+[   27s] Updating / installing...
+[   38s] libstdc++6-devel-gcc10-10.2.1+git501-1########################################
+[   41s] gcc10-c++-10.2.1+git501-1.1           ########################################
+[   41s] libmunge2-0.5.14-1.1                  ########################################
+[   41s] munge-devel-0.5.14-1.1                ########################################
+[   41s] gcc-c++-10-1.1                        ########################################
+[   42s] now finalizing build dir...
+[   43s] RTNETLINK answers: File exists
+[   43s] RTNETLINK answers: File exists
+[   46s] Running build time source services...
+[   51s] build target is riscv64-suse-linux
+[   51s] -----------------------------------------------------------------
+[   51s] I have the following modifications for spindle.spec:
+[   51s] 22c22
+[   51s] < Release:        0
+[   51s] ---
+[   51s] > Release:        1.1
+[   51s] -----------------------------------------------------------------
+[   51s] ----- building spindle.spec (user abuild)
+[   51s] -----------------------------------------------------------------
+[   51s] -----------------------------------------------------------------
+[   54s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f0f5f139dec6c6a3bb62030c50c3d455-spindle' /home/abuild/rpmbuild/SOURCES/spindle.spec
+[   54s] Building target platforms: riscv64-suse-linux
+[   54s] Building for target riscv64-suse-linux
+[   54s] setting SOURCE_DATE_EPOCH=1597190400
+[   55s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.j7Yu4b
+[   55s] + umask 022
+[   55s] + cd /home/abuild/rpmbuild/BUILD
+[   55s] + cd /home/abuild/rpmbuild/BUILD
+[   55s] + rm -rf spindle-0.12.git.4815692
+[   55s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/spindle-0.12.git.4815692.tar.gz
+[   55s] + /usr/bin/tar -xof -
+[   55s] + STATUS=0
+[   55s] + '[' 0 -ne 0 ']'
+[   55s] + cd spindle-0.12.git.4815692
+[   55s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   55s] + RPM_EC=0
+[   55s] ++ jobs -p
+[   55s] + exit 0
+[   55s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.2KYQge
+[   55s] + umask 022
+[   55s] + cd /home/abuild/rpmbuild/BUILD
+[   55s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/spindle-0.12.git.4815692-1.1.riscv64
+[   55s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/spindle-0.12.git.4815692-1.1.riscv64
+[   55s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   55s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/spindle-0.12.git.4815692-1.1.riscv64
+[   55s] + cd spindle-0.12.git.4815692
+[   55s] + ref=/usr/lib/rpm
+[   55s] ++ uname -m
+[   56s] + testarch=riscv64
+[   56s] + for s in guess sub
+[   56s] ++ find -maxdepth 8 -name config.guess
+[   56s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   56s] + grep -q config-patches@ ./scripts/config.guess
+[   56s] + grep -q 'riscv64[-:]' ./scripts/config.guess
+[   56s] + for s in guess sub
+[   56s] ++ find -maxdepth 8 -name config.sub
+[   56s] + for c in $(find -maxdepth 8 -name "config.$s")
+[   56s] + grep -q config-patches@ ./scripts/config.sub
+[   56s] + grep -q 'riscv64[-:]' ./scripts/config.sub
+[   56s] + CFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   56s] + export CFLAGS
+[   56s] + CXXFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   56s] + export CXXFLAGS
+[   56s] + FFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   56s] + export FFLAGS
+[   56s] + FCFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[   56s] + export FCFLAGS
+[   56s] + LDFLAGS=-flto=auto
+[   56s] + export LDFLAGS
+[   56s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/lib --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking --disable-testsuite --disable-static --libexecdir=/usr/lib64
+[   61s] checking build system type... riscv64-suse-linux-gnu
+[   62s] checking host system type... riscv64-suse-linux-gnu
+[   62s] checking target system type... riscv64-suse-linux-gnu
+[   62s] checking for a BSD-compatible install... /usr/bin/install -c
+[   62s] checking whether build environment is sane... yes
+[   62s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[   62s] checking for gawk... gawk
+[   62s] checking whether make sets $(MAKE)... yes
+[   63s] checking whether make supports nested variables... yes
+[   63s] checking whether make supports nested variables... (cached) yes
+[   63s] checking for style of include used by make... GNU
+[   63s] checking for riscv64-suse-linux-gnu-gcc... no
+[   63s] checking for gcc... gcc
+[   66s] checking whether the C compiler works... yes
+[   66s] checking for C compiler default output file name... a.out
+[   68s] checking for suffix of executables... 
+[   71s] checking whether we are cross compiling... no
+[   72s] checking for suffix of object files... o
+[   72s] checking whether we are using the GNU C compiler... yes
+[   73s] checking whether gcc accepts -g... yes
+[   74s] checking for gcc option to accept ISO C89... none needed
+[   74s] checking dependency style of gcc... none
+[   74s] checking for riscv64-suse-linux-gnu-ar... no
+[   74s] checking for riscv64-suse-linux-gnu-lib... no
+[   74s] checking for riscv64-suse-linux-gnu-link... no
+[   74s] checking for ar... ar
+[   75s] checking the archiver (ar) interface... ar
+[   75s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[   75s] checking whether we are using the GNU C compiler... (cached) yes
+[   75s] checking whether gcc accepts -g... (cached) yes
+[   75s] checking for gcc option to accept ISO C89... (cached) none needed
+[   75s] checking dependency style of gcc... (cached) none
+[   75s] checking for riscv64-suse-linux-gnu-g++... no
+[   75s] checking for riscv64-suse-linux-gnu-c++... no
+[   75s] checking for riscv64-suse-linux-gnu-gpp... no
+[   75s] checking for riscv64-suse-linux-gnu-aCC... no
+[   75s] checking for riscv64-suse-linux-gnu-CC... no
+[   75s] checking for riscv64-suse-linux-gnu-cxx... no
+[   75s] checking for riscv64-suse-linux-gnu-cc++... no
+[   75s] checking for riscv64-suse-linux-gnu-cl.exe... no
+[   75s] checking for riscv64-suse-linux-gnu-FCC... no
+[   75s] checking for riscv64-suse-linux-gnu-KCC... no
+[   75s] checking for riscv64-suse-linux-gnu-RCC... no
+[   75s] checking for riscv64-suse-linux-gnu-xlC_r... no
+[   75s] checking for riscv64-suse-linux-gnu-xlC... no
+[   75s] checking for g++... g++
+[   77s] checking whether we are using the GNU C++ compiler... yes
+[   77s] checking whether g++ accepts -g... yes
+[   77s] checking dependency style of g++... none
+[   78s] checking for a sed that does not truncate output... /usr/bin/sed
+[   78s] checking how to print strings... printf
+[   78s] checking for a sed that does not truncate output... (cached) /usr/bin/sed
+[   78s] checking for grep that handles long lines and -e... /usr/bin/grep
+[   78s] checking for egrep... /usr/bin/grep -E
+[   78s] checking for fgrep... /usr/bin/grep -F
+[   79s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[   79s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[   79s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[   79s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[   79s] checking whether ln -s works... yes
+[   80s] checking the maximum length of command line arguments... 1572864
+[   80s] checking whether the shell understands some XSI constructs... yes
+[   80s] checking whether the shell understands "+="... yes
+[   80s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[   80s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[   80s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[   80s] checking for riscv64-suse-linux-gnu-objdump... no
+[   80s] checking for objdump... objdump
+[   80s] checking how to recognize dependent libraries... pass_all
+[   80s] checking for riscv64-suse-linux-gnu-dlltool... no
+[   80s] checking for dlltool... no
+[   80s] checking how to associate runtime and link libraries... printf %s\n
+[   80s] checking for riscv64-suse-linux-gnu-ar... ar
+[   81s] checking for archiver @FILE support... @
+[   81s] checking for riscv64-suse-linux-gnu-strip... no
+[   81s] checking for strip... strip
+[   81s] checking for riscv64-suse-linux-gnu-ranlib... no
+[   81s] checking for ranlib... ranlib
+[   84s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[   84s] checking for sysroot... no
+[   84s] checking for riscv64-suse-linux-gnu-mt... no
+[   84s] checking for mt... no
+[   84s] checking if : is a manifest tool... no
+[   85s] checking how to run the C preprocessor... gcc -E
+[   91s] checking for ANSI C header files... yes
+[   92s] checking for sys/types.h... yes
+[   93s] checking for sys/stat.h... yes
+[   93s] checking for stdlib.h... yes
+[   94s] checking for string.h... yes
+[   95s] checking for memory.h... yes
+[   96s] checking for strings.h... yes
+[   98s] checking for inttypes.h... yes
+[   99s] checking for stdint.h... yes
+[  100s] checking for unistd.h... yes
+[  101s] checking for dlfcn.h... yes
+[  101s] checking for objdir... .libs
+[  105s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  105s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  106s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  106s] checking if gcc static flag -static works... no
+[  107s] checking if gcc supports -c -o file.o... yes
+[  107s] checking if gcc supports -c -o file.o... (cached) yes
+[  108s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  109s] checking whether -lc should be explicitly linked in... no
+[  112s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  112s] checking how to hardcode library paths into programs... immediate
+[  112s] checking whether stripping libraries is possible... yes
+[  112s] checking if libtool supports shared libraries... yes
+[  112s] checking whether to build shared libraries... yes
+[  112s] checking whether to build static libraries... no
+[  113s] checking how to run the C++ preprocessor... g++ -E
+[  118s] checking for ld used by g++... /usr/riscv64-suse-linux/bin/ld
+[  118s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  119s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  120s] checking for g++ option to produce PIC... -fPIC -DPIC
+[  121s] checking if g++ PIC flag -fPIC -DPIC works... yes
+[  122s] checking if g++ static flag -static works... no
+[  123s] checking if g++ supports -c -o file.o... yes
+[  123s] checking if g++ supports -c -o file.o... (cached) yes
+[  123s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  124s] checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+[  124s] checking how to hardcode library paths into programs... immediate
+[  124s] checking whether ln -s works... yes
+[  124s] checking for -Wall... yes
+[  125s] configure: WARNING: "--with-rm not specified.  Tests will not work"
+[  125s] configure: Communication is pipes/cobo
+[  126s] checking lmon_api/lmon_fe.h usability... no
+[  126s] checking lmon_api/lmon_fe.h presence... no
+[  126s] checking for lmon_api/lmon_fe.h... no
+[  126s] configure: WARNING: Could not find or build LaunchMON includes
+[  128s] checking for LMON_fe_init in -lmonfeapi... no
+[  128s] configure: WARNING: Could not find or build LaunchMON libraries
+[  128s] checking whether we can statically link launchmon... no
+[  129s] checking for thread local storage (TLS) class... __thread
+[  129s] checking for mpicc... no
+[  129s] checking for mpiicc... no
+[  129s] checking for mpixlc... no
+[  129s] checking for mpipgcc... no
+[  129s] Checking whether not-found responds to '-showme:compile'... no
+[  129s] Checking whether not-found responds to '-showme'... no
+[  129s] Checking whether not-found responds to '-compile-info'... no
+[  129s] Checking whether not-found responds to '-show'... no
+[  129s] Unable to find suitable MPI Compiler. Try setting MPICC.
+[  130s] checking for mpicxx... no
+[  130s] checking for mpiCC... no
+[  130s] checking for mpic++... no
+[  130s] checking for mpig++... no
+[  130s] checking for mpiicpc... no
+[  130s] checking for mpipgCC... no
+[  130s] checking for mpixlC... no
+[  130s] Checking whether not-found responds to '-showme:compile'... no
+[  130s] Checking whether not-found responds to '-showme'... no
+[  130s] Checking whether not-found responds to '-compile-info'... no
+[  130s] Checking whether not-found responds to '-show'... no
+[  130s] Unable to find suitable MPI Compiler. Try setting MPICXX.
+[  130s] checking automake compatibility... yes
+[  130s] checking that generated files are newer than configure... done
+[  130s] configure: creating ./config.status
+[  150s] config.status: creating src/slurm_plugin/Makefile
+[  151s] config.status: creating doc/Makefile
+[  152s] config.status: creating testsuite/Makefile
+[  152s] config.status: creating Makefile
+[  153s] config.status: creating config.h
+[  153s] config.status: executing depfiles commands
+[  153s] config.status: executing libtool commands
+[  156s] === configuring in src/client
+[  163s] checking build system type... riscv64-suse-linux-gnu
+[  163s] checking host system type... riscv64-suse-linux-gnu
+[  163s] checking target system type... riscv64-suse-linux-gnu
+[  164s] checking for a BSD-compatible install... /usr/bin/install -c
+[  164s] checking whether build environment is sane... yes
+[  164s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  164s] checking for gawk... gawk
+[  165s] checking whether make sets $(MAKE)... yes
+[  165s] checking whether make supports nested variables... yes
+[  165s] checking whether make supports nested variables... (cached) yes
+[  165s] checking for style of include used by make... GNU
+[  165s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  169s] checking whether the C compiler works... yes
+[  169s] checking for C compiler default output file name... a.out
+[  172s] checking for suffix of executables... 
+[  176s] checking whether we are cross compiling... no
+[  177s] checking for suffix of object files... o
+[  178s] checking whether we are using the GNU C compiler... yes
+[  179s] checking whether gcc accepts -g... yes
+[  180s] checking for gcc option to accept ISO C89... none needed
+[  180s] checking dependency style of gcc... none
+[  180s] checking for riscv64-suse-linux-gnu-ar... ar
+[  181s] checking the archiver (ar) interface... ar
+[  181s] checking for riscv64-suse-linux-gnu-gcc... (cached) gcc
+[  181s] checking whether we are using the GNU C compiler... (cached) yes
+[  181s] checking whether gcc accepts -g... (cached) yes
+[  181s] checking for gcc option to accept ISO C89... (cached) none needed
+[  181s] checking dependency style of gcc... (cached) none
+[  185s] checking whether gcc and cc understand -c and -o together... yes
+[  185s] checking how to print strings... printf
+[  185s] checking for a sed that does not truncate output... /usr/bin/sed
+[  185s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  185s] checking for egrep... /usr/bin/grep -E
+[  185s] checking for fgrep... /usr/bin/grep -F
+[  186s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  186s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  186s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  187s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  187s] checking whether ln -s works... yes
+[  187s] checking the maximum length of command line arguments... 1572864
+[  187s] checking whether the shell understands some XSI constructs... yes
+[  187s] checking whether the shell understands "+="... yes
+[  187s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  187s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  187s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  187s] checking for riscv64-suse-linux-gnu-objdump... no
+[  187s] checking for objdump... objdump
+[  187s] checking how to recognize dependent libraries... pass_all
+[  187s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  187s] checking for dlltool... no
+[  187s] checking how to associate runtime and link libraries... printf %s\n
+[  187s] checking for riscv64-suse-linux-gnu-ar... (cached) ar
+[  188s] checking for archiver @FILE support... @
+[  188s] checking for riscv64-suse-linux-gnu-strip... strip
+[  188s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  188s] checking for ranlib... ranlib
+[  193s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  193s] checking for sysroot... no
+[  193s] checking for riscv64-suse-linux-gnu-mt... no
+[  193s] checking for mt... no
+[  193s] checking if : is a manifest tool... no
+[  193s] checking how to run the C preprocessor... gcc -E
+[  201s] checking for ANSI C header files... yes
+[  202s] checking for sys/types.h... yes
+[  203s] checking for sys/stat.h... yes
+[  204s] checking for stdlib.h... yes
+[  206s] checking for string.h... yes
+[  207s] checking for memory.h... yes
+[  208s] checking for strings.h... yes
+[  209s] checking for inttypes.h... yes
+[  210s] checking for stdint.h... yes
+[  211s] checking for unistd.h... yes
+[  212s] checking for dlfcn.h... yes
+[  212s] checking for objdir... .libs
+[  217s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  217s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  217s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  218s] checking if gcc static flag -static works... no
+[  220s] checking if gcc supports -c -o file.o... yes
+[  220s] checking if gcc supports -c -o file.o... (cached) yes
+[  220s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  222s] checking whether -lc should be explicitly linked in... no
+[  225s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  225s] checking how to hardcode library paths into programs... immediate
+[  225s] checking whether stripping libraries is possible... yes
+[  225s] checking if libtool supports shared libraries... yes
+[  225s] checking whether to build shared libraries... yes
+[  225s] checking whether to build static libraries... no
+[  225s] checking for -Wall... yes
+[  226s] configure: WARNING: "--with-rm not specified.  Tests will not work"
+[  226s] configure: Communication is pipes/cobo
+[  233s] checking whether to remap first pages... /usr/lib64/gcc/riscv64-suse-linux/10/../../../../riscv64-suse-linux/bin/ld: /tmp/remapcl.26OPN1.ltrans0.ltrans.o: in function `main':
+[  233s] /home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/<stdin>:5: undefined reference to `dowork'
+[  233s] collect2: error: ld returned 1 exit status
+[  233s] cp: cannot stat './remapcl': No such file or directory
+[  233s] ./../../scripts/remap.sh: line 51: ./remapcl: No such file or directory
+[  239s] /usr/lib64/gcc/riscv64-suse-linux/10/../../../../riscv64-suse-linux/bin/ld: /tmp/remapxcl.ehhyFD.ltrans0.ltrans.o: in function `main':
+[  239s] /home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/<stdin>:5: undefined reference to `dowork'
+[  239s] collect2: error: ld returned 1 exit status
+[  239s] cp: cannot stat './remapxcl': No such file or directory
+[  239s] ./../../scripts/remap.sh: line 51: ./remapxcl: No such file or directory
+[  240s] yes
+[  240s] checking that generated files are newer than configure... done
+[  240s] configure: creating ./config.status
+[  253s] config.status: creating logging/Makefile
+[  254s] config.status: creating biter/Makefile
+[  254s] config.status: creating shm_cache/Makefile
+[  255s] config.status: creating client_comlib/Makefile
+[  255s] config.status: creating client/Makefile
+[  256s] config.status: creating auditclient/Makefile
+[  256s] config.status: creating subaudit/Makefile
+[  257s] config.status: creating beboot/Makefile
+[  257s] config.status: creating spindle_api/Makefile
+[  258s] config.status: creating ldsolookup/Makefile
+[  258s] config.status: creating Makefile
+[  259s] config.status: creating config.h
+[  259s] config.status: executing depfiles commands
+[  259s] config.status: executing libtool commands
+[  261s] === configuring in src/server
+[  268s] checking build system type... riscv64-suse-linux-gnu
+[  268s] checking host system type... riscv64-suse-linux-gnu
+[  268s] checking target system type... riscv64-suse-linux-gnu
+[  269s] checking for a BSD-compatible install... /usr/bin/install -c
+[  269s] checking whether build environment is sane... yes
+[  269s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  269s] checking for gawk... gawk
+[  269s] checking whether make sets $(MAKE)... yes
+[  270s] checking whether make supports nested variables... yes
+[  270s] checking whether make supports nested variables... (cached) yes
+[  270s] checking for style of include used by make... GNU
+[  270s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  273s] checking whether the C compiler works... yes
+[  273s] checking for C compiler default output file name... a.out
+[  275s] checking for suffix of executables... 
+[  278s] checking whether we are cross compiling... no
+[  279s] checking for suffix of object files... o
+[  280s] checking whether we are using the GNU C compiler... yes
+[  280s] checking whether gcc accepts -g... yes
+[  282s] checking for gcc option to accept ISO C89... none needed
+[  282s] checking dependency style of gcc... none
+[  282s] checking for riscv64-suse-linux-gnu-ar... ar
+[  282s] checking the archiver (ar) interface... ar
+[  282s] checking for riscv64-suse-linux-gnu-gcc... (cached) gcc
+[  283s] checking whether we are using the GNU C compiler... (cached) yes
+[  283s] checking whether gcc accepts -g... (cached) yes
+[  283s] checking for gcc option to accept ISO C89... (cached) none needed
+[  283s] checking dependency style of gcc... (cached) none
+[  286s] checking whether gcc and cc understand -c and -o together... yes
+[  288s] checking whether we are using the GNU C++ compiler... yes
+[  288s] checking whether g++ accepts -g... yes
+[  288s] checking dependency style of g++... none
+[  289s] checking how to print strings... printf
+[  289s] checking for a sed that does not truncate output... /usr/bin/sed
+[  289s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  289s] checking for egrep... /usr/bin/grep -E
+[  289s] checking for fgrep... /usr/bin/grep -F
+[  290s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  290s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  290s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  291s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  291s] checking whether ln -s works... yes
+[  291s] checking the maximum length of command line arguments... 1572864
+[  291s] checking whether the shell understands some XSI constructs... yes
+[  291s] checking whether the shell understands "+="... yes
+[  291s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  291s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  291s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  291s] checking for riscv64-suse-linux-gnu-objdump... no
+[  291s] checking for objdump... objdump
+[  291s] checking how to recognize dependent libraries... pass_all
+[  291s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  291s] checking for dlltool... no
+[  291s] checking how to associate runtime and link libraries... printf %s\n
+[  291s] checking for riscv64-suse-linux-gnu-ar... (cached) ar
+[  292s] checking for archiver @FILE support... @
+[  292s] checking for riscv64-suse-linux-gnu-strip... strip
+[  292s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  292s] checking for ranlib... ranlib
+[  295s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  295s] checking for sysroot... no
+[  295s] checking for riscv64-suse-linux-gnu-mt... no
+[  295s] checking for mt... no
+[  296s] checking if : is a manifest tool... no
+[  296s] checking how to run the C preprocessor... gcc -E
+[  301s] checking for ANSI C header files... yes
+[  302s] checking for sys/types.h... yes
+[  303s] checking for sys/stat.h... yes
+[  304s] checking for stdlib.h... yes
+[  305s] checking for string.h... yes
+[  306s] checking for memory.h... yes
+[  307s] checking for strings.h... yes
+[  308s] checking for inttypes.h... yes
+[  309s] checking for stdint.h... yes
+[  310s] checking for unistd.h... yes
+[  311s] checking for dlfcn.h... yes
+[  311s] checking for objdir... .libs
+[  314s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  314s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  315s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  316s] checking if gcc static flag -static works... no
+[  317s] checking if gcc supports -c -o file.o... yes
+[  317s] checking if gcc supports -c -o file.o... (cached) yes
+[  317s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  319s] checking whether -lc should be explicitly linked in... no
+[  322s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  322s] checking how to hardcode library paths into programs... immediate
+[  322s] checking whether stripping libraries is possible... yes
+[  322s] checking if libtool supports shared libraries... yes
+[  322s] checking whether to build shared libraries... yes
+[  322s] checking whether to build static libraries... no
+[  322s] checking how to run the C++ preprocessor... g++ -E
+[  326s] checking for ld used by g++... /usr/riscv64-suse-linux/bin/ld
+[  326s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  327s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  328s] checking for g++ option to produce PIC... -fPIC -DPIC
+[  329s] checking if g++ PIC flag -fPIC -DPIC works... yes
+[  330s] checking if g++ static flag -static works... no
+[  331s] checking if g++ supports -c -o file.o... yes
+[  331s] checking if g++ supports -c -o file.o... (cached) yes
+[  331s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  331s] checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+[  331s] checking how to hardcode library paths into programs... immediate
+[  332s] checking for -Wall... yes
+[  332s] configure: WARNING: "--with-rm not specified.  Tests will not work"
+[  332s] configure: Communication is pipes/cobo
+[  333s] checking munge.h usability... yes
+[  333s] checking munge.h presence... yes
+[  333s] checking for munge.h... yes
+[  336s] checking whether we have dynamic libmunge... yes
+[  336s] checking wheter we have a static libmunge... no
+[  337s] checking gcrypt.h usability... no
+[  337s] checking gcrypt.h presence... no
+[  337s] checking for gcrypt.h... no
+[  338s] checking for gcry_md_open in -lgcrypt... no
+[  338s] configure: Enabling munge for security authentication
+[  339s] checking lmon_api/lmon_fe.h usability... no
+[  339s] checking lmon_api/lmon_fe.h presence... no
+[  339s] checking for lmon_api/lmon_fe.h... no
+[  339s] configure: WARNING: Could not find or build LaunchMON includes
+[  340s] checking for LMON_fe_init in -lmonfeapi... no
+[  340s] configure: WARNING: Could not find or build LaunchMON libraries
+[  341s] checking whether we can statically link launchmon... no
+[  342s] checking that generated files are newer than configure... done
+[  342s] configure: creating ./config.status
+[  359s] config.status: creating logging/Makefile
+[  359s] config.status: creating biter/Makefile
+[  360s] config.status: creating cache/Makefile
+[  360s] config.status: creating auditserver/Makefile
+[  361s] config.status: creating cobo/Makefile
+[  361s] config.status: creating comlib/Makefile
+[  362s] config.status: creating launchmon/Makefile
+[  362s] config.status: creating startup/Makefile
+[  363s] config.status: creating Makefile
+[  363s] config.status: creating config.h
+[  364s] config.status: executing depfiles commands
+[  364s] config.status: executing libtool commands
+[  366s] === configuring in src/fe
+[  372s] checking build system type... riscv64-suse-linux-gnu
+[  372s] checking host system type... riscv64-suse-linux-gnu
+[  372s] checking target system type... riscv64-suse-linux-gnu
+[  373s] checking for a BSD-compatible install... /usr/bin/install -c
+[  373s] checking whether build environment is sane... yes
+[  373s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[  373s] checking for gawk... gawk
+[  373s] checking whether make sets $(MAKE)... yes
+[  374s] checking whether make supports nested variables... yes
+[  374s] checking whether make supports nested variables... (cached) yes
+[  374s] checking for style of include used by make... GNU
+[  374s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  377s] checking whether the C compiler works... yes
+[  377s] checking for C compiler default output file name... a.out
+[  379s] checking for suffix of executables... 
+[  382s] checking whether we are cross compiling... no
+[  382s] checking for suffix of object files... o
+[  383s] checking whether we are using the GNU C compiler... yes
+[  384s] checking whether gcc accepts -g... yes
+[  385s] checking for gcc option to accept ISO C89... none needed
+[  385s] checking dependency style of gcc... none
+[  385s] checking for riscv64-suse-linux-gnu-ar... ar
+[  385s] checking the archiver (ar) interface... ar
+[  385s] checking for riscv64-suse-linux-gnu-gcc... (cached) gcc
+[  386s] checking whether we are using the GNU C compiler... (cached) yes
+[  386s] checking whether gcc accepts -g... (cached) yes
+[  386s] checking for gcc option to accept ISO C89... (cached) none needed
+[  386s] checking dependency style of gcc... (cached) none
+[  389s] checking whether gcc and cc understand -c and -o together... yes
+[  390s] checking whether we are using the GNU C++ compiler... yes
+[  391s] checking whether g++ accepts -g... yes
+[  391s] checking dependency style of g++... none
+[  391s] checking how to print strings... printf
+[  391s] checking for a sed that does not truncate output... /usr/bin/sed
+[  391s] checking for grep that handles long lines and -e... /usr/bin/grep
+[  391s] checking for egrep... /usr/bin/grep -E
+[  391s] checking for fgrep... /usr/bin/grep -F
+[  392s] checking for ld used by gcc... /usr/riscv64-suse-linux/bin/ld
+[  392s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  392s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[  393s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[  393s] checking whether ln -s works... yes
+[  393s] checking the maximum length of command line arguments... 1572864
+[  393s] checking whether the shell understands some XSI constructs... yes
+[  393s] checking whether the shell understands "+="... yes
+[  393s] checking how to convert riscv64-suse-linux-gnu file names to riscv64-suse-linux-gnu format... func_convert_file_noop
+[  393s] checking how to convert riscv64-suse-linux-gnu file names to toolchain format... func_convert_file_noop
+[  393s] checking for /usr/riscv64-suse-linux/bin/ld option to reload object files... -r
+[  393s] checking for riscv64-suse-linux-gnu-objdump... no
+[  393s] checking for objdump... objdump
+[  393s] checking how to recognize dependent libraries... pass_all
+[  393s] checking for riscv64-suse-linux-gnu-dlltool... no
+[  393s] checking for dlltool... no
+[  393s] checking how to associate runtime and link libraries... printf %s\n
+[  393s] checking for riscv64-suse-linux-gnu-ar... (cached) ar
+[  394s] checking for archiver @FILE support... @
+[  394s] checking for riscv64-suse-linux-gnu-strip... strip
+[  394s] checking for riscv64-suse-linux-gnu-ranlib... no
+[  394s] checking for ranlib... ranlib
+[  397s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[  397s] checking for sysroot... no
+[  397s] checking for riscv64-suse-linux-gnu-mt... no
+[  397s] checking for mt... no
+[  397s] checking if : is a manifest tool... no
+[  397s] checking how to run the C preprocessor... gcc -E
+[  403s] checking for ANSI C header files... yes
+[  404s] checking for sys/types.h... yes
+[  405s] checking for sys/stat.h... yes
+[  406s] checking for stdlib.h... yes
+[  406s] checking for string.h... yes
+[  407s] checking for memory.h... yes
+[  408s] checking for strings.h... yes
+[  409s] checking for inttypes.h... yes
+[  410s] checking for stdint.h... yes
+[  411s] checking for unistd.h... yes
+[  412s] checking for dlfcn.h... yes
+[  412s] checking for objdir... .libs
+[  416s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[  416s] checking for gcc option to produce PIC... -fPIC -DPIC
+[  417s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[  417s] checking if gcc static flag -static works... no
+[  418s] checking if gcc supports -c -o file.o... yes
+[  418s] checking if gcc supports -c -o file.o... (cached) yes
+[  419s] checking whether the gcc linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  420s] checking whether -lc should be explicitly linked in... no
+[  423s] checking dynamic linker characteristics... GNU/Linux ld.so
+[  423s] checking how to hardcode library paths into programs... immediate
+[  423s] checking whether stripping libraries is possible... yes
+[  423s] checking if libtool supports shared libraries... yes
+[  423s] checking whether to build shared libraries... yes
+[  423s] checking whether to build static libraries... no
+[  423s] checking how to run the C++ preprocessor... g++ -E
+[  428s] checking for ld used by g++... /usr/riscv64-suse-linux/bin/ld
+[  428s] checking if the linker (/usr/riscv64-suse-linux/bin/ld) is GNU ld... yes
+[  428s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  430s] checking for g++ option to produce PIC... -fPIC -DPIC
+[  431s] checking if g++ PIC flag -fPIC -DPIC works... yes
+[  432s] checking if g++ static flag -static works... no
+[  433s] checking if g++ supports -c -o file.o... yes
+[  433s] checking if g++ supports -c -o file.o... (cached) yes
+[  433s] checking whether the g++ linker (/usr/riscv64-suse-linux/bin/ld) supports shared libraries... yes
+[  433s] checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+[  433s] checking how to hardcode library paths into programs... immediate
+[  433s] checking for -Wall... yes
+[  434s] configure: WARNING: "--with-rm not specified.  Tests will not work"
+[  434s] configure: Communication is pipes/cobo
+[  434s] checking munge.h usability... yes
+[  435s] checking munge.h presence... yes
+[  435s] checking for munge.h... yes
+[  437s] checking whether we have dynamic libmunge... yes
+[  437s] checking wheter we have a static libmunge... no
+[  438s] checking gcrypt.h usability... no
+[  438s] checking gcrypt.h presence... no
+[  438s] checking for gcrypt.h... no
+[  440s] checking for gcry_md_open in -lgcrypt... no
+[  440s] configure: Enabling munge for security authentication
+[  440s] checking set subaudit as defaulted to on...... configure: no
+[  440s] checking lmon_api/lmon_fe.h usability... no
+[  441s] checking lmon_api/lmon_fe.h presence... no
+[  441s] checking for lmon_api/lmon_fe.h... no
+[  441s] configure: WARNING: Could not find or build LaunchMON includes
+[  442s] checking for LMON_fe_init in -lmonfeapi... no
+[  442s] configure: WARNING: Could not find or build LaunchMON libraries
+[  443s] checking whether we can statically link launchmon... no
+[  443s] checking that generated files are newer than configure... done
+[  443s] configure: creating ./config.status
+[  460s] config.status: creating logging/Makefile
+[  461s] config.status: creating cobo/Makefile
+[  462s] config.status: creating comlib/Makefile
+[  462s] config.status: creating openmpi_intercept/Makefile
+[  463s] config.status: creating launchmon/Makefile
+[  463s] config.status: creating startup/Makefile
+[  464s] config.status: creating hostbin/Makefile
+[  464s] config.status: creating Makefile
+[  464s] config.status: creating config.h
+[  465s] config.status: executing depfiles commands
+[  465s] config.status: executing libtool commands
+[  468s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  468s] /usr/bin/make  all-recursive
+[  468s] Making all in src/client
+[  469s] /usr/bin/make  all-recursive
+[  469s] Making all in logging
+[  471s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  471s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DSPINDLECLIENT  -DLIBEXEC=\"/usr/lib64/spindle\" -DDAEMON_NAME=\"spindled_logd\" -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindleclogc_la-spindle_mkdir.lo `test -f '../../utils/spindle_mkdir.c' || echo './'`../../utils/spindle_mkdir.c
+[  471s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DSPINDLECLIENT -DLIBEXEC=\"/usr/lib64/spindle\" -DDAEMON_NAME=\"spindled_logd\" -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../utils/spindle_mkdir.c  -fPIC -DPIC -o .libs/libspindleclogc_la-spindle_mkdir.o
+[  471s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  472s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  472s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DSPINDLECLIENT  -DLIBEXEC=\"/usr/lib64/spindle\" -DDAEMON_NAME=\"spindled_logd\" -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindleclogc_la-spindle_logc.lo `test -f '../../logging/spindle_logc.c' || echo './'`../../logging/spindle_logc.c
+[  472s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DSPINDLECLIENT -DLIBEXEC=\"/usr/lib64/spindle\" -DDAEMON_NAME=\"spindled_logd\" -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../logging/spindle_logc.c  -fPIC -DPIC -o .libs/libspindleclogc_la-spindle_logc.o
+[  472s] ../../logging/spindle_logc.c: In function 'fini_spindle_debugging':
+[  472s] ../../logging/spindle_logc.c:354:7: warning: ignoring return value of 'write' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  472s]   354 |       write(debug_fd, &exitcode, sizeof(exitcode));
+[  472s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  472s] ../../logging/spindle_logc.c:356:7: warning: ignoring return value of 'write' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  472s]   356 |       write(test_fd, &exitcode, sizeof(exitcode));
+[  472s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  472s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  473s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  473s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -DLIBEXEC=\"/usr/lib64/spindle\" -DDAEMON_NAME=\"spindled_logd\" -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libspindleclogc.la  libspindleclogc_la-spindle_logc.lo libspindleclogc_la-spindle_mkdir.lo  
+[  473s] libtool: link: ar cr .libs/libspindleclogc.a .libs/libspindleclogc_la-spindle_logc.o .libs/libspindleclogc_la-spindle_mkdir.o 
+[  473s] libtool: link: ranlib .libs/libspindleclogc.a
+[  473s] libtool: link: ( cd ".libs" && rm -f "libspindleclogc.la" && ln -s "../libspindleclogc.la" "libspindleclogc.la" )
+[  473s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/logging'
+[  473s] Making all in biter
+[  475s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  475s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libbiterc_la-linux_ids.lo `test -f '../../biter/linux_ids.c' || echo './'`../../biter/linux_ids.c
+[  475s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/linux_ids.c  -fPIC -DPIC -o .libs/libbiterc_la-linux_ids.o
+[  475s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o shm_wrappers.lo `test -f '../../biter/shm_wrappers.c' || echo './'`../../biter/shm_wrappers.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/shm_wrappers.c  -fPIC -DPIC -o .libs/shm_wrappers.o
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libbiterc_la-client_queue.lo `test -f '../../biter/client_queue.c' || echo './'`../../biter/client_queue.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/client_queue.c  -fPIC -DPIC -o .libs/libbiterc_la-client_queue.o
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o shmutil.lo `test -f '../../biter/shmutil.c' || echo './'`../../biter/shmutil.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/shmutil.c  -fPIC -DPIC -o .libs/shmutil.o
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libbiterc_la-demultiplex.lo `test -f '../../biter/demultiplex.c' || echo './'`../../biter/demultiplex.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/demultiplex.c  -fPIC -DPIC -o .libs/libbiterc_la-demultiplex.o
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libbiterc_la-biterc.lo `test -f '../../biter/biterc.c' || echo './'`../../biter/biterc.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/biterc.c  -fPIC -DPIC -o .libs/libbiterc_la-biterc.o
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  476s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../../logging   -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o sheep.lo `test -f '../../biter/sheep.c' || echo './'`../../biter/sheep.c
+[  476s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../../logging -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../biter/sheep.c  -fPIC -DPIC -o .libs/sheep.o
+[  476s] In file included from ../../biter/sheep.c:19:
+[  476s] ../../biter/sheep.c: In function 'sheep_check':
+[  476s] ../../biter/sheep.c:380:14: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+[  476s]   380 |       assert(prev = PREV_FREE(cur));
+[  476s]       |              ^~~~
+[  476s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  477s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  477s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libsheep.la  sheep.lo shmutil.lo shm_wrappers.lo  
+[  477s] libtool: link: ar cr .libs/libsheep.a .libs/sheep.o .libs/shmutil.o .libs/shm_wrappers.o 
+[  477s] libtool: link: ranlib .libs/libsheep.a
+[  477s] libtool: link: ( cd ".libs" && rm -f "libsheep.la" && ln -s "../libsheep.la" "libsheep.la" )
+[  477s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  480s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  480s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -DCLIENT -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libbiterc.la  libbiterc_la-biterc.lo libbiterc_la-client_queue.lo libbiterc_la-demultiplex.lo  libbiterc_la-linux_ids.lo libsheep.la 
+[  480s] libtool: link: (cd .libs/libbiterc.lax/libsheep.a && ar x "/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter/./.libs/libsheep.a")
+[  480s] libtool: link: ar cr .libs/libbiterc.a .libs/libbiterc_la-biterc.o .libs/libbiterc_la-client_queue.o .libs/libbiterc_la-demultiplex.o .libs/libbiterc_la-linux_ids.o   .libs/libbiterc.lax/libsheep.a/sheep.o .libs/libbiterc.lax/libsheep.a/shm_wrappers.o .libs/libbiterc.lax/libsheep.a/shmutil.o 
+[  480s] libtool: link: ranlib .libs/libbiterc.a
+[  480s] libtool: link: rm -fr .libs/libbiterc.lax
+[  480s] libtool: link: ( cd ".libs" && rm -f "libbiterc.la" && ln -s "../libbiterc.la" "libbiterc.la" )
+[  480s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/biter'
+[  480s] Making all in shm_cache
+[  483s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/shm_cache'
+[  483s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../biter -I../shm_cache -I../../logging -I../client_comlib -I../../include  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o shmcache.lo shmcache.c
+[  483s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../biter -I../shm_cache -I../../logging -I../client_comlib -I../../include -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c shmcache.c  -fPIC -DPIC -o .libs/shmcache.o
+[  483s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/shm_cache'
+[  486s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/shm_cache'
+[  486s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libshmcache.la  shmcache.lo ../biter/libsheep.la 
+[  486s] libtool: link: (cd .libs/libshmcache.lax/libsheep.a && ar x "/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/shm_cache/../biter/.libs/libsheep.a")
+[  486s] libtool: link: ar cr .libs/libshmcache.a .libs/shmcache.o   .libs/libshmcache.lax/libsheep.a/sheep.o .libs/libshmcache.lax/libsheep.a/shm_wrappers.o .libs/libshmcache.lax/libsheep.a/shmutil.o 
+[  486s] libtool: link: ranlib .libs/libshmcache.a
+[  486s] libtool: link: rm -fr .libs/libshmcache.lax
+[  486s] libtool: link: ( cd ".libs" && rm -f "libshmcache.la" && ln -s "../libshmcache.la" "libshmcache.la" )
+[  486s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/shm_cache'
+[  486s] Making all in client_comlib
+[  488s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=pipe  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_pipe_la-client_wrappers.lo `test -f 'client_wrappers.c' || echo './'`client_wrappers.c
+[  488s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=pipe -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_wrappers.c  -fPIC -DPIC -o .libs/libclient_pipe_la-client_wrappers.o
+[  488s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=socket  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_socket_la-client_wrappers.lo `test -f 'client_wrappers.c' || echo './'`client_wrappers.c
+[  488s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=socket -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_wrappers.c  -fPIC -DPIC -o .libs/libclient_socket_la-client_wrappers.o
+[  488s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=pipe  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_pipe_la-client_heap.lo `test -f 'client_heap.c' || echo './'`client_heap.c
+[  488s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=pipe -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_heap.c  -fPIC -DPIC -o .libs/libclient_pipe_la-client_heap.o
+[  488s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  488s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=socket  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_socket_la-client_heap.lo `test -f 'client_heap.c' || echo './'`client_heap.c
+[  489s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=socket -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_heap.c  -fPIC -DPIC -o .libs/libclient_socket_la-client_heap.o
+[  489s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=pipe  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_pipe_la-client_api.lo `test -f 'client_api.c' || echo './'`client_api.c
+[  489s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=pipe -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api.c  -fPIC -DPIC -o .libs/libclient_pipe_la-client_api.o
+[  489s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=socket  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_socket_la-client_api_socket.lo `test -f 'client_api_socket.c' || echo './'`client_api_socket.c
+[  489s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=socket -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api_socket.c  -fPIC -DPIC -o .libs/libclient_socket_la-client_api_socket.o
+[  489s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=socket  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_socket_la-client_api.lo `test -f 'client_api.c' || echo './'`client_api.c
+[  489s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=socket -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api.c  -fPIC -DPIC -o .libs/libclient_socket_la-client_api.o
+[  489s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  489s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=pipe  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_pipe_la-client_api_pipe.lo `test -f 'client_api_pipe.c' || echo './'`client_api_pipe.c
+[  489s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=pipe -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api_pipe.c  -fPIC -DPIC -o .libs/libclient_pipe_la-client_api_pipe.o
+[  489s] client_api_pipe.c: In function 'find_existing_fds':
+[  489s] client_api_pipe.c:136:7: warning: ignoring return value of 'readlink' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  489s]   136 |       readlink(dirpath, fdpath, MAX_PATH_LEN);
+[  489s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  489s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=biter -I../../biter  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_biter_la-client_api_biter.lo `test -f 'client_api_biter.c' || echo './'`client_api_biter.c
+[  491s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=biter -I../../biter -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api_biter.c  -fPIC -DPIC -o .libs/libclient_biter_la-client_api_biter.o
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=biter -I../../biter  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_biter_la-client_wrappers.lo `test -f 'client_wrappers.c' || echo './'`client_wrappers.c
+[  491s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=biter -I../../biter -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_wrappers.c  -fPIC -DPIC -o .libs/libclient_biter_la-client_wrappers.o
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=biter -I../../biter  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_biter_la-client_api.lo `test -f 'client_api.c' || echo './'`client_api.c
+[  491s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=biter -I../../biter -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_api.c  -fPIC -DPIC -o .libs/libclient_biter_la-client_api.o
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libclient_socket.la  libclient_socket_la-client_api_socket.lo libclient_socket_la-client_api.lo libclient_socket_la-client_heap.lo libclient_socket_la-client_wrappers.lo  
+[  491s] libtool: link: ar cr .libs/libclient_socket.a .libs/libclient_socket_la-client_api_socket.o .libs/libclient_socket_la-client_api.o .libs/libclient_socket_la-client_heap.o .libs/libclient_socket_la-client_wrappers.o 
+[  491s] libtool: link: ranlib .libs/libclient_socket.a
+[  491s] libtool: link: ( cd ".libs" && rm -f "libclient_socket.la" && ln -s "../libclient_socket.la" "libclient_socket.la" )
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libclient_pipe.la  libclient_pipe_la-client_api_pipe.lo libclient_pipe_la-client_api.lo libclient_pipe_la-client_heap.lo libclient_pipe_la-client_wrappers.lo  
+[  491s] libtool: link: ar cr .libs/libclient_pipe.a .libs/libclient_pipe_la-client_api_pipe.o .libs/libclient_pipe_la-client_api.o .libs/libclient_pipe_la-client_heap.o .libs/libclient_pipe_la-client_wrappers.o 
+[  491s] libtool: link: ranlib .libs/libclient_pipe.a
+[  491s] libtool: link: ( cd ".libs" && rm -f "libclient_pipe.la" && ln -s "../libclient_pipe.la" "libclient_pipe.la" )
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  491s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../../include -DCOMM=biter -I../../biter  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libclient_biter_la-client_heap.lo `test -f 'client_heap.c' || echo './'`client_heap.c
+[  491s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../../include -DCOMM=biter -I../../biter -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client_heap.c  -fPIC -DPIC -o .libs/libclient_biter_la-client_heap.o
+[  491s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  494s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  494s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libclient_biter.la  libclient_biter_la-client_api_biter.lo libclient_biter_la-client_api.lo libclient_biter_la-client_heap.lo libclient_biter_la-client_wrappers.lo ../biter/libbiterc.la 
+[  494s] libtool: link: (cd .libs/libclient_biter.lax/libbiterc.a && ar x "/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib/../biter/.libs/libbiterc.a")
+[  494s] libtool: link: ar cr .libs/libclient_biter.a .libs/libclient_biter_la-client_api_biter.o .libs/libclient_biter_la-client_api.o .libs/libclient_biter_la-client_heap.o .libs/libclient_biter_la-client_wrappers.o   .libs/libclient_biter.lax/libbiterc.a/libbiterc_la-biterc.o .libs/libclient_biter.lax/libbiterc.a/libbiterc_la-client_queue.o .libs/libclient_biter.lax/libbiterc.a/libbiterc_la-demultiplex.o .libs/libclient_biter.lax/libbiterc.a/libbiterc_la-linux_ids.o .libs/libclient_biter.lax/libbiterc.a/sheep.o .libs/libclient_biter.lax/libbiterc.a/shm_wrappers.o .libs/libclient_biter.lax/libbiterc.a/shmutil.o 
+[  494s] libtool: link: ranlib .libs/libclient_biter.a
+[  494s] libtool: link: rm -fr .libs/libclient_biter.lax
+[  494s] libtool: link: ( cd ".libs" && rm -f "libclient_biter.la" && ln -s "../libclient_biter.la" "libclient_biter.la" )
+[  494s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client_comlib'
+[  494s] Making all in client
+[  497s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  497s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept_spindleapi.lo `test -f 'intercept_spindleapi.c' || echo './'`intercept_spindleapi.c
+[  497s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept_spindleapi.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept_spindleapi.o
+[  497s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  497s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  497s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept.lo `test -f 'intercept.c' || echo './'`intercept.c
+[  497s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept.o
+[  497s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  497s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  497s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept_stat.lo `test -f 'intercept_stat.c' || echo './'`intercept_stat.c
+[  497s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept_stat.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept_stat.o
+[  497s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept_readlink.lo `test -f 'intercept_readlink.c' || echo './'`intercept_readlink.c
+[  498s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept_readlink.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept_readlink.o
+[  498s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o lookup.lo lookup.c
+[  498s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c lookup.c  -fPIC -DPIC -o .libs/lookup.o
+[  498s] lookup.c: In function 'get_cache_name':
+[  498s] lookup.c:53:7: warning: ignoring return value of 'getcwd' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  498s]    53 |       getcwd(cwd, MAX_PATH_LEN+1);
+[  498s]       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  498s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o client.lo client.c
+[  498s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c client.c  -fPIC -DPIC -o .libs/client.o
+[  498s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept_exec.lo `test -f 'intercept_exec.c' || echo './'`intercept_exec.c
+[  498s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept_exec.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept_exec.o
+[  498s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  498s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o libspindle_audit_la-intercept_open.lo `test -f 'intercept_open.c' || echo './'`intercept_open.c
+[  498s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DAUDIT_LIB -I../auditclient -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c intercept_open.c  -fPIC -DPIC -o .libs/libspindle_audit_la-intercept_open.o
+[  498s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  500s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  500s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o lookup_libc.lo lookup_libc.c
+[  500s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c lookup_libc.c  -fPIC -DPIC -o .libs/lookup_libc.o
+[  500s] In file included from lookup_libc.c:26:
+[  500s] ../../utils/parse_plt.h:134:2: error: #error Unknown architecture
+[  500s]   134 | #error Unknown architecture
+[  500s]       |  ^~~~~
+[  500s] make[4]: *** [Makefile:439: lookup_libc.lo] Error 1
+[  500s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  500s] make[4]: *** Waiting for unfinished jobs....
+[  501s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o should_intercept.lo should_intercept.c
+[  501s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c should_intercept.c  -fPIC -DPIC -o .libs/should_intercept.o
+[  501s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o rogot.lo rogot.c
+[  501s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c rogot.c  -fPIC -DPIC -o .libs/rogot.o
+[  501s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o remap_exec.lo remap_exec.c
+[  501s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c remap_exec.c  -fPIC -DPIC -o .libs/remap_exec.o
+[  501s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  501s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall  -flto=auto -o libspindle_audit.la  libspindle_audit_la-intercept_open.lo libspindle_audit_la-intercept_exec.lo libspindle_audit_la-intercept_stat.lo libspindle_audit_la-intercept_readlink.lo libspindle_audit_la-intercept_spindleapi.lo libspindle_audit_la-intercept.lo  
+[  501s] libtool: link: ar cr .libs/libspindle_audit.a .libs/libspindle_audit_la-intercept_open.o .libs/libspindle_audit_la-intercept_exec.o .libs/libspindle_audit_la-intercept_stat.o .libs/libspindle_audit_la-intercept_readlink.o .libs/libspindle_audit_la-intercept_spindleapi.o .libs/libspindle_audit_la-intercept.o 
+[  501s] libtool: link: ranlib .libs/libspindle_audit.a
+[  501s] libtool: link: ( cd ".libs" && rm -f "libspindle_audit.la" && ln -s "../libspindle_audit.la" "libspindle_audit.la" )
+[  501s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  502s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  502s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o exec_util.lo exec_util.c
+[  502s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c exec_util.c  -fPIC -DPIC -o .libs/exec_util.o
+[  502s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  502s] make[4]: Entering directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  502s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils  -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c -o parseloc.lo `test -f '../../utils/parseloc.c' || echo './'`../../utils/parseloc.c
+[  502s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../../logging -I../client_comlib -I../../include -I../shm_cache -I../subaudit -I../../utils -fvisibility=hidden -fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -Wall -c ../../utils/parseloc.c  -fPIC -DPIC -o .libs/parseloc.o
+[  502s] make[4]: Leaving directory '/home/abuild/rpmbuild/BUILD/spindle-0.12.git.4815692/src/client/client'
+[  502s] make[3]: *** [Makefile:403: all-recursive] Error 1
+[  502s] make[2]: *** [Makefile:334: all] Error 2
+[  502s] make[1]: *** [Makefile:428: all-recursive] Error 1
+[  502s] make: *** [Makefile:359: all] Error 2
+[  502s] error: Bad exit status from /var/tmp/rpm-tmp.2KYQge (%build)
+[  502s] 
+[  502s] 
+[  502s] RPM build errors:
+[  502s]     Bad exit status from /var/tmp/rpm-tmp.2KYQge (%build)
+[  502s] ### VM INTERACTION START ###
+[  506s] [  499.429075] sysrq: Power Off
+[  506s] [  499.459272] reboot: Power down
+[  506s] ### VM INTERACTION END ###
+[  506s] 
+[  506s] lamb01 failed "build spindle.spec" at Tue Aug 18 12:05:40 UTC 2020.
+[  506s] 

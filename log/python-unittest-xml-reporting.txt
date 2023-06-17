@@ -1,0 +1,1244 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud104 started "build python-unittest-xml-reporting.spec" at Sat Feb 18 22:21:14 UTC 2023.
+[    0s] 
+[    0s] Building python-unittest-xml-reporting for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '109449b3d3dbde16d77928a93d7dce3f'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-unittest-xml-reporting.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-unittest-xml-reporting.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-unittest-xml-reporting.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...done
+[    5s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 4096 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   11s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   11s] Increasing log level from now on...
+[   11s] [    4.899816][  T404] sysrq: Changing Loglevel
+[   11s] [    4.900028][  T404] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 1.5 GiB (1610608640 bytes)
+[   12s] no label, UUID=d96b3c33-3826-42fd-a466-5413abe96962
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=1610612736, devsize=1610612736
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/python-unittest-xml-reporting.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-unittest-xml-reporting.spec build ...
+[   13s] initializing rpm db...
+[   14s] querying package ids...
+[   41s] [1/195] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   41s] [2/195] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   41s] [3/195] preinstalled attr-2.5.1-1.1
+[   41s] [4/195] preinstalled bash-5.2.15-8.1
+[   41s] [5/195] preinstalled bash-sh-5.2.15-8.1
+[   41s] [6/195] preinstalled binutils-2.39-3.1
+[   41s] [7/195] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   41s] [8/195] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   41s] [9/195] preinstalled build-mkbaselibs-20230215-1.1
+[   41s] [10/195] preinstalled bzip2-1.0.8-4.1
+[   41s] [11/195] preinstalled chkstat-1599_20221220-1.2
+[   41s] [12/195] preinstalled compat-usrmerge-build-84.87-5.1
+[   41s] [13/195] preinstalled compat-usrmerge-tools-84.87-5.1
+[   41s] [14/195] preinstalled coreutils-9.1-5.1
+[   41s] [15/195] preinstalled cpio-2.13-5.1
+[   41s] [16/195] preinstalled cpp-12-2.1
+[   41s] [17/195] preinstalled cpp12-12.2.1+git749-4.1
+[   41s] [18/195] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   41s] [19/195] preinstalled debugedit-5.0-5.1
+[   41s] [20/195] preinstalled diffutils-3.9-1.1
+[   41s] [21/195] preinstalled dwz-0.15-2.1
+[   41s] [22/195] preinstalled elfutils-0.188-3.2
+[   41s] [23/195] cumulate fdupes-2.2.1-1.1
+[   41s] [24/195] preinstalled file-5.44-1.2
+[   41s] [25/195] preinstalled file-magic-5.44-1.2
+[   41s] [26/195] preinstalled filesystem-84.87-12.1
+[   41s] [27/195] preinstalled fillup-1.42-279.1
+[   41s] [28/195] preinstalled findutils-4.9.0-2.1
+[   41s] [29/195] preinstalled gawk-5.2.1-2.1
+[   41s] [30/195] preinstalled gcc-12-2.1
+[   41s] [31/195] preinstalled gcc-PIE-12-2.1
+[   41s] [32/195] preinstalled gcc12-12.2.1+git749-4.1
+[   41s] [33/195] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   41s] [34/195] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   41s] [35/195] preinstalled gettext-tools-mini-0.21.1-1.1
+[   41s] [36/195] preinstalled glibc-2.37-1.1
+[   41s] [37/195] preinstalled glibc-devel-2.37-1.1
+[   42s] [38/195] preinstalled glibc-locale-base-2.37-1.1
+[   42s] [39/195] preinstalled grep-3.8-3.1
+[   42s] [40/195] preinstalled gzip-1.12-3.1
+[   42s] [41/195] preinstalled kernel-obs-build-6.1.12-1.1
+[   42s] [42/195] preinstalled libacl1-2.3.1-2.1
+[   42s] [43/195] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   42s] [44/195] preinstalled libasan8-13.0.1+git5428-6.1
+[   42s] [45/195] preinstalled libasm1-0.188-3.2
+[   42s] [46/195] preinstalled libatomic1-13.0.1+git5428-6.1
+[   42s] [47/195] preinstalled libattr1-2.5.1-1.1
+[   42s] [48/195] preinstalled libaudit1-3.0.6-4.1
+[   42s] [49/195] preinstalled libblkid1-2.38.1-7.1
+[   42s] [50/195] preinstalled libbz2-1-1.0.8-4.1
+[   42s] [51/195] preinstalled libcap-ng0-0.8.3-1.1
+[   42s] [52/195] preinstalled libcap2-2.67-1.1
+[   42s] [53/195] preinstalled libcrypt1-4.4.33-1.1
+[   42s] [54/195] preinstalled libctf-nobfd0-2.39-3.1
+[   42s] [55/195] preinstalled libctf0-2.39-3.1
+[   42s] [56/195] preinstalled libdb-4_8-4.8.30-39.1
+[   42s] [57/195] preinstalled libdw1-0.188-3.2
+[   42s] [58/195] preinstalled libeconf0-0.5.1-1.1
+[   42s] [59/195] preinstalled libelf1-0.188-3.2
+[   42s] [60/195] preinstalled libexpat1-2.5.0-2.1
+[   42s] [61/195] preinstalled libfdisk1-2.38.1-7.1
+[   42s] [62/195] preinstalled libffi8-3.4.4-1.1
+[   42s] [63/195] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   42s] [64/195] preinstalled libgcrypt20-1.10.1-1.1
+[   42s] [65/195] preinstalled libgdbm6-1.23-1.1
+[   42s] [66/195] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [67/195] preinstalled libgmp10-6.2.1-4.1
+[   42s] [68/195] preinstalled libgomp1-13.0.1+git5428-6.1
+[   42s] [69/195] preinstalled libgpg-error0-1.46-1.1
+[   42s] [70/195] preinstalled libisl23-0.25-1.1
+[   42s] [71/195] preinstalled liblua5_4-5-5.4.4-8.1
+[   42s] [72/195] preinstalled liblzma5-5.4.1-1.1
+[   42s] [73/195] preinstalled libmagic1-5.44-1.2
+[   42s] [74/195] preinstalled libmount1-2.38.1-7.1
+[   42s] [75/195] preinstalled libmpc3-1.3.1-1.2
+[   42s] [76/195] preinstalled libmpdec3-2.5.1-2.1
+[   42s] [77/195] preinstalled libmpfr6-4.2.0-1.1
+[   42s] [78/195] preinstalled libncurses6-6.4.20230128-5.1
+[   42s] [79/195] preinstalled libopenssl3-3.0.7-3.1
+[   42s] [80/195] preinstalled libpcre2-8-0-10.42-3.2
+[   42s] [81/195] preinstalled libpkgconf3-1.8.0-2.1
+[   42s] [82/195] preinstalled libpopt0-1.19-1.1
+[   42s] [83/195] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   42s] [84/195] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   42s] [85/195] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   42s] [86/195] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   42s] [87/195] preinstalled libreadline8-8.2-2.1
+[   42s] [88/195] preinstalled librpmbuild9-4.18.0-3.2
+[   42s] [89/195] preinstalled libseccomp2-2.5.4-2.1
+[   42s] [90/195] preinstalled libselinux1-3.4-2.1
+[   42s] [91/195] preinstalled libsemanage-conf-3.4-1.1
+[   42s] [92/195] preinstalled libsemanage2-3.4-1.1
+[   42s] [93/195] preinstalled libsepol2-3.4-1.1
+[   42s] [94/195] preinstalled libsmartcols1-2.38.1-7.1
+[   42s] [95/195] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   42s] [96/195] preinstalled libsubid4-4.13-3.1
+[   42s] [97/195] preinstalled libubsan1-13.0.1+git5428-6.1
+[   42s] [98/195] preinstalled libutempter0-1.2.0-3.2
+[   42s] [99/195] preinstalled libuuid1-2.38.1-7.1
+[   42s] [100/195] preinstalled libxcrypt-devel-4.4.33-1.1
+[   42s] [101/195] cumulate libxml2-2-2.10.3-3.1
+[   42s] [102/195] preinstalled libz1-1.2.13-2.1
+[   42s] [103/195] preinstalled libzstd1-1.5.2-2.1
+[   42s] [104/195] preinstalled linux-glibc-devel-6.1-1.1
+[   42s] [105/195] preinstalled login_defs-4.13-3.1
+[   42s] [106/195] preinstalled lua54-5.4.4-8.1
+[   42s] [107/195] preinstalled make-4.4-2.1
+[   42s] [108/195] preinstalled ncurses-utils-6.4.20230128-5.1
+[   42s] [109/195] preinstalled pam-1.5.2-12.1
+[   42s] [110/195] preinstalled patch-2.7.6-6.1
+[   42s] [111/195] preinstalled perl-5.36.0-4.1
+[   42s] [112/195] preinstalled perl-base-5.36.0-4.1
+[   42s] [113/195] preinstalled permissions-1599_20221220-1.2
+[   42s] [114/195] preinstalled permissions-config-1599_20221220-1.2
+[   42s] [115/195] preinstalled pkgconf-1.8.0-2.1
+[   42s] [116/195] preinstalled pkgconf-m4-1.8.0-2.1
+[   42s] [117/195] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   42s] [118/195] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   42s] [119/195] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   42s] [120/195] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   42s] [121/195] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   42s] [122/195] cumulate python310-attrs-22.2.0-1.2
+[   42s] [123/195] preinstalled python310-base-3.10.9-2.2
+[   42s] [124/195] cumulate python310-cssselect-1.2.0-1.2
+[   42s] [125/195] cumulate python310-exceptiongroup-1.1.0-1.2
+[   42s] [126/195] cumulate python310-iniconfig-1.1.1-3.2
+[   42s] [127/195] preinstalled python310-packaging-23.0-1.1
+[   42s] [128/195] cumulate python310-pluggy-1.0.0-1.5
+[   42s] [129/195] preinstalled python310-setuptools-65.6.3-1.2
+[   42s] [130/195] cumulate python310-tomli-2.0.1-1.3
+[   42s] [131/195] cumulate python310-zipp-3.8.1-1.2
+[   42s] [132/195] cumulate python311-attrs-22.2.0-1.2
+[   42s] [133/195] preinstalled python311-base-3.11.1-4.2
+[   42s] [134/195] cumulate python311-cssselect-1.2.0-1.2
+[   42s] [135/195] cumulate python311-exceptiongroup-1.1.0-1.2
+[   42s] [136/195] cumulate python311-iniconfig-1.1.1-3.2
+[   42s] [137/195] cumulate python311-packaging-23.0-1.2
+[   42s] [138/195] cumulate python311-pluggy-1.0.0-1.5
+[   42s] [139/195] preinstalled python311-setuptools-65.6.3-1.2
+[   42s] [140/195] cumulate python311-tomli-2.0.1-1.3
+[   42s] [141/195] cumulate python311-zipp-3.8.1-1.2
+[   42s] [142/195] cumulate python38-attrs-22.2.0-1.2
+[   42s] [143/195] preinstalled python38-base-3.8.16-3.2
+[   42s] [144/195] cumulate python38-cssselect-1.2.0-1.2
+[   42s] [145/195] cumulate python38-exceptiongroup-1.1.0-1.2
+[   42s] [146/195] cumulate python38-iniconfig-1.1.1-3.2
+[   42s] [147/195] cumulate python38-packaging-23.0-1.2
+[   42s] [148/195] cumulate python38-pluggy-1.0.0-1.5
+[   42s] [149/195] preinstalled python38-setuptools-65.6.3-1.2
+[   42s] [150/195] cumulate python38-tomli-2.0.1-1.3
+[   42s] [151/195] cumulate python38-zipp-3.8.1-1.2
+[   42s] [152/195] cumulate python39-attrs-22.2.0-1.2
+[   42s] [153/195] preinstalled python39-base-3.9.16-3.2
+[   42s] [154/195] cumulate python39-cssselect-1.2.0-1.2
+[   42s] [155/195] cumulate python39-exceptiongroup-1.1.0-1.2
+[   42s] [156/195] cumulate python39-iniconfig-1.1.1-3.2
+[   42s] [157/195] cumulate python39-packaging-23.0-1.2
+[   42s] [158/195] cumulate python39-pluggy-1.0.0-1.5
+[   42s] [159/195] preinstalled python39-setuptools-65.6.3-1.2
+[   42s] [160/195] cumulate python39-tomli-2.0.1-1.3
+[   42s] [161/195] cumulate python39-zipp-3.8.1-1.2
+[   42s] [162/195] preinstalled qemu-linux-user-7.1.0-50.1
+[   42s] [163/195] preinstalled rpm-4.18.0-3.2
+[   42s] [164/195] preinstalled rpm-build-4.18.0-3.2
+[   42s] [165/195] preinstalled rpm-build-perl-4.18.0-3.2
+[   42s] [166/195] preinstalled rpm-config-SUSE-20220926-1.1
+[   42s] [167/195] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   42s] [168/195] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   42s] [169/195] preinstalled sed-4.9-2.1
+[   42s] [170/195] preinstalled shadow-4.13-3.1
+[   42s] [171/195] preinstalled system-group-hardware-20170617-24.1
+[   42s] [172/195] preinstalled system-user-root-20190513-2.1
+[   42s] [173/195] preinstalled systemd-rpm-macros-19-1.1
+[   42s] [174/195] preinstalled sysuser-shadow-3.1-5.1
+[   42s] [175/195] preinstalled tar-1.34-9.1
+[   42s] [176/195] preinstalled terminfo-base-6.4.20230128-5.1
+[   42s] [177/195] preinstalled update-alternatives-1.21.8-1.1
+[   42s] [178/195] preinstalled util-linux-2.38.1-7.1
+[   42s] [179/195] preinstalled which-2.21-5.1
+[   42s] [180/195] preinstalled xz-5.4.1-1.1
+[   42s] [181/195] cumulate alts-1.2+3.b848aad-3.1
+[   42s] [182/195] cumulate libxslt1-1.1.37-1.1
+[   42s] [183/195] cumulate python310-importlib-metadata-6.0.0-1.2
+[   42s] [184/195] cumulate python311-importlib-metadata-6.0.0-1.2
+[   42s] [185/195] cumulate python38-importlib-metadata-6.0.0-1.2
+[   42s] [186/195] cumulate python39-importlib-metadata-6.0.0-1.2
+[   42s] [187/195] cumulate libexslt0-1.1.37-1.1
+[   42s] [188/195] cumulate python310-pytest-7.2.0-2.2
+[   42s] [189/195] cumulate python311-pytest-7.2.0-2.2
+[   42s] [190/195] cumulate python38-pytest-7.2.0-2.2
+[   42s] [191/195] cumulate python39-pytest-7.2.0-2.2
+[   42s] [192/195] cumulate python310-lxml-4.9.2-2.2
+[   42s] [193/195] cumulate python311-lxml-4.9.2-2.2
+[   42s] [194/195] cumulate python38-lxml-4.9.2-2.2
+[   42s] [195/195] cumulate python39-lxml-4.9.2-2.2
+[   42s] now installing cumulated packages
+[   43s] Preparing...                          ########################################
+[   43s] Updating / installing...
+[   43s] libxml2-2-2.10.3-3.1                  ########################################
+[   43s] libxslt1-1.1.37-1.1                   ########################################
+[   43s] libexslt0-1.1.37-1.1                  ########################################
+[   43s] python39-zipp-3.8.1-1.2               ########################################
+[   43s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   43s] python39-tomli-2.0.1-1.3              ########################################
+[   43s] python39-pluggy-1.0.0-1.5             ########################################
+[   43s] python39-packaging-23.0-1.2           ########################################
+[   43s] python39-iniconfig-1.1.1-3.2          ########################################
+[   43s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   43s] python39-cssselect-1.2.0-1.2          ########################################
+[   44s] python39-attrs-22.2.0-1.2             ########################################
+[   44s] python38-zipp-3.8.1-1.2               ########################################
+[   44s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   44s] python38-tomli-2.0.1-1.3              ########################################
+[   44s] python38-pluggy-1.0.0-1.5             ########################################
+[   44s] python38-packaging-23.0-1.2           ########################################
+[   44s] python38-iniconfig-1.1.1-3.2          ########################################
+[   44s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   44s] python38-cssselect-1.2.0-1.2          ########################################
+[   44s] python38-attrs-22.2.0-1.2             ########################################
+[   44s] python311-zipp-3.8.1-1.2              ########################################
+[   44s] python311-importlib-metadata-6.0.0-1.2########################################
+[   44s] python311-tomli-2.0.1-1.3             ########################################
+[   44s] python311-pluggy-1.0.0-1.5            ########################################
+[   44s] python311-packaging-23.0-1.2          ########################################
+[   44s] python311-iniconfig-1.1.1-3.2         ########################################
+[   44s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   44s] python311-cssselect-1.2.0-1.2         ########################################
+[   44s] python311-attrs-22.2.0-1.2            ########################################
+[   44s] python310-zipp-3.8.1-1.2              ########################################
+[   44s] python310-importlib-metadata-6.0.0-1.2########################################
+[   44s] python310-tomli-2.0.1-1.3             ########################################
+[   44s] python310-pluggy-1.0.0-1.5            ########################################
+[   44s] python310-iniconfig-1.1.1-3.2         ########################################
+[   44s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   44s] python310-cssselect-1.2.0-1.2         ########################################
+[   45s] python310-attrs-22.2.0-1.2            ########################################
+[   45s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   45s] alts-1.2+3.b848aad-3.1                ########################################
+[   45s] python310-pytest-7.2.0-2.2            ########################################
+[   46s] python311-pytest-7.2.0-2.2            ########################################
+[   47s] python38-pytest-7.2.0-2.2             ########################################
+[   48s] python39-pytest-7.2.0-2.2             ########################################
+[   49s] python310-lxml-4.9.2-2.2              ########################################
+[   49s] python311-lxml-4.9.2-2.2              ########################################
+[   50s] python38-lxml-4.9.2-2.2               ########################################
+[   51s] python39-lxml-4.9.2-2.2               ########################################
+[   51s] fdupes-2.2.1-1.1                      ########################################
+[   54s] now finalizing build dir...
+[   54s] ... running 01-add_abuild_user_to_trusted_group
+[   54s] ... running 02-set_timezone_to_utc
+[   54s] ... running 03-set-permissions-secure
+[   55s] ... running 11-hack_uname_version_to_kernel_version
+[   64s] -----------------------------------------------------------------
+[   64s] I have the following modifications for python-unittest-xml-reporting.spec:
+[   64s] 23c23
+[   64s] < Release:        0
+[   64s] ---
+[   64s] > Release:        2.2
+[   73s] build target is riscv64-suse-linux
+[   73s] -----------------------------------------------------------------
+[   73s] ----- building python-unittest-xml-reporting.spec (user abuild)
+[   73s] -----------------------------------------------------------------
+[   73s] -----------------------------------------------------------------
+[   77s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/109449b3d3dbde16d77928a93d7dce3f-python-unittest-xml-reporting' /home/abuild/rpmbuild/SOURCES/python-unittest-xml-reporting.spec
+[  114s] Building target platforms: riscv64-suse-linux
+[  114s] Building for target riscv64-suse-linux
+[  114s] setting SOURCE_DATE_EPOCH=1666137600
+[  114s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.LTPjtl
+[  114s] + umask 022
+[  114s] + cd /home/abuild/rpmbuild/BUILD
+[  114s] + cd /home/abuild/rpmbuild/BUILD
+[  114s] + rm -rf unittest-xml-reporting-3.0.2
+[  114s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/3.0.2.tar.gz
+[  114s] + STATUS=0
+[  114s] + '[' 0 -ne 0 ']'
+[  114s] + cd unittest-xml-reporting-3.0.2
+[  114s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  115s] + RPM_EC=0
+[  115s] ++ jobs -p
+[  115s] + exit 0
+[  115s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.UB9Tiq
+[  115s] + umask 022
+[  115s] + cd /home/abuild/rpmbuild/BUILD
+[  115s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64
+[  115s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64
+[  115s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  115s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64
+[  115s] + cd unittest-xml-reporting-3.0.2
+[  115s] + ref=/usr/lib/rpm
+[  115s] + mints=0
+[  115s] + case $(uname -m) in
+[  115s] ++ uname -m
+[  115s] + mints=20160911
+[  115s] + for s in guess sub
+[  115s] ++ find -maxdepth 8 -name config.guess
+[  115s] + for s in guess sub
+[  115s] ++ find -maxdepth 8 -name config.sub
+[  115s] ++ '[' -f _current_flavor ']'
+[  115s] ++ true
+[  115s] + last_flavor=
+[  115s] + '[' -z '' ']'
+[  115s] + last_flavor=tmp
+[  115s] + '[' tmp '!=' python38 ']'
+[  115s] + '[' -d build ']'
+[  115s] + '[' -d _build.python38 ']'
+[  115s] + echo python38
+[  115s] + python_flavor=python38
+[  115s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  121s] running build
+[  121s] running build_py
+[  121s] creating build
+[  121s] creating build/lib
+[  121s] creating build/lib/xmlrunner
+[  121s] copying xmlrunner/__init__.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/__main__.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/builder.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/result.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/runner.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/unittest.py -> build/lib/xmlrunner
+[  121s] copying xmlrunner/version.py -> build/lib/xmlrunner
+[  121s] creating build/lib/xmlrunner/extra
+[  121s] copying xmlrunner/extra/__init__.py -> build/lib/xmlrunner/extra
+[  121s] copying xmlrunner/extra/djangotestrunner.py -> build/lib/xmlrunner/extra
+[  121s] copying xmlrunner/extra/xunit_plugin.py -> build/lib/xmlrunner/extra
+[  121s] running egg_info
+[  121s] creating unittest_xml_reporting.egg-info
+[  121s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  121s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  121s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  121s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  121s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  121s] adding license file 'LICENSE'
+[  121s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  121s] ++ '[' -f _current_flavor ']'
+[  121s] ++ cat _current_flavor
+[  121s] + last_flavor=python38
+[  121s] + '[' -z python38 ']'
+[  121s] + '[' python38 '!=' python39 ']'
+[  121s] + '[' -d build ']'
+[  121s] + mv build _build.python38
+[  121s] + '[' -d _build.python39 ']'
+[  121s] + echo python39
+[  121s] + python_flavor=python39
+[  121s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  126s] running build
+[  126s] running build_py
+[  126s] creating build
+[  126s] creating build/lib
+[  126s] creating build/lib/xmlrunner
+[  126s] copying xmlrunner/__init__.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/__main__.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/builder.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/result.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/runner.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/unittest.py -> build/lib/xmlrunner
+[  126s] copying xmlrunner/version.py -> build/lib/xmlrunner
+[  126s] creating build/lib/xmlrunner/extra
+[  126s] copying xmlrunner/extra/__init__.py -> build/lib/xmlrunner/extra
+[  126s] copying xmlrunner/extra/djangotestrunner.py -> build/lib/xmlrunner/extra
+[  126s] copying xmlrunner/extra/xunit_plugin.py -> build/lib/xmlrunner/extra
+[  126s] running egg_info
+[  127s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  127s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  127s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  127s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  127s] adding license file 'LICENSE'
+[  127s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  127s] ++ '[' -f _current_flavor ']'
+[  127s] ++ cat _current_flavor
+[  127s] + last_flavor=python39
+[  127s] + '[' -z python39 ']'
+[  127s] + '[' python39 '!=' python311 ']'
+[  127s] + '[' -d build ']'
+[  127s] + mv build _build.python39
+[  127s] + '[' -d _build.python311 ']'
+[  127s] + echo python311
+[  127s] + python_flavor=python311
+[  127s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  132s] running build
+[  132s] running build_py
+[  132s] creating build
+[  132s] creating build/lib
+[  132s] creating build/lib/xmlrunner
+[  132s] copying xmlrunner/__init__.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/__main__.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/builder.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/result.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/runner.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/unittest.py -> build/lib/xmlrunner
+[  132s] copying xmlrunner/version.py -> build/lib/xmlrunner
+[  132s] creating build/lib/xmlrunner/extra
+[  132s] copying xmlrunner/extra/__init__.py -> build/lib/xmlrunner/extra
+[  132s] copying xmlrunner/extra/djangotestrunner.py -> build/lib/xmlrunner/extra
+[  132s] copying xmlrunner/extra/xunit_plugin.py -> build/lib/xmlrunner/extra
+[  132s] running egg_info
+[  132s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  132s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  132s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  132s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  132s] adding license file 'LICENSE'
+[  132s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  132s] ++ '[' -f _current_flavor ']'
+[  132s] ++ cat _current_flavor
+[  133s] + last_flavor=python311
+[  133s] + '[' -z python311 ']'
+[  133s] + '[' python311 '!=' python310 ']'
+[  133s] + '[' -d build ']'
+[  133s] + mv build _build.python311
+[  133s] + '[' -d _build.python310 ']'
+[  133s] + echo python310
+[  133s] + python_flavor=python310
+[  133s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  138s] running build
+[  138s] running build_py
+[  138s] creating build
+[  138s] creating build/lib
+[  138s] creating build/lib/xmlrunner
+[  138s] copying xmlrunner/__init__.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/__main__.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/builder.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/result.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/runner.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/unittest.py -> build/lib/xmlrunner
+[  138s] copying xmlrunner/version.py -> build/lib/xmlrunner
+[  138s] creating build/lib/xmlrunner/extra
+[  138s] copying xmlrunner/extra/__init__.py -> build/lib/xmlrunner/extra
+[  138s] copying xmlrunner/extra/djangotestrunner.py -> build/lib/xmlrunner/extra
+[  138s] copying xmlrunner/extra/xunit_plugin.py -> build/lib/xmlrunner/extra
+[  138s] running egg_info
+[  138s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  138s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  138s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  138s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  138s] adding license file 'LICENSE'
+[  138s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  138s] + RPM_EC=0
+[  138s] ++ jobs -p
+[  138s] + exit 0
+[  138s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.d6RqJJ
+[  139s] + umask 022
+[  139s] + cd /home/abuild/rpmbuild/BUILD
+[  139s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64
+[  139s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  139s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64
+[  139s] + cd unittest-xml-reporting-3.0.2
+[  139s] ++ '[' -f _current_flavor ']'
+[  139s] ++ cat _current_flavor
+[  139s] + last_flavor=python310
+[  139s] + '[' -z python310 ']'
+[  139s] + '[' python310 '!=' python38 ']'
+[  139s] + '[' -d build ']'
+[  139s] + mv build _build.python310
+[  139s] + '[' -d _build.python38 ']'
+[  139s] + mv _build.python38 build
+[  139s] + echo python38
+[  139s] + python_flavor=python38
+[  139s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64 --prefix /usr
+[  144s] running install
+[  144s] running install_lib
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/builder.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/result.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/unittest.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] copying build/lib/xmlrunner/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner
+[  144s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra
+[  144s] copying build/lib/xmlrunner/extra/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra
+[  144s] copying build/lib/xmlrunner/extra/djangotestrunner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra
+[  144s] copying build/lib/xmlrunner/extra/xunit_plugin.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra
+[  144s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__init__.py to __init__.cpython-38.pyc
+[  144s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__main__.py to __main__.cpython-38.pyc
+[  144s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/builder.py to builder.cpython-38.pyc
+[  144s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/result.py to result.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/runner.py to runner.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/unittest.py to unittest.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/version.py to version.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/__init__.py to __init__.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/djangotestrunner.py to djangotestrunner.cpython-38.pyc
+[  145s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/xunit_plugin.py to xunit_plugin.cpython-38.pyc
+[  145s] writing byte-compilation script '/tmp/tmpoirpb_sq.py'
+[  145s] /usr/bin/python3.8 /tmp/tmpoirpb_sq.py
+[  150s] removing /tmp/tmpoirpb_sq.py
+[  150s] running install_egg_info
+[  150s] running egg_info
+[  150s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  150s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  150s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  150s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  150s] adding license file 'LICENSE'
+[  150s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  150s] Copying unittest_xml_reporting.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/unittest_xml_reporting-3.0.2-py3.8.egg-info
+[  150s] running install_scripts
+[  151s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  151s]   warnings.warn(
+[  151s] ++ '[' -f _current_flavor ']'
+[  151s] ++ cat _current_flavor
+[  151s] + last_flavor=python38
+[  151s] + '[' -z python38 ']'
+[  151s] + '[' python38 '!=' python39 ']'
+[  151s] + '[' -d build ']'
+[  151s] + mv build _build.python38
+[  151s] + '[' -d _build.python39 ']'
+[  151s] + mv _build.python39 build
+[  151s] + echo python39
+[  151s] + python_flavor=python39
+[  151s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64 --prefix /usr
+[  156s] running install
+[  156s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  156s]   warnings.warn(
+[  156s] running install_lib
+[  156s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9
+[  156s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages
+[  156s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/builder.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/result.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/unittest.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] copying build/lib/xmlrunner/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner
+[  156s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra
+[  156s] copying build/lib/xmlrunner/extra/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra
+[  156s] copying build/lib/xmlrunner/extra/djangotestrunner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra
+[  156s] copying build/lib/xmlrunner/extra/xunit_plugin.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra
+[  156s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__init__.py to __init__.cpython-39.pyc
+[  156s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__main__.py to __main__.cpython-39.pyc
+[  156s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/builder.py to builder.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/result.py to result.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/runner.py to runner.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/unittest.py to unittest.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/version.py to version.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/__init__.py to __init__.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/djangotestrunner.py to djangotestrunner.cpython-39.pyc
+[  157s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/xunit_plugin.py to xunit_plugin.cpython-39.pyc
+[  157s] writing byte-compilation script '/tmp/tmp27l4v3p9.py'
+[  157s] /usr/bin/python3.9 /tmp/tmp27l4v3p9.py
+[  162s] removing /tmp/tmp27l4v3p9.py
+[  162s] running install_egg_info
+[  162s] running egg_info
+[  162s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  162s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  162s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  162s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  162s] adding license file 'LICENSE'
+[  162s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  162s] Copying unittest_xml_reporting.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/unittest_xml_reporting-3.0.2-py3.9.egg-info
+[  162s] running install_scripts
+[  163s] ++ '[' -f _current_flavor ']'
+[  163s] ++ cat _current_flavor
+[  163s] + last_flavor=python39
+[  163s] + '[' -z python39 ']'
+[  163s] + '[' python39 '!=' python311 ']'
+[  163s] + '[' -d build ']'
+[  163s] + mv build _build.python39
+[  163s] + '[' -d _build.python311 ']'
+[  163s] + mv _build.python311 build
+[  163s] + echo python311
+[  163s] + python_flavor=python311
+[  163s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64 --prefix /usr
+[  168s] running install
+[  168s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  168s]   warnings.warn(
+[  168s] running install_lib
+[  168s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11
+[  168s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages
+[  168s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/builder.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/result.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/unittest.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] copying build/lib/xmlrunner/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner
+[  168s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra
+[  168s] copying build/lib/xmlrunner/extra/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra
+[  168s] copying build/lib/xmlrunner/extra/djangotestrunner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra
+[  168s] copying build/lib/xmlrunner/extra/xunit_plugin.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__init__.py to __init__.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__main__.py to __main__.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/builder.py to builder.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/result.py to result.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/runner.py to runner.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/unittest.py to unittest.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/version.py to version.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__init__.py to __init__.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/djangotestrunner.py to djangotestrunner.cpython-311.pyc
+[  168s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/xunit_plugin.py to xunit_plugin.cpython-311.pyc
+[  168s] writing byte-compilation script '/tmp/tmpvyf3_rau.py'
+[  168s] /usr/bin/python3.11 /tmp/tmpvyf3_rau.py
+[  173s] removing /tmp/tmpvyf3_rau.py
+[  173s] running install_egg_info
+[  173s] running egg_info
+[  173s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  173s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  173s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  174s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  174s] adding license file 'LICENSE'
+[  174s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  174s] Copying unittest_xml_reporting.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/unittest_xml_reporting-3.0.2-py3.11.egg-info
+[  174s] running install_scripts
+[  174s] ++ '[' -f _current_flavor ']'
+[  174s] ++ cat _current_flavor
+[  175s] + last_flavor=python311
+[  175s] + '[' -z python311 ']'
+[  175s] + '[' python311 '!=' python310 ']'
+[  175s] + '[' -d build ']'
+[  175s] + mv build _build.python311
+[  175s] + '[' -d _build.python310 ']'
+[  175s] + mv _build.python310 build
+[  175s] + echo python310
+[  175s] + python_flavor=python310
+[  175s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64 --prefix /usr
+[  180s] running install
+[  180s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  180s]   warnings.warn(
+[  180s] running install_lib
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/builder.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/result.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/unittest.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] copying build/lib/xmlrunner/version.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra
+[  180s] copying build/lib/xmlrunner/extra/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra
+[  180s] copying build/lib/xmlrunner/extra/djangotestrunner.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra
+[  180s] copying build/lib/xmlrunner/extra/xunit_plugin.py -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__init__.py to __init__.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__main__.py to __main__.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/builder.py to builder.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/result.py to result.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/runner.py to runner.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/unittest.py to unittest.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/version.py to version.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/__init__.py to __init__.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/djangotestrunner.py to djangotestrunner.cpython-310.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/xunit_plugin.py to xunit_plugin.cpython-310.pyc
+[  180s] writing byte-compilation script '/tmp/tmpj99no2ue.py'
+[  180s] /usr/bin/python3.10 /tmp/tmpj99no2ue.py
+[  185s] removing /tmp/tmpj99no2ue.py
+[  185s] running install_egg_info
+[  185s] running egg_info
+[  186s] writing unittest_xml_reporting.egg-info/PKG-INFO
+[  186s] writing dependency_links to unittest_xml_reporting.egg-info/dependency_links.txt
+[  186s] writing top-level names to unittest_xml_reporting.egg-info/top_level.txt
+[  186s] reading manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  186s] adding license file 'LICENSE'
+[  186s] writing manifest file 'unittest_xml_reporting.egg-info/SOURCES.txt'
+[  186s] Copying unittest_xml_reporting.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/unittest_xml_reporting-3.0.2-py3.10.egg-info
+[  186s] running install_scripts
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python310
+[  187s] + '[' -z python310 ']'
+[  187s] + '[' python310 '!=' python38 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python310
+[  187s] + '[' -d _build.python38 ']'
+[  187s] + mv _build.python38 build
+[  187s] + echo python38
+[  187s] + python_flavor=python38
+[  187s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/unittest_xml_reporting-3.0.2-py3.8.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/unittest_xml_reporting-3.0.2-py3.8.egg-info/not-zip-safe
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/version.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/version.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/unittest.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/unittest.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/builder.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/builder.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/__main__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/__main__.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/__pycache__/__init__.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-38.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-38.pyc
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python38
+[  187s] + '[' -z python38 ']'
+[  187s] + '[' python38 '!=' python39 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python38
+[  187s] + '[' -d _build.python39 ']'
+[  187s] + mv _build.python39 build
+[  187s] + echo python39
+[  187s] + python_flavor=python39
+[  187s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/unittest_xml_reporting-3.0.2-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/unittest_xml_reporting-3.0.2-py3.9.egg-info/not-zip-safe
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/version.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/version.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/unittest.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/unittest.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/builder.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/builder.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/__main__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/__main__.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/__pycache__/__init__.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-39.pyc
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-39.pyc
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python39
+[  187s] + '[' -z python39 ']'
+[  187s] + '[' python39 '!=' python311 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python39
+[  187s] + '[' -d _build.python311 ']'
+[  187s] + mv _build.python311 build
+[  187s] + echo python311
+[  187s] + python_flavor=python311
+[  187s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/unittest_xml_reporting-3.0.2-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/unittest_xml_reporting-3.0.2-py3.11.egg-info/not-zip-safe
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/version.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/version.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/unittest.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/unittest.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/runner.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/runner.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/result.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/result.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/builder.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/builder.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/__main__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/__main__.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/__pycache__/__init__.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-311.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/djangotestrunner.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages/xmlrunner/extra/__pycache__/djangotestrunner.cpython-311.pyc
+[  188s] ++ '[' -f _current_flavor ']'
+[  188s] ++ cat _current_flavor
+[  188s] + last_flavor=python311
+[  188s] + '[' -z python311 ']'
+[  188s] + '[' python311 '!=' python310 ']'
+[  188s] + '[' -d build ']'
+[  188s] + mv build _build.python311
+[  188s] + '[' -d _build.python310 ']'
+[  188s] + mv _build.python310 build
+[  188s] + echo python310
+[  188s] + python_flavor=python310
+[  188s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/unittest_xml_reporting-3.0.2-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/unittest_xml_reporting-3.0.2-py3.10.egg-info/not-zip-safe
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/version.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/version.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/unittest.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/unittest.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/builder.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/builder.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/__main__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/__main__.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/__pycache__/__init__.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/__pycache__/xunit_plugin.cpython-310.pyc
+[  188s] Linking /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.10/site-packages/xmlrunner/extra/__pycache__/__init__.cpython-310.pyc
+[  188s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2
+[  189s] + /usr/lib/rpm/brp-compress
+[  189s] + /usr/lib/rpm/brp-suse
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  190s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.kHT2H8
+[  190s] + umask 022
+[  190s] + cd /home/abuild/rpmbuild/BUILD
+[  190s] + cd unittest-xml-reporting-3.0.2
+[  190s] + set +x
+[  190s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  190s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  191s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  191s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  191s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  191s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  192s] + export PATH=/home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  192s] + PATH=/home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  192s] ++ '[' -f _current_flavor ']'
+[  192s] ++ cat _current_flavor
+[  192s] + last_flavor=python310
+[  192s] + '[' -z python310 ']'
+[  192s] + '[' python310 '!=' python38 ']'
+[  192s] + '[' -d build ']'
+[  192s] + mv build _build.python310
+[  192s] + '[' -d _build.python38 ']'
+[  192s] + mv _build.python38 build
+[  192s] + echo python38
+[  192s] + python_flavor=python38
+[  192s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.8/site-packages
+[  192s] + PYTHONDONTWRITEBYTECODE=1
+[  192s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_xmlrunner_non_ascii'
+[  197s] ============================= test session starts ==============================
+[  197s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  197s] cachedir: .pytest_cache
+[  197s] rootdir: /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2, configfile: tox.ini, testpaths: tests
+[  199s] collecting ... collected 84 items / 3 deselected / 81 selected
+[  199s] 
+[  199s] tests/builder_test.py::TestXMLContextTest::test_add_time_attribute_on_end_context PASSED [  1%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_add_timestamp_attribute_on_end_context PASSED [  2%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_current_context_invalid_unicode_name PASSED [  3%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_current_context_name PASSED [  4%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_current_element_tag_name PASSED [  6%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_empty_counters_on_end_context PASSED [  7%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_increment_counters_for_unknown_context PASSED [  8%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuite_counters PASSED [  9%]
+[  199s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuites_counters PASSED [ 11%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_append_cdata_closing_tags_into_cdata_section PASSED [ 12%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_append_invalid_unicode_cdata_section PASSED [ 13%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_invalid_unicode_values PASSED [ 14%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_valid_unicode_values PASSED [ 16%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_append_valid_unicode_cdata_section PASSED [ 17%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_begin_nested_context PASSED [ 18%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_current_context_tag PASSED [ 19%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_end_all_context_stack PASSED [ 20%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_end_inexistent_context PASSED [ 22%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_end_nested_context PASSED [ 23%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_end_root_context PASSED  [ 24%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_finish_nested_context PASSED [ 25%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_increment_nested_context_counter PASSED [ 27%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_increment_root_context_counter PASSED [ 28%]
+[  200s] tests/builder_test.py::TestXMLBuilderTest::test_root_has_no_parent PASSED [ 29%]
+[  200s] tests/django_test.py::DjangoTest::test_django_multiple_reports SKIPPED   [ 30%]
+[  200s] tests/django_test.py::DjangoTest::test_django_runner SKIPPED (django...) [ 32%]
+[  200s] tests/django_test.py::DjangoTest::test_django_runner_extension SKIPPED   [ 33%]
+[  200s] tests/django_test.py::DjangoTest::test_django_single_report SKIPPED      [ 34%]
+[  200s] tests/django_test.py::DjangoTest::test_django_single_report_create_folder SKIPPED [ 35%]
+[  200s] tests/django_test.py::DjangoTest::test_django_verbose SKIPPED (djang...) [ 37%]
+[  200s] tests/django_test.py::DjangoTest::test_django_xmlrunner SKIPPED (dja...) [ 38%]
+[  200s] tests/testsuite.py::TestCaseSubclassWithNoSuper::test_something PASSED   [ 39%]
+[  200s] tests/testsuite.py::DoctestTest::test_doctest_example PASSED             [ 40%]
+[  200s] tests/testsuite.py::XMLTestRunnerTestCase::test_basic_unittest_constructs PASSED [ 41%]
+[  200s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames PASSED        [ 43%]
+[  200s] tests/testsuite.py::XMLTestRunnerTestCase::test_expected_failure PASSED  [ 44%]
+[  200s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_properties PASSED [ 45%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_empty_properties PASSED [ 46%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_order PASSED [ 48%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_opaque_decorator PASSED  [ 49%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_partialmethod PASSED     [ 50%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_with_buffer PASSED [ 51%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_wo_buffer PASSED [ 53%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_with_buffer PASSED [ 54%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_wo_buffer PASSED [ 55%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_unexpected_success PASSED [ 56%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error PASSED [ 58%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail PASSED [ 59%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_mixed PASSED [ 60%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_pass PASSED [ 61%]
+[  201s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_fail PASSED [ 62%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_pass XFAIL [ 64%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_cdata_section PASSED [ 65%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_check_for_valid_xml_streamout PASSED [ 66%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_elapsed_times PASSED [ 67%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_error_in_call PASSED [ 69%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_failfast PASSED [ 70%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_hold_traceback PASSED [ 71%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_nosuffix PASSED [ 72%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_subdir PASSED [ 74%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_with_buffer PASSED [ 75%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_without_buffer PASSED [ 76%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_outsuffix PASSED [ 77%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_pass PASSED    [ 79%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_patched_stdout PASSED [ 80%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_resultclass PASSED [ 81%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_safe_xml_encoding_name PASSED [ 82%]
+[  202s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_showall PASSED [ 83%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_with_buffer PASSED [ 85%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_without_buffer PASSED [ 86%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream PASSED  [ 87%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream_empty_testsuite PASSED [ 88%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_unsafe_unicode PASSED [ 90%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_verbose PASSED [ 91%]
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_xunit_plugin_transform PASSED [ 92%]
+[  203s] tests/testsuite.py::DuplicateWriterTestCase::test_flush PASSED           [ 93%]
+[  203s] tests/testsuite.py::DuplicateWriterTestCase::test_writable PASSED        [ 95%]
+[  203s] tests/testsuite.py::DuplicateWriterTestCase::test_write PASSED           [ 96%]
+[  203s] tests/testsuite.py::DuplicateWriterTestCase::test_writelines PASSED      [ 97%]
+[  203s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output PASSED     [ 98%]
+[  203s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output_file PASSED [100%]
+[  203s] 
+[  203s] =============================== warnings summary ===============================
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:275: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:280: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:525: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:530: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:496: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  203s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:501: DeprecationWarning: Please use assertRegex instead.
+[  203s]     self.assertRegexpMatches(
+[  203s] 
+[  203s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  203s] ====== 73 passed, 7 skipped, 3 deselected, 1 xfailed, 6 warnings in 5.86s ======
+[  204s] ++ '[' -f _current_flavor ']'
+[  204s] ++ cat _current_flavor
+[  204s] + last_flavor=python38
+[  204s] + '[' -z python38 ']'
+[  204s] + '[' python38 '!=' python39 ']'
+[  204s] + '[' -d build ']'
+[  204s] + mv build _build.python38
+[  204s] + '[' -d _build.python39 ']'
+[  204s] + mv _build.python39 build
+[  204s] + echo python39
+[  204s] + python_flavor=python39
+[  204s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.9/site-packages
+[  204s] + PYTHONDONTWRITEBYTECODE=1
+[  204s] + pytest-3.9 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_xmlrunner_non_ascii'
+[  208s] ============================= test session starts ==============================
+[  208s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  208s] cachedir: .pytest_cache
+[  208s] rootdir: /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2, configfile: tox.ini, testpaths: tests
+[  211s] collecting ... collected 84 items / 3 deselected / 81 selected
+[  211s] 
+[  211s] tests/builder_test.py::TestXMLContextTest::test_add_time_attribute_on_end_context PASSED [  1%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_add_timestamp_attribute_on_end_context PASSED [  2%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_current_context_invalid_unicode_name PASSED [  3%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_current_context_name PASSED [  4%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_current_element_tag_name PASSED [  6%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_empty_counters_on_end_context PASSED [  7%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_increment_counters_for_unknown_context PASSED [  8%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuite_counters PASSED [  9%]
+[  211s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuites_counters PASSED [ 11%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_append_cdata_closing_tags_into_cdata_section PASSED [ 12%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_append_invalid_unicode_cdata_section PASSED [ 13%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_invalid_unicode_values PASSED [ 14%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_valid_unicode_values PASSED [ 16%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_append_valid_unicode_cdata_section PASSED [ 17%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_begin_nested_context PASSED [ 18%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_current_context_tag PASSED [ 19%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_end_all_context_stack PASSED [ 20%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_end_inexistent_context PASSED [ 22%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_end_nested_context PASSED [ 23%]
+[  211s] tests/builder_test.py::TestXMLBuilderTest::test_end_root_context PASSED  [ 24%]
+[  212s] tests/builder_test.py::TestXMLBuilderTest::test_finish_nested_context PASSED [ 25%]
+[  212s] tests/builder_test.py::TestXMLBuilderTest::test_increment_nested_context_counter PASSED [ 27%]
+[  212s] tests/builder_test.py::TestXMLBuilderTest::test_increment_root_context_counter PASSED [ 28%]
+[  212s] tests/builder_test.py::TestXMLBuilderTest::test_root_has_no_parent PASSED [ 29%]
+[  212s] tests/django_test.py::DjangoTest::test_django_multiple_reports SKIPPED   [ 30%]
+[  212s] tests/django_test.py::DjangoTest::test_django_runner SKIPPED (django...) [ 32%]
+[  212s] tests/django_test.py::DjangoTest::test_django_runner_extension SKIPPED   [ 33%]
+[  212s] tests/django_test.py::DjangoTest::test_django_single_report SKIPPED      [ 34%]
+[  212s] tests/django_test.py::DjangoTest::test_django_single_report_create_folder SKIPPED [ 35%]
+[  212s] tests/django_test.py::DjangoTest::test_django_verbose SKIPPED (djang...) [ 37%]
+[  212s] tests/django_test.py::DjangoTest::test_django_xmlrunner SKIPPED (dja...) [ 38%]
+[  212s] tests/testsuite.py::TestCaseSubclassWithNoSuper::test_something PASSED   [ 39%]
+[  212s] tests/testsuite.py::DoctestTest::test_doctest_example PASSED             [ 40%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_basic_unittest_constructs PASSED [ 41%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames PASSED        [ 43%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_expected_failure PASSED  [ 44%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_properties PASSED [ 45%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_empty_properties PASSED [ 46%]
+[  212s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_order PASSED [ 48%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_opaque_decorator PASSED  [ 49%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_partialmethod PASSED     [ 50%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_with_buffer PASSED [ 51%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_wo_buffer PASSED [ 53%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_with_buffer PASSED [ 54%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_wo_buffer PASSED [ 55%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_unexpected_success PASSED [ 56%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error PASSED [ 58%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail PASSED [ 59%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_mixed PASSED [ 60%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_pass PASSED [ 61%]
+[  213s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_fail PASSED [ 62%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_pass XFAIL [ 64%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_cdata_section PASSED [ 65%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_check_for_valid_xml_streamout PASSED [ 66%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_elapsed_times PASSED [ 67%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_error_in_call PASSED [ 69%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_failfast PASSED [ 70%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_hold_traceback PASSED [ 71%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_nosuffix PASSED [ 72%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_subdir PASSED [ 74%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_with_buffer PASSED [ 75%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_without_buffer PASSED [ 76%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_outsuffix PASSED [ 77%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_pass PASSED    [ 79%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_patched_stdout PASSED [ 80%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_resultclass PASSED [ 81%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_safe_xml_encoding_name PASSED [ 82%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_showall PASSED [ 83%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_with_buffer PASSED [ 85%]
+[  214s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_without_buffer PASSED [ 86%]
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream PASSED  [ 87%]
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream_empty_testsuite PASSED [ 88%]
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_unsafe_unicode PASSED [ 90%]
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_verbose PASSED [ 91%]
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_xunit_plugin_transform PASSED [ 92%]
+[  215s] tests/testsuite.py::DuplicateWriterTestCase::test_flush PASSED           [ 93%]
+[  215s] tests/testsuite.py::DuplicateWriterTestCase::test_writable PASSED        [ 95%]
+[  215s] tests/testsuite.py::DuplicateWriterTestCase::test_write PASSED           [ 96%]
+[  215s] tests/testsuite.py::DuplicateWriterTestCase::test_writelines PASSED      [ 97%]
+[  215s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output PASSED     [ 98%]
+[  215s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output_file PASSED [100%]
+[  215s] 
+[  215s] =============================== warnings summary ===============================
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:275: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:280: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:525: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:530: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:496: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  215s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:501: DeprecationWarning: Please use assertRegex instead.
+[  215s]     self.assertRegexpMatches(
+[  215s] 
+[  215s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  215s] ====== 73 passed, 7 skipped, 3 deselected, 1 xfailed, 6 warnings in 6.64s ======
+[  215s] ++ '[' -f _current_flavor ']'
+[  215s] ++ cat _current_flavor
+[  215s] + last_flavor=python39
+[  215s] + '[' -z python39 ']'
+[  215s] + '[' python39 '!=' python311 ']'
+[  215s] + '[' -d build ']'
+[  215s] + mv build _build.python39
+[  215s] + '[' -d _build.python311 ']'
+[  215s] + mv _build.python311 build
+[  216s] + echo python311
+[  216s] + python_flavor=python311
+[  216s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-unittest-xml-reporting-3.0.2-2.2.riscv64/usr/lib/python3.11/site-packages
+[  216s] + PYTHONDONTWRITEBYTECODE=1
+[  216s] + pytest-3.11 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_xmlrunner_non_ascii'
+[  220s] ============================= test session starts ==============================
+[  220s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.11
+[  220s] cachedir: .pytest_cache
+[  220s] rootdir: /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2, configfile: tox.ini, testpaths: tests
+[  223s] collecting ... collected 84 items / 3 deselected / 81 selected
+[  223s] 
+[  223s] tests/builder_test.py::TestXMLContextTest::test_add_time_attribute_on_end_context PASSED [  1%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_add_timestamp_attribute_on_end_context PASSED [  2%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_current_context_invalid_unicode_name PASSED [  3%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_current_context_name PASSED [  4%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_current_element_tag_name PASSED [  6%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_empty_counters_on_end_context PASSED [  7%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_increment_counters_for_unknown_context PASSED [  8%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuite_counters PASSED [  9%]
+[  223s] tests/builder_test.py::TestXMLContextTest::test_increment_valid_testsuites_counters PASSED [ 11%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_append_cdata_closing_tags_into_cdata_section PASSED [ 12%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_append_invalid_unicode_cdata_section PASSED [ 13%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_invalid_unicode_values PASSED [ 14%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_append_tag_with_valid_unicode_values PASSED [ 16%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_append_valid_unicode_cdata_section PASSED [ 17%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_begin_nested_context PASSED [ 18%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_current_context_tag PASSED [ 19%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_end_all_context_stack PASSED [ 20%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_end_inexistent_context PASSED [ 22%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_end_nested_context PASSED [ 23%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_end_root_context PASSED  [ 24%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_finish_nested_context PASSED [ 25%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_increment_nested_context_counter PASSED [ 27%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_increment_root_context_counter PASSED [ 28%]
+[  223s] tests/builder_test.py::TestXMLBuilderTest::test_root_has_no_parent PASSED [ 29%]
+[  223s] tests/django_test.py::DjangoTest::test_django_multiple_reports SKIPPED   [ 30%]
+[  223s] tests/django_test.py::DjangoTest::test_django_runner SKIPPED (django...) [ 32%]
+[  223s] tests/django_test.py::DjangoTest::test_django_runner_extension SKIPPED   [ 33%]
+[  223s] tests/django_test.py::DjangoTest::test_django_single_report SKIPPED      [ 34%]
+[  223s] tests/django_test.py::DjangoTest::test_django_single_report_create_folder SKIPPED [ 35%]
+[  223s] tests/django_test.py::DjangoTest::test_django_verbose SKIPPED (djang...) [ 37%]
+[  224s] tests/django_test.py::DjangoTest::test_django_xmlrunner SKIPPED (dja...) [ 38%]
+[  224s] tests/testsuite.py::TestCaseSubclassWithNoSuper::test_something PASSED   [ 39%]
+[  224s] tests/testsuite.py::DoctestTest::test_doctest_example PASSED             [ 40%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_basic_unittest_constructs FAILED [ 41%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames PASSED        [ 43%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_expected_failure PASSED  [ 44%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_properties PASSED [ 45%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_empty_properties PASSED [ 46%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_junitxml_xsd_validation_order PASSED [ 48%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_opaque_decorator PASSED  [ 49%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_partialmethod PASSED     [ 50%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_with_buffer PASSED [ 51%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_fail_wo_buffer PASSED [ 53%]
+[  225s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_with_buffer PASSED [ 54%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_test_program_succeed_wo_buffer PASSED [ 55%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_unexpected_success FAILED [ 56%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error PASSED [ 58%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail PASSED [ 59%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_mixed PASSED [ 60%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_pass PASSED [ 61%]
+[  226s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_fail PASSED [ 62%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_buffer_output_pass XFAIL [ 64%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_cdata_section PASSED [ 65%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_check_for_valid_xml_streamout PASSED [ 66%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_elapsed_times PASSED [ 67%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_error_in_call PASSED [ 69%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_failfast PASSED [ 70%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_hold_traceback PASSED [ 71%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_nosuffix PASSED [ 72%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_subdir PASSED [ 74%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_with_buffer PASSED [ 75%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_output_without_buffer PASSED [ 76%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_outsuffix PASSED [ 77%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_pass PASSED    [ 79%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_patched_stdout PASSED [ 80%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_resultclass PASSED [ 81%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_safe_xml_encoding_name PASSED [ 82%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_showall PASSED [ 83%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_with_buffer PASSED [ 85%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stdout_stderr_recovered_without_buffer PASSED [ 86%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream PASSED  [ 87%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_stream_empty_testsuite PASSED [ 88%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_unsafe_unicode PASSED [ 90%]
+[  227s] tests/testsuite.py::XMLTestRunnerTestCase::test_xmlrunner_verbose PASSED [ 91%]
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_xunit_plugin_transform PASSED [ 92%]
+[  228s] tests/testsuite.py::DuplicateWriterTestCase::test_flush PASSED           [ 93%]
+[  228s] tests/testsuite.py::DuplicateWriterTestCase::test_writable PASSED        [ 95%]
+[  228s] tests/testsuite.py::DuplicateWriterTestCase::test_write PASSED           [ 96%]
+[  228s] tests/testsuite.py::DuplicateWriterTestCase::test_writelines PASSED      [ 97%]
+[  228s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output PASSED     [ 98%]
+[  228s] tests/testsuite.py::XMLProgramTestCase::test_xmlrunner_output_file PASSED [100%]
+[  228s] 
+[  228s] =================================== FAILURES ===================================
+[  228s] _____________ XMLTestRunnerTestCase.test_basic_unittest_constructs _____________
+[  228s] 
+[  228s] self = <tests.testsuite.XMLTestRunnerTestCase testMethod=test_basic_unittest_constructs>
+[  228s] 
+[  228s]     def test_basic_unittest_constructs(self):
+[  228s]         suite = unittest.TestSuite()
+[  228s]         suite.addTest(self.DummyTest('test_pass'))
+[  228s]         suite.addTest(self.DummyTest('test_skip'))
+[  228s]         suite.addTest(self.DummyTest('test_fail'))
+[  228s]         suite.addTest(self.DummyTest('test_expected_failure'))
+[  228s]         suite.addTest(self.DummyTest('test_unexpected_success'))
+[  228s]         suite.addTest(self.DummyTest('test_error'))
+[  228s] >       self._test_xmlrunner(suite)
+[  228s] 
+[  228s] tests/testsuite.py:257: 
+[  228s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  228s] tests/testsuite.py:242: in _test_xmlrunner
+[  228s]     runner.run(suite)
+[  228s] xmlrunner/runner.py:71: in run
+[  228s]     result.printErrors()
+[  228s] E   AttributeError: 'tuple' object has no attribute 'shortDescription'
+[  228s] ________________ XMLTestRunnerTestCase.test_unexpected_success _________________
+[  228s] 
+[  228s] self = <tests.testsuite.XMLTestRunnerTestCase testMethod=test_unexpected_success>
+[  228s] 
+[  228s]     def test_unexpected_success(self):
+[  228s]         suite = unittest.TestSuite()
+[  228s]         suite.addTest(self.DummyTest('test_unexpected_success'))
+[  228s]         outdir = BytesIO()
+[  228s]     
+[  228s] >       self._test_xmlrunner(suite, outdir=outdir)
+[  228s] 
+[  228s] tests/testsuite.py:302: 
+[  228s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  228s] tests/testsuite.py:242: in _test_xmlrunner
+[  228s]     runner.run(suite)
+[  228s] xmlrunner/runner.py:71: in run
+[  228s]     result.printErrors()
+[  228s] E   AttributeError: 'tuple' object has no attribute 'shortDescription'
+[  228s] =============================== warnings summary ===============================
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:275: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_classnames
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:280: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:525: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_error
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:530: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:496: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] tests/testsuite.py::XMLTestRunnerTestCase::test_unittest_subTest_fail
+[  228s]   /home/abuild/rpmbuild/BUILD/unittest-xml-reporting-3.0.2/tests/testsuite.py:501: DeprecationWarning: Please use assertRegex instead.
+[  228s]     self.assertRegexpMatches(
+[  228s] 
+[  228s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  228s] =========================== short test summary info ============================
+[  228s] FAILED tests/testsuite.py::XMLTestRunnerTestCase::test_basic_unittest_constructs
+[  228s] FAILED tests/testsuite.py::XMLTestRunnerTestCase::test_unexpected_success - A...
+[  228s] = 2 failed, 71 passed, 7 skipped, 3 deselected, 1 xfailed, 6 warnings in 7.53s =
+[  228s] error: Bad exit status from /var/tmp/rpm-tmp.kHT2H8 (%check)
+[  228s] 
+[  228s] RPM build errors:
+[  228s]     Bad exit status from /var/tmp/rpm-tmp.kHT2H8 (%check)
+[  229s] ### VM INTERACTION START ###
+[  229s] [  222.555075][    T1] sysrq: Power Off
+[  229s] [  222.559115][  T291] reboot: Power down
+[  229s] ### VM INTERACTION END ###
+[  229s] 
+[  229s] cloud104 failed "build python-unittest-xml-reporting.spec" at Sat Feb 18 22:25:03 UTC 2023.
+[  229s] 

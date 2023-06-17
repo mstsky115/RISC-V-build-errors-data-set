@@ -1,0 +1,539 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    1s] 
+[    1s] lamb18 started "build kbuild.spec" at Tue Oct  6 21:59:09 UTC 2020.
+[    1s] 
+[    1s] Building kbuild for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7dddb1fcae33886e38b24dd926f9f805'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/kbuild.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/kbuild.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/kbuild.spec build ...
+[    1s] cycle: rpm-config-SUSE -> rpm
+[    1s]   breaking dependency rpm-config-SUSE -> rpm
+[    2s] [1/33] preinstalling filesystem...
+[    2s] [2/33] preinstalling permissions...
+[    2s] [3/33] preinstalling glibc...
+[    2s] [4/33] preinstalling fillup...
+[    2s] [5/33] preinstalling libacl1...
+[    2s] [6/33] preinstalling libattr1...
+[    2s] [7/33] preinstalling libbz2-1...
+[    2s] [8/33] preinstalling libcap2...
+[    2s] [9/33] preinstalling libgcc_s1...
+[    2s] [10/33] preinstalling libgpg-error0...
+[    2s] [11/33] preinstalling liblua5_3-5...
+[    2s] [12/33] preinstalling liblzma5...
+[    2s] [13/33] preinstalling libpcre1...
+[    3s] [14/33] preinstalling libpopt0...
+[    3s] [15/33] preinstalling libz1...
+[    3s] [16/33] preinstalling libzstd1...
+[    3s] [17/33] preinstalling attr...
+[    3s] [18/33] preinstalling libelf1...
+[    3s] [19/33] preinstalling libgcrypt20...
+[    3s] [20/33] preinstalling libncurses6...
+[    3s] [21/33] preinstalling libselinux1...
+[    3s] [22/33] preinstalling libreadline8...
+[    3s] [23/33] preinstalling tar...
+[    3s] [24/33] preinstalling bash...
+[    3s] [25/33] preinstalling qemu-linux-user...
+[    4s] [26/33] preinstalling diffutils...
+[    4s] [27/33] preinstalling grep...
+[    4s] [28/33] preinstalling pam...
+[    4s] [29/33] preinstalling sed...
+[    4s] [30/33] preinstalling coreutils...
+[    4s] [31/33] preinstalling aaa_base...
+[    4s] [32/33] preinstalling rpm-config-SUSE...
+[    5s] [33/33] preinstalling rpm...
+[    5s] 
+[    5s] [1/12] preinstalling kernel-obs-build...
+[    5s] [2/12] preinstalling libblkid1...
+[    5s] [3/12] preinstalling libcrypt1...
+[    5s] [4/12] preinstalling libdb-4_8...
+[    5s] [5/12] preinstalling libmnl0...
+[    5s] [6/12] preinstalling libsepol1...
+[    5s] [7/12] preinstalling libsmartcols1...
+[    5s] [8/12] preinstalling libuuid1...
+[    6s] [9/12] preinstalling iproute2...
+[    6s] [10/12] preinstalling libmount1...
+[    6s] [11/12] preinstalling perl-base...
+[    6s] [12/12] preinstalling util-linux...
+[    6s] copying packages...
+[    7s] reordering...cycle: libncurses6 -> terminfo-base
+[    7s]   breaking dependency terminfo-base -> libncurses6
+[    7s] cycle: binutils -> libctf0
+[    7s]   breaking dependency binutils -> libctf0
+[    7s] cycle: rpm -> rpm-config-SUSE
+[    7s]   breaking dependency rpm -> rpm-config-SUSE
+[    7s] done
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using UART console
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 mitigations=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    8s] c[?7l[2J[0mSeaBIOS (version rel-1.12.0-59-gc9ba527-rebuilt.opensuse.org)
+[   11s] Booting from ROM..c[?7l[2J[    3.313284] dracut-pre-udev[259]: modprobe: FATAL: Module kqemu not found in directory /lib/modules/5.8.12-1-default
+[   11s] [    3.327805] dracut-pre-udev[261]: modprobe: FATAL: Module ext2 not found in directory /lib/modules/5.8.12-1-default
+[   11s] [    3.332079] dracut-pre-udev[262]: modprobe: FATAL: Module ext3 not found in directory /lib/modules/5.8.12-1-default
+[   12s] [    4.048101] dracut-pre-udev[275]: modprobe: FATAL: Module nf_conntrack_ipv6 not found in directory /lib/modules/5.8.12-1-default
+[   12s] [    4.164361] dracut-pre-udev[287]: modprobe: FATAL: Module ibmvscsi not found in directory /lib/modules/5.8.12-1-default
+[   12s] [    4.187018] dracut-pre-udev[290]: modprobe: FATAL: Module ibmveth not found in directory /lib/modules/5.8.12-1-default
+[   13s] No such file or directory
+[   13s] ### VM INTERACTION END ###
+[   13s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 5.8.12-1-default #1 SMP Tue Sep 29 08:27:06 UTC 2020 (79e03c2)
+[   14s] Increasing log level from now on...
+[   14s] [    5.686039] sysrq: Changing Loglevel
+[   14s] [    5.686904] sysrq: Loglevel set to 4
+[   14s] Enable sysrq operations
+[   14s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   14s] no label, UUID=d6f807f9-0e31-4c3f-85ad-17aba3aee50e
+[   14s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   14s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   14s] swapon /dev/vdb
+[   14s] WARNING: udev not running, creating extra device nodes
+[   15s] logging output to //.build.log...
+[   15s] processing recipe /.build-srcdir/kbuild.spec ...
+[   15s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/kbuild.spec build ...
+[   15s] initializing rpm db...
+[   16s] querying package ids...
+[   25s] [1/139] cumulate file-magic-5.39-1.1
+[   25s] [2/139] cumulate kernel-obs-build-5.8.12-1.1
+[   25s] [3/139] cumulate libtirpc-netconfig-1.2.6-1.2
+[   25s] [4/139] cumulate pkgconf-m4-1.7.3-2.1
+[   25s] [5/139] cumulate rpmlint-Factory-strict-1.0-98.1
+[   25s] [6/139] cumulate system-user-root-20190513-1.1
+[   25s] [7/139] cumulate filesystem-15.5-32.1
+[   25s] [8/139] cumulate glibc-2.32-1.1
+[   25s] [9/139] cumulate byacc-20200910-1.1
+[   25s] [10/139] cumulate fillup-1.42-275.2
+[   25s] [11/139] cumulate libacl1-2.2.53-4.1
+[   25s] [12/139] cumulate libatomic1-10.2.1+git583-1.1
+[   25s] [13/139] cumulate libattr1-2.4.48-3.1
+[   25s] [14/139] cumulate libaudit1-2.8.5-2.1
+[   25s] [15/139] cumulate libblkid1-2.35.1-2.1
+[   25s] [16/139] cumulate libbz2-1-1.0.8-2.1
+[   25s] [17/139] cumulate libcap-ng0-0.7.10-1.1
+[   25s] [18/139] cumulate libcap2-2.43-5.1
+[   25s] [19/139] cumulate libcom_err2-1.45.6-1.2
+[   25s] [20/139] cumulate libcrypt1-4.4.17-1.1
+[   25s] [21/139] cumulate libeconf0-0.3.8+git20200710.5126fff-1.1
+[   25s] [22/139] cumulate libexpat1-2.2.9-1.1
+[   25s] [23/139] cumulate libfl2-2.6.4-4.1
+[   25s] [24/139] cumulate libgcc_s1-10.2.1+git583-1.1
+[   25s] [25/139] cumulate libgdbm6-1.18.1-3.1
+[   25s] [26/139] cumulate libgmp10-6.2.0-3.1
+[   25s] [27/139] cumulate libgomp1-10.2.1+git583-1.1
+[   25s] [28/139] cumulate libgpg-error0-1.39-1.1
+[   25s] [29/139] cumulate libkeyutils1-1.6-1.2
+[   25s] [30/139] cumulate liblua5_3-5-5.3.6-1.1
+[   25s] [31/139] cumulate liblzma5-5.2.5-1.1
+[   25s] [32/139] cumulate libmnl0-1.0.4-2.1
+[   25s] [33/139] cumulate libpcre1-8.44-1.1
+[   25s] [34/139] cumulate libpkgconf3-1.7.3-2.1
+[   25s] [35/139] cumulate libpopt0-1.18-1.1
+[   25s] [36/139] cumulate libsepol1-3.1-1.1
+[   25s] [37/139] cumulate libsmartcols1-2.35.1-2.1
+[   25s] [38/139] cumulate libuuid1-2.35.1-2.1
+[   25s] [39/139] cumulate libverto1-0.3.1-1.1
+[   25s] [40/139] cumulate libz1-1.2.11-16.1
+[   25s] [41/139] cumulate libzstd1-1.4.5-2.1
+[   25s] [42/139] cumulate patch-2.7.6-3.1
+[   25s] [43/139] cumulate update-alternatives-1.19.0.5-6.1
+[   25s] [44/139] cumulate libfl-devel-2.6.4-4.1
+[   25s] [45/139] cumulate attr-2.4.48-3.1
+[   25s] [46/139] cumulate libctf-nobfd0-2.34-1.3
+[   25s] [47/139] cumulate libelf1-0.181-1.1
+[   25s] [48/139] cumulate libgcrypt20-1.8.6-1.1
+[   25s] [49/139] cumulate libgdbm_compat4-1.18.1-3.1
+[   25s] [50/139] cumulate libisl22-0.22.1-1.1
+[   25s] [51/139] cumulate libmpfr6-4.1.0-1.1
+[   25s] [52/139] cumulate libselinux1-3.1-1.1
+[   25s] [53/139] cumulate libstdc++6-10.2.1+git583-1.1
+[   25s] [54/139] cumulate perl-base-5.30.3-1.1
+[   25s] [55/139] cumulate pkgconf-1.7.3-2.1
+[   25s] [56/139] cumulate chkstat-1550_20200930-27.1
+[   25s] [57/139] cumulate libfdisk1-2.35.1-2.1
+[   25s] [58/139] cumulate libmagic1-5.39-1.1
+[   25s] [59/139] cumulate build-mkbaselibs-20200828-1.1
+[   25s] [60/139] cumulate rpm-build-perl-4.15.1-7.1
+[   25s] [61/139] cumulate dwz-0.13-7.1
+[   25s] [62/139] cumulate file-5.39-1.1
+[   25s] [63/139] cumulate libasan6-10.2.1+git583-1.1
+[   25s] [64/139] cumulate libdb-4_8-4.8.30-38.3
+[   25s] [65/139] cumulate libmount1-2.35.1-2.1
+[   25s] [66/139] cumulate libmpc3-1.2.0-1.1
+[   25s] [67/139] cumulate libubsan1-10.2.1+git583-1.1
+[   25s] [68/139] cumulate tar-1.32-3.3
+[   25s] [69/139] cumulate libdw1-0.181-1.1
+[   25s] [70/139] cumulate libsemanage1-3.1-1.1
+[   25s] [71/139] cumulate cpp10-10.2.1+git583-1.1
+[   25s] [72/139] cumulate perl-5.30.3-1.1
+[   25s] [73/139] cumulate brp-check-suse-84.87+git20200910.754804a-1.1
+[   25s] [74/139] cumulate perl-Text-Unidecode-1.30-2.1
+[   25s] [75/139] cumulate makeinfo-6.7-1.4
+[   25s] [76/139] cumulate terminfo-base-6.2.20200912-8.1
+[   25s] [77/139] cumulate libncurses6-6.2.20200912-8.1
+[   25s] [78/139] cumulate libreadline8-8.0-5.1
+[   25s] [79/139] cumulate ncurses-utils-6.2.20200912-8.1
+[   25s] [80/139] cumulate bash-5.0.18-1.2
+[   25s] [81/139] cumulate qemu-linux-user-5.1.0-104.1
+[   25s] [82/139] cumulate cpio-2.13-1.1
+[   25s] [83/139] cumulate cpp-10-2.2
+[   25s] [84/139] cumulate diffutils-3.7-4.1
+[   25s] [85/139] cumulate gzip-1.10-4.1
+[   25s] [86/139] cumulate hostname-3.23-1.1
+[   25s] [87/139] cumulate m4-1.4.18-5.1
+[   25s] [88/139] cumulate make-4.3-2.1
+[   25s] [89/139] cumulate which-2.21-4.2
+[   25s] [90/139] cumulate bzip2-1.0.8-2.1
+[   25s] [91/139] cumulate findutils-4.7.0-5.1
+[   25s] [92/139] cumulate gawk-5.1.0-1.3
+[   25s] [93/139] cumulate gettext-runtime-mini-0.21-1.1
+[   25s] [94/139] cumulate grep-3.5-1.1
+[   25s] [95/139] cumulate pkgconf-pkg-config-1.7.3-2.1
+[   25s] [96/139] cumulate xz-5.2.5-1.1
+[   25s] [97/139] cumulate sed-4.8-2.1
+[   25s] [98/139] cumulate iproute2-5.8.0-1.1
+[   25s] [99/139] cumulate binutils-2.34-1.3
+[   25s] [100/139] cumulate coreutils-8.32-5.1
+[   25s] [101/139] cumulate systemd-rpm-macros-4-3.1
+[   25s] [102/139] cumulate libxcrypt-devel-4.4.17-1.1
+[   25s] [103/139] cumulate linux-glibc-devel-5.8-1.1
+[   25s] [104/139] cumulate autoconf-2.69-17.1
+[   25s] [105/139] cumulate bison-3.7.2-1.1
+[   25s] [106/139] cumulate glibc-locale-base-2.32-1.1
+[   25s] [107/139] cumulate libctf0-2.34-1.3
+[   25s] [108/139] cumulate flex-2.6.4-4.1
+[   25s] [109/139] cumulate ncurses-devel-6.2.20200912-8.1
+[   25s] [110/139] cumulate gettext-tools-mini-0.21-1.1
+[   25s] [111/139] cumulate permissions-config-1550_20200930-27.1
+[   25s] [112/139] cumulate krb5-mini-1.18.2-3.1
+[   25s] [113/139] cumulate aaa_base-84.87+git20200918.331aa2f-1.1
+[   25s] [114/139] cumulate rpm-4.15.1-7.1
+[   25s] [115/139] cumulate aaa_base-malloccheck-84.87+git20200918.331aa2f-1.1
+[   25s] [116/139] cumulate glibc-locale-2.32-1.1
+[   25s] [117/139] cumulate permissions-20200930.1550-27.1
+[   25s] [118/139] cumulate rpm-config-SUSE-0.g56-1.1
+[   25s] [119/139] cumulate libtirpc3-1.2.6-1.2
+[   25s] [120/139] cumulate readline-devel-8.0-5.1
+[   25s] [121/139] cumulate automake-1.16.2-1.1
+[   25s] [122/139] cumulate glibc-devel-2.32-1.1
+[   25s] [123/139] cumulate librpmbuild9-4.15.1-7.1
+[   25s] [124/139] cumulate build-compare-20200727T175347.d95eb35-1.1
+[   25s] [125/139] cumulate libnsl2-1.3.0-1.1
+[   25s] [126/139] cumulate libacl-devel-2.2.53-4.1
+[   25s] [127/139] cumulate post-build-checks-84.87+git20200916.d341ab0-1.1
+[   25s] [128/139] cumulate rpmlint-mini-1.10-22.3
+[   25s] [129/139] cumulate gcc10-10.2.1+git583-1.1
+[   25s] [130/139] cumulate rpmlint-Factory-1.0-98.1
+[   25s] [131/139] cumulate gcc-10-2.2
+[   25s] [132/139] cumulate pam-1.4.0-1.1
+[   25s] [133/139] cumulate gcc-PIE-10-2.2
+[   25s] [134/139] cumulate shadow-4.8.1-3.1
+[   25s] [135/139] cumulate sysuser-shadow-3.0-4.1
+[   25s] [136/139] cumulate system-group-hardware-20170617-12.1
+[   25s] [137/139] cumulate libutempter0-1.2.0-3.1
+[   25s] [138/139] cumulate util-linux-2.35.1-2.1
+[   25s] [139/139] cumulate rpm-build-4.15.1-7.1
+[   25s] now installing cumulated packages
+[   26s] Preparing...                          ########################################
+[   26s] Updating / installing...
+[   26s] system-user-root-20190513-1.1         ########################################
+[   26s] filesystem-15.5-32.1                  ########################################
+[   26s] glibc-2.32-1.1                        ########################################
+[   26s] libz1-1.2.11-16.1                     ########################################
+[   26s] libgcc_s1-10.2.1+git583-1.1           ########################################
+[   26s] libacl1-2.2.53-4.1                    ########################################
+[   27s] libbz2-1-1.0.8-2.1                    ########################################
+[   27s] libcrypt1-4.4.17-1.1                  ########################################
+[   27s] perl-base-5.30.3-1.1                  ########################################
+[   27s] libgmp10-6.2.0-3.1                    ########################################
+[   27s] libstdc++6-10.2.1+git583-1.1          ########################################
+[   28s] terminfo-base-6.2.20200912-8.1        ########################################
+[   28s] libncurses6-6.2.20200912-8.1          ########################################
+[   28s] ncurses-utils-6.2.20200912-8.1        ########################################
+[   28s] libelf1-0.181-1.1                     ########################################
+[   28s] fillup-1.42-275.2                     ########################################
+[   28s] libaudit1-2.8.5-2.1                   ########################################
+[   28s] libcap2-2.43-5.1                      ########################################
+[   28s] libreadline8-8.0-5.1                  ########################################
+[   28s] libmpfr6-4.1.0-1.1                    ########################################
+[   28s] libattr1-2.4.48-3.1                   ########################################
+[   28s] libblkid1-2.35.1-2.1                  ########################################
+[   28s] libeconf0-0.3.8+git20200710.5126fff-1.########################################
+[   28s] libgomp1-10.2.1+git583-1.1            ########################################
+[   28s] liblzma5-5.2.5-1.1                    ########################################
+[   29s] libpopt0-1.18-1.1                     ########################################
+[   29s] libzstd1-1.4.5-2.1                    ########################################
+[   29s] update-alternatives-1.19.0.5-6.1      ########################################
+[   29s] bash-5.0.18-1.2                       ########################################
+[   29s] gawk-5.1.0-1.3                        ########################################
+[   30s] update-alternatives: using /usr/bin/gawk to provide /bin/awk (awk) in auto mode
+[   30s] xz-5.2.5-1.1                          ########################################
+[   30s] cpio-2.13-1.1                         ########################################
+[   30s] m4-1.4.18-5.1                         ########################################
+[   30s] diffutils-3.7-4.1                     ########################################
+[   30s] which-2.21-4.2                        ########################################
+[   30s] libdw1-0.181-1.1                      ########################################
+[   30s] libmpc3-1.2.0-1.1                     ########################################
+[   31s] chkstat-1550_20200930-27.1            ########################################
+[   31s] libisl22-0.22.1-1.1                   ########################################
+[   32s] cpp10-10.2.1+git583-1.1               ########################################
+[   32s] libgdbm6-1.18.1-3.1                   ########################################
+[   32s] libpcre1-8.44-1.1                     ########################################
+[   32s] libselinux1-3.1-1.1                   ########################################
+[   33s] coreutils-8.32-5.1                    ########################################
+[   33s] sed-4.8-2.1                           ########################################
+[   33s] grep-3.5-1.1                          ########################################
+[   33s] libuuid1-2.35.1-2.1                   ########################################
+[   34s] libfdisk1-2.35.1-2.1                  ########################################
+[   34s] systemd-rpm-macros-4-3.1              ########################################
+[   34s] linux-glibc-devel-5.8-1.1             ########################################
+[   35s] glibc-locale-base-2.32-1.1            ########################################
+[   50s] glibc-locale-2.32-1.1                 ########################################
+[   51s] permissions-config-1550_20200930-27.1 ########################################
+[   51s] Updating /etc/sysconfig/security ...
+[   51s] Checking permissions and ownerships - using the permissions files
+[   51s] 	/usr/share/permissions/permissions
+[   51s] 	/usr/share/permissions/permissions.easy
+[   51s] 	/etc/permissions.local
+[   51s] /sbin/unix2_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   51s] /sbin/unix_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   51s] /usr/bin/mount: setting to root:root 4755 (wrong permissions 0755)
+[   51s] /usr/bin/su: setting to root:root 4755 (wrong permissions 0755)
+[   51s] /usr/bin/umount: setting to root:root 4755 (wrong permissions 0755)
+[   51s] permissions-20200930.1550-27.1        ########################################
+[   51s] libmount1-2.35.1-2.1                  ########################################
+[   51s] tar-1.32-3.3                          ########################################
+[   51s] findutils-4.7.0-5.1                   ########################################
+[   51s] libgdbm_compat4-1.18.1-3.1            ########################################
+[   51s] cpp-10-2.2                            ########################################
+[   52s] autoconf-2.69-17.1                    ########################################
+[   52s] gzip-1.10-4.1                         ########################################
+[   52s] make-4.3-2.1                          ########################################
+[   52s] bzip2-1.0.8-2.1                       ########################################
+[   52s] gettext-runtime-mini-0.21-1.1         ########################################
+[   53s] gettext-tools-mini-0.21-1.1           ########################################
+[   53s] dwz-0.13-7.1                          ########################################
+[   53s] libasan6-10.2.1+git583-1.1            ########################################
+[   53s] libdb-4_8-4.8.30-38.3                 ########################################
+[   57s] perl-5.30.3-1.1                       ########################################
+[   57s] perl-Text-Unidecode-1.30-2.1          ########################################
+[   57s] libubsan1-10.2.1+git583-1.1           ########################################
+[   57s] rpm-build-perl-4.15.1-7.1             ########################################
+[   58s] libctf-nobfd0-2.34-1.3                ########################################
+[   59s] binutils-2.34-1.3                     ########################################
+[   59s] update-alternatives: using /usr/bin/ld.bfd to provide /usr/bin/ld (ld) in auto mode
+[   59s] libctf0-2.34-1.3                      ########################################
+[   59s] libatomic1-10.2.1+git583-1.1          ########################################
+[   59s] libcap-ng0-0.7.10-1.1                 ########################################
+[   59s] libcom_err2-1.45.6-1.2                ########################################
+[   59s] libexpat1-2.2.9-1.1                   ########################################
+[   59s] libfl2-2.6.4-4.1                      ########################################
+[   59s] libfl-devel-2.6.4-4.1                 ########################################
+[   60s] libgpg-error0-1.39-1.1                ########################################
+[   60s] libgcrypt20-1.8.6-1.1                 ########################################
+[   60s] libkeyutils1-1.6-1.2                  ########################################
+[   60s] liblua5_3-5-5.3.6-1.1                 ########################################
+[   60s] rpm-config-SUSE-0.g56-1.1             ########################################
+[   60s] rpm-4.15.1-7.1                        ########################################
+[   61s] Updating /etc/sysconfig/services ...
+[   61s] libmnl0-1.0.4-2.1                     ########################################
+[   61s] iproute2-5.8.0-1.1                    ########################################
+[   61s] aaa_base-84.87+git20200918.331aa2f-1.1########################################
+[   61s] Updating /etc/sysconfig/language ...
+[   61s] Updating /etc/sysconfig/proxy ...
+[   62s] Updating /etc/sysconfig/windowmanager ...
+[   62s] aaa_base-malloccheck-84.87+git20200918########################################
+[   62s] libpkgconf3-1.7.3-2.1                 ########################################
+[   62s] pkgconf-1.7.3-2.1                     ########################################
+[   62s] libsepol1-3.1-1.1                     ########################################
+[   62s] libsemanage1-3.1-1.1                  ########################################
+[   62s] libsmartcols1-2.35.1-2.1              ########################################
+[   62s] libverto1-0.3.1-1.1                   ########################################
+[   63s] krb5-mini-1.18.2-3.1                  ########################################
+[   63s] Updating /etc/sysconfig/kadmind ...
+[   63s] Updating /etc/sysconfig/krb5kdc ...
+[   64s] patch-2.7.6-3.1                       ########################################
+[   64s] pkgconf-m4-1.7.3-2.1                  ########################################
+[   64s] pkgconf-pkg-config-1.7.3-2.1          ########################################
+[   64s] libxcrypt-devel-4.4.17-1.1            ########################################
+[   64s] glibc-devel-2.32-1.1                  ########################################
+[   70s] gcc10-10.2.1+git583-1.1               ########################################
+[   71s] gcc-10-2.2                            ########################################
+[   71s] ncurses-devel-6.2.20200912-8.1        ########################################
+[   71s] libtirpc-netconfig-1.2.6-1.2          ########################################
+[   71s] libtirpc3-1.2.6-1.2                   ########################################
+[   71s] libnsl2-1.3.0-1.1                     ########################################
+[   72s] shadow-4.8.1-3.1                      ########################################
+[   73s] pam-1.4.0-1.1                         ########################################
+[   73s] sysuser-shadow-3.0-4.1                ########################################
+[   74s] /usr/sbin/groupadd -r kmem
+[   74s] /usr/sbin/groupadd -r lock
+[   74s] /usr/sbin/groupadd -r -g 5 tty
+[   74s] /usr/sbin/groupadd -r utmp
+[   74s] /usr/sbin/groupadd -r audio
+[   74s] /usr/sbin/groupadd -r cdrom
+[   75s] /usr/sbin/groupadd -r dialout
+[   75s] /usr/sbin/groupadd -r disk
+[   75s] /usr/sbin/groupadd -r input
+[   75s] /usr/sbin/groupadd -r kvm
+[   75s] /usr/sbin/groupadd -r lp
+[   75s] /usr/sbin/groupadd -r render
+[   76s] /usr/sbin/groupadd -r tape
+[   76s] /usr/sbin/groupadd -r video
+[   76s] system-group-hardware-20170617-12.1   ########################################
+[   76s] libutempter0-1.2.0-3.1                ########################################
+[   77s] util-linux-2.35.1-2.1                 ########################################
+[   77s] /usr/bin/mount: setting to root:root 4755 (wrong permissions 0755)
+[   77s] /usr/bin/umount: setting to root:root 4755 (wrong permissions 0755)
+[   77s] /usr/bin/wall: setting to root:tty 2755 (wrong permissions 0755)
+[   77s] /usr/bin/write: setting to root:tty 2755 (wrong permissions 0755)
+[   77s] /usr/bin/su: setting to root:root 4755 (wrong permissions 0755)
+[   77s] grep: /etc/default/su: No such file or directory
+[   78s] file-magic-5.39-1.1                   ########################################
+[   78s] libmagic1-5.39-1.1                    ########################################
+[   78s] file-5.39-1.1                         ########################################
+[   78s] librpmbuild9-4.15.1-7.1               ########################################
+[   79s] rpmlint-mini-1.10-22.3                ########################################
+[   79s] rpmlint-Factory-1.0-98.1              ########################################
+[   79s] rpm-build-4.15.1-7.1                  ########################################
+[   79s] build-compare-20200727T175347.d95eb35-########################################
+[   79s] readline-devel-8.0-5.1                ########################################
+[   79s] gcc-PIE-10-2.2                        ########################################
+[   79s] libacl-devel-2.2.53-4.1               ########################################
+[   79s] post-build-checks-84.87+git20200916.d3########################################
+[   80s] flex-2.6.4-4.1                        ########################################
+[   80s] makeinfo-6.7-1.4                      ########################################
+[   80s] brp-check-suse-84.87+git20200910.75480########################################
+[   81s] automake-1.16.2-1.1                   ########################################
+[   81s] bison-3.7.2-1.1                       ########################################
+[   90s] qemu-linux-user-5.1.0-104.1           ########################################
+[   90s] hostname-3.23-1.1                     ########################################
+[   90s] attr-2.4.48-3.1                       ########################################
+[   90s] build-mkbaselibs-20200828-1.1         ########################################
+[   90s] byacc-20200910-1.1                    ########################################
+[   90s] rpmlint-Factory-strict-1.0-98.1       ########################################
+[   91s] kernel-obs-build-5.8.12-1.1           ########################################
+[   97s] now finalizing build dir...
+[   97s] ... running 01-add_abuild_user_to_trusted_group
+[   98s] ... running 02-set_timezone_to_utc
+[   98s] ... running 11-hack_uname_version_to_kernel_version
+[   99s] RTNETLINK answers: File exists
+[   99s] RTNETLINK answers: File exists
+[  107s] build target is riscv64-suse-linux
+[  107s] -----------------------------------------------------------------
+[  107s] I have the following modifications for kbuild.spec:
+[  108s] 22c22
+[  108s] < Release:        0
+[  108s] ---
+[  108s] > Release:        1.1
+[  108s] -----------------------------------------------------------------
+[  108s] ----- building kbuild.spec (user abuild)
+[  108s] -----------------------------------------------------------------
+[  108s] -----------------------------------------------------------------
+[  111s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7dddb1fcae33886e38b24dd926f9f805-kbuild' /home/abuild/rpmbuild/SOURCES/kbuild.spec
+[  111s] Building target platforms: riscv64-suse-linux
+[  111s] Building for target riscv64-suse-linux
+[  111s] setting SOURCE_DATE_EPOCH=1598918400
+[  111s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.GEfys5
+[  111s] + umask 022
+[  111s] + cd /home/abuild/rpmbuild/BUILD
+[  111s] + cd /home/abuild/rpmbuild/BUILD
+[  111s] + rm -rf kbuild-0.1.9998svn3427
+[  111s] + /usr/bin/bzip2 -dc /home/abuild/rpmbuild/SOURCES/kbuild-0.1.9998svn3427.tar.bz2
+[  111s] + /usr/bin/tar -xof -
+[  113s] + STATUS=0
+[  113s] + '[' 0 -ne 0 ']'
+[  113s] + cd kbuild-0.1.9998svn3427
+[  113s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  113s] + echo 'Patch #0 (kbuild-man.diff):'
+[  113s] Patch #0 (kbuild-man.diff):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p0 --fuzz=0
+[  113s] patching file kmk.pod
+[  113s] + echo 'Patch #2 (kbuild-dummy_noreturn.diff):'
+[  113s] Patch #2 (kbuild-dummy_noreturn.diff):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p0 --fuzz=0
+[  113s] patching file src/kmk/kmkbuiltin/expr.c
+[  113s] patching file src/kmk/kmkbuiltin/kbuild_protection.c
+[  113s] + echo 'Patch #5 (kbuild-pthread.diff):'
+[  113s] Patch #5 (kbuild-pthread.diff):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file Config.kmk
+[  113s] Hunk #1 succeeded at 344 (offset 4 lines).
+[  113s] + echo 'Patch #6 (kbuild-timestamps.diff):'
+[  113s] Patch #6 (kbuild-timestamps.diff):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file src/kmk/main.c
+[  113s] Hunk #1 succeeded at 3552 (offset 454 lines).
+[  113s] Hunk #2 succeeded at 4218 (offset 435 lines).
+[  113s] + echo 'Patch #7 (kbuild-armv7l.diff):'
+[  113s] Patch #7 (kbuild-armv7l.diff):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file kBuild/env.sh
+[  113s] Hunk #1 succeeded at 374 (offset 18 lines).
+[  113s] + echo 'Patch #8 (kbuild-wrong-memset.patch):'
+[  113s] Patch #8 (kbuild-wrong-memset.patch):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file src/lib/md5.c
+[  113s] + echo 'Patch #9 (ppc64le.patch):'
+[  113s] Patch #9 (ppc64le.patch):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file kBuild/env.sh
+[  113s] patching file kBuild/header.kmk
+[  113s] patching file src/lib/kStuff/include/k/kDefs.h
+[  113s] + echo 'Patch #10 (aarch64.patch):'
+[  113s] Patch #10 (aarch64.patch):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file kBuild/env.sh
+[  113s] patching file kBuild/header.kmk
+[  113s] patching file src/lib/kStuff/include/k/kDefs.h
+[  113s] + echo 'Patch #13 (glob-lstat.patch):'
+[  113s] Patch #13 (glob-lstat.patch):
+[  113s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[  113s] patching file src/kmk/dir.c
+[  113s] + RPM_EC=0
+[  113s] ++ jobs -p
+[  113s] + exit 0
+[  113s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.5V16c4
+[  113s] + umask 022
+[  113s] + cd /home/abuild/rpmbuild/BUILD
+[  113s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/kbuild-0.1.9998svn3427-1.1.riscv64
+[  113s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/kbuild-0.1.9998svn3427-1.1.riscv64
+[  114s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  114s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/kbuild-0.1.9998svn3427-1.1.riscv64
+[  114s] + cd kbuild-0.1.9998svn3427
+[  114s] + ref=/usr/lib/rpm
+[  114s] ++ uname -m
+[  114s] + testarch=riscv64
+[  114s] + for s in guess sub
+[  114s] ++ find -maxdepth 8 -name config.guess
+[  114s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  114s] + grep -q config-patches@ ./src/sed/config/config.guess
+[  114s] + grep -q 'riscv64[-:]' ./src/sed/config/config.guess
+[  114s] + install -m 755 /usr/lib/rpm/config.guess ./src/sed/config/config.guess
+[  114s] + for s in guess sub
+[  114s] ++ find -maxdepth 8 -name config.sub
+[  114s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  114s] + grep -q config-patches@ ./src/sed/config/config.sub
+[  114s] + grep -q 'riscv64[-:]' ./src/sed/config/config.sub
+[  114s] + install -m 755 /usr/lib/rpm/config.sub ./src/sed/config/config.sub
+[  114s] + export 'CFLAGS=-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  114s] + CFLAGS='-fmessage-length=0 -grecord-gcc-switches -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  114s] + cat
+[  114s] ++ pwd
+[  114s] + kBuild/env.sh --full make -f bootstrap.gmk SRCDIR=/home/abuild/rpmbuild/BUILD/kbuild-0.1.9998svn3427
+[  115s] kBuild/env.sh: unknown cpu/arch - riscv64
+[  116s] error: Bad exit status from /var/tmp/rpm-tmp.5V16c4 (%build)
+[  116s] 
+[  116s] 
+[  116s] RPM build errors:
+[  116s]     Bad exit status from /var/tmp/rpm-tmp.5V16c4 (%build)
+[  116s] ### VM INTERACTION START ###
+[  119s] [  111.522339] sysrq: Power Off
+[  120s] [  111.542223] reboot: Power down
+[  120s] ### VM INTERACTION END ###
+[  120s] 
+[  120s] lamb18 failed "build kbuild.spec" at Tue Oct  6 22:01:08 UTC 2020.
+[  120s] 

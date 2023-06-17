@@ -1,0 +1,1049 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    1s] 
+[    1s] lamb58 started "build python-xkcdpass.spec" at Sat Feb 18 21:25:43 UTC 2023.
+[    1s] 
+[    1s] Building python-xkcdpass for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7b01349599ad268a53faf686764303b0'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/python-xkcdpass.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/python-xkcdpass.spec
+[    2s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/python-xkcdpass.spec build ...
+[    3s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[   12s] 
+[   12s] copying packages...
+[   13s] reordering...done
+[   13s] Detected virtio-serial support
+[   16s] booting kvm...
+[   16s] ### VM INTERACTION START ###
+[   16s] Using virtio-serial support
+[   16s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   32s] ### VM INTERACTION END ###
+[   32s] 2nd stage started in virtual machine
+[   33s] machine type: riscv64
+[   34s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   34s] Increasing log level from now on...
+[   34s] [   16.219278][  T413] sysrq: Changing Loglevel
+[   34s] [   16.222747][  T413] sysrq: Loglevel set to 4
+[   34s] Enable sysrq operations
+[   35s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   35s] no label, UUID=e65fbb84-2f13-4c0a-bbe8-5964eb18831d
+[   35s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   35s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   35s] swapon /dev/vdb
+[   35s] WARNING: udev not running, creating extra device nodes
+[   37s] logging output to //.build.log...
+[   38s] processing recipe /.build-srcdir/python-xkcdpass.spec ...
+[   38s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-xkcdpass.spec build ...
+[   40s] initializing rpm db...
+[   41s] querying package ids...
+[  102s] [1/184] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[  102s] [2/184] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[  102s] [3/184] preinstalled attr-2.5.1-1.1
+[  102s] [4/184] preinstalled bash-5.2.15-8.1
+[  102s] [5/184] preinstalled bash-sh-5.2.15-8.1
+[  102s] [6/184] preinstalled binutils-2.39-3.1
+[  102s] [7/184] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[  102s] [8/184] preinstalled build-compare-20221206T204012.bb70754-1.2
+[  102s] [9/184] preinstalled build-mkbaselibs-20230215-1.1
+[  102s] [10/184] preinstalled bzip2-1.0.8-4.1
+[  102s] [11/184] preinstalled chkstat-1599_20221220-1.2
+[  102s] [12/184] preinstalled compat-usrmerge-build-84.87-5.1
+[  102s] [13/184] preinstalled compat-usrmerge-tools-84.87-5.1
+[  102s] [14/184] preinstalled coreutils-9.1-5.1
+[  102s] [15/184] preinstalled cpio-2.13-5.1
+[  102s] [16/184] preinstalled cpp-12-2.1
+[  102s] [17/184] preinstalled cpp12-12.2.1+git749-4.1
+[  102s] [18/184] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[  102s] [19/184] preinstalled debugedit-5.0-5.1
+[  102s] [20/184] preinstalled diffutils-3.9-1.1
+[  102s] [21/184] preinstalled dwz-0.15-2.1
+[  102s] [22/184] preinstalled elfutils-0.188-3.2
+[  102s] [23/184] cumulate fdupes-2.2.1-1.1
+[  102s] [24/184] preinstalled file-5.44-1.2
+[  102s] [25/184] preinstalled file-magic-5.44-1.2
+[  102s] [26/184] preinstalled filesystem-84.87-12.1
+[  102s] [27/184] preinstalled fillup-1.42-279.1
+[  102s] [28/184] preinstalled findutils-4.9.0-2.1
+[  102s] [29/184] preinstalled gawk-5.2.1-2.1
+[  102s] [30/184] preinstalled gcc-12-2.1
+[  102s] [31/184] preinstalled gcc-PIE-12-2.1
+[  102s] [32/184] preinstalled gcc12-12.2.1+git749-4.1
+[  102s] [33/184] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[  102s] [34/184] preinstalled gettext-runtime-mini-0.21.1-1.1
+[  102s] [35/184] preinstalled gettext-tools-mini-0.21.1-1.1
+[  102s] [36/184] preinstalled glibc-2.37-1.1
+[  102s] [37/184] preinstalled glibc-devel-2.37-1.1
+[  102s] [38/184] preinstalled glibc-locale-base-2.37-1.1
+[  102s] [39/184] preinstalled grep-3.8-3.1
+[  102s] [40/184] preinstalled gzip-1.12-3.1
+[  102s] [41/184] preinstalled kernel-obs-build-6.1.12-1.1
+[  102s] [42/184] preinstalled libacl1-2.3.1-2.1
+[  102s] [43/184] cumulate libalternatives1-1.2+3.b848aad-3.1
+[  102s] [44/184] preinstalled libasan8-13.0.1+git5428-6.1
+[  102s] [45/184] preinstalled libasm1-0.188-3.2
+[  102s] [46/184] preinstalled libatomic1-13.0.1+git5428-6.1
+[  102s] [47/184] preinstalled libattr1-2.5.1-1.1
+[  102s] [48/184] preinstalled libaudit1-3.0.6-4.1
+[  102s] [49/184] preinstalled libblkid1-2.38.1-7.1
+[  102s] [50/184] preinstalled libbz2-1-1.0.8-4.1
+[  102s] [51/184] preinstalled libcap-ng0-0.8.3-1.1
+[  102s] [52/184] preinstalled libcap2-2.67-1.1
+[  102s] [53/184] preinstalled libcrypt1-4.4.33-1.1
+[  102s] [54/184] preinstalled libctf-nobfd0-2.39-3.1
+[  102s] [55/184] preinstalled libctf0-2.39-3.1
+[  102s] [56/184] preinstalled libdb-4_8-4.8.30-39.1
+[  102s] [57/184] preinstalled libdw1-0.188-3.2
+[  102s] [58/184] preinstalled libeconf0-0.5.1-1.1
+[  102s] [59/184] preinstalled libelf1-0.188-3.2
+[  102s] [60/184] preinstalled libexpat1-2.5.0-2.1
+[  102s] [61/184] preinstalled libfdisk1-2.38.1-7.1
+[  102s] [62/184] preinstalled libffi8-3.4.4-1.1
+[  102s] [63/184] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[  102s] [64/184] preinstalled libgcrypt20-1.10.1-1.1
+[  102s] [65/184] preinstalled libgdbm6-1.23-1.1
+[  102s] [66/184] preinstalled libgdbm_compat4-1.23-1.1
+[  102s] [67/184] preinstalled libgmp10-6.2.1-4.1
+[  102s] [68/184] preinstalled libgomp1-13.0.1+git5428-6.1
+[  102s] [69/184] preinstalled libgpg-error0-1.46-1.1
+[  102s] [70/184] preinstalled libisl23-0.25-1.1
+[  102s] [71/184] preinstalled liblua5_4-5-5.4.4-8.1
+[  102s] [72/184] preinstalled liblzma5-5.4.1-1.1
+[  102s] [73/184] preinstalled libmagic1-5.44-1.2
+[  102s] [74/184] preinstalled libmount1-2.38.1-7.1
+[  102s] [75/184] preinstalled libmpc3-1.3.1-1.2
+[  102s] [76/184] preinstalled libmpdec3-2.5.1-2.1
+[  102s] [77/184] preinstalled libmpfr6-4.2.0-1.1
+[  103s] [78/184] preinstalled libncurses6-6.4.20230128-5.1
+[  103s] [79/184] preinstalled libopenssl3-3.0.7-3.1
+[  103s] [80/184] preinstalled libpcre2-8-0-10.42-3.2
+[  103s] [81/184] preinstalled libpkgconf3-1.8.0-2.1
+[  103s] [82/184] preinstalled libpopt0-1.19-1.1
+[  103s] [83/184] preinstalled libpython3_10-1_0-3.10.9-2.2
+[  103s] [84/184] preinstalled libpython3_11-1_0-3.11.1-4.2
+[  103s] [85/184] preinstalled libpython3_8-1_0-3.8.16-3.2
+[  103s] [86/184] preinstalled libpython3_9-1_0-3.9.16-3.2
+[  103s] [87/184] preinstalled libreadline8-8.2-2.1
+[  103s] [88/184] preinstalled librpmbuild9-4.18.0-3.2
+[  103s] [89/184] preinstalled libseccomp2-2.5.4-2.1
+[  103s] [90/184] preinstalled libselinux1-3.4-2.1
+[  103s] [91/184] preinstalled libsemanage-conf-3.4-1.1
+[  103s] [92/184] preinstalled libsemanage2-3.4-1.1
+[  103s] [93/184] preinstalled libsepol2-3.4-1.1
+[  103s] [94/184] preinstalled libsmartcols1-2.38.1-7.1
+[  103s] [95/184] preinstalled libstdc++6-13.0.1+git5428-6.1
+[  103s] [96/184] preinstalled libsubid4-4.13-3.1
+[  103s] [97/184] preinstalled libubsan1-13.0.1+git5428-6.1
+[  103s] [98/184] preinstalled libutempter0-1.2.0-3.2
+[  103s] [99/184] preinstalled libuuid1-2.38.1-7.1
+[  103s] [100/184] preinstalled libxcrypt-devel-4.4.33-1.1
+[  103s] [101/184] preinstalled libz1-1.2.13-2.1
+[  103s] [102/184] preinstalled libzstd1-1.5.2-2.1
+[  103s] [103/184] preinstalled linux-glibc-devel-6.1-1.1
+[  103s] [104/184] preinstalled login_defs-4.13-3.1
+[  103s] [105/184] preinstalled lua54-5.4.4-8.1
+[  103s] [106/184] preinstalled make-4.4-2.1
+[  103s] [107/184] preinstalled ncurses-utils-6.4.20230128-5.1
+[  103s] [108/184] preinstalled pam-1.5.2-12.1
+[  103s] [109/184] preinstalled patch-2.7.6-6.1
+[  103s] [110/184] preinstalled perl-5.36.0-4.1
+[  103s] [111/184] preinstalled perl-base-5.36.0-4.1
+[  103s] [112/184] preinstalled permissions-1599_20221220-1.2
+[  103s] [113/184] preinstalled permissions-config-1599_20221220-1.2
+[  103s] [114/184] preinstalled pkgconf-1.8.0-2.1
+[  103s] [115/184] preinstalled pkgconf-m4-1.8.0-2.1
+[  103s] [116/184] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[  103s] [117/184] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[  103s] [118/184] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[  103s] [119/184] preinstalled python-rpm-macros-20230128.e704796-1.2
+[  103s] [120/184] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[  103s] [121/184] cumulate python310-attrs-22.2.0-1.2
+[  103s] [122/184] preinstalled python310-base-3.10.9-2.2
+[  103s] [123/184] cumulate python310-exceptiongroup-1.1.0-1.2
+[  103s] [124/184] cumulate python310-iniconfig-1.1.1-3.2
+[  103s] [125/184] preinstalled python310-packaging-23.0-1.1
+[  103s] [126/184] cumulate python310-pluggy-1.0.0-1.5
+[  103s] [127/184] preinstalled python310-setuptools-65.6.3-1.2
+[  103s] [128/184] cumulate python310-tomli-2.0.1-1.3
+[  103s] [129/184] cumulate python310-zipp-3.8.1-1.2
+[  103s] [130/184] cumulate python311-attrs-22.2.0-1.2
+[  103s] [131/184] preinstalled python311-base-3.11.1-4.2
+[  103s] [132/184] cumulate python311-exceptiongroup-1.1.0-1.2
+[  103s] [133/184] cumulate python311-iniconfig-1.1.1-3.2
+[  103s] [134/184] cumulate python311-packaging-23.0-1.2
+[  103s] [135/184] cumulate python311-pluggy-1.0.0-1.5
+[  103s] [136/184] preinstalled python311-setuptools-65.6.3-1.2
+[  103s] [137/184] cumulate python311-tomli-2.0.1-1.3
+[  103s] [138/184] cumulate python311-zipp-3.8.1-1.2
+[  103s] [139/184] cumulate python38-attrs-22.2.0-1.2
+[  103s] [140/184] preinstalled python38-base-3.8.16-3.2
+[  103s] [141/184] cumulate python38-exceptiongroup-1.1.0-1.2
+[  103s] [142/184] cumulate python38-iniconfig-1.1.1-3.2
+[  103s] [143/184] cumulate python38-packaging-23.0-1.2
+[  103s] [144/184] cumulate python38-pluggy-1.0.0-1.5
+[  103s] [145/184] preinstalled python38-setuptools-65.6.3-1.2
+[  103s] [146/184] cumulate python38-tomli-2.0.1-1.3
+[  103s] [147/184] cumulate python38-zipp-3.8.1-1.2
+[  103s] [148/184] cumulate python39-attrs-22.2.0-1.2
+[  103s] [149/184] preinstalled python39-base-3.9.16-3.2
+[  103s] [150/184] cumulate python39-exceptiongroup-1.1.0-1.2
+[  103s] [151/184] cumulate python39-iniconfig-1.1.1-3.2
+[  103s] [152/184] cumulate python39-packaging-23.0-1.2
+[  103s] [153/184] cumulate python39-pluggy-1.0.0-1.5
+[  103s] [154/184] preinstalled python39-setuptools-65.6.3-1.2
+[  103s] [155/184] cumulate python39-tomli-2.0.1-1.3
+[  103s] [156/184] cumulate python39-zipp-3.8.1-1.2
+[  103s] [157/184] preinstalled qemu-linux-user-7.1.0-50.1
+[  103s] [158/184] preinstalled rpm-4.18.0-3.2
+[  103s] [159/184] preinstalled rpm-build-4.18.0-3.2
+[  103s] [160/184] preinstalled rpm-build-perl-4.18.0-3.2
+[  103s] [161/184] preinstalled rpm-config-SUSE-20220926-1.1
+[  103s] [162/184] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[  103s] [163/184] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[  103s] [164/184] preinstalled sed-4.9-2.1
+[  103s] [165/184] preinstalled shadow-4.13-3.1
+[  103s] [166/184] preinstalled system-group-hardware-20170617-24.1
+[  103s] [167/184] preinstalled system-user-root-20190513-2.1
+[  103s] [168/184] preinstalled systemd-rpm-macros-19-1.1
+[  103s] [169/184] preinstalled sysuser-shadow-3.1-5.1
+[  103s] [170/184] preinstalled tar-1.34-9.1
+[  103s] [171/184] preinstalled terminfo-base-6.4.20230128-5.1
+[  103s] [172/184] preinstalled update-alternatives-1.21.8-1.1
+[  103s] [173/184] preinstalled util-linux-2.38.1-7.1
+[  103s] [174/184] preinstalled which-2.21-5.1
+[  103s] [175/184] preinstalled xz-5.4.1-1.1
+[  103s] [176/184] cumulate alts-1.2+3.b848aad-3.1
+[  103s] [177/184] cumulate python310-importlib-metadata-6.0.0-1.2
+[  103s] [178/184] cumulate python311-importlib-metadata-6.0.0-1.2
+[  103s] [179/184] cumulate python38-importlib-metadata-6.0.0-1.2
+[  103s] [180/184] cumulate python39-importlib-metadata-6.0.0-1.2
+[  103s] [181/184] cumulate python310-pytest-7.2.0-2.2
+[  103s] [182/184] cumulate python311-pytest-7.2.0-2.2
+[  103s] [183/184] cumulate python38-pytest-7.2.0-2.2
+[  103s] [184/184] cumulate python39-pytest-7.2.0-2.2
+[  103s] now installing cumulated packages
+[  104s] Preparing...                          ########################################
+[  104s] Updating / installing...
+[  105s] python39-zipp-3.8.1-1.2               ########################################
+[  105s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[  105s] python39-tomli-2.0.1-1.3              ########################################
+[  105s] python39-pluggy-1.0.0-1.5             ########################################
+[  105s] python39-packaging-23.0-1.2           ########################################
+[  105s] python39-iniconfig-1.1.1-3.2          ########################################
+[  105s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[  105s] python39-attrs-22.2.0-1.2             ########################################
+[  105s] python38-zipp-3.8.1-1.2               ########################################
+[  105s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[  105s] python38-tomli-2.0.1-1.3              ########################################
+[  106s] python38-pluggy-1.0.0-1.5             ########################################
+[  106s] python38-packaging-23.0-1.2           ########################################
+[  106s] python38-iniconfig-1.1.1-3.2          ########################################
+[  106s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[  106s] python38-attrs-22.2.0-1.2             ########################################
+[  106s] python311-zipp-3.8.1-1.2              ########################################
+[  106s] python311-importlib-metadata-6.0.0-1.2########################################
+[  106s] python311-tomli-2.0.1-1.3             ########################################
+[  106s] python311-pluggy-1.0.0-1.5            ########################################
+[  106s] python311-packaging-23.0-1.2          ########################################
+[  106s] python311-iniconfig-1.1.1-3.2         ########################################
+[  106s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[  106s] python311-attrs-22.2.0-1.2            ########################################
+[  106s] python310-zipp-3.8.1-1.2              ########################################
+[  106s] python310-importlib-metadata-6.0.0-1.2########################################
+[  106s] python310-tomli-2.0.1-1.3             ########################################
+[  107s] python310-pluggy-1.0.0-1.5            ########################################
+[  107s] python310-iniconfig-1.1.1-3.2         ########################################
+[  107s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[  107s] python310-attrs-22.2.0-1.2            ########################################
+[  107s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  107s] alts-1.2+3.b848aad-3.1                ########################################
+[  109s] python310-pytest-7.2.0-2.2            ########################################
+[  110s] python311-pytest-7.2.0-2.2            ########################################
+[  112s] python38-pytest-7.2.0-2.2             ########################################
+[  114s] python39-pytest-7.2.0-2.2             ########################################
+[  114s] fdupes-2.2.1-1.1                      ########################################
+[  120s] now finalizing build dir...
+[  120s] ... running 01-add_abuild_user_to_trusted_group
+[  122s] ... running 02-set_timezone_to_utc
+[  122s] ... running 03-set-permissions-secure
+[  123s] ... running 11-hack_uname_version_to_kernel_version
+[  143s] -----------------------------------------------------------------
+[  143s] I have the following modifications for python-xkcdpass.spec:
+[  144s] 24c24
+[  144s] < Release:        0
+[  144s] ---
+[  144s] > Release:        1.3
+[  161s] build target is riscv64-suse-linux
+[  161s] -----------------------------------------------------------------
+[  161s] ----- building python-xkcdpass.spec (user abuild)
+[  161s] -----------------------------------------------------------------
+[  161s] -----------------------------------------------------------------
+[  170s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7b01349599ad268a53faf686764303b0-python-xkcdpass' /home/abuild/rpmbuild/SOURCES/python-xkcdpass.spec
+[  281s] Building target platforms: riscv64-suse-linux
+[  281s] Building for target riscv64-suse-linux
+[  281s] setting SOURCE_DATE_EPOCH=1646611200
+[  282s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.D33qkz
+[  282s] + umask 022
+[  282s] + cd /home/abuild/rpmbuild/BUILD
+[  282s] + cd /home/abuild/rpmbuild/BUILD
+[  282s] + rm -rf xkcdpass-1.19.3
+[  282s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/xkcdpass-1.19.3.tar.gz
+[  284s] + STATUS=0
+[  284s] + '[' 0 -ne 0 ']'
+[  284s] + cd xkcdpass-1.19.3
+[  284s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  284s] + sed -i -e 1d xkcdpass/xkcd_password.py
+[  284s] + RPM_EC=0
+[  284s] ++ jobs -p
+[  284s] + exit 0
+[  285s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.d6fbf3
+[  285s] + umask 022
+[  285s] + cd /home/abuild/rpmbuild/BUILD
+[  285s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64
+[  285s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64
+[  285s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  285s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64
+[  285s] + cd xkcdpass-1.19.3
+[  285s] + ref=/usr/lib/rpm
+[  285s] + mints=0
+[  285s] + case $(uname -m) in
+[  285s] ++ uname -m
+[  286s] + mints=20160911
+[  286s] + for s in guess sub
+[  286s] ++ find -maxdepth 8 -name config.guess
+[  286s] + for s in guess sub
+[  286s] ++ find -maxdepth 8 -name config.sub
+[  286s] ++ '[' -f _current_flavor ']'
+[  286s] ++ true
+[  286s] + last_flavor=
+[  286s] + '[' -z '' ']'
+[  286s] + last_flavor=tmp
+[  286s] + '[' tmp '!=' python38 ']'
+[  286s] + '[' -d build ']'
+[  286s] + '[' -d _build.python38 ']'
+[  286s] + echo python38
+[  286s] + python_flavor=python38
+[  286s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  296s] running build
+[  296s] running build_py
+[  296s] creating build
+[  296s] creating build/lib
+[  296s] creating build/lib/xkcdpass
+[  296s] copying xkcdpass/__init__.py -> build/lib/xkcdpass
+[  296s] copying xkcdpass/xkcd_password.py -> build/lib/xkcdpass
+[  296s] running egg_info
+[  296s] writing xkcdpass.egg-info/PKG-INFO
+[  296s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  296s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  296s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  296s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  296s] reading manifest template 'MANIFEST.in'
+[  296s] adding license file 'LICENSE.BSD'
+[  296s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  296s] creating build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/eff-long -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/eff-short -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/eff-special -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/eff_large_de_sample.wordlist -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/fin-kotus -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/fr-corrected.txt -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/fr-freelang -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/ger-anlx -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/ita-wiki -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/legacy -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/nor-nb -> build/lib/xkcdpass/static
+[  296s] copying xkcdpass/static/pt-ipublicis -> build/lib/xkcdpass/static
+[  297s] copying xkcdpass/static/pt-l33t-ipublicis -> build/lib/xkcdpass/static
+[  297s] copying xkcdpass/static/spa-mich -> build/lib/xkcdpass/static
+[  297s] /usr/lib/python3.8/site-packages/setuptools/command/build_py.py:202: SetuptoolsDeprecationWarning:     Installing 'xkcdpass.static' as data is deprecated, please list it in `packages`.
+[  297s]     !!
+[  297s] 
+[  297s] 
+[  297s]     ############################
+[  297s]     # Package would be ignored #
+[  297s]     ############################
+[  297s]     Python recognizes 'xkcdpass.static' as an importable package,
+[  297s]     but it is not listed in the `packages` configuration of setuptools.
+[  297s] 
+[  297s]     'xkcdpass.static' has been automatically added to the distribution only
+[  297s]     because it may contain data files, but this behavior is likely to change
+[  297s]     in future versions of setuptools (and therefore is considered deprecated).
+[  297s] 
+[  297s]     Please make sure that 'xkcdpass.static' is included as a package by using
+[  297s]     the `packages` configuration field or the proper discovery methods
+[  297s]     (for example by using `find_namespace_packages(...)`/`find_namespace:`
+[  297s]     instead of `find_packages(...)`/`find:`).
+[  297s] 
+[  297s]     You can read more about "package discovery" and "data files" on setuptools
+[  297s]     documentation page.
+[  297s] 
+[  297s] 
+[  297s] !!
+[  297s] 
+[  297s]   check.warn(importable)
+[  297s] ++ '[' -f _current_flavor ']'
+[  297s] ++ cat _current_flavor
+[  297s] + last_flavor=python38
+[  297s] + '[' -z python38 ']'
+[  297s] + '[' python38 '!=' python39 ']'
+[  297s] + '[' -d build ']'
+[  297s] + mv build _build.python38
+[  297s] + '[' -d _build.python39 ']'
+[  297s] + echo python39
+[  297s] + python_flavor=python39
+[  297s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  305s] running build
+[  305s] running build_py
+[  305s] creating build
+[  305s] creating build/lib
+[  305s] creating build/lib/xkcdpass
+[  305s] copying xkcdpass/__init__.py -> build/lib/xkcdpass
+[  305s] copying xkcdpass/xkcd_password.py -> build/lib/xkcdpass
+[  306s] running egg_info
+[  306s] writing xkcdpass.egg-info/PKG-INFO
+[  306s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  306s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  306s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  306s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  306s] reading manifest template 'MANIFEST.in'
+[  306s] adding license file 'LICENSE.BSD'
+[  306s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  306s] /usr/lib/python3.9/site-packages/setuptools/command/build_py.py:202: SetuptoolsDeprecationWarning:     Installing 'xkcdpass.static' as data is deprecated, please list it in `packages`.
+[  306s]     !!
+[  306s] 
+[  306s] 
+[  306s]     ############################
+[  306s]     # Package would be ignored #
+[  306s]     ############################
+[  306s]     Python recognizes 'xkcdpass.static' as an importable package,
+[  306s]     but it is not listed in the `packages` configuration of setuptools.
+[  306s] 
+[  306s]     'xkcdpass.static' has been automatically added to the distribution only
+[  306s]     because it may contain data files, but this behavior is likely to change
+[  306s]     in future versions of setuptools (and therefore is considered deprecated).
+[  306s] 
+[  306s]     Please make sure that 'xkcdpass.static' is included as a package by using
+[  306s]     the `packages` configuration field or the proper discovery methods
+[  306s]     (for example by using `find_namespace_packages(...)`/`find_namespace:`
+[  306s]     instead of `find_packages(...)`/`find:`).
+[  306s] 
+[  306s]     You can read more about "package discovery" and "data files" on setuptools
+[  306s]     documentation page.
+[  306s] 
+[  306s] 
+[  306s] !!
+[  306s] 
+[  306s]   check.warn(importable)
+[  306s] creating build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/eff-long -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/eff-short -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/eff-special -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/eff_large_de_sample.wordlist -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/fin-kotus -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/fr-corrected.txt -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/fr-freelang -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/ger-anlx -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/ita-wiki -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/legacy -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/nor-nb -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/pt-ipublicis -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/pt-l33t-ipublicis -> build/lib/xkcdpass/static
+[  306s] copying xkcdpass/static/spa-mich -> build/lib/xkcdpass/static
+[  306s] ++ '[' -f _current_flavor ']'
+[  306s] ++ cat _current_flavor
+[  306s] + last_flavor=python39
+[  306s] + '[' -z python39 ']'
+[  306s] + '[' python39 '!=' python311 ']'
+[  306s] + '[' -d build ']'
+[  306s] + mv build _build.python39
+[  306s] + '[' -d _build.python311 ']'
+[  306s] + echo python311
+[  306s] + python_flavor=python311
+[  306s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  314s] running build
+[  314s] running build_py
+[  314s] creating build
+[  314s] creating build/lib
+[  314s] creating build/lib/xkcdpass
+[  314s] copying xkcdpass/__init__.py -> build/lib/xkcdpass
+[  314s] copying xkcdpass/xkcd_password.py -> build/lib/xkcdpass
+[  314s] running egg_info
+[  314s] writing xkcdpass.egg-info/PKG-INFO
+[  314s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  314s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  314s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  314s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  314s] reading manifest template 'MANIFEST.in'
+[  314s] adding license file 'LICENSE.BSD'
+[  314s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  314s] /usr/lib/python3.11/site-packages/setuptools/command/build_py.py:202: SetuptoolsDeprecationWarning:     Installing 'xkcdpass.static' as data is deprecated, please list it in `packages`.
+[  314s]     !!
+[  314s] 
+[  314s] 
+[  314s]     ############################
+[  314s]     # Package would be ignored #
+[  314s]     ############################
+[  314s]     Python recognizes 'xkcdpass.static' as an importable package,
+[  314s]     but it is not listed in the `packages` configuration of setuptools.
+[  314s] 
+[  314s]     'xkcdpass.static' has been automatically added to the distribution only
+[  314s]     because it may contain data files, but this behavior is likely to change
+[  314s]     in future versions of setuptools (and therefore is considered deprecated).
+[  314s] 
+[  314s]     Please make sure that 'xkcdpass.static' is included as a package by using
+[  314s]     the `packages` configuration field or the proper discovery methods
+[  314s]     (for example by using `find_namespace_packages(...)`/`find_namespace:`
+[  314s]     instead of `find_packages(...)`/`find:`).
+[  314s] 
+[  314s]     You can read more about "package discovery" and "data files" on setuptools
+[  314s]     documentation page.
+[  314s] 
+[  314s] 
+[  314s] !!
+[  314s] 
+[  314s]   check.warn(importable)
+[  314s] creating build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/eff-long -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/eff-short -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/eff-special -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/eff_large_de_sample.wordlist -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/fin-kotus -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/fr-corrected.txt -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/fr-freelang -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/ger-anlx -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/ita-wiki -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/legacy -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/nor-nb -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/pt-ipublicis -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/pt-l33t-ipublicis -> build/lib/xkcdpass/static
+[  315s] copying xkcdpass/static/spa-mich -> build/lib/xkcdpass/static
+[  315s] ++ '[' -f _current_flavor ']'
+[  315s] ++ cat _current_flavor
+[  315s] + last_flavor=python311
+[  315s] + '[' -z python311 ']'
+[  315s] + '[' python311 '!=' python310 ']'
+[  315s] + '[' -d build ']'
+[  315s] + mv build _build.python311
+[  315s] + '[' -d _build.python310 ']'
+[  315s] + echo python310
+[  315s] + python_flavor=python310
+[  315s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  325s] running build
+[  325s] running build_py
+[  325s] creating build
+[  325s] creating build/lib
+[  325s] creating build/lib/xkcdpass
+[  325s] copying xkcdpass/__init__.py -> build/lib/xkcdpass
+[  325s] copying xkcdpass/xkcd_password.py -> build/lib/xkcdpass
+[  325s] running egg_info
+[  325s] writing xkcdpass.egg-info/PKG-INFO
+[  325s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  325s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  325s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  325s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  325s] reading manifest template 'MANIFEST.in'
+[  325s] adding license file 'LICENSE.BSD'
+[  325s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  325s] /usr/lib/python3.10/site-packages/setuptools/command/build_py.py:202: SetuptoolsDeprecationWarning:     Installing 'xkcdpass.static' as data is deprecated, please list it in `packages`.
+[  325s]     !!
+[  325s] 
+[  325s] 
+[  325s]     ############################
+[  325s]     # Package would be ignored #
+[  325s]     ############################
+[  325s]     Python recognizes 'xkcdpass.static' as an importable package,
+[  325s]     but it is not listed in the `packages` configuration of setuptools.
+[  325s] 
+[  325s]     'xkcdpass.static' has been automatically added to the distribution only
+[  325s]     because it may contain data files, but this behavior is likely to change
+[  325s]     in future versions of setuptools (and therefore is considered deprecated).
+[  325s] 
+[  325s]     Please make sure that 'xkcdpass.static' is included as a package by using
+[  325s]     the `packages` configuration field or the proper discovery methods
+[  325s]     (for example by using `find_namespace_packages(...)`/`find_namespace:`
+[  325s]     instead of `find_packages(...)`/`find:`).
+[  325s] 
+[  325s]     You can read more about "package discovery" and "data files" on setuptools
+[  325s]     documentation page.
+[  325s] 
+[  325s] 
+[  325s] !!
+[  325s] 
+[  325s]   check.warn(importable)
+[  325s] creating build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/eff-long -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/eff-short -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/eff-special -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/eff_large_de_sample.wordlist -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/fin-kotus -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/fr-corrected.txt -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/fr-freelang -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/ger-anlx -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/ita-wiki -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/legacy -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/nor-nb -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/pt-ipublicis -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/pt-l33t-ipublicis -> build/lib/xkcdpass/static
+[  325s] copying xkcdpass/static/spa-mich -> build/lib/xkcdpass/static
+[  326s] + RPM_EC=0
+[  326s] ++ jobs -p
+[  326s] + exit 0
+[  326s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.HyRpFh
+[  327s] + umask 022
+[  327s] + cd /home/abuild/rpmbuild/BUILD
+[  327s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64
+[  327s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  327s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64
+[  327s] + cd xkcdpass-1.19.3
+[  327s] ++ '[' -f _current_flavor ']'
+[  327s] ++ cat _current_flavor
+[  327s] + last_flavor=python310
+[  327s] + '[' -z python310 ']'
+[  327s] + '[' python310 '!=' python38 ']'
+[  327s] + '[' -d build ']'
+[  327s] + mv build _build.python310
+[  327s] + '[' -d _build.python38 ']'
+[  327s] + mv _build.python38 build
+[  328s] + echo python38
+[  328s] + python_flavor=python38
+[  328s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64 --prefix /usr
+[  336s] running install
+[  336s] running install_lib
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass
+[  336s] copying build/lib/xkcdpass/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass
+[  336s] copying build/lib/xkcdpass/xkcd_password.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass
+[  336s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/eff-long -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/eff-short -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/eff-special -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/eff_large_de_sample.wordlist -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/fin-kotus -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/fr-corrected.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/fr-freelang -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/ger-anlx -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/ita-wiki -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/legacy -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/nor-nb -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/pt-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/pt-l33t-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  336s] copying build/lib/xkcdpass/static/spa-mich -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/static
+[  337s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/__init__.py to __init__.cpython-38.pyc
+[  337s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/xkcd_password.py to xkcd_password.cpython-38.pyc
+[  337s] writing byte-compilation script '/tmp/tmpezfrgw35.py'
+[  337s] /usr/bin/python3.8 /tmp/tmpezfrgw35.py
+[  345s] removing /tmp/tmpezfrgw35.py
+[  345s] running install_egg_info
+[  345s] running egg_info
+[  346s] writing xkcdpass.egg-info/PKG-INFO
+[  346s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  346s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  346s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  346s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  346s] reading manifest template 'MANIFEST.in'
+[  346s] adding license file 'LICENSE.BSD'
+[  346s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  346s] Copying xkcdpass.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass-1.19.3-py3.8.egg-info
+[  346s] running install_scripts
+[  347s] Installing xkcdpass script to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin
+[  347s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  347s]   warnings.warn(
+[  347s] ++ '[' -f _current_flavor ']'
+[  347s] ++ cat _current_flavor
+[  347s] + last_flavor=python38
+[  347s] + '[' -z python38 ']'
+[  347s] + '[' python38 '!=' python39 ']'
+[  347s] + '[' -d build ']'
+[  347s] + mv build _build.python38
+[  347s] + '[' -d _build.python39 ']'
+[  347s] + mv _build.python39 build
+[  348s] + echo python39
+[  348s] + python_flavor=python39
+[  348s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64 --prefix /usr
+[  356s] running install
+[  356s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  356s]   warnings.warn(
+[  356s] running install_lib
+[  356s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9
+[  356s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages
+[  356s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass
+[  356s] copying build/lib/xkcdpass/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass
+[  356s] copying build/lib/xkcdpass/xkcd_password.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass
+[  356s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/eff-long -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/eff-short -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/eff-special -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/eff_large_de_sample.wordlist -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/fin-kotus -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/fr-corrected.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/fr-freelang -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/ger-anlx -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/ita-wiki -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/legacy -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/nor-nb -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/pt-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/pt-l33t-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] copying build/lib/xkcdpass/static/spa-mich -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/static
+[  356s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/__init__.py to __init__.cpython-39.pyc
+[  356s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/xkcd_password.py to xkcd_password.cpython-39.pyc
+[  357s] writing byte-compilation script '/tmp/tmp08za1g31.py'
+[  357s] /usr/bin/python3.9 /tmp/tmp08za1g31.py
+[  365s] removing /tmp/tmp08za1g31.py
+[  365s] running install_egg_info
+[  365s] running egg_info
+[  365s] writing xkcdpass.egg-info/PKG-INFO
+[  365s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  365s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  365s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  365s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  365s] reading manifest template 'MANIFEST.in'
+[  365s] adding license file 'LICENSE.BSD'
+[  365s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  365s] Copying xkcdpass.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass-1.19.3-py3.9.egg-info
+[  365s] running install_scripts
+[  366s] Installing xkcdpass script to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin
+[  366s] ++ '[' -f _current_flavor ']'
+[  366s] ++ cat _current_flavor
+[  367s] + last_flavor=python39
+[  367s] + '[' -z python39 ']'
+[  367s] + '[' python39 '!=' python311 ']'
+[  367s] + '[' -d build ']'
+[  367s] + mv build _build.python39
+[  367s] + '[' -d _build.python311 ']'
+[  367s] + mv _build.python311 build
+[  367s] + echo python311
+[  367s] + python_flavor=python311
+[  367s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64 --prefix /usr
+[  374s] running install
+[  374s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  374s]   warnings.warn(
+[  375s] running install_lib
+[  375s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11
+[  375s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages
+[  375s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass
+[  375s] copying build/lib/xkcdpass/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass
+[  375s] copying build/lib/xkcdpass/xkcd_password.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass
+[  375s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/eff-long -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/eff-short -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/eff-special -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/eff_large_de_sample.wordlist -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/fin-kotus -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/fr-corrected.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/fr-freelang -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/ger-anlx -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/ita-wiki -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/legacy -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/nor-nb -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/pt-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/pt-l33t-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] copying build/lib/xkcdpass/static/spa-mich -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/static
+[  375s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/__init__.py to __init__.cpython-311.pyc
+[  375s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/xkcd_password.py to xkcd_password.cpython-311.pyc
+[  375s] writing byte-compilation script '/tmp/tmpc4xs9zkd.py'
+[  375s] /usr/bin/python3.11 /tmp/tmpc4xs9zkd.py
+[  383s] removing /tmp/tmpc4xs9zkd.py
+[  383s] running install_egg_info
+[  384s] running egg_info
+[  384s] writing xkcdpass.egg-info/PKG-INFO
+[  384s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  384s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  384s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  384s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  384s] reading manifest template 'MANIFEST.in'
+[  384s] adding license file 'LICENSE.BSD'
+[  384s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  384s] Copying xkcdpass.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass-1.19.3-py3.11.egg-info
+[  384s] running install_scripts
+[  385s] Installing xkcdpass script to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin
+[  385s] ++ '[' -f _current_flavor ']'
+[  385s] ++ cat _current_flavor
+[  385s] + last_flavor=python311
+[  385s] + '[' -z python311 ']'
+[  385s] + '[' python311 '!=' python310 ']'
+[  385s] + '[' -d build ']'
+[  385s] + mv build _build.python311
+[  386s] + '[' -d _build.python310 ']'
+[  386s] + mv _build.python310 build
+[  386s] + echo python310
+[  386s] + python_flavor=python310
+[  386s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64 --prefix /usr
+[  393s] running install
+[  393s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  393s]   warnings.warn(
+[  394s] running install_lib
+[  394s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10
+[  394s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages
+[  394s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass
+[  394s] copying build/lib/xkcdpass/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass
+[  394s] copying build/lib/xkcdpass/xkcd_password.py -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass
+[  394s] creating /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/eff-long -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/eff-short -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/eff-special -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/eff_large_de_sample.wordlist -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/fin-kotus -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/fr-corrected.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/fr-freelang -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/ger-anlx -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/ita-wiki -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/legacy -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/nor-nb -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/pt-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/pt-l33t-ipublicis -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] copying build/lib/xkcdpass/static/spa-mich -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/static
+[  394s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/__init__.py to __init__.cpython-310.pyc
+[  394s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/xkcd_password.py to xkcd_password.cpython-310.pyc
+[  394s] writing byte-compilation script '/tmp/tmpz8683l6t.py'
+[  394s] /usr/bin/python3.10 /tmp/tmpz8683l6t.py
+[  400s] removing /tmp/tmpz8683l6t.py
+[  400s] running install_egg_info
+[  401s] running egg_info
+[  401s] writing xkcdpass.egg-info/PKG-INFO
+[  401s] writing dependency_links to xkcdpass.egg-info/dependency_links.txt
+[  401s] writing entry points to xkcdpass.egg-info/entry_points.txt
+[  401s] writing top-level names to xkcdpass.egg-info/top_level.txt
+[  401s] reading manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  401s] reading manifest template 'MANIFEST.in'
+[  401s] adding license file 'LICENSE.BSD'
+[  401s] writing manifest file 'xkcdpass.egg-info/SOURCES.txt'
+[  401s] Copying xkcdpass.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass-1.19.3-py3.10.egg-info
+[  401s] running install_scripts
+[  402s] Installing xkcdpass script to /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin
+[  402s] + cp /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.8
+[  403s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.8
+[  403s] + cp /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.9
+[  403s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.9
+[  403s] + cp /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.11
+[  403s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.11
+[  404s] + cp /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.10
+[  404s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass-3.10
+[  404s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass
+[  404s] + alternative_target=/usr/bin/xkcdpass
+[  404s] + [[ /usr/bin/xkcdpass == /usr/share/man* ]]
+[  404s] + '[' 0 -eq 1 ']'
+[  404s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/etc/alternatives
+[  404s] + touch /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/etc/alternatives/xkcdpass
+[  404s] + ln -sf /etc/alternatives/xkcdpass /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/bin/xkcdpass
+[  404s] ++ '[' -f _current_flavor ']'
+[  404s] ++ cat _current_flavor
+[  405s] + last_flavor=python310
+[  405s] + '[' -z python310 ']'
+[  405s] + '[' python310 '!=' python38 ']'
+[  405s] + '[' -d build ']'
+[  405s] + mv build _build.python310
+[  405s] + '[' -d _build.python38 ']'
+[  405s] + mv _build.python38 build
+[  405s] + echo python38
+[  405s] + python_flavor=python38
+[  405s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages
+[  405s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass-1.19.3-py3.8.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass-1.19.3-py3.8.egg-info/not-zip-safe
+[  405s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/__pycache__/__init__.cpython-38.pyc
+[  405s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-38.pyc
+[  405s] ++ '[' -f _current_flavor ']'
+[  405s] ++ cat _current_flavor
+[  405s] + last_flavor=python38
+[  405s] + '[' -z python38 ']'
+[  405s] + '[' python38 '!=' python39 ']'
+[  405s] + '[' -d build ']'
+[  405s] + mv build _build.python38
+[  405s] + '[' -d _build.python39 ']'
+[  405s] + mv _build.python39 build
+[  406s] + echo python39
+[  406s] + python_flavor=python39
+[  406s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages
+[  406s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass-1.19.3-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass-1.19.3-py3.9.egg-info/not-zip-safe
+[  406s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/__pycache__/__init__.cpython-39.pyc
+[  406s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-39.pyc
+[  406s] ++ '[' -f _current_flavor ']'
+[  406s] ++ cat _current_flavor
+[  406s] + last_flavor=python39
+[  406s] + '[' -z python39 ']'
+[  406s] + '[' python39 '!=' python311 ']'
+[  406s] + '[' -d build ']'
+[  406s] + mv build _build.python39
+[  406s] + '[' -d _build.python311 ']'
+[  406s] + mv _build.python311 build
+[  406s] + echo python311
+[  406s] + python_flavor=python311
+[  406s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages
+[  407s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass-1.19.3-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass-1.19.3-py3.11.egg-info/not-zip-safe
+[  407s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/__pycache__/__init__.cpython-311.pyc
+[  407s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-311.pyc
+[  407s] ++ '[' -f _current_flavor ']'
+[  407s] ++ cat _current_flavor
+[  407s] + last_flavor=python311
+[  407s] + '[' -z python311 ']'
+[  407s] + '[' python311 '!=' python310 ']'
+[  407s] + '[' -d build ']'
+[  407s] + mv build _build.python311
+[  407s] + '[' -d _build.python310 ']'
+[  407s] + mv _build.python310 build
+[  407s] + echo python310
+[  407s] + python_flavor=python310
+[  407s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages
+[  408s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass-1.19.3-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass-1.19.3-py3.10.egg-info/not-zip-safe
+[  408s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/__pycache__/__init__.cpython-310.pyc
+[  408s] Linking /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.10/site-packages/xkcdpass/__pycache__/xkcd_password.cpython-310.pyc
+[  408s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3
+[  411s] + /usr/lib/rpm/brp-compress
+[  411s] + /usr/lib/rpm/brp-suse
+[  411s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  411s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  412s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  413s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  413s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  414s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.3Ct1gV
+[  414s] + umask 022
+[  414s] + cd /home/abuild/rpmbuild/BUILD
+[  414s] + cd xkcdpass-1.19.3
+[  414s] + pytest_python310_ignore='not test_entropy_printout_valid_input'
+[  414s] + set +x
+[  415s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  415s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  416s] Using alternative xkcdpass-3.8 for xkcdpass in ./build/flavorbin during Python 3.8 expansions.
+[  416s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  416s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  417s] Using alternative xkcdpass-3.9 for xkcdpass in ./build/flavorbin during Python 3.9 expansions.
+[  418s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  418s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  419s] Using alternative xkcdpass-3.11 for xkcdpass in ./build/flavorbin during Python 3.11 expansions.
+[  420s] Using alternative xkcdpass-3.10 for xkcdpass in ./build/flavorbin during Python 3.10 expansions.
+[  420s] + export PATH=/home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  420s] + PATH=/home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  420s] ++ '[' -f _current_flavor ']'
+[  420s] ++ cat _current_flavor
+[  420s] + last_flavor=python310
+[  420s] + '[' -z python310 ']'
+[  420s] + '[' python310 '!=' python38 ']'
+[  420s] + '[' -d build ']'
+[  420s] + mv build _build.python310
+[  421s] + '[' -d _build.python38 ']'
+[  421s] + mv _build.python38 build
+[  421s] + echo python38
+[  421s] + python_flavor=python38
+[  421s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.8/site-packages
+[  421s] + PYTHONDONTWRITEBYTECODE=1
+[  421s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k ''
+[  429s] ============================= test session starts ==============================
+[  429s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  429s] cachedir: .pytest_cache
+[  429s] rootdir: /home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3
+[  430s] collecting ... collected 8 items
+[  430s] 
+[  432s] tests/test_xkcdpass.py::XkcdPasswordTests::test_acrostic PASSED          [ 12%]
+[  434s] tests/test_xkcdpass.py::XkcdPasswordTests::test_delim PASSED             [ 25%]
+[  436s] tests/test_xkcdpass.py::XkcdPasswordTests::test_loadwordfile PASSED      [ 37%]
+[  437s] tests/test_xkcdpass.py::XkcdPasswordTests::test_regex PASSED             [ 50%]
+[  439s] tests/test_xkcdpass.py::XkcdPasswordTests::test_set_case PASSED          [ 62%]
+[  439s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_no_separator_when_specified_separator_empty PASSED [ 75%]
+[  439s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_count_of_passwords PASSED [ 87%]
+[  439s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_separator_between_passwords PASSED [100%]
+[  439s] 
+[  439s] ============================== 8 passed in 10.01s ==============================
+[  439s] ++ '[' -f _current_flavor ']'
+[  439s] ++ cat _current_flavor
+[  440s] + last_flavor=python38
+[  440s] + '[' -z python38 ']'
+[  440s] + '[' python38 '!=' python39 ']'
+[  440s] + '[' -d build ']'
+[  440s] + mv build _build.python38
+[  440s] + '[' -d _build.python39 ']'
+[  440s] + mv _build.python39 build
+[  440s] + echo python39
+[  440s] + python_flavor=python39
+[  440s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.9/site-packages
+[  440s] + PYTHONDONTWRITEBYTECODE=1
+[  440s] + pytest-3.9 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k ''
+[  447s] ============================= test session starts ==============================
+[  447s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  447s] cachedir: .pytest_cache
+[  447s] rootdir: /home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3
+[  449s] collecting ... collected 8 items
+[  449s] 
+[  451s] tests/test_xkcdpass.py::XkcdPasswordTests::test_acrostic PASSED          [ 12%]
+[  452s] tests/test_xkcdpass.py::XkcdPasswordTests::test_delim PASSED             [ 25%]
+[  454s] tests/test_xkcdpass.py::XkcdPasswordTests::test_loadwordfile PASSED      [ 37%]
+[  455s] tests/test_xkcdpass.py::XkcdPasswordTests::test_regex PASSED             [ 50%]
+[  457s] tests/test_xkcdpass.py::XkcdPasswordTests::test_set_case PASSED          [ 62%]
+[  457s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_no_separator_when_specified_separator_empty PASSED [ 75%]
+[  457s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_count_of_passwords PASSED [ 87%]
+[  457s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_separator_between_passwords PASSED [100%]
+[  457s] 
+[  457s] ============================== 8 passed in 9.88s ===============================
+[  457s] ++ '[' -f _current_flavor ']'
+[  457s] ++ cat _current_flavor
+[  457s] + last_flavor=python39
+[  457s] + '[' -z python39 ']'
+[  457s] + '[' python39 '!=' python311 ']'
+[  457s] + '[' -d build ']'
+[  457s] + mv build _build.python39
+[  457s] + '[' -d _build.python311 ']'
+[  457s] + mv _build.python311 build
+[  457s] + echo python311
+[  457s] + python_flavor=python311
+[  457s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-xkcdpass-1.19.3-1.3.riscv64/usr/lib/python3.11/site-packages
+[  457s] + PYTHONDONTWRITEBYTECODE=1
+[  457s] + pytest-3.11 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k ''
+[  464s] ============================= test session starts ==============================
+[  464s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.11
+[  464s] cachedir: .pytest_cache
+[  464s] rootdir: /home/abuild/rpmbuild/BUILD/xkcdpass-1.19.3
+[  466s] collecting ... collected 9 items
+[  466s] 
+[  467s] tests/test_xkcdpass.py::XkcdPasswordTests::test_acrostic PASSED          [ 11%]
+[  469s] tests/test_xkcdpass.py::XkcdPasswordTests::test_delim PASSED             [ 22%]
+[  470s] tests/test_xkcdpass.py::XkcdPasswordTests::test_loadwordfile PASSED      [ 33%]
+[  471s] tests/test_xkcdpass.py::XkcdPasswordTests::test_regex PASSED             [ 44%]
+[  473s] tests/test_xkcdpass.py::XkcdPasswordTests::test_set_case PASSED          [ 55%]
+[  473s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_no_separator_when_specified_separator_empty PASSED [ 66%]
+[  473s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_count_of_passwords PASSED [ 77%]
+[  473s] tests/test_xkcdpass.py::TestEmitPasswords::test_emits_specified_separator_between_passwords PASSED [ 88%]
+[  475s] tests/test_xkcdpass.py::TestEntropyInformation::test_entropy_printout_valid_input FAILED [100%]
+[  475s] 
+[  475s] =================================== FAILURES ===================================
+[  475s] ___________ TestEntropyInformation.test_entropy_printout_valid_input ___________
+[  475s] 
+[  475s] self = <unittest.case._Outcome object at 0x4003da3010>
+[  475s] test_case = <tests.test_xkcdpass.TestEntropyInformation testMethod=test_entropy_printout_valid_input>
+[  475s] subTest = False
+[  475s] 
+[  475s]     @contextlib.contextmanager
+[  475s]     def testPartExecutor(self, test_case, subTest=False):
+[  475s]         old_success = self.success
+[  475s]         self.success = True
+[  475s]         try:
+[  475s] >           yield
+[  475s] 
+[  475s] /usr/lib64/python3.11/unittest/case.py:57: 
+[  475s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  475s] /usr/lib64/python3.11/unittest/case.py:623: in run
+[  475s]     self._callTestMethod(testMethod)
+[  475s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  475s] 
+[  475s] self = <tests.test_xkcdpass.TestEntropyInformation testMethod=test_entropy_printout_valid_input>
+[  475s] method = <staticmethod(<function TestEntropyInformation.test_entropy_printout_valid_input at 0x4003b69c60>)>
+[  475s] 
+[  475s]     def _callTestMethod(self, method):
+[  475s] >       if method() is not None:
+[  475s] E       TypeError: TestEntropyInformation.test_entropy_printout_valid_input() missing 1 required positional argument: 'self'
+[  475s] 
+[  475s] /usr/lib64/python3.11/unittest/case.py:579: TypeError
+[  475s] =========================== short test summary info ============================
+[  475s] FAILED tests/test_xkcdpass.py::TestEntropyInformation::test_entropy_printout_valid_input
+[  475s] ========================= 1 failed, 8 passed in 10.72s =========================
+[  476s] error: Bad exit status from /var/tmp/rpm-tmp.3Ct1gV (%check)
+[  476s] 
+[  476s] RPM build errors:
+[  476s]     Bad exit status from /var/tmp/rpm-tmp.3Ct1gV (%check)
+[  476s] ### VM INTERACTION START ###
+[  477s] [  460.146075][    T1] sysrq: Power Off
+[  477s] [  460.189744][   T18] reboot: Power down
+[  478s] ### VM INTERACTION END ###
+[  478s] 
+[  478s] lamb58 failed "build python-xkcdpass.spec" at Sat Feb 18 21:33:40 UTC 2023.
+[  478s] 

@@ -1,0 +1,2062 @@
+[    1s] Memory limit set to 5447466KB
+[    1s] Using BUILD_ROOT=/var/cache/obs/worker/root_2
+[    1s] Using BUILD_ARCH=riscv64
+[    1s] 
+[    5s] 
+[    6s] oe-RISCV-worker8 started "build _service:extract_file:hibernate4.spec" at Sun Apr 17 00:45:31 UTC 2022.
+[    6s] 
+[    6s] Building hibernate4 for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '1333a6abd91c3b6c572b8527daeb232b'
+[    6s] 
+[    6s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:hibernate4.spec ...
+[   11s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:hibernate4.spec
+[   12s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:hibernate4.spec build ...
+[  113s] cycle: bash -> coreutils
+[  113s]   breaking dependency coreutils -> bash
+[  113s] cycle: bash -> coreutils -> info
+[  113s]   breaking dependency coreutils -> info
+[  113s] cycle: glibc -> filesystem -> bash -> coreutils
+[  113s]   breaking dependency filesystem -> bash
+[  113s] cycle: glibc -> filesystem -> coreutils
+[  113s]   breaking dependency coreutils -> glibc
+[  113s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  113s]   breaking dependency coreutils -> libacl
+[  113s] cycle: glibc -> filesystem -> coreutils -> attr
+[  113s]   breaking dependency coreutils -> attr
+[  113s] cycle: coreutils -> libcap -> bash
+[  113s]   breaking dependency coreutils -> libcap
+[  113s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  113s]   breaking dependency coreutils -> openssl-libs
+[  113s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  113s]   breaking dependency libselinux -> glibc
+[  113s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  113s]   breaking dependency pcre2 -> glibc
+[  113s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  113s]   breaking dependency readline -> glibc
+[  113s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  113s]   breaking dependency coreutils -> libselinux
+[  113s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  113s]   breaking dependency ncurses -> glibc
+[  113s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  113s]   breaking dependency ncurses -> ncurses-libs
+[  113s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  113s]   breaking dependency ncurses -> libgcc
+[  113s] cycle: perl-Carp -> perl-libs
+[  113s]   breaking dependency perl-libs -> perl-Carp
+[  113s] cycle: perl-libs -> perl-Exporter
+[  113s]   breaking dependency perl-libs -> perl-Exporter
+[  113s] cycle: perl-Carp -> perl-Exporter
+[  113s]   breaking dependency perl-Exporter -> perl-Carp
+[  113s] cycle: nss-util -> nss
+[  113s]   breaking dependency nss -> nss-util
+[  113s] cycle: nss-softokn -> nss-util -> nss
+[  113s]   breaking dependency nss -> nss-softokn
+[  113s] cycle: systemd -> cryptsetup -> device-mapper
+[  113s]   breaking dependency systemd -> cryptsetup
+[  113s] cycle: audit -> systemd -> pam
+[  113s]   breaking dependency systemd -> pam
+[  113s] [1/84] preinstalling dbus...
+[  114s] [2/84] preinstalling libffi-devel...
+[  115s] [3/84] preinstalling nodejs-source-map...
+[  116s] [4/84] preinstalling python3-pip...
+[  120s] [5/84] preinstalling python3-setuptools_scm...
+[  121s] [6/84] preinstalling ncurses...
+[  126s] [7/84] preinstalling coreutils...
+[  133s] [8/84] preinstalling filesystem...
+[  136s] [9/84] preinstalling glibc...
+[  141s] [10/84] preinstalling libgcc...
+[  142s] [11/84] preinstalling diffutils...
+[  143s] [12/84] preinstalling libcap-ng...
+[  145s] [13/84] preinstalling libgpg-error...
+[  146s] [14/84] preinstalling libpcap...
+[  147s] [15/84] preinstalling libsmartcols...
+[  148s] [16/84] preinstalling libuuid...
+[  150s] [17/84] preinstalling libxcrypt...
+[  151s] [18/84] preinstalling lz4...
+[  152s] [19/84] preinstalling m4...
+[  154s] [20/84] preinstalling ncurses-libs...
+[  155s] [21/84] preinstalling nspr...
+[  156s] [22/84] preinstalling xz-libs...
+[  157s] [23/84] preinstalling zlib...
+[  159s] [24/84] preinstalling attr...
+[  160s] [25/84] preinstalling libdb...
+[  164s] [26/84] preinstalling zstd...
+[  167s] [27/84] preinstalling audit-libs...
+[  168s] [28/84] preinstalling file...
+[  170s] [29/84] preinstalling iptables-libs...
+[  171s] [30/84] preinstalling libacl...
+[  172s] [31/84] preinstalling libgcrypt...
+[  174s] [32/84] preinstalling openssl-libs...
+[  176s] [33/84] preinstalling readline...
+[  178s] [34/84] preinstalling bash...
+[  180s] [35/84] preinstalling cmake...
+[  198s] [36/84] preinstalling perl-libs...
+[  204s] [37/84] preinstalling dnf...
+[  206s] [38/84] preinstalling pcre2...
+[  209s] [39/84] preinstalling perl-Exporter...
+[  211s] [40/84] preinstalling bzip2...
+[  213s] [41/84] preinstalling elfutils...
+[  218s] [42/84] preinstalling hostname...
+[  220s] [43/84] preinstalling libcap...
+[  221s] [44/84] preinstalling pcre...
+[  223s] [45/84] preinstalling popt...
+[  224s] [46/84] preinstalling acl...
+[  225s] [47/84] preinstalling libblkid...
+[  226s] [48/84] preinstalling openssl...
+[  228s] [49/84] preinstalling sqlite...
+[  230s] [50/84] preinstalling tar...
+[  233s] [51/84] preinstalling info...
+[  235s] [52/84] preinstalling libgcrypt-devel...
+[  236s] [53/84] preinstalling lua...
+[  237s] [54/84] preinstalling libselinux...
+[  238s] [55/84] preinstalling perl-Carp...
+[  240s] [56/84] preinstalling copy-jdk-configs...
+[  241s] [57/84] preinstalling libfdisk...
+[  242s] [58/84] preinstalling perl-Digest-MD5...
+[  243s] [59/84] preinstalling grep...
+[  244s] [60/84] preinstalling rpm-libs...
+[  247s] [61/84] preinstalling chkconfig...
+[  248s] [62/84] preinstalling sed...
+[  249s] [63/84] preinstalling libmount...
+[  250s] [64/84] preinstalling libsemanage...
+[  251s] [65/84] preinstalling perl-constant...
+[  253s] [66/84] preinstalling findutils...
+[  254s] [67/84] preinstalling xz...
+[  255s] [68/84] preinstalling perl-Getopt-Long...
+[  258s] [69/84] preinstalling glib2...
+[  263s] [70/84] preinstalling nss...
+[  265s] [71/84] preinstalling perl-Data-Dumper...
+[  266s] [72/84] preinstalling systemd-libs...
+[  267s] [73/84] preinstalling systemd...
+[  273s] [74/84] preinstalling dbus-libs...
+[  274s] [75/84] preinstalling nss-util...
+[  276s] [76/84] preinstalling audit...
+[  277s] [77/84] preinstalling nss-softokn...
+[  279s] [78/84] preinstalling pam...
+[  281s] [79/84] preinstalling rpm...
+[  283s] [80/84] preinstalling openEuler-rpm-config...
+[  284s] [81/84] preinstalling util-linux...
+[  289s] [82/84] preinstalling device-mapper...
+[  290s] [83/84] preinstalling cryptsetup...
+[  293s] [84/84] preinstalling lvm2...
+[  297s] 
+[  299s] initializing rpm db...
+[  318s] reordering...cycle: bash -> coreutils
+[  318s]   breaking dependency coreutils -> bash
+[  318s] cycle: bash -> coreutils -> info
+[  318s]   breaking dependency coreutils -> info
+[  318s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  318s]   breaking dependency filesystem -> bash
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  318s]   breaking dependency coreutils -> gmp
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  318s]   breaking dependency coreutils -> glibc
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  318s]   breaking dependency coreutils -> libacl
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  318s]   breaking dependency coreutils -> attr
+[  318s] cycle: coreutils -> libcap -> bash
+[  318s]   breaking dependency coreutils -> libcap
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  318s]   breaking dependency openssl-libs -> glibc
+[  318s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  318s]   breaking dependency ca-certificates -> bash
+[  318s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  318s]   breaking dependency ca-certificates -> coreutils
+[  318s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  318s]   breaking dependency grep -> bash
+[  318s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  318s]   breaking dependency ca-certificates -> grep
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  318s]   breaking dependency p11-kit -> glibc
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  318s]   breaking dependency openssl-libs -> ca-certificates
+[  318s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  318s]   breaking dependency crypto-policies -> bash
+[  318s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  318s]   breaking dependency crypto-policies -> coreutils
+[  318s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency grep -> coreutils
+[  318s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency glibc -> basesystem
+[  318s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency glibc-common -> bash
+[  318s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency glibc-common -> coreutils
+[  318s] cycle: glibc -> glibc-common
+[  318s]   breaking dependency glibc-common -> glibc
+[  318s] cycle: glibc -> glibc-common -> libselinux
+[  318s]   breaking dependency libselinux -> glibc
+[  318s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  318s]   breaking dependency pcre2 -> glibc
+[  318s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  318s]   breaking dependency readline -> glibc
+[  318s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  318s]   breaking dependency libselinux -> pcre2
+[  318s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency bash -> coreutils
+[  318s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency libsepol -> bash
+[  318s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  318s]   breaking dependency coreutils -> openssl-libs
+[  318s] cycle: libselinux -> libsepol -> coreutils
+[  318s]   breaking dependency libsepol -> coreutils
+[  318s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  318s]   breaking dependency glibc -> glibc-common
+[  318s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  318s]   breaking dependency filesystem -> coreutils
+[  318s] cycle: filesystem -> setup
+[  318s]   breaking dependency filesystem -> setup
+[  318s] cycle: systemd -> cryptsetup -> device-mapper
+[  318s]   breaking dependency systemd -> cryptsetup
+[  318s] cycle: perl-libs -> perl-Carp
+[  318s]   breaking dependency perl-libs -> perl-Carp
+[  318s] cycle: perl-libs -> perl-Exporter
+[  318s]   breaking dependency perl-libs -> perl-Exporter
+[  318s] cycle: perl-Carp -> perl-Exporter
+[  318s]   breaking dependency perl-Exporter -> perl-Carp
+[  318s] cycle: perl -> perl-PathTools
+[  318s]   breaking dependency perl -> perl-PathTools
+[  318s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  318s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  318s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  318s]   breaking dependency perl -> perl-File-Path
+[  318s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  318s]   breaking dependency perl -> perl-Getopt-Long
+[  318s] cycle: perl -> perl-Locale-Maketext
+[  318s]   breaking dependency perl -> perl-Locale-Maketext
+[  318s] cycle: perl -> perl-Pod-Simple
+[  318s]   breaking dependency perl -> perl-Pod-Simple
+[  318s] cycle: perl -> perl-Socket
+[  318s]   breaking dependency perl -> perl-Socket
+[  318s] cycle: perl -> perl-Storable
+[  318s]   breaking dependency perl -> perl-Storable
+[  318s] cycle: perl -> perl-Text-Tabs+Wrap
+[  318s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  318s] cycle: perl -> perl-Time-Local -> perl-constant
+[  318s]   breaking dependency perl -> perl-Time-Local
+[  318s] cycle: perl -> perl-constant
+[  318s]   breaking dependency perl -> perl-constant
+[  318s] cycle: perl -> perl-threads
+[  318s]   breaking dependency perl -> perl-threads
+[  318s] cycle: perl -> perl-threads-shared
+[  318s]   breaking dependency perl -> perl-threads-shared
+[  318s] cycle: perl -> perl-Archive-Tar
+[  318s]   breaking dependency perl -> perl-Archive-Tar
+[  318s] cycle: perl -> perl-B-Debug
+[  318s]   breaking dependency perl -> perl-B-Debug
+[  318s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  318s]   breaking dependency perl -> perl-CPAN-Meta
+[  318s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  318s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  318s] cycle: perl -> perl-CPAN-Meta-YAML
+[  318s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  318s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  318s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  318s] cycle: perl -> perl-Compress-Raw-Zlib
+[  318s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  318s] cycle: perl -> perl-Config-Perl-V
+[  318s]   breaking dependency perl -> perl-Config-Perl-V
+[  318s] cycle: perl -> perl-DB_File
+[  318s]   breaking dependency perl -> perl-DB_File
+[  318s] cycle: perl -> perl-Data-Dumper
+[  318s]   breaking dependency perl -> perl-Data-Dumper
+[  318s] cycle: perl -> perl-Devel-PPPort
+[  318s]   breaking dependency perl -> perl-Devel-PPPort
+[  318s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  318s]   breaking dependency perl -> perl-Digest
+[  318s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  318s]   breaking dependency perl -> perl-Digest-MD5
+[  318s] cycle: perl -> perl-Digest-SHA
+[  318s]   breaking dependency perl -> perl-Digest-SHA
+[  318s] cycle: perl -> perl-Encode
+[  318s]   breaking dependency perl -> perl-Encode
+[  318s] cycle: perl -> perl-Env
+[  318s]   breaking dependency perl -> perl-Env
+[  318s] cycle: perl -> perl-ExtUtils-Command
+[  318s]   breaking dependency perl -> perl-ExtUtils-Command
+[  318s] cycle: perl -> perl-ExtUtils-Install
+[  318s]   breaking dependency perl -> perl-ExtUtils-Install
+[  318s] cycle: perl -> perl-ExtUtils-Manifest
+[  318s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  318s] cycle: perl -> perl-ExtUtils-ParseXS
+[  318s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  318s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  318s]   breaking dependency perl -> perl-File-Fetch
+[  318s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  318s]   breaking dependency perl -> perl-File-Temp
+[  318s] cycle: perl -> perl-Filter
+[  318s]   breaking dependency perl -> perl-Filter
+[  318s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  318s]   breaking dependency perl -> perl-Filter-Simple
+[  318s] cycle: perl -> perl-HTTP-Tiny
+[  318s]   breaking dependency perl -> perl-HTTP-Tiny
+[  318s] cycle: perl -> perl-IO-Compress
+[  318s]   breaking dependency perl -> perl-IO-Compress
+[  318s] cycle: perl -> perl-IO-Socket-IP
+[  318s]   breaking dependency perl -> perl-IO-Socket-IP
+[  318s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  318s]   breaking dependency perl -> perl-IPC-Cmd
+[  318s] cycle: perl -> perl-IPC-SysV
+[  318s]   breaking dependency perl -> perl-IPC-SysV
+[  318s] cycle: perl -> perl-JSON-PP
+[  318s]   breaking dependency perl -> perl-JSON-PP
+[  318s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  318s]   breaking dependency perl -> perl-Locale-Codes
+[  318s] cycle: perl -> perl-MIME-Base64
+[  318s]   breaking dependency perl -> perl-MIME-Base64
+[  318s] cycle: perl -> perl-Math-BigInt
+[  318s]   breaking dependency perl -> perl-Math-BigInt
+[  318s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  318s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  318s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  318s]   breaking dependency perl -> perl-Math-BigRat
+[  318s] cycle: perl -> perl-Module-CoreList
+[  318s]   breaking dependency perl -> perl-Module-CoreList
+[  318s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  318s]   breaking dependency perl -> perl-Module-Load
+[  318s] cycle: perl -> perl-Module-Load-Conditional
+[  318s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  318s] cycle: perl -> perl-Module-Metadata
+[  318s]   breaking dependency perl -> perl-Module-Metadata
+[  318s] cycle: perl -> perl-Params-Check
+[  318s]   breaking dependency perl -> perl-Params-Check
+[  318s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  318s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  318s] cycle: perl -> perl-Pod-Checker
+[  318s]   breaking dependency perl -> perl-Pod-Checker
+[  318s] cycle: perl -> perl-Pod-Escapes
+[  318s]   breaking dependency perl -> perl-Pod-Escapes
+[  318s] cycle: perl -> perl-Pod-Parser
+[  318s]   breaking dependency perl -> perl-Pod-Parser
+[  318s] cycle: perl -> perl-Pod-Perldoc
+[  318s]   breaking dependency perl -> perl-Pod-Perldoc
+[  318s] cycle: perl -> perl-Pod-Usage
+[  318s]   breaking dependency perl -> perl-Pod-Usage
+[  318s] cycle: perl -> perl-Sys-Syslog
+[  318s]   breaking dependency perl -> perl-Sys-Syslog
+[  318s] cycle: perl -> perl-Term-Cap
+[  318s]   breaking dependency perl -> perl-Term-Cap
+[  318s] cycle: perl -> perl-Test-Harness
+[  318s]   breaking dependency perl -> perl-Test-Harness
+[  319s] cycle: perl -> perl-Test-Simple
+[  319s]   breaking dependency perl -> perl-Test-Simple
+[  319s] cycle: perl -> perl-Text-Balanced
+[  319s]   breaking dependency perl -> perl-Text-Balanced
+[  319s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  319s]   breaking dependency perl -> perl-Thread-Queue
+[  319s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  319s]   breaking dependency perl -> perl-Unicode-Collate
+[  319s] cycle: perl -> perl-autodie
+[  319s]   breaking dependency perl -> perl-autodie
+[  319s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  319s]   breaking dependency perl -> perl-bignum
+[  319s] cycle: perl -> perl-devel
+[  319s]   breaking dependency perl -> perl-devel
+[  319s] cycle: perl -> perl-Encode-devel
+[  319s]   breaking dependency perl -> perl-Encode-devel
+[  319s] cycle: perl -> perl-experimental
+[  319s]   breaking dependency perl -> perl-experimental
+[  319s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  319s]   breaking dependency perl -> perl-libnet
+[  319s] cycle: perl -> perl-podlators
+[  319s]   breaking dependency perl -> perl-podlators
+[  319s] cycle: perl -> perl-version
+[  319s]   breaking dependency perl -> perl-version
+[  319s] cycle: glib2 -> gamin
+[  319s]   breaking dependency glib2 -> gamin
+[  319s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  319s]   breaking dependency systemd -> gnutls
+[  319s] cycle: systemd -> pam -> audit
+[  319s]   breaking dependency systemd -> pam
+[  319s] cycle: systemd -> shadow -> pam -> audit
+[  319s]   breaking dependency systemd -> shadow
+[  319s] cycle: pam -> libpwquality
+[  319s]   breaking dependency pam -> libpwquality
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  319s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  319s]   breaking dependency perl-podlators -> perl-Encode
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  319s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  319s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  319s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  319s] cycle: perl-Pod-Usage -> perl-podlators
+[  319s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  319s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  319s]   breaking dependency groff -> perl-Getopt-Long
+[  319s] cycle: nss -> nss-util
+[  319s]   breaking dependency nss -> nss-util
+[  319s] cycle: nss -> nss-softokn -> nss-util
+[  319s]   breaking dependency nss -> nss-softokn
+[  319s] cycle: groovy-lib -> gpars
+[  319s]   breaking dependency groovy-lib -> gpars
+[  319s] cycle: xalan-j2 -> xerces-j2
+[  319s]   breaking dependency xerces-j2 -> xalan-j2
+[  319s] cycle: batik -> batik-css
+[  319s]   breaking dependency batik -> batik-css
+[  319s] cycle: libxcrypt-devel -> glibc-devel
+[  319s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  319s] cycle: cmake-data -> cmake
+[  319s]   breaking dependency cmake -> cmake-data
+[  319s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  319s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  319s] cycle: openssh -> openssh-server
+[  319s]   breaking dependency openssh-server -> openssh
+[  319s] cycle: git -> perl-Git
+[  319s]   breaking dependency git -> perl-Git
+[  319s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  319s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  320s] done
+[  320s] querying package ids...
+[  380s] [1/648] installing cmake-filesystem-3.22.0-1.oe1
+[  383s] [2/648] installing fonts-filesystem-2.0.2-2.oe1
+[  384s] [3/648] installing fuse-common-3.9.2-5.oe1
+[  385s] [4/648] installing javapackages-filesystem-5.3.0-3.oe1
+[  386s] [5/648] installing kernel-headers-5.10-3.oe1
+[  394s] [6/648] installing libreport-filesystem-2.13.1-5.oe1
+[  395s] [7/648] installing ncurses-base-6.1-14.oe1
+[  398s] [8/648] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  399s] [9/648] installing python-setuptools-59.4.0-3.oe1
+[  400s] [10/648] installing qt5-srpm-macros-5.15.2-1.oe1
+[  401s] [11/648] installing tzdata-2021a-2.oe1
+[  410s] [12/648] installing tzdata-java-2021a-2.oe1
+[  414s] [13/648] installing dnf-data-4.10.0-1.oe1
+[  415s] [14/648] installing openEuler-repos-1.0-2.5.oe1
+[  416s] [15/648] installing wqy-zenhei-fonts-0.9.46-21.oe1
+[  425s] [16/648] installing openEuler-release-20.03LTS-40.oe1
+[  426s] [17/648] installing filesystem-3.9-3.oe1
+[  435s] warning: group mail does not exist - using root
+[  435s] [18/648] installing emacs-filesystem-1:27.1-5.oe1
+[  436s] [19/648] installing libgcc-10.3.1-20220105.6.oe1
+[  437s] [20/648] installing setup-2.13.3-4.oe1
+[  438s] [21/648] installing glibc-2.34-64.oe1
+[  444s] [22/648] installing brotli-1.0.9-2.oe1
+[  445s] [23/648] installing chrpath-0.16-12.oe1
+[  446s] [24/648] installing cpio-2.13-4.oe1
+[  447s] [25/648] installing diffutils-3.7-4.oe1
+[  449s] [26/648] installing expat-2.2.10-1.oe1
+[  450s] [27/648] installing giflib-5.2.1-2.oe1
+[  451s] [28/648] installing json-c-0.15-1.oe1
+[  452s] [29/648] installing keyutils-libs-1.6.3-3.oe1
+[  453s] [30/648] installing libICE-1.0.10-2.oe1
+[  453s] [31/648] installing libXau-1.0.9-2.oe1
+[  454s] [32/648] installing libaio-0.3.112-1.oe1
+[  455s] [33/648] installing libargon2-20190702-1.oe1
+[  456s] [34/648] installing libatomic-10.3.1-20220105.6.oe1
+[  457s] [35/648] installing libcap-ng-0.7.11-1.oe1
+[  458s] [36/648] installing libev-4.24-11.oe1
+[  459s] [37/648] installing libffi-3.3-31.oe1
+[  459s] [38/648] installing libgomp-10.3.1-20220105.6.oe1
+[  460s] [39/648] installing libgpg-error-1.41-1.oe1
+[  462s] [40/648] installing libjpeg-turbo-2.0.6-1.oe1
+[  463s] [41/648] installing libnghttp2-1.42.0-1.oe1
+[  463s] [42/648] installing libpcap-14:1.9.1-7.oe1
+[  464s] [43/648] installing libpipeline-1.5.3-1.oe1
+[  465s] [44/648] installing libsigsegv-2.11-10.oe1
+[  466s] [45/648] installing libsmartcols-2.36.1-3.oe1
+[  468s] [46/648] installing libtasn1-4.16.0-2.oe1
+[  469s] [47/648] installing libtool-ltdl-2.4.6-34.oe1
+[  470s] [48/648] installing libunistring-0.9.10-8.oe1
+[  471s] [49/648] installing libuuid-2.36.1-3.oe1
+[  472s] [50/648] installing libuv-1:1.40.0-1.oe1
+[  473s] [51/648] installing libxcrypt-4.4.8-4.oe1
+[  474s] [52/648] installing libyaml-0.2.5-1.oe1
+[  475s] [53/648] installing lz4-1.9.3-1.oe1
+[  477s] [54/648] installing m4-1.4.18-14.oe1
+[  478s] [55/648] installing nspr-4.32.0-1.oe1
+[  479s] [56/648] installing pkgconf-1.7.3-1.oe1
+[  480s] [57/648] installing rhash-1.3.5-5.oe1
+[  481s] [58/648] installing which-2.21-14.oe1
+[  481s] [59/648] installing xz-libs-5.2.5-1.oe1
+[  482s] [60/648] installing zlib-1.2.11-18.oe1
+[  483s] [61/648] installing attr-2.4.48-12.oe1
+[  485s] [62/648] installing basesystem-12-2.oe1
+[  485s] [63/648] installing libstdc++-10.3.1-20220105.6.oe1
+[  487s] [64/648] installing ncurses-libs-6.1-14.oe1
+[  488s] [65/648] installing libsepol-3.1-4.oe1
+[  490s] [66/648] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  497s] [67/648] installing audit-libs-1:3.0-2.oe1
+[  498s] [68/648] installing elfutils-libelf-0.185-3.oe1
+[  500s] [69/648] installing file-libs-5.39-6.oe1
+[  502s] [70/648] installing gmp-1:6.2.1-3.oe1
+[  504s] [71/648] installing iptables-libs-1.8.1-4.oe1
+[  504s] [72/648] installing less-563-2.oe1
+[  505s] [73/648] installing libacl-2.2.53-7.oe1
+[  506s] [74/648] installing libassuan-2.5.4-1.oe1
+[  507s] [75/648] installing libedit-3.1-27.oe1
+[  508s] [76/648] installing libffi-devel-3.3-31.oe1
+[  509s] [77/648] installing libfontenc-1.1.4-2.oe1
+[  510s] [78/648] installing libgcrypt-1.8.7-1.oe1
+[  512s] [79/648] installing libpng-2:1.6.37-1.oe1
+[  514s] [80/648] installing libxcb-1.14-1.oe1
+[  515s] [81/648] installing readline-8.0-2.oe1
+[  516s] [82/648] installing fuse-2.9.9-6.oe1
+[  518s] [83/648] installing gc-8.0.4-2.oe1
+[  519s] [84/648] installing libSM-1.2.3-2.oe1
+[  520s] [85/648] installing libdb-5.3.28-35.oe1
+[  524s] [86/648] installing libselinux-3.1-3.oe1
+[  525s] [87/648] installing libxml2-2.9.12-5.oe1
+[  528s] [88/648] installing bash-5.1-1.oe1
+[  530s] [89/648] installing perl-libs-4:5.28.0-435.oe1
+[  535s] [90/648] installing zstd-1.4.8-2.oe1
+[  537s] [91/648] installing ncurses-6.1-14.oe1
+[  546s] [92/648] installing thin-provisioning-tools-0.8.5-1.oe1
+[  548s] [93/648] installing perl-parent-1:0.237-4.oe1
+[  549s] [94/648] installing perl-perlfaq-5.20180915-5.oe1
+[  550s] [95/648] installing libX11-1.6.9-2.oe1
+[  552s] [96/648] installing mpfr-4.1.0-1.oe1
+[  554s] [97/648] installing nettle-3.6-6.oe1
+[  556s] [98/648] installing pcre2-10.36-1.oe1
+[  558s] [99/648] installing perl-Exporter-5.74-1.oe1
+[  559s] [100/648] installing file-5.39-6.oe1
+[  560s] [101/648] installing gdbm-1:1.18.1-1.oe1
+[  561s] [102/648] installing patch-2.7.6-12.oe1
+[  562s] [103/648] installing qrencode-4.1.1-1
+[  563s] [104/648] installing sed-4.8-2.oe1
+[  564s] [105/648] installing acl-2.2.53-7.oe1
+[  565s] [106/648] installing libcomps-0.1.15-1.oe1
+[  567s] [107/648] installing pcre-8.44-1.oe1
+[  568s] [108/648] installing glibc-common-2.34-64.oe1
+[  579s] [109/648] installing coreutils-8.31-4.oe1
+[  585s] [110/648] installing alsa-lib-1.2.4-1.oe1
+[  587s] [111/648] installing crontabs-1.11-21.oe1
+[  588s] [112/648] installing elfutils-default-yama-scope-0.185-3.oe1
+[  589s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  589s] [113/648] installing libXcomposite-0.4.5-1.oe1
+[  591s] [114/648] installing libXext-1.3.4-2.oe1
+[  592s] [115/648] installing libXpm-3.5.12-11.oe1
+[  594s] [116/648] installing libXrender-0.9.10-10.oe1
+[  595s] [117/648] installing perl-Carp-1.50-418.oe1
+[  596s] [118/648] installing perl-Perl-OSType-1.010-421.oe1
+[  597s] [119/648] installing perl-Term-ANSIColor-4.06-511.oe1
+[  598s] [120/648] installing publicsuffix-list-20200718-1.oe1
+[  599s] [121/648] installing uname-build-checks-1.0-0.4.oe1
+[  600s] [122/648] installing bzip2-1.0.8-3.oe1
+[  601s] [123/648] installing gzip-1.10-1.oe1
+[  603s] [124/648] installing hostname-3.21-2.oe1
+[  604s] [125/648] installing libcap-2.32-2.oe1
+[  605s] [126/648] installing libmpc-1.2.0-2.oe1
+[  607s] [127/648] installing libseccomp-2.4.3-2.oe1
+[  608s] [128/648] installing lksctp-tools-1.0.16-11.oe1
+[  610s] [129/648] installing npth-1.5-7.oe1
+[  611s] [130/648] installing popt-1.18-1.oe1
+[  613s] [131/648] installing grep-3.6-1.oe1
+[  615s] [132/648] installing libXt-1.2.0-0.oe1
+[  617s] [133/648] installing libblkid-2.36.1-3.oe1
+[  619s] [134/648] installing libidn2-2.3.0-1.oe1
+[  621s] [135/648] installing libksba-1.3.5-12.oe1
+[  623s] [136/648] installing tar-2:1.32-3.oe1
+[  625s] [137/648] installing tcl-1:8.6.10-3.oe1
+[  629s] [138/648] installing apr-1.7.0-4.oe1
+[  630s] [139/648] installing info-6.7-2.oe1
+[  631s] [140/648] installing jsoncpp-1.9.4-1.oe1
+[  633s] [141/648] installing libgpg-error-devel-1.41-1.oe1
+[  635s] [142/648] installing lua-5.3.5-6.oe1
+[  636s] [143/648] installing slang-2.3.2-8.oe1
+[  639s] [144/648] installing gawk-5.0.1-2.oe1
+[  641s] [145/648] installing libxslt-1.1.32-7.oe1
+[  643s] [146/648] installing guile-5:2.0.14-15.oe1
+[  649s] [147/648] installing zip-3.0-29.oe1
+[  650s] [148/648] installing libXi-1.7.10-1.oe1
+[  652s] [149/648] installing libfdisk-2.36.1-3.oe1
+[  654s] [150/648] installing newt-0.52.21-4.oe1
+[  656s] [151/648] installing perl-Text-ParseWords-3.30-419.oe1
+[  657s] [152/648] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  663s] [153/648] installing elfutils-libs-0.185-3.oe1
+[  665s] [154/648] installing libXmu-1.1.3-1.oe1
+[  666s] [155/648] installing libmount-2.36.1-3.oe1
+[  668s] [156/648] installing lua-posix-33.3.1-12.oe1
+[  670s] [157/648] installing unzip-6.0-47.oe1
+[  671s] [158/648] installing cracklib-2.9.7-6.oe1
+[  676s] [159/648] installing e2fsprogs-1.45.6-3.oe1
+[  679s] [160/648] installing findutils-2:4.7.0-7.oe1
+[  681s] [161/648] installing libsemanage-3.1-4.oe1
+[  682s] [162/648] installing make-1:4.2.1-15.oe1
+[  684s] [163/648] installing sqlite-3.24.0-9.oe1
+[  687s] [164/648] installing xz-5.2.5-1.oe1
+[  688s] [165/648] installing logrotate-3.15.1-2.oe1
+[  689s] [166/648] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  691s] [167/648] installing perl-Time-HiRes-1.9760-2.oe1
+[  692s] [168/648] installing perl-Unicode-Normalize-1.26-419.oe1
+[  694s] [169/648] installing freetype-2.10.2-3.oe1
+[  696s] [170/648] installing glibc-devel-2.34-64.oe1
+[  705s] [171/648] installing libgcrypt-devel-1.8.7-1.oe1
+[  707s] [172/648] installing cpp-10.3.1-20220105.6.oe1
+[  715s] [173/648] installing gnupg2-2.2.27-2.oe1
+[  719s] [174/648] installing systemd-libs-243-22.oe1
+[  721s] [175/648] installing dbus-libs-1:1.12.20-3.oe1
+[  723s] [176/648] installing libxcrypt-devel-4.4.8-4.oe1
+[  725s] [177/648] installing p11-kit-0.23.22-1.oe1
+[  728s] [178/648] installing procps-ng-3.3.16-15.oe1
+[  729s] [179/648] installing copy-jdk-configs-4.0-1.oe1
+[  731s] [180/648] installing gpgme-1.15.1-1.oe1
+[  733s] [181/648] installing libXtst-1.2.3-10.oe1
+[  734s] [182/648] installing openssl-libs-1:1.1.1f-2.oe1
+[  737s] [183/648] installing chkconfig-1.14-2.oe1
+[  739s] [184/648] installing elfutils-0.185-3.oe1
+[  741s] [185/648] installing libXaw-1.0.13-13.oe1
+[  743s] [186/648] installing xorg-x11-font-utils-1:7.5-43.oe1
+[  744s] [187/648] installing fontconfig-2.13.92-1.oe1
+[  750s] [188/648] installing glib2-2.66.8-1.oe1
+[  756s] [189/648] installing dbus-tools-1:1.12.20-3.oe1
+[  757s] [190/648] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  758s] [191/648] installing libevent-2.1.12-4
+[  760s] [192/648] installing libcroco-0.6.12-13.oe1
+[  762s] [193/648] installing libtcnative-1-0-1.2.23-3.oe1
+[  764s] [194/648] installing fipscheck-1.5.0-7.oe1
+[  766s] [195/648] installing gamin-0.1.10-38.oe1
+[  768s] [196/648] installing kmod-libs-27-4.oe1
+[  769s] [197/648] installing libsecret-0.18.6-5.oe1
+[  771s] [198/648] installing obs-env-1.0-5.oe1
+[  777s] [199/648] installing xorg-x11-fonts-others-7.5-24
+[  791s] [200/648] installing kmod-27-4.oe1
+[  793s] [201/648] installing binutils-2.37-6.oe1
+[  800s] [202/648] installing p11-kit-trust-0.23.22-1.oe1
+[  802s] [203/648] installing babeltrace-1.5.8-1.oe1
+[  805s] [204/648] installing libarchive-3.5.1-1.oe1
+[  807s] [205/648] installing nodejs-libs-1:16.10.0-1.oe1
+[  840s] [206/648] installing libverto-0.3.1-2.oe1
+[  841s] [207/648] installing ca-certificates-2020.2.46-2.oe1
+[  849s] [208/648] installing gettext-0.20.1-2.oe1
+[  852s] [209/648] installing gcc-10.3.1-20220105.6.oe1
+[  872s] [210/648] installing rpm-libs-4.15.1-25.oe1
+[  874s] [211/648] installing python-pip-wheel-19.2.3-2.fc32
+[  876s] [212/648] installing libmodulemd-2.13.0-1.oe1
+[  877s] [213/648] installing gcc-c++-10.3.1-20220105.6.oe1
+[  887s] [214/648] installing krb5-libs-1.18.2-3.oe1
+[  889s] [215/648] installing libtirpc-1.3.1-1.oe1
+[  891s] [216/648] installing cyrus-sasl-lib-2.1.27-10.oe1
+[  893s] [217/648] installing libssh-0.9.5-1.oe1
+[  894s] [218/648] installing openldap-2.4.46-15.oe1
+[  896s] [219/648] installing libnsl2-1.3.0-2.oe1
+[  898s] [220/648] installing python3-3.8.5-13.oe1
+[  917s] [221/648] installing python3-pyparsing-2.4.5-1.fc32
+[  918s] [222/648] installing python3-setuptools-59.4.0-3.oe1
+[  922s] [223/648] installing python3-setuptools_scm-3.3.3-6.fc32
+[  924s] [224/648] installing python3-six-1.15.0-3.oe1
+[  926s] [225/648] installing python3-gpgme-1.15.1-1.oe1
+[  928s] [226/648] installing python3-lxml-4.4.1-3.fc32
+[  930s] [227/648] installing python3-libcomps-0.1.15-1.oe1
+[  932s] [228/648] installing libpsl-0.21.1-1.oe1
+[  934s] [229/648] installing gdb-headless-9.2-5.oe1
+[  939s] [230/648] installing systemtap-sdt-devel-4.1-3.oe1
+[  940s] [231/648] installing gdb-9.2-5.oe1
+[  942s] [232/648] installing python3-javapackages-5.3.0-3.oe1
+[  944s] [233/648] installing python3-pip-19.2.3-2.fc32
+[  950s] [234/648] installing libcurl-7.79.1-1.oe1
+[  951s] [235/648] installing curl-7.79.1-1.oe1
+[  952s] [236/648] installing librepo-1.14.2-2.oe1
+[  954s] [237/648] installing rpm-4.15.1-25.oe1
+[  957s] [238/648] installing efi-srpm-macros-4-3.oe1
+[  959s] [239/648] installing cmake-rpm-macros-3.22.0-1.oe1
+[  960s] [240/648] installing libsolv-0.7.20-1.oe1
+[  961s] [241/648] installing python3-rpm-4.15.1-25.oe1
+[  963s] [242/648] installing openEuler-rpm-config-30-21.oe1
+[  965s] [243/648] installing cmake-3.22.0-1.oe1
+[  976s] [244/648] installing libdnf-0.65.0-2.oe1
+[  979s] [245/648] installing cmake-data-3.22.0-1.oe1
+[  991s] [246/648] installing python3-libdnf-0.65.0-2.oe1
+[  994s] [247/648] installing perl-4:5.28.0-435.oe1
+[ 1000s] [248/648] installing perl-B-Debug-1.26-4.oe1
+[ 1001s] [249/648] installing perl-Env-1.04-397.oe1
+[ 1003s] [250/648] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1004s] [251/648] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1005s] [252/648] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1006s] [253/648] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1007s] [254/648] installing perl-Params-Check-1:0.38-418.oe1
+[ 1008s] [255/648] installing perl-Term-Cap-1.17-510.oe1
+[ 1009s] [256/648] installing perl-TermReadKey-2.38-2.oe1
+[ 1010s] [257/648] installing perl-Text-Balanced-2.03-420.oe1
+[ 1011s] [258/648] installing perl-threads-1:2.22-419.oe1
+[ 1013s] [259/648] installing openssl-1:1.1.1f-2.oe1
+[ 1015s] [260/648] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1017s] [261/648] installing perl-Error-1:0.17029-1.oe1
+[ 1018s] [262/648] installing perl-Filter-2:1.59-2.oe1
+[ 1019s] [263/648] installing perl-IPC-SysV-2.07-5.oe1
+[ 1021s] [264/648] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1022s] [265/648] installing perl-constant-1.33-421.oe1
+[ 1023s] [266/648] installing perl-MIME-Base64-3.15-418.oe1
+[ 1025s] [267/648] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1026s] [268/648] installing perl-Socket-4:2.029-2.oe1
+[ 1028s] [269/648] installing perl-Storable-1:3.15-2.oe1
+[ 1030s] [270/648] installing python3-hawkey-0.65.0-2.oe1
+[ 1031s] [271/648] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1032s] [272/648] installing perl-Digest-1.17-419.oe1
+[ 1033s] [273/648] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1034s] [274/648] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1035s] [275/648] installing perl-Text-Diff-1.45-7.oe1
+[ 1036s] [276/648] installing perl-Time-Local-2:1.280-6.oe1
+[ 1037s] [277/648] installing perl-version-8:0.99.24-3.oe1
+[ 1039s] [278/648] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1040s] [279/648] installing perl-threads-shared-1.59-2.oe1
+[ 1042s] [280/648] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1044s] [281/648] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1045s] [282/648] installing perl-Locale-Codes-3.58-2.oe1
+[ 1047s] [283/648] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1048s] [284/648] installing perl-PathTools-3.75-4.oe1
+[ 1050s] [285/648] installing python3-dnf-4.10.0-1.oe1
+[ 1053s] [286/648] installing perl-Data-Dumper-2.172-3.oe1
+[ 1054s] [287/648] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1056s] [288/648] installing perl-Encode-4:2.98-9.oe1
+[ 1060s] [289/648] installing autogen-5.18.16-1.oe1
+[ 1062s] [290/648] installing nodejs-1:16.10.0-1.oe1
+[ 1064s] [291/648] installing systemd-243-22.oe1
+[ 1077s] /var/tmp/rpm-tmp.lgUWNZ: line 8: groupadd: command not found
+[ 1077s] /var/tmp/rpm-tmp.lgUWNZ: line 10: groupadd: command not found
+[ 1077s] /var/tmp/rpm-tmp.lgUWNZ: line 13: groupadd: command not found
+[ 1077s] /var/tmp/rpm-tmp.lgUWNZ: line 16: groupadd: command not found
+[ 1077s] [292/648] installing dbus-common-1:1.12.20-3.oe1
+[ 1079s] [293/648] installing nodejs-source-map-0.5.6-1.oe1
+[ 1080s] [294/648] installing perl-Module-Load-1:0.32-418.oe1
+[ 1082s] [295/648] installing nodejs-packaging-20-1.oe1
+[ 1083s] [296/648] installing dnf-4.10.0-1.oe1
+[ 1086s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1086s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1086s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1086s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1086s] [297/648] installing perl-File-Which-1.23-1.oe1
+[ 1087s] [298/648] installing perl-Thread-Queue-3.13-3.oe1
+[ 1088s] [299/648] installing perl-experimental-0.020-2.oe1
+[ 1089s] [300/648] installing perl-Digest-MD5-2.55-419.oe1
+[ 1091s] [301/648] installing perl-File-Path-2.16-4.oe1
+[ 1092s] [302/648] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1095s] [303/648] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1096s] [304/648] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1097s] [305/648] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1099s] [306/648] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1100s] [307/648] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1101s] [308/648] installing audit-1:3.0-2.oe1
+[ 1104s] [309/648] installing perl-DB_File-1.842-2.oe1
+[ 1106s] [310/648] installing perl-autodie-2.29-398.oe1
+[ 1107s] [311/648] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1110s] [312/648] installing perl-IO-Compress-2.081-6.oe1
+[ 1112s] [313/648] installing perl-podlators-1:4.14-1.oe1
+[ 1113s] [314/648] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1114s] [315/648] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1115s] [316/648] installing perl-bignum-0.50-4.oe1
+[ 1116s] [317/648] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1118s] [318/648] installing perl-libnet-3.11-420.oe1
+[ 1120s] [319/648] installing pam-1.5.1-1.oe1
+[ 1123s] [320/648] installing libpwquality-1.4.4-1.oe1
+[ 1126s] [321/648] installing perl-File-HomeDir-1.004-4.oe1
+[ 1127s] [322/648] installing shadow-2:4.8.1-5.oe1
+[ 1129s] [323/648] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1131s] [324/648] installing libutempter-1.1.6-16.oe1
+[ 1133s] [325/648] installing unbound-libs-1.10.1-4.oe1
+[ 1137s] [326/648] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1141s] [327/648] installing openssh-server-8.2p1-10.oe1
+[ 1144s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1144s] [328/648] installing groff-1.22.4-4.oe1
+[ 1149s] [329/648] installing dbus-1:1.12.20-3.oe1
+[ 1151s] [330/648] installing man-db-2.9.3-2.oe1
+[ 1155s] [331/648] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1156s] [332/648] installing gnutls-3.6.15-3.oe1
+[ 1159s] [333/648] installing util-linux-2.36.1-3.oe1
+[ 1165s] [334/648] installing nss-help-3.72.0-2.oe1
+[ 1167s] [335/648] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1168s] [336/648] installing device-mapper-8:1.02.172-1.oe1
+[ 1171s] [337/648] installing openssh-8.2p1-10.oe1
+[ 1173s] [338/648] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1175s] [339/648] installing cryptsetup-2.3.3-3.oe1
+[ 1178s] [340/648] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1181s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1181s] [341/648] installing nss-3.72.0-2.oe1
+[ 1188s] [342/648] installing openssh-clients-8.2p1-10.oe1
+[ 1190s] [343/648] installing nss-util-3.72.0-2.oe1
+[ 1193s] [344/648] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1194s] [345/648] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1195s] [346/648] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1197s] [347/648] installing perl-Pod-Parser-1.63-397.oe1
+[ 1198s] [348/648] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1200s] [349/648] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1202s] [350/648] installing perl-Archive-Tar-2.30-421.oe1
+[ 1203s] [351/648] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1204s] [352/648] installing lvm2-8:2.03.11-1.oe1
+[ 1209s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1209s] [353/648] installing autoconf-2.69-30.oe1
+[ 1212s] [354/648] installing git-2.23.0-12.oe1
+[ 1222s] [355/648] installing nss-softokn-3.72.0-2.oe1
+[ 1224s] [356/648] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1226s] [357/648] installing perl-Git-2.23.0-12.oe1
+[ 1227s] [358/648] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1229s] [359/648] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1230s] [360/648] installing automake-1.16.1-6.oe1
+[ 1232s] [361/648] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1234s] [362/648] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1235s] [363/648] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1236s] [364/648] installing java-1.8.0-openjdk-headless-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 1270s] [365/648] installing rpm-build-4.15.1-25.oe1
+[ 1272s] [366/648] installing ant-lib-1.10.5-2.fc29
+[ 1274s] [367/648] installing aopalliance-1.0-19.oe1
+[ 1275s] [368/648] installing apache-commons-cli-1.4-6.oe1
+[ 1277s] [369/648] installing apache-commons-collections-3.2.2-11.oe1
+[ 1278s] [370/648] installing apache-commons-compress-1.17-6.oe1
+[ 1280s] [371/648] installing apache-commons-lang-2.6-23.oe1
+[ 1281s] [372/648] installing apache-commons-lang3-3.9-3.oe1
+[ 1282s] [373/648] installing apache-commons-pool-1.6-18.oe1
+[ 1283s] [374/648] installing apache-ivy-2.4.0-17.oe1
+[ 1290s] [375/648] installing apache-resource-bundles-2-23.oe1
+[ 1291s] [376/648] installing atinject-1-31.oe1
+[ 1292s] [377/648] installing avalon-logkit-2.1-32.oe1
+[ 1293s] [378/648] installing bea-stax-api-1.2.0-18.oe1
+[ 1294s] [379/648] installing bean-validation-api-1.1.0-12.oe1
+[ 1296s] [380/648] installing beust-jcommander-1.71-7.oe1
+[ 1297s] [381/648] installing classmate-1.3.1-6.oe1
+[ 1299s] [382/648] installing codemodel-2.6-1.oe1
+[ 1300s] [383/648] installing dain-snappy-0.4-7.oe1
+[ 1302s] [384/648] installing extra166y-1.7.0-11.oe1
+[ 1304s] [385/648] installing felix-utils-1.10.4-4.oe1
+[ 1305s] [386/648] installing geronimo-annotation-1.0-25.oe1
+[ 1306s] [387/648] installing geronimo-interceptor-1.0.1-20.oe1
+[ 1307s] [388/648] installing glassfish-dtd-parser-1.2-1.oe1
+[ 1308s] [389/648] installing glassfish-el-api-3.0.1-0.7.b09.oe1
+[ 1309s] [390/648] installing glassfish-jaxb-api-2.2.12-11.oe1
+[ 1311s] [391/648] installing glassfish-servlet-api-3.1.0-16.oe1
+[ 1312s] [392/648] installing guava20-20.0-8.fc29
+[ 1315s] [393/648] installing hawtjni-runtime-1.16-4.oe1
+[ 1316s] [394/648] installing hibernate-jpa-2.0-api-1.0.1-1.oe1
+[ 1317s] [395/648] installing hibernate-jpa-2.1-api-1.0.0-7.oe1
+[ 1321s] [396/648] installing httpcomponents-core-4.4.10-4.oe1
+[ 1330s] [397/648] installing istack-commons-runtime-2.21-1.oe1
+[ 1332s] [398/648] installing jackson-annotations-2.9.8-1.oe1
+[ 1333s] [399/648] installing jandex-2.0.2-6.oe1
+[ 1335s] [400/648] installing java_cup-1:0.11b-13.oe1
+[ 1336s] [401/648] installing jaxen-1.2.0-3.oe1
+[ 1337s] [402/648] installing jboss-interceptors-1.2-api-1.0.0-9.oe1
+[ 1339s] [403/648] installing jboss-logging-3.3.0-5.oe1
+[ 1340s] [404/648] installing jboss-marshalling-1.4.11-6.oe1
+[ 1342s] [405/648] installing jboss-servlet-3.0-api-1.0.2-10.oe1
+[ 1343s] [406/648] installing jboss-transaction-1.1-api-1.0.1-1.oe1
+[ 1344s] [407/648] installing jboss-transaction-1.2-api-1.0.1-1.oe1
+[ 1346s] [408/648] installing jcodings-1.0.9-15.oe1
+[ 1347s] [409/648] installing jdeparser-2.0.0-6.oe1
+[ 1350s] [410/648] installing jdom2-2.0.6-14.oe1
+[ 1351s] [411/648] installing jsoup-1.11.3-5.oe1
+[ 1355s] [412/648] installing jsr-311-1.1.1-18.oe1
+[ 1356s] [413/648] installing jzlib-1.1.3-11.oe1
+[ 1357s] [414/648] installing maven-monitor-2.2.1-60.oe1
+[ 1358s] [415/648] installing maven-resolver-api-1:1.1.1-3.oe1
+[ 1359s] [416/648] installing multiverse-0.7.0-10.oe1
+[ 1364s] [417/648] installing objenesis-2.6-4.oe1
+[ 1366s] [418/648] installing osgi-annotation-7.0.0-1.oe1
+[ 1367s] [419/648] installing osgi-compendium-7.0.0-1.oe1
+[ 1369s] [420/648] installing osgi-core-7.0.0-1.oe1
+[ 1370s] [421/648] installing plexus-cipher-1.7-16.oe1
+[ 1372s] [422/648] installing plexus-classworlds-2.5.2-10.oe1
+[ 1373s] [423/648] installing plexus-containers-component-annotations-1.7.1-7.oe1
+[ 1374s] [424/648] installing plexus-interpolation-1.22-11.oe1
+[ 1375s] [425/648] installing plexus-utils-3.1.0-4.oe1
+[ 1376s] [426/648] installing protobuf-java-3.5.0-8.1.riscv64.fc29
+[ 1378s] [427/648] installing qdox-2.0-5.M9.oe1
+[ 1379s] [428/648] installing relaxngDatatype-2011.1-9.oe1
+[ 1380s] [429/648] installing rhq-plugin-annotations-3.0.4-1.oe1
+[ 1381s] [430/648] installing slf4j-1.7.25-8.oe1
+[ 1382s] [431/648] installing stax2-api-4.0.0-6.oe1
+[ 1383s] [432/648] installing xapool-1.5.0-14.oe1
+[ 1384s] [433/648] installing xml-commons-apis-1.4.01-29.oe1
+[ 1390s] [434/648] installing xmvn-api-3.0.0-25.oe1
+[ 1392s] [435/648] installing xmvn-core-3.0.0-25.oe1
+[ 1393s] [436/648] installing xpp3-1.1.4-21.oe1
+[ 1394s] [437/648] installing xz-java-1.8-4.oe1
+[ 1396s] [438/648] installing ecj-1:4.9-1.fc29
+[ 1399s] [439/648] installing netty-tcnative-1.1.33-1.oe1
+[ 1400s] [440/648] installing antlr-tool-2.7.7-60.oe1
+[ 1402s] [441/648] installing geronimo-jta-1.1.1-25.oe1
+[ 1403s] [442/648] installing javapackages-tools-5.3.0-3.oe1
+[ 1405s] [443/648] installing tomcat-el-3.0-api-1:9.0.10-1.fc29
+[ 1407s] [444/648] installing tomcat-servlet-4.0-api-1:9.0.10-1.fc29
+[ 1408s] [445/648] installing gcc_secure-1.0-0.9.oe1
+[ 1410s] [446/648] installing perl-File-Fetch-0.56-4.oe1
+[ 1411s] [447/648] installing perl-devel-4:5.28.0-435.oe1
+[ 1420s] [448/648] installing java-1.8.0-openjdk-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 1422s] [449/648] installing apache-commons-codec-1.11-4.fc29
+[ 1423s] [450/648] installing apache-commons-exec-1.3-9.fc29
+[ 1424s] [451/648] installing apache-commons-logging-1.2-14.fc29
+[ 1425s] [452/648] installing fastutil-7.0.7-6.fc29
+[ 1435s] [453/648] installing geronimo-validation-1.1-19.fc29
+[ 1436s] [454/648] installing glassfish-jaxb-codemodel-2.2.11-10.fc29
+[ 1437s] [455/648] installing glassfish-jaxb-txw2-2.2.11-10.fc29
+[ 1438s] [456/648] installing jackson-core-2.9.4-3.fc29
+[ 1440s] [457/648] installing javaparser-1.0.11-6.fc29
+[ 1442s] [458/648] installing jctools-2.0.2-4.fc29
+[ 1443s] [459/648] installing jgroups-3.6.10-5.fc29
+[ 1446s] [460/648] installing joda-time-2.9.9-3.tzdata2017b.fc29
+[ 1447s] [461/648] installing lucene-7.1.0-3.fc29
+[ 1450s] [462/648] installing mchange-commons-0.2.11-5.fc29
+[ 1451s] [463/648] installing protoparser-3.1.5-5.fc29
+[ 1452s] [464/648] installing HikariCP-2.4.3-4.oe1
+[ 1453s] [465/648] installing aalto-xml-1.0.0-7.oe1
+[ 1455s] [466/648] installing avalon-framework-4.3-22.oe1
+[ 1456s] [467/648] installing bytelist-1.0.8-16.fc29
+[ 1457s] [468/648] installing dom4j-2.0.0-8.oe1
+[ 1462s] [469/648] installing eclipse-equinox-osgi-1:4.9.0-1.0.riscv64.fc29
+[ 1465s] [470/648] installing glassfish-jaxb-rngom-2.2.11-10.fc29
+[ 1466s] [471/648] installing gnu-getopt-1.0.14-15.oe1
+[ 1468s] [472/648] installing jansi-native-1.7-7.oe1
+[ 1470s] [473/648] installing javassist-3.18.1-10.oe1
+[ 1476s] [474/648] installing jboss-jacc-1.4-api-1.0.2-15.oe1
+[ 1477s] [475/648] installing jboss-logging-tools-2.0.1-8.oe1
+[ 1480s] [476/648] installing jboss-sasl-1.0.5-6.oe1
+[ 1481s] [477/648] installing jcl-over-slf4j-1.7.25-8.oe1
+[ 1482s] [478/648] installing jcsp-1.1-0.13.oe1
+[ 1490s] [479/648] installing kxml-2.3.0-19.oe1
+[ 1492s] [480/648] installing leveldb-java-0.7-9.fc29
+[ 1493s] [481/648] installing maven-artifact-2.2.1-60.oe1
+[ 1494s] [482/648] installing maven-model-2.2.1-60.oe1
+[ 1495s] [483/648] installing maven-resolver-spi-1:1.1.1-3.oe1
+[ 1496s] [484/648] installing maven-resolver-util-1:1.1.1-3.oe1
+[ 1497s] [485/648] installing maven-wagon-provider-api-3.1.0-2.oe1
+[ 1498s] [486/648] installing plexus-build-api-0.0.7-23.oe1
+[ 1499s] [487/648] installing plexus-component-api-1.0-0.25.alpha16.oe1
+[ 1500s] [488/648] installing slf4j-jdk14-1.7.25-8.oe1
+[ 1501s] [489/648] installing stax-ex-1.7.7-11.oe1
+[ 1502s] [490/648] installing wildfly-common-1.1.0-7.oe1
+[ 1503s] [491/648] installing xsom-0-1.oe1
+[ 1504s] [492/648] installing xstream-1.4.9-8.fc29
+[ 1506s] [493/648] installing byteman-4.0.4-2.fc29
+[ 1508s] [494/648] installing istack-commons-tools-2.21-1.oe1
+[ 1509s] [495/648] installing log4j12-1.2.17-23.fc29
+[ 1510s] [496/648] installing maven-invoker-2.2-9.oe1
+[ 1512s] [497/648] installing netty3-3.10.6-5.fc29
+[ 1515s] [498/648] installing objectweb-asm-7.0-1.oe1
+[ 1516s] [499/648] installing objectweb-asm3-3.3.1-21.oe1
+[ 1518s] [500/648] installing plexus-sec-dispatcher-1.4-26.oe1
+[ 1519s] [501/648] installing velocity-1.7-26.oe1
+[ 1521s] [502/648] installing xml-commons-resolver-1.2-27.oe1
+[ 1522s] [503/648] installing xmvn-connector-aether-3.0.0-25.oe1
+[ 1523s] [504/648] installing cdi-api-1.2-9.oe1
+[ 1524s] [505/648] installing felix-bundlerepository-2.0.10-6.oe1
+[ 1525s] [506/648] installing google-guice-4.1-13.oe1
+[ 1527s] [507/648] installing aqute-bndlib-3.5.0-4.fc29
+[ 1529s] [508/648] installing xmvn-resolve-3.0.0-25.oe1
+[ 1530s] [509/648] installing xmvn-subst-3.0.0-25.oe1
+[ 1531s] [510/648] installing java-1.8.0-openjdk-devel-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 1544s] [511/648] installing bsf-2.4.0-32.oe1
+[ 1545s] [512/648] installing byteman-bmunit-4.0.4-2.fc29
+[ 1546s] [513/648] installing c3p0-0.9.5.4-2.oe1
+[ 1549s] [514/648] installing cglib-3.2.4-8.fc29
+[ 1550s] [515/648] installing eclipselink-persistence-api-2.1.0-7.oe1
+[ 1551s] [516/648] installing fontbox-2.0.9-2.fc29
+[ 1553s] [517/648] installing lucene-analysis-7.1.0-3.fc29
+[ 1555s] [518/648] installing stream-lib-2.6.0-11.oe1
+[ 1556s] [519/648] installing xmlstreambuffer-1.5.4-1.oe1
+[ 1557s] [520/648] installing xnio-3.4.0-7.oe1
+[ 1558s] [521/648] installing apache-commons-beanutils-1.9.4-2.oe1
+[ 1559s] [522/648] installing apache-commons-configuration-1.10-13.oe1
+[ 1561s] [523/648] installing hibernate-commons-annotations-5.0.1-7.oe1
+[ 1562s] [524/648] installing jackson-databind-2.9.4-4.fc29
+[ 1564s] [525/648] installing jakarta-commons-httpclient-1:3.1-30.oe1
+[ 1570s] [526/648] installing jansi-1.17.1-2.oe1
+[ 1571s] [527/648] installing leveldbjni-1.8-20.oe1
+[ 1573s] [528/648] installing maven-dependency-tree-3.0-7.oe1
+[ 1575s] [529/648] installing maven-wagon-file-3.1.0-2.oe1
+[ 1576s] [530/648] installing netty-4.1.13-6.fc29
+[ 1581s] [531/648] installing plexus-interactivity-api-1.0-0.27.alpha6.fc29
+[ 1582s] [532/648] installing plexus-languages-0.9.10-4.oe1
+[ 1584s] [533/648] installing glassfish-jaxb-core-2.2.11-10.fc29
+[ 1585s] [534/648] installing maven-resolver-connector-basic-1:1.1.1-3.oe1
+[ 1586s] [535/648] installing maven-resolver-impl-1:1.1.1-3.oe1
+[ 1587s] [536/648] installing xmvn-mojo-3.0.0-25.oe1
+[ 1588s] [537/648] installing httpcomponents-client-4.5.5-6.oe1
+[ 1590s] [538/648] installing jackson-1.9.11-16.oe1
+[ 1591s] [539/648] installing maven-resolver-transport-wagon-1:1.1.1-3.oe1
+[ 1592s] [540/648] installing protostream-3.0.4-8.oe1
+[ 1594s] [541/648] installing sisu-inject-1:0.3.3-5.oe1
+[ 1599s] [542/648] installing xerces-j2-2.11.0-37.oe1
+[ 1602s] [543/648] installing xmvn-install-3.0.0-25.oe1
+[ 1604s] [544/648] installing aesh-0.66.8-7.oe1
+[ 1605s] [545/648] installing jline-2.14.6-4.oe1
+[ 1608s] [546/648] installing glassfish-fastinfoset-1.2.13-11.oe1
+[ 1609s] [547/648] installing jboss-remoting-4.0.21-1.oe1
+[ 1611s] [548/648] installing easymock-3.5-4.fc29
+[ 1612s] [549/648] installing log4j-2.11.1-1.fc29
+[ 1614s] [550/648] installing springframework-3.2.18-4.fc28
+[ 1616s] [551/648] installing proxool-0.9.1-23.oe1
+[ 1617s] [552/648] installing xalan-j2-2.7.1-38.fc29
+[ 1619s] [553/648] installing javapackages-local-5.3.0-3.oe1
+[ 1621s] [554/648] installing glassfish-jaxb-xjc-2.2.11-10.fc29
+[ 1623s] [555/648] installing hibernate3-3.6.10-22.fc27
+[ 1626s] [556/648] installing groovy-lib-2.4.8-7.fc29
+[ 1636s] [557/648] installing springframework-expression-3.2.18-4.fc28
+[ 1637s] [558/648] installing hamcrest-1.3-25.oe1
+[ 1639s] [559/648] installing log4j-jcl-2.11.1-1.fc29
+[ 1640s] [560/648] installing log4j-slf4j-2.11.1-1.fc29
+[ 1641s] [561/648] installing springframework-beans-3.2.18-4.fc28
+[ 1642s] [562/648] installing glassfish-jaxb-runtime-2.2.11-10.fc29
+[ 1644s] [563/648] installing bsh-2.0-15.b6.oe1
+[ 1646s] [564/648] installing gpars-1.2.1-12.fc29
+[ 1648s] [565/648] installing scala-2.10.6-14.fc29
+[ 1663s] [566/648] installing xbean-4.9-3.oe1
+[ 1669s] [567/648] installing jboss-remoting-jmx-2.0.1-6.oe1
+[ 1670s] [568/648] installing junit-1:4.12-14.oe1
+[ 1672s] [569/648] installing parboiled-1.1.6-17.oe1
+[ 1674s] [570/648] installing springframework-aop-3.2.18-4.fc28
+[ 1675s] [571/648] installing plexus-containers-container-default-1.7.1-7.oe1
+[ 1676s] [572/648] installing apache-commons-io-1:2.6-7.oe1
+[ 1678s] [573/648] installing maven-doxia-logging-api-1.7-12.oe1
+[ 1679s] [574/648] installing pegdown-1.4.2-14.oe1
+[ 1681s] [575/648] installing maven-plugin-registry-2.2.1-60.oe1
+[ 1682s] [576/648] installing plexus-i18n-1.0-0.12.b10.6.oe1
+[ 1683s] [577/648] installing plexus-resources-1.0-0.25.a7.oe1
+[ 1685s] [578/648] installing plexus-cli-1.6-9.oe1
+[ 1685s] [579/648] installing plexus-velocity-1.2-6.oe1
+[ 1687s] [580/648] installing xmlunit-1.6-10.oe1
+[ 1689s] [581/648] installing maven-profile-2.2.1-60.oe1
+[ 1690s] [582/648] installing maven-settings-2.2.1-60.oe1
+[ 1691s] [583/648] installing narayana-5.3.3-4.fc29
+[ 1697s] [584/648] installing springframework-context-3.2.18-4.fc28
+[ 1698s] [585/648] installing maven-doxia-sink-api-1.7-12.oe1
+[ 1699s] [586/648] installing maven-shared-utils-3.2.1-2.oe1
+[ 1701s] [587/648] installing plexus-io-3.0.0-4.oe1
+[ 1702s] [588/648] installing xmlgraphics-commons-2.2-3.oe1
+[ 1710s] [589/648] installing maven-wagon-http-shared-3.1.0-2.oe1
+[ 1711s] [590/648] installing jaxb2-common-basics-0.9.5-7.fc29
+[ 1712s] [591/648] installing infinispan-8.2.4-5.fc28
+[ 1717s] [592/648] installing maven-reporting-api-3.0-17.oe1
+[ 1719s] [593/648] installing maven-verifier-1.6-8.oe1
+[ 1722s] [594/648] installing batik-1.10-2.fc29
+[ 1728s] [595/648] installing plexus-archiver-3.6.0-3.oe1
+[ 1732s] [596/648] installing maven-wagon-http-3.1.0-2.oe1
+[ 1733s] [597/648] installing maven-doxia-core-1.7-12.oe1
+[ 1734s] [598/648] installing maven-lib-1:3.5.4-8.oe1
+[ 1737s] [599/648] installing maven-artifact-resolver-1:1.0-21.oe1
+[ 1738s] [600/648] installing batik-css-1.10-2.fc29
+[ 1739s] [601/648] installing maven-common-artifact-filters-3.0.1-7.oe1
+[ 1742s] [602/648] installing maven-enforcer-api-1.4.1-11.oe1
+[ 1743s] [603/648] installing maven-plugin-testing-harness-3.3.0-14.oe1
+[ 1744s] [604/648] installing maven-shared-incremental-1.1-16.oe1
+[ 1746s] [605/648] installing maven-doxia-module-apt-1.7-12.oe1
+[ 1747s] [606/648] installing maven-doxia-module-fml-1.7-12.oe1
+[ 1748s] [607/648] installing maven-doxia-module-xdoc-1.7-12.oe1
+[ 1750s] [608/648] installing maven-doxia-module-xhtml-1.7-12.oe1
+[ 1751s] [609/648] installing maven-artifact-manager-2.2.1-60.oe1
+[ 1752s] [610/648] installing maven-filtering-3.1.1-7.oe1
+[ 1754s] [611/648] installing maven-archiver-3.2.0-5.oe1
+[ 1756s] [612/648] installing fop-2.2-2.fc29
+[ 1761s] [613/648] installing xmvn-minimal-3.0.0-25.oe1
+[ 1762s] [614/648] installing maven-1:3.5.4-8.oe1
+[ 1764s] [615/648] installing xmvn-3.0.0-25.oe1
+[ 1765s] [616/648] installing maven-jar-plugin-3.1.0-3.oe1
+[ 1766s] [617/648] installing maven-source-plugin-3.0.1-6.oe1
+[ 1767s] [618/648] installing maven-resources-plugin-3.1.0-4.oe1
+[ 1769s] [619/648] installing maven-doxia-module-markdown-1.7-12.oe1
+[ 1770s] [620/648] installing maven-artifact-transfer-1:0.9.0-7.oe1
+[ 1772s] [621/648] installing maven-doxia-module-fo-1.7-12.oe1
+[ 1773s] [622/648] installing maven-project-2.2.1-60.oe1
+[ 1774s] [623/648] installing maven-enforcer-rules-1.4.1-11.oe1
+[ 1775s] [624/648] installing plexus-containers-component-metadata-1.7.1-7.oe1
+[ 1776s] [625/648] installing maven-remote-resources-plugin-1.5-4.oe1
+[ 1777s] [626/648] installing maven-doxia-sitetools-1.7.5-5.oe1
+[ 1780s] [627/648] installing maven-enforcer-plugin-1.4.1-11.oe1
+[ 1781s] [628/648] installing maven-reporting-impl-3.0.0-5.oe1
+[ 1782s] [629/648] installing maven-javadoc-plugin-3.0.1-3.oe1
+[ 1784s] [630/648] installing plexus-pom-5.0-4.oe1
+[ 1785s] [631/648] installing apache-parent-19-5.oe1
+[ 1786s] [632/648] installing antlr-maven-plugin-2.2-1.oe1
+[ 1787s] [633/648] installing maven-plugin-bundle-3.5.0-5.oe1
+[ 1789s] [634/648] installing maven-parent-27-7.oe1
+[ 1790s] [635/648] installing plexus-components-pom-1.3.1-14.oe1
+[ 1792s] [636/648] installing plexus-compiler-2.8.2-4.oe1
+[ 1795s] [637/648] installing maven-plugin-tools-3.5.1-7.oe1
+[ 1799s] [638/648] installing maven-processor-plugin-2.2.4-1.oe1
+[ 1800s] [639/648] installing maven-compiler-plugin-3.8.0-2.oe1
+[ 1801s] [640/648] installing maven-surefire-2.22.0-6.oe1
+[ 1803s] [641/648] installing maven-jaxb2-plugin-0.13.0-1.oe1
+[ 1805s] [642/648] installing maven-surefire-plugin-2.22.0-6.oe1
+[ 1806s] [643/648] installing maven-surefire-provider-junit-2.22.0-6.oe1
+[ 1807s] [644/648] installing maven-surefire-provider-testng-2.22.0-6.oe1
+[ 1808s] [645/648] installing ehcache-parent-2.3-16.fc29
+[ 1809s] [646/648] installing ehcache-sizeof-agent-1.0.1-17.oe1
+[ 1810s] [647/648] installing maven-local-5.3.0-3.oe1
+[ 1811s] [648/648] installing ehcache-core-2.6.11-7.oe1
+[ 1813s] removing nis flags from /var/cache/obs/worker/root_2/etc/nsswitch.conf...
+[ 1813s] now finalizing build dir...
+[ 1825s] Running build time source services...
+[ 1839s] -----------------------------------------------------------------
+[ 1839s] ----- building hibernate4.spec (user abuild)
+[ 1839s] -----------------------------------------------------------------
+[ 1839s] -----------------------------------------------------------------
+[ 1846s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/1333a6abd91c3b6c572b8527daeb232b-hibernate4' /home/abuild/rpmbuild/SOURCES/hibernate4.spec
+[ 1846s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.FEcbdz
+[ 1846s] + umask 022
+[ 1846s] + cd /home/abuild/rpmbuild/BUILD
+[ 1846s] + cd /home/abuild/rpmbuild/BUILD
+[ 1846s] + rm -rf hibernate-orm-4.3.11.Final
+[ 1847s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/hibernate-4.3.11.Final.tar.gz
+[ 1847s] + /usr/bin/tar -xof -
+[ 1858s] + STATUS=0
+[ 1858s] + '[' 0 -ne 0 ']'
+[ 1858s] + cd hibernate-orm-4.3.11.Final
+[ 1858s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1862s] + find . -name '*.jar' -delete
+[ 1864s] + find . -name '*.class' -delete
+[ 1866s] + rm -r documentation/documentation.gradle documentation/src
+[ 1867s] + echo 'Patch #0 (hibernate-4.3.11.Final-hibernate-commons-annotations5.patch):'
+[ 1867s] Patch #0 (hibernate-4.3.11.Final-hibernate-commons-annotations5.patch):
+[ 1867s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 1867s] patching file hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/DynamicProperty.java
+[ 1867s] + echo 'Patch #1 (hibernate-4.3.11.Final-infinispan8.patch):'
+[ 1867s] Patch #1 (hibernate-4.3.11.Final-infinispan8.patch):
+[ 1867s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 1867s] patching file hibernate-infinispan/src/main/java/org/hibernate/cache/infinispan/util/Caches.java
+[ 1867s] + echo 'Patch #2 (CVE-2020-25638.patch):'
+[ 1867s] Patch #2 (CVE-2020-25638.patch):
+[ 1867s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/dialect/Dialect.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/loader/plan/exec/query/internal/SelectStatementBuilder.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/Delete.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/Insert.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/InsertSelect.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/QuerySelect.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/Select.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/SimpleSelect.java
+[ 1867s] patching file hibernate-core/src/main/java/org/hibernate/sql/Update.java
+[ 1867s] patching file hibernate-core/src/test/java/org/hibernate/test/comments/TestEntity.java
+[ 1867s] patching file hibernate-core/src/test/java/org/hibernate/test/comments/TestEntity2.java
+[ 1867s] patching file hibernate-core/src/test/java/org/hibernate/test/comments/UseSqlCommentTest.java
+[ 1867s] + echo 'Patch #3 (CVE-2019-14900.patch):'
+[ 1867s] Patch #3 (CVE-2019-14900.patch):
+[ 1867s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 1867s] patching file hibernate-entitymanager/src/main/java/org/hibernate/jpa/criteria/expression/LiteralExpression.java
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-c3p0-4.3.11.Final.pom hibernate-c3p0/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-core-4.3.11.Final.pom hibernate-core/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-ehcache-4.3.11.Final.pom hibernate-ehcache/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-entitymanager-4.3.11.Final.pom hibernate-entitymanager/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-envers-4.3.11.Final.pom hibernate-envers/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-hikaricp-4.3.11.Final.pom hibernate-hikaricp/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-infinispan-4.3.11.Final.pom hibernate-infinispan/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-proxool-4.3.11.Final.pom hibernate-proxool/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-testing-4.3.11.Final.pom hibernate-testing/pom.xml
+[ 1867s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-osgi-4.3.11.Final.pom hibernate-osgi/pom.xml
+[ 1868s] + cp -p /home/abuild/rpmbuild/SOURCES/hibernate-parent-4.3.11.Final.pom pom.xml
+[ 1868s] + cp -p /home/abuild/rpmbuild/SOURCES/LICENSE-2.0.txt .
+[ 1868s] + sed -i 's/\r//' LICENSE-2.0.txt
+[ 1868s] + for m in entitymanager envers core
+[ 1868s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.bsc.maven:maven-processor-plugin:2.2.4 hibernate-entitymanager '
+[ 1868s] 
+[ 1868s] <configuration>
+[ 1868s]     <defaultOutputDirectory>${project.build.directory}/generated-sources/logging</defaultOutputDirectory>
+[ 1868s]     <processors>
+[ 1868s]         <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
+[ 1868s]     </processors>
+[ 1868s] </configuration>
+[ 1868s] <executions>
+[ 1868s]     <execution>
+[ 1868s]         <id>process</id>
+[ 1868s]         <phase>generate-sources</phase>
+[ 1868s]         <goals>
+[ 1868s]             <goal>process</goal>
+[ 1868s]         </goals>
+[ 1868s]     </execution>
+[ 1868s] </executions>
+[ 1868s] <dependencies>
+[ 1868s]     <dependency>
+[ 1868s]         <groupId>org.jboss.logging</groupId>
+[ 1868s]         <artifactId>jboss-logging-processor</artifactId>
+[ 1868s]         <version>1.2.0.Beta1</version>
+[ 1868s]     </dependency>
+[ 1868s] </dependencies>'
+[ 1870s] + for m in entitymanager envers core
+[ 1870s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.bsc.maven:maven-processor-plugin:2.2.4 hibernate-envers '
+[ 1870s] 
+[ 1870s] <configuration>
+[ 1870s]     <defaultOutputDirectory>${project.build.directory}/generated-sources/logging</defaultOutputDirectory>
+[ 1870s]     <processors>
+[ 1870s]         <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
+[ 1870s]     </processors>
+[ 1870s] </configuration>
+[ 1870s] <executions>
+[ 1870s]     <execution>
+[ 1870s]         <id>process</id>
+[ 1870s]         <phase>generate-sources</phase>
+[ 1870s]         <goals>
+[ 1870s]             <goal>process</goal>
+[ 1870s]         </goals>
+[ 1870s]     </execution>
+[ 1870s] </executions>
+[ 1870s] <dependencies>
+[ 1870s]     <dependency>
+[ 1870s]         <groupId>org.jboss.logging</groupId>
+[ 1870s]         <artifactId>jboss-logging-processor</artifactId>
+[ 1870s]         <version>1.2.0.Beta1</version>
+[ 1870s]     </dependency>
+[ 1870s] </dependencies>'
+[ 1872s] + for m in entitymanager envers core
+[ 1872s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.bsc.maven:maven-processor-plugin:2.2.4 hibernate-core '
+[ 1872s] 
+[ 1872s] <configuration>
+[ 1872s]     <defaultOutputDirectory>${project.build.directory}/generated-sources/logging</defaultOutputDirectory>
+[ 1872s]     <processors>
+[ 1872s]         <processor>org.jboss.logging.processor.apt.LoggingToolsProcessor</processor>
+[ 1872s]     </processors>
+[ 1872s] </configuration>
+[ 1872s] <executions>
+[ 1872s]     <execution>
+[ 1872s]         <id>process</id>
+[ 1872s]         <phase>generate-sources</phase>
+[ 1872s]         <goals>
+[ 1872s]             <goal>process</goal>
+[ 1872s]         </goals>
+[ 1872s]     </execution>
+[ 1872s] </executions>
+[ 1872s] <dependencies>
+[ 1872s]     <dependency>
+[ 1872s]         <groupId>org.jboss.logging</groupId>
+[ 1872s]         <artifactId>jboss-logging-processor</artifactId>
+[ 1872s]         <version>1.2.0.Beta1</version>
+[ 1872s]     </dependency>
+[ 1872s] </dependencies>'
+[ 1873s] + pushd hibernate-core
+[ 1873s] ~/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core ~/rpmbuild/BUILD/hibernate-orm-4.3.11.Final
+[ 1873s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.jvnet.jaxb2.maven2:maven-jaxb22-plugin:0.12.3 . '
+[ 1873s] 
+[ 1873s] <executions>
+[ 1873s]   <execution>
+[ 1873s]     <id>hibernate-configuration</id>
+[ 1873s]     <goals>
+[ 1873s]       <goal>generate</goal>
+[ 1873s]     </goals>
+[ 1873s]     <configuration>
+[ 1873s]       <schemaIncludes>
+[ 1873s]         <include>hibernate-configuration-4.0.xsd</include>
+[ 1873s]       </schemaIncludes>
+[ 1873s]       <bindingIncludes>
+[ 1873s]         <include>hbm-configuration-bindings.xjb</include>
+[ 1873s]       </bindingIncludes>
+[ 1873s]       <generatePackage>org.hibernate.internal.jaxb.cfg</generatePackage>
+[ 1873s]       <generateDirectory>${project.build.directory}/generated-sources/hibernate-configuration</generateDirectory>
+[ 1873s]     </configuration>
+[ 1873s]   </execution>
+[ 1873s]   <execution>
+[ 1873s]     <id>hibernate-mapping</id>
+[ 1873s]     <goals>
+[ 1873s]       <goal>generate</goal>
+[ 1873s]     </goals>
+[ 1873s]     <configuration>
+[ 1873s]       <schemaIncludes>
+[ 1873s]         <include>hibernate-mapping-4.0.xsd</include>
+[ 1873s]       </schemaIncludes>
+[ 1873s]       <bindingIncludes>
+[ 1873s]         <include>hbm-mapping-bindings.xjb</include>
+[ 1873s]       </bindingIncludes>
+[ 1873s]       <generatePackage>org.hibernate.internal.jaxb.mapping.hbm</generatePackage>
+[ 1873s]       <generateDirectory>${project.build.directory}/generated-sources/hibernate-mapping</generateDirectory>
+[ 1873s]     </configuration>
+[ 1873s]   </execution>
+[ 1873s]   <execution>
+[ 1873s]     <id>hibernate-orm</id>
+[ 1873s]     <goals>
+[ 1873s]       <goal>generate</goal>
+[ 1873s]     </goals>
+[ 1873s]     <configuration>
+[ 1873s]       <schemaIncludes>
+[ 1873s]         <include>jpa/orm_2_0.xsd</include>
+[ 1873s]       </schemaIncludes>
+[ 1873s]       <bindingIncludes>
+[ 1873s]         <include>orm-bindings.xjb</include>
+[ 1873s]       </bindingIncludes>
+[ 1873s]       <generatePackage>org.hibernate.internal.jaxb.mapping.orm</generatePackage>
+[ 1873s]       <generateDirectory>${project.build.directory}/generated-sources/hibernate-orm</generateDirectory>
+[ 1873s]     </configuration>
+[ 1873s]   </execution>
+[ 1873s] </executions>
+[ 1873s] <configuration>
+[ 1873s]   <schemaDirectory>src/main/resources/org/hibernate</schemaDirectory>
+[ 1873s]   <bindingDirectory>src/main/xjb</bindingDirectory>
+[ 1873s]   <extension>true</extension>
+[ 1873s]   <plugins>
+[ 1873s]     <plugin>
+[ 1873s]       <groupId>org.jvnet.jaxb2_commons</groupId>
+[ 1873s]       <artifactId>jaxb2-basics</artifactId>
+[ 1873s]       <version>0.6.3</version>
+[ 1873s]     </plugin>
+[ 1873s]   </plugins>
+[ 1873s]   <args>
+[ 1873s]     <arg>-Xinheritance</arg>
+[ 1873s]   </args>
+[ 1873s] </configuration>'
+[ 1876s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.codehaus.mojo:antlr-maven-plugin:2.2 . '
+[ 1876s] 
+[ 1876s] <configuration>
+[ 1876s]   <grammars>*</grammars>
+[ 1876s] </configuration>
+[ 1876s] <executions>
+[ 1876s]   <execution>
+[ 1876s]     <goals>
+[ 1876s]       <goal>generate</goal>
+[ 1876s]     </goals>
+[ 1876s]   </execution>
+[ 1876s] </executions>'
+[ 1878s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-compiler-plugin:3.3 . '
+[ 1878s] 
+[ 1878s] <configuration>
+[ 1878s]   <source>1.6</source>
+[ 1878s]   <target>1.6</target>
+[ 1878s] </configuration>
+[ 1878s] <inherited>true</inherited>'
+[ 1879s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 . '
+[ 1879s] 
+[ 1879s] <extensions>true</extensions>
+[ 1879s] <configuration>
+[ 1879s]   <instructions>
+[ 1879s]     <Bundle-Description>hibernate core</Bundle-Description>
+[ 1879s]     <Bundle-SymbolicName>org.hibernate.core</Bundle-SymbolicName>
+[ 1879s]     <Bundle-Name>hibernate-core</Bundle-Name>
+[ 1879s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1879s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1879s]   </instructions>
+[ 1879s] </configuration>
+[ 1879s] <executions>
+[ 1879s]   <execution>
+[ 1879s]     <id>bundle-manifest</id>
+[ 1879s]     <phase>process-classes</phase>
+[ 1879s]     <goals>
+[ 1879s]       <goal>manifest</goal>
+[ 1879s]     </goals>
+[ 1879s]   </execution>
+[ 1879s] </executions>'
+[ 1881s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 . '
+[ 1881s] 
+[ 1881s] <configuration>
+[ 1881s]   <archive>
+[ 1881s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1881s]     <manifest>
+[ 1881s]       <addClasspath>false</addClasspath>
+[ 1881s]       <mainClass>org.hibernate.Version</mainClass>
+[ 1881s]     </manifest>
+[ 1881s]     <manifestEntries>
+[ 1881s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1881s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1881s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1881s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1881s]     </manifestEntries>
+[ 1881s]   </archive>
+[ 1881s] </configuration>'
+[ 1883s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep com.fasterxml:classmate:1.1.0
+[ 1885s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep javax.validation:validation-api:1.1.0.Final
+[ 1887s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep org.apache.ant:ant:1.9.4:provided
+[ 1888s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep org.jboss.spec.javax.security.jacc:jboss-jacc-api_1.4_spec:1.0.2.Final
+[ 1890s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep junit:junit:4.12:test
+[ 1892s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep org.hibernate:hibernate-testing:4.3.11.Final:test
+[ 1894s] + popd
+[ 1894s] ~/rpmbuild/BUILD/hibernate-orm-4.3.11.Final
+[ 1894s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_dep javax.enterprise:cdi-api:1.2 hibernate-entitymanager
+[ 1896s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep com.zaxxer:HikariCP-java6 :HikariCP:2.4.0 hibernate-hikaricp
+[ 1898s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep org.osgi:org.osgi.core org.eclipse.osgi:org.eclipse.osgi:3.10.102.v20160416-2200 hibernate-osgi
+[ 1900s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.osgi:org.osgi.compendium hibernate-osgi
+[ 1902s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep org.jboss.jbossts:jbossjta org.jboss.narayana.jta:jta hibernate-testing
+[ 1903s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1903s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-c3p0 '
+[ 1903s] 
+[ 1903s] <extensions>true</extensions>
+[ 1903s] <configuration>
+[ 1903s]   <instructions>
+[ 1903s]     <Bundle-Description>hibernate c3p0</Bundle-Description>
+[ 1903s]     <Bundle-SymbolicName>org.hibernate.c3p0</Bundle-SymbolicName>
+[ 1903s]     <Bundle-Name>hibernate-c3p0</Bundle-Name>
+[ 1903s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1903s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1903s]   </instructions>
+[ 1903s] </configuration>
+[ 1903s] <executions>
+[ 1903s]   <execution>
+[ 1903s]     <id>bundle-manifest</id>
+[ 1903s]     <phase>process-classes</phase>
+[ 1903s]     <goals>
+[ 1903s]       <goal>manifest</goal>
+[ 1903s]     </goals>
+[ 1903s]   </execution>
+[ 1903s] </executions>'
+[ 1905s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-c3p0 '
+[ 1905s] 
+[ 1905s] <configuration>
+[ 1905s]   <archive>
+[ 1905s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1905s]     <manifestEntries>
+[ 1905s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1905s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1905s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1905s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1905s]     </manifestEntries>
+[ 1905s]   </archive>
+[ 1905s] </configuration>'
+[ 1907s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1907s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-ehcache '
+[ 1907s] 
+[ 1907s] <extensions>true</extensions>
+[ 1907s] <configuration>
+[ 1907s]   <instructions>
+[ 1907s]     <Bundle-Description>hibernate ehcache</Bundle-Description>
+[ 1907s]     <Bundle-SymbolicName>org.hibernate.ehcache</Bundle-SymbolicName>
+[ 1907s]     <Bundle-Name>hibernate-ehcache</Bundle-Name>
+[ 1907s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1907s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1907s]   </instructions>
+[ 1907s] </configuration>
+[ 1907s] <executions>
+[ 1907s]   <execution>
+[ 1907s]     <id>bundle-manifest</id>
+[ 1907s]     <phase>process-classes</phase>
+[ 1907s]     <goals>
+[ 1907s]       <goal>manifest</goal>
+[ 1907s]     </goals>
+[ 1907s]   </execution>
+[ 1907s] </executions>'
+[ 1909s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-ehcache '
+[ 1909s] 
+[ 1909s] <configuration>
+[ 1909s]   <archive>
+[ 1909s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1909s]     <manifestEntries>
+[ 1909s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1909s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1909s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1909s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1909s]     </manifestEntries>
+[ 1909s]   </archive>
+[ 1909s] </configuration>'
+[ 1910s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1910s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-entitymanager '
+[ 1910s] 
+[ 1910s] <extensions>true</extensions>
+[ 1910s] <configuration>
+[ 1910s]   <instructions>
+[ 1910s]     <Bundle-Description>hibernate entitymanager</Bundle-Description>
+[ 1910s]     <Bundle-SymbolicName>org.hibernate.entitymanager</Bundle-SymbolicName>
+[ 1910s]     <Bundle-Name>hibernate-entitymanager</Bundle-Name>
+[ 1910s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1910s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1910s]   </instructions>
+[ 1910s] </configuration>
+[ 1910s] <executions>
+[ 1910s]   <execution>
+[ 1910s]     <id>bundle-manifest</id>
+[ 1910s]     <phase>process-classes</phase>
+[ 1910s]     <goals>
+[ 1910s]       <goal>manifest</goal>
+[ 1910s]     </goals>
+[ 1910s]   </execution>
+[ 1910s] </executions>'
+[ 1912s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-entitymanager '
+[ 1912s] 
+[ 1912s] <configuration>
+[ 1912s]   <archive>
+[ 1912s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1912s]     <manifestEntries>
+[ 1912s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1912s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1912s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1912s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1912s]     </manifestEntries>
+[ 1912s]   </archive>
+[ 1912s] </configuration>'
+[ 1914s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1914s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-envers '
+[ 1914s] 
+[ 1914s] <extensions>true</extensions>
+[ 1914s] <configuration>
+[ 1914s]   <instructions>
+[ 1914s]     <Bundle-Description>hibernate envers</Bundle-Description>
+[ 1914s]     <Bundle-SymbolicName>org.hibernate.envers</Bundle-SymbolicName>
+[ 1914s]     <Bundle-Name>hibernate-envers</Bundle-Name>
+[ 1914s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1914s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1914s]   </instructions>
+[ 1914s] </configuration>
+[ 1914s] <executions>
+[ 1914s]   <execution>
+[ 1914s]     <id>bundle-manifest</id>
+[ 1914s]     <phase>process-classes</phase>
+[ 1914s]     <goals>
+[ 1914s]       <goal>manifest</goal>
+[ 1914s]     </goals>
+[ 1914s]   </execution>
+[ 1914s] </executions>'
+[ 1916s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-envers '
+[ 1916s] 
+[ 1916s] <configuration>
+[ 1916s]   <archive>
+[ 1916s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1916s]     <manifestEntries>
+[ 1916s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1916s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1916s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1916s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1916s]     </manifestEntries>
+[ 1916s]   </archive>
+[ 1916s] </configuration>'
+[ 1917s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1917s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-hikaricp '
+[ 1917s] 
+[ 1917s] <extensions>true</extensions>
+[ 1917s] <configuration>
+[ 1917s]   <instructions>
+[ 1917s]     <Bundle-Description>hibernate hikaricp</Bundle-Description>
+[ 1917s]     <Bundle-SymbolicName>org.hibernate.hikaricp</Bundle-SymbolicName>
+[ 1917s]     <Bundle-Name>hibernate-hikaricp</Bundle-Name>
+[ 1917s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1917s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1917s]   </instructions>
+[ 1917s] </configuration>
+[ 1917s] <executions>
+[ 1917s]   <execution>
+[ 1917s]     <id>bundle-manifest</id>
+[ 1917s]     <phase>process-classes</phase>
+[ 1917s]     <goals>
+[ 1917s]       <goal>manifest</goal>
+[ 1917s]     </goals>
+[ 1917s]   </execution>
+[ 1917s] </executions>'
+[ 1920s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-hikaricp '
+[ 1920s] 
+[ 1920s] <configuration>
+[ 1920s]   <archive>
+[ 1920s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1920s]     <manifestEntries>
+[ 1920s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1920s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1920s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1920s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1920s]     </manifestEntries>
+[ 1920s]   </archive>
+[ 1920s] </configuration>'
+[ 1922s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1922s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-infinispan '
+[ 1922s] 
+[ 1922s] <extensions>true</extensions>
+[ 1922s] <configuration>
+[ 1922s]   <instructions>
+[ 1922s]     <Bundle-Description>hibernate infinispan</Bundle-Description>
+[ 1922s]     <Bundle-SymbolicName>org.hibernate.infinispan</Bundle-SymbolicName>
+[ 1922s]     <Bundle-Name>hibernate-infinispan</Bundle-Name>
+[ 1922s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1922s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1922s]   </instructions>
+[ 1922s] </configuration>
+[ 1922s] <executions>
+[ 1922s]   <execution>
+[ 1922s]     <id>bundle-manifest</id>
+[ 1922s]     <phase>process-classes</phase>
+[ 1922s]     <goals>
+[ 1922s]       <goal>manifest</goal>
+[ 1922s]     </goals>
+[ 1922s]   </execution>
+[ 1922s] </executions>'
+[ 1923s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-infinispan '
+[ 1923s] 
+[ 1923s] <configuration>
+[ 1923s]   <archive>
+[ 1923s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1923s]     <manifestEntries>
+[ 1923s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1923s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1923s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1923s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1923s]     </manifestEntries>
+[ 1923s]   </archive>
+[ 1923s] </configuration>'
+[ 1925s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1925s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-osgi '
+[ 1925s] 
+[ 1925s] <extensions>true</extensions>
+[ 1925s] <configuration>
+[ 1925s]   <instructions>
+[ 1925s]     <Bundle-Description>hibernate osgi</Bundle-Description>
+[ 1925s]     <Bundle-SymbolicName>org.hibernate.osgi</Bundle-SymbolicName>
+[ 1925s]     <Bundle-Name>hibernate-osgi</Bundle-Name>
+[ 1925s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1925s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1925s]   </instructions>
+[ 1925s] </configuration>
+[ 1925s] <executions>
+[ 1925s]   <execution>
+[ 1925s]     <id>bundle-manifest</id>
+[ 1925s]     <phase>process-classes</phase>
+[ 1925s]     <goals>
+[ 1925s]       <goal>manifest</goal>
+[ 1925s]     </goals>
+[ 1925s]   </execution>
+[ 1925s] </executions>'
+[ 1927s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-osgi '
+[ 1927s] 
+[ 1927s] <configuration>
+[ 1927s]   <archive>
+[ 1927s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1927s]     <manifestEntries>
+[ 1927s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1927s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1927s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1927s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1927s]     </manifestEntries>
+[ 1927s]   </archive>
+[ 1927s] </configuration>'
+[ 1929s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1929s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-proxool '
+[ 1929s] 
+[ 1929s] <extensions>true</extensions>
+[ 1929s] <configuration>
+[ 1929s]   <instructions>
+[ 1929s]     <Bundle-Description>hibernate proxool</Bundle-Description>
+[ 1929s]     <Bundle-SymbolicName>org.hibernate.proxool</Bundle-SymbolicName>
+[ 1929s]     <Bundle-Name>hibernate-proxool</Bundle-Name>
+[ 1929s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1929s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1929s]   </instructions>
+[ 1929s] </configuration>
+[ 1929s] <executions>
+[ 1929s]   <execution>
+[ 1929s]     <id>bundle-manifest</id>
+[ 1929s]     <phase>process-classes</phase>
+[ 1929s]     <goals>
+[ 1929s]       <goal>manifest</goal>
+[ 1929s]     </goals>
+[ 1929s]   </execution>
+[ 1929s] </executions>'
+[ 1930s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-proxool '
+[ 1930s] 
+[ 1930s] <configuration>
+[ 1930s]   <archive>
+[ 1930s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1930s]     <manifestEntries>
+[ 1930s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1930s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1930s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1930s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1930s]     </manifestEntries>
+[ 1930s]   </archive>
+[ 1930s] </configuration>'
+[ 1932s] + for m in c3p0 ehcache entitymanager envers hikaricp infinispan osgi proxool testing
+[ 1932s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin:2.5.4 hibernate-testing '
+[ 1932s] 
+[ 1932s] <extensions>true</extensions>
+[ 1932s] <configuration>
+[ 1932s]   <instructions>
+[ 1932s]     <Bundle-Description>hibernate testing</Bundle-Description>
+[ 1932s]     <Bundle-SymbolicName>org.hibernate.testing</Bundle-SymbolicName>
+[ 1932s]     <Bundle-Name>hibernate-testing</Bundle-Name>
+[ 1932s]     <Bundle-Vendor>Hibernate.org</Bundle-Vendor>
+[ 1932s]     <Bundle-Version>${project.version}</Bundle-Version>
+[ 1932s]   </instructions>
+[ 1932s] </configuration>
+[ 1932s] <executions>
+[ 1932s]   <execution>
+[ 1932s]     <id>bundle-manifest</id>
+[ 1932s]     <phase>process-classes</phase>
+[ 1932s]     <goals>
+[ 1932s]       <goal>manifest</goal>
+[ 1932s]     </goals>
+[ 1932s]   </execution>
+[ 1932s] </executions>'
+[ 1933s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.6 hibernate-testing '
+[ 1933s] 
+[ 1933s] <configuration>
+[ 1933s]   <archive>
+[ 1933s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 1933s]     <manifestEntries>
+[ 1933s]       <Implementation-Url>http://hibernate.org</Implementation-Url>
+[ 1933s]       <Implementation-Vendor>Hibernate.org</Implementation-Vendor>
+[ 1933s]       <Implementation-Vendor-Id>org.hibernate</Implementation-Vendor-Id>
+[ 1933s]       <Implementation-Version>${project.version}</Implementation-Version>
+[ 1933s]     </manifestEntries>
+[ 1933s]   </archive>
+[ 1933s] </configuration>'
+[ 1935s] ++ sort
+[ 1935s] ++ uniq
+[ 1935s] ++ grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include '*.java' -r -l
+[ 1939s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1939s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/CacheModeType.java hibernate-core/src/main/java/org/hibernate/annotations/CacheModeType.java
+[ 1942s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1942s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/FlushModeType.java hibernate-core/src/main/java/org/hibernate/annotations/FlushModeType.java
+[ 1947s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1947s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/Loader.java hibernate-core/src/main/java/org/hibernate/annotations/Loader.java
+[ 1951s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1951s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/NamedQueries.java hibernate-core/src/main/java/org/hibernate/annotations/NamedQueries.java
+[ 1955s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1955s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/NamedQuery.java hibernate-core/src/main/java/org/hibernate/annotations/NamedQuery.java
+[ 1958s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1958s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/NaturalId.java hibernate-core/src/main/java/org/hibernate/annotations/NaturalId.java
+[ 1962s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1962s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/ResultCheckStyle.java hibernate-core/src/main/java/org/hibernate/annotations/ResultCheckStyle.java
+[ 1965s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1965s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/SQLDelete.java hibernate-core/src/main/java/org/hibernate/annotations/SQLDelete.java
+[ 1968s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1968s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/SQLDeleteAll.java hibernate-core/src/main/java/org/hibernate/annotations/SQLDeleteAll.java
+[ 1970s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1970s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/SQLInsert.java hibernate-core/src/main/java/org/hibernate/annotations/SQLInsert.java
+[ 1973s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1973s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/annotations/SQLUpdate.java hibernate-core/src/main/java/org/hibernate/annotations/SQLUpdate.java
+[ 1975s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1975s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/bytecode/enhance/spi/CollectionTracker.java hibernate-core/src/main/java/org/hibernate/bytecode/enhance/spi/CollectionTracker.java
+[ 1978s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1978s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/bytecode/enhance/spi/CompositeOwnerTracker.java hibernate-core/src/main/java/org/hibernate/bytecode/enhance/spi/CompositeOwnerTracker.java
+[ 1980s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1980s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/engine/spi/CompositeOwner.java hibernate-core/src/main/java/org/hibernate/engine/spi/CompositeOwner.java
+[ 1983s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1983s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/engine/spi/CompositeTracker.java hibernate-core/src/main/java/org/hibernate/engine/spi/CompositeTracker.java
+[ 1985s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1985s] + native2ascii -encoding UTF8 hibernate-core/src/main/java/org/hibernate/engine/spi/SelfDirtinessTracker.java hibernate-core/src/main/java/org/hibernate/engine/spi/SelfDirtinessTracker.java
+[ 1988s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1988s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/derivedidentities/e1/b/specjmapid/IdMapManyToOneSpecjTest.java hibernate-core/src/test/java/org/hibernate/test/annotations/derivedidentities/e1/b/specjmapid/IdMapManyToOneSpecjTest.java
+[ 1990s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1990s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/derivedidentities/e1/b2/IdClassGeneratedValueManyToOneTest.java hibernate-core/src/test/java/org/hibernate/test/annotations/derivedidentities/e1/b2/IdClassGeneratedValueManyToOneTest.java
+[ 1993s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1993s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/DomainAdmin.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/DomainAdmin.java
+[ 1995s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1995s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/DomainAdminId.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/DomainAdminId.java
+[ 1998s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 1998s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/IdClassCompositePKTest.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclass/IdClassCompositePKTest.java
+[ 2000s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2000s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/IdClassGeneratedValueTest.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/IdClassGeneratedValueTest.java
+[ 2003s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2003s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Multiple.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Multiple.java
+[ 2006s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2006s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/MultiplePK.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/MultiplePK.java
+[ 2008s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2008s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Simple.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Simple.java
+[ 2011s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2011s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Simple2.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/Simple2.java
+[ 2013s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2013s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/SimplePK.java hibernate-core/src/test/java/org/hibernate/test/annotations/idclassgeneratedvalue/SimplePK.java
+[ 2016s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2016s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/Address.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/Address.java
+[ 2018s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2018s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/CompositeOwnerTrackerTest.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/CompositeOwnerTrackerTest.java
+[ 2021s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2021s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/Country.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/Country.java
+[ 2023s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2023s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/Address.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/Address.java
+[ 2026s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2026s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/Customer.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/Customer.java
+[ 2029s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2029s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/CustomerInventory.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/CustomerInventory.java
+[ 2032s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2032s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/CustomerInventoryPK.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/CustomerInventoryPK.java
+[ 2034s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2034s] + native2ascii -encoding UTF8 hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/SupplierComponentPK.java hibernate-core/src/test/java/org/hibernate/test/bytecode/enhancement/customer/SupplierComponentPK.java
+[ 2037s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2037s] + native2ascii -encoding UTF8 hibernate-entitymanager/src/main/java/org/hibernate/jpa/AvailableSettings.java hibernate-entitymanager/src/main/java/org/hibernate/jpa/AvailableSettings.java
+[ 2043s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2043s] + native2ascii -encoding UTF8 hibernate-entitymanager/src/main/java/org/hibernate/jpa/internal/schemagen/JpaSchemaGenerator.java hibernate-entitymanager/src/main/java/org/hibernate/jpa/internal/schemagen/JpaSchemaGenerator.java
+[ 2049s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2049s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/AuditReader.java hibernate-envers/src/main/java/org/hibernate/envers/AuditReader.java
+[ 2053s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2053s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/AuditMetadataGenerator.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/AuditMetadataGenerator.java
+[ 2059s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2059s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/CollectionMetadataGenerator.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/CollectionMetadataGenerator.java
+[ 2066s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2066s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/AuditedPropertiesHolder.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/AuditedPropertiesHolder.java
+[ 2069s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2069s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/AuditedPropertiesReader.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/AuditedPropertiesReader.java
+[ 2075s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2075s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ClassAuditingData.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ClassAuditingData.java
+[ 2079s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2079s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ComponentAuditedPropertiesReader.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ComponentAuditedPropertiesReader.java
+[ 2081s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2081s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ComponentAuditingData.java hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/metadata/reader/ComponentAuditingData.java
+[ 2084s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2084s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/BaseEnversCollectionEventListener.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/BaseEnversCollectionEventListener.java
+[ 2088s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2088s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/BaseEnversEventListener.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/BaseEnversEventListener.java
+[ 2091s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2091s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostCollectionRecreateEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostCollectionRecreateEventListenerImpl.java
+[ 2093s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2093s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostDeleteEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostDeleteEventListenerImpl.java
+[ 2096s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2096s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostInsertEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostInsertEventListenerImpl.java
+[ 2099s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2099s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostUpdateEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPostUpdateEventListenerImpl.java
+[ 2101s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2101s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPreCollectionRemoveEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPreCollectionRemoveEventListenerImpl.java
+[ 2104s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2104s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPreCollectionUpdateEventListenerImpl.java hibernate-envers/src/main/java/org/hibernate/envers/event/spi/EnversPreCollectionUpdateEventListenerImpl.java
+[ 2107s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2107s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntitiesConfigurations.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntitiesConfigurations.java
+[ 2110s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2110s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntityConfiguration.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntityConfiguration.java
+[ 2113s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2113s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntityInstantiator.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/EntityInstantiator.java
+[ 2116s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2116s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/OneToOneNotOwningMapper.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/OneToOneNotOwningMapper.java
+[ 2119s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2119s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/ToOneIdMapper.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/ToOneIdMapper.java
+[ 2122s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2122s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/lazy/ToOneDelegateSessionImplementor.java hibernate-envers/src/main/java/org/hibernate/envers/internal/entities/mapper/relation/lazy/ToOneDelegateSessionImplementor.java
+[ 2125s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2125s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/reader/AuditReaderImpl.java hibernate-envers/src/main/java/org/hibernate/envers/internal/reader/AuditReaderImpl.java
+[ 2129s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2129s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/reader/FirstLevelCache.java hibernate-envers/src/main/java/org/hibernate/envers/internal/reader/FirstLevelCache.java
+[ 2132s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2132s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/internal/tools/Tools.java hibernate-envers/src/main/java/org/hibernate/envers/internal/tools/Tools.java
+[ 2134s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2134s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/query/AuditQueryCreator.java hibernate-envers/src/main/java/org/hibernate/envers/query/AuditQueryCreator.java
+[ 2138s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2138s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/AbstractAuditQuery.java hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/AbstractAuditQuery.java
+[ 2141s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2141s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/EntitiesAtRevisionQuery.java hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/EntitiesAtRevisionQuery.java
+[ 2144s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2144s] + native2ascii -encoding UTF8 hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/RevisionsOfEntityQuery.java hibernate-envers/src/main/java/org/hibernate/envers/query/internal/impl/RevisionsOfEntityQuery.java
+[ 2147s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2147s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/AbstractOneSessionTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/AbstractOneSessionTest.java
+[ 2150s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2150s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/auditReader/AuditReaderAPITest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/auditReader/AuditReaderAPITest.java
+[ 2153s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2153s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/auditReader/AuditedTestEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/auditReader/AuditedTestEntity.java
+[ 2155s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2155s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/auditedEntity/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/auditedEntity/Person.java
+[ 2157s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2157s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/auditedEntity/ReadEntityWhitEntityNameTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/auditedEntity/ReadEntityWhitEntityNameTest.java
+[ 2160s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2160s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/Car.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/Car.java
+[ 2162s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2162s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/Person.java
+[ 2164s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2164s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/ReadEntityWithAuditedManyToManyTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/manyToManyAudited/ReadEntityWithAuditedManyToManyTest.java
+[ 2167s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2167s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/Car.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/Car.java
+[ 2169s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2169s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/Person.java
+[ 2172s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2172s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/ReadEntityWithAuditedCollectionTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyAudited/ReadEntityWithAuditedCollectionTest.java
+[ 2174s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2174s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/Car.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/Car.java
+[ 2176s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2176s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/Person.java
+[ 2179s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2179s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/ReadEntityWithAuditedCollectionTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/oneToManyNotAudited/ReadEntityWithAuditedCollectionTest.java
+[ 2182s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2182s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/Car.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/Car.java
+[ 2184s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2184s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/Person.java
+[ 2186s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2186s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/ReadEntityAssociatedAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedAudited/ReadEntityAssociatedAuditedTest.java
+[ 2189s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2189s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/Car.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/Car.java
+[ 2191s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2191s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/Person.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/Person.java
+[ 2193s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2193s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/ReadEntityAssociatedNotAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/entityNames/singleAssociatedNotAudited/ReadEntityAssociatedNotAuditedTest.java
+[ 2196s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2196s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/AbstractAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/AbstractAllAuditedTest.java
+[ 2198s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2198s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/AuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/AuditedImplementor.java
+[ 2201s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2201s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/NonAuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/NonAuditedImplementor.java
+[ 2203s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2203s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/SimpleInterface.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/SimpleInterface.java
+[ 2205s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2205s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/joined/JoinedAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/joined/JoinedAllAuditedTest.java
+[ 2208s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2208s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/subclass/SubclassAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/subclass/SubclassAllAuditedTest.java
+[ 2210s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2210s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/union/UnionAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/allAudited/union/UnionAllAuditedTest.java
+[ 2212s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2212s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/AbstractPropertiesAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/AbstractPropertiesAuditedTest.java
+[ 2215s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2215s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/AuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/AuditedImplementor.java
+[ 2218s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2218s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/NonAuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/NonAuditedImplementor.java
+[ 2220s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2220s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/SimpleInterface.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/SimpleInterface.java
+[ 2222s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2222s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/joined/JoinedPropertiesAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/joined/JoinedPropertiesAuditedTest.java
+[ 2225s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2225s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/subclass/SubclassPropertiesAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/subclass/SubclassPropertiesAuditedTest.java
+[ 2227s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2227s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/union/UnionPropertiesAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited/union/UnionPropertiesAuditedTest.java
+[ 2230s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2230s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/AbstractPropertiesAudited2Test.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/AbstractPropertiesAudited2Test.java
+[ 2232s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2232s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/AuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/AuditedImplementor.java
+[ 2235s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2235s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/NonAuditedImplementor.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/NonAuditedImplementor.java
+[ 2237s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2237s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/SimpleInterface.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/SimpleInterface.java
+[ 2240s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2240s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/joined/JoinedPropertiesAudited2Test.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/joined/JoinedPropertiesAudited2Test.java
+[ 2242s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2242s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/subclass/SubclassPropertiesAudited2Test.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/subclass/SubclassPropertiesAudited2Test.java
+[ 2244s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2244s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/union/UnionPropertiesAudited2Test.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/interfaces/hbm/propertiesAudited2/union/UnionPropertiesAudited2Test.java
+[ 2247s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2247s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/manytomany/inverseToSuperclass/ManyToManyInverseToSuperclassTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/manytomany/inverseToSuperclass/ManyToManyInverseToSuperclassTest.java
+[ 2249s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2249s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/modifiedflags/HasChangedAPITest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/modifiedflags/HasChangedAPITest.java
+[ 2252s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2252s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/modifiedflags/HasChangedAuditedManyToManyTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/modifiedflags/HasChangedAuditedManyToManyTest.java
+[ 2254s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2254s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/onetomany/inverseToSuperclass/OneToManyInverseToSuperclassTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/onetomany/inverseToSuperclass/OneToManyInverseToSuperclassTest.java
+[ 2257s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2257s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/AuditedMethodMappedSuperclass.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/AuditedMethodMappedSuperclass.java
+[ 2259s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2259s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/NotAuditedSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/NotAuditedSubclassEntity.java
+[ 2262s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2262s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditAllSubclass/AuditedAllSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditAllSubclass/AuditedAllSubclassEntity.java
+[ 2265s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2265s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditAllSubclass/MappedSubclassingAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditAllSubclass/MappedSubclassingAllAuditedTest.java
+[ 2268s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2268s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditMethodSubclass/AuditedMethodSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditMethodSubclass/AuditedMethodSubclassEntity.java
+[ 2271s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2271s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditMethodSubclass/MappedSubclassingMethodAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditAtMethodSuperclassLevel/auditMethodSubclass/MappedSubclassingMethodAuditedTest.java
+[ 2274s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2274s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/AuditedAllMappedSuperclass.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/AuditedAllMappedSuperclass.java
+[ 2276s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2276s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/NotAuditedSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/NotAuditedSubclassEntity.java
+[ 2279s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2279s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditAllSubclass/AuditedAllSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditAllSubclass/AuditedAllSubclassEntity.java
+[ 2282s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2282s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditAllSubclass/MappedSubclassingAllAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditAllSubclass/MappedSubclassingAllAuditedTest.java
+[ 2285s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2285s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditMethodSubclass/AuditedMethodSubclassEntity.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditMethodSubclass/AuditedMethodSubclassEntity.java
+[ 2287s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2287s] + native2ascii -encoding UTF8 hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditMethodSubclass/MappedSubclassingMethodAuditedTest.java hibernate-envers/src/test/java/org/hibernate/envers/test/integration/superclass/auditedAtSuperclassLevel/auditMethodSubclass/MappedSubclassingMethodAuditedTest.java
+[ 2290s] + for f in $(grep -e 'Pedersen\|Lichtmaier\|Chanfreau\|Benke\|Carlos\|CREATE\ SCHEMA' --include *.java -r -l | sort | uniq)
+[ 2290s] + native2ascii -encoding UTF8 hibernate-testing/src/main/java/org/hibernate/testing/junit4/Helper.java hibernate-testing/src/main/java/org/hibernate/testing/junit4/Helper.java
+[ 2293s] + sed -i.jandex1.2.2 's|classDotName, superName, access_flag, interfaces, map|classDotName, superName, access_flag, interfaces, map, true|' hibernate-core/src/main/java/org/hibernate/metamodel/source/annotations/xml/mocker/IndexBuilder.java
+[ 2293s] + /usr/bin/python3 /usr/share/java-utils/mvn_compat_version.py : 4.3.11.Final 4.3.11 4
+[ 2295s] + RPM_EC=0
+[ 2295s] ++ jobs -p
+[ 2295s] + exit 0
+[ 2295s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.xELdH9
+[ 2295s] + umask 022
+[ 2295s] + cd /home/abuild/rpmbuild/BUILD
+[ 2295s] + cd hibernate-orm-4.3.11.Final
+[ 2295s] + /usr/bin/python3 /usr/share/java-utils/mvn_build.py -s -f -- -Dproject.build.sourceEncoding=UTF-8
+[ 2297s] Executing: xmvn --batch-mode --offline -Dmaven.test.skip=true -Dproject.build.sourceEncoding=UTF-8 package org.fedoraproject.xmvn:xmvn-mojo:install org.apache.maven.plugins:maven-javadoc-plugin:aggregate org.fedoraproject.xmvn:xmvn-mojo:builddep
+[ 2297s] ['xmvn', '--batch-mode', '--offline', '-Dmaven.test.skip=true', '-Dproject.build.sourceEncoding=UTF-8', 'package', 'org.fedoraproject.xmvn:xmvn-mojo:install', 'org.apache.maven.plugins:maven-javadoc-plugin:aggregate', 'org.fedoraproject.xmvn:xmvn-mojo:builddep']
+[ 2357s] [INFO] Scanning for projects...
+[ 2430s] [INFO] ------------------------------------------------------------------------
+[ 2430s] [INFO] Reactor Build Order:
+[ 2430s] [INFO] 
+[ 2430s] [INFO] Core Hibernate O/RM functionality                                  [jar]
+[ 2430s] [INFO] Hibernate/c3p0 Integration                                         [jar]
+[ 2430s] [INFO] Hibernate JPA Support                                              [jar]
+[ 2430s] [INFO] Entity versioning support                                          [jar]
+[ 2430s] [INFO] Hibernate/Ehcache Integration                                      [jar]
+[ 2430s] [INFO] Hibernate/HikariCP Integration                                     [jar]
+[ 2430s] [INFO] Hibernate/Infinispan Integration                                   [jar]
+[ 2431s] [INFO] Hibernate OSGi Support                                             [jar]
+[ 2431s] [INFO] Hibernate/Proxool Integration                                      [jar]
+[ 2431s] [INFO] Hibernate ORM Testing                                              [jar]
+[ 2431s] [INFO] Hibernate Parent                                                   [pom]
+[ 2449s] [INFO] 
+[ 2449s] [INFO] --------------------< org.hibernate:hibernate-core >--------------------
+[ 2449s] [INFO] Building Core Hibernate O/RM functionality 4.3.11.Final           [1/11]
+[ 2450s] [INFO] --------------------------------[ jar ]---------------------------------
+[ 2466s] [WARNING] The POM for com.sun:tools:jar:any is missing, no dependency information available
+[ 2466s] [INFO] 
+[ 2466s] [INFO] --- antlr-maven-plugin:2.2:generate (default) @ hibernate-core ---
+[ 2497s] [INFO] performing grammar generation [hql.g]
+[ 2535s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2535s] 
+[ 2535s] [INFO] performing grammar generation [hql-sql.g]
+[ 2564s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2564s] 
+[ 2564s] [INFO] performing grammar generation [order-by.g]
+[ 2585s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2585s] 
+[ 2585s] [INFO] performing grammar generation [order-by-render.g]
+[ 2590s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2590s] 
+[ 2590s] [INFO] performing grammar generation [sql-gen.g]
+[ 2611s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2611s] 
+[ 2611s] [INFO] performing grammar generation [sql-stmt.g]
+[ 2621s] ANTLR Parser Generator   Version 2.7.7 (2006-11-01)   1989-2005
+[ 2621s] 
+[ 2621s] [INFO] 
+[ 2621s] [INFO] --- maven-jaxb22-plugin:0.13.0:generate (hibernate-configuration) @ hibernate-core ---
+[ 2651s] [INFO] Up-to-date check for source resources [[file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/resources/org/hibernate/hibernate-configuration-4.0.xsd, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/xjb/hbm-configuration-bindings.xjb, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/pom.xml]] and target resources [[]].
+[ 2651s] [INFO] Sources are not up-to-date, XJC will be executed.
+[ 2684s] [INFO] Episode file [/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/target/generated-sources/hibernate-configuration/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[ 2684s] [INFO] 
+[ 2684s] [INFO] --- maven-jaxb22-plugin:0.13.0:generate (hibernate-mapping) @ hibernate-core ---
+[ 2688s] [INFO] Up-to-date check for source resources [[file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/resources/org/hibernate/hibernate-mapping-4.0.xsd, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/xjb/hbm-mapping-bindings.xjb, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/pom.xml]] and target resources [[]].
+[ 2688s] [INFO] Sources are not up-to-date, XJC will be executed.
+[ 2916s] [INFO] Episode file [/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/target/generated-sources/hibernate-mapping/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[ 2916s] [INFO] 
+[ 2916s] [INFO] --- maven-jaxb22-plugin:0.13.0:generate (hibernate-orm) @ hibernate-core ---
+[ 2919s] [INFO] Up-to-date check for source resources [[file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/resources/org/hibernate/jpa/orm_2_0.xsd, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/src/main/xjb/orm-bindings.xjb, file:/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/pom.xml]] and target resources [[]].
+[ 2920s] [INFO] Sources are not up-to-date, XJC will be executed.
+[ 2997s] [INFO] Episode file [/home/abuild/rpmbuild/BUILD/hibernate-orm-4.3.11.Final/hibernate-core/target/generated-sources/hibernate-orm/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[ 2997s] [INFO] 
+[ 2997s] [INFO] --- maven-processor-plugin:2.2.4:process (process) @ hibernate-core ---
+[ 4687s] 
+[ 4687s] 
+[ 4687s] The system is out of resources.
+[ 4687s] Consult the following stack trace for details.
+[ 4687s] java.lang.OutOfMemoryError: Java heap space
+[ 4687s] 	at java.util.HashMap.resize(HashMap.java:704)
+[ 4687s] 	at java.util.HashMap.putVal(HashMap.java:629)
+[ 4687s] 	at java.util.HashMap.put(HashMap.java:612)
+[ 4687s] 	at com.sun.tools.javac.code.Types$ImplementationCache.get(Types.java:2676)
+[ 4687s] 	at com.sun.tools.javac.code.Types.implementation(Types.java:2704)
+[ 4687s] 	at com.sun.tools.javac.code.Symbol$MethodSymbol.implementation(Symbol.java:1539)
+[ 4687s] 	at com.sun.tools.javac.code.Symbol$MethodSymbol.implementation(Symbol.java:1528)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.notOverriddenIn(Resolve.java:419)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.isAccessible(Resolve.java:405)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.isAccessible(Resolve.java:365)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.selectBest(Resolve.java:1463)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.findMethodInScope(Resolve.java:1633)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.findMethod(Resolve.java:1704)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.findMethod(Resolve.java:1677)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve$9.doLookup(Resolve.java:2436)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve$BasicLookupHelper.lookup(Resolve.java:3097)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.lookupMethod(Resolve.java:3348)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Resolve.java:2433)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Resolve.java:2427)
+[ 4687s] 	at com.sun.tools.javac.comp.Resolve.resolveQualifiedMethod(Resolve.java:2422)
+[ 4687s] 	at com.sun.tools.javac.comp.Annotate.enterAnnotation(Annotate.java:301)
+[ 4687s] 	at com.sun.tools.javac.comp.Annotate.enterAnnotation(Annotate.java:236)
+[ 4687s] 	at com.sun.tools.javac.comp.MemberEnter.actualEnterAnnotations(MemberEnter.java:923)
+[ 4687s] 	at com.sun.tools.javac.comp.MemberEnter.access$600(MemberEnter.java:64)
+[ 4687s] 	at com.sun.tools.javac.comp.MemberEnter$5.run(MemberEnter.java:876)
+[ 4687s] 	at com.sun.tools.javac.comp.Annotate.flush(Annotate.java:143)
+[ 4687s] 	at com.sun.tools.javac.comp.Annotate.enterDone(Annotate.java:129)
+[ 4687s] 	at com.sun.tools.javac.comp.Enter.complete(Enter.java:512)
+[ 4687s] 	at com.sun.tools.javac.comp.Enter.main(Enter.java:471)
+[ 4687s] 	at com.sun.tools.javac.main.JavaCompiler.enterTrees(JavaCompiler.java:982)
+[ 4687s] 	at com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.enterTrees(JavacProcessingEnvironment.java:1015)
+[ 4687s] 	at com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.<init>(JavacProcessingEnvironment.java:902)
+[ 4688s] [ERROR] error on execute: error during compilation
+[ 4688s] [INFO] 
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4688s] [INFO] Skipping Hibernate Parent
+[ 4688s] [INFO] This project has been banned from the build due to previous failures.
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4688s] [INFO] Reactor Summary:
+[ 4688s] [INFO] 
+[ 4688s] [INFO] Core Hibernate O/RM functionality .................. FAILURE [37:18 min]
+[ 4688s] [INFO] Hibernate/c3p0 Integration ......................... SKIPPED
+[ 4688s] [INFO] Hibernate JPA Support .............................. SKIPPED
+[ 4688s] [INFO] Entity versioning support .......................... SKIPPED
+[ 4688s] [INFO] Hibernate/Ehcache Integration ...................... SKIPPED
+[ 4688s] [INFO] Hibernate/HikariCP Integration ..................... SKIPPED
+[ 4688s] [INFO] Hibernate/Infinispan Integration ................... SKIPPED
+[ 4688s] [INFO] Hibernate OSGi Support ............................. SKIPPED
+[ 4688s] [INFO] Hibernate/Proxool Integration ...................... SKIPPED
+[ 4688s] [INFO] Hibernate ORM Testing .............................. SKIPPED
+[ 4688s] [INFO] Hibernate Parent 4.3.11.Final ...................... SKIPPED
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4688s] [INFO] BUILD FAILURE
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4688s] [INFO] Total time: 38:52 min
+[ 4688s] [INFO] Finished at: 2022-04-17T02:03:33Z
+[ 4688s] [INFO] ------------------------------------------------------------------------
+[ 4690s] [ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:2.2.4:process (process) on project hibernate-core: Error executing: error during compilation -> [Help 1]
+[ 4690s] [ERROR] 
+[ 4690s] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ 4690s] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ 4690s] [ERROR] 
+[ 4690s] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ 4690s] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ 4692s] error: Bad exit status from /var/tmp/rpm-tmp.xELdH9 (%build)
+[ 4692s] 
+[ 4692s] 
+[ 4692s] RPM build errors:
+[ 4692s]     Bad exit status from /var/tmp/rpm-tmp.xELdH9 (%build)
+[ 4692s] 
+[ 4692s] oe-RISCV-worker8 failed "build hibernate4.spec" at Sun Apr 17 02:03:37 UTC 2022.
+[ 4692s] 

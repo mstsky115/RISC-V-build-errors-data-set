@@ -1,0 +1,1016 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] cloud116 started "build EternalTerminal.spec" at Tue Jan 24 05:53:37 UTC 2023.
+[    0s] 
+[    0s] Building EternalTerminal for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '9228d508c8300526e843a08b5fa3f5ce'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/EternalTerminal.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/EternalTerminal.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/EternalTerminal.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [bc34219ff31c06e2137371208e66ec40]
+[    4s] 
+[    4s] copying packages...
+[    7s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    7s]   breaking dependency python310-base -> libpython3_10-1_0
+[    7s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    7s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    7s] cycle: libgio-2_0-0 -> glib2-tools
+[    7s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    7s] cycle: girepository-1_0 -> libgirepository-1_0-1
+[    7s]   breaking dependency libgirepository-1_0-1 -> girepository-1_0
+[    7s] cycle: mozilla-nss -> libsoftokn3
+[    7s]   breaking dependency mozilla-nss -> libsoftokn3
+[    7s] done
+[    7s] Detected virtio-serial support
+[   24s] booting kvm...
+[   24s] ### VM INTERACTION START ###
+[   24s] Using virtio-serial support
+[   24s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   31s] ### VM INTERACTION END ###
+[   31s] 2nd stage started in virtual machine
+[   31s] machine type: riscv64
+[   32s] Linux version: 6.1.7-1-default #1 SMP PREEMPT_DYNAMIC Wed Jan 18 11:12:34 UTC 2023 (872045c)
+[   32s] Increasing log level from now on...
+[   32s] [    6.216444][  T367] sysrq: Changing Loglevel
+[   32s] [    6.216673][  T367] sysrq: Loglevel set to 4
+[   32s] Enable sysrq operations
+[   32s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   32s] no label, UUID=1834bb7e-cd0d-48b9-8847-80208999f0c5
+[   32s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   32s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   32s] swapon /dev/vdb
+[   33s] WARNING: udev not running, creating extra device nodes
+[   34s] logging output to //.build.log...
+[   34s] processing recipe /.build-srcdir/EternalTerminal.spec ...
+[   34s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/EternalTerminal.spec build ...
+[   35s] initializing rpm db...
+[   35s] querying package ids...
+[   65s] [1/220] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   65s] [2/220] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   65s] [3/220] preinstalled attr-2.5.1-1.1
+[   65s] [4/220] preinstalled bash-5.2.15-8.1
+[   65s] [5/220] preinstalled bash-sh-5.2.15-8.1
+[   65s] [6/220] preinstalled binutils-2.39-2.1
+[   65s] [7/220] cumulate boost-license1_80_0-1.80.0-2.2
+[   65s] [8/220] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   65s] [9/220] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   65s] [10/220] preinstalled build-mkbaselibs-20230105-1.1
+[   65s] [11/220] preinstalled bzip2-1.0.8-4.1
+[   65s] [12/220] preinstalled chkstat-1599_20221220-1.2
+[   65s] [13/220] preinstalled compat-usrmerge-build-84.87-5.1
+[   65s] [14/220] preinstalled compat-usrmerge-tools-84.87-5.1
+[   65s] [15/220] preinstalled coreutils-9.1-5.1
+[   65s] [16/220] preinstalled cpio-2.13-5.1
+[   65s] [17/220] preinstalled cpp-12-2.1
+[   65s] [18/220] preinstalled cpp12-12.2.1+git537-1.2
+[   65s] [19/220] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   65s] [20/220] cumulate dbus-1-common-1.14.4-1.1
+[   65s] [21/220] preinstalled debugedit-5.0-5.1
+[   65s] [22/220] preinstalled diffutils-3.9-1.1
+[   65s] [23/220] preinstalled dwz-0.15-2.1
+[   65s] [24/220] preinstalled elfutils-0.188-3.2
+[   65s] [25/220] preinstalled file-5.44-1.1
+[   65s] [26/220] preinstalled file-magic-5.44-1.1
+[   65s] [27/220] preinstalled filesystem-84.87-11.1
+[   65s] [28/220] preinstalled fillup-1.42-279.1
+[   65s] [29/220] preinstalled findutils-4.9.0-2.1
+[   65s] [30/220] cumulate firewall-macros-1.3.0-1.1
+[   65s] [31/220] preinstalled gawk-5.2.1-2.1
+[   65s] [32/220] preinstalled gcc-12-2.1
+[   65s] [33/220] preinstalled gcc-PIE-12-2.1
+[   65s] [34/220] preinstalled gcc12-12.2.1+git537-1.2
+[   65s] [35/220] preinstalled gcc12-PIE-12.2.1+git537-1.2
+[   65s] [36/220] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   65s] [37/220] preinstalled gettext-tools-mini-0.21.1-1.1
+[   65s] [38/220] preinstalled glibc-2.36-9.1
+[   65s] [39/220] preinstalled glibc-devel-2.36-9.1
+[   65s] [40/220] preinstalled glibc-locale-base-2.36-9.1
+[   65s] [41/220] preinstalled grep-3.8-3.1
+[   65s] [42/220] preinstalled gzip-1.12-3.1
+[   65s] [43/220] preinstalled kernel-obs-build-6.1.7-1.1
+[   65s] [44/220] preinstalled libacl1-2.3.1-2.1
+[   65s] [45/220] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   65s] [46/220] preinstalled libasan8-13.0.0+git197351-5.1
+[   65s] [47/220] preinstalled libasm1-0.188-3.2
+[   65s] [48/220] preinstalled libatomic1-13.0.0+git197351-5.1
+[   65s] [49/220] preinstalled libattr1-2.5.1-1.1
+[   65s] [50/220] preinstalled libaudit1-3.0.6-4.1
+[   65s] [51/220] preinstalled libblkid1-2.38.1-5.1
+[   65s] [52/220] cumulate libbrotlicommon1-1.0.9-1.1
+[   65s] [53/220] preinstalled libbz2-1-1.0.8-4.1
+[   65s] [54/220] preinstalled libcap-ng0-0.8.3-1.1
+[   65s] [55/220] preinstalled libcap2-2.66-1.1
+[   65s] [56/220] cumulate libcom_err2-1.46.5-4.1
+[   65s] [57/220] preinstalled libcrypt1-4.4.33-1.1
+[   65s] [58/220] preinstalled libctf-nobfd0-2.39-2.1
+[   65s] [59/220] preinstalled libctf0-2.39-2.1
+[   65s] [60/220] preinstalled libdb-4_8-4.8.30-39.1
+[   65s] [61/220] preinstalled libdw1-0.188-3.2
+[   65s] [62/220] preinstalled libeconf0-0.5.1-1.1
+[   65s] [63/220] cumulate libedit0-20210910.3.1-1.1
+[   65s] [64/220] preinstalled libelf1-0.188-3.2
+[   65s] [65/220] cumulate libexpat1-2.5.0-2.1
+[   65s] [66/220] preinstalled libfdisk1-2.38.1-5.1
+[   65s] [67/220] cumulate libffi8-3.4.4-1.1
+[   65s] [68/220] cumulate libfreebl3-3.86-1.1
+[   65s] [69/220] preinstalled libgcc_s1-13.0.0+git197351-5.1
+[   65s] [70/220] preinstalled libgcrypt20-1.10.1-1.1
+[   65s] [71/220] preinstalled libgdbm6-1.23-1.1
+[   65s] [72/220] preinstalled libgdbm_compat4-1.23-1.1
+[   65s] [73/220] cumulate libgflags2_2-2.2.2-2.1
+[   65s] [74/220] cumulate libglib-2_0-0-2.74.4-1.2
+[   65s] [75/220] preinstalled libgmp10-6.2.1-4.1
+[   65s] [76/220] preinstalled libgomp1-13.0.0+git197351-5.1
+[   65s] [77/220] preinstalled libgpg-error0-1.46-1.1
+[   65s] [78/220] preinstalled libisl23-0.25-1.1
+[   65s] [79/220] cumulate libjansson4-2.14-1.1
+[   65s] [80/220] cumulate libkeyutils1-1.6.3-5.1
+[   65s] [81/220] preinstalled liblua5_4-5-5.4.4-7.2
+[   65s] [82/220] preinstalled liblzma5-5.4.0-1.1
+[   65s] [83/220] preinstalled libmagic1-5.44-1.1
+[   65s] [84/220] cumulate libmnl0-1.0.5-1.1
+[   65s] [85/220] preinstalled libmount1-2.38.1-5.1
+[   65s] [86/220] preinstalled libmpc3-1.3.1-1.2
+[   65s] [87/220] cumulate libmpdec3-2.5.1-2.1
+[   65s] [88/220] preinstalled libmpfr6-4.1.1-3.1
+[   65s] [89/220] preinstalled libncurses6-6.4.20230114-2.1
+[   65s] [90/220] cumulate libnghttp2-14-1.51.0-7.1
+[   65s] [91/220] preinstalled libpcre2-8-0-10.42-3.2
+[   65s] [92/220] preinstalled libpkgconf3-1.8.0-1.1
+[   65s] [93/220] preinstalled libpopt0-1.19-1.1
+[   65s] [94/220] cumulate libprotobuf-lite3_21_12-21.12-1.2
+[   65s] [95/220] cumulate libprotobuf3_21_12-21.12-1.2
+[   65s] [96/220] preinstalled libreadline8-8.2-2.1
+[   65s] [97/220] cumulate librhash0-1.4.3-1.1
+[   65s] [98/220] preinstalled librpmbuild9-4.18.0-3.1
+[   65s] [99/220] cumulate libsasl2-3-2.1.28-3.1
+[   65s] [100/220] preinstalled libseccomp2-2.5.4-2.1
+[   65s] [101/220] preinstalled libselinux1-3.4-2.1
+[   65s] [102/220] preinstalled libsemanage-conf-3.4-1.1
+[   65s] [103/220] preinstalled libsemanage2-3.4-1.1
+[   65s] [104/220] preinstalled libsepol2-3.4-1.1
+[   65s] [105/220] preinstalled libsmartcols1-2.38.1-5.1
+[   65s] [106/220] cumulate libsodium23-1.0.18-2.2
+[   65s] [107/220] cumulate libsqlite3-0-3.40.1-1.1
+[   65s] [108/220] cumulate libssh-config-0.10.4-1.1
+[   65s] [109/220] preinstalled libstdc++6-13.0.0+git197351-5.1
+[   65s] [110/220] cumulate libstdc++6-devel-gcc12-12.2.1+git537-1.2
+[   65s] [111/220] preinstalled libsubid4-4.13-3.1
+[   65s] [112/220] cumulate libsystemd0-mini-252.4-1.1
+[   65s] [113/220] preinstalled libubsan1-13.0.0+git197351-5.1
+[   65s] [114/220] cumulate libudev-mini1-252.4-1.1
+[   65s] [115/220] cumulate libunistring5-1.1-1.1
+[   65s] [116/220] preinstalled libutempter0-1.2.0-3.2
+[   65s] [117/220] preinstalled libuuid1-2.38.1-5.1
+[   65s] [118/220] cumulate libuv1-1.44.2-3.1
+[   65s] [119/220] cumulate libverto1-0.3.2-1.1
+[   65s] [120/220] preinstalled libxcrypt-devel-4.4.33-1.1
+[   65s] [121/220] cumulate libxml2-2-2.10.3-2.1
+[   65s] [122/220] preinstalled libz1-1.2.13-1.1
+[   65s] [123/220] preinstalled libzstd1-1.5.2-2.1
+[   65s] [124/220] preinstalled linux-glibc-devel-6.1-1.1
+[   65s] [125/220] preinstalled login_defs-4.13-3.1
+[   65s] [126/220] preinstalled lua54-5.4.4-7.2
+[   65s] [127/220] preinstalled make-4.4-2.1
+[   65s] [128/220] cumulate mozilla-nspr-4.35-1.1
+[   65s] [129/220] cumulate ncurses-devel-6.4.20230114-2.1
+[   65s] [130/220] preinstalled ncurses-utils-6.4.20230114-2.1
+[   65s] [131/220] cumulate ninja-1.11.1-8.1
+[   65s] [132/220] preinstalled pam-1.5.2-11.2
+[   65s] [133/220] preinstalled patch-2.7.6-6.1
+[   65s] [134/220] preinstalled perl-5.36.0-4.1
+[   65s] [135/220] preinstalled perl-base-5.36.0-4.1
+[   65s] [136/220] preinstalled permissions-1599_20221220-1.2
+[   65s] [137/220] preinstalled permissions-config-1599_20221220-1.2
+[   65s] [138/220] preinstalled pkgconf-1.8.0-1.1
+[   65s] [139/220] preinstalled pkgconf-m4-1.8.0-1.1
+[   65s] [140/220] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   65s] [141/220] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   65s] [142/220] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   65s] [143/220] cumulate python-rpm-macros-20221117.8687578-1.1
+[   65s] [144/220] preinstalled qemu-linux-user-7.1.0-47.1
+[   65s] [145/220] preinstalled rpm-4.18.0-3.1
+[   65s] [146/220] preinstalled rpm-build-4.18.0-3.1
+[   65s] [147/220] preinstalled rpm-build-perl-4.18.0-3.1
+[   65s] [148/220] preinstalled rpm-config-SUSE-20220926-1.1
+[   65s] [149/220] preinstalled rpmlint-mini-2.4.0+git20230119.40d52b0-8.50
+[   65s] [150/220] preinstalled rpmlint-strict-2.4.0+git20230119.40d52b0-1.1
+[   65s] [151/220] preinstalled sed-4.9-2.1
+[   65s] [152/220] preinstalled shadow-4.13-3.1
+[   66s] [153/220] preinstalled system-group-hardware-20170617-24.1
+[   66s] [154/220] preinstalled system-user-root-20190513-2.1
+[   66s] [155/220] cumulate systemd-mini-252.4-1.1
+[   66s] [156/220] preinstalled systemd-rpm-macros-18-1.1
+[   66s] [157/220] preinstalled sysuser-shadow-3.1-5.1
+[   66s] [158/220] preinstalled tar-1.34-9.1
+[   66s] [159/220] preinstalled terminfo-base-6.4.20230114-2.1
+[   66s] [160/220] preinstalled update-alternatives-1.21.8-1.1
+[   66s] [161/220] cumulate utempter-devel-1.2.0-3.2
+[   66s] [162/220] preinstalled util-linux-2.38.1-5.1
+[   66s] [163/220] preinstalled which-2.21-5.1
+[   66s] [164/220] preinstalled xz-5.4.0-1.1
+[   66s] [165/220] cumulate zlib-devel-1.2.13-1.1
+[   66s] [166/220] cumulate alts-1.2+3.b848aad-3.1
+[   66s] [167/220] cumulate gcc12-c++-12.2.1+git537-1.2
+[   66s] [168/220] cumulate gflags-devel-2.2.2-2.1
+[   66s] [169/220] cumulate libbrotlidec1-1.0.9-1.1
+[   66s] [170/220] cumulate libgmodule-2_0-0-2.74.4-1.2
+[   66s] [171/220] cumulate libidn2-0-2.3.4-1.1
+[   66s] [172/220] cumulate libnftnl11-1.2.4-1.1
+[   66s] [173/220] cumulate libopenssl1_1-1.1.1s-2.2
+[   66s] [174/220] cumulate libprotoc3_21_12-21.12-1.2
+[   66s] [175/220] cumulate libsodium-devel-1.0.18-2.2
+[   66s] [176/220] cumulate libstdc++-devel-12-2.1
+[   66s] [177/220] cumulate mozilla-nss-certs-3.86-1.1
+[   66s] [178/220] cumulate libdbus-1-3-1.14.4-1.1
+[   66s] [179/220] cumulate libgobject-2_0-0-2.74.4-1.2
+[   66s] [180/220] cumulate shared-mime-info-2.2-1.1
+[   66s] [181/220] cumulate krb5-mini-1.20.1-2.2
+[   66s] [182/220] cumulate dbus-1-tools-1.14.4-1.1
+[   66s] [183/220] cumulate gcc-c++-12-2.1
+[   66s] [184/220] cumulate libboost_headers1_80_0-devel-1.80.0-2.2
+[   66s] [185/220] cumulate libldap2-2.6.3-3.1
+[   66s] [186/220] cumulate libopenssl-1_1-devel-1.1.1s-2.2
+[   66s] [187/220] cumulate libpsl5-0.21.2-1.1
+[   66s] [188/220] cumulate dbus-1-daemon-1.14.4-1.1
+[   66s] [189/220] cumulate libnftables1-1.0.6-1.2
+[   66s] [190/220] cumulate libssh4-0.10.4-1.1
+[   66s] [191/220] cumulate boost-devel-1.80.0-1.1
+[   66s] [192/220] cumulate nftables-1.0.6-1.2
+[   66s] [193/220] cumulate protobuf-devel-21.12-1.2
+[   66s] [194/220] cumulate dbus-1-1.14.4-1.1
+[   66s] [195/220] cumulate libcurl4-7.87.0-1.2
+[   66s] [196/220] cumulate libcurl-devel-7.87.0-1.2
+[   66s] [197/220] cumulate mozilla-nss-3.86-1.1
+[   66s] [198/220] cumulate python310-base-3.10.9-1.2
+[   66s] [199/220] cumulate libgio-2_0-0-2.74.4-1.2
+[   66s] [200/220] cumulate gio-branding-upstream-2.74.4-1.2
+[   66s] [201/220] cumulate libpython3_10-1_0-3.10.9-1.2
+[   66s] [202/220] cumulate python3-nftables-1.0.6-1.2
+[   66s] [203/220] cumulate python310-decorator-5.1.1-1.2
+[   66s] [204/220] cumulate python310-packaging-23.0-1.1
+[   66s] [205/220] cumulate python310-six-1.16.0-2.4
+[   66s] [206/220] cumulate glib2-tools-2.74.4-1.2
+[   66s] [207/220] cumulate libsoftokn3-3.86-1.1
+[   66s] [208/220] cumulate cmake-mini-3.25.1-1.1
+[   66s] [209/220] cumulate libgirepository-1_0-1-1.74.0-2.1
+[   66s] [210/220] cumulate libnm0-1.40.10-1.1
+[   66s] [211/220] cumulate cmake-3.25.1-1.1
+[   66s] [212/220] cumulate girepository-1_0-1.74.0-2.1
+[   66s] [213/220] cumulate python310-slip-0.6.5-6.9
+[   66s] [214/220] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   66s] [215/220] cumulate typelib-1_0-NM-1_0-1.40.10-1.1
+[   66s] [216/220] cumulate python310-gobject-3.42.2-1.1
+[   66s] [217/220] cumulate python310-dbus-python-1.3.2-1.1
+[   66s] [218/220] cumulate python310-slip-dbus-0.6.5-6.9
+[   66s] [219/220] cumulate python3-firewall-1.3.0-1.1
+[   66s] [220/220] cumulate firewalld-1.3.0-1.1
+[   66s] now installing cumulated packages
+[   67s] Preparing...                          ########################################
+[   67s] Updating / installing...
+[   68s] libglib-2_0-0-2.74.4-1.2              ########################################
+[   68s] libgmodule-2_0-0-2.74.4-1.2           ########################################
+[   68s] mozilla-nspr-4.35-1.1                 ########################################
+[   68s] libffi8-3.4.4-1.1                     ########################################
+[   68s] libgobject-2_0-0-2.74.4-1.2           ########################################
+[   68s] libexpat1-2.5.0-2.1                   ########################################
+[   68s] libsystemd0-mini-252.4-1.1            ########################################
+[   69s] zlib-devel-1.2.13-1.1                 ########################################
+[   69s] libunistring5-1.1-1.1                 ########################################
+[   69s] libidn2-0-2.3.4-1.1                   ########################################
+[   84s] libstdc++6-devel-gcc12-12.2.1+git537-1########################################
+[   85s] libprotobuf3_21_12-21.12-1.2          ########################################
+[   85s] libmnl0-1.0.5-1.1                     ########################################
+[   85s] libfreebl3-3.86-1.1                   ########################################
+[   85s] dbus-1-common-1.14.4-1.1              ########################################
+[   85s] libdbus-1-3-1.14.4-1.1                ########################################
+[   85s] dbus-1-tools-1.14.4-1.1               ########################################
+[   85s] dbus-1-daemon-1.14.4-1.1              ########################################
+[   85s] libnftnl11-1.2.4-1.1                  ########################################
+[   86s] libprotoc3_21_12-21.12-1.2            ########################################
+[   90s] gcc12-c++-12.2.1+git537-1.2           ########################################
+[   90s] gcc-c++-12-2.1                        ########################################
+[   90s] libstdc++-devel-12-2.1                ########################################
+[   90s] libpsl5-0.21.2-1.1                    ########################################
+[   90s] mozilla-nss-certs-3.86-1.1            ########################################
+[   90s] systemd-mini-252.4-1.1                warning: group systemd-journal does not exist - using root
+[   92s] ########################################
+[   92s] Creating group 'systemd-journal' with GID 486.
+[   93s] Creating group 'systemd-timesync' with GID 485.
+[   93s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   93s] Running in chroot, ignoring command 'daemon-reexec'
+[   93s] /usr/lib/tmpfiles.d/dbus.conf:13: Failed to resolve user 'messagebus': No such process
+[   93s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   93s] All rules containing unresolvable specifiers will be skipped.
+[   94s] python-rpm-macros-20221117.8687578-1.1########################################
+[   94s] libxml2-2-2.10.3-2.1                  ########################################
+[   95s] shared-mime-info-2.2-1.1              ########################################
+[  106s] libverto1-0.3.2-1.1                   ########################################
+[  106s] libuv1-1.44.2-3.1                     ########################################
+[  107s] libudev-mini1-252.4-1.1               ########################################
+[  107s] libssh-config-0.10.4-1.1              ########################################
+[  107s] libsqlite3-0-3.40.1-1.1               ########################################
+[  107s] mozilla-nss-3.86-1.1                  ########################################
+[  107s] libsoftokn3-3.86-1.1                  ########################################
+[  108s] libsodium23-1.0.18-2.2                ########################################
+[  108s] libsasl2-3-2.1.28-3.1                 ########################################
+[  108s] librhash0-1.4.3-1.1                   ########################################
+[  108s] libprotobuf-lite3_21_12-21.12-1.2     ########################################
+[  108s] libnghttp2-14-1.51.0-7.1              ########################################
+[  108s] libmpdec3-2.5.1-2.1                   ########################################
+[  108s] libkeyutils1-1.6.3-5.1                ########################################
+[  108s] libjansson4-2.14-1.1                  ########################################
+[  109s] libnftables1-1.0.6-1.2                ########################################
+[  109s] libgflags2_2-2.2.2-2.1                ########################################
+[  109s] libedit0-20210910.3.1-1.1             ########################################
+[  109s] nftables-1.0.6-1.2                    ########################################
+[  109s] libcom_err2-1.46.5-4.1                ########################################
+[  110s] krb5-mini-1.20.1-2.2                  ########################################
+[  111s] Updating /etc/sysconfig/kadmind ...
+[  111s] Updating /etc/sysconfig/krb5kdc ...
+[  111s] libbrotlicommon1-1.0.9-1.1            ########################################
+[  111s] libbrotlidec1-1.0.9-1.1               ########################################
+[  111s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  111s] alts-1.2+3.b848aad-3.1                ########################################
+[  112s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/dbus.conf -
+[  112s] Creating group 'messagebus' with GID 484.
+[  112s] Creating user 'messagebus' (User for D-Bus) with UID 484 and GID 484.
+[  112s] dbus-1-1.14.4-1.1                     ########################################
+[  113s] gio-branding-upstream-2.74.4-1.2      ########################################
+[  113s] libgio-2_0-0-2.74.4-1.2               ########################################
+[  114s] glib2-tools-2.74.4-1.2                ########################################
+[  114s] No schema files found: doing nothing.
+[  114s] libnm0-1.40.10-1.1                    ########################################
+[  114s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  115s] libopenssl1_1-1.1.1s-2.2              ########################################
+[  116s] libpython3_10-1_0-3.10.9-1.2          ########################################
+[  122s] python310-base-3.10.9-1.2             ########################################
+[  122s] girepository-1_0-1.74.0-2.1           ########################################
+[  122s] libgirepository-1_0-1-1.74.0-2.1      ########################################
+[  122s] python310-gobject-3.42.2-1.1          ########################################
+[  122s] python310-dbus-python-1.3.2-1.1       ########################################
+[  122s] python310-decorator-5.1.1-1.2         ########################################
+[  123s] python310-six-1.16.0-2.4              ########################################
+[  123s] python310-slip-0.6.5-6.9              ########################################
+[  123s] python310-slip-dbus-0.6.5-6.9         ########################################
+[  123s] typelib-1_0-NM-1_0-1.40.10-1.1        ########################################
+[  123s] python3-firewall-1.3.0-1.1            ########################################
+[  123s] python3-nftables-1.0.6-1.2            ########################################
+[  123s] python310-packaging-23.0-1.1          ########################################
+[  132s] cmake-mini-3.25.1-1.1                 ########################################
+[  132s] libldap2-2.6.3-3.1                    ########################################
+[  132s] libssh4-0.10.4-1.1                    ########################################
+[  132s] libcurl4-7.87.0-1.2                   ########################################
+[  133s] boost-license1_80_0-1.80.0-2.2        ########################################
+[  155s] libboost_headers1_80_0-devel-1.80.0-2.########################################
+[  157s] boost-devel-1.80.0-1.1                ########################################
+[  157s] libcurl-devel-7.87.0-1.2              ########################################
+[  157s] cmake-3.25.1-1.1                      ########################################
+[  157s] python-rpm-packaging-20210526+a18ca48-########################################
+[  157s] firewalld-1.3.0-1.1                   ########################################
+[  158s] Updating /etc/sysconfig/firewalld ...
+[  158s] libopenssl-1_1-devel-1.1.1s-2.2       ########################################
+[  158s] gflags-devel-2.2.2-2.1                ########################################
+[  159s] protobuf-devel-21.12-1.2              ########################################
+[  159s] libsodium-devel-1.0.18-2.2            ########################################
+[  159s] utempter-devel-1.2.0-3.2              ########################################
+[  159s] ninja-1.11.1-8.1                      ########################################
+[  159s] ncurses-devel-6.4.20230114-2.1        ########################################
+[  160s] firewall-macros-1.3.0-1.1             ########################################
+[  165s] now finalizing build dir...
+[  165s] ... running 01-add_abuild_user_to_trusted_group
+[  166s] ... running 02-set_timezone_to_utc
+[  166s] ... running 03-set-permissions-secure
+[  166s] ... running 11-hack_uname_version_to_kernel_version
+[  176s] -----------------------------------------------------------------
+[  176s] I have the following modifications for EternalTerminal.spec:
+[  177s] 22c22
+[  177s] < Release:        0
+[  177s] ---
+[  177s] > Release:        1.1
+[  186s] build target is riscv64-suse-linux
+[  187s] -----------------------------------------------------------------
+[  187s] ----- building EternalTerminal.spec (user abuild)
+[  187s] -----------------------------------------------------------------
+[  187s] -----------------------------------------------------------------
+[  191s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/9228d508c8300526e843a08b5fa3f5ce-EternalTerminal' /home/abuild/rpmbuild/SOURCES/EternalTerminal.spec
+[  192s] Building target platforms: riscv64-suse-linux
+[  192s] Building for target riscv64-suse-linux
+[  192s] setting SOURCE_DATE_EPOCH=1674172800
+[  192s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.lSlg2h
+[  192s] + umask 022
+[  192s] + cd /home/abuild/rpmbuild/BUILD
+[  192s] + cd /home/abuild/rpmbuild/BUILD
+[  192s] + rm -rf EternalTerminal-et-v6.2.4
+[  192s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/et-v6.2.4.tar.gz
+[  198s] + STATUS=0
+[  198s] + '[' 0 -ne 0 ']'
+[  198s] + cd EternalTerminal-et-v6.2.4
+[  198s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  199s] + RPM_EC=0
+[  199s] ++ jobs -p
+[  199s] + exit 0
+[  199s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.45hPA4
+[  199s] + umask 022
+[  199s] + cd /home/abuild/rpmbuild/BUILD
+[  199s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/EternalTerminal-6.2.4-1.1.riscv64
+[  199s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/EternalTerminal-6.2.4-1.1.riscv64
+[  199s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  199s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/EternalTerminal-6.2.4-1.1.riscv64
+[  199s] + cd EternalTerminal-et-v6.2.4
+[  199s] + ref=/usr/lib/rpm
+[  199s] + mints=0
+[  199s] + case $(uname -m) in
+[  199s] ++ uname -m
+[  199s] + mints=20160911
+[  199s] + for s in guess sub
+[  199s] ++ find -maxdepth 8 -name config.guess
+[  200s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  200s] + grep -q config-patches@ ./external_imported/sentry-native/external/breakpad/autotools/config.guess
+[  200s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./external_imported/sentry-native/external/breakpad/autotools/config.guess
+[  200s] + timestamp=20170207
+[  200s] + test -n 20170207
+[  200s] + test 20170207 -ge 20160911
+[  200s] + for s in guess sub
+[  200s] ++ find -maxdepth 8 -name config.sub
+[  201s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  201s] + grep -q config-patches@ ./external_imported/sentry-native/external/breakpad/autotools/config.sub
+[  201s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./external_imported/sentry-native/external/breakpad/autotools/config.sub
+[  201s] + timestamp=20170207
+[  201s] + test -n 20170207
+[  201s] + test 20170207 -ge 20160911
+[  201s] + export 'CXXFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17'
+[  201s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17'
+[  201s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  202s] + mkdir -p build
+[  202s] + cd build
+[  202s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/EternalTerminal -DDISABLE_VCPKG:BOOL=ON -DProtobuf_LITE_LIBRARY=/usr/lib64/libprotobuf-lite.so
+[  202s] -- VCPKG TRIPLET: 
+[  208s] -- The C compiler identification is GNU 12.2.1
+[  208s] -- Detecting C compiler ABI info
+[  214s] -- Detecting C compiler ABI info - done
+[  215s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  215s] -- Detecting C compile features
+[  215s] -- Detecting C compile features - done
+[  220s] -- The CXX compiler identification is GNU 12.2.1
+[  220s] -- Detecting CXX compiler ABI info
+[  226s] -- Detecting CXX compiler ABI info - done
+[  226s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  226s] -- Detecting CXX compile features
+[  226s] -- Detecting CXX compile features - done
+[  230s] -- Found OpenSSL: /usr/lib64/libcrypto.so (found version "1.1.1s")  
+[  230s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[  236s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[  236s] -- Found Threads: TRUE  
+[  240s] -- Found sodium: /usr/lib64/libsodium.so  
+[  240s] -- Found Protobuf: /usr/lib64/libprotobuf.so (found version "3.21.12") 
+[  240s] -- Found ZLIB: /usr/lib64/libz.so (found version "1.2.13") 
+[  240s] -- Could NOT find Unwind (missing: Unwind_INCLUDE_DIR Unwind_LIBRARY Unwind_PLATFORM_LIBRARY) 
+[  240s] -- Found UTempter: /usr/include  
+[  240s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[  240s] -- Checking for module 'libselinux'
+[  241s] --   Package 'libselinux', required by 'virtual:world', not found
+[  241s] -- Could NOT find SELinux (missing: SELINUX_INCLUDE_DIR SELINUX_LIBRARIES) 
+[  241s] -- The ASM compiler identification is GNU
+[  241s] -- Found assembler: /usr/bin/cc
+[  241s] -- SENTRY_TRANSPORT=curl
+[  241s] -- SENTRY_BACKEND=breakpad
+[  241s] -- SENTRY_LIBRARY_TYPE=STATIC
+[  241s] -- SENTRY_SDK_NAME=
+[  241s] -- Looking for sys/types.h
+[  246s] -- Looking for sys/types.h - found
+[  246s] -- Looking for stdint.h
+[  251s] -- Looking for stdint.h - found
+[  251s] -- Looking for stddef.h
+[  256s] -- Looking for stddef.h - found
+[  256s] -- Check size of long
+[  261s] -- Check size of long - done
+[  265s] -- Found CURL: /usr/lib64/libcurl.so (found version "7.87.0")  
+[  266s] -- Looking for getcontext
+[  271s] -- Looking for getcontext - found
+[  271s] -- cotire 1.8.0 loaded.
+[  272s] -- CXX target et-lib cotired.
+[  273s] -- CXX target TerminalCommon cotired.
+[  274s] -- CXX target et cotired without precompiled header. Too few applicable sources.
+[  274s] -- CXX target etserver cotired without precompiled header. Too few applicable sources.
+[  275s] -- CXX target etterminal cotired without precompiled header. Too few applicable sources.
+[  275s] -- CXX target HtmCommon cotired.
+[  276s] -- CXX target htm cotired without precompiled header. Too few applicable sources.
+[  276s] -- CXX target htmd cotired without precompiled header. Too few applicable sources.
+[  277s] -- CXX target et-test cotired.
+[  278s] -- Configuring done
+[  280s] -- Generating done
+[  280s] CMake Warning:
+[  280s]   Manually-specified variables were not used by the project:
+[  280s] 
+[  280s]     BUILD_STATIC_LIBS
+[  280s]     CMAKE_Fortran_FLAGS
+[  280s]     CMAKE_INSTALL_DO_STRIP
+[  280s]     CMAKE_MODULES_INSTALL_DIR
+[  280s]     INCLUDE_INSTALL_DIR
+[  280s]     LIB_INSTALL_DIR
+[  280s]     LIB_SUFFIX
+[  280s]     SHARE_INSTALL_PREFIX
+[  280s]     SYSCONF_INSTALL_DIR
+[  280s] 
+[  280s] 
+[  280s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build
+[  280s] + make -j4
+[  281s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -B/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  281s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/CMakeFiles /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build//CMakeFiles/progress.marks
+[  281s] make  -f CMakeFiles/Makefile2 all
+[  281s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  281s] make  -f CMakeFiles/generated-code.dir/build.make CMakeFiles/generated-code.dir/depend
+[  281s] make  -f external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/build.make external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/depend
+[  281s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  281s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  281s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/DependInfo.cmake
+[  281s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/CMakeFiles/generated-code.dir/DependInfo.cmake
+[  282s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  282s] make  -f external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/build.make external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/build
+[  282s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  282s] make  -f CMakeFiles/generated-code.dir/build.make CMakeFiles/generated-code.dir/build
+[  282s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  282s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  282s] [  1%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/md5.cc.o
+[  282s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/md5.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/md5.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/md5.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/md5.cc
+[  282s] [  1%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/convert_UTF.cc.o
+[  282s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/convert_UTF.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/convert_UTF.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/convert_UTF.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/convert_UTF.cc
+[  282s] [  2%] Running cpp protocol buffer compiler on proto/ET.proto
+[  282s] /usr/bin/protoc --cpp_out /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/proto /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/proto/ET.proto
+[  282s] [  2%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/string_conversion.cc.o
+[  282s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/string_conversion.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/string_conversion.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/string_conversion.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/string_conversion.cc
+[  283s] [  2%] Running cpp protocol buffer compiler on proto/ETerminal.proto
+[  283s] /usr/bin/protoc --cpp_out /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/proto /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/proto/ETerminal.proto
+[  284s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  285s] [  2%] Built target generated-code
+[  285s] make  -f CMakeFiles/et-lib.dir/build.make CMakeFiles/et-lib.dir/depend
+[  285s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  285s] [  4%] Generating CXX prefix source cotire/et-lib_CXX_prefix.cxx
+[  285s] /usr/bin/cmake -DCOTIRE_BUILD_TYPE:STRING=RelWithDebInfo -DCOTIRE_VERBOSE:BOOL=1 -P /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cotire/CMake/cotire.cmake combine /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/et-lib_CXX_cotire.cmake /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp
+[  285s] [  5%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elf_core_dump.cc.o
+[  285s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elf_core_dump.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elf_core_dump.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elf_core_dump.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/elf_core_dump.cc
+[  285s] [  5%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elfutils.cc.o
+[  285s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elfutils.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elfutils.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elfutils.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/elfutils.cc
+[  286s] #ifdef __cplusplus
+[  286s] #include "/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp"
+[  286s] #endif
+[  286s] 
+[  286s] [  5%] Generating CXX prefix header cotire/et-lib_CXX_prefix.hxx
+[  286s] /usr/bin/cmake -DCOTIRE_BUILD_TYPE:STRING=RelWithDebInfo -DCOTIRE_VERBOSE:BOOL=1 -P /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cotire/CMake/cotire.cmake combine /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/et-lib_CXX_cotire.cmake /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx
+[  287s] #ifdef __cplusplus
+[  287s] #include "/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx"
+[  287s] #endif
+[  287s] 
+[  287s] [  5%] Building CXX precompiled header cotire/et-lib_CXX_prefix.hxx.gch
+[  287s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 && /usr/bin/cmake -DCOTIRE_BUILD_TYPE:STRING=RelWithDebInfo -DCOTIRE_VERBOSE:BOOL=1 -P /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cotire/CMake/cotire.cmake precompile /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/et-lib_CXX_cotire.cmake /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc
+[  288s] -- execute_process: /usr/bin/c++;-DET_VERSION="6.2.4";-DCMAKE_EXPORT_COMPILE_COMMANDS=ON;-D_FORTIFY_SOURCE=3;-DUSE_SENTRY;-DELPP_NO_DEFAULT_LOG_FILE;-DELPP_FEATURE_CRASH_LOG;-DELPP_THREAD_SAFE;-DELPP_STRICT_PERMISSIONS;-DSENTRY_BUILD_STATIC;-DWITH_UTEMPTER;-DNDEBUG;-O2;-Wall;-U_FORTIFY_SOURCE;-fstack-protector-strong;-funwind-tables;-fasynchronous-unwind-tables;-fstack-clash-protection;-Werror=return-type;-flto=auto;-g;-std=c++17;-g;-ggdb3;-O2;-g;-std=gnu++17;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4;-I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust;-x;c++-header;-c;/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx;-o;/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch
+[  290s] [  6%] Building CXX object external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/file_id.cc.o
+[  290s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/external_imported/sentry-native/external && /usr/bin/c++ -DHAVE_GETCONTEXT -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -O3 -g -DNDEBUG -fPIC -std=gnu++17 -MD -MT external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/file_id.cc.o -MF CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/file_id.cc.o.d -o CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/file_id.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/file_id.cc
+[  297s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/elfutils.h:40,
+[  297s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/elfutils.cc:30:
+[  297s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h: In member function 'uint8_t* google_breakpad::PageAllocator::GetNPages(size_t)':
+[  297s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h:119:15: error: 'sys_mmap' was not declared in this scope
+[  297s]   119 |     void* a = sys_mmap(NULL, page_size_ * num_pages, PROT_READ | PROT_WRITE,
+[  297s]       |               ^~~~~~~~
+[  297s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h: In member function 'void google_breakpad::PageAllocator::FreeAll()':
+[  297s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h:145:7: error: 'sys_munmap' was not declared in this scope; did you mean 'munmap'?
+[  297s]   145 |       sys_munmap(cur, cur->num_pages * page_size_);
+[  297s]       |       ^~~~~~~~~~
+[  297s]       |       munmap
+[  298s] make[2]: *** [external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/build.make:135: external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/elfutils.cc.o] Error 1
+[  298s] make[2]: *** Waiting for unfinished jobs....
+[  304s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/file_id.h:40,
+[  304s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/linux/file_id.cc:35:
+[  304s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h: In member function 'uint8_t* google_breakpad::PageAllocator::GetNPages(size_t)':
+[  304s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h:119:15: error: 'sys_mmap' was not declared in this scope
+[  304s]   119 |     void* a = sys_mmap(NULL, page_size_ * num_pages, PROT_READ | PROT_WRITE,
+[  304s]       |               ^~~~~~~~
+[  305s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h: In member function 'void google_breakpad::PageAllocator::FreeAll()':
+[  305s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/external/breakpad/src/common/memory_allocator.h:145:7: error: 'sys_munmap' was not declared in this scope; did you mean 'munmap'?
+[  305s]   145 |       sys_munmap(cur, cur->num_pages * page_size_);
+[  305s]       |       ^~~~~~~~~~
+[  305s]       |       munmap
+[  309s] make[2]: *** [external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/build.make:149: external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/breakpad/src/common/linux/file_id.cc.o] Error 1
+[  309s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  309s] make[1]: *** [CMakeFiles/Makefile2:930: external_imported/sentry-native/external/CMakeFiles/breakpad_client.dir/all] Error 2
+[  309s] make[1]: *** Waiting for unfinished jobs....
+[  337s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  337s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  337s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4:
+[  337s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  337s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  337s]  2402 |     int ret = Z_OK;
+[  337s]       |         ^~~
+[  371s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  371s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  371s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  371s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  409s] cd /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/CMakeFiles/et-lib.dir/DependInfo.cmake
+[  410s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  410s] make  -f CMakeFiles/et-lib.dir/build.make CMakeFiles/et-lib.dir/build
+[  410s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[  410s] [  6%] Building CXX object CMakeFiles/et-lib.dir/src/base/BackedReader.cpp.o
+[  410s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/BackedReader.cpp.o -MF CMakeFiles/et-lib.dir/src/base/BackedReader.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/BackedReader.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/BackedReader.cpp
+[  410s] [  8%] Building CXX object CMakeFiles/et-lib.dir/external_imported/easyloggingpp/src/easylogging++.cc.o
+[  410s] [  8%] Building CXX object CMakeFiles/et-lib.dir/src/base/BackedWriter.cpp.o
+[  410s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/external_imported/easyloggingpp/src/easylogging++.cc.o -MF CMakeFiles/et-lib.dir/external_imported/easyloggingpp/src/easylogging++.cc.o.d -o CMakeFiles/et-lib.dir/external_imported/easyloggingpp/src/easylogging++.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc
+[  410s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/BackedWriter.cpp.o -MF CMakeFiles/et-lib.dir/src/base/BackedWriter.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/BackedWriter.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/BackedWriter.cpp
+[  410s] [  9%] Building CXX object CMakeFiles/et-lib.dir/external_imported/PlatformFolders/sago/platform_folders.cpp.o
+[  410s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/external_imported/PlatformFolders/sago/platform_folders.cpp.o -MF CMakeFiles/et-lib.dir/external_imported/PlatformFolders/sago/platform_folders.cpp.o.d -o CMakeFiles/et-lib.dir/external_imported/PlatformFolders/sago/platform_folders.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders/sago/platform_folders.cpp
+[  411s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  411s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  411s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  411s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  467s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  467s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  467s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  467s]                  from <command-line>:
+[  467s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  467s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  467s]  2402 |     int ret = Z_OK;
+[  467s]       |         ^~~
+[  468s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  468s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  468s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  468s]                  from <command-line>:
+[  468s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  468s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  468s]  2402 |     int ret = Z_OK;
+[  468s]       |         ^~~
+[  472s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  472s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  472s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  472s]                  from <command-line>:
+[  472s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  472s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  472s]  2402 |     int ret = Z_OK;
+[  472s]       |         ^~~
+[  479s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  479s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  479s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  479s]                  from <command-line>:
+[  479s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  479s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  479s]  2402 |     int ret = Z_OK;
+[  479s]       |         ^~~
+[  515s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  515s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  515s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  515s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  521s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  521s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  521s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  521s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  521s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  521s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  521s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  521s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  522s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc: In member function 'el::Logger* el::base::RegisteredLoggers::get(const std::string&, bool)':
+[  522s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc:1904:83: warning: loop variable 'h' of type 'const std::pair<std::__cxx11::basic_string<char>, std::shared_ptr<el::LoggerRegistrationCallback> >&' binds to a temporary constructed from type 'std::pair<const std::__cxx11::basic_string<char>, std::shared_ptr<el::LoggerRegistrationCallback> >' [-Wrange-loop-construct]
+[  522s]  1904 |     for (const std::pair<std::string, base::type::LoggerRegistrationCallbackPtr>& h
+[  522s]       |                                                                                   ^
+[  522s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc:1904:83: note: use non-reference type 'const std::pair<std::__cxx11::basic_string<char>, std::shared_ptr<el::LoggerRegistrationCallback> >' to make the copy explicit or 'const std::pair<const std::__cxx11::basic_string<char>, std::shared_ptr<el::LoggerRegistrationCallback> >&' to prevent copying
+[  524s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc: In member function 'void el::base::LogDispatcher::dispatch()':
+[  524s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc:2496:74: warning: loop variable 'h' of type 'const std::pair<std::__cxx11::basic_string<char>, std::shared_ptr<el::LogDispatchCallback> >&' binds to a temporary constructed from type 'std::pair<const std::__cxx11::basic_string<char>, std::shared_ptr<el::LogDispatchCallback> >' [-Wrange-loop-construct]
+[  524s]  2496 |   for (const std::pair<std::string, base::type::LogDispatchCallbackPtr>& h
+[  524s]       |                                                                          ^
+[  524s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src/easylogging++.cc:2496:74: note: use non-reference type 'const std::pair<std::__cxx11::basic_string<char>, std::shared_ptr<el::LogDispatchCallback> >' to make the copy explicit or 'const std::pair<const std::__cxx11::basic_string<char>, std::shared_ptr<el::LogDispatchCallback> >&' to prevent copying
+[  528s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  528s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  528s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  528s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  601s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[  601s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[  601s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  601s]   407 |       ::realpath(fileName.c_str(), buf);
+[  601s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  603s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[  603s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[  603s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  603s]   407 |       ::realpath(fileName.c_str(), buf);
+[  603s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  680s] [  9%] Building CXX object CMakeFiles/et-lib.dir/src/base/ClientConnection.cpp.o
+[  680s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/ClientConnection.cpp.o -MF CMakeFiles/et-lib.dir/src/base/ClientConnection.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/ClientConnection.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/ClientConnection.cpp
+[  681s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  706s] [ 10%] Building CXX object CMakeFiles/et-lib.dir/src/base/Connection.cpp.o
+[  706s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/Connection.cpp.o -MF CMakeFiles/et-lib.dir/src/base/Connection.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/Connection.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Connection.cpp
+[  706s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  713s] [ 10%] Building CXX object CMakeFiles/et-lib.dir/src/base/CryptoHandler.cpp.o
+[  713s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/CryptoHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/CryptoHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/CryptoHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/CryptoHandler.cpp
+[  713s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  734s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  734s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  734s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  734s]                  from <command-line>:
+[  734s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  734s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  734s]  2402 |     int ret = Z_OK;
+[  734s]       |         ^~~
+[  741s] [ 12%] Building CXX object CMakeFiles/et-lib.dir/src/base/ServerClientConnection.cpp.o
+[  741s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/ServerClientConnection.cpp.o -MF CMakeFiles/et-lib.dir/src/base/ServerClientConnection.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/ServerClientConnection.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/ServerClientConnection.cpp
+[  742s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  766s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  766s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  766s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  766s]                  from <command-line>:
+[  766s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  766s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  766s]  2402 |     int ret = Z_OK;
+[  766s]       |         ^~~
+[  767s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  767s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  767s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  767s]                  from <command-line>:
+[  767s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  767s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  767s]  2402 |     int ret = Z_OK;
+[  767s]       |         ^~~
+[  784s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  784s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  784s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  784s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  802s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[  802s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[  802s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[  802s]                  from <command-line>:
+[  802s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[  802s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[  802s]  2402 |     int ret = Z_OK;
+[  802s]       |         ^~~
+[  810s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  810s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  810s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  810s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  817s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  817s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  817s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  817s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  851s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[  851s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[  851s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[  851s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  858s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[  858s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[  858s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  858s]   407 |       ::realpath(fileName.c_str(), buf);
+[  858s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  870s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[  870s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[  870s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  870s]   407 |       ::realpath(fileName.c_str(), buf);
+[  870s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  883s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[  883s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[  883s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[  883s]   407 |       ::realpath(fileName.c_str(), buf);
+[  883s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  973s] [ 12%] Building CXX object CMakeFiles/et-lib.dir/src/base/ServerConnection.cpp.o
+[  973s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/ServerConnection.cpp.o -MF CMakeFiles/et-lib.dir/src/base/ServerConnection.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/ServerConnection.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/ServerConnection.cpp
+[  974s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  975s] [ 13%] Building CXX object CMakeFiles/et-lib.dir/src/base/SocketHandler.cpp.o
+[  975s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/SocketHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/SocketHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/SocketHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/SocketHandler.cpp
+[  975s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[  996s] [ 13%] Building CXX object CMakeFiles/et-lib.dir/src/base/PipeSocketHandler.cpp.o
+[  996s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/PipeSocketHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/PipeSocketHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/PipeSocketHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/PipeSocketHandler.cpp
+[  997s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1045s] [ 15%] Building CXX object CMakeFiles/et-lib.dir/src/base/TcpSocketHandler.cpp.o
+[ 1045s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/TcpSocketHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/TcpSocketHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/TcpSocketHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/TcpSocketHandler.cpp
+[ 1046s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1050s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1050s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1050s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1050s]                  from <command-line>:
+[ 1050s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1050s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1050s]  2402 |     int ret = Z_OK;
+[ 1050s]       |         ^~~
+[ 1050s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1050s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1050s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1050s]                  from <command-line>:
+[ 1050s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1050s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1050s]  2402 |     int ret = Z_OK;
+[ 1050s]       |         ^~~
+[ 1064s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1064s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1064s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1064s]                  from <command-line>:
+[ 1064s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1064s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1064s]  2402 |     int ret = Z_OK;
+[ 1064s]       |         ^~~
+[ 1106s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1106s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1106s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1106s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1107s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1107s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1107s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1107s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1108s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1108s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1108s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1108s]                  from <command-line>:
+[ 1108s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1108s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1108s]  2402 |     int ret = Z_OK;
+[ 1108s]       |         ^~~
+[ 1118s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1118s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1118s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1118s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1154s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1154s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1154s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1154s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1173s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1173s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1173s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1173s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1173s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1188s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1188s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1188s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1188s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1188s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1200s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1200s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1200s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1200s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1200s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1226s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1226s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1226s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1226s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1226s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1283s] [ 15%] Building CXX object CMakeFiles/et-lib.dir/src/base/UnixSocketHandler.cpp.o
+[ 1283s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/UnixSocketHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/UnixSocketHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/UnixSocketHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/UnixSocketHandler.cpp
+[ 1284s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1310s] [ 16%] Building CXX object CMakeFiles/et-lib.dir/src/base/LogHandler.cpp.o
+[ 1310s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/LogHandler.cpp.o -MF CMakeFiles/et-lib.dir/src/base/LogHandler.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/LogHandler.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/LogHandler.cpp
+[ 1310s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1311s] [ 16%] Building CXX object CMakeFiles/et-lib.dir/src/base/DaemonCreator.cpp.o
+[ 1311s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/DaemonCreator.cpp.o -MF CMakeFiles/et-lib.dir/src/base/DaemonCreator.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/DaemonCreator.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/DaemonCreator.cpp
+[ 1311s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1336s] [ 17%] Building CXX object CMakeFiles/et-lib.dir/src/base/RawSocketUtils.cpp.o
+[ 1336s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/RawSocketUtils.cpp.o -MF CMakeFiles/et-lib.dir/src/base/RawSocketUtils.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/RawSocketUtils.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/RawSocketUtils.cpp
+[ 1337s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1338s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1338s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1338s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1338s]                  from <command-line>:
+[ 1338s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1338s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1338s]  2402 |     int ret = Z_OK;
+[ 1338s]       |         ^~~
+[ 1365s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1365s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1365s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1365s]                  from <command-line>:
+[ 1365s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1365s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1365s]  2402 |     int ret = Z_OK;
+[ 1365s]       |         ^~~
+[ 1374s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1374s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1374s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1374s]                  from <command-line>:
+[ 1374s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1374s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1374s]  2402 |     int ret = Z_OK;
+[ 1374s]       |         ^~~
+[ 1388s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1388s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1388s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1388s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1393s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1393s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1393s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1393s]                  from <command-line>:
+[ 1393s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1393s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1393s]  2402 |     int ret = Z_OK;
+[ 1393s]       |         ^~~
+[ 1407s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1407s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1407s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1407s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1415s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1415s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1415s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1415s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1434s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1434s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1434s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1434s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1453s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1453s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1453s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1453s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1453s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1461s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/DaemonCreator.cpp: In static member function 'static int et::DaemonCreator::create(bool, std::string)':
+[ 1461s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/DaemonCreator.cpp:50:10: warning: ignoring return value of 'ssize_t write(int, const void*, size_t)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1461s]    50 |     write(pidFilehandle, pid_str.c_str(), pid_str.length());
+[ 1461s]       |     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 1461s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/DaemonCreator.cpp:56:8: warning: ignoring return value of 'int chdir(const char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1461s]    56 |   chdir("/");
+[ 1461s]       |   ~~~~~^~~~~
+[ 1462s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1462s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1462s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1462s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1462s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1484s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1484s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1484s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1484s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1484s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1496s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1496s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1496s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1496s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1496s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1544s] [ 17%] Building CXX object CMakeFiles/et-lib.dir/src/base/SubprocessToString.cpp.o
+[ 1544s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/SubprocessToString.cpp.o -MF CMakeFiles/et-lib.dir/src/base/SubprocessToString.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/SubprocessToString.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/SubprocessToString.cpp
+[ 1545s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1554s] [ 19%] Building CXX object CMakeFiles/et-lib.dir/src/base/TunnelUtils.cpp.o
+[ 1554s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/src/base/TunnelUtils.cpp.o -MF CMakeFiles/et-lib.dir/src/base/TunnelUtils.cpp.o.d -o CMakeFiles/et-lib.dir/src/base/TunnelUtils.cpp.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/TunnelUtils.cpp
+[ 1555s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1579s] [ 20%] Building CXX object CMakeFiles/et-lib.dir/ET.pb.cc.o
+[ 1579s] /usr/bin/c++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DET_VERSION=\"6.2.4\" -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sentry-native/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/easyloggingpp/src -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/ThreadPool -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/PlatformFolders -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/Catch2/single_include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cxxopts/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/msgpack-c/include -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/json/single_include/nlohmann -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/sole -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/base64 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/simpleini -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/terminal/forwarding -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/htm -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4 -I/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c++17 -DUSE_SENTRY -DELPP_NO_DEFAULT_LOG_FILE -DELPP_FEATURE_CRASH_LOG -DELPP_THREAD_SAFE -DELPP_STRICT_PERMISSIONS -DSENTRY_BUILD_STATIC -g -ggdb3 -DWITH_UTEMPTER -O2 -g -DNDEBUG -Winvalid-pch -include /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx -std=gnu++17 -MD -MT CMakeFiles/et-lib.dir/ET.pb.cc.o -MF CMakeFiles/et-lib.dir/ET.pb.cc.o.d -o CMakeFiles/et-lib.dir/ET.pb.cc.o -c /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/ET.pb.cc
+[ 1580s] cc1plus: warning: /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx.gch: not used because `_FORTIFY_SOURCE' is defined [-Winvalid-pch]
+[ 1594s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1594s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1594s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1594s]                  from <command-line>:
+[ 1594s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1594s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1594s]  2402 |     int ret = Z_OK;
+[ 1594s]       |         ^~~
+[ 1604s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1604s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1604s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1604s]                  from <command-line>:
+[ 1604s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1604s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1604s]  2402 |     int ret = Z_OK;
+[ 1604s]       |         ^~~
+[ 1628s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:7,
+[ 1628s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.cxx:4,
+[ 1628s]                  from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build/cotire/et-lib_CXX_prefix.hxx:4,
+[ 1628s]                  from <command-line>:
+[ 1628s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h: In member function 'virtual bool httplib::detail::gzip_compressor::compress(const char*, size_t, bool, httplib::detail::compressor::Callback)':
+[ 1628s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/cpp-httplib/httplib.h:2402:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+[ 1628s]  2402 |     int ret = Z_OK;
+[ 1628s]       |         ^~~
+[ 1632s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1632s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1632s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1632s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1632s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/SubprocessToString.cpp: In function 'std::string et::SubprocessToStringInteractive(const std::string&, const std::vector<std::__cxx11::basic_string<char> >&)':
+[ 1632s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/SubprocessToString.cpp:177:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[ 1632s]   177 |     for (int a = 0; a < args.size(); a++) {
+[ 1632s]       |                     ~~^~~~~~~~~~~~~
+[ 1632s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/SubprocessToString.cpp:184:23: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<std::__cxx11::basic_string<char> >::size_type' {aka 'long unsigned int'} [-Wsign-compare]
+[ 1632s]   184 |     for (int a = 0; a <= args.size(); a++) {
+[ 1632s]       |                     ~~^~~~~~~~~~~~~~
+[ 1644s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1644s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1644s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1644s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1668s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp: In function 'int et::replaceAll(std::string&, const std::string&, const std::string&)':
+[ 1668s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:309:50: warning: comparison of integer expressions of different signedness: 'int' and 'const std::__cxx11::basic_string<char>::size_type' {aka 'const long unsigned int'} [-Wsign-compare]
+[ 1668s]   309 |   while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
+[ 1668s]       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[ 1687s] In file included from /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/src/base/Headers.hpp:127:
+[ 1687s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp: In function 'ust::StackTrace ust::generate()':
+[ 1687s] /home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/external_imported/UniversalStacktrace/ust/ust.hpp:407:17: warning: ignoring return value of 'char* realpath(const char*, char*)' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 1687s]   407 |       ::realpath(fileName.c_str(), buf);
+[ 1687s]       |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[ 1811s] [ 20%] Linking CXX static library libet-lib.a
+[ 1811s] /usr/bin/cmake -P CMakeFiles/et-lib.dir/cmake_clean_target.cmake
+[ 1811s] /usr/bin/cmake -E cmake_link_script CMakeFiles/et-lib.dir/link.txt --verbose=1
+[ 1812s] /usr/bin/ar qc libet-lib.a "CMakeFiles/et-lib.dir/external_imported/easyloggingpp/src/easylogging++.cc.o" "CMakeFiles/et-lib.dir/external_imported/PlatformFolders/sago/platform_folders.cpp.o" "CMakeFiles/et-lib.dir/src/base/BackedReader.cpp.o" "CMakeFiles/et-lib.dir/src/base/BackedWriter.cpp.o" "CMakeFiles/et-lib.dir/src/base/ClientConnection.cpp.o" "CMakeFiles/et-lib.dir/src/base/Connection.cpp.o" "CMakeFiles/et-lib.dir/src/base/CryptoHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/ServerClientConnection.cpp.o" "CMakeFiles/et-lib.dir/src/base/ServerConnection.cpp.o" "CMakeFiles/et-lib.dir/src/base/SocketHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/PipeSocketHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/TcpSocketHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/UnixSocketHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/LogHandler.cpp.o" "CMakeFiles/et-lib.dir/src/base/DaemonCreator.cpp.o" "CMakeFiles/et-lib.dir/src/base/RawSocketUtils.cpp.o" "CMakeFiles/et-lib.dir/src/base/SubprocessToString.cpp.o" "CMakeFiles/et-lib.dir/src/base/TunnelUtils.cpp.o" "CMakeFiles/et-lib.dir/ET.pb.cc.o"
+[ 1815s] /usr/bin/ranlib libet-lib.a
+[ 1818s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[ 1818s] [ 21%] Built target et-lib
+[ 1818s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/EternalTerminal-et-v6.2.4/build'
+[ 1818s] make: *** [Makefile:169: all] Error 2
+[ 1818s] error: Bad exit status from /var/tmp/rpm-tmp.45hPA4 (%build)
+[ 1818s] 
+[ 1818s] RPM build errors:
+[ 1818s]     Bad exit status from /var/tmp/rpm-tmp.45hPA4 (%build)
+[ 1819s] ### VM INTERACTION START ###
+[ 1821s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[ 1821s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[ 1821s] Powering off.
+[ 1821s] [ 1795.334220][ T8215] reboot: Power down
+[ 1821s] ### VM INTERACTION END ###
+[ 1821s] 
+[ 1821s] cloud116 failed "build EternalTerminal.spec" at Tue Jan 24 06:23:58 UTC 2023.
+[ 1821s] 

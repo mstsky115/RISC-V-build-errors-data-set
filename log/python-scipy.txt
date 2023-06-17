@@ -1,0 +1,1506 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud126 started "build python-scipy.spec" at Sun Feb 19 03:08:37 UTC 2023.
+[    0s] 
+[    0s] Building python-scipy for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'c80dd59500da088a10ae12b4b30637d8'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-scipy.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-scipy.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-scipy.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    5s] 
+[    5s] copying packages...
+[    6s] reordering...done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 4096 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   12s] Increasing log level from now on...
+[   12s] [    4.819626][  T409] sysrq: Changing Loglevel
+[   12s] [    4.819843][  T409] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 1.5 GiB (1610608640 bytes)
+[   13s] no label, UUID=96cd5112-23a4-46f8-9ad4-eb8b2517784d
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=1610612736, devsize=1610612736
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-scipy.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-scipy.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   44s] [1/235] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   44s] [2/235] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   44s] [3/235] preinstalled attr-2.5.1-1.1
+[   44s] [4/235] preinstalled bash-5.2.15-8.1
+[   44s] [5/235] preinstalled bash-sh-5.2.15-8.1
+[   44s] [6/235] preinstalled binutils-2.39-3.1
+[   44s] [7/235] cumulate boost-license1_81_0-1.81.0-1.1
+[   44s] [8/235] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   44s] [9/235] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   44s] [10/235] preinstalled build-mkbaselibs-20230215-1.1
+[   44s] [11/235] preinstalled bzip2-1.0.8-4.1
+[   44s] [12/235] preinstalled chkstat-1599_20221220-1.2
+[   44s] [13/235] preinstalled compat-usrmerge-build-84.87-5.1
+[   44s] [14/235] preinstalled compat-usrmerge-tools-84.87-5.1
+[   44s] [15/235] preinstalled coreutils-9.1-5.1
+[   44s] [16/235] preinstalled cpio-2.13-5.1
+[   44s] [17/235] preinstalled cpp-12-2.1
+[   44s] [18/235] preinstalled cpp12-12.2.1+git749-4.1
+[   44s] [19/235] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   44s] [20/235] preinstalled debugedit-5.0-5.1
+[   44s] [21/235] preinstalled diffutils-3.9-1.1
+[   44s] [22/235] preinstalled dwz-0.15-2.1
+[   44s] [23/235] preinstalled elfutils-0.188-3.2
+[   44s] [24/235] cumulate fdupes-2.2.1-1.1
+[   44s] [25/235] preinstalled file-5.44-1.2
+[   44s] [26/235] preinstalled file-magic-5.44-1.2
+[   44s] [27/235] preinstalled filesystem-84.87-12.1
+[   44s] [28/235] preinstalled fillup-1.42-279.1
+[   44s] [29/235] preinstalled findutils-4.9.0-2.1
+[   44s] [30/235] preinstalled gawk-5.2.1-2.1
+[   44s] [31/235] preinstalled gcc-12-2.1
+[   44s] [32/235] preinstalled gcc-PIE-12-2.1
+[   44s] [33/235] preinstalled gcc12-12.2.1+git749-4.1
+[   44s] [34/235] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   44s] [35/235] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   44s] [36/235] preinstalled gettext-tools-mini-0.21.1-1.1
+[   44s] [37/235] preinstalled glibc-2.37-1.1
+[   44s] [38/235] preinstalled glibc-devel-2.37-1.1
+[   44s] [39/235] preinstalled glibc-locale-base-2.37-1.1
+[   44s] [40/235] preinstalled grep-3.8-3.1
+[   44s] [41/235] preinstalled gzip-1.12-3.1
+[   44s] [42/235] preinstalled kernel-obs-build-6.1.12-1.1
+[   44s] [43/235] preinstalled libacl1-2.3.1-2.1
+[   44s] [44/235] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   44s] [45/235] preinstalled libasan8-13.0.1+git5428-6.1
+[   44s] [46/235] preinstalled libasm1-0.188-3.2
+[   44s] [47/235] preinstalled libatomic1-13.0.1+git5428-6.1
+[   44s] [48/235] preinstalled libattr1-2.5.1-1.1
+[   44s] [49/235] preinstalled libaudit1-3.0.6-4.1
+[   44s] [50/235] preinstalled libblkid1-2.38.1-7.1
+[   44s] [51/235] preinstalled libbz2-1-1.0.8-4.1
+[   44s] [52/235] preinstalled libcap-ng0-0.8.3-1.1
+[   44s] [53/235] preinstalled libcap2-2.67-1.1
+[   44s] [54/235] preinstalled libcrypt1-4.4.33-1.1
+[   44s] [55/235] preinstalled libctf-nobfd0-2.39-3.1
+[   44s] [56/235] preinstalled libctf0-2.39-3.1
+[   44s] [57/235] preinstalled libdb-4_8-4.8.30-39.1
+[   44s] [58/235] preinstalled libdw1-0.188-3.2
+[   44s] [59/235] preinstalled libeconf0-0.5.1-1.1
+[   44s] [60/235] preinstalled libelf1-0.188-3.2
+[   44s] [61/235] preinstalled libexpat1-2.5.0-2.1
+[   44s] [62/235] preinstalled libfdisk1-2.38.1-7.1
+[   44s] [63/235] preinstalled libffi8-3.4.4-1.1
+[   44s] [64/235] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   44s] [65/235] preinstalled libgcrypt20-1.10.1-1.1
+[   44s] [66/235] preinstalled libgdbm6-1.23-1.1
+[   44s] [67/235] preinstalled libgdbm_compat4-1.23-1.1
+[   44s] [68/235] cumulate libgfortran5-13.0.1+git5428-6.1
+[   44s] [69/235] preinstalled libgmp10-6.2.1-4.1
+[   44s] [70/235] preinstalled libgomp1-13.0.1+git5428-6.1
+[   44s] [71/235] preinstalled libgpg-error0-1.46-1.1
+[   44s] [72/235] preinstalled libisl23-0.25-1.1
+[   44s] [73/235] preinstalled liblua5_4-5-5.4.4-8.1
+[   44s] [74/235] preinstalled liblzma5-5.4.1-1.1
+[   44s] [75/235] preinstalled libmagic1-5.44-1.2
+[   44s] [76/235] preinstalled libmount1-2.38.1-7.1
+[   44s] [77/235] preinstalled libmpc3-1.3.1-1.2
+[   44s] [78/235] preinstalled libmpdec3-2.5.1-2.1
+[   44s] [79/235] preinstalled libmpfr6-4.2.0-1.1
+[   44s] [80/235] preinstalled libncurses6-6.4.20230128-5.1
+[   44s] [81/235] preinstalled libopenssl3-3.0.7-3.1
+[   44s] [82/235] preinstalled libpcre2-8-0-10.42-3.2
+[   44s] [83/235] preinstalled libpkgconf3-1.8.0-2.1
+[   44s] [84/235] preinstalled libpopt0-1.19-1.1
+[   44s] [85/235] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   44s] [86/235] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   44s] [87/235] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   44s] [88/235] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   44s] [89/235] preinstalled libreadline8-8.2-2.1
+[   44s] [90/235] preinstalled librpmbuild9-4.18.0-3.2
+[   44s] [91/235] preinstalled libseccomp2-2.5.4-2.1
+[   44s] [92/235] preinstalled libselinux1-3.4-2.1
+[   44s] [93/235] preinstalled libsemanage-conf-3.4-1.1
+[   44s] [94/235] preinstalled libsemanage2-3.4-1.1
+[   44s] [95/235] preinstalled libsepol2-3.4-1.1
+[   44s] [96/235] preinstalled libsmartcols1-2.38.1-7.1
+[   44s] [97/235] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   44s] [98/235] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   44s] [99/235] preinstalled libsubid4-4.13-3.1
+[   44s] [100/235] preinstalled libubsan1-13.0.1+git5428-6.1
+[   44s] [101/235] preinstalled libutempter0-1.2.0-3.2
+[   44s] [102/235] preinstalled libuuid1-2.38.1-7.1
+[   44s] [103/235] preinstalled libxcrypt-devel-4.4.33-1.1
+[   44s] [104/235] preinstalled libz1-1.2.13-2.1
+[   44s] [105/235] preinstalled libzstd1-1.5.2-2.1
+[   44s] [106/235] preinstalled linux-glibc-devel-6.1-1.1
+[   44s] [107/235] preinstalled login_defs-4.13-3.1
+[   44s] [108/235] preinstalled lua54-5.4.4-8.1
+[   44s] [109/235] preinstalled make-4.4-2.1
+[   44s] [110/235] preinstalled ncurses-utils-6.4.20230128-5.1
+[   44s] [111/235] cumulate ninja-1.11.1-8.1
+[   44s] [112/235] cumulate openblas-common-devel-0.3.21-3.1
+[   44s] [113/235] preinstalled pam-1.5.2-12.1
+[   44s] [114/235] preinstalled patch-2.7.6-6.1
+[   44s] [115/235] preinstalled perl-5.36.0-4.1
+[   44s] [116/235] preinstalled perl-base-5.36.0-4.1
+[   44s] [117/235] preinstalled permissions-1599_20221220-1.2
+[   44s] [118/235] preinstalled permissions-config-1599_20221220-1.2
+[   44s] [119/235] preinstalled pkgconf-1.8.0-2.1
+[   44s] [120/235] preinstalled pkgconf-m4-1.8.0-2.1
+[   44s] [121/235] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   44s] [122/235] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   44s] [123/235] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   44s] [124/235] cumulate python-pybind11-common-devel-2.10.3-1.2
+[   44s] [125/235] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   44s] [126/235] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   44s] [127/235] preinstalled python310-base-3.10.9-2.2
+[   44s] [128/235] cumulate python310-devel-3.10.9-2.2
+[   44s] [129/235] cumulate python310-gast-0.5.3-1.3
+[   44s] [130/235] preinstalled python310-packaging-23.0-1.1
+[   44s] [131/235] cumulate python310-ply-3.11-3.11
+[   44s] [132/235] cumulate python310-pyproject-metadata-0.6.1-2.2
+[   44s] [133/235] preinstalled python310-setuptools-65.6.3-1.2
+[   44s] [134/235] cumulate python310-tomli-2.0.1-1.3
+[   44s] [135/235] preinstalled python311-base-3.11.1-4.2
+[   44s] [136/235] cumulate python311-devel-3.11.1-4.2
+[   44s] [137/235] cumulate python311-gast-0.5.3-1.3
+[   44s] [138/235] cumulate python311-packaging-23.0-1.2
+[   44s] [139/235] cumulate python311-ply-3.11-3.11
+[   44s] [140/235] preinstalled python311-setuptools-65.6.3-1.2
+[   44s] [141/235] preinstalled python38-base-3.8.16-3.2
+[   44s] [142/235] cumulate python38-devel-3.8.16-3.2
+[   44s] [143/235] cumulate python38-gast-0.5.3-1.3
+[   44s] [144/235] cumulate python38-packaging-23.0-1.2
+[   44s] [145/235] cumulate python38-ply-3.11-3.11
+[   44s] [146/235] preinstalled python38-setuptools-65.6.3-1.2
+[   44s] [147/235] cumulate python38-tomli-2.0.1-1.3
+[   44s] [148/235] cumulate python38-typing_extensions-4.4.0-2.2
+[   44s] [149/235] preinstalled python39-base-3.9.16-3.2
+[   44s] [150/235] cumulate python39-devel-3.9.16-3.2
+[   44s] [151/235] cumulate python39-gast-0.5.3-1.3
+[   44s] [152/235] cumulate python39-packaging-23.0-1.2
+[   44s] [153/235] cumulate python39-ply-3.11-3.11
+[   44s] [154/235] preinstalled python39-setuptools-65.6.3-1.2
+[   44s] [155/235] cumulate python39-tomli-2.0.1-1.3
+[   44s] [156/235] cumulate python39-typing_extensions-4.4.0-2.2
+[   44s] [157/235] preinstalled qemu-linux-user-7.1.0-50.1
+[   44s] [158/235] preinstalled rpm-4.18.0-3.2
+[   44s] [159/235] preinstalled rpm-build-4.18.0-3.2
+[   44s] [160/235] preinstalled rpm-build-perl-4.18.0-3.2
+[   44s] [161/235] preinstalled rpm-config-SUSE-20220926-1.1
+[   44s] [162/235] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   45s] [163/235] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   45s] [164/235] preinstalled sed-4.9-2.1
+[   45s] [165/235] preinstalled shadow-4.13-3.1
+[   45s] [166/235] preinstalled system-group-hardware-20170617-24.1
+[   45s] [167/235] preinstalled system-user-root-20190513-2.1
+[   45s] [168/235] preinstalled systemd-rpm-macros-19-1.1
+[   45s] [169/235] preinstalled sysuser-shadow-3.1-5.1
+[   45s] [170/235] preinstalled tar-1.34-9.1
+[   45s] [171/235] preinstalled terminfo-base-6.4.20230128-5.1
+[   45s] [172/235] preinstalled update-alternatives-1.21.8-1.1
+[   45s] [173/235] preinstalled util-linux-2.38.1-7.1
+[   45s] [174/235] preinstalled which-2.21-5.1
+[   45s] [175/235] preinstalled xz-5.4.1-1.1
+[   45s] [176/235] cumulate alts-1.2+3.b848aad-3.1
+[   45s] [177/235] cumulate gcc12-c++-12.2.1+git749-4.1
+[   45s] [178/235] cumulate gcc12-fortran-12.2.1+git749-4.1
+[   45s] [179/235] cumulate libblas3-3.9.0-6.1
+[   45s] [180/235] cumulate libopenblas_openmp0-0.3.21-3.1
+[   45s] [181/235] cumulate libstdc++-devel-12-2.1
+[   45s] [182/235] cumulate meson-1.0.0-1.1
+[   45s] [183/235] cumulate python310-Cython-0.29.33-1.2
+[   45s] [184/235] cumulate python310-beniget-0.4.1-1.3
+[   45s] [185/235] cumulate python311-Cython-0.29.33-1.2
+[   45s] [186/235] cumulate python311-beniget-0.4.1-1.3
+[   45s] [187/235] cumulate python311-pyproject-metadata-0.6.1-2.2
+[   45s] [188/235] cumulate python38-Cython-0.29.33-1.2
+[   45s] [189/235] cumulate python38-beniget-0.4.1-1.3
+[   45s] [190/235] cumulate python38-pyproject-metadata-0.6.1-2.2
+[   45s] [191/235] cumulate python39-Cython-0.29.33-1.2
+[   45s] [192/235] cumulate python39-beniget-0.4.1-1.3
+[   45s] [193/235] cumulate python39-pyproject-metadata-0.6.1-2.2
+[   45s] [194/235] cumulate blas-devel-3.9.0-6.1
+[   45s] [195/235] cumulate gcc-c++-12-2.1
+[   45s] [196/235] cumulate gcc-fortran-12-2.1
+[   45s] [197/235] cumulate libcblas3-3.9.0-6.1
+[   45s] [198/235] cumulate python310-pip-22.3.1-1.2
+[   45s] [199/235] cumulate python310-pybind11-2.10.3-1.2
+[   45s] [200/235] cumulate python310-wheel-0.38.4-1.2
+[   45s] [201/235] cumulate python311-pip-22.3.1-1.2
+[   45s] [202/235] cumulate python311-pybind11-2.10.3-1.2
+[   45s] [203/235] cumulate python311-wheel-0.38.4-1.2
+[   45s] [204/235] cumulate python38-pip-22.3.1-1.2
+[   45s] [205/235] cumulate python38-pybind11-2.10.3-1.2
+[   45s] [206/235] cumulate python38-wheel-0.38.4-1.2
+[   45s] [207/235] cumulate python39-pip-22.3.1-1.2
+[   45s] [208/235] cumulate python39-pybind11-2.10.3-1.2
+[   45s] [209/235] cumulate python39-wheel-0.38.4-1.2
+[   45s] [210/235] cumulate libboost_headers1_81_0-devel-1.81.0-1.1
+[   45s] [211/235] cumulate liblapack3-3.9.0-6.1
+[   45s] [212/235] cumulate libopenblas_openmp-devel-0.3.21-3.1
+[   45s] [213/235] cumulate python311-meson-python-0.12.0-1.2
+[   45s] [214/235] cumulate python310-meson-python-0.12.0-1.2
+[   45s] [215/235] cumulate python38-meson-python-0.12.0-1.2
+[   45s] [216/235] cumulate python39-meson-python-0.12.0-1.2
+[   45s] [217/235] cumulate boost-devel-1.81.0-1.1
+[   45s] [218/235] cumulate cblas-devel-3.9.0-6.1
+[   45s] [219/235] cumulate lapack-devel-3.9.0-6.1
+[   45s] [220/235] cumulate python310-pybind11-devel-2.10.3-1.2
+[   45s] [221/235] cumulate python311-pybind11-devel-2.10.3-1.2
+[   45s] [222/235] cumulate python38-pybind11-devel-2.10.3-1.2
+[   45s] [223/235] cumulate python39-pybind11-devel-2.10.3-1.2
+[   45s] [224/235] cumulate python310-numpy-1.24.1-3.2
+[   45s] [225/235] cumulate python311-numpy-1.24.1-3.2
+[   45s] [226/235] cumulate python38-numpy-1.24.1-3.2
+[   45s] [227/235] cumulate python39-numpy-1.24.1-3.2
+[   45s] [228/235] cumulate python310-numpy-devel-1.24.1-3.2
+[   45s] [229/235] cumulate python311-numpy-devel-1.24.1-3.2
+[   45s] [230/235] cumulate python38-numpy-devel-1.24.1-3.2
+[   45s] [231/235] cumulate python39-numpy-devel-1.24.1-3.2
+[   45s] [232/235] cumulate python310-pythran-0.12.1-1.2
+[   45s] [233/235] cumulate python311-pythran-0.12.1-1.2
+[   45s] [234/235] cumulate python38-pythran-0.12.1-1.2
+[   45s] [235/235] cumulate python39-pythran-0.12.1-1.2
+[   45s] now installing cumulated packages
+[   46s] Preparing...                          ########################################
+[   47s] Updating / installing...
+[   47s] python39-devel-3.9.16-3.2             ########################################
+[   47s] python38-devel-3.8.16-3.2             ########################################
+[   48s] python311-devel-3.11.1-4.2            ########################################
+[   48s] python310-devel-3.10.9-2.2            ########################################
+[   48s] python-pybind11-common-devel-2.10.3-1.########################################
+[   48s] libgfortran5-13.0.1+git5428-6.1       ########################################
+[   48s] libblas3-3.9.0-6.1                    ########################################
+[   49s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   49s] blas-devel-3.9.0-6.1                  ########################################
+[   49s] libcblas3-3.9.0-6.1                   ########################################
+[   49s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   50s] liblapack3-3.9.0-6.1                  ########################################
+[   50s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   50s] lapack-devel-3.9.0-6.1                ########################################
+[   50s] cblas-devel-3.9.0-6.1                 ########################################
+[   50s] python39-gast-0.5.3-1.3               ########################################
+[   50s] python38-gast-0.5.3-1.3               ########################################
+[   50s] python311-gast-0.5.3-1.3              ########################################
+[   50s] python310-gast-0.5.3-1.3              ########################################
+[   65s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   70s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   70s] gcc-c++-12-2.1                        ########################################
+[   70s] libstdc++-devel-12-2.1                ########################################
+[   70s] python310-beniget-0.4.1-1.3           ########################################
+[   70s] python311-beniget-0.4.1-1.3           ########################################
+[   70s] python38-beniget-0.4.1-1.3            ########################################
+[   70s] python39-beniget-0.4.1-1.3            ########################################
+[   79s] gcc12-fortran-12.2.1+git749-4.1       ########################################
+[   80s] libopenblas_openmp0-0.3.21-3.1        ########################################
+[   81s] update-alternatives: using /usr/lib64/openblas-openmp to provide /usr/lib64/openblas-default (openblas-default_riscv64) in auto mode
+[   81s] update-alternatives: using /usr/lib64/openblas-openmp/libopenblas.so.0 to provide /usr/lib64/liblapacke.so.3 (liblapacke.so.3_riscv64) in auto mode
+[   81s] openblas-common-devel-0.3.21-3.1      ########################################
+[   82s] libopenblas_openmp-devel-0.3.21-3.1   ########################################
+[   82s] python39-typing_extensions-4.4.0-2.2  ########################################
+[   82s] python39-tomli-2.0.1-1.3              ########################################
+[   82s] python39-ply-3.11-3.11                ########################################
+[   82s] python39-packaging-23.0-1.2           ########################################
+[   82s] python39-pyproject-metadata-0.6.1-2.2 ########################################
+[   82s] python38-typing_extensions-4.4.0-2.2  ########################################
+[   82s] python38-tomli-2.0.1-1.3              ########################################
+[   82s] python38-ply-3.11-3.11                ########################################
+[   82s] python38-packaging-23.0-1.2           ########################################
+[   82s] python38-pyproject-metadata-0.6.1-2.2 ########################################
+[   82s] python311-ply-3.11-3.11               ########################################
+[   82s] python311-packaging-23.0-1.2          ########################################
+[   82s] python311-pyproject-metadata-0.6.1-2.2########################################
+[   82s] python310-tomli-2.0.1-1.3             ########################################
+[   82s] python310-pyproject-metadata-0.6.1-2.2########################################
+[   82s] python310-ply-3.11-3.11               ########################################
+[   82s] ninja-1.11.1-8.1                      ########################################
+[   84s] meson-1.0.0-1.1                       ########################################
+[   84s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   84s] alts-1.2+3.b848aad-3.1                ########################################
+[   84s] python310-pybind11-2.10.3-1.2         ########################################
+[   85s] python311-pybind11-2.10.3-1.2         ########################################
+[   85s] python38-pybind11-2.10.3-1.2          ########################################
+[   85s] python39-pybind11-2.10.3-1.2          ########################################
+[   90s] python310-numpy-1.24.1-3.2            ########################################
+[   90s] python310-numpy-devel-1.24.1-3.2      ########################################
+[   95s] python311-numpy-1.24.1-3.2            ########################################
+[   96s] python311-numpy-devel-1.24.1-3.2      ########################################
+[  100s] python38-numpy-1.24.1-3.2             ########################################
+[  100s] python38-numpy-devel-1.24.1-3.2       ########################################
+[  105s] python39-numpy-1.24.1-3.2             ########################################
+[  105s] python39-numpy-devel-1.24.1-3.2       ########################################
+[  105s] boost-license1_81_0-1.81.0-1.1        ########################################
+[  127s] libboost_headers1_81_0-devel-1.81.0-1.########################################
+[  129s] boost-devel-1.81.0-1.1                ########################################
+[  130s] python310-pythran-0.12.1-1.2          ########################################
+[  132s] python311-pythran-0.12.1-1.2          ########################################
+[  134s] python38-pythran-0.12.1-1.2           ########################################
+[  136s] python39-pythran-0.12.1-1.2           ########################################
+[  136s] python39-pybind11-devel-2.10.3-1.2    ########################################
+[  136s] python38-pybind11-devel-2.10.3-1.2    ########################################
+[  136s] python311-pybind11-devel-2.10.3-1.2   ########################################
+[  136s] python310-pybind11-devel-2.10.3-1.2   ########################################
+[  139s] python310-pip-22.3.1-1.2              ########################################
+[  139s] python310-wheel-0.38.4-1.2            ########################################
+[  142s] python311-pip-22.3.1-1.2              ########################################
+[  143s] python311-wheel-0.38.4-1.2            ########################################
+[  145s] python38-pip-22.3.1-1.2               ########################################
+[  146s] python38-wheel-0.38.4-1.2             ########################################
+[  148s] python39-pip-22.3.1-1.2               ########################################
+[  149s] python39-wheel-0.38.4-1.2             ########################################
+[  149s] python311-meson-python-0.12.0-1.2     ########################################
+[  149s] python310-meson-python-0.12.0-1.2     ########################################
+[  149s] python38-meson-python-0.12.0-1.2      ########################################
+[  149s] python39-meson-python-0.12.0-1.2      ########################################
+[  149s] gcc-fortran-12-2.1                    ########################################
+[  151s] python310-Cython-0.29.33-1.2          ########################################
+[  153s] python311-Cython-0.29.33-1.2          ########################################
+[  155s] python38-Cython-0.29.33-1.2           ########################################
+[  157s] python39-Cython-0.29.33-1.2           ########################################
+[  157s] fdupes-2.2.1-1.1                      ########################################
+[  162s] now finalizing build dir...
+[  162s] ... running 01-add_abuild_user_to_trusted_group
+[  163s] ... running 02-set_timezone_to_utc
+[  163s] ... running 03-set-permissions-secure
+[  163s] ... running 11-hack_uname_version_to_kernel_version
+[  173s] -----------------------------------------------------------------
+[  173s] I have the following modifications for python-scipy.spec:
+[  173s] 19c19
+[  173s] < %global flavor @BUILD_FLAVOR@%{nil}
+[  173s] ---
+[  173s] > %global flavor %{nil}
+[  173s] 96c96
+[  173s] < Release:        0
+[  173s] ---
+[  173s] > Release:        1.3
+[  173s] 116c116
+[  173s] < BuildRequires:  pkg-config
+[  173s] ---
+[  173s] > BuildRequires:  pkgconf-pkg-config
+[  182s] build target is riscv64-suse-linux
+[  182s] -----------------------------------------------------------------
+[  182s] ----- building python-scipy.spec (user abuild)
+[  182s] -----------------------------------------------------------------
+[  182s] -----------------------------------------------------------------
+[  186s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/c80dd59500da088a10ae12b4b30637d8-python-scipy' /home/abuild/rpmbuild/SOURCES/python-scipy.spec
+[  186s] warning: Macro expanded in comment on line 102: %{version}/scipy/datasets/_download_all.py scipy-datasets/scipy-data; tar czf scipy-datasets.tar.gz scipy-datasets`
+[  186s] 
+[  195s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 148: Macro %hpc_module_pname defined but not used within scope
+[  195s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 160: Macro %hpc_module_pname defined but not used within scope
+[  195s] warning: /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 169: Macro %hpc_module_pname defined but not used within scope
+[  239s] Building target platforms: riscv64-suse-linux
+[  239s] Building for target riscv64-suse-linux
+[  239s] setting SOURCE_DATE_EPOCH=1673827200
+[  239s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.s7ue3Y
+[  240s] + umask 022
+[  240s] + cd /home/abuild/rpmbuild/BUILD
+[  240s] + cd /home/abuild/rpmbuild/BUILD
+[  240s] + rm -rf scipy-1.10.0
+[  240s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/scipy-1.10.0.tar.gz
+[  248s] + STATUS=0
+[  248s] + '[' 0 -ne 0 ']'
+[  248s] + cd scipy-1.10.0
+[  248s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/scipy-datasets.tar.gz
+[  248s] + STATUS=0
+[  248s] + '[' 0 -ne 0 ']'
+[  248s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  248s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/scipy-pr17717-ro-interpn.patch
+[  248s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  249s] + sed -i '1{/env python/d}' scipy/sparse/linalg/_isolve/tests/test_gcrotmk.py
+[  249s] + chmod a-x scipy/stats/tests/test_distributions.py
+[  249s] + RPM_EC=0
+[  249s] ++ jobs -p
+[  249s] + exit 0
+[  249s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.7cHq1n
+[  249s] + umask 022
+[  249s] + cd /home/abuild/rpmbuild/BUILD
+[  249s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-scipy-1.10.0-1.3.riscv64
+[  249s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-scipy-1.10.0-1.3.riscv64
+[  249s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  249s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-scipy-1.10.0-1.3.riscv64
+[  249s] + cd scipy-1.10.0
+[  249s] + ref=/usr/lib/rpm
+[  249s] + mints=0
+[  249s] + case $(uname -m) in
+[  249s] ++ uname -m
+[  249s] + mints=20160911
+[  249s] + for s in guess sub
+[  249s] ++ find -maxdepth 8 -name config.guess
+[  250s] + for s in guess sub
+[  250s] ++ find -maxdepth 8 -name config.sub
+[  250s] + set +x
+[  250s] Using libalternatives variant 38 for f2py in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  250s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  250s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  251s] Using libalternatives variant 38 for pybind11-config in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  251s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  251s] Using alternative cygdb-3.8 for cygdb in ./build/flavorbin during Python 3.8 expansions.
+[  251s] Using alternative cython-3.8 for cython in ./build/flavorbin during Python 3.8 expansions.
+[  251s] Using alternative cythonize-3.8 for cythonize in ./build/flavorbin during Python 3.8 expansions.
+[  252s] Using alternative pythran-3.8 for pythran in ./build/flavorbin during Python 3.8 expansions.
+[  252s] Using alternative pythran-config-3.8 for pythran-config in ./build/flavorbin during Python 3.8 expansions.
+[  252s] Using libalternatives variant 39 for f2py in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  252s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  252s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  252s] Using libalternatives variant 39 for pybind11-config in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  253s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  253s] Using alternative cygdb-3.9 for cygdb in ./build/flavorbin during Python 3.9 expansions.
+[  253s] Using alternative cython-3.9 for cython in ./build/flavorbin during Python 3.9 expansions.
+[  253s] Using alternative cythonize-3.9 for cythonize in ./build/flavorbin during Python 3.9 expansions.
+[  254s] Using alternative pythran-3.9 for pythran in ./build/flavorbin during Python 3.9 expansions.
+[  254s] Using alternative pythran-config-3.9 for pythran-config in ./build/flavorbin during Python 3.9 expansions.
+[  254s] Using libalternatives variant 311 for f2py in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  254s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  254s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  254s] Using libalternatives variant 311 for pybind11-config in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  254s] Using libalternatives variant 311 for wheel in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  255s] Using alternative cygdb-3.11 for cygdb in ./build/flavorbin during Python 3.11 expansions.
+[  255s] Using alternative cython-3.11 for cython in ./build/flavorbin during Python 3.11 expansions.
+[  255s] Using alternative cythonize-3.11 for cythonize in ./build/flavorbin during Python 3.11 expansions.
+[  256s] Using alternative pythran-3.11 for pythran in ./build/flavorbin during Python 3.11 expansions.
+[  256s] Using alternative pythran-config-3.11 for pythran-config in ./build/flavorbin during Python 3.11 expansions.
+[  256s] Using alternative cygdb-3.10 for cygdb in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative cython-3.10 for cython in ./build/flavorbin during Python 3.10 expansions.
+[  256s] Using alternative cythonize-3.10 for cythonize in ./build/flavorbin during Python 3.10 expansions.
+[  257s] Using alternative pythran-3.10 for pythran in ./build/flavorbin during Python 3.10 expansions.
+[  257s] Using alternative pythran-config-3.10 for pythran-config in ./build/flavorbin during Python 3.10 expansions.
+[  257s] + export PATH=/home/abuild/rpmbuild/BUILD/scipy-1.10.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  257s] + PATH=/home/abuild/rpmbuild/BUILD/scipy-1.10.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  257s] ++ '[' -f _current_flavor ']'
+[  257s] ++ cat _current_flavor
+[  257s] + last_flavor=python310
+[  257s] + '[' -z python310 ']'
+[  257s] + '[' python310 '!=' python38 ']'
+[  257s] + '[' -d build ']'
+[  257s] + mv build _build.python310
+[  257s] + '[' -d _build.python38 ']'
+[  257s] + mv _build.python38 build
+[  257s] + echo python38
+[  257s] + python_flavor=python38
+[  257s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  257s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  257s] ++ '[' -f _current_flavor ']'
+[  257s] ++ cat _current_flavor
+[  258s] + last_flavor=python38
+[  258s] + '[' -z python38 ']'
+[  258s] + '[' python38 '!=' python38 ']'
+[  258s] + echo python38
+[  258s] + python_flavor=python38
+[  258s] + myargs=
+[  258s] + '[' -f './dist/*-none-any.whl' ']'
+[  258s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  266s] Processing /home/abuild/rpmbuild/BUILD/scipy-1.10.0
+[  267s]   Preparing metadata (pyproject.toml): started
+[  267s]   Running command Preparing metadata (pyproject.toml)
+[  418s]   The Meson build system
+[  418s]   Version: 1.0.0
+[  418s]   Source dir: /home/abuild/rpmbuild/BUILD/scipy-1.10.0
+[  418s]   Build dir: /home/abuild/rpmbuild/BUILD/scipy-1.10.0/.mesonpy-q2moph1g/build
+[  419s]   Build type: native build
+[  419s]   Project name: SciPy
+[  419s]   Project version: 1.10.0
+[  419s]   C compiler for the host machine: cc (gcc 12.2.1 "cc (SUSE Linux) 12.2.1 20230124 [revision 193f7e62815b4089dfaed4c2bd34fd4f10209e27]")
+[  419s]   C linker for the host machine: cc ld.bfd 2.39.0.20220810-3
+[  419s]   C++ compiler for the host machine: c++ (gcc 12.2.1 "c++ (SUSE Linux) 12.2.1 20230124 [revision 193f7e62815b4089dfaed4c2bd34fd4f10209e27]")
+[  419s]   C++ linker for the host machine: c++ ld.bfd 2.39.0.20220810-3
+[  419s]   Host machine cpu family: riscv64
+[  419s]   Host machine cpu: riscv64
+[  419s]   Compiler for C supports arguments -Wno-unused-but-set-variable: YES
+[  419s]   Compiler for C supports arguments -Wno-unused-function: YES
+[  419s]   Compiler for C supports arguments -Wno-conversion: YES
+[  419s]   Compiler for C supports arguments -Wno-misleading-indentation: YES
+[  419s]   Compiler for C supports arguments -Wno-incompatible-pointer-types: YES
+[  419s]   Library m found: YES
+[  419s]   Fortran compiler for the host machine: gfortran (gcc 12.2.1 "GNU Fortran (SUSE Linux) 12.2.1 20230124 [revision 193f7e62815b4089dfaed4c2bd34fd4f10209e27]")
+[  419s]   Fortran linker for the host machine: gfortran ld.bfd 2.39.0.20220810-3
+[  419s]   Compiler for Fortran supports arguments -Wno-conversion: YES
+[  419s]   Checking if "-Wl,--version-script" : links: YES
+[  419s]   Program cython found: YES (/home/abuild/rpmbuild/BUILD/scipy-1.10.0/build/flavorbin/cython)
+[  419s]   Program python found: YES (/usr/bin/python3.8)
+[  419s]   Found pkg-config: /usr/bin/pkg-config (1.8.0)
+[  419s]   Program pythran found: YES (/home/abuild/rpmbuild/BUILD/scipy-1.10.0/build/flavorbin/pythran)
+[  419s]   Run-time dependency threads found: YES
+[  419s]   Library npymath found: YES
+[  419s]   Library npyrandom found: YES
+[  419s]   Run-time dependency openblas found: YES 0.3.21
+[  419s]   Dependency openblas found: YES 0.3.21 (cached)
+[  419s]   Program _build_utils/cythoner.py found: YES (/usr/bin/python3 /home/abuild/rpmbuild/BUILD/scipy-1.10.0/scipy/_build_utils/cythoner.py)
+[  419s]   Compiler for C supports arguments -Wno-maybe-uninitialized: YES
+[  419s]   Compiler for C supports arguments -Wno-discarded-qualifiers: YES
+[  419s]   Compiler for C supports arguments -Wno-empty-body: YES
+[  419s]   Compiler for C supports arguments -Wno-implicit-function-declaration: YES
+[  419s]   Compiler for C supports arguments -Wno-parentheses: YES
+[  419s]   Compiler for C supports arguments -Wno-switch: YES
+[  419s]   Compiler for C supports arguments -Wno-unused-label: YES
+[  419s]   Compiler for C supports arguments -Wno-unused-variable: YES
+[  419s]   Compiler for C++ supports arguments -Wno-cpp: YES
+[  419s]   Compiler for C++ supports arguments -Wno-deprecated-declarations: YES
+[  419s]   Compiler for C++ supports arguments -Wno-class-memaccess: YES
+[  419s]   Compiler for C++ supports arguments -Wno-format-truncation: YES
+[  419s]   Compiler for C++ supports arguments -Wno-non-virtual-dtor: YES
+[  419s]   Compiler for C++ supports arguments -Wno-sign-compare: YES
+[  419s]   Compiler for C++ supports arguments -Wno-switch: YES
+[  419s]   Compiler for C++ supports arguments -Wno-terminate: YES
+[  419s]   Compiler for C++ supports arguments -Wno-unused-but-set-variable: YES
+[  419s]   Compiler for C++ supports arguments -Wno-unused-function: YES
+[  419s]   Compiler for C++ supports arguments -Wno-unused-local-typedefs: YES
+[  419s]   Compiler for C++ supports arguments -Wno-unused-variable: YES
+[  419s]   Compiler for C++ supports arguments -Wno-int-in-bool-context: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-argument-mismatch: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-conversion: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-intrinsic-shadow: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-maybe-uninitialized: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-surprising: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-uninitialized: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-dummy-argument: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-label: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-variable: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-tabs: YES
+[  419s]   Compiler for Fortran supports arguments -Wno-argument-mismatch: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-conversion: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-maybe-uninitialized: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-dummy-argument: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-label: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-unused-variable: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -Wno-tabs: YES (cached)
+[  419s]   Checking for function "open_memstream" : NO
+[  419s]   Configuring messagestream_config.h using configuration
+[  419s]   Compiler for Fortran supports arguments -w: YES
+[  419s]   Checking for size of "void*" : 8
+[  419s]   Compiler for C supports arguments -Wno-unused-variable: YES (cached)
+[  419s]   Compiler for C supports arguments -Wno-parentheses: YES (cached)
+[  419s]   Compiler for C supports arguments -Wno-unused-label: YES (cached)
+[  419s]   Compiler for C supports arguments -Wno-implicit-function-declaration: YES (cached)
+[  419s]   Compiler for C supports arguments -Wno-switch: YES (cached)
+[  419s]   Compiler for Fortran supports arguments -w: YES (cached)
+[  419s]   Checking for size of "void*" : 8
+[  419s]   Build targets in project: 253
+[  419s] 
+[  419s]   SciPy 1.10.0
+[  419s] 
+[  419s]     User defined options
+[  419s]       Native files: /home/abuild/rpmbuild/BUILD/scipy-1.10.0/.mesonpy-native-file.ini
+[  419s]       debug       : false
+[  419s]       optimization: 2
+[  419s]       prefix      : /usr
+[  419s] 
+[  419s]   Found ninja-1.11.1 at /usr/bin/ninja
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_special' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target '_stats_gen_pyx' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  419s]   WARNING: custom_target 'cython_linalg' has more than one output! Using the first one.
+[  428s]   [1/1620] Generating scipy/generate-version with a custom command
+[  428s]   [2/1620] Generating scipy/special.pxd with a custom command
+[  428s]   [3/1620] Generating scipy/_lib/__init__.py with a custom command
+[  428s]   [4/1620] Generating scipy/__init__.py with a custom command
+[  428s]   [5/1620] Generating scipy/linalg.pxd with a custom command
+[  428s]   [6/1620] Generating scipy/optimize.pxd with a custom command
+[  428s]   [7/1620] Generating scipy/_lib/_ccallback_c.pxd with a custom command
+[  428s]   [8/1620] Generating scipy/_lib/ccallback.pxd with a custom command
+[  430s]   [9/1620] Generating scipy/generate-config with a custom command
+[  430s]   [10/1620] Generating scipy/_lib/messagestream.pxd with a custom command
+[  431s]   [11/1620] Generating scipy/special/__init__.py with a custom command
+[  432s]   [12/1620] Generating scipy/special/_agm.pxd with a custom command
+[  434s]   [13/1620] Compiling C object scipy/_lib/_fpumode.cpython-38-riscv64-linux-gnu.so.p/_fpumode.c.o
+[  435s]   [14/1620] Compiling C object scipy/_lib/_test_ccallback.cpython-38-riscv64-linux-gnu.so.p/src__test_ccallback.c.o
+[  435s]   [15/1620] Generating scipy/special/_boxcox.pxd with a custom command
+[  435s]   [16/1620] Compiling C object scipy/lib_fortranobject.a.p/a8f3816407c89b906d49975551fc53d2678e900e_.._.._f2py_src_fortranobject.c.o
+[  436s]   [17/1620] Linking static target scipy/lib_fortranobject.a
+[  437s]   [18/1620] Compiling C++ object scipy/_lib/_uarray/_uarray.cpython-38-riscv64-linux-gnu.so.p/vectorcall.cxx.o
+[  437s]   [19/1620] Generating scipy/special/_cephes.pxd with a custom command
+[  438s]   [20/1620] Generating scipy/special/_complexstuff.pxd with a custom command
+[  439s]   [21/1620] Generating scipy/special/_convex_analysis.pxd with a custom command
+[  439s]   [22/1620] Generating scipy/special/_cunity.pxd with a custom command
+[  440s]   [23/1620] Linking target scipy/_lib/_fpumode.cpython-38-riscv64-linux-gnu.so
+[  440s]   [24/1620] Generating scipy/special/_digamma.pxd with a custom command
+[  441s]   [25/1620] Generating scipy/special/_ellip_harm.pxd with a custom command
+[  442s]   [26/1620] Generating scipy/special/_ellip_harm_2.pxd with a custom command
+[  442s]   [27/1620] Generating scipy/special/_evalpoly.pxd with a custom command
+[  442s]   [28/1620] Generating scipy/special/_ellipk.pxd with a custom command
+[  444s]   [29/1620] Generating scipy/special/_exprel.pxd with a custom command
+[  444s]   [30/1620] Generating scipy/special/_factorial.pxd with a custom command
+[  444s]   [31/1620] Generating scipy/special/_hyp0f1.pxd with a custom command
+[  444s]   [32/1620] Generating scipy/special/_hyp2f1.pxd with a custom command
+[  444s]   [33/1620] Linking target scipy/_lib/_test_ccallback.cpython-38-riscv64-linux-gnu.so
+[  446s]   [34/1620] Generating scipy/special/_hypergeometric.pxd with a custom command
+[  446s]   [35/1620] Generating scipy/special/_lambertw.pxd with a custom command
+[  446s]   [36/1620] Generating scipy/special/_legacy.pxd with a custom command
+[  446s]   [37/1620] Generating scipy/special/_loggamma.pxd with a custom command
+[  447s]   [38/1620] Generating scipy/special/_ndtri_exp.pxd with a custom command
+[  448s]   [39/1620] Generating scipy/special/_sici.pxd with a custom command
+[  448s]   [40/1620] Generating scipy/special/_spence.pxd with a custom command
+[  448s]   [41/1620] Generating scipy/special/_spherical_bessel.pxd with a custom command
+[  449s]   [42/1620] Generating scipy/special/_trig.pxd with a custom command
+[  449s]   [43/1620] Generating scipy/special/_wright_bessel.pxd with a custom command
+[  450s]   [44/1620] Generating scipy/special/_xlogy.pxd with a custom command
+[  450s]   [45/1620] Generating scipy/special/orthogonal_eval.pxd with a custom command
+[  451s]   [46/1620] Generating scipy/special/sf_error.pxd with a custom command
+[  452s]   [47/1620] Generating scipy/special/sph_harm.pxd with a custom command
+[  452s]   [48/1620] Generating scipy/special/_cython_special.pxi with a custom command
+[  452s]   [49/1620] Generating scipy/special/_cython_special_custom.pxi with a custom command
+[  453s]   [50/1620] Generating scipy/special/_ufuncs_extra_code.pxi with a custom command
+[  453s]   [51/1620] Generating scipy/special/_ufuncs_extra_code_common.pxi with a custom command
+[  458s]   [52/1620] Compiling C object scipy/special/libcephes.a.p/cephes_airy.c.o
+[  458s]   [53/1620] Compiling C object scipy/special/libcephes.a.p/cephes_bdtr.c.o
+[  458s]   [54/1620] Compiling C object scipy/special/libcephes.a.p/cephes_besselpoly.c.o
+[  458s]   [55/1620] Compiling C object scipy/special/libcephes.a.p/cephes_beta.c.o
+[  459s]   [56/1620] Compiling C object scipy/special/libcephes.a.p/cephes_btdtr.c.o
+[  459s]   [57/1620] Generating 'scipy/_lib/_test_deprecation_call.cpython-38-riscv64-linux-gnu.so.p/_test_deprecation_call.c'.
+[  459s]   [58/1620] Generating 'scipy/_lib/_test_deprecation_def.cpython-38-riscv64-linux-gnu.so.p/_test_deprecation_def.c'.
+[  464s]   [59/1620] Compiling C object scipy/special/libcephes.a.p/cephes_chbevl.c.o
+[  464s]   [60/1620] Compiling C object scipy/special/libcephes.a.p/cephes_cbrt.c.o
+[  464s]   [61/1620] Compiling C object scipy/special/libcephes.a.p/cephes_chdtr.c.o
+[  464s]   [62/1620] Compiling C object scipy/special/libcephes.a.p/cephes_const.c.o
+[  464s]   [63/1620] Compiling C object scipy/special/libcephes.a.p/cephes_dawsn.c.o
+[  466s]   [64/1620] Generating 'scipy/_lib/_ccallback_c.cpython-38-riscv64-linux-gnu.so.p/_ccallback_c.c'.
+[  467s]   [65/1620] Compiling C object scipy/_lib/_test_deprecation_call.cpython-38-riscv64-linux-gnu.so.p/meson-generated__test_deprecation_call.c.o
+[  468s]   [66/1620] Compiling C object scipy/_lib/_test_deprecation_def.cpython-38-riscv64-linux-gnu.so.p/meson-generated__test_deprecation_def.c.o
+[  469s]   [67/1620] Compiling C object scipy/special/libcephes.a.p/cephes_dd_real.c.o
+[  469s]   [68/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ellpe.c.o
+[  470s]   [69/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ellik.c.o
+[  470s]   [70/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ellie.c.o
+[  470s]   [71/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ellpj.c.o
+[  471s]   [72/1620] Generating 'scipy/_lib/messagestream.cpython-38-riscv64-linux-gnu.so.p/messagestream.c'.
+[  475s]   [73/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ellpk.c.o
+[  475s]   [74/1620] Compiling C object scipy/special/libcephes.a.p/cephes_erfinv.c.o
+[  475s]   [75/1620] Compiling C object scipy/special/libcephes.a.p/cephes_exp2.c.o
+[  476s]   [76/1620] Compiling C object scipy/special/libcephes.a.p/cephes_expn.c.o
+[  476s]   [77/1620] Compiling C object scipy/special/libcephes.a.p/cephes_exp10.c.o
+[  478s]   [78/1620] Linking target scipy/_lib/_test_deprecation_call.cpython-38-riscv64-linux-gnu.so
+[  479s]   [79/1620] Linking target scipy/_lib/_test_deprecation_def.cpython-38-riscv64-linux-gnu.so
+[  480s]   [80/1620] Compiling C object scipy/special/libcephes.a.p/cephes_fdtr.c.o
+[  481s]   [81/1620] Compiling C object scipy/special/libcephes.a.p/cephes_fresnl.c.o
+[  482s]   [82/1620] Compiling C object scipy/_lib/_ccallback_c.cpython-38-riscv64-linux-gnu.so.p/meson-generated__ccallback_c.c.o
+[  482s]   [83/1620] Compiling C object scipy/special/libcephes.a.p/cephes_gammasgn.c.o
+[  482s]   [84/1620] Compiling C object scipy/special/libcephes.a.p/cephes_gamma.c.o
+[  482s]   [85/1620] Compiling C object scipy/special/libcephes.a.p/cephes_gdtr.c.o
+[  483s]   [86/1620] Compiling C object scipy/_lib/messagestream.cpython-38-riscv64-linux-gnu.so.p/meson-generated_messagestream.c.o
+[  484s]   [87/1620] Compiling C object scipy/special/libcephes.a.p/cephes_hyperg.c.o
+[  485s]   [88/1620] Compiling C object scipy/special/libcephes.a.p/cephes_hyp2f1.c.o
+[  485s]   [89/1620] Compiling C object scipy/special/libcephes.a.p/cephes_i0.c.o
+[  486s]   [90/1620] Compiling C object scipy/special/libcephes.a.p/cephes_i1.c.o
+[  488s]   [91/1620] Compiling C object scipy/special/libcephes.a.p/cephes_igam.c.o
+[  488s]   [92/1620] Compiling C object scipy/special/libcephes.a.p/cephes_igami.c.o
+[  489s]   [93/1620] Compiling C object scipy/special/libcephes.a.p/cephes_incbet.c.o
+[  490s]   [94/1620] Compiling C object scipy/special/libcephes.a.p/cephes_incbi.c.o
+[  491s]   [95/1620] Compiling C object scipy/special/libcephes.a.p/cephes_j1.c.o
+[  491s]   [96/1620] Compiling C object scipy/special/libcephes.a.p/cephes_j0.c.o
+[  492s]   [97/1620] Compiling C object scipy/special/libcephes.a.p/cephes_jv.c.o
+[  493s]   [98/1620] Compiling C object scipy/special/libcephes.a.p/cephes_k1.c.o
+[  494s]   [99/1620] Compiling C object scipy/special/libcephes.a.p/cephes_k0.c.o
+[  495s]   [100/1620] Compiling C object scipy/special/libcephes.a.p/cephes_kn.c.o
+[  496s]   [101/1620] Compiling C object scipy/special/libcephes.a.p/cephes_lanczos.c.o
+[  497s]   [102/1620] Compiling C object scipy/special/libcephes.a.p/cephes_nbdtr.c.o
+[  498s]   [103/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ndtr.c.o
+[  499s]   [104/1620] Compiling C object scipy/special/libcephes.a.p/cephes_kolmogorov.c.o
+[  499s]   [105/1620] Compiling C object scipy/special/libcephes.a.p/cephes_ndtri.c.o
+[  500s]   [106/1620] Compiling C object scipy/special/libcephes.a.p/cephes_pdtr.c.o
+[  500s]   [107/1620] Compiling C object scipy/special/libcephes.a.p/cephes_owens_t.c.o
+[  502s]   [108/1620] Compiling C object scipy/special/libcephes.a.p/cephes_poch.c.o
+[  503s]   [109/1620] Compiling C object scipy/special/libcephes.a.p/cephes_psi.c.o
+[  504s]   [110/1620] Compiling C object scipy/special/libcephes.a.p/cephes_rgamma.c.o
+[  504s]   [111/1620] Compiling C object scipy/special/libcephes.a.p/cephes_round.c.o
+[  506s]   [112/1620] Compiling C object scipy/special/libcephes.a.p/cephes_scipy_iv.c.o
+[  506s]   [113/1620] Compiling C object scipy/special/libcephes.a.p/cephes_sici.c.o
+[  506s]   [114/1620] Compiling C object scipy/special/libcephes.a.p/cephes_shichi.c.o
+[  508s]   [115/1620] Compiling C object scipy/special/libcephes.a.p/cephes_sindg.c.o
+[  508s]   [116/1620] Compiling C object scipy/special/libcephes.a.p/cephes_sinpi.c.o
+[  510s]   [117/1620] Compiling C object scipy/special/libcephes.a.p/cephes_spence.c.o
+[  510s]   [118/1620] Compiling C object scipy/special/libcephes.a.p/cephes_stdtr.c.o
+[  512s]   [119/1620] Linking target scipy/_lib/messagestream.cpython-38-riscv64-linux-gnu.so
+[  512s]   [120/1620] Compiling C object scipy/special/libcephes.a.p/cephes_tukey.c.o
+[  512s]   [121/1620] Compiling C object scipy/special/libcephes.a.p/cephes_tandg.c.o
+[  512s]   [122/1620] Compiling C object scipy/special/libcephes.a.p/cephes_struve.c.o
+[  514s]   [123/1620] Compiling C object scipy/special/libcephes.a.p/cephes_unity.c.o
+[  514s]   [124/1620] Compiling C++ object scipy/_lib/_uarray/_uarray.cpython-38-riscv64-linux-gnu.so.p/_uarray_dispatch.cxx.o
+[  514s]   [125/1620] Compiling C object scipy/special/libcephes.a.p/cephes_yn.c.o
+[  515s]   [126/1620] Compiling C object scipy/special/libcephes.a.p/cephes_yv.c.o
+[  516s]   [127/1620] Compiling C object scipy/special/libcephes.a.p/cephes_zeta.c.o
+[  516s]   [128/1620] Linking target scipy/_lib/_uarray/_uarray.cpython-38-riscv64-linux-gnu.so
+[  517s]   [129/1620] Compiling C object scipy/special/libcephes.a.p/cephes_zetac.c.o
+[  518s]   [130/1620] Module scanner.
+[  518s]   [131/1620] Module scanner.
+[  519s]   [132/1620] Module scanner.
+[  519s]   [133/1620] Linking static target scipy/special/libcephes.a
+[  519s]   [134/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/_cosine.c.o
+[  520s]   [135/1620] Module scanner.
+[  520s]   [136/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zabs.f.o
+[  522s]   [137/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_dgamln.f.o
+[  522s]   [138/1620] Generating scipy/special/cython_special with a custom command
+[  522s]   [139/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zacai.f.o
+[  522s]   [140/1620] Linking target scipy/_lib/_ccallback_c.cpython-38-riscv64-linux-gnu.so
+[  523s]   [141/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/amos_wrappers.c.o
+[  524s]   [142/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zacon.f.o
+[  524s]   [143/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zairy.f.o
+[  524s]   [144/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbesh.f.o
+[  525s]   [145/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zasyi.f.o
+[  525s]   [146/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbesk.f.o
+[  526s]   [147/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbesj.f.o
+[  526s]   [148/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbesy.f.o
+[  526s]   [149/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbesi.f.o
+[  527s]   [150/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbunk.f.o
+[  527s]   [151/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbinu.f.o
+[  527s]   [152/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zdiv.f.o
+[  527s]   [153/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zexp.f.o
+[  528s]   [154/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbuni.f.o
+[  528s]   [155/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbiry.f.o
+[  529s]   [156/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zmlt.f.o
+[  529s]   [157/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zlog.f.o
+[  530s]   [158/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zs1s2.f.o
+[  530s]   [159/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zkscl.f.o
+[  530s]   [160/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zshch.f.o
+[  531s]   [161/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zuchk.f.o
+[  531s]   [162/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zrati.f.o
+[  531s]   [163/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zsqrt.f.o
+[  532s]   [164/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zmlri.f.o
+[  532s]   [165/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zbknu.f.o
+[  533s]   [166/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zseri.f.o
+[  534s]   [167/1620] Generating scipy/special/specfun_module with a custom command
+[  536s]   [168/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zunik.f.o
+[  536s]   [169/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zwrsk.f.o
+[  536s]   [170/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_algdiv.f.o
+[  536s]   [171/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zuni2.f.o
+[  536s]   [172/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zuni1.f.o
+[  536s]   [173/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zuoik.f.o
+[  537s]   [174/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_alngam.f.o
+[  538s]   [175/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zunhj.f.o
+[  538s]   [176/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_apser.f.o
+[  538s]   [177/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_alnrel.f.o
+[  538s]   [178/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bcorr.f.o
+[  539s]   [179/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zunk1.f.o
+[  539s]   [180/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bfrac.f.o
+[  540s]   [181/1620] Compiling Fortran object scipy/special/libamos.a.p/amos_zunk2.f.o
+[  540s]   [182/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_betaln.f.o
+[  540s]   [183/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_basym.f.o
+[  540s]   [184/1620] Linking static target scipy/special/libamos.a
+[  541s]   [185/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bgrat.f.o
+[  541s]   [186/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bpser.f.o
+[  542s]   [187/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_brcmp1.f.o
+[  542s]   [188/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bratio.f.o
+[  542s]   [189/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_bup.f.o
+[  542s]   [190/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_brcomp.f.o
+[  543s]   [191/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfchi.f.o
+[  544s]   [192/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfbin.f.o
+[  544s]   [193/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfbet.f.o
+[  544s]   [194/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfchn.f.o
+[  544s]   [195/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdff.f.o
+[  545s]   [196/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfgam.f.o
+[  545s]   [197/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfnor.f.o
+[  545s]   [198/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdffnc.f.o
+[  545s]   [199/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfnbn.f.o
+[  546s]   [200/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdfpoi.f.o
+[  546s]   [201/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumbin.f.o
+[  546s]   [202/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumbet.f.o
+[  546s]   [203/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumchi.f.o
+[  547s]   [204/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdftnc.f.o
+[  547s]   [205/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumf.f.o
+[  547s]   [206/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cdft.f.o
+[  548s]   [207/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumnbn.f.o
+[  548s]   [208/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumgam.f.o
+[  548s]   [209/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumpoi.f.o
+[  548s]   [210/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumchn.f.o
+[  549s]   [211/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumt.f.o
+[  549s]   [212/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumfnc.f.o
+[  549s]   [213/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumnor.f.o
+[  549s]   [214/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_devlpl.f.o
+[  550s]   [215/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_dinvnr.f.o
+[  550s]   [216/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_cumtnc.f.o
+[  550s]   [217/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_dt1.f.o
+[  551s]   [218/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_erf.f.o
+[  551s]   [219/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_dinvr.f.o
+[  551s]   [220/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_esum.f.o
+[  552s]   [221/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_dzror.f.o
+[  552s]   [222/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_exparg.f.o
+[  552s]   [223/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_erfc1.f.o
+[  552s]   [224/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_fpser.f.o
+[  552s]   [225/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gam1.f.o
+[  553s]   [226/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gamln1.f.o
+[  553s]   [227/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gamln.f.o
+[  554s]   [228/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_ipmpar.f.o
+[  554s]   [229/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gsumln.f.o
+[  555s]   [230/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gamma_fort.f.o
+[  555s]   [231/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_rcomp.f.o
+[  555s]   [232/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_grat1.f.o
+[  555s]   [233/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gaminv.f.o
+[  555s]   [234/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_psi_fort.f.o
+[  556s]   [235/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_rlog.f.o
+[  556s]   [236/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_rlog1.f.o
+[  556s]   [237/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_rexp.f.o
+[  556s]   [238/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_spmpar.f.o
+[  557s]   [239/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_stvaln.f.o
+[  557s]   [240/1620] Compiling Fortran object scipy/special/libcdflib.a.p/cdflib_gratio.f.o
+[  558s]   [241/1620] Compiling Fortran object scipy/special/libmach.a.p/mach_i1mach.f.o
+[  558s]   [242/1620] Compiling Fortran object scipy/special/libmach.a.p/mach_d1mach.f.o
+[  558s]   [243/1620] Compiling Fortran object scipy/special/libmach.a.p/mach_xerror.f.o
+[  558s]   [244/1620] Linking static target scipy/special/libcdflib.a
+[  559s]   [245/1620] Linking static target scipy/special/libmach.a
+[  563s]   [246/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/cdf_wrappers.c.o
+[  563s]   [247/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/sf_error.c.o
+[  564s]   [248/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/specfun_wrappers.c.o
+[  565s]   [249/1620] Compiling C object scipy/special/_specfun.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__specfunmodule.c.o
+[  573s]   [250/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/sf_error.cc.o
+[  579s]   [251/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/_wright.cxx.o
+[  580s]   [252/1620] Compiling C object scipy/special/_ellip_harm_2.cpython-38-riscv64-linux-gnu.so.p/sf_error.c.o
+[  580s]   [253/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/_faddeeva.cxx.o
+[  582s]   [254/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/_cosine.c.o
+[  588s]   [255/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/amos_wrappers.c.o
+[  590s]   [256/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/cdf_wrappers.c.o
+[  591s]   [257/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/wright.cc.o
+[  596s]   [258/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/sf_error.c.o
+[  596s]   [259/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/specfun_wrappers.c.o
+[  600s]   [260/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/Faddeeva.cc.o
+[  601s]   [261/1620] Compiling C object scipy/special/_test_internal.cpython-38-riscv64-linux-gnu.so.p/cephes_dd_real.c.o
+[  603s]   [262/1620] Generating 'scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/_ufuncs_cxx.cpp'.
+[  605s]   [263/1620] Generating scipy/special/_data_gsl with a custom command
+[  610s]   [264/1620] Generating scipy/special/_data_local with a custom command
+[  612s]   [265/1620] Generating scipy/special/_data_boost with a custom command
+[  613s]   [266/1620] Generating scipy/linalg/__init__.py with a custom command
+[  614s]   [267/1620] Generating scipy/linalg/_cythonized_array_utils.pxd with a custom command
+[  616s]   [268/1620] Generating scipy/linalg/cython_linalg with a custom command
+[  616s]   [269/1620] Generating 'scipy/special/_ellip_harm_2.cpython-38-riscv64-linux-gnu.so.p/_ellip_harm_2.c'.
+[  624s]   [270/1620] Generating 'scipy/special/_comb.cpython-38-riscv64-linux-gnu.so.p/_comb.c'.
+[  633s]   [271/1620] Compiling C object scipy/special/_ellip_harm_2.cpython-38-riscv64-linux-gnu.so.p/meson-generated__ellip_harm_2.c.o
+[  634s]   [272/1620] Compiling C object scipy/special/_comb.cpython-38-riscv64-linux-gnu.so.p/meson-generated__comb.c.o
+[  635s]   [273/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/ellint_carlson_wrap.cxx.o
+[  651s]   [274/1620] Generating scipy/linalg/flinalg_module with a custom command
+[  654s]   [275/1620] Generating 'scipy/special/_test_internal.cpython-38-riscv64-linux-gnu.so.p/_test_internal.c'.
+[  655s]   [276/1620] Linking target scipy/special/_comb.cpython-38-riscv64-linux-gnu.so
+[  659s]   [277/1620] Compiling C object scipy/linalg/_flinalg.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__flinalgmodule.c.o
+[  661s]   [278/1620] Module scanner.
+[  666s]   [279/1620] Compiling Fortran object scipy/linalg/_flinalg.cpython-38-riscv64-linux-gnu.so.p/src_det.f.o
+[  673s]   [280/1620] Compiling Fortran object scipy/linalg/_flinalg.cpython-38-riscv64-linux-gnu.so.p/src_lu.f.o
+[  684s]   [281/1620] Linking target scipy/special/_ellip_harm_2.cpython-38-riscv64-linux-gnu.so
+[  684s]   [282/1620] Compiling C object scipy/special/_test_internal.cpython-38-riscv64-linux-gnu.so.p/meson-generated__test_internal.c.o
+[  703s]   [283/1620] Linking target scipy/linalg/_flinalg.cpython-38-riscv64-linux-gnu.so
+[  731s]   [284/1620] Generating scipy/linalg/interpolative_module with a custom command
+[  752s]   [285/1620] Compiling C object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__interpolativemodule.c.o
+[  752s]   [286/1620] Generating scipy/linalg/fblas_module with a custom command
+[  759s]   [287/1620] Module scanner.
+[  760s]   [288/1620] Generating 'scipy/linalg/_solve_toeplitz.cpython-38-riscv64-linux-gnu.so.p/_solve_toeplitz.c'.
+[  760s]   [289/1620] Linking target scipy/special/_test_internal.cpython-38-riscv64-linux-gnu.so
+[  764s]   [290/1620] Module scanner.
+[  766s]   [291/1620] Compiling Fortran object scipy/special/libspecfun.a.p/specfun_specfun.f.o
+[  766s]   [292/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_id_rand.f.o
+[  766s]   [293/1620] Linking static target scipy/special/libspecfun.a
+[  768s]   [294/1620] Compiling Fortran object scipy/linalg/_fblas.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__fblas-f2pywrappers.f.o
+[  768s]   [295/1620] Compiling Fortran object scipy/linalg/_fblas.cpython-38-riscv64-linux-gnu.so.p/..__build_utils_src_wrap_dummy_g77_abi.f.o
+[  774s]   [296/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_frm.f.o
+[  775s]   [297/1620] Generating 'scipy/linalg/_matfuncs_sqrtm_triu.cpython-38-riscv64-linux-gnu.so.p/_matfuncs_sqrtm_triu.c'.
+[  777s]   [298/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_id_rtrans.f.o
+[  779s]   [299/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_house.f.o
+[  780s]   [300/1620] Generating 'scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/_ufuncs.c'.
+[  783s]   [301/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_id2svd.f.o
+[  783s]   [302/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_id.f.o
+[  788s]   [303/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_snorm.f.o
+[  789s]   [304/1620] Generating 'scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/cython_special.c'.
+[  790s]   [305/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_sfft.f.o
+[  791s]   [306/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_qrpiv.f.o
+[  794s]   [307/1620] Linking target scipy/special/_specfun.cpython-38-riscv64-linux-gnu.so
+[  795s]   [308/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddp_asvd.f.o
+[  795s]   [309/1620] Compiling C object scipy/linalg/_fblas.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__fblasmodule.c.o
+[  796s]   [310/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idd_svd.f.o
+[  796s]   [311/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddp_aid.f.o
+[  798s]   [312/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddr_asvd.f.o
+[  799s]   [313/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddr_aid.f.o
+[  800s]   [314/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddp_rsvd.f.o
+[  800s]   [315/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddp_rid.f.o
+[  802s]   [316/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddr_rid.f.o
+[  803s]   [317/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_iddr_rsvd.f.o
+[  806s]   [318/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_frm.f.o
+[  808s]   [319/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_house.f.o
+[  812s]   [320/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_id2svd.f.o
+[  814s]   [321/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_id.f.o
+[  816s]   [322/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_sfft.f.o
+[  820s]   [323/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_snorm.f.o
+[  823s]   [324/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_qrpiv.f.o
+[  824s]   [325/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idz_svd.f.o
+[  825s]   [326/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzp_aid.f.o
+[  825s]   [327/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzp_asvd.f.o
+[  829s]   [328/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzr_asvd.f.o
+[  829s]   [329/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzp_rsvd.f.o
+[  829s]   [330/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzr_aid.f.o
+[  831s]   [331/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzp_rid.f.o
+[  833s]   [332/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzr_rsvd.f.o
+[  834s]   [333/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_idzr_rid.f.o
+[  837s]   [334/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_prini.f.o
+[  842s]   [335/1620] Module scanner.
+[  847s]   [336/1620] Compiling Fortran object scipy/linalg/libfwrappers.a.p/meson-generated_..__blas_subroutine_wrappers.f.o
+[  848s]   [337/1620] Compiling C object scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so.p/meson-generated__ufuncs.c.o
+[  854s]   [338/1620] Compiling Fortran object scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so.p/src_id_dist_src_dfft.f.o
+[  857s]   [339/1620] Compiling Fortran object scipy/linalg/libfwrappers.a.p/meson-generated_..__lapack_subroutine_wrappers.f.o
+[  860s]   [340/1620] Compiling Fortran object scipy/linalg/libfwrappers.a.p/..__build_utils_src_wrap_dummy_g77_abi.f.o
+[  861s]   [341/1620] Linking static target scipy/linalg/libfwrappers.a
+[  865s]   [342/1620] Linking target scipy/linalg/_fblas.cpython-38-riscv64-linux-gnu.so
+[  870s]   [343/1620] Generating scipy/linalg/_decomp_update with a custom command
+[  879s]   [344/1620] Compiling C object scipy/linalg/_matfuncs_sqrtm_triu.cpython-38-riscv64-linux-gnu.so.p/meson-generated__matfuncs_sqrtm_triu.c.o
+[  883s]   [345/1620] Compiling C object scipy/linalg/_solve_toeplitz.cpython-38-riscv64-linux-gnu.so.p/meson-generated__solve_toeplitz.c.o
+[  916s]   [346/1620] Compiling C++ object scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so.p/meson-generated__ufuncs_cxx.cpp.o
+[  921s]   [347/1620] Linking target scipy/special/_ufuncs_cxx.cpython-38-riscv64-linux-gnu.so
+[  926s]   [348/1620] Generating scipy/linalg/_matfuncs_expm with a custom command
+[  940s]   [349/1620] Linking target scipy/linalg/_interpolative.cpython-38-riscv64-linux-gnu.so
+[  972s]   [350/1620] Generating 'scipy/linalg/cython_blas.cpython-38-riscv64-linux-gnu.so.p/cython_blas.c'.
+[  984s]   [351/1620] Linking target scipy/linalg/_matfuncs_sqrtm_triu.cpython-38-riscv64-linux-gnu.so
+[  987s]   [352/1620] Generating scipy/sparse/_csparsetools_pyx with a custom command
+[  987s]   [353/1620] Linking target scipy/linalg/_solve_toeplitz.cpython-38-riscv64-linux-gnu.so
+[  989s]   [354/1620] Generating scipy/sparse/sparsetools/_sparsetools_headers with a custom command
+[ 1008s]   [355/1620] Compiling C object scipy/linalg/cython_blas.cpython-38-riscv64-linux-gnu.so.p/meson-generated_cython_blas.c.o
+[ 1054s]   [356/1620] Linking target scipy/special/_ufuncs.cpython-38-riscv64-linux-gnu.so
+[ 1064s]   [357/1620] Generating 'scipy/linalg/_cythonized_array_utils.cpython-38-riscv64-linux-gnu.so.p/_cythonized_array_utils.c'.
+[ 1072s]   [358/1620] Compiling C object scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so.p/meson-generated_cython_special.c.o
+[ 1075s]   [359/1620] Generating 'scipy/linalg/_decomp_update.cpython-38-riscv64-linux-gnu.so.p/_decomp_update.c'.
+[ 1088s]   [360/1620] Linking target scipy/linalg/cython_blas.cpython-38-riscv64-linux-gnu.so
+[ 1097s]   [361/1620] Generating 'scipy/sparse/_csparsetools.cpython-38-riscv64-linux-gnu.so.p/_csparsetools.c'.
+[ 1108s]   [362/1620] Generating 'scipy/linalg/_matfuncs_expm.cpython-38-riscv64-linux-gnu.so.p/_matfuncs_expm.c'.
+[ 1150s]   [363/1620] Compiling C object scipy/linalg/_decomp_update.cpython-38-riscv64-linux-gnu.so.p/meson-generated__decomp_update.c.o
+[ 1166s]   [364/1620] Compiling C object scipy/linalg/_cythonized_array_utils.cpython-38-riscv64-linux-gnu.so.p/meson-generated__cythonized_array_utils.c.o
+[ 1236s]   [365/1620] Compiling C object scipy/linalg/_matfuncs_expm.cpython-38-riscv64-linux-gnu.so.p/meson-generated__matfuncs_expm.c.o
+[ 1276s]   [366/1620] Compiling C object scipy/sparse/_csparsetools.cpython-38-riscv64-linux-gnu.so.p/meson-generated__csparsetools.c.o
+[ 1305s]   [367/1620] Generating 'scipy/linalg/cython_lapack.cpython-38-riscv64-linux-gnu.so.p/cython_lapack.c'.
+[ 1331s]   [368/1620] Linking target scipy/linalg/_decomp_update.cpython-38-riscv64-linux-gnu.so
+[ 1376s]   [369/1620] Linking target scipy/linalg/_cythonized_array_utils.cpython-38-riscv64-linux-gnu.so
+[ 1421s]   [370/1620] Compiling C object scipy/linalg/cython_lapack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_cython_lapack.c.o
+[ 1445s]   [371/1620] Compiling C++ object scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/sparsetools.cxx.o
+[ 1445s]   [372/1620] Linking target scipy/linalg/_matfuncs_expm.cpython-38-riscv64-linux-gnu.so
+[ 1470s]   [373/1620] Linking target scipy/special/cython_special.cpython-38-riscv64-linux-gnu.so
+[ 1483s]   [374/1620] Compiling C++ object scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/other.cxx.o
+[ 1487s]   [375/1620] Linking target scipy/linalg/cython_lapack.cpython-38-riscv64-linux-gnu.so
+[ 1516s]   [376/1620] Linking target scipy/sparse/_csparsetools.cpython-38-riscv64-linux-gnu.so
+[ 1522s]   [377/1620] Generating 'scipy/sparse/csgraph/_flow.cpython-38-riscv64-linux-gnu.so.p/_flow.c'.
+[ 1524s]   [378/1620] Generating 'scipy/sparse/csgraph/_matching.cpython-38-riscv64-linux-gnu.so.p/_matching.c'.
+[ 1536s]   [379/1620] Generating 'scipy/sparse/csgraph/_min_spanning_tree.cpython-38-riscv64-linux-gnu.so.p/_min_spanning_tree.c'.
+[ 1541s]   [380/1620] Generating 'scipy/sparse/csgraph/_reordering.cpython-38-riscv64-linux-gnu.so.p/_reordering.c'.
+[ 1560s]   [381/1620] Generating 'scipy/sparse/csgraph/_tools.cpython-38-riscv64-linux-gnu.so.p/_tools.c'.
+[ 1562s]   [382/1620] Compiling C object scipy/sparse/csgraph/_flow.cpython-38-riscv64-linux-gnu.so.p/meson-generated__flow.c.o
+[ 1564s]   [383/1620] Compiling C object scipy/sparse/csgraph/_matching.cpython-38-riscv64-linux-gnu.so.p/meson-generated__matching.c.o
+[ 1566s]   [384/1620] Compiling C object scipy/sparse/csgraph/_min_spanning_tree.cpython-38-riscv64-linux-gnu.so.p/meson-generated__min_spanning_tree.c.o
+[ 1572s]   [385/1620] Generating 'scipy/sparse/csgraph/_shortest_path.cpython-38-riscv64-linux-gnu.so.p/_shortest_path.c'.
+[ 1596s]   [386/1620] Compiling C object scipy/sparse/csgraph/_reordering.cpython-38-riscv64-linux-gnu.so.p/meson-generated__reordering.c.o
+[ 1598s]   [387/1620] Compiling C object scipy/sparse/csgraph/_tools.cpython-38-riscv64-linux-gnu.so.p/meson-generated__tools.c.o
+[ 1665s]   [388/1620] Compiling C object scipy/sparse/csgraph/_shortest_path.cpython-38-riscv64-linux-gnu.so.p/meson-generated__shortest_path.c.o
+[ 1674s]   [389/1620] Linking target scipy/sparse/csgraph/_flow.cpython-38-riscv64-linux-gnu.so
+[ 1676s]   [390/1620] Linking target scipy/sparse/csgraph/_min_spanning_tree.cpython-38-riscv64-linux-gnu.so
+[ 1686s]   [391/1620] Module scanner.
+[ 1691s]   [392/1620] Linking target scipy/sparse/csgraph/_matching.cpython-38-riscv64-linux-gnu.so
+[ 1691s]   [393/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_printstat.F.o
+[ 1700s]   [394/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sblasext.F.o
+[ 1701s]   [395/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sbsvd.F.o
+[ 1703s]   [396/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_second.F.o
+[ 1707s]   [397/1620] Linking target scipy/sparse/csgraph/_tools.cpython-38-riscv64-linux-gnu.so
+[ 1708s]   [398/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sgetu0.F.o
+[ 1708s]   [399/1620] Linking target scipy/sparse/csgraph/_reordering.cpython-38-riscv64-linux-gnu.so
+[ 1710s]   [400/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sgemm_ovwr.F.o
+[ 1714s]   [401/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_smgs.pentium.F.o
+[ 1716s]   [402/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_slansvd.F.o
+[ 1717s]   [403/1620] Generating scipy/linalg/flapack_module with a custom command
+[ 1719s]   [404/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_slansvd_irl.F.o
+[ 1720s]   [405/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sreorth.F.o
+[ 1721s]   [406/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_sritzvec.F.o
+[ 1723s]   [407/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_ssafescal.F.o
+[ 1724s]   [408/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_slanbpro.F.o
+[ 1725s]   [409/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1727s]   [410/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__spropack.a.p/PROPACK_single_smgs.risc.F.o
+[ 1728s]   [411/1620] Module scanner.
+[ 1728s]   [412/1620] Linking static target scipy/sparse/linalg/_propack/liblib__spropack.a
+[ 1730s]   [413/1620] Compiling Fortran object scipy/linalg/_flapack.cpython-38-riscv64-linux-gnu.so.p/..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1731s]   [414/1620] Compiling Fortran object scipy/linalg/_flapack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__flapack-f2pywrappers.f.o
+[ 1733s]   [415/1620] Module scanner.
+[ 1736s]   [416/1620] Generating 'scipy/sparse/csgraph/_traversal.cpython-38-riscv64-linux-gnu.so.p/_traversal.c'.
+[ 1741s]   [417/1620] Module scanner.
+[ 1741s]   [418/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dblasext.F.o
+[ 1742s]   [419/1620] Generating scipy/sparse/linalg/_propack/propack_module_spropack with a custom command
+[ 1748s]   [420/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dgemm_ovwr.F.o
+[ 1748s]   [421/1620] Generating scipy/sparse/linalg/_propack/propack_module_dpropack with a custom command
+[ 1748s]   [422/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dbsvd.F.o
+[ 1752s]   [423/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dgetu0.F.o
+[ 1752s]   [424/1620] Compiling C object scipy/sparse/linalg/_propack/_spropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__spropackmodule.c.o
+[ 1754s]   [425/1620] Module scanner.
+[ 1756s]   [426/1620] Compiling Fortran object scipy/sparse/linalg/_propack/_spropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__spropack-f2pywrappers.f.o
+[ 1757s]   [427/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dlansvd.F.o
+[ 1760s]   [428/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dlansvd_irl.F.o
+[ 1760s]   [429/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dlanbpro.F.o
+[ 1761s]   [430/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dmgs.pentium.F.o
+[ 1761s]   [431/1620] Compiling C object scipy/sparse/csgraph/_traversal.cpython-38-riscv64-linux-gnu.so.p/meson-generated__traversal.c.o
+[ 1763s]   [432/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dsafescal.F.o
+[ 1764s]   [433/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dritzvec.F.o
+[ 1765s]   [434/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dreorth.F.o
+[ 1766s]   [435/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_second.F.o
+[ 1767s]   [436/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_printstat.F.o
+[ 1768s]   [437/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1769s]   [438/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__dpropack.a.p/PROPACK_double_dmgs.risc.F.o
+[ 1770s]   [439/1620] Linking static target scipy/sparse/linalg/_propack/liblib__dpropack.a
+[ 1775s]   [440/1620] Module scanner.
+[ 1777s]   [441/1620] Compiling Fortran object scipy/sparse/linalg/_propack/_dpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__dpropack-f2pywrappers.f.o
+[ 1777s]   [442/1620] Compiling C object scipy/sparse/linalg/_propack/_dpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__dpropackmodule.c.o
+[ 1780s]   [443/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_cblasext.F.o
+[ 1784s]   [444/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_cgetu0.F.o
+[ 1785s]   [445/1620] Linking target scipy/sparse/csgraph/_shortest_path.cpython-38-riscv64-linux-gnu.so
+[ 1786s]   [446/1620] Linking target scipy/sparse/linalg/_propack/_spropack.cpython-38-riscv64-linux-gnu.so
+[ 1792s]   [447/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_cgemm_ovwr.F.o
+[ 1792s]   [448/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_clansvd.F.o
+[ 1794s]   [449/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_clansvd_irl.F.o
+[ 1796s]   [450/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_cmgs.pentium.F.o
+[ 1796s]   [451/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_clanbpro.F.o
+[ 1797s]   [452/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_creorth.F.o
+[ 1798s]   [453/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_critzvec.F.o
+[ 1798s]   [454/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_csafescal.F.o
+[ 1800s]   [455/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_printstat.F.o
+[ 1801s]   [456/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_second.F.o
+[ 1803s]   [457/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_sblasext.F.o
+[ 1805s]   [458/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_sbsvd.F.o
+[ 1805s]   [459/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_cmgs.risc.F.o
+[ 1806s]   [460/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1806s]   [461/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__cpropack.a.p/PROPACK_complex8_sgemm_ovwr.F.o
+[ 1807s]   [462/1620] Linking target scipy/sparse/linalg/_propack/_dpropack.cpython-38-riscv64-linux-gnu.so
+[ 1807s]   [463/1620] Linking static target scipy/sparse/linalg/_propack/liblib__cpropack.a
+[ 1808s]   [464/1620] Generating scipy/sparse/linalg/_isolve/methods_f_0 with a custom command
+[ 1809s]   [465/1620] Generating scipy/sparse/linalg/_isolve/methods_f_1 with a custom command
+[ 1810s]   [466/1620] Generating scipy/sparse/linalg/_isolve/methods_f_2 with a custom command
+[ 1811s]   [467/1620] Generating scipy/sparse/linalg/_isolve/methods_f_3 with a custom command
+[ 1812s]   [468/1620] Generating scipy/sparse/linalg/_isolve/methods_f_4 with a custom command
+[ 1812s]   [469/1620] Module scanner.
+[ 1813s]   [470/1620] Generating scipy/sparse/linalg/_isolve/methods_f_5 with a custom command
+[ 1813s]   [471/1620] Generating scipy/sparse/linalg/_isolve/Util_f_0 with a custom command
+[ 1818s]   [472/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_dblasext.F.o
+[ 1819s]   [473/1620] Generating scipy/sparse/linalg/_propack/propack_module_cpropack with a custom command
+[ 1819s]   [474/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_dbsvd.F.o
+[ 1819s]   [475/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_dgemm_ovwr.F.o
+[ 1820s]   [476/1620] Generating scipy/sparse/linalg/_propack/propack_module_zpropack with a custom command
+[ 1822s]   [477/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_printstat.F.o
+[ 1822s]   [478/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_second.F.o
+[ 1825s]   [479/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zgetu0.F.o
+[ 1825s]   [480/1620] Module scanner.
+[ 1828s]   [481/1620] Linking target scipy/sparse/csgraph/_traversal.cpython-38-riscv64-linux-gnu.so
+[ 1828s]   [482/1620] Compiling Fortran object scipy/sparse/linalg/_propack/_cpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__cpropack-f2pywrappers.f.o
+[ 1828s]   [483/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zblasext.F.o
+[ 1828s]   [484/1620] Compiling C object scipy/sparse/linalg/_propack/_cpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__cpropackmodule.c.o
+[ 1832s]   [485/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zmgs.pentium.F.o
+[ 1833s]   [486/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zlansvd.F.o
+[ 1835s]   [487/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zlansvd_irl.F.o
+[ 1836s]   [488/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zreorth.F.o
+[ 1836s]   [489/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zgemm_ovwr.F.o
+[ 1837s]   [490/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zritzvec.F.o
+[ 1837s]   [491/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zlanbpro.F.o
+[ 1838s]   [492/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zsafescal.F.o
+[ 1838s]   [493/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1840s]   [494/1620] Compiling Fortran object scipy/sparse/linalg/_propack/liblib__zpropack.a.p/PROPACK_complex16_zmgs.risc.F.o
+[ 1840s]   [495/1620] Linking static target scipy/sparse/linalg/_propack/liblib__zpropack.a
+[ 1842s]   [496/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ccolumn_bmod.c.o
+[ 1842s]   [497/1620] Module scanner.
+[ 1843s]   [498/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ccolumn_dfs.c.o
+[ 1844s]   [499/1620] Compiling C object scipy/linalg/_flapack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__flapackmodule.c.o
+[ 1845s]   [500/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ccopy_to_ucol.c.o
+[ 1845s]   [501/1620] Compiling Fortran object scipy/sparse/linalg/_propack/_zpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__zpropack-f2pywrappers.f.o
+[ 1846s]   [502/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cdiagonal.c.o
+[ 1847s]   [503/1620] Compiling C object scipy/sparse/linalg/_propack/_zpropack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__zpropackmodule.c.o
+[ 1848s]   [504/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgscon.c.o
+[ 1848s]   [505/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgsequ.c.o
+[ 1850s]   [506/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgsisx.c.o
+[ 1852s]   [507/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgsitrf.c.o
+[ 1852s]   [508/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgsrfs.c.o
+[ 1853s]   [509/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgssv.c.o
+[ 1855s]   [510/1620] Compiling C++ object scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csc.cxx.o
+[ 1856s]   [511/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgssvx.c.o
+[ 1857s]   [512/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgstrs.c.o
+[ 1857s]   [513/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cgstrf.c.o
+[ 1860s]   [514/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_clacon2.c.o
+[ 1861s]   [515/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_clangs.c.o
+[ 1861s]   [516/1620] Linking target scipy/sparse/linalg/_propack/_cpropack.cpython-38-riscv64-linux-gnu.so
+[ 1862s]   [517/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_claqgs.c.o
+[ 1862s]   [518/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cldperm.c.o
+[ 1865s]   [519/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cmyblas2.c.o
+[ 1867s]   [520/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cpanel_dfs.c.o
+[ 1867s]   [521/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cmemory.c.o
+[ 1869s]   [522/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cpanel_bmod.c.o
+[ 1870s]   [523/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_colamd.c.o
+[ 1871s]   [524/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cpivotL.c.o
+[ 1872s]   [525/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cpruneL.c.o
+[ 1872s]   [526/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cpivotgrowth.c.o
+[ 1876s]   [527/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_creadhb.c.o
+[ 1876s]   [528/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_creadtriple.c.o
+[ 1877s]   [529/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_creadrb.c.o
+[ 1877s]   [530/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_csnode_bmod.c.o
+[ 1877s]   [531/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_csnode_dfs.c.o
+[ 1881s]   [532/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_csp_blas3.c.o
+[ 1881s]   [533/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dGetDiagU.c.o
+[ 1883s]   [534/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dcolumn_bmod.c.o
+[ 1884s]   [535/1620] Generating scipy/sparse/linalg/_isolve/_iterative_module with a custom command
+[ 1884s]   [536/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_csp_blas2.c.o
+[ 1884s]   [537/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_cutil.c.o
+[ 1886s]   [538/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dcomplex.c.o
+[ 1886s]   [539/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dcolumn_dfs.c.o
+[ 1887s]   [540/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dcopy_to_ucol.c.o
+[ 1890s]   [541/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ddiagonal.c.o
+[ 1891s]   [542/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgscon.c.o
+[ 1891s]   [543/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgsequ.c.o
+[ 1892s]   [544/1620] Linking target scipy/sparse/linalg/_propack/_zpropack.cpython-38-riscv64-linux-gnu.so
+[ 1894s]   [545/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgsisx.c.o
+[ 1895s]   [546/1620] Module scanner.
+[ 1896s]   [547/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgssv.c.o
+[ 1897s]   [548/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgsitrf.c.o
+[ 1898s]   [549/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgsrfs.c.o
+[ 1898s]   [550/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgssvx.c.o
+[ 1900s]   [551/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgstrf.c.o
+[ 1903s]   [552/1620] Compiling C object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__iterativemodule.c.o
+[ 1906s]   [553/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._getbreak.f.o
+[ 1909s]   [554/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 1911s]   [555/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._CGREVCOM.f.o
+[ 1914s]   [556/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._BiCGREVCOM.f.o
+[ 1916s]   [557/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dlacon2.c.o
+[ 1916s]   [558/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dgstrs.c.o
+[ 1917s]   [559/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._BiCGSTABREVCOM.f.o
+[ 1919s]   [560/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dlangs.c.o
+[ 1919s]   [561/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._CGSREVCOM.f.o
+[ 1921s]   [562/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dlaqgs.c.o
+[ 1921s]   [563/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dldperm.c.o
+[ 1922s]   [564/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dmach.c.o
+[ 1923s]   [565/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dmyblas2.c.o
+[ 1926s]   [566/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dmemory.c.o
+[ 1926s]   [567/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dpanel_dfs.c.o
+[ 1927s]   [568/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dpivotL.c.o
+[ 1927s]   [569/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dpanel_bmod.c.o
+[ 1928s]   [570/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dpivotgrowth.c.o
+[ 1931s]   [571/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dpruneL.c.o
+[ 1932s]   [572/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dreadtriple.c.o
+[ 1932s]   [573/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dreadhb.c.o
+[ 1933s]   [574/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._GMRESREVCOM.f.o
+[ 1933s]   [575/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dsnode_bmod.c.o
+[ 1934s]   [576/1620] Compiling Fortran object scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so.p/meson-generated_.._QMRREVCOM.f.o
+[ 1934s]   [577/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dreadrb.c.o
+[ 1936s]   [578/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dsnode_dfs.c.o
+[ 1936s]   [579/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dsp_blas3.c.o
+[ 1937s]   [580/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dzsum1.c.o
+[ 1939s]   [581/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dsp_blas2.c.o
+[ 1940s]   [582/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_dutil.c.o
+[ 1940s]   [583/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_get_perm_c.c.o
+[ 1941s]   [584/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_icmax1.c.o
+[ 1941s]   [585/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_heap_relax_snode.c.o
+[ 1942s]   [586/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_ccolumn_dfs.c.o
+[ 1944s]   [587/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_ccopy_to_ucol.c.o
+[ 1946s]   [588/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_cpanel_dfs.c.o
+[ 1946s]   [589/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_csnode_dfs.c.o
+[ 1947s]   [590/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_cdrop_row.c.o
+[ 1947s]   [591/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_cpivotL.c.o
+[ 1947s]   [592/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_dcolumn_dfs.c.o
+[ 1949s]   [593/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_dcopy_to_ucol.c.o
+[ 1950s]   [594/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_dpanel_dfs.c.o
+[ 1952s]   [595/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_dsnode_dfs.c.o
+[ 1952s]   [596/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_ddrop_row.c.o
+[ 1952s]   [597/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_dpivotL.c.o
+[ 1953s]   [598/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_heap_relax_snode.c.o
+[ 1953s]   [599/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_relax_snode.c.o
+[ 1956s]   [600/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_scolumn_dfs.c.o
+[ 1957s]   [601/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_scopy_to_ucol.c.o
+[ 1957s]   [602/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_spanel_dfs.c.o
+[ 1958s]   [603/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_ssnode_dfs.c.o
+[ 1958s]   [604/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_spivotL.c.o
+[ 1958s]   [605/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_sdrop_row.c.o
+[ 1961s]   [606/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zcolumn_dfs.c.o
+[ 1962s]   [607/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zcopy_to_ucol.c.o
+[ 1963s]   [608/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zsnode_dfs.c.o
+[ 1963s]   [609/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zpanel_dfs.c.o
+[ 1964s]   [610/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zdrop_row.c.o
+[ 1964s]   [611/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ilu_zpivotL.c.o
+[ 1964s]   [612/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_input_error.c.o
+[ 1967s]   [613/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_izmax1.c.o
+[ 1967s]   [614/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_mark_relax.c.o
+[ 1968s]   [615/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_memory.c.o
+[ 1969s]   [616/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_relax_snode.c.o
+[ 1969s]   [617/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_qselect.c.o
+[ 1969s]   [618/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_mmd.c.o
+[ 1972s]   [619/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_scolumn_dfs.c.o
+[ 1972s]   [620/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_scolumn_bmod.c.o
+[ 1972s]   [621/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_scsum1.c.o
+[ 1973s]   [622/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_scomplex.c.o
+[ 1973s]   [623/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_scopy_to_ucol.c.o
+[ 1974s]   [624/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sdiagonal.c.o
+[ 1975s]   [625/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgscon.c.o
+[ 1976s]   [626/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgsequ.c.o
+[ 1976s]   [627/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgsisx.c.o
+[ 1976s]   [628/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgssv.c.o
+[ 1977s]   [629/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgsitrf.c.o
+[ 1977s]   [630/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgsrfs.c.o
+[ 1979s]   [631/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgssvx.c.o
+[ 1979s]   [632/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_slacon2.c.o
+[ 1979s]   [633/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgstrf.c.o
+[ 1979s]   [634/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_slaqgs.c.o
+[ 1980s]   [635/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sgstrs.c.o
+[ 1980s]   [636/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_slangs.c.o
+[ 1982s]   [637/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_smach.c.o
+[ 1982s]   [638/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sldperm.c.o
+[ 1982s]   [639/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sp_ienv.c.o
+[ 1983s]   [640/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_smyblas2.c.o
+[ 1983s]   [641/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_smemory.c.o
+[ 1983s]   [642/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sp_coletree.c.o
+[ 1985s]   [643/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_spanel_dfs.c.o
+[ 1985s]   [644/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sp_preorder.c.o
+[ 1985s]   [645/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_spivotL.c.o
+[ 1986s]   [646/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_spruneL.c.o
+[ 1986s]   [647/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_spivotgrowth.c.o
+[ 1986s]   [648/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_spanel_bmod.c.o
+[ 1987s]   [649/1620] Linking target scipy/sparse/linalg/_isolve/_iterative.cpython-38-riscv64-linux-gnu.so
+[ 1988s]   [650/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sreadhb.c.o
+[ 1988s]   [651/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sreadtriple.c.o
+[ 1989s]   [652/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ssnode_dfs.c.o
+[ 1989s]   [653/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ssnode_bmod.c.o
+[ 1989s]   [654/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sreadrb.c.o
+[ 1990s]   [655/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ssp_blas3.c.o
+[ 1990s]   [656/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_superlu_timer.c.o
+[ 1990s]   [657/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_ssp_blas2.c.o
+[ 1992s]   [658/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zcolumn_bmod.c.o
+[ 1993s]   [659/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zcolumn_dfs.c.o
+[ 1993s]   [660/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_sutil.c.o
+[ 1993s]   [661/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zcopy_to_ucol.c.o
+[ 1993s]   [662/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_util.c.o
+[ 1993s]   [663/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zdiagonal.c.o
+[ 1993s]   [664/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgscon.c.o
+[ 1995s]   [665/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgsequ.c.o
+[ 1996s]   [666/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgssv.c.o
+[ 1996s]   [667/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgsisx.c.o
+[ 1996s]   [668/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgssvx.c.o
+[ 1996s]   [669/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgstrf.c.o
+[ 1996s]   [670/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgsitrf.c.o
+[ 1997s]   [671/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgsrfs.c.o
+[ 1998s]   [672/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zlacon2.c.o
+[ 1999s]   [673/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zldperm.c.o
+[ 1999s]   [674/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zgstrs.c.o
+[ 1999s]   [675/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zlangs.c.o
+[ 1999s]   [676/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zlaqgs.c.o
+[ 1999s]   [677/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zmyblas2.c.o
+[ 2000s]   [678/1620] Linking target scipy/linalg/_flapack.cpython-38-riscv64-linux-gnu.so
+[ 2001s]   [679/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zmemory.c.o
+[ 2001s]   [680/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zpanel_dfs.c.o
+[ 2002s]   [681/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zpivotL.c.o
+[ 2002s]   [682/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zpruneL.c.o
+[ 2002s]   [683/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zpivotgrowth.c.o
+[ 2003s]   [684/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zpanel_bmod.c.o
+[ 2003s]   [685/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zreadhb.c.o
+[ 2004s]   [686/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zreadrb.c.o
+[ 2004s]   [687/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zsnode_bmod.c.o
+[ 2004s]   [688/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zreadtriple.c.o
+[ 2004s]   [689/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zsnode_dfs.c.o
+[ 2005s]   [690/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zsp_blas3.c.o
+[ 2007s]   [691/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zsp_blas2.c.o
+[ 2007s]   [692/1620] Generating scipy/stats/__init__.py with a custom command
+[ 2008s]   [693/1620] Compiling C object scipy/sparse/linalg/_dsolve/libsuperlu_lib.a.p/SuperLU_SRC_zutil.c.o
+[ 2009s]   [694/1620] Generating scipy/stats/_stats.pxd with a custom command
+[ 2009s]   [695/1620] Generating scipy/stats/_biasedurn.pxd with a custom command
+[ 2010s]   [696/1620] Compiling C object scipy/sparse/linalg/_dsolve/_superlu.cpython-38-riscv64-linux-gnu.so.p/_superlu_utils.c.o
+[ 2010s]   [697/1620] Linking static target scipy/sparse/linalg/_dsolve/libsuperlu_lib.a
+[ 2010s]   [698/1620] Compiling C object scipy/sparse/linalg/_dsolve/_superlu.cpython-38-riscv64-linux-gnu.so.p/_superlumodule.c.o
+[ 2011s]   [699/1620] Generating scipy/stats/unuran.pxd with a custom command
+[ 2011s]   [700/1620] Module scanner.
+[ 2014s]   [701/1620] Compiling C object scipy/sparse/linalg/_dsolve/_superlu.cpython-38-riscv64-linux-gnu.so.p/_superluobject.c.o
+[ 2015s]   [702/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cgetv0.f.o
+[ 2015s]   [703/1620] Module scanner.
+[ 2019s]   [704/1620] Generating scipy/stats/statlib_module with a custom command
+[ 2021s]   [705/1620] Generating scipy/stats/mvn_module with a custom command
+[ 2023s]   [706/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cnaitr.f.o
+[ 2026s]   [707/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cnapps.f.o
+[ 2027s]   [708/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cnaupd.f.o
+[ 2028s]   [709/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cnaup2.f.o
+[ 2028s]   [710/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cneigh.f.o
+[ 2031s]   [711/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cngets.f.o
+[ 2031s]   [712/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cstatn.f.o
+[ 2036s]   [713/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_csortc.f.o
+[ 2036s]   [714/1620] Generating scipy/sparse/linalg/_eigen/arpack/arpack_module with a custom command
+[ 2037s]   [715/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dgetv0.f.o
+[ 2037s]   [716/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_cneupd.f.o
+[ 2039s]   [717/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dnaitr.f.o
+[ 2041s]   [718/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dnconv.f.o
+[ 2043s]   [719/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dnaupd.f.o
+[ 2045s]   [720/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dnaup2.f.o
+[ 2045s]   [721/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dneigh.f.o
+[ 2047s]   [722/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dnapps.f.o
+[ 2047s]   [723/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dngets.f.o
+[ 2054s]   [724/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsaitr.f.o
+[ 2054s]   [725/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsaupd.f.o
+[ 2054s]   [726/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dneupd.f.o
+[ 2054s]   [727/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsapps.f.o
+[ 2057s]   [728/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsaup2.f.o
+[ 2058s]   [729/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsconv.f.o
+[ 2059s]   [730/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dseigt.f.o
+[ 2061s]   [731/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsesrt.f.o
+[ 2061s]   [732/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsgets.f.o
+[ 2063s]   [733/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dstatn.f.o
+[ 2063s]   [734/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dstats.f.o
+[ 2064s]   [735/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsortr.f.o
+[ 2065s]   [736/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dsortc.f.o
+[ 2066s]   [737/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dseupd.f.o
+[ 2070s]   [738/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sgetv0.f.o
+[ 2074s]   [739/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_dstqrb.f.o
+[ 2074s]   [740/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_snaitr.f.o
+[ 2075s]   [741/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_snaup2.f.o
+[ 2076s]   [742/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_snapps.f.o
+[ 2077s]   [743/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_snaupd.f.o
+[ 2077s]   [744/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_snconv.f.o
+[ 2079s]   [745/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sneigh.f.o
+[ 2081s]   [746/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sngets.f.o
+[ 2086s]   [747/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssaitr.f.o
+[ 2087s]   [748/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssapps.f.o
+[ 2087s]   [749/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssaup2.f.o
+[ 2088s]   [750/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssaupd.f.o
+[ 2088s]   [751/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sneupd.f.o
+[ 2090s]   [752/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssconv.f.o
+[ 2091s]   [753/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sseigt.f.o
+[ 2092s]   [754/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssgets.f.o
+[ 2094s]   [755/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssesrt.f.o
+[ 2094s]   [756/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sstatn.f.o
+[ 2096s]   [757/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sstats.f.o
+[ 2096s]   [758/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssortr.f.o
+[ 2097s]   [759/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_ssortc.f.o
+[ 2099s]   [760/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sseupd.f.o
+[ 2100s]   [761/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zgetv0.f.o
+[ 2103s]   [762/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_sstqrb.f.o
+[ 2104s]   [763/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_znaitr.f.o
+[ 2106s]   [764/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_znaupd.f.o
+[ 2106s]   [765/1620] Generating 'scipy/stats/_sobol.cpython-38-riscv64-linux-gnu.so.p/_sobol.c'.
+[ 2106s]   [766/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_znapps.f.o
+[ 2107s]   [767/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_znaup2.f.o
+[ 2108s]   [768/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zneigh.f.o
+[ 2109s]   [769/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zngets.f.o
+[ 2109s]   [770/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zstatn.f.o
+[ 2113s]   [771/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zsortc.f.o
+[ 2114s]   [772/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_SRC_zneupd.f.o
+[ 2115s]   [773/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_dvout.f.o
+[ 2115s]   [774/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_cvout.f.o
+[ 2115s]   [775/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_icnteq.f.o
+[ 2117s]   [776/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_icopy.f.o
+[ 2118s]   [777/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_iset.f.o
+[ 2118s]   [778/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_dmout.f.o
+[ 2118s]   [779/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_cmout.f.o
+[ 2118s]   [780/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_iswap.f.o
+[ 2119s]   [781/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_second_NONE.f.o
+[ 2121s]   [782/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_ivout.f.o
+[ 2124s]   [783/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_svout.f.o
+[ 2126s]   [784/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_zvout.f.o
+[ 2126s]   [785/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_smout.f.o
+[ 2128s]   [786/1620] Module scanner.
+[ 2129s]   [787/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a.p/ARPACK_UTIL_zmout.f.o
+[ 2130s]   [788/1620] Compiling Fortran object scipy/stats/libstatlib_lib.a.p/statlib_spearman.f.o
+[ 2130s]   [789/1620] Compiling Fortran object scipy/stats/libstatlib_lib.a.p/statlib_ansari.f.o
+[ 2130s]   [790/1620] Linking static target scipy/sparse/linalg/_eigen/arpack/libarpack_lib.a
+[ 2132s]   [791/1620] Compiling C object scipy/sparse/linalg/_eigen/arpack/_arpack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__arpackmodule.c.o
+[ 2132s]   [792/1620] Compiling Fortran object scipy/stats/libstatlib_lib.a.p/statlib_swilk.f.o
+[ 2133s]   [793/1620] Linking static target scipy/stats/libstatlib_lib.a
+[ 2133s]   [794/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/_arpack.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__arpack-f2pywrappers.f.o
+[ 2134s]   [795/1620] Compiling Fortran object scipy/sparse/linalg/_eigen/arpack/_arpack.cpython-38-riscv64-linux-gnu.so.p/.._.._.._..__build_utils_src_wrap_dummy_g77_abi.f.o
+[ 2135s]   [796/1620] Compiling C object scipy/stats/_statlib.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__statlibmodule.c.o
+[ 2136s]   [797/1620] Module scanner.
+[ 2137s]   [798/1620] Compiling C object scipy/stats/_mvn.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__mvnmodule.c.o
+[ 2138s]   [799/1620] Compiling Fortran object scipy/stats/_statlib.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__statlib-f2pywrappers.f.o
+[ 2139s]   [800/1620] Module scanner.
+[ 2139s]   [801/1620] Generating 'scipy/stats/_stats.cpython-38-riscv64-linux-gnu.so.p/_stats.c'.
+[ 2140s]   [802/1620] Compiling Fortran object scipy/stats/_mvn.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__mvn-f2pywrappers.f.o
+[ 2144s]   [803/1620] Linking target scipy/sparse/linalg/_dsolve/_superlu.cpython-38-riscv64-linux-gnu.so
+[ 2144s]   [804/1620] Generating scipy/stats/_stats_gen_pyx with a custom command
+[ 2156s]   [805/1620] Linking target scipy/stats/_statlib.cpython-38-riscv64-linux-gnu.so
+[ 2159s]   [806/1620] Compiling Fortran object scipy/stats/_mvn.cpython-38-riscv64-linux-gnu.so.p/mvndst.f.o
+[ 2159s]   [807/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/biasedurn_fnchyppr.cpp.o
+[ 2169s]   [808/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/biasedurn_impls.cpp.o
+[ 2169s]   [809/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/biasedurn_stoc1.cpp.o
+[ 2180s]   [810/1620] Linking target scipy/stats/_mvn.cpython-38-riscv64-linux-gnu.so
+[ 2182s]   [811/1620] Compiling C object scipy/stats/_sobol.cpython-38-riscv64-linux-gnu.so.p/meson-generated__sobol.c.o
+[ 2185s]   [812/1620] Linking target scipy/sparse/linalg/_eigen/arpack/_arpack.cpython-38-riscv64-linux-gnu.so
+[ 2188s]   [813/1620] Generating 'scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/_biasedurn.cpp'.
+[ 2190s]   [814/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/biasedurn_stoc3.cpp.o
+[ 2204s]   [815/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/biasedurn_wnchyppr.cpp.o
+[ 2214s]   [816/1620] Generating 'scipy/stats/_qmc_cy.cpython-38-riscv64-linux-gnu.so.p/_qmc_cy.cpp'.
+[ 2239s]   [817/1620] Generating 'scipy/stats/_boost/binom_ufunc.cpython-38-riscv64-linux-gnu.so.p/binom_ufunc.cpp'.
+[ 2242s]   [818/1620] Compiling C object scipy/stats/_stats.cpython-38-riscv64-linux-gnu.so.p/meson-generated__stats.c.o
+[ 2242s]   [819/1620] Generating 'scipy/stats/_boost/beta_ufunc.cpython-38-riscv64-linux-gnu.so.p/beta_ufunc.cpp'.
+[ 2246s]   [820/1620] Generating scipy/stats/_stats_pythran with a custom command
+[ 2259s]   [821/1620] Generating 'scipy/stats/_boost/hypergeom_ufunc.cpython-38-riscv64-linux-gnu.so.p/hypergeom_ufunc.cpp'.
+[ 2277s]   [822/1620] Linking target scipy/stats/_sobol.cpython-38-riscv64-linux-gnu.so
+[ 2289s]   [823/1620] Compiling C++ object scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so.p/meson-generated__biasedurn.cpp.o
+[ 2292s]   [824/1620] Linking target scipy/stats/_biasedurn.cpython-38-riscv64-linux-gnu.so
+[ 2347s]   [825/1620] Generating 'scipy/stats/_boost/nbinom_ufunc.cpython-38-riscv64-linux-gnu.so.p/nbinom_ufunc.cpp'.
+[ 2359s]   [826/1620] Generating 'scipy/stats/_boost/ncf_ufunc.cpython-38-riscv64-linux-gnu.so.p/ncf_ufunc.cpp'.
+[ 2377s]   [827/1620] Linking target scipy/stats/_stats.cpython-38-riscv64-linux-gnu.so
+[ 2419s]   [828/1620] Generating 'scipy/stats/_boost/ncx2_ufunc.cpython-38-riscv64-linux-gnu.so.p/ncx2_ufunc.cpp'.
+[ 2438s]   [829/1620] Compiling C++ object scipy/stats/_qmc_cy.cpython-38-riscv64-linux-gnu.so.p/meson-generated__qmc_cy.cpp.o
+[ 2440s]   [830/1620] Linking target scipy/stats/_qmc_cy.cpython-38-riscv64-linux-gnu.so
+[ 2489s]   [831/1620] Generating 'scipy/stats/_boost/nct_ufunc.cpython-38-riscv64-linux-gnu.so.p/nct_ufunc.cpp'.
+[ 2539s] [ 2531.499521][T22362] Out of memory: Killed process 12219 (cc1plus) total-vm:891648kB, anon-rss:668580kB, file-rss:0kB, shmem-rss:0kB, UID:399 pgtables:1596kB oom_score_adj:0
+[ 2539s]   [832/1620] Compiling C++ object scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csr.cxx.o
+[ 2539s]   FAILED: scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csr.cxx.o
+[ 2539s]   c++ -Iscipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p -Iscipy/sparse/sparsetools -I../../scipy/sparse/sparsetools -I/usr/lib64/python3.8/site-packages/numpy/core/include -I/usr/include/python3.8 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c++14 -O2 -fPIC -DNPY_NO_DEPRECATED_API=NPY_1_9_API_VERSION -MD -MQ scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csr.cxx.o -MF scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csr.cxx.o.d -o scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/csr.cxx.o -c ../../scipy/sparse/sparsetools/csr.cxx
+[ 2539s]   c++: fatal error: Killed signal terminated program cc1plus
+[ 2539s]   compilation terminated.
+[ 2548s]   [833/1620] Compiling C++ object scipy/stats/_boost/hypergeom_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_hypergeom_ufunc.cpp.o
+[ 2574s]   [834/1620] Compiling C++ object scipy/stats/_stats_pythran.cpython-38-riscv64-linux-gnu.so.p/meson-generated_..__stats_pythran.cpp.o
+[ 2605s]   [835/1620] Compiling C++ object scipy/stats/_boost/binom_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_binom_ufunc.cpp.o
+[ 2634s]   [836/1620] Compiling C++ object scipy/stats/_boost/beta_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_beta_ufunc.cpp.o
+[ 2643s]   [837/1620] Compiling C++ object scipy/stats/_boost/ncf_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_ncf_ufunc.cpp.o
+[ 2656s]   [838/1620] Compiling C++ object scipy/stats/_boost/nbinom_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_nbinom_ufunc.cpp.o
+[ 2692s]   [839/1620] Compiling C++ object scipy/stats/_boost/ncx2_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_ncx2_ufunc.cpp.o
+[ 2784s]   [840/1620] Compiling C++ object scipy/stats/_boost/nct_ufunc.cpython-38-riscv64-linux-gnu.so.p/meson-generated_nct_ufunc.cpp.o
+[ 3538s]   [841/1620] Compiling C++ object scipy/sparse/sparsetools/_sparsetools.cpython-38-riscv64-linux-gnu.so.p/bsr.cxx.o
+[ 3538s]   ninja: build stopped: subcommand failed.
+[ 3538s]   INFO: autodetecting backend as ninja
+[ 3538s]   INFO: calculating backend command to run: /usr/bin/ninja
+[ 3539s]   + meson setup --prefix=/usr /home/abuild/rpmbuild/BUILD/scipy-1.10.0 /home/abuild/rpmbuild/BUILD/scipy-1.10.0/.mesonpy-q2moph1g/build --native-file=/home/abuild/rpmbuild/BUILD/scipy-1.10.0/.mesonpy-native-file.ini -Ddebug=false -Doptimization=2
+[ 3539s]   + meson compile
+[ 3540s]   error: subprocess-exited-with-error
+[ 3540s]   
+[ 3540s]   × Preparing metadata (pyproject.toml) did not run successfully.
+[ 3540s]   │ exit code: 1
+[ 3540s]   ╰─> See above for output.
+[ 3540s]   
+[ 3540s]   note: This error originates from a subprocess, and is likely not a problem with pip.
+[ 3540s]   full command: /usr/bin/python3.8 /usr/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py prepare_metadata_for_build_wheel /tmp/tmprbw17cjr
+[ 3540s]   cwd: /home/abuild/rpmbuild/BUILD/scipy-1.10.0
+[ 3540s]   Preparing metadata (pyproject.toml): finished with status 'error'
+[ 3540s] error: metadata-generation-failed
+[ 3540s] 
+[ 3540s] × Encountered error while generating package metadata.
+[ 3540s] ╰─> See above for output.
+[ 3540s] 
+[ 3540s] note: This is an issue with the package mentioned above, not pip.
+[ 3540s] hint: See above for details.
+[ 3541s] error: Bad exit status from /var/tmp/rpm-tmp.7cHq1n (%build)
+[ 3541s] 
+[ 3541s] RPM build warnings:
+[ 3541s]     Macro expanded in comment on line 102: %{version}/scipy/datasets/_download_all.py scipy-datasets/scipy-data; tar czf scipy-datasets.tar.gz scipy-datasets`
+[ 3541s] 
+[ 3541s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 148: Macro %hpc_module_pname defined but not used within scope
+[ 3541s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 160: Macro %hpc_module_pname defined but not used within scope
+[ 3541s]     /home/abuild/rpmbuild/SOURCES/python-scipy.spec: line 169: Macro %hpc_module_pname defined but not used within scope
+[ 3541s] 
+[ 3541s] RPM build errors:
+[ 3541s]     Bad exit status from /var/tmp/rpm-tmp.7cHq1n (%build)
+[ 3542s] ### VM INTERACTION START ###
+[ 3542s] [ 3534.984153][    T1] sysrq: Power Off
+[ 3542s] [ 3534.988292][   T96] reboot: Power down
+[ 3543s] ### VM INTERACTION END ###
+[ 3543s] 
+[ 3543s] cloud126 failed "build python-scipy.spec" at Sun Feb 19 04:07:40 UTC 2023.
+[ 3543s] 

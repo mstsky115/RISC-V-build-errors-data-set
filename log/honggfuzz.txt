@@ -1,0 +1,292 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    1s] 
+[    1s] sheep87 started "build honggfuzz.spec" at Mon Aug 29 07:44:47 UTC 2022.
+[    1s] 
+[    1s] Building honggfuzz for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'c5de6b308166f75865f2fb6ebcc75054'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/honggfuzz.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/honggfuzz.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/honggfuzz.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [9f8cd92954c754d5ed9c73d21089973e]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using UART console
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host,l3-cache=on -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   11s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   11s] Increasing log level from now on...
+[   11s] [    6.436208][  T418] sysrq: Changing Loglevel
+[   11s] [    6.437153][  T418] sysrq: Loglevel set to 4
+[   11s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   12s] no label, UUID=a4ec8869-0335-4e6f-914d-3b67ae5531d2
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   12s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/honggfuzz.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/honggfuzz.spec build ...
+[   13s] initializing rpm db...
+[   14s] querying package ids...
+[   31s] [1/135] preinstalled aaa_base-84.87+git20220727.43b9e53-1.1
+[   31s] [2/135] preinstalled aaa_base-malloccheck-84.87+git20220727.43b9e53-1.1
+[   31s] [3/135] preinstalled attr-2.5.1-1.1
+[   31s] [4/135] preinstalled bash-5.1.16-8.1
+[   31s] [5/135] preinstalled bash-sh-5.1.16-8.1
+[   31s] [6/135] preinstalled binutils-2.39-1.1
+[   31s] [7/135] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   31s] [8/135] preinstalled build-compare-20220620T150329.a852498-1.1
+[   31s] [9/135] preinstalled build-mkbaselibs-20220613-1.1
+[   31s] [10/135] preinstalled bzip2-1.0.8-4.1
+[   31s] [11/135] preinstalled chkstat-1599_20220713-34.1
+[   31s] [12/135] preinstalled compat-usrmerge-build-84.87-5.1
+[   31s] [13/135] preinstalled compat-usrmerge-tools-84.87-5.1
+[   31s] [14/135] preinstalled coreutils-9.1-4.1
+[   31s] [15/135] preinstalled cpio-2.13-4.1
+[   31s] [16/135] preinstalled cpp-12-2.1
+[   31s] [17/135] preinstalled cpp12-12.1.1+git372-4.1
+[   31s] [18/135] preinstalled debugedit-5.0-3.1
+[   31s] [19/135] preinstalled diffutils-3.8-2.1
+[   31s] [20/135] preinstalled dwz-0.14-4.1
+[   31s] [21/135] preinstalled elfutils-0.187-11.1
+[   31s] [22/135] preinstalled file-5.42-3.1
+[   31s] [23/135] preinstalled file-magic-5.42-3.1
+[   31s] [24/135] preinstalled filesystem-84.87-7.1
+[   31s] [25/135] preinstalled fillup-1.42-277.1
+[   31s] [26/135] preinstalled findutils-4.9.0-1.1
+[   31s] [27/135] preinstalled gawk-5.1.1-6.1
+[   31s] [28/135] preinstalled gcc-12-2.1
+[   31s] [29/135] preinstalled gcc-PIE-12-2.1
+[   31s] [30/135] preinstalled gcc12-12.1.1+git372-4.1
+[   31s] [31/135] preinstalled gcc12-PIE-12.1.1+git372-4.1
+[   31s] [32/135] preinstalled gettext-runtime-mini-0.21-4.1
+[   31s] [33/135] preinstalled gettext-tools-mini-0.21-4.1
+[   31s] [34/135] preinstalled glibc-2.36-1.1
+[   31s] [35/135] preinstalled glibc-devel-2.36-1.1
+[   31s] [36/135] preinstalled glibc-locale-base-2.36-1.1
+[   31s] [37/135] preinstalled grep-3.7-5.1
+[   31s] [38/135] preinstalled gzip-1.12-2.1
+[   31s] [39/135] preinstalled kernel-obs-build-5.14.2-1.3
+[   31s] [40/135] preinstalled libacl1-2.3.1-2.1
+[   31s] [41/135] preinstalled libasan8-12.1.1+git372-4.1
+[   31s] [42/135] preinstalled libasm1-0.187-11.1
+[   31s] [43/135] preinstalled libatomic1-12.1.1+git372-4.1
+[   31s] [44/135] preinstalled libattr1-2.5.1-1.1
+[   31s] [45/135] preinstalled libaudit1-3.0.6-4.1
+[   31s] [46/135] preinstalled libblkid1-2.37.4-4.1
+[   31s] [47/135] preinstalled libbz2-1-1.0.8-4.1
+[   31s] [48/135] preinstalled libcap-ng0-0.8.3-1.1
+[   31s] [49/135] preinstalled libcap2-2.65-1.1
+[   31s] [50/135] preinstalled libcrypt1-4.4.27-1.1
+[   31s] [51/135] preinstalled libctf-nobfd0-2.39-1.1
+[   31s] [52/135] preinstalled libctf0-2.39-1.1
+[   31s] [53/135] preinstalled libdb-4_8-4.8.30-39.1
+[   31s] [54/135] preinstalled libdw1-0.187-11.1
+[   31s] [55/135] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   31s] [56/135] preinstalled libelf1-0.187-11.1
+[   31s] [57/135] preinstalled libfdisk1-2.37.4-4.1
+[   31s] [58/135] preinstalled libgcc_s1-12.1.1+git372-4.1
+[   31s] [59/135] preinstalled libgcrypt20-1.9.4-4.1
+[   31s] [60/135] preinstalled libgdbm6-1.23-1.1
+[   31s] [61/135] preinstalled libgdbm_compat4-1.23-1.1
+[   31s] [62/135] preinstalled libgmp10-6.2.1-4.1
+[   31s] [63/135] preinstalled libgomp1-12.1.1+git372-4.1
+[   31s] [64/135] preinstalled libgpg-error0-1.45-1.1
+[   31s] [65/135] preinstalled libisl23-0.25-1.1
+[   31s] [66/135] preinstalled liblua5_4-5-5.4.4-5.1
+[   31s] [67/135] preinstalled liblzma5-5.2.6-1.1
+[   31s] [68/135] preinstalled libmagic1-5.42-3.1
+[   31s] [69/135] preinstalled libmount1-2.37.4-4.1
+[   31s] [70/135] preinstalled libmpc3-1.2.1-1.2
+[   31s] [71/135] preinstalled libmpfr6-4.1.0-2.1
+[   31s] [72/135] preinstalled libncurses6-6.3.20220813-26.1
+[   31s] [73/135] preinstalled libpcre1-8.45-2.1
+[   31s] [74/135] preinstalled libpcre2-8-0-10.40-3.1
+[   31s] [75/135] preinstalled libpkgconf3-1.8.0-1.1
+[   31s] [76/135] preinstalled libpopt0-1.18-3.1
+[   31s] [77/135] preinstalled libreadline8-8.1-3.1
+[   31s] [78/135] preinstalled librpmbuild9-4.17.1-1.1
+[   31s] [79/135] preinstalled libseccomp2-2.5.4-2.1
+[   31s] [80/135] preinstalled libselinux1-3.4-2.1
+[   31s] [81/135] preinstalled libsemanage-conf-3.4-1.1
+[   31s] [82/135] preinstalled libsemanage2-3.4-1.1
+[   31s] [83/135] preinstalled libsepol2-3.4-1.1
+[   31s] [84/135] preinstalled libsmartcols1-2.37.4-4.1
+[   31s] [85/135] preinstalled libstdc++6-12.1.1+git372-4.1
+[   31s] [86/135] preinstalled libsubid4-4.12.3-1.1
+[   31s] [87/135] preinstalled libubsan1-12.1.1+git372-4.1
+[   31s] [88/135] cumulate libunwind-coredump0-1.6.2-4.1
+[   31s] [89/135] cumulate libunwind-ptrace0-1.6.2-4.1
+[   31s] [90/135] cumulate libunwind8-1.6.2-4.1
+[   31s] [91/135] preinstalled libutempter0-1.2.0-3.2
+[   31s] [92/135] preinstalled libuuid1-2.37.4-4.1
+[   31s] [93/135] preinstalled libxcrypt-devel-4.4.27-1.1
+[   31s] [94/135] preinstalled libz1-1.2.11-19.1
+[   31s] [95/135] preinstalled libzstd1-1.5.2-1.1
+[   31s] [96/135] preinstalled linux-glibc-devel-5.17-1.1
+[   31s] [97/135] preinstalled login_defs-4.12.3-1.1
+[   31s] [98/135] preinstalled lua54-5.4.4-5.1
+[   31s] [99/135] preinstalled make-4.3-3.1
+[   31s] [100/135] preinstalled ncurses-utils-6.3.20220813-26.1
+[   31s] [101/135] preinstalled pam-1.5.2-7.1
+[   31s] [102/135] preinstalled pam_unix-1.5.2-7.1
+[   31s] [103/135] preinstalled patch-2.7.6-6.1
+[   31s] [104/135] preinstalled perl-5.36.0-3.1
+[   31s] [105/135] preinstalled perl-base-5.36.0-3.1
+[   31s] [106/135] preinstalled permissions-1599_20220713-34.1
+[   31s] [107/135] preinstalled permissions-config-1599_20220713-34.1
+[   31s] [108/135] preinstalled pkgconf-1.8.0-1.1
+[   31s] [109/135] preinstalled pkgconf-m4-1.8.0-1.1
+[   31s] [110/135] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   31s] [111/135] preinstalled polkit-default-privs-1550+20220727.3ce2e2f-1.1
+[   31s] [112/135] preinstalled post-build-checks-84.87+git20220325.f46ef3c-1.1
+[   31s] [113/135] preinstalled qemu-linux-user-7.0.0-83.1
+[   31s] [114/135] preinstalled rpm-4.17.1-1.1
+[   31s] [115/135] preinstalled rpm-build-4.17.1-1.1
+[   31s] [116/135] preinstalled rpm-build-perl-4.17.1-1.1
+[   31s] [117/135] preinstalled rpm-config-SUSE-20220421-1.1
+[   31s] [118/135] preinstalled rpmlint-mini-2.3.0+git20220818.a8685c5d-7.9
+[   31s] [119/135] preinstalled rpmlint-strict-2.3.0+git20220826.4e835ede-1.1
+[   31s] [120/135] preinstalled sed-4.8-3.2
+[   31s] [121/135] preinstalled shadow-4.12.3-1.1
+[   31s] [122/135] preinstalled system-group-hardware-20170617-24.1
+[   31s] [123/135] preinstalled system-user-root-20190513-2.1
+[   31s] [124/135] preinstalled systemd-rpm-macros-16-1.1
+[   31s] [125/135] preinstalled sysuser-shadow-3.1-4.1
+[   31s] [126/135] preinstalled tar-1.34-7.1
+[   31s] [127/135] preinstalled terminfo-base-6.3.20220813-26.1
+[   31s] [128/135] preinstalled update-alternatives-1.21.8-1.1
+[   31s] [129/135] preinstalled util-linux-2.37.4-4.1
+[   31s] [130/135] preinstalled which-2.21-5.1
+[   31s] [131/135] preinstalled xz-5.2.6-1.1
+[   31s] [132/135] cumulate zlib-devel-1.2.11-19.1
+[   31s] [133/135] cumulate binutils-devel-2.39-1.1
+[   31s] [134/135] cumulate libunwind-setjmp0-1.6.2-4.1
+[   31s] [135/135] cumulate libunwind-devel-1.6.2-4.1
+[   31s] now installing cumulated packages
+[   32s] Preparing...                          ########################################
+[   32s] Updating / installing...
+[   32s] libunwind8-1.6.2-4.1                  ########################################
+[   32s] libunwind-setjmp0-1.6.2-4.1           ########################################
+[   32s] zlib-devel-1.2.11-19.1                ########################################
+[   32s] libunwind-ptrace0-1.6.2-4.1           ########################################
+[   32s] libunwind-coredump0-1.6.2-4.1         ########################################
+[   32s] libunwind-devel-1.6.2-4.1             ########################################
+[   47s] binutils-devel-2.39-1.1               ########################################
+[   48s] now finalizing build dir...
+[   48s] ... running 01-add_abuild_user_to_trusted_group
+[   49s] ... running 02-set_timezone_to_utc
+[   49s] ... running 03-set-permissions-secure
+[   49s] ... running 11-hack_uname_version_to_kernel_version
+[   61s] build target is riscv64-suse-linux
+[   61s] -----------------------------------------------------------------
+[   61s] I have the following modifications for honggfuzz.spec:
+[   61s] 21c21
+[   61s] < Release:        0
+[   61s] ---
+[   61s] > Release:        1.1
+[   61s] -----------------------------------------------------------------
+[   61s] ----- building honggfuzz.spec (user abuild)
+[   61s] -----------------------------------------------------------------
+[   61s] -----------------------------------------------------------------
+[   64s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/c5de6b308166f75865f2fb6ebcc75054-honggfuzz' /home/abuild/rpmbuild/SOURCES/honggfuzz.spec
+[   65s] Building target platforms: riscv64-suse-linux
+[   65s] Building for target riscv64-suse-linux
+[   65s] setting SOURCE_DATE_EPOCH=1661385600
+[   65s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.mbrG4Y
+[   65s] + umask 022
+[   65s] + cd /home/abuild/rpmbuild/BUILD
+[   65s] + cd /home/abuild/rpmbuild/BUILD
+[   65s] + rm -rf honggfuzz-2.5
+[   65s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/honggfuzz-2.5.tar.gz
+[   65s] + /usr/bin/tar -xof -
+[   72s] + STATUS=0
+[   72s] + '[' 0 -ne 0 ']'
+[   72s] + cd honggfuzz-2.5
+[   72s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   72s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0001-Always-pass-4-arguments-to-init_disassemble_info-no-.patch
+[   72s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   72s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0002-linux-bfd-use-DIAGNOSTIC_ERROR_SWITCH-define-to-figu.patch
+[   72s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   73s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0003-linux-bfd-cover-include-diagnostics.h-with-__has_inc.patch
+[   73s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   73s] + RPM_EC=0
+[   73s] ++ jobs -p
+[   73s] + exit 0
+[   73s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.NayHD2
+[   73s] + umask 022
+[   73s] + cd /home/abuild/rpmbuild/BUILD
+[   73s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/honggfuzz-2.5-1.1.riscv64
+[   73s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/honggfuzz-2.5-1.1.riscv64
+[   73s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   73s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/honggfuzz-2.5-1.1.riscv64
+[   73s] + cd honggfuzz-2.5
+[   73s] + ref=/usr/lib/rpm
+[   73s] + mints=0
+[   73s] + case $(uname -m) in
+[   73s] ++ uname -m
+[   73s] + mints=20160911
+[   73s] + for s in guess sub
+[   73s] ++ find -maxdepth 8 -name config.guess
+[   73s] + for s in guess sub
+[   73s] ++ find -maxdepth 8 -name config.sub
+[   73s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   73s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[   73s] + /usr/bin/make -O -j6 V=1 VERBOSE=1 'ARCH_LDFLAGS=-L/usr/local/include -L/usr/include -lpthread -lunwind-ptrace -lunwind-generic -lbfd -lopcodes -lrt -liberty -lz -ldl'
+[   77s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o display.o display.c
+[   77s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o fuzz.o fuzz.c
+[   77s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o mangle.o mangle.c
+[   77s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o cmdline.o cmdline.c
+[   77s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o honggfuzz.o honggfuzz.c
+[   78s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o input.o input.c
+[   79s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o report.o report.c
+[   79s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o socketfuzzer.o socketfuzzer.c
+[   79s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/arch.o linux/arch.c
+[   80s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o sanitizers.o sanitizers.c
+[   80s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o subproc.o subproc.c
+[   80s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/bfd.o linux/bfd.c
+[   80s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/pt.o linux/pt.c
+[   81s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/trace.o linux/trace.c
+[   81s] linux/trace.c: In function 'arch_getPC':
+[   81s] linux/trace.c:332:5: error: unknown type name 'HEADERS_STRUCT'
+[   81s]   332 |     HEADERS_STRUCT regs;
+[   81s]       |     ^~~~~~~~~~~~~~
+[   81s] linux/trace.c:321:47: error: unused parameter 'pc' [-Werror=unused-parameter]
+[   81s]   321 | static size_t arch_getPC(pid_t pid, uint64_t* pc, uint64_t* status_reg HF_ATTR_UNUSED) {
+[   81s]       |                                     ~~~~~~~~~~^~
+[   81s] linux/trace.c: In function 'arch_getInstrStr':
+[   81s] linux/trace.c:444:17: error: 'MAX_INSTR_SZ' undeclared (first use in this function)
+[   81s]   444 |     uint8_t buf[MAX_INSTR_SZ];
+[   81s]       |                 ^~~~~~~~~~~~
+[   81s] linux/trace.c:444:17: note: each undeclared identifier is reported only once for each function it appears in
+[   81s] linux/trace.c:444:13: error: unused variable 'buf' [-Werror=unused-variable]
+[   81s]   444 |     uint8_t buf[MAX_INSTR_SZ];
+[   81s]       |             ^~~
+[   81s] cc1: all warnings being treated as errors
+[   81s] make: *** [Makefile:263: linux/trace.o] Error 1
+[   81s] make: *** Waiting for unfinished jobs....
+[   81s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/perf.o linux/perf.c
+[   81s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX -fPIC -fno-stack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0   -o libhfcommon/log.o libhfcommon/log.c
+[   82s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX -fPIC -fno-stack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0   -o libhfcommon/ns.o libhfcommon/ns.c
+[   82s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX  -o linux/unwind.o linux/unwind.c
+[   82s] cc -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -std=c11 -I/usr/local/include -D_GNU_SOURCE -Wall -Wextra -Werror -Wno-format-truncation -Wno-override-init -I. -D_FILE_OFFSET_BITS=64 -finline-limit=4000 -D_HF_ARCH_LINUX -fPIC -fno-stack-protector -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0   -o libhfcommon/files.o libhfcommon/files.c
+[   82s] error: Bad exit status from /var/tmp/rpm-tmp.NayHD2 (%build)
+[   82s] 
+[   82s] RPM build errors:
+[   82s]     Bad exit status from /var/tmp/rpm-tmp.NayHD2 (%build)
+[   82s] ### VM INTERACTION START ###
+[   82s] [   77.610681][    T1] sysrq: Power Off
+[   82s] [   77.613231][    T7] reboot: Power down
+[   83s] ### VM INTERACTION END ###
+[   83s] 
+[   83s] sheep87 failed "build honggfuzz.spec" at Mon Aug 29 07:46:09 UTC 2022.
+[   83s] 

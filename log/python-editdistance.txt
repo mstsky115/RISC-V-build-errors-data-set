@@ -1,0 +1,793 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_5/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_5/root
+[    0s] 
+[    0s] 
+[    0s] hci-snode1-m0 started "build python-editdistance.spec" at Sat Feb 18 21:25:09 UTC 2023.
+[    0s] 
+[    0s] Building python-editdistance for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '0726aae847535e33fb9903906d21d0e0'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_5/.build-srcdir/python-editdistance.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_5/.build-srcdir/python-editdistance.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/5/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_5/.build.rpmlist /var/cache/obs/worker/root_5/.build-srcdir/python-editdistance.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    8s] 
+[    8s] copying packages...
+[    9s] reordering...done
+[    9s] Detected virtio-serial support
+[   12s] booting kvm...
+[   12s] ### VM INTERACTION START ###
+[   12s] Using virtio-serial support
+[   12s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_5/.mount/boot/kernel -initrd /var/cache/obs/worker/root_5/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_5/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_5/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_5/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   21s] ### VM INTERACTION END ###
+[   21s] 2nd stage started in virtual machine
+[   22s] machine type: riscv64
+[   22s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   22s] Increasing log level from now on...
+[   22s] [    8.815165][  T413] sysrq: Changing Loglevel
+[   22s] [    8.815610][  T413] sysrq: Loglevel set to 4
+[   22s] Enable sysrq operations
+[   23s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   23s] no label, UUID=8fbe847d-251f-42f9-b319-d56099f7395c
+[   23s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   23s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   23s] swapon /dev/vdb
+[   23s] WARNING: udev not running, creating extra device nodes
+[   24s] logging output to //.build.log...
+[   25s] processing recipe /.build-srcdir/python-editdistance.spec ...
+[   25s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-editdistance.spec build ...
+[   26s] initializing rpm db...
+[   27s] querying package ids...
+[   79s] [1/195] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   79s] [2/195] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   79s] [3/195] preinstalled attr-2.5.1-1.1
+[   79s] [4/195] preinstalled bash-5.2.15-8.1
+[   79s] [5/195] preinstalled bash-sh-5.2.15-8.1
+[   79s] [6/195] preinstalled binutils-2.39-3.1
+[   79s] [7/195] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   79s] [8/195] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   79s] [9/195] preinstalled build-mkbaselibs-20230215-1.1
+[   79s] [10/195] preinstalled bzip2-1.0.8-4.1
+[   79s] [11/195] preinstalled chkstat-1599_20221220-1.2
+[   79s] [12/195] preinstalled compat-usrmerge-build-84.87-5.1
+[   79s] [13/195] preinstalled compat-usrmerge-tools-84.87-5.1
+[   79s] [14/195] preinstalled coreutils-9.1-5.1
+[   79s] [15/195] preinstalled cpio-2.13-5.1
+[   79s] [16/195] preinstalled cpp-12-2.1
+[   79s] [17/195] preinstalled cpp12-12.2.1+git749-4.1
+[   79s] [18/195] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   79s] [19/195] preinstalled debugedit-5.0-5.1
+[   79s] [20/195] preinstalled diffutils-3.9-1.1
+[   79s] [21/195] preinstalled dwz-0.15-2.1
+[   79s] [22/195] preinstalled elfutils-0.188-3.2
+[   79s] [23/195] cumulate fdupes-2.2.1-1.1
+[   79s] [24/195] preinstalled file-5.44-1.2
+[   79s] [25/195] preinstalled file-magic-5.44-1.2
+[   79s] [26/195] preinstalled filesystem-84.87-12.1
+[   79s] [27/195] preinstalled fillup-1.42-279.1
+[   79s] [28/195] preinstalled findutils-4.9.0-2.1
+[   79s] [29/195] preinstalled gawk-5.2.1-2.1
+[   79s] [30/195] preinstalled gcc-12-2.1
+[   79s] [31/195] preinstalled gcc-PIE-12-2.1
+[   79s] [32/195] preinstalled gcc12-12.2.1+git749-4.1
+[   79s] [33/195] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   79s] [34/195] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   79s] [35/195] preinstalled gettext-tools-mini-0.21.1-1.1
+[   79s] [36/195] preinstalled glibc-2.37-1.1
+[   79s] [37/195] preinstalled glibc-devel-2.37-1.1
+[   79s] [38/195] preinstalled glibc-locale-base-2.37-1.1
+[   79s] [39/195] preinstalled grep-3.8-3.1
+[   79s] [40/195] preinstalled gzip-1.12-3.1
+[   79s] [41/195] preinstalled kernel-obs-build-6.1.12-1.1
+[   79s] [42/195] preinstalled libacl1-2.3.1-2.1
+[   79s] [43/195] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   79s] [44/195] preinstalled libasan8-13.0.1+git5428-6.1
+[   79s] [45/195] preinstalled libasm1-0.188-3.2
+[   79s] [46/195] preinstalled libatomic1-13.0.1+git5428-6.1
+[   79s] [47/195] preinstalled libattr1-2.5.1-1.1
+[   79s] [48/195] preinstalled libaudit1-3.0.6-4.1
+[   79s] [49/195] preinstalled libblkid1-2.38.1-7.1
+[   79s] [50/195] preinstalled libbz2-1-1.0.8-4.1
+[   79s] [51/195] preinstalled libcap-ng0-0.8.3-1.1
+[   79s] [52/195] preinstalled libcap2-2.67-1.1
+[   79s] [53/195] preinstalled libcrypt1-4.4.33-1.1
+[   79s] [54/195] preinstalled libctf-nobfd0-2.39-3.1
+[   79s] [55/195] preinstalled libctf0-2.39-3.1
+[   79s] [56/195] preinstalled libdb-4_8-4.8.30-39.1
+[   79s] [57/195] preinstalled libdw1-0.188-3.2
+[   79s] [58/195] preinstalled libeconf0-0.5.1-1.1
+[   79s] [59/195] preinstalled libelf1-0.188-3.2
+[   80s] [60/195] preinstalled libexpat1-2.5.0-2.1
+[   80s] [61/195] preinstalled libfdisk1-2.38.1-7.1
+[   80s] [62/195] preinstalled libffi8-3.4.4-1.1
+[   80s] [63/195] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   80s] [64/195] preinstalled libgcrypt20-1.10.1-1.1
+[   80s] [65/195] preinstalled libgdbm6-1.23-1.1
+[   80s] [66/195] preinstalled libgdbm_compat4-1.23-1.1
+[   80s] [67/195] preinstalled libgmp10-6.2.1-4.1
+[   80s] [68/195] preinstalled libgomp1-13.0.1+git5428-6.1
+[   80s] [69/195] preinstalled libgpg-error0-1.46-1.1
+[   80s] [70/195] preinstalled libisl23-0.25-1.1
+[   80s] [71/195] preinstalled liblua5_4-5-5.4.4-8.1
+[   80s] [72/195] preinstalled liblzma5-5.4.1-1.1
+[   80s] [73/195] preinstalled libmagic1-5.44-1.2
+[   80s] [74/195] preinstalled libmount1-2.38.1-7.1
+[   80s] [75/195] preinstalled libmpc3-1.3.1-1.2
+[   80s] [76/195] preinstalled libmpdec3-2.5.1-2.1
+[   80s] [77/195] preinstalled libmpfr6-4.2.0-1.1
+[   80s] [78/195] preinstalled libncurses6-6.4.20230128-5.1
+[   80s] [79/195] preinstalled libopenssl3-3.0.7-3.1
+[   80s] [80/195] preinstalled libpcre2-8-0-10.42-3.2
+[   80s] [81/195] preinstalled libpkgconf3-1.8.0-2.1
+[   80s] [82/195] preinstalled libpopt0-1.19-1.1
+[   80s] [83/195] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   80s] [84/195] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   80s] [85/195] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   80s] [86/195] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   80s] [87/195] preinstalled libreadline8-8.2-2.1
+[   80s] [88/195] preinstalled librpmbuild9-4.18.0-3.2
+[   80s] [89/195] preinstalled libseccomp2-2.5.4-2.1
+[   80s] [90/195] preinstalled libselinux1-3.4-2.1
+[   80s] [91/195] preinstalled libsemanage-conf-3.4-1.1
+[   80s] [92/195] preinstalled libsemanage2-3.4-1.1
+[   80s] [93/195] preinstalled libsepol2-3.4-1.1
+[   80s] [94/195] preinstalled libsmartcols1-2.38.1-7.1
+[   80s] [95/195] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   80s] [96/195] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   80s] [97/195] preinstalled libsubid4-4.13-3.1
+[   80s] [98/195] preinstalled libubsan1-13.0.1+git5428-6.1
+[   80s] [99/195] preinstalled libutempter0-1.2.0-3.2
+[   80s] [100/195] preinstalled libuuid1-2.38.1-7.1
+[   80s] [101/195] preinstalled libxcrypt-devel-4.4.33-1.1
+[   80s] [102/195] preinstalled libz1-1.2.13-2.1
+[   80s] [103/195] preinstalled libzstd1-1.5.2-2.1
+[   80s] [104/195] preinstalled linux-glibc-devel-6.1-1.1
+[   80s] [105/195] preinstalled login_defs-4.13-3.1
+[   80s] [106/195] preinstalled lua54-5.4.4-8.1
+[   80s] [107/195] preinstalled make-4.4-2.1
+[   80s] [108/195] preinstalled ncurses-utils-6.4.20230128-5.1
+[   80s] [109/195] preinstalled pam-1.5.2-12.1
+[   80s] [110/195] preinstalled patch-2.7.6-6.1
+[   80s] [111/195] preinstalled perl-5.36.0-4.1
+[   80s] [112/195] preinstalled perl-base-5.36.0-4.1
+[   80s] [113/195] preinstalled permissions-1599_20221220-1.2
+[   80s] [114/195] preinstalled permissions-config-1599_20221220-1.2
+[   80s] [115/195] preinstalled pkgconf-1.8.0-2.1
+[   80s] [116/195] preinstalled pkgconf-m4-1.8.0-2.1
+[   80s] [117/195] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   80s] [118/195] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   80s] [119/195] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   80s] [120/195] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   80s] [121/195] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   80s] [122/195] cumulate python310-attrs-22.2.0-1.2
+[   80s] [123/195] preinstalled python310-base-3.10.9-2.2
+[   80s] [124/195] cumulate python310-devel-3.10.9-2.2
+[   80s] [125/195] cumulate python310-exceptiongroup-1.1.0-1.2
+[   80s] [126/195] cumulate python310-iniconfig-1.1.1-3.2
+[   80s] [127/195] preinstalled python310-packaging-23.0-1.1
+[   80s] [128/195] cumulate python310-pluggy-1.0.0-1.5
+[   80s] [129/195] preinstalled python310-setuptools-65.6.3-1.2
+[   80s] [130/195] cumulate python310-tomli-2.0.1-1.3
+[   80s] [131/195] cumulate python310-zipp-3.8.1-1.2
+[   80s] [132/195] cumulate python311-attrs-22.2.0-1.2
+[   80s] [133/195] preinstalled python311-base-3.11.1-4.2
+[   80s] [134/195] cumulate python311-devel-3.11.1-4.2
+[   80s] [135/195] cumulate python311-exceptiongroup-1.1.0-1.2
+[   80s] [136/195] cumulate python311-iniconfig-1.1.1-3.2
+[   80s] [137/195] cumulate python311-packaging-23.0-1.2
+[   80s] [138/195] cumulate python311-pluggy-1.0.0-1.5
+[   80s] [139/195] preinstalled python311-setuptools-65.6.3-1.2
+[   80s] [140/195] cumulate python311-tomli-2.0.1-1.3
+[   80s] [141/195] cumulate python311-zipp-3.8.1-1.2
+[   80s] [142/195] cumulate python38-attrs-22.2.0-1.2
+[   80s] [143/195] preinstalled python38-base-3.8.16-3.2
+[   80s] [144/195] cumulate python38-devel-3.8.16-3.2
+[   80s] [145/195] cumulate python38-exceptiongroup-1.1.0-1.2
+[   80s] [146/195] cumulate python38-iniconfig-1.1.1-3.2
+[   80s] [147/195] cumulate python38-packaging-23.0-1.2
+[   80s] [148/195] cumulate python38-pluggy-1.0.0-1.5
+[   80s] [149/195] preinstalled python38-setuptools-65.6.3-1.2
+[   80s] [150/195] cumulate python38-tomli-2.0.1-1.3
+[   80s] [151/195] cumulate python38-zipp-3.8.1-1.2
+[   80s] [152/195] cumulate python39-attrs-22.2.0-1.2
+[   80s] [153/195] preinstalled python39-base-3.9.16-3.2
+[   80s] [154/195] cumulate python39-devel-3.9.16-3.2
+[   80s] [155/195] cumulate python39-exceptiongroup-1.1.0-1.2
+[   80s] [156/195] cumulate python39-iniconfig-1.1.1-3.2
+[   80s] [157/195] cumulate python39-packaging-23.0-1.2
+[   80s] [158/195] cumulate python39-pluggy-1.0.0-1.5
+[   80s] [159/195] preinstalled python39-setuptools-65.6.3-1.2
+[   80s] [160/195] cumulate python39-tomli-2.0.1-1.3
+[   80s] [161/195] cumulate python39-zipp-3.8.1-1.2
+[   80s] [162/195] preinstalled qemu-linux-user-7.1.0-50.1
+[   80s] [163/195] preinstalled rpm-4.18.0-3.2
+[   80s] [164/195] preinstalled rpm-build-4.18.0-3.2
+[   80s] [165/195] preinstalled rpm-build-perl-4.18.0-3.2
+[   80s] [166/195] preinstalled rpm-config-SUSE-20220926-1.1
+[   80s] [167/195] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   80s] [168/195] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   80s] [169/195] preinstalled sed-4.9-2.1
+[   80s] [170/195] preinstalled shadow-4.13-3.1
+[   80s] [171/195] preinstalled system-group-hardware-20170617-24.1
+[   80s] [172/195] preinstalled system-user-root-20190513-2.1
+[   80s] [173/195] preinstalled systemd-rpm-macros-19-1.1
+[   80s] [174/195] preinstalled sysuser-shadow-3.1-5.1
+[   80s] [175/195] preinstalled tar-1.34-9.1
+[   80s] [176/195] preinstalled terminfo-base-6.4.20230128-5.1
+[   80s] [177/195] preinstalled update-alternatives-1.21.8-1.1
+[   80s] [178/195] preinstalled util-linux-2.38.1-7.1
+[   80s] [179/195] preinstalled which-2.21-5.1
+[   80s] [180/195] preinstalled xz-5.4.1-1.1
+[   80s] [181/195] cumulate alts-1.2+3.b848aad-3.1
+[   80s] [182/195] cumulate gcc12-c++-12.2.1+git749-4.1
+[   80s] [183/195] cumulate python310-Cython-0.29.33-1.2
+[   80s] [184/195] cumulate python310-importlib-metadata-6.0.0-1.2
+[   80s] [185/195] cumulate python311-Cython-0.29.33-1.2
+[   80s] [186/195] cumulate python311-importlib-metadata-6.0.0-1.2
+[   80s] [187/195] cumulate python38-Cython-0.29.33-1.2
+[   80s] [188/195] cumulate python38-importlib-metadata-6.0.0-1.2
+[   80s] [189/195] cumulate python39-Cython-0.29.33-1.2
+[   80s] [190/195] cumulate python39-importlib-metadata-6.0.0-1.2
+[   80s] [191/195] cumulate gcc-c++-12-2.1
+[   80s] [192/195] cumulate python310-pytest-7.2.0-2.2
+[   80s] [193/195] cumulate python311-pytest-7.2.0-2.2
+[   80s] [194/195] cumulate python38-pytest-7.2.0-2.2
+[   80s] [195/195] cumulate python39-pytest-7.2.0-2.2
+[   80s] now installing cumulated packages
+[   82s] Preparing...                          ########################################
+[   82s] Updating / installing...
+[   82s] python39-zipp-3.8.1-1.2               ########################################
+[   82s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   82s] python39-tomli-2.0.1-1.3              ########################################
+[   82s] python39-pluggy-1.0.0-1.5             ########################################
+[   82s] python39-packaging-23.0-1.2           ########################################
+[   82s] python39-iniconfig-1.1.1-3.2          ########################################
+[   83s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   83s] python39-devel-3.9.16-3.2             ########################################
+[   83s] python39-attrs-22.2.0-1.2             ########################################
+[   83s] python38-zipp-3.8.1-1.2               ########################################
+[   83s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   83s] python38-tomli-2.0.1-1.3              ########################################
+[   84s] python38-pluggy-1.0.0-1.5             ########################################
+[   84s] python38-packaging-23.0-1.2           ########################################
+[   84s] python38-iniconfig-1.1.1-3.2          ########################################
+[   84s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   84s] python38-devel-3.8.16-3.2             ########################################
+[   84s] python38-attrs-22.2.0-1.2             ########################################
+[   84s] python311-zipp-3.8.1-1.2              ########################################
+[   84s] python311-importlib-metadata-6.0.0-1.2########################################
+[   84s] python311-tomli-2.0.1-1.3             ########################################
+[   84s] python311-pluggy-1.0.0-1.5            ########################################
+[   85s] python311-packaging-23.0-1.2          ########################################
+[   85s] python311-iniconfig-1.1.1-3.2         ########################################
+[   85s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   85s] python311-devel-3.11.1-4.2            ########################################
+[   86s] python311-attrs-22.2.0-1.2            ########################################
+[   86s] python310-zipp-3.8.1-1.2              ########################################
+[   86s] python310-importlib-metadata-6.0.0-1.2########################################
+[   86s] python310-tomli-2.0.1-1.3             ########################################
+[   86s] python310-pluggy-1.0.0-1.5            ########################################
+[   86s] python310-iniconfig-1.1.1-3.2         ########################################
+[   86s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   86s] python310-devel-3.10.9-2.2            ########################################
+[   87s] python310-attrs-22.2.0-1.2            ########################################
+[  108s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[  115s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[  115s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  115s] alts-1.2+3.b848aad-3.1                ########################################
+[  117s] python310-pytest-7.2.0-2.2            ########################################
+[  118s] python311-pytest-7.2.0-2.2            ########################################
+[  119s] python38-pytest-7.2.0-2.2             ########################################
+[  121s] python39-pytest-7.2.0-2.2             ########################################
+[  121s] gcc-c++-12-2.1                        ########################################
+[  124s] python310-Cython-0.29.33-1.2          ########################################
+[  127s] python311-Cython-0.29.33-1.2          ########################################
+[  131s] python38-Cython-0.29.33-1.2           ########################################
+[  134s] python39-Cython-0.29.33-1.2           ########################################
+[  134s] fdupes-2.2.1-1.1                      ########################################
+[  138s] now finalizing build dir...
+[  139s] ... running 01-add_abuild_user_to_trusted_group
+[  139s] ... running 02-set_timezone_to_utc
+[  140s] ... running 03-set-permissions-secure
+[  140s] ... running 11-hack_uname_version_to_kernel_version
+[  157s] -----------------------------------------------------------------
+[  157s] I have the following modifications for python-editdistance.spec:
+[  158s] 22c22
+[  158s] < Release:        0
+[  158s] ---
+[  158s] > Release:        1.5
+[  174s] build target is riscv64-suse-linux
+[  174s] -----------------------------------------------------------------
+[  174s] ----- building python-editdistance.spec (user abuild)
+[  174s] -----------------------------------------------------------------
+[  174s] -----------------------------------------------------------------
+[  181s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/0726aae847535e33fb9903906d21d0e0-python-editdistance' /home/abuild/rpmbuild/SOURCES/python-editdistance.spec
+[  244s] Building target platforms: riscv64-suse-linux
+[  244s] Building for target riscv64-suse-linux
+[  244s] setting SOURCE_DATE_EPOCH=1635897600
+[  244s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Ix2Oq0
+[  245s] + umask 022
+[  245s] + cd /home/abuild/rpmbuild/BUILD
+[  245s] + cd /home/abuild/rpmbuild/BUILD
+[  245s] + rm -rf editdistance-0.6.0
+[  245s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/editdistance-0.6.0.tar.gz
+[  245s] + STATUS=0
+[  245s] + '[' 0 -ne 0 ']'
+[  245s] + cd editdistance-0.6.0
+[  245s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  245s] + RPM_EC=0
+[  245s] ++ jobs -p
+[  245s] + exit 0
+[  246s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ouxFp1
+[  246s] + umask 022
+[  246s] + cd /home/abuild/rpmbuild/BUILD
+[  246s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-editdistance-0.6.0-1.5.riscv64
+[  246s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-editdistance-0.6.0-1.5.riscv64
+[  246s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  246s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-editdistance-0.6.0-1.5.riscv64
+[  246s] + cd editdistance-0.6.0
+[  246s] + ref=/usr/lib/rpm
+[  246s] + mints=0
+[  246s] + case $(uname -m) in
+[  246s] ++ uname -m
+[  247s] + mints=20160911
+[  247s] + for s in guess sub
+[  247s] ++ find -maxdepth 8 -name config.guess
+[  247s] + for s in guess sub
+[  247s] ++ find -maxdepth 8 -name config.sub
+[  247s] ++ '[' -f _current_flavor ']'
+[  247s] ++ true
+[  247s] + last_flavor=
+[  247s] + '[' -z '' ']'
+[  247s] + last_flavor=tmp
+[  247s] + '[' tmp '!=' python38 ']'
+[  247s] + '[' -d build ']'
+[  247s] + '[' -d _build.python38 ']'
+[  247s] + echo python38
+[  247s] + python_flavor=python38
+[  247s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  254s] running build
+[  254s] running build_py
+[  254s] creating build
+[  254s] creating build/lib.linux-riscv64-cpython-38
+[  254s] creating build/lib.linux-riscv64-cpython-38/editdistance
+[  254s] copying editdistance/__init__.py -> build/lib.linux-riscv64-cpython-38/editdistance
+[  254s] copying editdistance/_editdistance.h -> build/lib.linux-riscv64-cpython-38/editdistance
+[  254s] copying editdistance/def.h -> build/lib.linux-riscv64-cpython-38/editdistance
+[  254s] running build_ext
+[  256s] building 'editdistance.bycython' extension
+[  256s] creating build/temp.linux-riscv64-cpython-38
+[  256s] creating build/temp.linux-riscv64-cpython-38/editdistance
+[  256s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -fPIC -I./editdistance -I/usr/include/python3.8 -c editdistance/_editdistance.cpp -o build/temp.linux-riscv64-cpython-38/editdistance/_editdistance.o
+[  276s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_dp(const T*, size_t, const T*, size_t) [with T = long int; size_t = long unsigned int]’:
+[  276s] editdistance/_editdistance.cpp:130:37:   required from here
+[  276s] editdistance/_editdistance.cpp:70:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  276s]    70 |     for (int i = 0; i < size2 + 1; i++) d[0][i] = i;
+[  276s]       |                     ~~^~~~~~~~~~~
+[  276s] editdistance/_editdistance.cpp:71:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  276s]    71 |     for (int i = 1; i < size1 + 1; i++) {
+[  276s]       |                     ~~^~~~~~~~~~~
+[  276s] editdistance/_editdistance.cpp:72:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  276s]    72 |         for (int j = 1; j < size2 + 1; j++) {
+[  276s]       |                         ~~^~~~~~~~~~~
+[  276s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>; int64_t = long int; size_t = long unsigned int]’:
+[  276s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1; int64_t = long int; size_t = long unsigned int]’
+[  276s] editdistance/_editdistance.cpp:120:48:   required from here
+[  276s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  276s]    44 |         for(int r = 0; r <= tmax; ++r) {
+[  276s]       |                        ~~^~~~~~~
+[  276s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<2>, std::less<long int>, std::allocator<std::pair<const long int, varr<2> > > >; TVALUE = varr<2>; int64_t = long int; size_t = long unsigned int]’:
+[  276s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 2; int64_t = long int; size_t = long unsigned int]’
+[  276s] editdistance/_editdistance.cpp:121:53:   required from here
+[  276s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  276s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<3>, std::less<long int>, std::allocator<std::pair<const long int, varr<3> > > >; TVALUE = varr<3>; int64_t = long int; size_t = long unsigned int]’:
+[  276s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 3; int64_t = long int; size_t = long unsigned int]’
+[  276s] editdistance/_editdistance.cpp:122:53:   required from here
+[  276s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<4>, std::less<long int>, std::allocator<std::pair<const long int, varr<4> > > >; TVALUE = varr<4>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 4; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:123:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<5>, std::less<long int>, std::allocator<std::pair<const long int, varr<5> > > >; TVALUE = varr<5>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 5; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:124:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<6>, std::less<long int>, std::allocator<std::pair<const long int, varr<6> > > >; TVALUE = varr<6>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 6; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:125:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<7>, std::less<long int>, std::allocator<std::pair<const long int, varr<7> > > >; TVALUE = varr<7>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 7; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:126:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<8>, std::less<long int>, std::allocator<std::pair<const long int, varr<8> > > >; TVALUE = varr<8>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 8; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:127:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<9>, std::less<long int>, std::allocator<std::pair<const long int, varr<9> > > >; TVALUE = varr<9>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 9; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:128:53:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  277s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<10>, std::less<long int>, std::allocator<std::pair<const long int, varr<10> > > >; TVALUE = varr<10>; int64_t = long int; size_t = long unsigned int]’:
+[  277s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 10; int64_t = long int; size_t = long unsigned int]’
+[  277s] editdistance/_editdistance.cpp:129:55:   required from here
+[  277s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  307s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  307s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:52:15,
+[  307s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  307s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  307s]    83 |         return arr_[i];
+[  307s]       |                ~~~~^
+[  307s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  307s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  307s]    81 |     uint64_t arr_[N];
+[  307s]       |              ^~~~
+[  307s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  307s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:53:46,
+[  307s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  307s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  307s]    83 |         return arr_[i];
+[  307s]       |                ~~~~^
+[  307s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  307s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  307s]    81 |     uint64_t arr_[N];
+[  307s]       |              ^~~~
+[  340s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -fPIC -I./editdistance -I/usr/include/python3.8 -c editdistance/bycython.cpp -o build/temp.linux-riscv64-cpython-38/editdistance/bycython.o
+[  349s] editdistance/bycython.cpp: In function ‘unsigned int __pyx_f_12editdistance_8bycython_eval(PyObject*, PyObject*, int)’:
+[  349s] editdistance/bycython.cpp:1243:13: warning: conversion from ‘long unsigned int’ to ‘unsigned int’ changes value from ‘18446744073709551615’ to ‘4294967295’ [-Woverflow]
+[  349s]  1243 |   __pyx_r = 0xffffffffffffffff;
+[  349s]       |             ^~~~~~~~~~~~~~~~~~
+[  365s] g++ -shared build/temp.linux-riscv64-cpython-38/editdistance/_editdistance.o build/temp.linux-riscv64-cpython-38/editdistance/bycython.o -L/usr/lib64 -o build/lib.linux-riscv64-cpython-38/editdistance/bycython.cpython-38-riscv64-linux-gnu.so
+[  367s] ++ '[' -f _current_flavor ']'
+[  367s] ++ cat _current_flavor
+[  367s] + last_flavor=python38
+[  367s] + '[' -z python38 ']'
+[  367s] + '[' python38 '!=' python39 ']'
+[  367s] + '[' -d build ']'
+[  367s] + mv build _build.python38
+[  367s] + '[' -d _build.python39 ']'
+[  367s] + echo python39
+[  368s] + python_flavor=python39
+[  368s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  374s] running build
+[  374s] running build_py
+[  374s] creating build
+[  374s] creating build/lib.linux-riscv64-cpython-39
+[  374s] creating build/lib.linux-riscv64-cpython-39/editdistance
+[  374s] copying editdistance/__init__.py -> build/lib.linux-riscv64-cpython-39/editdistance
+[  374s] copying editdistance/_editdistance.h -> build/lib.linux-riscv64-cpython-39/editdistance
+[  374s] copying editdistance/def.h -> build/lib.linux-riscv64-cpython-39/editdistance
+[  374s] running build_ext
+[  376s] building 'editdistance.bycython' extension
+[  376s] creating build/temp.linux-riscv64-cpython-39
+[  376s] creating build/temp.linux-riscv64-cpython-39/editdistance
+[  376s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -fPIC -I./editdistance -I/usr/include/python3.9 -c editdistance/_editdistance.cpp -o build/temp.linux-riscv64-cpython-39/editdistance/_editdistance.o
+[  394s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_dp(const T*, size_t, const T*, size_t) [with T = long int; size_t = long unsigned int]’:
+[  394s] editdistance/_editdistance.cpp:130:37:   required from here
+[  394s] editdistance/_editdistance.cpp:70:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  394s]    70 |     for (int i = 0; i < size2 + 1; i++) d[0][i] = i;
+[  394s]       |                     ~~^~~~~~~~~~~
+[  394s] editdistance/_editdistance.cpp:71:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  394s]    71 |     for (int i = 1; i < size1 + 1; i++) {
+[  394s]       |                     ~~^~~~~~~~~~~
+[  394s] editdistance/_editdistance.cpp:72:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  394s]    72 |         for (int j = 1; j < size2 + 1; j++) {
+[  394s]       |                         ~~^~~~~~~~~~~
+[  394s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>; int64_t = long int; size_t = long unsigned int]’:
+[  394s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1; int64_t = long int; size_t = long unsigned int]’
+[  394s] editdistance/_editdistance.cpp:120:48:   required from here
+[  394s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  394s]    44 |         for(int r = 0; r <= tmax; ++r) {
+[  394s]       |                        ~~^~~~~~~
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<2>, std::less<long int>, std::allocator<std::pair<const long int, varr<2> > > >; TVALUE = varr<2>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 2; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:121:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<3>, std::less<long int>, std::allocator<std::pair<const long int, varr<3> > > >; TVALUE = varr<3>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 3; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:122:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<4>, std::less<long int>, std::allocator<std::pair<const long int, varr<4> > > >; TVALUE = varr<4>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 4; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:123:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<5>, std::less<long int>, std::allocator<std::pair<const long int, varr<5> > > >; TVALUE = varr<5>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 5; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:124:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<6>, std::less<long int>, std::allocator<std::pair<const long int, varr<6> > > >; TVALUE = varr<6>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 6; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:125:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<7>, std::less<long int>, std::allocator<std::pair<const long int, varr<7> > > >; TVALUE = varr<7>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 7; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:126:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<8>, std::less<long int>, std::allocator<std::pair<const long int, varr<8> > > >; TVALUE = varr<8>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 8; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:127:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<9>, std::less<long int>, std::allocator<std::pair<const long int, varr<9> > > >; TVALUE = varr<9>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 9; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:128:53:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  395s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<10>, std::less<long int>, std::allocator<std::pair<const long int, varr<10> > > >; TVALUE = varr<10>; int64_t = long int; size_t = long unsigned int]’:
+[  395s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 10; int64_t = long int; size_t = long unsigned int]’
+[  395s] editdistance/_editdistance.cpp:129:55:   required from here
+[  395s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  422s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  422s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:52:15,
+[  422s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  422s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  422s]    83 |         return arr_[i];
+[  422s]       |                ~~~~^
+[  422s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  422s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  422s]    81 |     uint64_t arr_[N];
+[  422s]       |              ^~~~
+[  422s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  422s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:53:46,
+[  422s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  422s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  422s]    83 |         return arr_[i];
+[  422s]       |                ~~~~^
+[  422s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  422s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  422s]    81 |     uint64_t arr_[N];
+[  422s]       |              ^~~~
+[  463s] gcc -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -fPIC -I./editdistance -I/usr/include/python3.9 -c editdistance/bycython.cpp -o build/temp.linux-riscv64-cpython-39/editdistance/bycython.o
+[  476s] editdistance/bycython.cpp: In function ‘unsigned int __pyx_f_12editdistance_8bycython_eval(PyObject*, PyObject*, int)’:
+[  476s] editdistance/bycython.cpp:1243:13: warning: conversion from ‘long unsigned int’ to ‘unsigned int’ changes value from ‘18446744073709551615’ to ‘4294967295’ [-Woverflow]
+[  476s]  1243 |   __pyx_r = 0xffffffffffffffff;
+[  476s]       |             ^~~~~~~~~~~~~~~~~~
+[  477s] In file included from /usr/include/python3.9/unicodeobject.h:1026,
+[  477s]                  from /usr/include/python3.9/Python.h:93,
+[  477s]                  from editdistance/bycython.cpp:24:
+[  477s] editdistance/bycython.cpp: In function ‘int __Pyx_ParseOptionalKeywords(PyObject*, PyObject***, PyObject*, PyObject**, Py_ssize_t, const char*)’:
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+[  477s]       |       ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                      ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+[  477s]       |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                      ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:580:45: note: declared here
+[  477s]   580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+[  477s]       |                                             ^~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   264 |        PyUnicode_WSTR_LENGTH(op)))
+[  477s]       |        ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                      ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+[  477s]       |       ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                    ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+[  477s]       |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                    ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:580:45: note: declared here
+[  477s]   580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+[  477s]       |                                             ^~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   264 |        PyUnicode_WSTR_LENGTH(op)))
+[  477s]       |        ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1930:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1930 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                    ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+[  477s]       |       ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+[  477s]       |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:580:45: note: declared here
+[  477s]   580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+[  477s]       |                                             ^~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   264 |        PyUnicode_WSTR_LENGTH(op)))
+[  477s]       |        ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+[  477s]       |       ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                           ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+[  477s]       |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                           ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:580:45: note: declared here
+[  477s]   580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+[  477s]       |                                             ^~~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+[  477s]   451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+[  477s]       |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+[  477s]   264 |        PyUnicode_WSTR_LENGTH(op)))
+[  477s]       |        ^~~~~~~~~~~~~~~~~~~~~
+[  477s] editdistance/bycython.cpp:1946:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+[  477s]  1946 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+[  477s]       |                                                           ^~~~~~~~~~~~~~~~~~
+[  477s] /usr/include/python3.9/cpython/unicodeobject.h:446:26: note: declared here
+[  477s]   446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+[  477s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  494s] g++ -shared build/temp.linux-riscv64-cpython-39/editdistance/_editdistance.o build/temp.linux-riscv64-cpython-39/editdistance/bycython.o -L/usr/lib64 -o build/lib.linux-riscv64-cpython-39/editdistance/bycython.cpython-39-riscv64-linux-gnu.so
+[  496s] ++ '[' -f _current_flavor ']'
+[  496s] ++ cat _current_flavor
+[  496s] + last_flavor=python39
+[  496s] + '[' -z python39 ']'
+[  496s] + '[' python39 '!=' python311 ']'
+[  496s] + '[' -d build ']'
+[  496s] + mv build _build.python39
+[  497s] + '[' -d _build.python311 ']'
+[  497s] + echo python311
+[  497s] + python_flavor=python311
+[  497s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  503s] running build
+[  503s] running build_py
+[  503s] creating build
+[  503s] creating build/lib.linux-riscv64-cpython-311
+[  503s] creating build/lib.linux-riscv64-cpython-311/editdistance
+[  503s] copying editdistance/__init__.py -> build/lib.linux-riscv64-cpython-311/editdistance
+[  503s] copying editdistance/_editdistance.h -> build/lib.linux-riscv64-cpython-311/editdistance
+[  503s] copying editdistance/def.h -> build/lib.linux-riscv64-cpython-311/editdistance
+[  503s] running build_ext
+[  505s] building 'editdistance.bycython' extension
+[  505s] creating build/temp.linux-riscv64-cpython-311
+[  505s] creating build/temp.linux-riscv64-cpython-311/editdistance
+[  505s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -fPIC -I./editdistance -I/usr/include/python3.11 -c editdistance/_editdistance.cpp -o build/temp.linux-riscv64-cpython-311/editdistance/_editdistance.o
+[  528s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_dp(const T*, size_t, const T*, size_t) [with T = long int; size_t = long unsigned int]’:
+[  528s] editdistance/_editdistance.cpp:130:37:   required from here
+[  528s] editdistance/_editdistance.cpp:70:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  528s]    70 |     for (int i = 0; i < size2 + 1; i++) d[0][i] = i;
+[  528s]       |                     ~~^~~~~~~~~~~
+[  528s] editdistance/_editdistance.cpp:71:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  528s]    71 |     for (int i = 1; i < size1 + 1; i++) {
+[  528s]       |                     ~~^~~~~~~~~~~
+[  528s] editdistance/_editdistance.cpp:72:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+[  528s]    72 |         for (int j = 1; j < size2 + 1; j++) {
+[  528s]       |                         ~~^~~~~~~~~~~
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>; int64_t = long int; size_t = long unsigned int]’:
+[  529s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1; int64_t = long int; size_t = long unsigned int]’
+[  529s] editdistance/_editdistance.cpp:120:48:   required from here
+[  529s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  529s]    44 |         for(int r = 0; r <= tmax; ++r) {
+[  529s]       |                        ~~^~~~~~~
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<2>, std::less<long int>, std::allocator<std::pair<const long int, varr<2> > > >; TVALUE = varr<2>; int64_t = long int; size_t = long unsigned int]’:
+[  529s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 2; int64_t = long int; size_t = long unsigned int]’
+[  529s] editdistance/_editdistance.cpp:121:53:   required from here
+[  529s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<3>, std::less<long int>, std::allocator<std::pair<const long int, varr<3> > > >; TVALUE = varr<3>; int64_t = long int; size_t = long unsigned int]’:
+[  529s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 3; int64_t = long int; size_t = long unsigned int]’
+[  529s] editdistance/_editdistance.cpp:122:53:   required from here
+[  529s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<4>, std::less<long int>, std::allocator<std::pair<const long int, varr<4> > > >; TVALUE = varr<4>; int64_t = long int; size_t = long unsigned int]’:
+[  529s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 4; int64_t = long int; size_t = long unsigned int]’
+[  529s] editdistance/_editdistance.cpp:123:53:   required from here
+[  529s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<5>, std::less<long int>, std::allocator<std::pair<const long int, varr<5> > > >; TVALUE = varr<5>; int64_t = long int; size_t = long unsigned int]’:
+[  529s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 5; int64_t = long int; size_t = long unsigned int]’
+[  529s] editdistance/_editdistance.cpp:124:53:   required from here
+[  529s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  529s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<6>, std::less<long int>, std::allocator<std::pair<const long int, varr<6> > > >; TVALUE = varr<6>; int64_t = long int; size_t = long unsigned int]’:
+[  530s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 6; int64_t = long int; size_t = long unsigned int]’
+[  530s] editdistance/_editdistance.cpp:125:53:   required from here
+[  530s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  530s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<7>, std::less<long int>, std::allocator<std::pair<const long int, varr<7> > > >; TVALUE = varr<7>; int64_t = long int; size_t = long unsigned int]’:
+[  530s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 7; int64_t = long int; size_t = long unsigned int]’
+[  530s] editdistance/_editdistance.cpp:126:53:   required from here
+[  530s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  530s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<8>, std::less<long int>, std::allocator<std::pair<const long int, varr<8> > > >; TVALUE = varr<8>; int64_t = long int; size_t = long unsigned int]’:
+[  530s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 8; int64_t = long int; size_t = long unsigned int]’
+[  530s] editdistance/_editdistance.cpp:127:53:   required from here
+[  530s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  530s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<9>, std::less<long int>, std::allocator<std::pair<const long int, varr<9> > > >; TVALUE = varr<9>; int64_t = long int; size_t = long unsigned int]’:
+[  530s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 9; int64_t = long int; size_t = long unsigned int]’
+[  530s] editdistance/_editdistance.cpp:128:53:   required from here
+[  530s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  530s] editdistance/_editdistance.cpp: In instantiation of ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<10>, std::less<long int>, std::allocator<std::pair<const long int, varr<10> > > >; TVALUE = varr<10>; int64_t = long int; size_t = long unsigned int]’:
+[  530s] editdistance/_editdistance.cpp:98:67:   required from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 10; int64_t = long int; size_t = long unsigned int]’
+[  530s] editdistance/_editdistance.cpp:129:55:   required from here
+[  530s] editdistance/_editdistance.cpp:44:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+[  565s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  565s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:52:15,
+[  565s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  565s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  565s]    83 |         return arr_[i];
+[  565s]       |                ~~~~^
+[  565s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  565s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  565s]    81 |     uint64_t arr_[N];
+[  565s]       |              ^~~~
+[  565s] In member function ‘uint64_t& varr<N>::operator[](const size_t&) [with long unsigned int N = 1]’,
+[  565s]     inlined from ‘unsigned int edit_distance_bpv(T&, const int64_t*, const size_t&, const unsigned int&, const unsigned int&) [with T = std::map<long int, varr<1>, std::less<long int>, std::allocator<std::pair<const long int, varr<1> > > >; TVALUE = varr<1>]’ at editdistance/_editdistance.cpp:53:46,
+[  565s]     inlined from ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’ at editdistance/_editdistance.cpp:98:67:
+[  565s] editdistance/_editdistance.cpp:83:20: warning: array subscript 1 is above array bounds of ‘uint64_t [1]’ {aka ‘long unsigned int [1]’} [-Warray-bounds]
+[  565s]    83 |         return arr_[i];
+[  565s]       |                ~~~~^
+[  565s] editdistance/_editdistance.cpp: In function ‘unsigned int edit_distance_map_(const int64_t*, size_t, const int64_t*, size_t) [with long unsigned int N = 1]’:
+[  565s] editdistance/_editdistance.cpp:81:14: note: while referencing ‘varr<1>::arr_’
+[  565s]    81 |     uint64_t arr_[N];
+[  565s]       |              ^~~~
+[  601s] gcc -Wsign-compare -DNDEBUG -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -DOPENSSL_LOAD_CONF -fwrapv -fno-semantic-interposition -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -g -IVendor/ -fPIC -I./editdistance -I/usr/include/python3.11 -c editdistance/bycython.cpp -o build/temp.linux-riscv64-cpython-311/editdistance/bycython.o
+[  605s] editdistance/bycython.cpp:216:12: fatal error: longintrepr.h: No such file or directory
+[  605s]   216 |   #include "longintrepr.h"
+[  605s]       |            ^~~~~~~~~~~~~~~
+[  605s] compilation terminated.
+[  605s] error: command '/usr/bin/gcc' failed with exit code 1
+[  605s] error: Bad exit status from /var/tmp/rpm-tmp.ouxFp1 (%build)
+[  605s] 
+[  605s] RPM build errors:
+[  605s]     Bad exit status from /var/tmp/rpm-tmp.ouxFp1 (%build)
+[  606s] ### VM INTERACTION START ###
+[  607s] [  593.089883][    T1] sysrq: Power Off
+[  607s] [  593.092691][   T18] reboot: Power down
+[  607s] ### VM INTERACTION END ###
+[  607s] 
+[  607s] hci-snode1-m0 failed "build python-editdistance.spec" at Sat Feb 18 21:35:16 UTC 2023.
+[  607s] 
