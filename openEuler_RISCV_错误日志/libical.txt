@@ -1,0 +1,1444 @@
+[    1s] Memory limit set to 10955196KB
+[    1s] Using BUILD_ROOT=/var/cache/obs/worker/root_2
+[    1s] Using BUILD_ARCH=riscv64
+[    1s] 
+[    5s] 
+[    5s] oe-RISCV-worker22 started "build _service:extract_file:libical.spec" at Sat Apr 23 10:53:57 UTC 2022.
+[    5s] 
+[    5s] Building libical for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '4eda7e13f8dc192fc5a068d71a926164'
+[    5s] 
+[    5s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:libical.spec ...
+[    9s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:libical.spec
+[   10s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:libical.spec build ...
+[  108s] cycle: bash -> coreutils
+[  108s]   breaking dependency coreutils -> bash
+[  108s] cycle: bash -> coreutils -> info
+[  108s]   breaking dependency coreutils -> info
+[  108s] cycle: glibc -> filesystem -> bash -> coreutils
+[  108s]   breaking dependency filesystem -> bash
+[  108s] cycle: glibc -> filesystem -> coreutils
+[  108s]   breaking dependency coreutils -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  108s]   breaking dependency coreutils -> libacl
+[  108s] cycle: glibc -> filesystem -> coreutils -> attr
+[  108s]   breaking dependency coreutils -> attr
+[  108s] cycle: coreutils -> libcap -> bash
+[  108s]   breaking dependency coreutils -> libcap
+[  108s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  108s]   breaking dependency coreutils -> openssl-libs
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  108s]   breaking dependency libselinux -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  108s]   breaking dependency pcre2 -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  108s]   breaking dependency readline -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  108s]   breaking dependency coreutils -> libselinux
+[  108s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  108s]   breaking dependency ncurses -> glibc
+[  108s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  108s]   breaking dependency ncurses -> ncurses-libs
+[  108s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  108s]   breaking dependency ncurses -> libgcc
+[  108s] cycle: perl-Carp -> perl-libs
+[  108s]   breaking dependency perl-libs -> perl-Carp
+[  108s] cycle: perl-libs -> perl-Exporter
+[  108s]   breaking dependency perl-libs -> perl-Exporter
+[  108s] cycle: perl-Carp -> perl-Exporter
+[  108s]   breaking dependency perl-Exporter -> perl-Carp
+[  108s] cycle: nss-util -> nss
+[  108s]   breaking dependency nss -> nss-util
+[  108s] cycle: nss-softokn -> nss-util -> nss
+[  108s]   breaking dependency nss -> nss-softokn
+[  108s] cycle: systemd -> cryptsetup -> device-mapper
+[  108s]   breaking dependency systemd -> cryptsetup
+[  108s] cycle: audit -> systemd -> pam
+[  108s]   breaking dependency systemd -> pam
+[  108s] [1/84] preinstalling dbus...
+[  109s] [2/84] preinstalling libffi-devel...
+[  110s] [3/84] preinstalling nodejs-source-map...
+[  110s] [4/84] preinstalling python3-pip...
+[  113s] [5/84] preinstalling python3-setuptools_scm...
+[  114s] [6/84] preinstalling ncurses...
+[  119s] [7/84] preinstalling coreutils...
+[  123s] [8/84] preinstalling filesystem...
+[  125s] [9/84] preinstalling glibc...
+[  129s] [10/84] preinstalling libgcc...
+[  130s] [11/84] preinstalling diffutils...
+[  131s] [12/84] preinstalling libcap-ng...
+[  132s] [13/84] preinstalling libgpg-error...
+[  133s] [14/84] preinstalling libpcap...
+[  134s] [15/84] preinstalling libsmartcols...
+[  135s] [16/84] preinstalling libuuid...
+[  136s] [17/84] preinstalling libxcrypt...
+[  137s] [18/84] preinstalling lz4...
+[  138s] [19/84] preinstalling m4...
+[  139s] [20/84] preinstalling ncurses-libs...
+[  141s] [21/84] preinstalling nspr...
+[  142s] [22/84] preinstalling xz-libs...
+[  142s] [23/84] preinstalling zlib...
+[  143s] [24/84] preinstalling attr...
+[  144s] [25/84] preinstalling libdb...
+[  148s] [26/84] preinstalling zstd...
+[  150s] [27/84] preinstalling audit-libs...
+[  151s] [28/84] preinstalling file...
+[  152s] [29/84] preinstalling iptables-libs...
+[  152s] [30/84] preinstalling libacl...
+[  153s] [31/84] preinstalling libgcrypt...
+[  154s] [32/84] preinstalling openssl-libs...
+[  156s] [33/84] preinstalling readline...
+[  157s] [34/84] preinstalling bash...
+[  160s] [35/84] preinstalling cmake...
+[  175s] [36/84] preinstalling perl-libs...
+[  178s] [37/84] preinstalling dnf...
+[  179s] [38/84] preinstalling pcre2...
+[  180s] [39/84] preinstalling perl-Exporter...
+[  181s] [40/84] preinstalling bzip2...
+[  181s] [41/84] preinstalling hostname...
+[  182s] [42/84] preinstalling libcap...
+[  183s] [43/84] preinstalling pcre...
+[  184s] [44/84] preinstalling popt...
+[  185s] [45/84] preinstalling acl...
+[  187s] [46/84] preinstalling elfutils...
+[  189s] [47/84] preinstalling libblkid...
+[  190s] [48/84] preinstalling openssl...
+[  191s] [49/84] preinstalling sqlite...
+[  192s] [50/84] preinstalling tar...
+[  194s] [51/84] preinstalling info...
+[  195s] [52/84] preinstalling libgcrypt-devel...
+[  196s] [53/84] preinstalling lua...
+[  197s] [54/84] preinstalling libselinux...
+[  198s] [55/84] preinstalling perl-Carp...
+[  198s] [56/84] preinstalling copy-jdk-configs...
+[  199s] [57/84] preinstalling libfdisk...
+[  200s] [58/84] preinstalling perl-Digest-MD5...
+[  201s] [59/84] preinstalling grep...
+[  204s] [60/84] preinstalling rpm-libs...
+[  205s] [61/84] preinstalling chkconfig...
+[  206s] [62/84] preinstalling sed...
+[  207s] [63/84] preinstalling libmount...
+[  208s] [64/84] preinstalling libsemanage...
+[  209s] [65/84] preinstalling perl-constant...
+[  210s] [66/84] preinstalling findutils...
+[  211s] [67/84] preinstalling xz...
+[  212s] [68/84] preinstalling perl-Getopt-Long...
+[  213s] [69/84] preinstalling glib2...
+[  217s] [70/84] preinstalling nss...
+[  219s] [71/84] preinstalling perl-Data-Dumper...
+[  220s] [72/84] preinstalling systemd-libs...
+[  221s] [73/84] preinstalling systemd...
+[  226s] [74/84] preinstalling dbus-libs...
+[  227s] [75/84] preinstalling nss-util...
+[  228s] [76/84] preinstalling audit...
+[  230s] [77/84] preinstalling nss-softokn...
+[  232s] [78/84] preinstalling pam...
+[  233s] [79/84] preinstalling rpm...
+[  234s] [80/84] preinstalling openEuler-rpm-config...
+[  235s] [81/84] preinstalling util-linux...
+[  239s] [82/84] preinstalling device-mapper...
+[  240s] [83/84] preinstalling cryptsetup...
+[  241s] [84/84] preinstalling lvm2...
+[  244s] 
+[  247s] initializing rpm db...
+[  261s] reordering...cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[  261s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[  261s] cycle: bash -> coreutils
+[  261s]   breaking dependency coreutils -> bash
+[  261s] cycle: bash -> coreutils -> info
+[  261s]   breaking dependency coreutils -> info
+[  261s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  261s]   breaking dependency filesystem -> bash
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  261s]   breaking dependency coreutils -> gmp
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  261s]   breaking dependency coreutils -> glibc
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  261s]   breaking dependency coreutils -> libacl
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  261s]   breaking dependency coreutils -> attr
+[  261s] cycle: coreutils -> libcap -> bash
+[  261s]   breaking dependency coreutils -> libcap
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  261s]   breaking dependency openssl-libs -> glibc
+[  261s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  261s]   breaking dependency ca-certificates -> bash
+[  261s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  261s]   breaking dependency ca-certificates -> coreutils
+[  261s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  261s]   breaking dependency grep -> bash
+[  261s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  261s]   breaking dependency ca-certificates -> grep
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  261s]   breaking dependency p11-kit -> glibc
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  261s]   breaking dependency openssl-libs -> ca-certificates
+[  261s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  261s]   breaking dependency crypto-policies -> bash
+[  261s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  261s]   breaking dependency crypto-policies -> coreutils
+[  261s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency grep -> coreutils
+[  261s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency glibc -> basesystem
+[  261s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency glibc-common -> bash
+[  261s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency glibc-common -> coreutils
+[  261s] cycle: glibc -> glibc-common
+[  261s]   breaking dependency glibc-common -> glibc
+[  261s] cycle: glibc -> glibc-common -> libselinux
+[  261s]   breaking dependency libselinux -> glibc
+[  261s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  261s]   breaking dependency pcre2 -> glibc
+[  261s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  261s]   breaking dependency readline -> glibc
+[  261s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  261s]   breaking dependency libselinux -> pcre2
+[  261s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency bash -> coreutils
+[  261s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency libsepol -> bash
+[  261s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  261s]   breaking dependency coreutils -> openssl-libs
+[  261s] cycle: libselinux -> libsepol -> coreutils
+[  261s]   breaking dependency libsepol -> coreutils
+[  261s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  261s]   breaking dependency glibc -> glibc-common
+[  261s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  261s]   breaking dependency filesystem -> coreutils
+[  261s] cycle: filesystem -> setup
+[  261s]   breaking dependency filesystem -> setup
+[  261s] cycle: systemd -> cryptsetup -> device-mapper
+[  261s]   breaking dependency systemd -> cryptsetup
+[  261s] cycle: perl-libs -> perl-Carp
+[  261s]   breaking dependency perl-libs -> perl-Carp
+[  261s] cycle: perl-libs -> perl-Exporter
+[  261s]   breaking dependency perl-libs -> perl-Exporter
+[  261s] cycle: perl-Carp -> perl-Exporter
+[  261s]   breaking dependency perl-Exporter -> perl-Carp
+[  261s] cycle: perl -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-PathTools
+[  261s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  261s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  261s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-File-Path
+[  261s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  261s]   breaking dependency perl -> perl-Getopt-Long
+[  261s] cycle: perl -> perl-Locale-Maketext
+[  261s]   breaking dependency perl -> perl-Locale-Maketext
+[  261s] cycle: perl -> perl-Pod-Simple
+[  261s]   breaking dependency perl -> perl-Pod-Simple
+[  261s] cycle: perl -> perl-Socket
+[  261s]   breaking dependency perl -> perl-Socket
+[  261s] cycle: perl -> perl-Storable
+[  261s]   breaking dependency perl -> perl-Storable
+[  261s] cycle: perl -> perl-Text-Tabs+Wrap
+[  261s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  261s] cycle: perl -> perl-Time-Local -> perl-constant
+[  261s]   breaking dependency perl -> perl-Time-Local
+[  261s] cycle: perl -> perl-constant
+[  261s]   breaking dependency perl -> perl-constant
+[  261s] cycle: perl -> perl-threads
+[  261s]   breaking dependency perl -> perl-threads
+[  261s] cycle: perl -> perl-threads-shared
+[  261s]   breaking dependency perl -> perl-threads-shared
+[  261s] cycle: perl -> perl-Archive-Tar
+[  261s]   breaking dependency perl -> perl-Archive-Tar
+[  261s] cycle: perl -> perl-B-Debug
+[  261s]   breaking dependency perl -> perl-B-Debug
+[  261s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  261s]   breaking dependency perl -> perl-CPAN-Meta
+[  261s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  261s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  261s] cycle: perl -> perl-CPAN-Meta-YAML
+[  261s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  261s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  261s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  261s] cycle: perl -> perl-Compress-Raw-Zlib
+[  261s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  261s] cycle: perl -> perl-Config-Perl-V
+[  261s]   breaking dependency perl -> perl-Config-Perl-V
+[  261s] cycle: perl -> perl-DB_File
+[  261s]   breaking dependency perl -> perl-DB_File
+[  261s] cycle: perl -> perl-Data-Dumper
+[  261s]   breaking dependency perl -> perl-Data-Dumper
+[  261s] cycle: perl -> perl-Devel-PPPort
+[  261s]   breaking dependency perl -> perl-Devel-PPPort
+[  261s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  261s]   breaking dependency perl -> perl-Digest
+[  261s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  261s]   breaking dependency perl -> perl-Digest-MD5
+[  261s] cycle: perl -> perl-Digest-SHA
+[  261s]   breaking dependency perl -> perl-Digest-SHA
+[  261s] cycle: perl -> perl-Encode
+[  261s]   breaking dependency perl -> perl-Encode
+[  261s] cycle: perl -> perl-Env
+[  261s]   breaking dependency perl -> perl-Env
+[  261s] cycle: perl -> perl-ExtUtils-Command
+[  261s]   breaking dependency perl -> perl-ExtUtils-Command
+[  261s] cycle: perl -> perl-ExtUtils-Install
+[  261s]   breaking dependency perl -> perl-ExtUtils-Install
+[  261s] cycle: perl -> perl-ExtUtils-Manifest
+[  261s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  261s] cycle: perl -> perl-ExtUtils-ParseXS
+[  261s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  261s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-File-Fetch
+[  261s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-File-Temp
+[  261s] cycle: perl -> perl-Filter
+[  261s]   breaking dependency perl -> perl-Filter
+[  261s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  261s]   breaking dependency perl -> perl-Filter-Simple
+[  261s] cycle: perl -> perl-HTTP-Tiny
+[  261s]   breaking dependency perl -> perl-HTTP-Tiny
+[  261s] cycle: perl -> perl-IO-Compress
+[  261s]   breaking dependency perl -> perl-IO-Compress
+[  261s] cycle: perl -> perl-IO-Socket-IP
+[  261s]   breaking dependency perl -> perl-IO-Socket-IP
+[  261s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  261s]   breaking dependency perl -> perl-IPC-Cmd
+[  261s] cycle: perl -> perl-IPC-SysV
+[  261s]   breaking dependency perl -> perl-IPC-SysV
+[  261s] cycle: perl -> perl-JSON-PP
+[  261s]   breaking dependency perl -> perl-JSON-PP
+[  261s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  261s]   breaking dependency perl -> perl-Locale-Codes
+[  261s] cycle: perl -> perl-MIME-Base64
+[  261s]   breaking dependency perl -> perl-MIME-Base64
+[  261s] cycle: perl -> perl-Math-BigInt
+[  261s]   breaking dependency perl -> perl-Math-BigInt
+[  261s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  261s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  261s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  261s]   breaking dependency perl -> perl-Math-BigRat
+[  261s] cycle: perl -> perl-Module-CoreList
+[  261s]   breaking dependency perl -> perl-Module-CoreList
+[  261s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-Module-Load
+[  261s] cycle: perl -> perl-Module-Load-Conditional
+[  261s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  261s] cycle: perl -> perl-Module-Metadata
+[  261s]   breaking dependency perl -> perl-Module-Metadata
+[  261s] cycle: perl -> perl-Params-Check
+[  261s]   breaking dependency perl -> perl-Params-Check
+[  261s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  261s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  261s] cycle: perl -> perl-Pod-Checker
+[  261s]   breaking dependency perl -> perl-Pod-Checker
+[  261s] cycle: perl -> perl-Pod-Escapes
+[  261s]   breaking dependency perl -> perl-Pod-Escapes
+[  261s] cycle: perl -> perl-Pod-Parser
+[  261s]   breaking dependency perl -> perl-Pod-Parser
+[  261s] cycle: perl -> perl-Pod-Perldoc
+[  261s]   breaking dependency perl -> perl-Pod-Perldoc
+[  261s] cycle: perl -> perl-Pod-Usage
+[  261s]   breaking dependency perl -> perl-Pod-Usage
+[  261s] cycle: perl -> perl-Sys-Syslog
+[  261s]   breaking dependency perl -> perl-Sys-Syslog
+[  261s] cycle: perl -> perl-Term-Cap
+[  261s]   breaking dependency perl -> perl-Term-Cap
+[  261s] cycle: perl -> perl-Test-Harness
+[  261s]   breaking dependency perl -> perl-Test-Harness
+[  261s] cycle: perl -> perl-Test-Simple
+[  261s]   breaking dependency perl -> perl-Test-Simple
+[  261s] cycle: perl -> perl-Text-Balanced
+[  261s]   breaking dependency perl -> perl-Text-Balanced
+[  261s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  261s]   breaking dependency perl -> perl-Thread-Queue
+[  261s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  261s]   breaking dependency perl -> perl-Unicode-Collate
+[  261s] cycle: perl -> perl-autodie
+[  261s]   breaking dependency perl -> perl-autodie
+[  261s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  261s]   breaking dependency perl -> perl-bignum
+[  261s] cycle: perl -> perl-devel
+[  261s]   breaking dependency perl -> perl-devel
+[  261s] cycle: perl -> perl-Encode-devel
+[  261s]   breaking dependency perl -> perl-Encode-devel
+[  261s] cycle: perl -> perl-experimental
+[  261s]   breaking dependency perl -> perl-experimental
+[  261s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  261s]   breaking dependency perl -> perl-libnet
+[  261s] cycle: perl -> perl-podlators
+[  261s]   breaking dependency perl -> perl-podlators
+[  261s] cycle: perl -> perl-version
+[  261s]   breaking dependency perl -> perl-version
+[  261s] cycle: glib2 -> gamin
+[  261s]   breaking dependency glib2 -> gamin
+[  261s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  261s]   breaking dependency systemd -> gnutls
+[  261s] cycle: systemd -> pam -> audit
+[  261s]   breaking dependency systemd -> pam
+[  261s] cycle: systemd -> shadow -> pam -> audit
+[  261s]   breaking dependency systemd -> shadow
+[  261s] cycle: pam -> libpwquality
+[  261s]   breaking dependency pam -> libpwquality
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  261s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  261s]   breaking dependency perl-podlators -> perl-Encode
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  261s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  261s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  261s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  261s] cycle: perl-Pod-Usage -> perl-podlators
+[  261s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  261s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  261s]   breaking dependency groff -> perl-Getopt-Long
+[  261s] cycle: fontconfig -> urw-base35-p052-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[  261s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[  261s] cycle: fontconfig -> urw-base35-c059-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[  261s] cycle: fontconfig -> urw-base35-gothic-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[  261s] cycle: fontconfig -> urw-base35-z003-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[  261s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[  261s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  261s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[  261s] cycle: fontconfig -> urw-base35-bookman-fonts
+[  261s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[  261s] cycle: libxcrypt-devel -> glibc-devel
+[  261s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  261s] cycle: cmake-data -> cmake
+[  261s]   breaking dependency cmake -> cmake-data
+[  261s] cycle: nss-util -> nss
+[  261s]   breaking dependency nss -> nss-util
+[  261s] cycle: nss-softokn -> nss-util -> nss
+[  261s]   breaking dependency nss -> nss-softokn
+[  261s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  261s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  261s] cycle: openssh -> openssh-server
+[  261s]   breaking dependency openssh-server -> openssh
+[  261s] cycle: git -> perl-Git
+[  261s]   breaking dependency git -> perl-Git
+[  261s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  261s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  262s] done
+[  262s] querying package ids...
+[  300s] [1/458] installing adobe-mappings-pdf-20190401-2.oe1
+[  303s] [2/458] installing cmake-filesystem-3.22.0-1.oe1
+[  311s] [3/458] installing fonts-filesystem-2.0.2-2.oe1
+[  314s] [4/458] installing fuse-common-3.9.2-5.oe1
+[  315s] [5/458] installing kernel-headers-5.10-3.oe1
+[  321s] [6/458] installing libreport-filesystem-2.13.1-5.oe1
+[  322s] [7/458] installing ncurses-base-6.1-14.oe1
+[  324s] [8/458] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  324s] [9/458] installing python-setuptools-59.4.0-3.oe1
+[  325s] [10/458] installing qt5-srpm-macros-5.15.2-1.oe1
+[  326s] [11/458] installing tzdata-2021a-2.oe1
+[  337s] [12/458] installing xkeyboard-config-2.30-1.oe1
+[  340s] [13/458] installing dnf-data-4.10.0-1.oe1
+[  341s] [14/458] installing google-droid-sans-fonts-20120715-15.oe1
+[  346s] [15/458] installing openEuler-repos-1.0-2.5.oe1
+[  347s] [16/458] installing openEuler-release-20.03LTS-40.oe1
+[  348s] [17/458] installing adobe-mappings-cmap-lang-20190730-3.oe1
+[  355s] [18/458] installing filesystem-3.9-3.oe1
+[  364s] warning: group mail does not exist - using root
+[  364s] [19/458] installing adobe-mappings-cmap-20190730-3.oe1
+[  365s] [20/458] installing emacs-filesystem-1:27.1-5.oe1
+[  366s] [21/458] installing libgcc-10.3.1-10.oe1
+[  367s] [22/458] installing setup-2.13.3-4.oe1
+[  368s] [23/458] installing urw-base35-fonts-common-20170801-11
+[  369s] [24/458] installing glibc-2.34-74.oe1
+[  379s] [25/458] installing brotli-1.0.9-2.oe1
+[  381s] [26/458] installing chrpath-0.16-12.oe1
+[  382s] [27/458] installing cpio-2.13-4.oe1
+[  384s] [28/458] installing diffutils-3.7-4.oe1
+[  385s] [29/458] installing expat-2.2.10-1.oe1
+[  386s] [30/458] installing fribidi-1.0.10-1.oe1
+[  387s] [31/458] installing gpm-libs-1.20.7-21.oe1
+[  388s] [32/458] installing jbig2dec-0.19-2.oe1
+[  389s] [33/458] installing jbigkit-libs-2.1-17.oe1
+[  390s] [34/458] installing json-c-0.15-1.oe1
+[  391s] [35/458] installing keyutils-libs-1.6.3-3.oe1
+[  392s] [36/458] installing lcms2-2.11-2.oe1
+[  393s] [37/458] installing libICE-1.0.10-2.oe1
+[  394s] [38/458] installing libXau-1.0.9-2.oe1
+[  395s] [39/458] installing libaio-0.3.112-1.oe1
+[  396s] [40/458] installing libargon2-20190702-1.oe1
+[  397s] [41/458] installing libatomic-10.3.1-10.oe1
+[  398s] [42/458] installing libcap-ng-0.7.11-1.oe1
+[  399s] [43/458] installing libdatrie-0.2.12-1.oe1
+[  402s] [44/458] installing libepoxy-1.5.3-2
+[  405s] [45/458] installing libev-4.24-11.oe1
+[  406s] [46/458] installing libffi-3.3-31.oe1
+[  407s] [47/458] installing libgomp-10.3.1-10.oe1
+[  408s] [48/458] installing libgpg-error-1.41-1.oe1
+[  410s] [49/458] installing libijs-0.35-9.oe1
+[  411s] [50/458] installing libjpeg-turbo-2.0.6-1.oe1
+[  412s] [51/458] installing libnghttp2-1.42.0-1.oe1
+[  413s] [52/458] installing libpcap-14:1.9.1-7.oe1
+[  414s] [53/458] installing libpipeline-1.5.3-1.oe1
+[  415s] [54/458] installing libsigsegv-2.11-10.oe1
+[  416s] [55/458] installing libsmartcols-2.36.1-3.oe1
+[  417s] [56/458] installing libtasn1-4.16.0-2.oe1
+[  421s] [57/458] installing libtool-ltdl-2.4.6-34.oe1
+[  422s] [58/458] installing libunistring-0.9.10-8.oe1
+[  424s] [59/458] installing libuuid-2.36.1-3.oe1
+[  425s] [60/458] installing libuv-1:1.40.0-1.oe1
+[  426s] [61/458] installing libwebp-1.1.0-3.oe1
+[  428s] [62/458] installing libxcrypt-4.4.8-4.oe1
+[  430s] [63/458] installing libyaml-0.2.5-1.oe1
+[  431s] [64/458] installing lz4-1.9.3-1.oe1
+[  432s] [65/458] installing m4-1.4.18-14.oe1
+[  433s] [66/458] installing mcpp-2.7.2-25.oe1
+[  434s] [67/458] installing nspr-4.32.0-1.oe1
+[  436s] [68/458] installing openjpeg2-2.3.1-6.oe1
+[  437s] [69/458] installing pixman-0.38.0-1.oe1
+[  438s] [70/458] installing pkgconf-1.7.3-1.oe1
+[  439s] [71/458] installing rhash-1.3.5-5.oe1
+[  440s] [72/458] installing which-2.21-14.oe1
+[  441s] [73/458] installing xz-libs-5.2.5-1.oe1
+[  442s] [74/458] installing zlib-1.2.11-18.oe1
+[  443s] [75/458] installing attr-2.4.48-12.oe1
+[  445s] [76/458] installing basesystem-12-2.oe1
+[  446s] [77/458] installing libidn-1.36-1.oe1
+[  447s] [78/458] installing libstdc++-10.3.1-10.oe1
+[  449s] [79/458] installing ncurses-libs-6.1-14.oe1
+[  450s] [80/458] installing libsepol-3.1-4.oe1
+[  452s] [81/458] installing libstdc++-devel-10.3.1-10.oe1
+[  461s] [82/458] installing audit-libs-1:3.0-2.oe1
+[  462s] [83/458] installing file-libs-5.39-6.oe1
+[  467s] [84/458] installing gmp-1:6.2.1-1.oe1
+[  469s] [85/458] installing iptables-libs-1.8.1-4.oe1
+[  470s] [86/458] installing less-563-2.oe1
+[  472s] [87/458] installing libacl-2.2.53-7.oe1
+[  473s] [88/458] installing libassuan-2.5.4-1.oe1
+[  474s] [89/458] installing libedit-3.1-27.oe1
+[  475s] [90/458] installing libffi-devel-3.3-31.oe1
+[  476s] [91/458] installing libfontenc-1.1.4-2.oe1
+[  477s] [92/458] installing libgcrypt-1.8.7-1.oe1
+[  478s] [93/458] installing libpng-2:1.6.37-1.oe1
+[  480s] [94/458] installing libsepol-devel-3.1-4.oe1
+[  484s] [95/458] installing libthai-0.1.28-4.oe1
+[  485s] [96/458] installing libxcb-1.14-1.oe1
+[  487s] [97/458] installing readline-8.0-2.oe1
+[  489s] [98/458] installing wayland-1.18.0-1.oe1
+[  492s] [99/458] installing zlib-devel-1.2.11-18.oe1
+[  493s] [100/458] installing fuse-2.9.9-6.oe1
+[  495s] [101/458] installing gc-8.0.4-2.oe1
+[  496s] [102/458] installing libSM-1.2.3-2.oe1
+[  497s] [103/458] installing libdb-5.3.28-35.oe1
+[  501s] [104/458] installing libicu-62.1-5.oe1
+[  517s] [105/458] installing libselinux-3.1-3.oe1
+[  518s] [106/458] installing libxml2-2.9.12-5.oe1
+[  521s] [107/458] installing bash-5.1-1.oe1
+[  525s] [108/458] installing perl-libs-4:5.28.0-435.oe1
+[  532s] [109/458] installing zstd-1.4.8-2.oe1
+[  534s] [110/458] installing ncurses-6.1-14.oe1
+[  545s] [111/458] installing thin-provisioning-tools-0.8.5-1.oe1
+[  548s] [112/458] installing libtiff-4.2.0-1.oe1
+[  550s] [113/458] installing perl-parent-1:0.237-4.oe1
+[  551s] [114/458] installing perl-perlfaq-5.20180915-5.oe1
+[  552s] [115/458] installing libX11-1.6.9-2.oe1
+[  556s] [116/458] installing mpfr-4.1.0-2.oe1
+[  558s] [117/458] installing nettle-3.6-6.oe1
+[  561s] [118/458] installing pcre2-10.36-1.oe1
+[  563s] [119/458] installing perl-Exporter-5.74-1.oe1
+[  564s] [120/458] installing file-5.39-6.oe1
+[  566s] [121/458] installing gdbm-1:1.18.1-1.oe1
+[  567s] [122/458] installing libxkbcommon-1.0.3-1.oe1
+[  569s] [123/458] installing patch-2.7.6-12.oe1
+[  570s] [124/458] installing qrencode-4.1.1-1
+[  571s] [125/458] installing sed-4.8-2.oe1
+[  574s] [126/458] installing acl-2.2.53-7.oe1
+[  575s] [127/458] installing libcomps-0.1.15-1.oe1
+[  577s] [128/458] installing pcre-8.44-1.oe1
+[  579s] [129/458] installing glibc-common-2.34-74.oe1
+[  591s] [130/458] installing coreutils-8.31-4.oe1
+[  598s] [131/458] installing adwaita-icon-theme-3.38.0-1.oe1
+[  647s] [132/458] installing crontabs-1.11-21.oe1
+[  649s] [133/458] installing hicolor-icon-theme-0.17-4.oe1
+[  652s] [134/458] installing libXcomposite-0.4.5-1.oe1
+[  655s] [135/458] installing libXext-1.3.4-2.oe1
+[  657s] [136/458] installing libXfixes-5.0.3-11.oe1
+[  659s] [137/458] installing libXpm-3.5.12-11.oe1
+[  661s] [138/458] installing libXrender-0.9.10-10.oe1
+[  663s] [139/458] installing perl-Carp-1.50-418.oe1
+[  665s] [140/458] installing perl-Perl-OSType-1.010-421.oe1
+[  666s] [141/458] installing perl-Term-ANSIColor-4.06-511.oe1
+[  668s] [142/458] installing publicsuffix-list-20200718-1.oe1
+[  669s] [143/458] installing uname-build-checks-1.0-0.4.oe1
+[  671s] [144/458] installing bzip2-1.0.8-3.oe1
+[  672s] [145/458] installing gzip-1.10-1.oe1
+[  674s] [146/458] installing hostname-3.21-2.oe1
+[  676s] [147/458] installing libcap-2.32-2.oe1
+[  678s] [148/458] installing libmpc-1.2.0-2.oe1
+[  679s] [149/458] installing libpaper-1.1.24-25.oe1
+[  681s] [150/458] installing libseccomp-2.4.3-2.oe1
+[  683s] [151/458] installing npth-1.5-7.oe1
+[  685s] [152/458] installing popt-1.18-1.oe1
+[  689s] [153/458] installing sgml-common-0.6.3-51.oe1
+[  691s] [154/458] installing grep-3.6-1.oe1
+[  695s] [155/458] installing libXt-1.2.0-0.oe1
+[  697s] [156/458] installing libblkid-2.36.1-3.oe1
+[  699s] [157/458] installing libidn2-2.3.0-1.oe1
+[  701s] [158/458] installing libksba-1.3.5-12.oe1
+[  704s] [159/458] installing pcre-devel-8.44-1.oe1
+[  708s] [160/458] installing pcre2-devel-10.36-1.oe1
+[  711s] [161/458] installing tar-2:1.32-3.oe1
+[  714s] [162/458] installing tcl-1:8.6.10-3.oe1
+[  719s] [163/458] installing elfutils-0.185-5.oe1
+[  724s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  724s] [164/458] installing graphite2-1.3.13-2.oe1
+[  730s] [165/458] installing info-6.7-2.oe1
+[  731s] [166/458] installing jsoncpp-1.9.4-1.oe1
+[  734s] [167/458] installing libgpg-error-devel-1.41-1.oe1
+[  736s] [168/458] installing lua-5.3.5-6.oe1
+[  738s] [169/458] installing slang-2.3.2-8.oe1
+[  742s] [170/458] installing gawk-5.1.0-1.oe1
+[  745s] [171/458] installing glibc-devel-2.34-74.oe1
+[  756s] [172/458] installing libxslt-1.1.32-7.oe1
+[  759s] [173/458] installing libicu-devel-62.1-5.oe1
+[  765s] [174/458] installing guile-5:2.0.14-15.oe1
+[  780s] [175/458] installing zip-3.0-29.oe1
+[  782s] [176/458] installing libXdamage-1.1.5-1.oe1
+[  784s] [177/458] installing libXi-1.7.10-1.oe1
+[  786s] [178/458] installing libXinerama-1.1.4-5.oe1
+[  789s] [179/458] installing libXxf86misc-1.0.4-4.oe1
+[  790s] [180/458] installing libXxf86vm-1.1.4-13.oe1
+[  792s] [181/458] installing libfdisk-2.36.1-3.oe1
+[  795s] [182/458] installing libxcrypt-devel-4.4.8-4.oe1
+[  798s] [183/458] installing newt-0.52.21-4.oe1
+[  801s] [184/458] installing perl-Text-ParseWords-3.30-419.oe1
+[  802s] [185/458] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  809s] [186/458] installing libXcursor-1.2.0-1.oe1
+[  812s] [187/458] installing libXmu-1.1.3-1.oe1
+[  815s] [188/458] installing libXrandr-1.5.2-1.oe1
+[  818s] [189/458] installing libmount-2.36.1-3.oe1
+[  821s] [190/458] installing libselinux-devel-3.1-3.oe1
+[  823s] [191/458] installing lua-posix-33.3.1-12.oe1
+[  826s] [192/458] installing unzip-6.0-47.oe1
+[  827s] [193/458] installing cracklib-2.9.7-6.oe1
+[  834s] [194/458] installing docbook-dtds-1.0-78.oe1
+[  859s] [195/458] installing e2fsprogs-1.45.6-3.oe1
+[  863s] [196/458] installing findutils-2:4.7.0-7.oe1
+[  866s] [197/458] installing libsemanage-3.1-4.oe1
+[  869s] [198/458] installing make-1:4.2.1-15.oe1
+[  870s] [199/458] installing sqlite-3.24.0-9.oe1
+[  874s] [200/458] installing xz-5.2.5-1.oe1
+[  876s] [201/458] installing logrotate-3.15.1-2.oe1
+[  879s] [202/458] installing opensp-1.5.2-31.oe1
+[  883s] [203/458] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  886s] [204/458] installing perl-Time-HiRes-1.9760-2.oe1
+[  888s] [205/458] installing perl-Unicode-Normalize-1.26-419.oe1
+[  890s] [206/458] installing freetype-2.10.2-3.oe1
+[  893s] [207/458] installing libgcrypt-devel-1.8.7-1.oe1
+[  895s] [208/458] installing cpp-10.3.1-10.oe1
+[  905s] [209/458] installing gnupg2-2.2.27-2.oe1
+[  915s] [210/458] installing systemd-libs-243-22.oe1
+[  923s] [211/458] installing dbus-libs-1:1.12.20-3.oe1
+[  926s] [212/458] installing libusbx-1.0.23-3.oe1
+[  929s] [213/458] installing xz-devel-5.2.5-1.oe1
+[  933s] [214/458] installing p11-kit-0.23.22-1.oe1
+[  936s] [215/458] installing procps-ng-3.3.16-15.oe1
+[  939s] [216/458] installing copy-jdk-configs-4.0-1.oe1
+[  941s] [217/458] installing gpgme-1.15.1-1.oe1
+[  956s] [218/458] installing libXtst-1.2.3-10.oe1
+[  958s] [219/458] installing openssl-libs-1:1.1.1f-2.oe1
+[  962s] [220/458] installing chkconfig-1.14-2.oe1
+[  966s] [221/458] installing docbook-style-xsl-1.79.2-9.oe1
+[  995s] [222/458] installing libXaw-1.0.13-13.oe1
+[  998s] [223/458] installing openjade-1.3.2-60.oe1
+[ 1004s] [224/458] installing xorg-x11-font-utils-1:7.5-43.oe1
+[ 1014s] [225/458] installing glib2-2.66.8-1.oe1
+[ 1020s] [226/458] installing xorg-x11-server-utils-7.7-28
+[ 1022s] [227/458] installing fontconfig-2.13.92-1.oe1
+[ 1032s] [228/458] installing atk-2.36.0-1.oe1
+[ 1036s] [229/458] installing dbus-tools-1:1.12.20-3.oe1
+[ 1037s] [230/458] installing ima-evm-utils-libs-1.2.1-8.oe1
+[ 1039s] [231/458] installing libevent-2.1.12-4
+[ 1041s] [232/458] installing libcroco-0.6.12-13.oe1
+[ 1047s] [233/458] installing libgusb-0.3.0-5.oe1
+[ 1049s] [234/458] installing fipscheck-1.5.0-7.oe1
+[ 1053s] [235/458] installing gamin-0.1.10-38.oe1
+[ 1056s] [236/458] installing kmod-libs-27-4.oe1
+[ 1058s] [237/458] installing libsecret-0.18.6-5.oe1
+[ 1061s] [238/458] installing obs-env-1.0-5.oe1
+[ 1068s] [239/458] installing xorg-x11-fonts-7.5-24
+[ 1092s] [240/458] installing gobject-introspection-1.66.1-1.oe1
+[ 1096s] [241/458] installing kmod-27-4.oe1
+[ 1098s] [242/458] installing libXft-2.3.3-1.oe1
+[ 1101s] [243/458] installing shared-mime-info-1.10-4.oe1
+[ 1125s] [244/458] installing binutils-2.37-6.oe1
+[ 1137s] [245/458] installing urw-base35-bookman-fonts-20170801-11
+[ 1140s] [246/458] installing urw-base35-c059-fonts-20170801-11
+[ 1144s] [247/458] installing urw-base35-d050000l-fonts-20170801-11
+[ 1147s] [248/458] installing urw-base35-gothic-fonts-20170801-11
+[ 1151s] [249/458] installing urw-base35-nimbus-mono-ps-fonts-20170801-11
+[ 1155s] [250/458] installing urw-base35-nimbus-roman-fonts-20170801-11
+[ 1161s] [251/458] installing urw-base35-nimbus-sans-fonts-20170801-11
+[ 1170s] [252/458] installing urw-base35-p052-fonts-20170801-11
+[ 1176s] [253/458] installing urw-base35-standard-symbols-ps-fonts-20170801-11
+[ 1180s] [254/458] installing urw-base35-z003-fonts-20170801-11
+[ 1183s] [255/458] installing babeltrace-1.5.8-1.oe1
+[ 1190s] [256/458] installing harfbuzz-2.7.4-1.oe1
+[ 1194s] [257/458] installing libxml2-devel-2.9.12-5.oe1
+[ 1205s] [258/458] installing p11-kit-trust-0.23.22-1.oe1
+[ 1209s] [259/458] installing libarchive-3.5.1-1.oe1
+[ 1212s] [260/458] installing nodejs-libs-1:16.10.0-1.oe1
+[ 1249s] [261/458] installing cairo-1.16.0-6.fc32
+[ 1252s] [262/458] installing avahi-libs-0.8-6.oe1
+[ 1254s] [263/458] installing libverto-0.3.1-2.oe1
+[ 1256s] [264/458] installing colord-libs-1.4.3-6.oe1
+[ 1262s] [265/458] installing ca-certificates-2020.2.46-2.oe1
+[ 1271s] [266/458] installing gdk-pixbuf2-2.42.6-1.oe1
+[ 1276s] [267/458] installing gettext-0.20.1-2.oe1
+[ 1281s] [268/458] installing pango-1.47.0-1.oe1
+[ 1286s] [269/458] installing urw-base35-fonts-20170801-11
+[ 1287s] [270/458] installing cairo-gobject-1.16.0-6.fc32
+[ 1289s] [271/458] installing gcc-10.3.1-10.oe1
+[ 1319s] [272/458] installing rpm-libs-4.15.1-25.oe1
+[ 1322s] [273/458] installing python-pip-wheel-19.2.3-2.fc32
+[ 1323s] [274/458] installing gdk-pixbuf2-modules-2.42.6-1.oe1
+[ 1326s] [275/458] installing libmodulemd-2.13.0-1.oe1
+[ 1329s] [276/458] installing gcc-c++-10.3.1-10.oe1
+[ 1341s] [277/458] installing krb5-libs-1.18.2-3.oe1
+[ 1344s] [278/458] installing librsvg2-2.50.5-1.oe1
+[ 1353s] [279/458] installing libtirpc-1.3.1-1.oe1
+[ 1355s] [280/458] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1357s] [281/458] installing libssh-0.9.5-1.oe1
+[ 1360s] [282/458] installing elinks-0.12-1.oe1
+[ 1365s] [283/458] installing openldap-2.4.46-15.oe1
+[ 1368s] [284/458] installing libnsl2-1.3.0-2.oe1
+[ 1371s] [285/458] installing python3-3.8.5-13.oe1
+[ 1413s] [286/458] installing python3-parameterized-0.6.1-9.fc32
+[ 1420s] [287/458] installing python3-pyparsing-2.4.5-1.fc32
+[ 1425s] [288/458] installing python3-setuptools-59.4.0-3.oe1
+[ 1431s] [289/458] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1433s] [290/458] installing python3-six-1.16.0-2.oe1
+[ 1435s] [291/458] installing python3-markupsafe-1.1.1-4.fc32
+[ 1437s] [292/458] installing python3-cairo-1.18.2-1
+[ 1439s] [293/458] installing python3-gpgme-1.15.1-1.oe1
+[ 1443s] [294/458] installing python3-lxml-4.4.1-3.fc32
+[ 1449s] [295/458] installing python3-gobject-base-3.38.0-1.oe1
+[ 1452s] [296/458] installing python3-libcomps-0.1.15-1.oe1
+[ 1454s] [297/458] installing libpsl-0.21.1-1.oe1
+[ 1458s] [298/458] installing gdb-headless-9.2-5.oe1
+[ 1464s] [299/458] installing python3-anytree-2.7.2-2.fc32
+[ 1467s] [300/458] installing python3-pygments-2.4.2-6.fc32
+[ 1472s] [301/458] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1474s] [302/458] installing gdb-9.2-5.oe1
+[ 1476s] [303/458] installing python3-mako-1.1.0-4.fc32
+[ 1479s] [304/458] installing python3-pip-19.2.3-2.fc32
+[ 1488s] [305/458] installing python3-gobject-3.38.0-1.oe1
+[ 1490s] [306/458] installing libcurl-7.79.1-1.oe1
+[ 1493s] [307/458] installing curl-7.79.1-1.oe1
+[ 1494s] [308/458] installing librepo-1.14.2-2.oe1
+[ 1496s] [309/458] installing rpm-4.15.1-25.oe1
+[ 1500s] [310/458] installing efi-srpm-macros-4-3.oe1
+[ 1503s] [311/458] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1504s] [312/458] installing libsolv-0.7.20-1.oe1
+[ 1507s] [313/458] installing python3-rpm-4.15.1-25.oe1
+[ 1508s] [314/458] installing openEuler-rpm-config-30-22.oe1
+[ 1510s] [315/458] installing cmake-3.22.0-1.oe1
+[ 1524s] [316/458] installing libdnf-0.65.0-2.oe1
+[ 1527s] [317/458] installing cmake-data-3.22.0-1.oe1
+[ 1546s] [318/458] installing python3-libdnf-0.65.0-2.oe1
+[ 1550s] [319/458] installing perl-4:5.28.0-435.oe1
+[ 1558s] [320/458] installing perl-B-Debug-1.26-4.oe1
+[ 1560s] [321/458] installing perl-Env-1.04-397.oe1
+[ 1562s] [322/458] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1564s] [323/458] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1565s] [324/458] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1566s] [325/458] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1568s] [326/458] installing perl-Params-Check-1:0.38-418.oe1
+[ 1569s] [327/458] installing perl-Term-Cap-1.17-510.oe1
+[ 1571s] [328/458] installing perl-TermReadKey-2.38-2.oe1
+[ 1573s] [329/458] installing perl-Text-Balanced-2.03-420.oe1
+[ 1574s] [330/458] installing perl-threads-1:2.22-419.oe1
+[ 1576s] [331/458] installing openssl-1:1.1.1f-2.oe1
+[ 1578s] [332/458] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1580s] [333/458] installing perl-Error-1:0.17029-1.oe1
+[ 1581s] [334/458] installing perl-Filter-2:1.59-2.oe1
+[ 1583s] [335/458] installing perl-IPC-SysV-2.07-5.oe1
+[ 1587s] [336/458] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1588s] [337/458] installing perl-SGMLSpm-1.03ii-45.oe1
+[ 1590s] [338/458] installing perl-constant-1.33-421.oe1
+[ 1592s] [339/458] installing docbook-style-dsssl-1.79-27.oe1
+[ 1600s] [340/458] installing perl-MIME-Base64-3.15-418.oe1
+[ 1602s] [341/458] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1607s] [342/458] installing perl-Socket-4:2.029-2.oe1
+[ 1614s] [343/458] installing perl-Storable-1:3.15-2.oe1
+[ 1617s] [344/458] installing gd-2.2.5-6.oe1
+[ 1620s] [345/458] installing python3-hawkey-0.65.0-2.oe1
+[ 1622s] [346/458] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1623s] [347/458] installing perl-Digest-1.17-419.oe1
+[ 1625s] [348/458] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1626s] [349/458] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1627s] [350/458] installing perl-Text-Diff-1.45-7.oe1
+[ 1629s] [351/458] installing perl-Time-Local-2:1.280-6.oe1
+[ 1630s] [352/458] installing perl-version-8:0.99.24-3.oe1
+[ 1635s] [353/458] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1637s] [354/458] installing perl-threads-shared-1.59-2.oe1
+[ 1641s] [355/458] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1643s] [356/458] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1645s] [357/458] installing perl-Locale-Codes-3.58-2.oe1
+[ 1648s] [358/458] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1650s] [359/458] installing perl-PathTools-3.75-4.oe1
+[ 1652s] [360/458] installing python3-dnf-4.10.0-1.oe1
+[ 1655s] [361/458] installing perl-Data-Dumper-2.172-3.oe1
+[ 1657s] [362/458] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1659s] [363/458] installing perl-Encode-4:2.98-9.oe1
+[ 1666s] [364/458] installing autogen-5.18.16-1.oe1
+[ 1669s] [365/458] installing nodejs-1:16.10.0-1.oe1
+[ 1671s] [366/458] installing systemd-243-22.oe1
+[ 1688s] /var/tmp/rpm-tmp.5jNq9b: line 8: groupadd: command not found
+[ 1688s] /var/tmp/rpm-tmp.5jNq9b: line 10: groupadd: command not found
+[ 1688s] /var/tmp/rpm-tmp.5jNq9b: line 13: groupadd: command not found
+[ 1688s] /var/tmp/rpm-tmp.5jNq9b: line 16: groupadd: command not found
+[ 1688s] [367/458] installing dbus-common-1:1.12.20-3.oe1
+[ 1690s] [368/458] installing nodejs-source-map-0.5.6-1.oe1
+[ 1692s] [369/458] installing perl-Module-Load-1:0.32-418.oe1
+[ 1693s] [370/458] installing nodejs-packaging-20-1.oe1
+[ 1698s] [371/458] installing dnf-4.10.0-1.oe1
+[ 1704s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1704s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1704s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1704s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1704s] [372/458] installing perl-File-Which-1.23-1.oe1
+[ 1706s] [373/458] installing perl-Thread-Queue-3.13-3.oe1
+[ 1708s] [374/458] installing perl-experimental-0.020-2.oe1
+[ 1709s] [375/458] installing perl-Digest-MD5-2.55-419.oe1
+[ 1712s] [376/458] installing perl-File-Path-2.16-4.oe1
+[ 1714s] [377/458] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1717s] [378/458] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1718s] [379/458] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1720s] [380/458] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1726s] [381/458] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1730s] [382/458] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1732s] [383/458] installing audit-1:3.0-2.oe1
+[ 1742s] [384/458] installing perl-DB_File-1.842-2.oe1
+[ 1746s] [385/458] installing perl-autodie-2.29-398.oe1
+[ 1747s] [386/458] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1752s] [387/458] installing perl-IO-Compress-2.081-6.oe1
+[ 1754s] [388/458] installing perl-podlators-1:4.14-1.oe1
+[ 1756s] [389/458] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1757s] [390/458] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1759s] [391/458] installing perl-bignum-0.50-4.oe1
+[ 1760s] [392/458] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1762s] [393/458] installing perl-libnet-3.11-420.oe1
+[ 1764s] [394/458] installing pam-1.5.1-1.oe1
+[ 1770s] [395/458] installing libpwquality-1.4.4-1.oe1
+[ 1772s] [396/458] installing perl-File-HomeDir-1.004-4.oe1
+[ 1774s] [397/458] installing shadow-2:4.8.1-5.oe1
+[ 1777s] [398/458] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1779s] [399/458] installing libutempter-1.1.6-16.oe1
+[ 1781s] [400/458] installing unbound-libs-1.10.1-4.oe1
+[ 1786s] [401/458] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1791s] [402/458] installing openssh-server-8.2p1-10.oe1
+[ 1794s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1794s] [403/458] installing groff-1.22.4-4.oe1
+[ 1802s] [404/458] installing dbus-1:1.12.20-3.oe1
+[ 1803s] [405/458] installing man-db-2.9.3-2.oe1
+[ 1812s] [406/458] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1817s] [407/458] installing gnutls-3.6.15-3.oe1
+[ 1822s] [408/458] installing util-linux-2.36.1-3.oe1
+[ 1830s] [409/458] installing nss-help-3.72.0-2.oe1
+[ 1832s] [410/458] installing util-linux-devel-2.36.1-3.oe1
+[ 1835s] [411/458] installing at-spi2-core-2.39.1-1.oe1
+[ 1838s] [412/458] installing cups-libs-1:2.3.3-6.oe1
+[ 1840s] [413/458] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1847s] [414/458] installing device-mapper-8:1.02.172-1.oe1
+[ 1851s] [415/458] installing openssh-8.2p1-10.oe1
+[ 1855s] [416/458] installing at-spi2-atk-2.38.0-1.oe1
+[ 1857s] [417/458] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1859s] [418/458] installing cryptsetup-2.3.3-3.oe1
+[ 1863s] [419/458] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1866s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1867s] [420/458] installing nss-3.72.0-2.oe1
+[ 1876s] [421/458] installing glib2-devel-2.66.8-1.oe1
+[ 1896s] [422/458] installing openssh-clients-8.2p1-10.oe1
+[ 1900s] [423/458] installing nss-util-3.72.0-2.oe1
+[ 1903s] [424/458] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1905s] [425/458] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1907s] [426/458] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1909s] [427/458] installing perl-Pod-Parser-1.63-397.oe1
+[ 1910s] [428/458] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1912s] [429/458] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1914s] [430/458] installing docbook-utils-0.6.14-47.oe1
+[ 1915s] [431/458] installing perl-Archive-Tar-2.30-421.oe1
+[ 1917s] [432/458] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1918s] [433/458] installing lvm2-8:2.03.11-1.oe1
+[ 1924s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1924s] [434/458] installing autoconf-2.69-30.oe1
+[ 1927s] [435/458] installing git-2.23.0-12.oe1
+[ 1938s] [436/458] installing gtk3-3.24.30-2.oe1
+[ 1948s] [437/458] installing nss-softokn-3.72.0-2.oe1
+[ 1951s] [438/458] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1952s] [439/458] installing perl-Git-2.23.0-12.oe1
+[ 1953s] [440/458] installing gtk-doc-1.33.2-1.oe1
+[ 1962s] [441/458] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1965s] [442/458] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1966s] [443/458] installing automake-1.16.1-6.oe1
+[ 1978s] [444/458] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1982s] [445/458] installing gtk2-2.24.33-2.oe1
+[ 1997s] [446/458] installing ghostscript-9.52-5.oe1
+[ 2012s] [447/458] installing libtool-2.4.6-34.oe1
+[ 2015s] [448/458] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 2017s] [449/458] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 2018s] [450/458] installing graphviz-2.44.1-4.oe1
+[ 2037s] [451/458] installing rpm-build-4.15.1-25.oe1
+[ 2040s] [452/458] installing graphviz-devel-2.44.1-4.oe1
+[ 2042s] [453/458] installing gcc_secure-1.0-0.9.oe1
+[ 2044s] [454/458] installing gobject-introspection-devel-1.66.1-1.oe1
+[ 2052s] [455/458] installing perl-File-Fetch-0.56-4.oe1
+[ 2054s] [456/458] installing perl-devel-4:5.28.0-435.oe1
+[ 2065s] [457/458] installing vala-devel-0.50.8-3.oe1
+[ 2068s] [458/458] installing vala-0.50.8-3.oe1
+[ 2075s] removing nis flags from /var/cache/obs/worker/root_2/etc/nsswitch.conf...
+[ 2076s] now finalizing build dir...
+[ 2087s] Running build time source services...
+[ 2103s] -----------------------------------------------------------------
+[ 2103s] ----- building libical.spec (user abuild)
+[ 2103s] -----------------------------------------------------------------
+[ 2103s] -----------------------------------------------------------------
+[ 2112s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/4eda7e13f8dc192fc5a068d71a926164-libical' /home/abuild/rpmbuild/SOURCES/libical.spec
+[ 2113s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.pqrJnm
+[ 2113s] + umask 022
+[ 2113s] + cd /home/abuild/rpmbuild/BUILD
+[ 2113s] + cd /home/abuild/rpmbuild/BUILD
+[ 2113s] + rm -rf libical-3.0.11
+[ 2113s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/libical-3.0.11.tar.gz
+[ 2113s] + /usr/bin/tar -xof -
+[ 2115s] + STATUS=0
+[ 2115s] + '[' 0 -ne 0 ']'
+[ 2115s] + cd libical-3.0.11
+[ 2115s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2115s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libical-bugfix-timeout-found-by-fuzzer.patch
+[ 2115s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2115s] + RPM_EC=0
+[ 2115s] ++ jobs -p
+[ 2115s] + exit 0
+[ 2115s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.FO4bf6
+[ 2116s] + umask 022
+[ 2116s] + cd /home/abuild/rpmbuild/BUILD
+[ 2116s] + cd libical-3.0.11
+[ 2116s] + mkdir -p riscv64-openEuler-linux-gnu
+[ 2116s] + pushd riscv64-openEuler-linux-gnu
+[ 2116s] ~/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu ~/rpmbuild/BUILD/libical-3.0.11
+[ 2116s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 2116s] + export CFLAGS
+[ 2116s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 2116s] + export CXXFLAGS
+[ 2116s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules'
+[ 2116s] + export FFLAGS
+[ 2116s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -I/usr/lib64/gfortran/modules'
+[ 2116s] + export FCFLAGS
+[ 2116s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2116s] + export LDFLAGS
+[ 2116s] + /usr/bin/cmake -DCMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_Fortran_FLAGS_RELEASE:STRING=-DNDEBUG -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DLIB_SUFFIX=64 -DBUILD_SHARED_LIBS:BOOL=ON .. -DUSE_INTEROPERABLE_VTIMEZONES:BOOL=true -DICAL_ALLOW_EMPTY_PROPERTIES:BOOL=true -DGOBJECT_INTROSPECTION:BOOL=true -DICAL_GLIB:BOOL=true -DICAL_GLIB_VAPI:BOOL=true -DSHARED_ONLY:BOOL=true
+[ 2122s] -- The C compiler identification is GNU 10.3.1
+[ 2123s] -- Detecting C compiler ABI info
+[ 2129s] -- Detecting C compiler ABI info - done
+[ 2129s] -- Check for working C compiler: /usr/bin/cc - skipped
+[ 2129s] -- Detecting C compile features
+[ 2129s] -- Detecting C compile features - done
+[ 2133s] -- The CXX compiler identification is GNU 10.3.1
+[ 2134s] -- Detecting CXX compiler ABI info
+[ 2142s] -- Detecting CXX compiler ABI info - done
+[ 2142s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[ 2142s] -- Detecting CXX compile features
+[ 2142s] -- Detecting CXX compile features - done
+[ 2143s] -- Found Perl: /usr/bin/perl (found version "5.28.0") 
+[ 2145s] -- Found ICU version 62.1
+[ 2145s] -- Found ICU header files in /usr/include
+[ 2145s] -- Found ICU libraries: /lib64/libicuuc.so /lib64/libicui18n.so
+[ 2145s] -- Optional package Berkeley DB was not found
+[ 2145s] -- Looking for include file byteswap.h
+[ 2150s] -- Looking for include file byteswap.h - found
+[ 2150s] -- Looking for include file dirent.h
+[ 2154s] -- Looking for include file dirent.h - found
+[ 2154s] -- Looking for include file endian.h
+[ 2158s] -- Looking for include file endian.h - found
+[ 2158s] -- Looking for include file inttypes.h
+[ 2163s] -- Looking for include file inttypes.h - found
+[ 2163s] -- Looking for include file pthread.h
+[ 2167s] -- Looking for include file pthread.h - found
+[ 2167s] -- Looking for include file sys/endian.h
+[ 2169s] -- Looking for include file sys/endian.h - not found
+[ 2169s] -- Looking for include file sys/param.h
+[ 2174s] -- Looking for include file sys/param.h - found
+[ 2174s] -- Looking for include file sys/utsname.h
+[ 2180s] -- Looking for include file sys/utsname.h - found
+[ 2180s] -- Looking for include file fcntl.h
+[ 2185s] -- Looking for include file fcntl.h - found
+[ 2185s] -- Looking for include file unistd.h
+[ 2189s] -- Looking for include file unistd.h - found
+[ 2189s] -- Looking for include file wctype.h
+[ 2194s] -- Looking for include file wctype.h - found
+[ 2194s] -- Looking for include file stdbool.h
+[ 2198s] -- Looking for include file stdbool.h - found
+[ 2198s] -- Looking for access
+[ 2202s] -- Looking for access - found
+[ 2202s] -- Looking for fork
+[ 2207s] -- Looking for fork - found
+[ 2207s] -- Looking for getopt
+[ 2211s] -- Looking for getopt - found
+[ 2211s] -- Looking for getpid
+[ 2216s] -- Looking for getpid - found
+[ 2216s] -- Looking for getpwent
+[ 2221s] -- Looking for getpwent - found
+[ 2221s] -- Looking for gmtime_r
+[ 2228s] -- Looking for gmtime_r - found
+[ 2228s] -- Looking for localtime_r
+[ 2231s] -- Looking for localtime_r - found
+[ 2231s] -- Looking for mkdir
+[ 2236s] -- Looking for mkdir - found
+[ 2236s] -- Looking for open
+[ 2240s] -- Looking for open - found
+[ 2240s] -- Looking for nanosleep
+[ 2245s] -- Looking for nanosleep - found
+[ 2245s] -- Looking for signal
+[ 2250s] -- Looking for signal - found
+[ 2250s] -- Looking for stat
+[ 2254s] -- Looking for stat - found
+[ 2254s] -- Looking for strdup
+[ 2259s] -- Looking for strdup - found
+[ 2259s] -- Looking for strcasecmp
+[ 2266s] -- Looking for strcasecmp - found
+[ 2266s] -- Looking for strncasecmp
+[ 2270s] -- Looking for strncasecmp - found
+[ 2270s] -- Looking for read
+[ 2277s] -- Looking for read - found
+[ 2277s] -- Looking for unlink
+[ 2282s] -- Looking for unlink - found
+[ 2282s] -- Looking for usleep
+[ 2286s] -- Looking for usleep - found
+[ 2286s] -- Looking for waitpid
+[ 2291s] -- Looking for waitpid - found
+[ 2291s] -- Looking for write
+[ 2295s] -- Looking for write - found
+[ 2295s] -- Looking for alarm
+[ 2301s] -- Looking for alarm - found
+[ 2301s] -- Looking for backtrace
+[ 2306s] -- Looking for backtrace - found
+[ 2306s] -- Looking for iswspace
+[ 2310s] -- Looking for iswspace - found
+[ 2310s] -- Looking for setenv
+[ 2315s] -- Looking for setenv - found
+[ 2315s] -- Looking for unsetenv
+[ 2319s] -- Looking for unsetenv - found
+[ 2319s] -- Looking for snprintf
+[ 2323s] -- Looking for snprintf - found
+[ 2323s] -- Looking for GetNumberFormat
+[ 2328s] -- Looking for GetNumberFormat - not found
+[ 2331s] -- Looking for sys/types.h
+[ 2335s] -- Looking for sys/types.h - found
+[ 2336s] -- Looking for stdint.h
+[ 2340s] -- Looking for stdint.h - found
+[ 2341s] -- Looking for stddef.h
+[ 2345s] -- Looking for stddef.h - found
+[ 2345s] -- Check size of intptr_t
+[ 2349s] -- Check size of intptr_t - done
+[ 2349s] -- Check size of pid_t
+[ 2353s] -- Check size of pid_t - done
+[ 2353s] -- Check size of size_t
+[ 2357s] -- Check size of size_t - done
+[ 2357s] -- Check size of ssize_t
+[ 2361s] -- Check size of ssize_t - done
+[ 2361s] -- Check size of time_t
+[ 2365s] -- Check size of time_t - done
+[ 2365s] -- Check size of wint_t
+[ 2367s] -- Check size of wint_t - failed
+[ 2367s] -- Looking for pthread.h
+[ 2371s] -- Looking for pthread.h - found
+[ 2371s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[ 2376s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[ 2376s] -- Found Threads: TRUE  
+[ 2376s] -- Looking for pthread_attr_get_np in pthread
+[ 2381s] -- Looking for pthread_attr_get_np in pthread - not found
+[ 2381s] -- Looking for pthread_getattr_np in pthread
+[ 2385s] -- Looking for pthread_getattr_np in pthread - found
+[ 2385s] -- Looking for pthread_create in pthread
+[ 2389s] -- Looking for pthread_create in pthread - found
+[ 2389s] -- Looking for include files pthread.h, pthread_np.h
+[ 2391s] -- Looking for include files pthread.h, pthread_np.h - not found
+[ 2391s] -- Found PkgConfig: /usr/bin/pkgconf (found version "1.7.3") 
+[ 2391s] -- Checking for module 'gobject-introspection-1.0>=0.6.7'
+[ 2392s] --   Found gobject-introspection-1.0, version 1.66.1
+[ 2394s] -- Checking for modules 'glib-2.0>=2.32;gobject-2.0>=2.32'
+[ 2394s] --   Found glib-2.0, version 2.66.8
+[ 2395s] --   Found gobject-2.0, version 2.66.8
+[ 2396s] -- Checking for module 'libxml-2.0>=2.7.3'
+[ 2397s] --   Found libxml-2.0, version 2.9.12
+[ 2398s] -- Performing Test HAVE_GCC_UNUSED_BUT_SET
+[ 2402s] -- Performing Test HAVE_GCC_UNUSED_BUT_SET - Success
+[ 2402s] -- Performing Test HAVE_GCC_LOGICAL_OP
+[ 2406s] -- Performing Test HAVE_GCC_LOGICAL_OP - Success
+[ 2406s] -- Performing Test HAVE_GCC_POINTER_MEMACCESS
+[ 2410s] -- Performing Test HAVE_GCC_POINTER_MEMACCESS - Success
+[ 2410s] -- Performing Test HAVE_GCC_FORMAT_SECURITY
+[ 2414s] -- Performing Test HAVE_GCC_FORMAT_SECURITY - Success
+[ 2414s] -- Performing Test HAVE_GCC_REDUNDANT_DECLS
+[ 2419s] -- Performing Test HAVE_GCC_REDUNDANT_DECLS - Success
+[ 2419s] -- Performing Test HAVE_GXX_UNUSED_BUT_SET
+[ 2424s] -- Performing Test HAVE_GXX_UNUSED_BUT_SET - Success
+[ 2424s] -- Performing Test HAVE_GXX_LOGICAL_OP
+[ 2428s] -- Performing Test HAVE_GXX_LOGICAL_OP - Success
+[ 2428s] -- Performing Test HAVE_GXX_POINTER_MEMACCESS
+[ 2432s] -- Performing Test HAVE_GXX_POINTER_MEMACCESS - Success
+[ 2432s] -- Performing Test HAVE_GXX_REORDER
+[ 2437s] -- Performing Test HAVE_GXX_REORDER - Success
+[ 2437s] -- Performing Test HAVE_GXX_FORMAT_SECURITY
+[ 2442s] -- Performing Test HAVE_GXX_FORMAT_SECURITY - Success
+[ 2442s] -- Performing Test HAVE_GXX_REDUNDANT_DECLS
+[ 2446s] -- Performing Test HAVE_GXX_REDUNDANT_DECLS - Success
+[ 2447s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[ 2447s] -- The following features have been enabled:
+[ 2447s] 
+[ 2447s]  * Option WITH_CXX_BINDINGS, build the C++ bindings. Requires a C++ compiler
+[ 2447s]  * Option SHARED_ONLY, build shared libraries only
+[ 2447s]  * RSCALE support (RFC7529), build in RSCALE support
+[ 2447s]  * Option ICAL_ALLOW_EMPTY_PROPERTIES, prevents empty properties from being replaced with X-LIC-ERROR properties
+[ 2447s]  * Option GOBJECT_INTROSPECTION, build GObject introspection "typelib" files
+[ 2447s]  * Option ICAL_BUILD_DOCS, build API documentation and reference manual
+[ 2447s]  * Option ICAL_GLIB_VAPI, build Vala "vapi" files
+[ 2447s]  * Option ICAL_GLIB, build libical-glib interface
+[ 2447s]  * Option LIBICAL_BUILD_TESTING, build tests
+[ 2447s]  * libical-glib testing, python3 is required to run the regression tests
+[ 2447s] 
+[ 2447s] -- The following OPTIONAL packages have been found:
+[ 2447s] 
+[ 2447s]  * GObjectIntrospection (required version >= 0.6.7), <https://wiki.gnome.org/Projects/GObjectIntrospection>
+[ 2447s]    Needed in order to build the GObject introspection "typelib" files.
+[ 2447s]  * GLib (required version >= 2.32), A library of handy utility functions, <https://www.gtk.org>
+[ 2447s]    For the optional libical-glib interface
+[ 2447s]  * PkgConfig
+[ 2447s]  * LibXML (required version >= 2.7.3), a library providing XML and HTML support, <http://xmlsoft.org>
+[ 2447s]    For the optional libical-glib interface
+[ 2447s] 
+[ 2447s] -- The following RECOMMENDED packages have been found:
+[ 2447s] 
+[ 2447s]  * ICU, libicu (International Components for Unicode) libraries, <http://www.icu-project.org>
+[ 2447s]    For RSCALE (RFC7529) support
+[ 2447s] 
+[ 2447s] -- The following REQUIRED packages have been found:
+[ 2447s] 
+[ 2447s]  * Perl
+[ 2447s]    Required by the libical build system.
+[ 2447s] 
+[ 2447s] -- The following features have been disabled:
+[ 2447s] 
+[ 2447s]  * Option STATIC_ONLY, build static libraries only
+[ 2447s]  * Berkeley DB storage support, build in support for Berkeley DB storage
+[ 2447s]  * Option ICAL_ERRORS_ARE_FATAL, icalerror_* calls will abort instead of internally signaling an error
+[ 2447s]  * Option USE_BUILTIN_TZDATA, use our own timezone data rather then the system timezone data
+[ 2447s] 
+[ 2447s] -- The following OPTIONAL packages have not been found:
+[ 2447s] 
+[ 2447s]  * BDB, Berkeley DB storage, <https://www.oracle.com/database/berkeley-db>
+[ 2447s]    For Berkeley DB storage support
+[ 2447s]  * Doxygen, API Documentation system, <http://www.doxygen.org>
+[ 2447s]    Needed to build the API documention.
+[ 2447s] 
+[ 2447s] -- Configuring done
+[ 2450s] -- Generating done
+[ 2452s] CMake Warning:
+[ 2452s]   Manually-specified variables were not used by the project:
+[ 2452s] 
+[ 2452s]     CMAKE_CXX_FLAGS_RELEASE
+[ 2452s]     CMAKE_C_FLAGS_RELEASE
+[ 2452s]     CMAKE_Fortran_FLAGS_RELEASE
+[ 2452s]     LIB_SUFFIX
+[ 2452s]     SHARE_INSTALL_PREFIX
+[ 2452s]     SYSCONF_INSTALL_DIR
+[ 2452s]     USE_INTEROPERABLE_VTIMEZONES
+[ 2452s] 
+[ 2452s] 
+[ 2452s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu
+[ 2452s] + popd
+[ 2452s] ~/rpmbuild/BUILD/libical-3.0.11
+[ 2452s] + /usr/bin/make -O -j8 V=1 VERBOSE=1 -j1 -C riscv64-openEuler-linux-gnu
+[ 2452s] make: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2452s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/libical-3.0.11 -B/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+[ 2452s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/CMakeFiles /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu//CMakeFiles/progress.marks
+[ 2452s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[ 2453s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2453s] /usr/bin/make  -f src/libical/CMakeFiles/ical-header.dir/build.make src/libical/CMakeFiles/ical-header.dir/depend
+[ 2453s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2453s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/libical-3.0.11 /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/CMakeFiles/ical-header.dir/DependInfo.cmake --color=
+[ 2453s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2453s] /usr/bin/make  -f src/libical/CMakeFiles/ical-header.dir/build.make src/libical/CMakeFiles/ical-header.dir/build
+[ 2453s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2454s] [  1%] Generating icalderivedproperty.c
+[ 2454s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedproperties.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedproperty.c.in -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/properties.csv /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/value-types.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedproperty.c
+[ 2455s] [  2%] Generating icalderivedparameter.c
+[ 2455s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedparameters.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedparameter.c.in -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/parameters.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedparameter.c
+[ 2455s] [  3%] Generating icalrestriction.c
+[ 2455s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkrestrictiontable.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalrestriction.c.in /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/restrictions.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalrestriction.c
+[ 2456s] [  3%] Generating icalderivedvalue.c
+[ 2456s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedvalues.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedvalue.c.in -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/value-types.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedvalue.c
+[ 2457s] [  4%] Generating icalderivedproperty.h
+[ 2457s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedproperties.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedproperty.h.in -h /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/properties.csv /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/value-types.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedproperty.h
+[ 2459s] [  4%] Generating icalderivedparameter.h
+[ 2459s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedparameters.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedparameter.h.in -h /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/parameters.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedparameter.h
+[ 2460s] [  5%] Generating icalderivedvalue.h
+[ 2460s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/perl -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts/ /home/abuild/rpmbuild/BUILD/libical-3.0.11/scripts//mkderivedvalues.pl -i /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalderivedvalue.h.in -h /home/abuild/rpmbuild/BUILD/libical-3.0.11/design-data/value-types.csv > /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedvalue.h
+[ 2461s] [  6%] Generating ical.h
+[ 2461s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cmake -DTOPS:FILEPATH=/home/abuild/rpmbuild/BUILD/libical-3.0.11 -DTOPB:FILEPATH=/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -DICAL_FILE_H_FILE:FILEPATH=/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/ical.h -P /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/ical_file.cmake
+[ 2462s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2462s] [  6%] Built target ical-header
+[ 2462s] /usr/bin/make  -f src/libical/CMakeFiles/ical.dir/build.make src/libical/CMakeFiles/ical.dir/depend
+[ 2462s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2462s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/libical-3.0.11 /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/CMakeFiles/ical.dir/DependInfo.cmake --color=
+[ 2463s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2463s] /usr/bin/make  -f src/libical/CMakeFiles/ical.dir/build.make src/libical/CMakeFiles/ical.dir/build
+[ 2463s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2463s] [  6%] Building C object src/libical/CMakeFiles/ical.dir/icalderivedproperty.c.o
+[ 2463s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalderivedproperty.c.o -MF CMakeFiles/ical.dir/icalderivedproperty.c.o.d -o CMakeFiles/ical.dir/icalderivedproperty.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedproperty.c
+[ 2501s] [  7%] Building C object src/libical/CMakeFiles/ical.dir/icalderivedparameter.c.o
+[ 2501s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalderivedparameter.c.o -MF CMakeFiles/ical.dir/icalderivedparameter.c.o.d -o CMakeFiles/ical.dir/icalderivedparameter.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedparameter.c
+[ 2518s] [  8%] Building C object src/libical/CMakeFiles/ical.dir/icalrestriction.c.o
+[ 2518s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalrestriction.c.o -MF CMakeFiles/ical.dir/icalrestriction.c.o.d -o CMakeFiles/ical.dir/icalrestriction.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalrestriction.c
+[ 2523s] [  8%] Building C object src/libical/CMakeFiles/ical.dir/icalderivedvalue.c.o
+[ 2523s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalderivedvalue.c.o -MF CMakeFiles/ical.dir/icalderivedvalue.c.o.d -o CMakeFiles/ical.dir/icalderivedvalue.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/icalderivedvalue.c
+[ 2533s] [  9%] Building C object src/libical/CMakeFiles/ical.dir/icalarray.c.o
+[ 2533s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalarray.c.o -MF CMakeFiles/ical.dir/icalarray.c.o.d -o CMakeFiles/ical.dir/icalarray.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalarray.c
+[ 2538s] [ 10%] Building C object src/libical/CMakeFiles/ical.dir/icalattach.c.o
+[ 2538s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalattach.c.o -MF CMakeFiles/ical.dir/icalattach.c.o.d -o CMakeFiles/ical.dir/icalattach.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalattach.c
+[ 2541s] [ 10%] Building C object src/libical/CMakeFiles/ical.dir/icalcomponent.c.o
+[ 2541s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalcomponent.c.o -MF CMakeFiles/ical.dir/icalcomponent.c.o.d -o CMakeFiles/ical.dir/icalcomponent.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalcomponent.c
+[ 2556s] [ 11%] Building C object src/libical/CMakeFiles/ical.dir/icalenums.c.o
+[ 2556s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalenums.c.o -MF CMakeFiles/ical.dir/icalenums.c.o.d -o CMakeFiles/ical.dir/icalenums.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalenums.c
+[ 2560s] [ 12%] Building C object src/libical/CMakeFiles/ical.dir/icalerror.c.o
+[ 2560s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalerror.c.o -MF CMakeFiles/ical.dir/icalerror.c.o.d -o CMakeFiles/ical.dir/icalerror.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalerror.c
+[ 2564s] [ 12%] Building C object src/libical/CMakeFiles/ical.dir/icalmemory.c.o
+[ 2564s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalmemory.c.o -MF CMakeFiles/ical.dir/icalmemory.c.o.d -o CMakeFiles/ical.dir/icalmemory.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalmemory.c
+[ 2568s] [ 13%] Building C object src/libical/CMakeFiles/ical.dir/icalmime.c.o
+[ 2568s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalmime.c.o -MF CMakeFiles/ical.dir/icalmime.c.o.d -o CMakeFiles/ical.dir/icalmime.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalmime.c
+[ 2573s] [ 14%] Building C object src/libical/CMakeFiles/ical.dir/icalparameter.c.o
+[ 2573s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalparameter.c.o -MF CMakeFiles/ical.dir/icalparameter.c.o.d -o CMakeFiles/ical.dir/icalparameter.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparameter.c
+[ 2577s] [ 14%] Building C object src/libical/CMakeFiles/ical.dir/icalparser.c.o
+[ 2577s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalparser.c.o -MF CMakeFiles/ical.dir/icalparser.c.o.d -o CMakeFiles/ical.dir/icalparser.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparser.c
+[ 2581s] In file included from /usr/include/string.h:519,
+[ 2581s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:327,
+[ 2581s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparser.c:33:
+[ 2581s] In function 'strncpy',
+[ 2581s]     inlined from 'icalparser_string_line_generator' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparser.c:1331:5:
+[ 2581s] /usr/include/bits/string_fortified.h:95:10: warning: '__builtin_strncpy' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+[ 2581s]    95 |   return __builtin___strncpy_chk (__dest, __src, __len,
+[ 2581s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2581s]    96 |       __glibc_objsize (__dest));
+[ 2581s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2581s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparser.c: In function 'icalparser_string_line_generator':
+[ 2581s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalparser.c:1316:20: note: length computed here
+[ 2581s]  1316 |             size = strlen(data->pos);
+[ 2581s]       |                    ^~~~~~~~~~~~~~~~~
+[ 2585s] [ 15%] Building C object src/libical/CMakeFiles/ical.dir/icalproperty.c.o
+[ 2585s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalproperty.c.o -MF CMakeFiles/ical.dir/icalproperty.c.o.d -o CMakeFiles/ical.dir/icalproperty.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalproperty.c
+[ 2595s] [ 15%] Building C object src/libical/CMakeFiles/ical.dir/icalrecur.c.o
+[ 2595s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalrecur.c.o -MF CMakeFiles/ical.dir/icalrecur.c.o.d -o CMakeFiles/ical.dir/icalrecur.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalrecur.c
+[ 2615s] [ 16%] Building C object src/libical/CMakeFiles/ical.dir/icaltime.c.o
+[ 2615s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icaltime.c.o -MF CMakeFiles/ical.dir/icaltime.c.o.d -o CMakeFiles/ical.dir/icaltime.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltime.c
+[ 2623s] [ 17%] Building C object src/libical/CMakeFiles/ical.dir/icaltz-util.c.o
+[ 2623s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icaltz-util.c.o -MF CMakeFiles/ical.dir/icaltz-util.c.o.d -o CMakeFiles/ical.dir/icaltz-util.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltz-util.c
+[ 2637s] [ 17%] Building C object src/libical/CMakeFiles/ical.dir/icaltimezone.c.o
+[ 2637s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icaltimezone.c.o -MF CMakeFiles/ical.dir/icaltimezone.c.o.d -o CMakeFiles/ical.dir/icaltimezone.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c: In function 'icaltimezone_dump_changes':
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:2013:46: warning: '%02i' directive output may be truncated writing 2 bytes into a region of size between 1 and 5 [-Wformat-truncation=]
+[ 2649s]  2013 |         snprintf(buffer, buffer_size, "%s%02i%02i%02i", sign, hours, minutes, seconds);
+[ 2649s]       |                                              ^~~~
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:2013:39: note: directive argument in the range [0, 59]
+[ 2649s]  2013 |         snprintf(buffer, buffer_size, "%s%02i%02i%02i", sign, hours, minutes, seconds);
+[ 2649s]       |                                       ^~~~~~~~~~~~~~~~
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:2013:39: note: directive argument in the range [1, 59]
+[ 2649s] In file included from /usr/include/stdio.h:888,
+[ 2649s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:279,
+[ 2649s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:21:
+[ 2649s] /usr/include/bits/stdio2.h:71:10: note: '__builtin___snprintf_chk' output between 8 and 12 bytes into a destination of size 8
+[ 2649s]    71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+[ 2649s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2649s]    72 |        __glibc_objsize (__s), __fmt,
+[ 2649s]       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2649s]    73 |        __va_arg_pack ());
+[ 2649s]       |        ~~~~~~~~~~~~~~~~~
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:2011:46: warning: '%02i' directive output may be truncated writing 2 bytes into a region of size between 1 and 5 [-Wformat-truncation=]
+[ 2649s]  2011 |         snprintf(buffer, buffer_size, "%s%02i%02i", sign, hours, minutes);
+[ 2649s]       |                                              ^~~~
+[ 2649s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:2011:39: note: directive argument in the range [0, 59]
+[ 2649s]  2011 |         snprintf(buffer, buffer_size, "%s%02i%02i", sign, hours, minutes);
+[ 2649s]       |                                       ^~~~~~~~~~~~
+[ 2649s] In file included from /usr/include/stdio.h:888,
+[ 2649s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:279,
+[ 2649s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltimezone.c:21:
+[ 2649s] /usr/include/bits/stdio2.h:71:10: note: '__builtin___snprintf_chk' output between 6 and 10 bytes into a destination of size 8
+[ 2649s]    71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+[ 2649s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2649s]    72 |        __glibc_objsize (__s), __fmt,
+[ 2649s]       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2649s]    73 |        __va_arg_pack ());
+[ 2649s]       |        ~~~~~~~~~~~~~~~~~
+[ 2656s] [ 18%] Building C object src/libical/CMakeFiles/ical.dir/icalduration.c.o
+[ 2656s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalduration.c.o -MF CMakeFiles/ical.dir/icalduration.c.o.d -o CMakeFiles/ical.dir/icalduration.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalduration.c
+[ 2660s] [ 19%] Building C object src/libical/CMakeFiles/ical.dir/icalperiod.c.o
+[ 2660s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalperiod.c.o -MF CMakeFiles/ical.dir/icalperiod.c.o.d -o CMakeFiles/ical.dir/icalperiod.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalperiod.c
+[ 2663s] [ 19%] Building C object src/libical/CMakeFiles/ical.dir/icaltypes.c.o
+[ 2663s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icaltypes.c.o -MF CMakeFiles/ical.dir/icaltypes.c.o.d -o CMakeFiles/ical.dir/icaltypes.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icaltypes.c
+[ 2666s] [ 20%] Building C object src/libical/CMakeFiles/ical.dir/icalvalue.c.o
+[ 2666s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icalvalue.c.o -MF CMakeFiles/ical.dir/icalvalue.c.o.d -o CMakeFiles/ical.dir/icalvalue.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c
+[ 2670s] In file included from /usr/include/string.h:519,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:327,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:23:
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1001:9,
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:993:6:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin_strncat' output may be truncated copying 8 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1001:9,
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:993:6,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1028:9:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin_strncat' output may be truncated copying 8 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_time_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:988:13,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1032:13,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1021:6:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin___strncat_chk' output may be truncated copying 6 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_time_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:985:13,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1032:13,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1021:6:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin___strncat_chk' output may be truncated copying 7 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1033:13,
+[ 2670s]     inlined from 'print_datetime_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1021:6:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin_strncat' output may be truncated copying 19 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c: In function 'icalvalue_as_ical_string_r':
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:905:33: warning: '%02d' directive output may be truncated writing between 2 and 8 bytes into a region of size between 2 and 6 [-Wformat-truncation=]
+[ 2670s]   905 |         snprintf(str, 9, "%c%02d%02d", sign, abs(h), abs(m));
+[ 2670s]       |                                 ^~~~
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:905:26: note: directive argument in the range [0, 35791394]
+[ 2670s]   905 |         snprintf(str, 9, "%c%02d%02d", sign, abs(h), abs(m));
+[ 2670s]       |                          ^~~~~~~~~~~~
+[ 2670s] In file included from /usr/include/stdio.h:888,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:279,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:23:
+[ 2670s] /usr/include/bits/stdio2.h:71:10: note: '__builtin___snprintf_chk' output between 6 and 16 bytes into a destination of size 9
+[ 2670s]    71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]    72 |        __glibc_objsize (__s), __fmt,
+[ 2670s]       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]    73 |        __va_arg_pack ());
+[ 2670s]       |        ~~~~~~~~~~~~~~~~~
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:903:33: warning: '%02d' directive output may be truncated writing between 2 and 8 bytes into a region of size between 2 and 6 [-Wformat-truncation=]
+[ 2670s]   903 |         snprintf(str, 9, "%c%02d%02d%02d", sign, abs(h), abs(m), abs(s));
+[ 2670s]       |                                 ^~~~
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:903:26: note: directive argument in the range [0, 35791394]
+[ 2670s]   903 |         snprintf(str, 9, "%c%02d%02d%02d", sign, abs(h), abs(m), abs(s));
+[ 2670s]       |                          ^~~~~~~~~~~~~~~~
+[ 2670s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:903:26: note: directive argument in the range [1, 2147483647]
+[ 2670s] In file included from /usr/include/stdio.h:888,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:279,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:23:
+[ 2670s] /usr/include/bits/stdio2.h:71:10: note: '__builtin___snprintf_chk' output between 8 and 26 bytes into a destination of size 9
+[ 2670s]    71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]    72 |        __glibc_objsize (__s), __fmt,
+[ 2670s]       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]    73 |        __va_arg_pack ());
+[ 2670s]       |        ~~~~~~~~~~~~~~~~~
+[ 2670s] In file included from /usr/include/string.h:519,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:327,
+[ 2670s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:23:
+[ 2670s] In function 'strncat',
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1001:9,
+[ 2670s]     inlined from 'print_date_to_string' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:993:6,
+[ 2670s]     inlined from 'icalvalue_date_as_ical_string_r' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1016:5,
+[ 2670s]     inlined from 'icalvalue_as_ical_string_r' at /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icalvalue.c:1195:16:
+[ 2670s] /usr/include/bits/string_fortified.h:135:10: warning: '__builtin_strncat' output may be truncated copying 8 bytes from a string of length 19 [-Wstringop-truncation]
+[ 2670s]   135 |   return __builtin___strncat_chk (__dest, __src, __len,
+[ 2670s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2670s]   136 |       __glibc_objsize (__dest));
+[ 2670s]       |       ~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2673s] [ 21%] Building C object src/libical/CMakeFiles/ical.dir/pvl.c.o
+[ 2673s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/pvl.c.o -MF CMakeFiles/ical.dir/pvl.c.o.d -o CMakeFiles/ical.dir/pvl.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/pvl.c
+[ 2677s] [ 21%] Building C object src/libical/CMakeFiles/ical.dir/sspm.c.o
+[ 2677s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/sspm.c.o -MF CMakeFiles/ical.dir/sspm.c.o.d -o CMakeFiles/ical.dir/sspm.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/sspm.c
+[ 2683s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/sspm.c: In function 'sspm_write_part.constprop':
+[ 2683s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/sspm.c:1209:34: warning: '%02X' directive output may be truncated writing between 2 and 8 bytes into a region of size 3 [-Wformat-truncation=]
+[ 2683s]  1209 |     snprintf(tmp, sizeof(tmp), "=%02X", (unsigned int)ch);
+[ 2683s]       |                                  ^~~~
+[ 2683s] /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/sspm.c:1209:32: note: directive argument in the range [1, 4294967295]
+[ 2683s]  1209 |     snprintf(tmp, sizeof(tmp), "=%02X", (unsigned int)ch);
+[ 2683s]       |                                ^~~~~~~
+[ 2683s] In file included from /usr/include/stdio.h:888,
+[ 2683s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/config.h:279,
+[ 2683s]                  from /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/sspm.c:33:
+[ 2683s] /usr/include/bits/stdio2.h:71:10: note: '__builtin___snprintf_chk' output between 4 and 10 bytes into a destination of size 4
+[ 2683s]    71 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+[ 2683s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2683s]    72 |        __glibc_objsize (__s), __fmt,
+[ 2683s]       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2683s]    73 |        __va_arg_pack ());
+[ 2683s]       |        ~~~~~~~~~~~~~~~~~
+[ 2687s] [ 22%] Building C object src/libical/CMakeFiles/ical.dir/icallangbind.c.o
+[ 2687s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/icallangbind.c.o -MF CMakeFiles/ical.dir/icallangbind.c.o.d -o CMakeFiles/ical.dir/icallangbind.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/icallangbind.c
+[ 2690s] [ 23%] Building C object src/libical/CMakeFiles/ical.dir/caldate.c.o
+[ 2691s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cc -DBUILD_LIBICALDLL -DHAVE_CONFIG_H -DPACKAGE_DATA_DIR=\"/usr/share/libical\" -DWITH_CXX_BINDINGS -Dical_EXPORTS -Dlibical_ical_EXPORTS -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -fPIC -MD -MT src/libical/CMakeFiles/ical.dir/caldate.c.o -MF CMakeFiles/ical.dir/caldate.c.o.d -o CMakeFiles/ical.dir/caldate.c.o -c /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical/caldate.c
+[ 2693s] [ 23%] Linking C shared library ../../lib/libical.so
+[ 2693s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cmake -E cmake_link_script CMakeFiles/ical.dir/link.txt --verbose=1
+[ 2693s] /usr/bin/cc -fPIC -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fvisibility=hidden -Wno-deprecated -Wall -Wno-unknown-pragmas -Wextra -Winit-self -Wunused -Wno-div-by-zero -Wundef -Wpointer-arith -Wtype-limits -Wwrite-strings -Werror=return-type -Wunused-but-set-variable -Wlogical-op -Wsizeof-pointer-memaccess -Wformat -Wformat-security -Wredundant-decls -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE -D_GNU_SOURCE -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -shared -Wl,-soname,libical.so.3 -o ../../lib/libical.so.3.0.11 CMakeFiles/ical.dir/icalderivedproperty.c.o CMakeFiles/ical.dir/icalderivedparameter.c.o CMakeFiles/ical.dir/icalrestriction.c.o CMakeFiles/ical.dir/icalderivedvalue.c.o CMakeFiles/ical.dir/icalarray.c.o CMakeFiles/ical.dir/icalattach.c.o CMakeFiles/ical.dir/icalcomponent.c.o CMakeFiles/ical.dir/icalenums.c.o CMakeFiles/ical.dir/icalerror.c.o CMakeFiles/ical.dir/icalmemory.c.o CMakeFiles/ical.dir/icalmime.c.o CMakeFiles/ical.dir/icalparameter.c.o CMakeFiles/ical.dir/icalparser.c.o CMakeFiles/ical.dir/icalproperty.c.o CMakeFiles/ical.dir/icalrecur.c.o CMakeFiles/ical.dir/icaltime.c.o CMakeFiles/ical.dir/icaltz-util.c.o CMakeFiles/ical.dir/icaltimezone.c.o CMakeFiles/ical.dir/icalduration.c.o CMakeFiles/ical.dir/icalperiod.c.o CMakeFiles/ical.dir/icaltypes.c.o CMakeFiles/ical.dir/icalvalue.c.o CMakeFiles/ical.dir/pvl.c.o CMakeFiles/ical.dir/sspm.c.o CMakeFiles/ical.dir/icallangbind.c.o CMakeFiles/ical.dir/caldate.c.o  -licuuc -licui18n 
+[ 2696s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cmake -E cmake_symlink_library ../../lib/libical.so.3.0.11 ../../lib/libical.so.3 ../../lib/libical.so
+[ 2696s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2697s] [ 28%] Built target ical
+[ 2697s] /usr/bin/make  -f src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/build.make src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/depend
+[ 2697s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2697s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/libical-3.0.11 /home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/DependInfo.cmake --color=
+[ 2697s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2697s] /usr/bin/make  -f src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/build.make src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/build
+[ 2697s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2698s] [ 29%] Generating ICal-3.0.gir
+[ 2698s] cd /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical && /usr/bin/cmake -E env "CC='/usr/bin/cc'" /usr/bin/g-ir-scanner --c-include=libical/ical.h --pkg-export libical --identifier-prefix=ical -I/home/abuild/rpmbuild/BUILD/libical-3.0.11/src/libical /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/ical.h --namespace=ICal --nsversion=3.0 --no-libtool --library=ical --include=GObject-2.0 -L/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/lib --output /home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu/src/libical/ICal-3.0.gir --accept-unprefixed
+[ 2701s] Traceback (most recent call last):
+[ 2701s]   File "/usr/bin/g-ir-scanner", line 98, in <module>
+[ 2701s]     from giscanner.scannermain import scanner_main
+[ 2701s]   File "/usr/lib64/gobject-introspection/giscanner/scannermain.py", line 35, in <module>
+[ 2701s]     from giscanner.ast import Include, Namespace
+[ 2701s]   File "/usr/lib64/gobject-introspection/giscanner/ast.py", line 29, in <module>
+[ 2701s]     from .sourcescanner import CTYPE_TYPEDEF, CSYMBOL_TYPE_TYPEDEF
+[ 2701s]   File "/usr/lib64/gobject-introspection/giscanner/sourcescanner.py", line 35, in <module>
+[ 2701s]     from giscanner._giscanner import SourceScanner as CSourceScanner
+[ 2701s] ModuleNotFoundError: No module named 'giscanner._giscanner'
+[ 2701s] make[2]: *** [src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/build.make:76: src/libical/ICal-3.0.gir] Error 1
+[ 2701s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2701s] make[1]: *** [CMakeFiles/Makefile2:426: src/libical/CMakeFiles/gir-girs-ICal_3_0_gir.dir/all] Error 2
+[ 2701s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2701s] make: *** [Makefile:149: all] Error 2
+[ 2701s] make: Leaving directory '/home/abuild/rpmbuild/BUILD/libical-3.0.11/riscv64-openEuler-linux-gnu'
+[ 2701s] error: Bad exit status from /var/tmp/rpm-tmp.FO4bf6 (%build)
+[ 2701s] 
+[ 2701s] 
+[ 2701s] RPM build errors:
+[ 2701s]     Bad exit status from /var/tmp/rpm-tmp.FO4bf6 (%build)
+[ 2702s] 
+[ 2702s] oe-RISCV-worker22 failed "build libical.spec" at Sat Apr 23 11:38:54 UTC 2022.
+[ 2702s] 

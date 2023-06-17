@@ -1,0 +1,1589 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] lamb28 started "build python-i3ipc.spec" at Sat Feb 18 23:24:03 UTC 2023.
+[    0s] 
+[    0s] Building python-i3ipc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'de047bd78567f14c2014562459aae2cf'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/python-i3ipc.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/python-i3ipc.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/python-i3ipc.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    4s] 
+[    4s] copying packages...
+[    5s] reordering...cycle: gio-branding-upstream -> libgio-2_0-0
+[    5s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    5s] cycle: libgio-2_0-0 -> glib2-tools
+[    5s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    5s] cycle: fontconfig -> libfontconfig1
+[    5s]   breaking dependency libfontconfig1 -> fontconfig
+[    5s] cycle: Mesa-dri -> Mesa
+[    5s]   breaking dependency Mesa -> Mesa-dri
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    5s]   breaking dependency Mesa -> Mesa-libEGL1
+[    5s] cycle: Mesa -> Mesa-libGL1
+[    5s]   breaking dependency Mesa-libGL1 -> Mesa
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    5s]   breaking dependency Mesa -> Mesa-libGL1
+[    5s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    5s]   breaking dependency libglvnd -> Mesa-dri
+[    5s] done
+[    5s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   12s] Increasing log level from now on...
+[   12s] [    4.999535][  T415] sysrq: Changing Loglevel
+[   12s] [    4.999657][  T415] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   12s] no label, UUID=0dcc05c8-3e85-4a4b-bfe4-8697ef98309b
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   12s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-i3ipc.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-i3ipc.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   46s] [1/289] cumulate Mesa-libglapi0-22.3.5-350.1
+[   46s] [2/289] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   46s] [3/289] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   46s] [4/289] preinstalled attr-2.5.1-1.1
+[   46s] [5/289] preinstalled bash-5.2.15-8.1
+[   46s] [6/289] preinstalled bash-sh-5.2.15-8.1
+[   46s] [7/289] preinstalled binutils-2.39-3.1
+[   46s] [8/289] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   46s] [9/289] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   46s] [10/289] preinstalled build-mkbaselibs-20230215-1.1
+[   46s] [11/289] preinstalled bzip2-1.0.8-4.1
+[   46s] [12/289] preinstalled chkstat-1599_20221220-1.2
+[   46s] [13/289] preinstalled compat-usrmerge-build-84.87-5.1
+[   46s] [14/289] preinstalled compat-usrmerge-tools-84.87-5.1
+[   46s] [15/289] preinstalled coreutils-9.1-5.1
+[   46s] [16/289] preinstalled cpio-2.13-5.1
+[   46s] [17/289] preinstalled cpp-12-2.1
+[   46s] [18/289] preinstalled cpp12-12.2.1+git749-4.1
+[   46s] [19/289] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   46s] [20/289] cumulate dbus-1-common-1.14.6-1.1
+[   46s] [21/289] preinstalled debugedit-5.0-5.1
+[   46s] [22/289] preinstalled diffutils-3.9-1.1
+[   46s] [23/289] preinstalled dwz-0.15-2.1
+[   46s] [24/289] preinstalled elfutils-0.188-3.2
+[   46s] [25/289] cumulate fdupes-2.2.1-1.1
+[   46s] [26/289] preinstalled file-5.44-1.2
+[   46s] [27/289] preinstalled file-magic-5.44-1.2
+[   46s] [28/289] preinstalled filesystem-84.87-12.1
+[   46s] [29/289] preinstalled fillup-1.42-279.1
+[   46s] [30/289] preinstalled findutils-4.9.0-2.1
+[   46s] [31/289] preinstalled gawk-5.2.1-2.1
+[   46s] [32/289] preinstalled gcc-12-2.1
+[   46s] [33/289] preinstalled gcc-PIE-12-2.1
+[   46s] [34/289] preinstalled gcc12-12.2.1+git749-4.1
+[   46s] [35/289] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   46s] [36/289] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   46s] [37/289] preinstalled gettext-tools-mini-0.21.1-1.1
+[   46s] [38/289] preinstalled glibc-2.37-1.1
+[   46s] [39/289] preinstalled glibc-devel-2.37-1.1
+[   46s] [40/289] preinstalled glibc-locale-base-2.37-1.1
+[   46s] [41/289] preinstalled grep-3.8-3.1
+[   46s] [42/289] preinstalled gzip-1.12-3.1
+[   46s] [43/289] preinstalled kernel-obs-build-6.1.12-1.1
+[   46s] [44/289] cumulate libX11-data-1.8.1-4.1
+[   46s] [45/289] cumulate libXau6-1.0.11-1.1
+[   46s] [46/289] cumulate libXdmcp6-1.1.4-1.1
+[   46s] [47/289] preinstalled libacl1-2.3.1-2.1
+[   46s] [48/289] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   46s] [49/289] preinstalled libasan8-13.0.1+git5428-6.1
+[   46s] [50/289] preinstalled libasm1-0.188-3.2
+[   46s] [51/289] preinstalled libatomic1-13.0.1+git5428-6.1
+[   46s] [52/289] preinstalled libattr1-2.5.1-1.1
+[   46s] [53/289] preinstalled libaudit1-3.0.6-4.1
+[   46s] [54/289] preinstalled libblkid1-2.38.1-7.1
+[   46s] [55/289] cumulate libbrotlicommon1-1.0.9-1.1
+[   46s] [56/289] preinstalled libbz2-1-1.0.8-4.1
+[   46s] [57/289] preinstalled libcap-ng0-0.8.3-1.1
+[   46s] [58/289] preinstalled libcap2-2.67-1.1
+[   46s] [59/289] preinstalled libcrypt1-4.4.33-1.1
+[   46s] [60/289] preinstalled libctf-nobfd0-2.39-3.1
+[   46s] [61/289] preinstalled libctf0-2.39-3.1
+[   46s] [62/289] cumulate libdatrie1-0.2.13-1.1
+[   46s] [63/289] preinstalled libdb-4_8-4.8.30-39.1
+[   46s] [64/289] cumulate libdrm2-2.4.115-2.1
+[   46s] [65/289] preinstalled libdw1-0.188-3.2
+[   46s] [66/289] preinstalled libeconf0-0.5.1-1.1
+[   46s] [67/289] cumulate libedit0-20210910.3.1-1.1
+[   46s] [68/289] preinstalled libelf1-0.188-3.2
+[   46s] [69/289] cumulate libepoxy0-1.5.10-2.1
+[   46s] [70/289] cumulate libev4-4.33-1.2
+[   46s] [71/289] preinstalled libexpat1-2.5.0-2.1
+[   46s] [72/289] preinstalled libfdisk1-2.38.1-7.1
+[   46s] [73/289] preinstalled libffi8-3.4.4-1.1
+[   46s] [74/289] cumulate libfontenc1-1.1.7-1.1
+[   46s] [75/289] cumulate libfribidi0-1.0.12-1.1
+[   46s] [76/289] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   46s] [77/289] preinstalled libgcrypt20-1.10.1-1.1
+[   46s] [78/289] preinstalled libgdbm6-1.23-1.1
+[   46s] [79/289] preinstalled libgdbm_compat4-1.23-1.1
+[   46s] [80/289] cumulate libglib-2_0-0-2.74.5-1.1
+[   46s] [81/289] preinstalled libgmp10-6.2.1-4.1
+[   46s] [82/289] preinstalled libgomp1-13.0.1+git5428-6.1
+[   46s] [83/289] preinstalled libgpg-error0-1.46-1.1
+[   46s] [84/289] cumulate libgraphite2-3-1.3.14-3.1
+[   46s] [85/289] preinstalled libisl23-0.25-1.1
+[   46s] [86/289] preinstalled liblua5_4-5-5.4.4-8.1
+[   46s] [87/289] preinstalled liblzma5-5.4.1-1.1
+[   46s] [88/289] preinstalled libmagic1-5.44-1.2
+[   46s] [89/289] preinstalled libmount1-2.38.1-7.1
+[   46s] [90/289] preinstalled libmpc3-1.3.1-1.2
+[   46s] [91/289] preinstalled libmpdec3-2.5.1-2.1
+[   46s] [92/289] preinstalled libmpfr6-4.2.0-1.1
+[   46s] [93/289] preinstalled libncurses6-6.4.20230128-5.1
+[   46s] [94/289] preinstalled libopenssl3-3.0.7-3.1
+[   46s] [95/289] cumulate libpciaccess0-0.17-1.1
+[   46s] [96/289] preinstalled libpcre2-8-0-10.42-3.2
+[   46s] [97/289] cumulate libpixman-1-0-0.42.2-1.1
+[   46s] [98/289] preinstalled libpkgconf3-1.8.0-2.1
+[   46s] [99/289] cumulate libpng16-16-1.6.39-2.1
+[   46s] [100/289] preinstalled libpopt0-1.19-1.1
+[   46s] [101/289] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   46s] [102/289] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   46s] [103/289] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   46s] [104/289] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   46s] [105/289] preinstalled libreadline8-8.2-2.1
+[   46s] [106/289] preinstalled librpmbuild9-4.18.0-3.2
+[   46s] [107/289] preinstalled libseccomp2-2.5.4-2.1
+[   46s] [108/289] preinstalled libselinux1-3.4-2.1
+[   46s] [109/289] preinstalled libsemanage-conf-3.4-1.1
+[   46s] [110/289] preinstalled libsemanage2-3.4-1.1
+[   46s] [111/289] preinstalled libsepol2-3.4-1.1
+[   46s] [112/289] preinstalled libsmartcols1-2.38.1-7.1
+[   46s] [113/289] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   46s] [114/289] preinstalled libsubid4-4.13-3.1
+[   46s] [115/289] cumulate libsystemd0-mini-252.5-1.1
+[   46s] [116/289] cumulate libthai-data-0.1.29-1.1
+[   46s] [117/289] preinstalled libubsan1-13.0.1+git5428-6.1
+[   46s] [118/289] cumulate libudev-mini1-252.5-1.1
+[   46s] [119/289] preinstalled libutempter0-1.2.0-3.2
+[   46s] [120/289] preinstalled libuuid1-2.38.1-7.1
+[   46s] [121/289] cumulate libwayland-client0-1.21.0-4.2
+[   46s] [122/289] cumulate libwayland-server0-1.21.0-4.2
+[   46s] [123/289] preinstalled libxcrypt-devel-4.4.33-1.1
+[   46s] [124/289] cumulate libxcvt0-0.1.2-1.1
+[   46s] [125/289] cumulate libxml2-2-2.10.3-3.1
+[   46s] [126/289] cumulate libxshmfence1-1.3.2-1.1
+[   46s] [127/289] cumulate libyajl2-2.1.0-6.1
+[   46s] [128/289] preinstalled libz1-1.2.13-2.1
+[   46s] [129/289] preinstalled libzstd1-1.5.2-2.1
+[   46s] [130/289] preinstalled linux-glibc-devel-6.1-1.1
+[   46s] [131/289] preinstalled login_defs-4.13-3.1
+[   46s] [132/289] preinstalled lua54-5.4.4-8.1
+[   46s] [133/289] preinstalled make-4.4-2.1
+[   46s] [134/289] preinstalled ncurses-utils-6.4.20230128-5.1
+[   46s] [135/289] preinstalled pam-1.5.2-12.1
+[   46s] [136/289] preinstalled patch-2.7.6-6.1
+[   46s] [137/289] preinstalled perl-5.36.0-4.1
+[   46s] [138/289] cumulate perl-AnyEvent-7.17-1.7
+[   46s] [139/289] preinstalled perl-base-5.36.0-4.1
+[   46s] [140/289] cumulate perl-common-sense-3.75-1.6
+[   46s] [141/289] preinstalled permissions-1599_20221220-1.2
+[   46s] [142/289] preinstalled permissions-config-1599_20221220-1.2
+[   46s] [143/289] preinstalled pkgconf-1.8.0-2.1
+[   46s] [144/289] preinstalled pkgconf-m4-1.8.0-2.1
+[   46s] [145/289] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   46s] [146/289] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   46s] [147/289] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   46s] [148/289] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   46s] [149/289] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   46s] [150/289] cumulate python310-attrs-22.2.0-1.2
+[   46s] [151/289] preinstalled python310-base-3.10.9-2.2
+[   46s] [152/289] cumulate python310-exceptiongroup-1.1.0-1.2
+[   46s] [153/289] cumulate python310-iniconfig-1.1.1-3.2
+[   46s] [154/289] preinstalled python310-packaging-23.0-1.1
+[   46s] [155/289] cumulate python310-pluggy-1.0.0-1.5
+[   46s] [156/289] preinstalled python310-setuptools-65.6.3-1.2
+[   46s] [157/289] cumulate python310-six-1.16.0-2.5
+[   46s] [158/289] cumulate python310-tomli-2.0.1-1.3
+[   46s] [159/289] cumulate python310-zipp-3.8.1-1.2
+[   46s] [160/289] cumulate python311-attrs-22.2.0-1.2
+[   46s] [161/289] preinstalled python311-base-3.11.1-4.2
+[   46s] [162/289] cumulate python311-exceptiongroup-1.1.0-1.2
+[   46s] [163/289] cumulate python311-iniconfig-1.1.1-3.2
+[   46s] [164/289] cumulate python311-packaging-23.0-1.2
+[   46s] [165/289] cumulate python311-pluggy-1.0.0-1.5
+[   46s] [166/289] preinstalled python311-setuptools-65.6.3-1.2
+[   46s] [167/289] cumulate python311-six-1.16.0-2.5
+[   46s] [168/289] cumulate python311-tomli-2.0.1-1.3
+[   46s] [169/289] cumulate python311-zipp-3.8.1-1.2
+[   46s] [170/289] cumulate python38-attrs-22.2.0-1.2
+[   46s] [171/289] preinstalled python38-base-3.8.16-3.2
+[   46s] [172/289] cumulate python38-exceptiongroup-1.1.0-1.2
+[   46s] [173/289] cumulate python38-iniconfig-1.1.1-3.2
+[   46s] [174/289] cumulate python38-packaging-23.0-1.2
+[   46s] [175/289] cumulate python38-pluggy-1.0.0-1.5
+[   46s] [176/289] preinstalled python38-setuptools-65.6.3-1.2
+[   46s] [177/289] cumulate python38-six-1.16.0-2.5
+[   46s] [178/289] cumulate python38-tomli-2.0.1-1.3
+[   46s] [179/289] cumulate python38-zipp-3.8.1-1.2
+[   46s] [180/289] cumulate python39-attrs-22.2.0-1.2
+[   46s] [181/289] preinstalled python39-base-3.9.16-3.2
+[   46s] [182/289] cumulate python39-exceptiongroup-1.1.0-1.2
+[   46s] [183/289] cumulate python39-iniconfig-1.1.1-3.2
+[   46s] [184/289] cumulate python39-packaging-23.0-1.2
+[   46s] [185/289] cumulate python39-pluggy-1.0.0-1.5
+[   46s] [186/289] preinstalled python39-setuptools-65.6.3-1.2
+[   46s] [187/289] cumulate python39-six-1.16.0-2.5
+[   46s] [188/289] cumulate python39-tomli-2.0.1-1.3
+[   46s] [189/289] cumulate python39-zipp-3.8.1-1.2
+[   46s] [190/289] preinstalled qemu-linux-user-7.1.0-50.1
+[   46s] [191/289] preinstalled rpm-4.18.0-3.2
+[   46s] [192/289] preinstalled rpm-build-4.18.0-3.2
+[   46s] [193/289] preinstalled rpm-build-perl-4.18.0-3.2
+[   46s] [194/289] preinstalled rpm-config-SUSE-20220926-1.1
+[   46s] [195/289] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   46s] [196/289] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   46s] [197/289] preinstalled sed-4.9-2.1
+[   46s] [198/289] preinstalled shadow-4.13-3.1
+[   46s] [199/289] preinstalled system-group-hardware-20170617-24.1
+[   46s] [200/289] preinstalled system-user-root-20190513-2.1
+[   46s] [201/289] preinstalled systemd-rpm-macros-19-1.1
+[   46s] [202/289] preinstalled sysuser-shadow-3.1-5.1
+[   46s] [203/289] preinstalled tar-1.34-9.1
+[   46s] [204/289] preinstalled terminfo-base-6.4.20230128-5.1
+[   46s] [205/289] preinstalled update-alternatives-1.21.8-1.1
+[   46s] [206/289] preinstalled util-linux-2.38.1-7.1
+[   46s] [207/289] preinstalled which-2.21-5.1
+[   46s] [208/289] cumulate xkeyboard-config-2.38-1.1
+[   46s] [209/289] preinstalled xz-5.4.1-1.1
+[   46s] [210/289] cumulate alts-1.2+3.b848aad-3.1
+[   46s] [211/289] cumulate libLLVM15-15.0.7-1.1
+[   46s] [212/289] cumulate libX11-xcb1-1.8.1-4.1
+[   46s] [213/289] cumulate libbrotlidec1-1.0.9-1.1
+[   46s] [214/289] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   46s] [215/289] cumulate libdrm_nouveau2-2.4.115-2.1
+[   46s] [216/289] cumulate libdrm_radeon1-2.4.115-2.1
+[   46s] [217/289] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   46s] [218/289] cumulate libgobject-2_0-0-2.74.5-1.1
+[   46s] [219/289] cumulate libxcb1-1.15-2.1
+[   46s] [220/289] cumulate libxkbcommon0-1.5.0-1.1
+[   46s] [221/289] cumulate perl-Types-Serialiser-1.01-1.5
+[   46s] [222/289] cumulate python310-importlib-metadata-6.0.0-1.2
+[   46s] [223/289] cumulate python310-python-xlib-0.31-2.3
+[   46s] [224/289] cumulate python311-importlib-metadata-6.0.0-1.2
+[   46s] [225/289] cumulate python311-python-xlib-0.31-2.3
+[   46s] [226/289] cumulate python38-importlib-metadata-6.0.0-1.2
+[   46s] [227/289] cumulate python38-python-xlib-0.31-2.3
+[   46s] [228/289] cumulate python39-importlib-metadata-6.0.0-1.2
+[   46s] [229/289] cumulate python39-python-xlib-0.31-2.3
+[   46s] [230/289] cumulate libdbus-1-3-1.14.6-1.1
+[   46s] [231/289] cumulate libgbm1-22.3.5-350.1
+[   46s] [232/289] cumulate libthai0-0.1.29-1.1
+[   46s] [233/289] cumulate shared-mime-info-2.2-1.1
+[   46s] [234/289] cumulate libxcb-dri2-0-1.15-2.1
+[   46s] [235/289] cumulate libxcb-dri3-0-1.15-2.1
+[   46s] [236/289] cumulate libxcb-glx0-1.15-2.1
+[   47s] [237/289] cumulate libxcb-icccm4-0.4.2-1.1
+[   47s] [238/289] cumulate libxcb-keysyms1-0.4.1-1.1
+[   47s] [239/289] cumulate libxcb-present0-1.15-2.1
+[   47s] [240/289] cumulate libxcb-randr0-1.15-2.1
+[   47s] [241/289] cumulate libxcb-render0-1.15-2.1
+[   47s] [242/289] cumulate libxcb-shape0-1.15-2.1
+[   47s] [243/289] cumulate libxcb-shm0-1.15-2.1
+[   47s] [244/289] cumulate libxcb-sync1-1.15-2.1
+[   47s] [245/289] cumulate libxcb-util1-0.4.1-1.1
+[   47s] [246/289] cumulate libxcb-xfixes0-1.15-2.1
+[   47s] [247/289] cumulate libxcb-xinerama0-1.15-2.1
+[   47s] [248/289] cumulate libxcb-xkb1-1.15-2.1
+[   47s] [249/289] cumulate libX11-6-1.8.1-4.1
+[   47s] [250/289] cumulate libfreetype6-2.12.1-4.1
+[   47s] [251/289] cumulate perl-JSON-XS-4.03-1.6
+[   47s] [252/289] cumulate python310-pytest-7.2.0-2.2
+[   47s] [253/289] cumulate python311-pytest-7.2.0-2.2
+[   47s] [254/289] cumulate python38-pytest-7.2.0-2.2
+[   47s] [255/289] cumulate python39-pytest-7.2.0-2.2
+[   47s] [256/289] cumulate libXext6-1.3.5-1.1
+[   47s] [257/289] cumulate libXfixes3-6.0.0-2.1
+[   47s] [258/289] cumulate libXmuu1-1.1.4-1.1
+[   47s] [259/289] cumulate libXrender1-0.9.11-1.1
+[   47s] [260/289] cumulate libXfont2-2-2.0.6-1.1
+[   47s] [261/289] cumulate libxcb-render-util0-0.3.10-1.1
+[   47s] [262/289] cumulate libxcb-xrm0-1.3-1.1
+[   47s] [263/289] cumulate libxkbfile1-1.1.2-1.1
+[   47s] [264/289] cumulate perl-AnyEvent-I3-0.17-1.9
+[   47s] [265/289] cumulate libharfbuzz0-7.0.0-1.1
+[   47s] [266/289] cumulate libstartup-notification-1-0-0.12-16.2
+[   47s] [267/289] cumulate libxcb-image0-0.4.1-1.1
+[   47s] [268/289] cumulate libxkbcommon-x11-0-1.5.0-1.1
+[   47s] [269/289] cumulate libXxf86vm1-1.1.5-1.1
+[   47s] [270/289] cumulate xkbcomp-1.4.6-1.1
+[   47s] [271/289] cumulate libxcb-cursor0-0.1.4-1.1
+[   47s] [272/289] cumulate xauth-1.1.2-1.3
+[   47s] [273/289] cumulate libfontconfig1-2.14.2-1.1
+[   47s] [274/289] cumulate libglvnd-1.6.0-1.1
+[   47s] [275/289] cumulate libgio-2_0-0-2.74.5-1.1
+[   47s] [276/289] cumulate gio-branding-upstream-2.74.5-1.1
+[   47s] [277/289] cumulate fontconfig-2.14.2-1.1
+[   47s] [278/289] cumulate Mesa-22.3.5-350.1
+[   47s] [279/289] cumulate glib2-tools-2.74.5-1.1
+[   47s] [280/289] cumulate libXft2-2.3.7-1.1
+[   47s] [281/289] cumulate libcairo2-1.17.6-1.1
+[   47s] [282/289] cumulate Mesa-libEGL1-22.3.5-350.1
+[   47s] [283/289] cumulate Mesa-libGL1-22.3.5-350.1
+[   47s] [284/289] cumulate Mesa-dri-22.3.5-350.1
+[   47s] [285/289] cumulate xorg-x11-server-Xvfb-21.1.7-1.1
+[   47s] [286/289] cumulate libpango-1_0-0-1.50.12-1.1
+[   47s] [287/289] cumulate xorg-x11-server-21.1.7-1.1
+[   47s] [288/289] cumulate i3-4.22-1.1
+[   47s] [289/289] cumulate xvfb-run-1.5.2-7.1
+[   47s] now installing cumulated packages
+[   47s] Preparing...                          ########################################
+[   47s] Updating / installing...
+[   48s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   48s] libdrm2-2.4.115-2.1                   ########################################
+[   48s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   48s] xkeyboard-config-2.38-1.1             ########################################
+[   49s] libXau6-1.0.11-1.1                    ########################################
+[   49s] libxcb1-1.15-2.1                      ########################################
+[   49s] libxcb-util1-0.4.1-1.1                ########################################
+[   49s] libxcb-randr0-1.15-2.1                ########################################
+[   49s] libxcb-render0-1.15-2.1               ########################################
+[   49s] libxcb-shm0-1.15-2.1                  ########################################
+[   49s] libxshmfence1-1.3.2-1.1               ########################################
+[   49s] libsystemd0-mini-252.5-1.1            ########################################
+[   49s] libpixman-1-0-0.42.2-1.1              ########################################
+[   49s] Mesa-libglapi0-22.3.5-350.1           ########################################
+[   50s] libxcb-dri2-0-1.15-2.1                ########################################
+[   50s] libxcb-dri3-0-1.15-2.1                ########################################
+[   50s] libxcb-present0-1.15-2.1              ########################################
+[   50s] libxcb-sync1-1.15-2.1                 ########################################
+[   50s] libxcb-xfixes0-1.15-2.1               ########################################
+[   50s] libxcb-xkb1-1.15-2.1                  ########################################
+[   50s] libxkbcommon0-1.5.0-1.1               ########################################
+[   50s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   50s] perl-common-sense-3.75-1.6            ########################################
+[   50s] libwayland-server0-1.21.0-4.2         ########################################
+[   50s] libgbm1-22.3.5-350.1                  ########################################
+[   50s] libpng16-16-1.6.39-2.1                ########################################
+[   51s] libXdmcp6-1.1.4-1.1                   ########################################
+[   51s] libX11-data-1.8.1-4.1                 ########################################
+[   51s] libX11-6-1.8.1-4.1                    ########################################
+[   51s] libXext6-1.3.5-1.1                    ########################################
+[   51s] libXrender1-0.9.11-1.1                ########################################
+[   51s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   51s] libstartup-notification-1-0-0.12-16.2 ########################################
+[   51s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   52s] libXfixes3-6.0.0-2.1                  ########################################
+[   52s] libXmuu1-1.1.4-1.1                    ########################################
+[   52s] xauth-1.1.2-1.3                       ########################################
+[   52s] libxkbfile1-1.1.2-1.1                 ########################################
+[   52s] xkbcomp-1.4.6-1.1                     ########################################
+[   52s] perl-Types-Serialiser-1.01-1.5        ########################################
+[   52s] perl-JSON-XS-4.03-1.6                 ########################################
+[   52s] perl-AnyEvent-7.17-1.7                ########################################
+[   52s] perl-AnyEvent-I3-0.17-1.9             ########################################
+[   52s] libxkbcommon-x11-0-1.5.0-1.1          ########################################
+[   52s] libxcb-image0-0.4.1-1.1               ########################################
+[   52s] libxcb-render-util0-0.3.10-1.1        ########################################
+[   52s] libxcb-cursor0-0.1.4-1.1              ########################################
+[   52s] libxcb-xrm0-1.3-1.1                   ########################################
+[   53s] libxcb-glx0-1.15-2.1                  ########################################
+[   53s] libxcb-icccm4-0.4.2-1.1               ########################################
+[   53s] libxcb-keysyms1-0.4.1-1.1             ########################################
+[   53s] libxcb-shape0-1.15-2.1                ########################################
+[   53s] libxcb-xinerama0-1.15-2.1             ########################################
+[   53s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   53s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   53s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   53s] python39-zipp-3.8.1-1.2               ########################################
+[   53s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   53s] python39-tomli-2.0.1-1.3              ########################################
+[   53s] python39-six-1.16.0-2.5               ########################################
+[   53s] python39-pluggy-1.0.0-1.5             ########################################
+[   54s] python39-packaging-23.0-1.2           ########################################
+[   54s] python39-iniconfig-1.1.1-3.2          ########################################
+[   54s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   54s] python39-attrs-22.2.0-1.2             ########################################
+[   54s] python38-zipp-3.8.1-1.2               ########################################
+[   54s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   54s] python38-tomli-2.0.1-1.3              ########################################
+[   54s] python38-six-1.16.0-2.5               ########################################
+[   54s] python38-pluggy-1.0.0-1.5             ########################################
+[   54s] python38-packaging-23.0-1.2           ########################################
+[   54s] python38-iniconfig-1.1.1-3.2          ########################################
+[   54s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   54s] python38-attrs-22.2.0-1.2             ########################################
+[   54s] python311-zipp-3.8.1-1.2              ########################################
+[   54s] python311-importlib-metadata-6.0.0-1.2########################################
+[   54s] python311-tomli-2.0.1-1.3             ########################################
+[   54s] python311-six-1.16.0-2.5              ########################################
+[   54s] python311-pluggy-1.0.0-1.5            ########################################
+[   54s] python311-packaging-23.0-1.2          ########################################
+[   54s] python311-iniconfig-1.1.1-3.2         ########################################
+[   54s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   54s] python311-attrs-22.2.0-1.2            ########################################
+[   54s] python310-zipp-3.8.1-1.2              ########################################
+[   54s] python310-importlib-metadata-6.0.0-1.2########################################
+[   54s] python310-tomli-2.0.1-1.3             ########################################
+[   55s] python310-six-1.16.0-2.5              ########################################
+[   55s] python310-pluggy-1.0.0-1.5            ########################################
+[   55s] python310-iniconfig-1.1.1-3.2         ########################################
+[   55s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   55s] python310-attrs-22.2.0-1.2            ########################################
+[   55s] libyajl2-2.1.0-6.1                    ########################################
+[   55s] libxml2-2-2.10.3-3.1                  ########################################
+[   55s] shared-mime-info-2.2-1.1              ########################################
+[   65s] gio-branding-upstream-2.74.5-1.1      ########################################
+[   65s] libgio-2_0-0-2.74.5-1.1               ########################################
+[   66s] glib2-tools-2.74.5-1.1                ########################################
+[   66s] No schema files found: doing nothing.
+[   66s] libxcvt0-0.1.2-1.1                    ########################################
+[   66s] libwayland-client0-1.21.0-4.2         ########################################
+[   66s] libudev-mini1-252.5-1.1               ########################################
+[   66s] libthai-data-0.1.29-1.1               ########################################
+[   66s] libpciaccess0-0.17-1.1                ########################################
+[   66s] libgraphite2-3-1.3.14-3.1             ########################################
+[   66s] libfribidi0-1.0.12-1.1                ########################################
+[   66s] libfontenc1-1.1.7-1.1                 ########################################
+[   67s] libev4-4.33-1.2                       ########################################
+[   67s] libepoxy0-1.5.10-2.1                  ########################################
+[   67s] libedit0-20210910.3.1-1.1             ########################################
+[   80s] libLLVM15-15.0.7-1.1                  ########################################
+[   80s] Mesa-libEGL1-22.3.5-350.1             ########################################
+[   80s] libglvnd-1.6.0-1.1                    ########################################
+[   81s] Mesa-libGL1-22.3.5-350.1              ########################################
+[   81s] Mesa-22.3.5-350.1                     ########################################
+[   84s] Mesa-dri-22.3.5-350.1                 ########################################
+[   84s] libdatrie1-0.2.13-1.1                 ########################################
+[   84s] libthai0-0.1.29-1.1                   ########################################
+[   84s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   84s] libbrotlidec1-1.0.9-1.1               ########################################
+[   84s] libfreetype6-2.12.1-4.1               ########################################
+[   84s] libfontconfig1-2.14.2-1.1             ########################################
+[   84s] fontconfig-2.14.2-1.1                 ########################################
+[   85s] libcairo2-1.17.6-1.1                  ########################################
+[   85s] libXfont2-2-2.0.6-1.1                 ########################################
+[   85s] xorg-x11-server-Xvfb-21.1.7-1.1       ########################################
+[   85s] libXft2-2.3.7-1.1                     ########################################
+[   86s] libharfbuzz0-7.0.0-1.1                ########################################
+[   86s] libpango-1_0-0-1.50.12-1.1            ########################################
+[   86s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   86s] alts-1.2+3.b848aad-3.1                ########################################
+[   86s] dbus-1-common-1.14.6-1.1              ########################################
+[   86s] libdbus-1-3-1.14.6-1.1                ########################################
+[   87s] xorg-x11-server-21.1.7-1.1            ########################################
+[   87s] Updating /etc/sysconfig/displaymanager ...
+[   88s] update-alternatives: using /usr/lib64/xorg/modules/extensions/xorg/xorg-libglx.so to provide /usr/lib64/xorg/modules/extensions/libglx.so (libglx.so) in auto mode
+[   88s] i3-4.22-1.1                           ########################################
+[   88s] xvfb-run-1.5.2-7.1                    ########################################
+[   89s] python310-pytest-7.2.0-2.2            ########################################
+[   90s] python311-pytest-7.2.0-2.2            ########################################
+[   91s] python38-pytest-7.2.0-2.2             ########################################
+[   92s] python39-pytest-7.2.0-2.2             ########################################
+[   92s] python310-python-xlib-0.31-2.3        ########################################
+[   93s] python311-python-xlib-0.31-2.3        ########################################
+[   93s] python38-python-xlib-0.31-2.3         ########################################
+[   93s] python39-python-xlib-0.31-2.3         ########################################
+[   93s] fdupes-2.2.1-1.1                      ########################################
+[  104s] now finalizing build dir...
+[  104s] ... running 01-add_abuild_user_to_trusted_group
+[  105s] ... running 02-set_timezone_to_utc
+[  105s] ... running 03-set-permissions-secure
+[  105s] ... running 11-hack_uname_version_to_kernel_version
+[  117s] -----------------------------------------------------------------
+[  117s] I have the following modifications for python-i3ipc.spec:
+[  117s] 24c24
+[  117s] < Release:        0
+[  117s] ---
+[  117s] > Release:        4.3
+[  129s] build target is riscv64-suse-linux
+[  129s] -----------------------------------------------------------------
+[  129s] ----- building python-i3ipc.spec (user abuild)
+[  129s] -----------------------------------------------------------------
+[  129s] -----------------------------------------------------------------
+[  134s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/de047bd78567f14c2014562459aae2cf-python-i3ipc' /home/abuild/rpmbuild/SOURCES/python-i3ipc.spec
+[  151s] Building target platforms: riscv64-suse-linux
+[  151s] Building for target riscv64-suse-linux
+[  151s] setting SOURCE_DATE_EPOCH=1646352000
+[  152s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.bQOCV9
+[  152s] + umask 022
+[  152s] + cd /home/abuild/rpmbuild/BUILD
+[  152s] + cd /home/abuild/rpmbuild/BUILD
+[  152s] + rm -rf i3ipc-python-2.2.1
+[  152s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/i3ipc-2.2.1.tar.gz
+[  153s] + STATUS=0
+[  153s] + '[' 0 -ne 0 ']'
+[  153s] + cd i3ipc-python-2.2.1
+[  153s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  153s] + sed -i 's/'\''enum-compat'\''//' setup.py
+[  153s] + sed -i '/^#!\/usr\/bin\/env.*/d' examples/app-on-ws-init.py examples/asyncio-i3status-wrapper.py examples/command-on-exit.py examples/disable-standby-fs.py examples/floating-mode.py examples/focus-last.py examples/focus-next-visible.py examples/focused-windows.py examples/i3-cmd.py examples/i3-container-commander.py examples/i3-cycle-focus.py examples/i3-debug-console.py examples/ipc-trace.py examples/nth_window_in_workspace.py examples/open-floating-on-ws.py examples/stop-application-on-unfocus.py examples/tiling-indicator.py examples/workspace-new.py examples/workspace_renumber.py examples/i3-focus/focus-app.py examples/i3-focus/focus-current-app-window.py examples/i3-focus/focus-window.py examples/i3-focus/history-server.py
+[  153s] + find examples/ -name '*.py' -exec chmod -x '{}' ';'
+[  156s] + RPM_EC=0
+[  156s] ++ jobs -p
+[  156s] + exit 0
+[  156s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.XTQHtd
+[  156s] + umask 022
+[  156s] + cd /home/abuild/rpmbuild/BUILD
+[  156s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64
+[  156s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64
+[  156s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  156s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64
+[  156s] + cd i3ipc-python-2.2.1
+[  156s] + ref=/usr/lib/rpm
+[  156s] + mints=0
+[  156s] + case $(uname -m) in
+[  156s] ++ uname -m
+[  157s] + mints=20160911
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.guess
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.sub
+[  157s] ++ '[' -f _current_flavor ']'
+[  157s] ++ true
+[  157s] + last_flavor=
+[  157s] + '[' -z '' ']'
+[  157s] + last_flavor=tmp
+[  157s] + '[' tmp '!=' python38 ']'
+[  157s] + '[' -d build ']'
+[  157s] + '[' -d _build.python38 ']'
+[  157s] + echo python38
+[  157s] + python_flavor=python38
+[  157s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  165s] running build
+[  165s] running build_py
+[  165s] creating build
+[  165s] creating build/lib
+[  165s] creating build/lib/i3ipc
+[  165s] copying i3ipc/__init__.py -> build/lib/i3ipc
+[  165s] copying i3ipc/__version__.py -> build/lib/i3ipc
+[  165s] copying i3ipc/con.py -> build/lib/i3ipc
+[  165s] copying i3ipc/connection.py -> build/lib/i3ipc
+[  165s] copying i3ipc/events.py -> build/lib/i3ipc
+[  165s] copying i3ipc/model.py -> build/lib/i3ipc
+[  165s] copying i3ipc/replies.py -> build/lib/i3ipc
+[  165s] creating build/lib/i3ipc/_private
+[  165s] copying i3ipc/_private/__init__.py -> build/lib/i3ipc/_private
+[  165s] copying i3ipc/_private/pubsub.py -> build/lib/i3ipc/_private
+[  165s] copying i3ipc/_private/sync.py -> build/lib/i3ipc/_private
+[  165s] copying i3ipc/_private/types.py -> build/lib/i3ipc/_private
+[  165s] creating build/lib/i3ipc/aio
+[  165s] copying i3ipc/aio/__init__.py -> build/lib/i3ipc/aio
+[  165s] copying i3ipc/aio/connection.py -> build/lib/i3ipc/aio
+[  165s] running egg_info
+[  165s] creating i3ipc.egg-info
+[  165s] writing i3ipc.egg-info/PKG-INFO
+[  165s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  165s] writing requirements to i3ipc.egg-info/requires.txt
+[  165s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  165s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  165s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  165s] reading manifest template 'MANIFEST.in'
+[  166s] adding license file 'LICENSE'
+[  166s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  166s] ++ '[' -f _current_flavor ']'
+[  166s] ++ cat _current_flavor
+[  166s] + last_flavor=python38
+[  166s] + '[' -z python38 ']'
+[  166s] + '[' python38 '!=' python39 ']'
+[  166s] + '[' -d build ']'
+[  166s] + mv build _build.python38
+[  166s] + '[' -d _build.python39 ']'
+[  166s] + echo python39
+[  166s] + python_flavor=python39
+[  166s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  175s] running build
+[  175s] running build_py
+[  175s] creating build
+[  175s] creating build/lib
+[  175s] creating build/lib/i3ipc
+[  175s] copying i3ipc/__init__.py -> build/lib/i3ipc
+[  175s] copying i3ipc/__version__.py -> build/lib/i3ipc
+[  175s] copying i3ipc/con.py -> build/lib/i3ipc
+[  175s] copying i3ipc/connection.py -> build/lib/i3ipc
+[  175s] copying i3ipc/events.py -> build/lib/i3ipc
+[  175s] copying i3ipc/model.py -> build/lib/i3ipc
+[  175s] copying i3ipc/replies.py -> build/lib/i3ipc
+[  175s] creating build/lib/i3ipc/_private
+[  175s] copying i3ipc/_private/__init__.py -> build/lib/i3ipc/_private
+[  175s] copying i3ipc/_private/pubsub.py -> build/lib/i3ipc/_private
+[  175s] copying i3ipc/_private/sync.py -> build/lib/i3ipc/_private
+[  175s] copying i3ipc/_private/types.py -> build/lib/i3ipc/_private
+[  175s] creating build/lib/i3ipc/aio
+[  175s] copying i3ipc/aio/__init__.py -> build/lib/i3ipc/aio
+[  175s] copying i3ipc/aio/connection.py -> build/lib/i3ipc/aio
+[  175s] running egg_info
+[  175s] writing i3ipc.egg-info/PKG-INFO
+[  175s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  175s] writing requirements to i3ipc.egg-info/requires.txt
+[  175s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  175s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  175s] reading manifest template 'MANIFEST.in'
+[  175s] adding license file 'LICENSE'
+[  175s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  176s] ++ '[' -f _current_flavor ']'
+[  176s] ++ cat _current_flavor
+[  176s] + last_flavor=python39
+[  176s] + '[' -z python39 ']'
+[  176s] + '[' python39 '!=' python311 ']'
+[  176s] + '[' -d build ']'
+[  176s] + mv build _build.python39
+[  176s] + '[' -d _build.python311 ']'
+[  176s] + echo python311
+[  176s] + python_flavor=python311
+[  176s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  182s] running build
+[  182s] running build_py
+[  182s] creating build
+[  182s] creating build/lib
+[  182s] creating build/lib/i3ipc
+[  182s] copying i3ipc/__init__.py -> build/lib/i3ipc
+[  182s] copying i3ipc/__version__.py -> build/lib/i3ipc
+[  182s] copying i3ipc/con.py -> build/lib/i3ipc
+[  182s] copying i3ipc/connection.py -> build/lib/i3ipc
+[  182s] copying i3ipc/events.py -> build/lib/i3ipc
+[  182s] copying i3ipc/model.py -> build/lib/i3ipc
+[  182s] copying i3ipc/replies.py -> build/lib/i3ipc
+[  182s] creating build/lib/i3ipc/_private
+[  182s] copying i3ipc/_private/__init__.py -> build/lib/i3ipc/_private
+[  182s] copying i3ipc/_private/pubsub.py -> build/lib/i3ipc/_private
+[  182s] copying i3ipc/_private/sync.py -> build/lib/i3ipc/_private
+[  182s] copying i3ipc/_private/types.py -> build/lib/i3ipc/_private
+[  182s] creating build/lib/i3ipc/aio
+[  182s] copying i3ipc/aio/__init__.py -> build/lib/i3ipc/aio
+[  182s] copying i3ipc/aio/connection.py -> build/lib/i3ipc/aio
+[  182s] running egg_info
+[  182s] writing i3ipc.egg-info/PKG-INFO
+[  182s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  182s] writing requirements to i3ipc.egg-info/requires.txt
+[  182s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  182s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  182s] reading manifest template 'MANIFEST.in'
+[  183s] adding license file 'LICENSE'
+[  183s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  183s] ++ '[' -f _current_flavor ']'
+[  183s] ++ cat _current_flavor
+[  183s] + last_flavor=python311
+[  183s] + '[' -z python311 ']'
+[  183s] + '[' python311 '!=' python310 ']'
+[  183s] + '[' -d build ']'
+[  183s] + mv build _build.python311
+[  183s] + '[' -d _build.python310 ']'
+[  183s] + echo python310
+[  183s] + python_flavor=python310
+[  183s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  188s] running build
+[  189s] running build_py
+[  189s] creating build
+[  189s] creating build/lib
+[  189s] creating build/lib/i3ipc
+[  189s] copying i3ipc/__init__.py -> build/lib/i3ipc
+[  189s] copying i3ipc/__version__.py -> build/lib/i3ipc
+[  189s] copying i3ipc/con.py -> build/lib/i3ipc
+[  189s] copying i3ipc/connection.py -> build/lib/i3ipc
+[  189s] copying i3ipc/events.py -> build/lib/i3ipc
+[  189s] copying i3ipc/model.py -> build/lib/i3ipc
+[  189s] copying i3ipc/replies.py -> build/lib/i3ipc
+[  189s] creating build/lib/i3ipc/_private
+[  189s] copying i3ipc/_private/__init__.py -> build/lib/i3ipc/_private
+[  189s] copying i3ipc/_private/pubsub.py -> build/lib/i3ipc/_private
+[  189s] copying i3ipc/_private/sync.py -> build/lib/i3ipc/_private
+[  189s] copying i3ipc/_private/types.py -> build/lib/i3ipc/_private
+[  189s] creating build/lib/i3ipc/aio
+[  189s] copying i3ipc/aio/__init__.py -> build/lib/i3ipc/aio
+[  189s] copying i3ipc/aio/connection.py -> build/lib/i3ipc/aio
+[  189s] running egg_info
+[  189s] writing i3ipc.egg-info/PKG-INFO
+[  189s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  189s] writing requirements to i3ipc.egg-info/requires.txt
+[  189s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  189s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  189s] reading manifest template 'MANIFEST.in'
+[  189s] adding license file 'LICENSE'
+[  189s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  189s] + RPM_EC=0
+[  189s] ++ jobs -p
+[  189s] + exit 0
+[  189s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.p3SipC
+[  190s] + umask 022
+[  190s] + cd /home/abuild/rpmbuild/BUILD
+[  190s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64
+[  190s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  190s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64
+[  190s] + cd i3ipc-python-2.2.1
+[  190s] ++ '[' -f _current_flavor ']'
+[  190s] ++ cat _current_flavor
+[  190s] + last_flavor=python310
+[  190s] + '[' -z python310 ']'
+[  190s] + '[' python310 '!=' python38 ']'
+[  190s] + '[' -d build ']'
+[  190s] + mv build _build.python310
+[  190s] + '[' -d _build.python38 ']'
+[  190s] + mv _build.python38 build
+[  190s] + echo python38
+[  190s] + python_flavor=python38
+[  190s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64 --prefix /usr
+[  195s] running install
+[  196s] running install_lib
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/__version__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/con.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/events.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/model.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] copying build/lib/i3ipc/replies.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private
+[  196s] copying build/lib/i3ipc/_private/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private
+[  196s] copying build/lib/i3ipc/_private/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private
+[  196s] copying build/lib/i3ipc/_private/sync.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private
+[  196s] copying build/lib/i3ipc/_private/types.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private
+[  196s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio
+[  196s] copying build/lib/i3ipc/aio/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio
+[  196s] copying build/lib/i3ipc/aio/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__init__.py to __init__.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__version__.py to __version__.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/con.py to con.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/connection.py to connection.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/events.py to events.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/model.py to model.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/replies.py to replies.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__init__.py to __init__.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/pubsub.py to pubsub.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/sync.py to sync.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/types.py to types.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/__init__.py to __init__.cpython-38.pyc
+[  196s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/connection.py to connection.cpython-38.pyc
+[  196s] writing byte-compilation script '/tmp/tmp0th70bj1.py'
+[  196s] /usr/bin/python3.8 /tmp/tmp0th70bj1.py
+[  202s] removing /tmp/tmp0th70bj1.py
+[  202s] running install_egg_info
+[  202s] running egg_info
+[  202s] writing i3ipc.egg-info/PKG-INFO
+[  202s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  202s] writing requirements to i3ipc.egg-info/requires.txt
+[  202s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  202s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  202s] reading manifest template 'MANIFEST.in'
+[  202s] adding license file 'LICENSE'
+[  202s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  202s] Copying i3ipc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc-2.2.1-py3.8.egg-info
+[  202s] running install_scripts
+[  203s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  203s]   warnings.warn(
+[  203s] ++ '[' -f _current_flavor ']'
+[  203s] ++ cat _current_flavor
+[  203s] + last_flavor=python38
+[  203s] + '[' -z python38 ']'
+[  203s] + '[' python38 '!=' python39 ']'
+[  203s] + '[' -d build ']'
+[  203s] + mv build _build.python38
+[  203s] + '[' -d _build.python39 ']'
+[  203s] + mv _build.python39 build
+[  203s] + echo python39
+[  203s] + python_flavor=python39
+[  203s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64 --prefix /usr
+[  209s] running install
+[  209s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  209s]   warnings.warn(
+[  209s] running install_lib
+[  209s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9
+[  209s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages
+[  209s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/__version__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/con.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/events.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/model.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] copying build/lib/i3ipc/replies.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc
+[  209s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private
+[  209s] copying build/lib/i3ipc/_private/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private
+[  209s] copying build/lib/i3ipc/_private/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private
+[  209s] copying build/lib/i3ipc/_private/sync.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private
+[  209s] copying build/lib/i3ipc/_private/types.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private
+[  209s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio
+[  209s] copying build/lib/i3ipc/aio/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio
+[  209s] copying build/lib/i3ipc/aio/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__init__.py to __init__.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__version__.py to __version__.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/con.py to con.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/connection.py to connection.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/events.py to events.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/model.py to model.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/replies.py to replies.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__init__.py to __init__.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/pubsub.py to pubsub.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/sync.py to sync.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/types.py to types.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/__init__.py to __init__.cpython-39.pyc
+[  209s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/connection.py to connection.cpython-39.pyc
+[  210s] writing byte-compilation script '/tmp/tmpbb8egj5i.py'
+[  210s] /usr/bin/python3.9 /tmp/tmpbb8egj5i.py
+[  215s] removing /tmp/tmpbb8egj5i.py
+[  215s] running install_egg_info
+[  215s] running egg_info
+[  215s] writing i3ipc.egg-info/PKG-INFO
+[  215s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  215s] writing requirements to i3ipc.egg-info/requires.txt
+[  215s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  215s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  215s] reading manifest template 'MANIFEST.in'
+[  215s] adding license file 'LICENSE'
+[  215s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  215s] Copying i3ipc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc-2.2.1-py3.9.egg-info
+[  215s] running install_scripts
+[  216s] ++ '[' -f _current_flavor ']'
+[  216s] ++ cat _current_flavor
+[  216s] + last_flavor=python39
+[  216s] + '[' -z python39 ']'
+[  216s] + '[' python39 '!=' python311 ']'
+[  216s] + '[' -d build ']'
+[  216s] + mv build _build.python39
+[  216s] + '[' -d _build.python311 ']'
+[  216s] + mv _build.python311 build
+[  216s] + echo python311
+[  216s] + python_flavor=python311
+[  216s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64 --prefix /usr
+[  221s] running install
+[  221s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  221s]   warnings.warn(
+[  221s] running install_lib
+[  221s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11
+[  221s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages
+[  221s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/__version__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/con.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/events.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/model.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] copying build/lib/i3ipc/replies.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc
+[  221s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private
+[  221s] copying build/lib/i3ipc/_private/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private
+[  221s] copying build/lib/i3ipc/_private/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private
+[  221s] copying build/lib/i3ipc/_private/sync.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private
+[  221s] copying build/lib/i3ipc/_private/types.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private
+[  221s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio
+[  221s] copying build/lib/i3ipc/aio/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio
+[  221s] copying build/lib/i3ipc/aio/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__init__.py to __init__.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__version__.py to __version__.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/con.py to con.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/connection.py to connection.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/events.py to events.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/model.py to model.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/replies.py to replies.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__init__.py to __init__.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/pubsub.py to pubsub.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/sync.py to sync.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/types.py to types.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/__init__.py to __init__.cpython-311.pyc
+[  221s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/connection.py to connection.cpython-311.pyc
+[  222s] writing byte-compilation script '/tmp/tmpji18rfif.py'
+[  222s] /usr/bin/python3.11 /tmp/tmpji18rfif.py
+[  226s] removing /tmp/tmpji18rfif.py
+[  226s] running install_egg_info
+[  226s] running egg_info
+[  226s] writing i3ipc.egg-info/PKG-INFO
+[  226s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  226s] writing requirements to i3ipc.egg-info/requires.txt
+[  226s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  226s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  226s] reading manifest template 'MANIFEST.in'
+[  226s] adding license file 'LICENSE'
+[  226s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  226s] Copying i3ipc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc-2.2.1-py3.11.egg-info
+[  226s] running install_scripts
+[  227s] ++ '[' -f _current_flavor ']'
+[  227s] ++ cat _current_flavor
+[  227s] + last_flavor=python311
+[  227s] + '[' -z python311 ']'
+[  227s] + '[' python311 '!=' python310 ']'
+[  227s] + '[' -d build ']'
+[  227s] + mv build _build.python311
+[  227s] + '[' -d _build.python310 ']'
+[  227s] + mv _build.python310 build
+[  227s] + echo python310
+[  227s] + python_flavor=python310
+[  227s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64 --prefix /usr
+[  232s] running install
+[  232s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  232s]   warnings.warn(
+[  232s] running install_lib
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/__version__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/con.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/events.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/model.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] copying build/lib/i3ipc/replies.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private
+[  232s] copying build/lib/i3ipc/_private/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private
+[  232s] copying build/lib/i3ipc/_private/pubsub.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private
+[  232s] copying build/lib/i3ipc/_private/sync.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private
+[  232s] copying build/lib/i3ipc/_private/types.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio
+[  232s] copying build/lib/i3ipc/aio/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio
+[  232s] copying build/lib/i3ipc/aio/connection.py -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__init__.py to __init__.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__version__.py to __version__.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/con.py to con.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/connection.py to connection.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/events.py to events.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/model.py to model.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/replies.py to replies.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__init__.py to __init__.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/pubsub.py to pubsub.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/sync.py to sync.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/types.py to types.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/__init__.py to __init__.cpython-310.pyc
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/connection.py to connection.cpython-310.pyc
+[  232s] writing byte-compilation script '/tmp/tmp0n2negyx.py'
+[  232s] /usr/bin/python3.10 /tmp/tmp0n2negyx.py
+[  236s] removing /tmp/tmp0n2negyx.py
+[  236s] running install_egg_info
+[  237s] running egg_info
+[  237s] writing i3ipc.egg-info/PKG-INFO
+[  237s] writing dependency_links to i3ipc.egg-info/dependency_links.txt
+[  237s] writing requirements to i3ipc.egg-info/requires.txt
+[  237s] writing top-level names to i3ipc.egg-info/top_level.txt
+[  237s] reading manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  237s] reading manifest template 'MANIFEST.in'
+[  237s] adding license file 'LICENSE'
+[  237s] writing manifest file 'i3ipc.egg-info/SOURCES.txt'
+[  237s] Copying i3ipc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc-2.2.1-py3.10.egg-info
+[  237s] running install_scripts
+[  238s] ++ '[' -f _current_flavor ']'
+[  238s] ++ cat _current_flavor
+[  238s] + last_flavor=python310
+[  238s] + '[' -z python310 ']'
+[  238s] + '[' python310 '!=' python38 ']'
+[  238s] + '[' -d build ']'
+[  238s] + mv build _build.python310
+[  238s] + '[' -d _build.python38 ']'
+[  238s] + mv _build.python38 build
+[  238s] + echo python38
+[  238s] + python_flavor=python38
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/replies.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/replies.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/model.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/model.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/events.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/events.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/con.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/con.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/connection.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/connection.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/__pycache__/__init__.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/__pycache__/__init__.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/__pycache__/connection.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/aio/__pycache__/connection.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/types.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/types.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/sync.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/sync.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-38.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages/i3ipc/_private/__pycache__/__init__.cpython-38.pyc
+[  238s] ++ '[' -f _current_flavor ']'
+[  238s] ++ cat _current_flavor
+[  238s] + last_flavor=python38
+[  238s] + '[' -z python38 ']'
+[  238s] + '[' python38 '!=' python39 ']'
+[  238s] + '[' -d build ']'
+[  238s] + mv build _build.python38
+[  238s] + '[' -d _build.python39 ']'
+[  238s] + mv _build.python39 build
+[  238s] + echo python39
+[  238s] + python_flavor=python39
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/replies.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/replies.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/model.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/model.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/events.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/events.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/con.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/con.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/connection.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/connection.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/__pycache__/__init__.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/__pycache__/__init__.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/__pycache__/connection.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/aio/__pycache__/connection.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/types.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/types.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/sync.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/sync.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-39.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages/i3ipc/_private/__pycache__/__init__.cpython-39.pyc
+[  239s] ++ '[' -f _current_flavor ']'
+[  239s] ++ cat _current_flavor
+[  239s] + last_flavor=python39
+[  239s] + '[' -z python39 ']'
+[  239s] + '[' python39 '!=' python311 ']'
+[  239s] + '[' -d build ']'
+[  239s] + mv build _build.python39
+[  239s] + '[' -d _build.python311 ']'
+[  239s] + mv _build.python311 build
+[  239s] + echo python311
+[  239s] + python_flavor=python311
+[  239s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/replies.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/replies.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/model.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/model.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/events.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/events.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/connection.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/connection.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/con.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/con.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/__version__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/__version__.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/__pycache__/__init__.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/__pycache__/connection.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/__pycache__/connection.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/aio/__pycache__/__init__.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/types.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/types.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/sync.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/sync.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-311.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages/i3ipc/_private/__pycache__/__init__.cpython-311.pyc
+[  239s] ++ '[' -f _current_flavor ']'
+[  239s] ++ cat _current_flavor
+[  239s] + last_flavor=python311
+[  239s] + '[' -z python311 ']'
+[  239s] + '[' python311 '!=' python310 ']'
+[  239s] + '[' -d build ']'
+[  239s] + mv build _build.python311
+[  239s] + '[' -d _build.python310 ']'
+[  239s] + mv _build.python310 build
+[  239s] + echo python310
+[  239s] + python_flavor=python310
+[  239s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/replies.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/replies.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/model.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/model.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/events.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/events.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/connection.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/connection.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/con.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/con.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/__pycache__/__init__.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/__pycache__/connection.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/__pycache__/connection.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/aio/__pycache__/__init__.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/types.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/types.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/sync.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/sync.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/pubsub.cpython-310.pyc
+[  239s] Linking /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages/i3ipc/_private/__pycache__/__init__.cpython-310.pyc
+[  239s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1
+[  240s] + /usr/lib/rpm/brp-compress
+[  240s] + /usr/lib/rpm/brp-suse
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  241s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  241s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  241s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  241s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  242s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.yzlwsJ
+[  242s] + umask 022
+[  242s] + cd /home/abuild/rpmbuild/BUILD
+[  242s] + cd i3ipc-python-2.2.1
+[  242s] ++ '[' -f _current_flavor ']'
+[  242s] ++ cat _current_flavor
+[  242s] + last_flavor=python310
+[  242s] + '[' -z python310 ']'
+[  242s] + '[' python310 '!=' python38 ']'
+[  242s] + '[' -d build ']'
+[  242s] + mv build _build.python310
+[  242s] + '[' -d _build.python38 ']'
+[  242s] + mv _build.python38 build
+[  242s] + echo python38
+[  242s] + python_flavor=python38
+[  242s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages
+[  242s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.8/site-packages
+[  242s] + xvfb-run --server-args '-screen 0 1920x1080x24' python3.8 -m pytest -k 'not (test_shutdown_event_reconnect or test_restart or test_window_event or test_detailed_window_event)'
+[  254s] ============================= test session starts ==============================
+[  254s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0
+[  254s] rootdir: /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1, configfile: pytest.ini
+[  254s] collected 26 items / 8 deselected / 18 selected
+[  254s] 
+[  255s] test/test_event_exceptions.py .                                          [  5%]
+[  256s] test/test_get_bindings_modes.py .                                        [ 11%]
+[  257s] test/test_get_config.py .                                                [ 16%]
+[  258s] test/test_get_marks.py .                                                 [ 22%]
+[  260s] test/test_leaves.py .                                                    [ 27%]
+[  261s] test/test_ticks.py .                                                     [ 33%]
+[  263s] test/test_window.py .                                                    [ 38%]
+[  263s] test/aio/test_event_exceptions.py s                                      [ 44%]
+[  263s] test/aio/test_get_bindings_modes.py s                                    [ 50%]
+[  263s] test/aio/test_get_config.py s                                            [ 55%]
+[  263s] test/aio/test_get_marks.py s                                             [ 61%]
+[  263s] test/aio/test_leaves.py s                                                [ 66%]
+[  263s] test/aio/test_output.py s                                                [ 72%]
+[  263s] test/aio/test_requests.py s                                              [ 77%]
+[  263s] test/aio/test_scratchpad.py s                                            [ 83%]
+[  263s] test/aio/test_ticks.py s                                                 [ 88%]
+[  263s] test/aio/test_window.py s                                                [ 94%]
+[  263s] test/aio/test_workspace.py s                                             [100%]
+[  263s] 
+[  263s] =============================== warnings summary ===============================
+[  263s] ../../../../../usr/lib/python3.8/site-packages/_pytest/config/__init__.py:1294
+[  263s]   /usr/lib/python3.8/site-packages/_pytest/config/__init__.py:1294: PytestConfigWarning: Unknown config option: timeout
+[  263s]   
+[  263s]     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+[  263s] 
+[  263s] test/aio/test_event_exceptions.py:15
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_event_exceptions.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_get_bindings_modes.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_bindings_modes.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_get_config.py:9
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_config.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_get_marks.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_marks.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_leaves.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_leaves.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_output.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_output.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_requests.py:11
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_requests.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_restart.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_restart.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_scratchpad.py:7
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_scratchpad.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_shutdown_event.py:21
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_shutdown_event.py:21: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_ticks.py:15
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_ticks.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_window.py:9
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_window.py:29
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_window.py:68
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:68: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_workspace.py:17
+[  263s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_workspace.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  263s]     @pytest.mark.asyncio
+[  263s] 
+[  263s] test/aio/test_event_exceptions.py: 1 warning
+[  263s] test/aio/test_get_bindings_modes.py: 1 warning
+[  263s] test/aio/test_get_config.py: 1 warning
+[  263s] test/aio/test_get_marks.py: 1 warning
+[  263s] test/aio/test_leaves.py: 1 warning
+[  263s] test/aio/test_output.py: 1 warning
+[  263s] test/aio/test_requests.py: 1 warning
+[  263s] test/aio/test_scratchpad.py: 1 warning
+[  263s] test/aio/test_ticks.py: 1 warning
+[  263s] test/aio/test_window.py: 1 warning
+[  263s] test/aio/test_workspace.py: 1 warning
+[  263s]   /usr/lib/python3.8/site-packages/_pytest/python.py:184: PytestUnhandledCoroutineWarning: async def functions are not natively supported and have been skipped.
+[  263s]   You need to install a suitable plugin for your async framework, for example:
+[  263s]     - anyio
+[  263s]     - pytest-asyncio
+[  263s]     - pytest-tornasync
+[  263s]     - pytest-trio
+[  263s]     - pytest-twisted
+[  263s]     warnings.warn(PytestUnhandledCoroutineWarning(msg.format(nodeid)))
+[  263s] 
+[  263s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  263s] ========== 7 passed, 11 skipped, 8 deselected, 27 warnings in 12.48s ===========
+[  263s] ++ '[' -f _current_flavor ']'
+[  263s] ++ cat _current_flavor
+[  263s] + last_flavor=python38
+[  263s] + '[' -z python38 ']'
+[  263s] + '[' python38 '!=' python39 ']'
+[  263s] + '[' -d build ']'
+[  263s] + mv build _build.python38
+[  264s] + '[' -d _build.python39 ']'
+[  264s] + mv _build.python39 build
+[  264s] + echo python39
+[  264s] + python_flavor=python39
+[  264s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages
+[  264s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.9/site-packages
+[  264s] + xvfb-run --server-args '-screen 0 1920x1080x24' python3.9 -m pytest -k 'not (test_shutdown_event_reconnect or test_restart or test_window_event or test_detailed_window_event)'
+[  276s] ============================= test session starts ==============================
+[  276s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0
+[  276s] rootdir: /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1, configfile: pytest.ini
+[  276s] collected 26 items / 8 deselected / 18 selected
+[  276s] 
+[  277s] test/test_event_exceptions.py .                                          [  5%]
+[  278s] test/test_get_bindings_modes.py .                                        [ 11%]
+[  279s] test/test_get_config.py .                                                [ 16%]
+[  280s] test/test_get_marks.py .                                                 [ 22%]
+[  282s] test/test_leaves.py .                                                    [ 27%]
+[  283s] test/test_ticks.py .                                                     [ 33%]
+[  284s] test/test_window.py .                                                    [ 38%]
+[  284s] test/aio/test_event_exceptions.py s                                      [ 44%]
+[  284s] test/aio/test_get_bindings_modes.py s                                    [ 50%]
+[  284s] test/aio/test_get_config.py s                                            [ 55%]
+[  284s] test/aio/test_get_marks.py s                                             [ 61%]
+[  284s] test/aio/test_leaves.py s                                                [ 66%]
+[  284s] test/aio/test_output.py s                                                [ 72%]
+[  284s] test/aio/test_requests.py s                                              [ 77%]
+[  284s] test/aio/test_scratchpad.py s                                            [ 83%]
+[  284s] test/aio/test_ticks.py s                                                 [ 88%]
+[  284s] test/aio/test_window.py s                                                [ 94%]
+[  284s] test/aio/test_workspace.py s                                             [100%]
+[  284s] 
+[  284s] =============================== warnings summary ===============================
+[  284s] ../../../../../usr/lib/python3.9/site-packages/_pytest/config/__init__.py:1294
+[  284s]   /usr/lib/python3.9/site-packages/_pytest/config/__init__.py:1294: PytestConfigWarning: Unknown config option: timeout
+[  284s]   
+[  284s]     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+[  284s] 
+[  284s] test/aio/test_event_exceptions.py:15
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_event_exceptions.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_get_bindings_modes.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_bindings_modes.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_get_config.py:9
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_config.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_get_marks.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_marks.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_leaves.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_leaves.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_output.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_output.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_requests.py:11
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_requests.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_restart.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_restart.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_scratchpad.py:7
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_scratchpad.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_shutdown_event.py:21
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_shutdown_event.py:21: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_ticks.py:15
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_ticks.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_window.py:9
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_window.py:29
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_window.py:68
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:68: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_workspace.py:17
+[  284s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_workspace.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  284s]     @pytest.mark.asyncio
+[  284s] 
+[  284s] test/aio/test_event_exceptions.py: 1 warning
+[  284s] test/aio/test_get_bindings_modes.py: 1 warning
+[  284s] test/aio/test_get_config.py: 1 warning
+[  284s] test/aio/test_get_marks.py: 1 warning
+[  284s] test/aio/test_leaves.py: 1 warning
+[  284s] test/aio/test_output.py: 1 warning
+[  284s] test/aio/test_requests.py: 1 warning
+[  284s] test/aio/test_scratchpad.py: 1 warning
+[  284s] test/aio/test_ticks.py: 1 warning
+[  284s] test/aio/test_window.py: 1 warning
+[  284s] test/aio/test_workspace.py: 1 warning
+[  284s]   /usr/lib/python3.9/site-packages/_pytest/python.py:184: PytestUnhandledCoroutineWarning: async def functions are not natively supported and have been skipped.
+[  284s]   You need to install a suitable plugin for your async framework, for example:
+[  284s]     - anyio
+[  284s]     - pytest-asyncio
+[  284s]     - pytest-tornasync
+[  284s]     - pytest-trio
+[  284s]     - pytest-twisted
+[  284s]     warnings.warn(PytestUnhandledCoroutineWarning(msg.format(nodeid)))
+[  284s] 
+[  284s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  284s] ========== 7 passed, 11 skipped, 8 deselected, 27 warnings in 12.30s ===========
+[  285s] ++ '[' -f _current_flavor ']'
+[  285s] ++ cat _current_flavor
+[  285s] + last_flavor=python39
+[  285s] + '[' -z python39 ']'
+[  285s] + '[' python39 '!=' python311 ']'
+[  285s] + '[' -d build ']'
+[  285s] + mv build _build.python39
+[  285s] + '[' -d _build.python311 ']'
+[  285s] + mv _build.python311 build
+[  285s] + echo python311
+[  285s] + python_flavor=python311
+[  285s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages
+[  285s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.11/site-packages
+[  285s] + xvfb-run --server-args '-screen 0 1920x1080x24' python3.11 -m pytest -k 'not (test_shutdown_event_reconnect or test_restart or test_window_event or test_detailed_window_event)'
+[  297s] ============================= test session starts ==============================
+[  297s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0
+[  297s] rootdir: /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1, configfile: pytest.ini
+[  297s] collected 26 items / 8 deselected / 18 selected
+[  297s] 
+[  298s] test/test_event_exceptions.py .                                          [  5%]
+[  299s] test/test_get_bindings_modes.py .                                        [ 11%]
+[  300s] test/test_get_config.py .                                                [ 16%]
+[  302s] test/test_get_marks.py .                                                 [ 22%]
+[  304s] test/test_leaves.py .                                                    [ 27%]
+[  305s] test/test_ticks.py .                                                     [ 33%]
+[  307s] test/test_window.py .                                                    [ 38%]
+[  307s] test/aio/test_event_exceptions.py s                                      [ 44%]
+[  307s] test/aio/test_get_bindings_modes.py s                                    [ 50%]
+[  307s] test/aio/test_get_config.py s                                            [ 55%]
+[  307s] test/aio/test_get_marks.py s                                             [ 61%]
+[  308s] test/aio/test_leaves.py s                                                [ 66%]
+[  308s] test/aio/test_output.py s                                                [ 72%]
+[  308s] test/aio/test_requests.py s                                              [ 77%]
+[  308s] test/aio/test_scratchpad.py s                                            [ 83%]
+[  308s] test/aio/test_ticks.py s                                                 [ 88%]
+[  308s] test/aio/test_window.py s                                                [ 94%]
+[  308s] test/aio/test_workspace.py s                                             [100%]
+[  308s] 
+[  308s] =============================== warnings summary ===============================
+[  308s] ../../../../../usr/lib/python3.11/site-packages/_pytest/config/__init__.py:1294
+[  308s]   /usr/lib/python3.11/site-packages/_pytest/config/__init__.py:1294: PytestConfigWarning: Unknown config option: timeout
+[  308s]   
+[  308s]     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+[  308s] 
+[  308s] test/aio/test_event_exceptions.py:15
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_event_exceptions.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_get_bindings_modes.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_bindings_modes.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_get_config.py:9
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_config.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_get_marks.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_marks.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_leaves.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_leaves.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_output.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_output.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_requests.py:11
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_requests.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_restart.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_restart.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_scratchpad.py:7
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_scratchpad.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_shutdown_event.py:21
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_shutdown_event.py:21: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_ticks.py:15
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_ticks.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_window.py:9
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_window.py:29
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_window.py:68
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:68: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_workspace.py:17
+[  308s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_workspace.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  308s]     @pytest.mark.asyncio
+[  308s] 
+[  308s] test/aio/test_event_exceptions.py: 1 warning
+[  308s] test/aio/test_get_bindings_modes.py: 1 warning
+[  308s] test/aio/test_get_config.py: 1 warning
+[  308s] test/aio/test_get_marks.py: 1 warning
+[  308s] test/aio/test_leaves.py: 1 warning
+[  308s] test/aio/test_output.py: 1 warning
+[  308s] test/aio/test_requests.py: 1 warning
+[  308s] test/aio/test_scratchpad.py: 1 warning
+[  308s] test/aio/test_ticks.py: 1 warning
+[  308s] test/aio/test_window.py: 1 warning
+[  308s] test/aio/test_workspace.py: 1 warning
+[  308s]   /usr/lib/python3.11/site-packages/_pytest/python.py:184: PytestUnhandledCoroutineWarning: async def functions are not natively supported and have been skipped.
+[  308s]   You need to install a suitable plugin for your async framework, for example:
+[  308s]     - anyio
+[  308s]     - pytest-asyncio
+[  308s]     - pytest-tornasync
+[  308s]     - pytest-trio
+[  308s]     - pytest-twisted
+[  308s]     warnings.warn(PytestUnhandledCoroutineWarning(msg.format(nodeid)))
+[  308s] 
+[  308s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  308s] ========== 7 passed, 11 skipped, 8 deselected, 27 warnings in 14.49s ===========
+[  308s] ++ '[' -f _current_flavor ']'
+[  308s] ++ cat _current_flavor
+[  309s] + last_flavor=python311
+[  309s] + '[' -z python311 ']'
+[  309s] + '[' python311 '!=' python310 ']'
+[  309s] + '[' -d build ']'
+[  309s] + mv build _build.python311
+[  309s] + '[' -d _build.python310 ']'
+[  309s] + mv _build.python310 build
+[  309s] + echo python310
+[  309s] + python_flavor=python310
+[  309s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages
+[  309s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-i3ipc-2.2.1-4.3.riscv64/usr/lib/python3.10/site-packages
+[  309s] + xvfb-run --server-args '-screen 0 1920x1080x24' python3.10 -m pytest -k 'not (test_shutdown_event_reconnect or test_restart or test_window_event or test_detailed_window_event)'
+[  324s] ============================= test session starts ==============================
+[  324s] platform linux -- Python 3.10.9, pytest-7.2.0, pluggy-1.0.0
+[  324s] rootdir: /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1, configfile: pytest.ini
+[  324s] collected 26 items / 8 deselected / 18 selected
+[  324s] 
+[  326s] test/test_event_exceptions.py .                                          [  5%]
+[  327s] test/test_get_bindings_modes.py .                                        [ 11%]
+[  329s] test/test_get_config.py .                                                [ 16%]
+[  331s] test/test_get_marks.py .                                                 [ 22%]
+[  334s] test/test_leaves.py .                                                    [ 27%]
+[  335s] test/test_ticks.py .                                                     [ 33%]
+[  337s] test/test_window.py .                                                    [ 38%]
+[  337s] test/aio/test_event_exceptions.py s                                      [ 44%]
+[  337s] test/aio/test_get_bindings_modes.py s                                    [ 50%]
+[  337s] test/aio/test_get_config.py s                                            [ 55%]
+[  337s] test/aio/test_get_marks.py s                                             [ 61%]
+[  337s] test/aio/test_leaves.py s                                                [ 66%]
+[  337s] test/aio/test_output.py s                                                [ 72%]
+[  337s] test/aio/test_requests.py s                                              [ 77%]
+[  337s] test/aio/test_scratchpad.py s                                            [ 83%]
+[  337s] test/aio/test_ticks.py s                                                 [ 88%]
+[  337s] test/aio/test_window.py s                                                [ 94%]
+[  337s] test/aio/test_workspace.py s                                             [100%]
+[  337s] 
+[  337s] =============================== warnings summary ===============================
+[  337s] ../../../../../usr/lib/python3.10/site-packages/_pytest/config/__init__.py:1294
+[  337s]   /usr/lib/python3.10/site-packages/_pytest/config/__init__.py:1294: PytestConfigWarning: Unknown config option: timeout
+[  337s]   
+[  337s]     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+[  337s] 
+[  337s] test/aio/test_event_exceptions.py:15
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_event_exceptions.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_get_bindings_modes.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_bindings_modes.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_get_config.py:9
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_config.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_get_marks.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_get_marks.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_leaves.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_leaves.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_output.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_output.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_requests.py:11
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_requests.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_restart.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_restart.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_scratchpad.py:7
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_scratchpad.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_shutdown_event.py:21
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_shutdown_event.py:21: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_ticks.py:15
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_ticks.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_window.py:9
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_window.py:29
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_window.py:68
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_window.py:68: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_workspace.py:17
+[  337s]   /home/abuild/rpmbuild/BUILD/i3ipc-python-2.2.1/test/aio/test_workspace.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+[  337s]     @pytest.mark.asyncio
+[  337s] 
+[  337s] test/aio/test_event_exceptions.py: 1 warning
+[  337s] test/aio/test_get_bindings_modes.py: 1 warning
+[  337s] test/aio/test_get_config.py: 1 warning
+[  337s] test/aio/test_get_marks.py: 1 warning
+[  337s] test/aio/test_leaves.py: 1 warning
+[  337s] test/aio/test_output.py: 1 warning
+[  337s] test/aio/test_requests.py: 1 warning
+[  337s] test/aio/test_scratchpad.py: 1 warning
+[  337s] test/aio/test_ticks.py: 1 warning
+[  337s] test/aio/test_window.py: 1 warning
+[  337s] test/aio/test_workspace.py: 1 warning
+[  337s]   /usr/lib/python3.10/site-packages/_pytest/python.py:184: PytestUnhandledCoroutineWarning: async def functions are not natively supported and have been skipped.
+[  337s]   You need to install a suitable plugin for your async framework, for example:
+[  337s]     - anyio
+[  337s]     - pytest-asyncio
+[  337s]     - pytest-tornasync
+[  337s]     - pytest-trio
+[  337s]     - pytest-twisted
+[  337s]     warnings.warn(PytestUnhandledCoroutineWarning(msg.format(nodeid)))
+[  337s] 
+[  337s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  337s] ========== 7 passed, 11 skipped, 8 deselected, 27 warnings in 17.94s ===========
+[90344s] qemu-kvm: terminating on signal 15 from pid 18853 (<unknown process>)
+[90344s] ### VM INTERACTION END ###
+[90344s] No buildstatus set, either the base system is broken (kernel/initrd/udev/glibc/bash/perl)
+[90344s] or the build host has a kernel or hardware problem...
+
+
+Job seems to be stuck here, killed. (after 90000 seconds of inactivity)

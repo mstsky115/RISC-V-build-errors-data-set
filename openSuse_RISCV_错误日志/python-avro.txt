@@ -1,0 +1,1801 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    0s] 
+[    0s] old-cirrus1 started "build python-avro.spec" at Sat Feb 18 21:24:51 UTC 2023.
+[    0s] 
+[    0s] Building python-avro for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '012abbc2fee0f6c8fc439bad6a661976'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/python-avro.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/python-avro.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/python-avro.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   13s] machine type: riscv64
+[   13s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   13s] Increasing log level from now on...
+[   13s] [    5.285370][  T368] sysrq: Changing Loglevel
+[   13s] [    5.285708][  T368] sysrq: Loglevel set to 4
+[   13s] Enable sysrq operations
+[   14s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   14s] no label, UUID=374da852-c658-4761-8e92-a0ca18824bfb
+[   14s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   14s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   14s] swapon /dev/vdb
+[   14s] WARNING: udev not running, creating extra device nodes
+[   15s] logging output to //.build.log...
+[   15s] processing recipe /.build-srcdir/python-avro.spec ...
+[   15s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-avro.spec build ...
+[   16s] initializing rpm db...
+[   16s] querying package ids...
+[   45s] [1/184] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   45s] [2/184] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   45s] [3/184] preinstalled attr-2.5.1-1.1
+[   45s] [4/184] preinstalled bash-5.2.15-8.1
+[   45s] [5/184] preinstalled bash-sh-5.2.15-8.1
+[   45s] [6/184] preinstalled binutils-2.39-3.1
+[   45s] [7/184] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   45s] [8/184] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   45s] [9/184] preinstalled build-mkbaselibs-20230215-1.1
+[   45s] [10/184] preinstalled bzip2-1.0.8-4.1
+[   45s] [11/184] preinstalled chkstat-1599_20221220-1.2
+[   45s] [12/184] preinstalled compat-usrmerge-build-84.87-5.1
+[   45s] [13/184] preinstalled compat-usrmerge-tools-84.87-5.1
+[   45s] [14/184] preinstalled coreutils-9.1-5.1
+[   45s] [15/184] preinstalled cpio-2.13-5.1
+[   45s] [16/184] preinstalled cpp-12-2.1
+[   45s] [17/184] preinstalled cpp12-12.2.1+git749-4.1
+[   45s] [18/184] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   45s] [19/184] preinstalled debugedit-5.0-5.1
+[   45s] [20/184] preinstalled diffutils-3.9-1.1
+[   45s] [21/184] preinstalled dwz-0.15-2.1
+[   45s] [22/184] preinstalled elfutils-0.188-3.2
+[   45s] [23/184] cumulate fdupes-2.2.1-1.1
+[   45s] [24/184] preinstalled file-5.44-1.2
+[   45s] [25/184] preinstalled file-magic-5.44-1.2
+[   45s] [26/184] preinstalled filesystem-84.87-12.1
+[   45s] [27/184] preinstalled fillup-1.42-279.1
+[   45s] [28/184] preinstalled findutils-4.9.0-2.1
+[   45s] [29/184] preinstalled gawk-5.2.1-2.1
+[   45s] [30/184] preinstalled gcc-12-2.1
+[   45s] [31/184] preinstalled gcc-PIE-12-2.1
+[   45s] [32/184] preinstalled gcc12-12.2.1+git749-4.1
+[   45s] [33/184] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   45s] [34/184] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   45s] [35/184] preinstalled gettext-tools-mini-0.21.1-1.1
+[   45s] [36/184] preinstalled glibc-2.37-1.1
+[   45s] [37/184] preinstalled glibc-devel-2.37-1.1
+[   45s] [38/184] preinstalled glibc-locale-base-2.37-1.1
+[   45s] [39/184] preinstalled grep-3.8-3.1
+[   45s] [40/184] preinstalled gzip-1.12-3.1
+[   45s] [41/184] preinstalled kernel-obs-build-6.1.12-1.1
+[   45s] [42/184] preinstalled libacl1-2.3.1-2.1
+[   45s] [43/184] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   45s] [44/184] preinstalled libasan8-13.0.1+git5428-6.1
+[   45s] [45/184] preinstalled libasm1-0.188-3.2
+[   45s] [46/184] preinstalled libatomic1-13.0.1+git5428-6.1
+[   45s] [47/184] preinstalled libattr1-2.5.1-1.1
+[   45s] [48/184] preinstalled libaudit1-3.0.6-4.1
+[   45s] [49/184] preinstalled libblkid1-2.38.1-7.1
+[   45s] [50/184] preinstalled libbz2-1-1.0.8-4.1
+[   45s] [51/184] preinstalled libcap-ng0-0.8.3-1.1
+[   45s] [52/184] preinstalled libcap2-2.67-1.1
+[   45s] [53/184] preinstalled libcrypt1-4.4.33-1.1
+[   45s] [54/184] preinstalled libctf-nobfd0-2.39-3.1
+[   45s] [55/184] preinstalled libctf0-2.39-3.1
+[   45s] [56/184] preinstalled libdb-4_8-4.8.30-39.1
+[   45s] [57/184] preinstalled libdw1-0.188-3.2
+[   46s] [58/184] preinstalled libeconf0-0.5.1-1.1
+[   46s] [59/184] preinstalled libelf1-0.188-3.2
+[   46s] [60/184] preinstalled libexpat1-2.5.0-2.1
+[   46s] [61/184] preinstalled libfdisk1-2.38.1-7.1
+[   46s] [62/184] preinstalled libffi8-3.4.4-1.1
+[   46s] [63/184] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   46s] [64/184] preinstalled libgcrypt20-1.10.1-1.1
+[   46s] [65/184] preinstalled libgdbm6-1.23-1.1
+[   46s] [66/184] preinstalled libgdbm_compat4-1.23-1.1
+[   46s] [67/184] preinstalled libgmp10-6.2.1-4.1
+[   46s] [68/184] preinstalled libgomp1-13.0.1+git5428-6.1
+[   46s] [69/184] preinstalled libgpg-error0-1.46-1.1
+[   46s] [70/184] preinstalled libisl23-0.25-1.1
+[   46s] [71/184] preinstalled liblua5_4-5-5.4.4-8.1
+[   46s] [72/184] preinstalled liblzma5-5.4.1-1.1
+[   46s] [73/184] preinstalled libmagic1-5.44-1.2
+[   46s] [74/184] preinstalled libmount1-2.38.1-7.1
+[   46s] [75/184] preinstalled libmpc3-1.3.1-1.2
+[   46s] [76/184] preinstalled libmpdec3-2.5.1-2.1
+[   46s] [77/184] preinstalled libmpfr6-4.2.0-1.1
+[   46s] [78/184] preinstalled libncurses6-6.4.20230128-5.1
+[   46s] [79/184] preinstalled libopenssl3-3.0.7-3.1
+[   46s] [80/184] preinstalled libpcre2-8-0-10.42-3.2
+[   46s] [81/184] preinstalled libpkgconf3-1.8.0-2.1
+[   46s] [82/184] preinstalled libpopt0-1.19-1.1
+[   46s] [83/184] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   46s] [84/184] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   46s] [85/184] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   46s] [86/184] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   46s] [87/184] preinstalled libreadline8-8.2-2.1
+[   46s] [88/184] preinstalled librpmbuild9-4.18.0-3.2
+[   46s] [89/184] preinstalled libseccomp2-2.5.4-2.1
+[   46s] [90/184] preinstalled libselinux1-3.4-2.1
+[   46s] [91/184] preinstalled libsemanage-conf-3.4-1.1
+[   46s] [92/184] preinstalled libsemanage2-3.4-1.1
+[   46s] [93/184] preinstalled libsepol2-3.4-1.1
+[   46s] [94/184] preinstalled libsmartcols1-2.38.1-7.1
+[   46s] [95/184] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   46s] [96/184] preinstalled libsubid4-4.13-3.1
+[   46s] [97/184] preinstalled libubsan1-13.0.1+git5428-6.1
+[   46s] [98/184] preinstalled libutempter0-1.2.0-3.2
+[   46s] [99/184] preinstalled libuuid1-2.38.1-7.1
+[   46s] [100/184] preinstalled libxcrypt-devel-4.4.33-1.1
+[   46s] [101/184] preinstalled libz1-1.2.13-2.1
+[   46s] [102/184] preinstalled libzstd1-1.5.2-2.1
+[   46s] [103/184] preinstalled linux-glibc-devel-6.1-1.1
+[   46s] [104/184] preinstalled login_defs-4.13-3.1
+[   46s] [105/184] preinstalled lua54-5.4.4-8.1
+[   46s] [106/184] preinstalled make-4.4-2.1
+[   46s] [107/184] preinstalled ncurses-utils-6.4.20230128-5.1
+[   46s] [108/184] preinstalled pam-1.5.2-12.1
+[   46s] [109/184] preinstalled patch-2.7.6-6.1
+[   46s] [110/184] preinstalled perl-5.36.0-4.1
+[   46s] [111/184] preinstalled perl-base-5.36.0-4.1
+[   46s] [112/184] preinstalled permissions-1599_20221220-1.2
+[   46s] [113/184] preinstalled permissions-config-1599_20221220-1.2
+[   46s] [114/184] preinstalled pkgconf-1.8.0-2.1
+[   46s] [115/184] preinstalled pkgconf-m4-1.8.0-2.1
+[   46s] [116/184] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   46s] [117/184] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   46s] [118/184] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   46s] [119/184] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   46s] [120/184] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   46s] [121/184] cumulate python310-attrs-22.2.0-1.2
+[   46s] [122/184] preinstalled python310-base-3.10.9-2.2
+[   46s] [123/184] cumulate python310-exceptiongroup-1.1.0-1.2
+[   46s] [124/184] cumulate python310-iniconfig-1.1.1-3.2
+[   46s] [125/184] preinstalled python310-packaging-23.0-1.1
+[   46s] [126/184] cumulate python310-pluggy-1.0.0-1.5
+[   46s] [127/184] preinstalled python310-setuptools-65.6.3-1.2
+[   46s] [128/184] cumulate python310-tomli-2.0.1-1.3
+[   46s] [129/184] cumulate python310-zipp-3.8.1-1.2
+[   46s] [130/184] cumulate python311-attrs-22.2.0-1.2
+[   46s] [131/184] preinstalled python311-base-3.11.1-4.2
+[   46s] [132/184] cumulate python311-exceptiongroup-1.1.0-1.2
+[   46s] [133/184] cumulate python311-iniconfig-1.1.1-3.2
+[   46s] [134/184] cumulate python311-packaging-23.0-1.2
+[   46s] [135/184] cumulate python311-pluggy-1.0.0-1.5
+[   46s] [136/184] preinstalled python311-setuptools-65.6.3-1.2
+[   46s] [137/184] cumulate python311-tomli-2.0.1-1.3
+[   46s] [138/184] cumulate python311-zipp-3.8.1-1.2
+[   46s] [139/184] cumulate python38-attrs-22.2.0-1.2
+[   46s] [140/184] preinstalled python38-base-3.8.16-3.2
+[   46s] [141/184] cumulate python38-exceptiongroup-1.1.0-1.2
+[   46s] [142/184] cumulate python38-iniconfig-1.1.1-3.2
+[   46s] [143/184] cumulate python38-packaging-23.0-1.2
+[   46s] [144/184] cumulate python38-pluggy-1.0.0-1.5
+[   46s] [145/184] preinstalled python38-setuptools-65.6.3-1.2
+[   46s] [146/184] cumulate python38-tomli-2.0.1-1.3
+[   46s] [147/184] cumulate python38-zipp-3.8.1-1.2
+[   46s] [148/184] cumulate python39-attrs-22.2.0-1.2
+[   46s] [149/184] preinstalled python39-base-3.9.16-3.2
+[   46s] [150/184] cumulate python39-exceptiongroup-1.1.0-1.2
+[   46s] [151/184] cumulate python39-iniconfig-1.1.1-3.2
+[   46s] [152/184] cumulate python39-packaging-23.0-1.2
+[   46s] [153/184] cumulate python39-pluggy-1.0.0-1.5
+[   46s] [154/184] preinstalled python39-setuptools-65.6.3-1.2
+[   46s] [155/184] cumulate python39-tomli-2.0.1-1.3
+[   46s] [156/184] cumulate python39-zipp-3.8.1-1.2
+[   46s] [157/184] preinstalled qemu-linux-user-7.1.0-50.1
+[   46s] [158/184] preinstalled rpm-4.18.0-3.2
+[   46s] [159/184] preinstalled rpm-build-4.18.0-3.2
+[   46s] [160/184] preinstalled rpm-build-perl-4.18.0-3.2
+[   46s] [161/184] preinstalled rpm-config-SUSE-20220926-1.1
+[   46s] [162/184] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   46s] [163/184] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   46s] [164/184] preinstalled sed-4.9-2.1
+[   46s] [165/184] preinstalled shadow-4.13-3.1
+[   46s] [166/184] preinstalled system-group-hardware-20170617-24.1
+[   46s] [167/184] preinstalled system-user-root-20190513-2.1
+[   46s] [168/184] preinstalled systemd-rpm-macros-19-1.1
+[   46s] [169/184] preinstalled sysuser-shadow-3.1-5.1
+[   46s] [170/184] preinstalled tar-1.34-9.1
+[   46s] [171/184] preinstalled terminfo-base-6.4.20230128-5.1
+[   46s] [172/184] preinstalled update-alternatives-1.21.8-1.1
+[   46s] [173/184] preinstalled util-linux-2.38.1-7.1
+[   46s] [174/184] preinstalled which-2.21-5.1
+[   46s] [175/184] preinstalled xz-5.4.1-1.1
+[   46s] [176/184] cumulate alts-1.2+3.b848aad-3.1
+[   46s] [177/184] cumulate python310-importlib-metadata-6.0.0-1.2
+[   46s] [178/184] cumulate python311-importlib-metadata-6.0.0-1.2
+[   46s] [179/184] cumulate python38-importlib-metadata-6.0.0-1.2
+[   46s] [180/184] cumulate python39-importlib-metadata-6.0.0-1.2
+[   46s] [181/184] cumulate python310-pytest-7.2.0-2.2
+[   46s] [182/184] cumulate python311-pytest-7.2.0-2.2
+[   46s] [183/184] cumulate python38-pytest-7.2.0-2.2
+[   46s] [184/184] cumulate python39-pytest-7.2.0-2.2
+[   46s] now installing cumulated packages
+[   46s] Preparing...                          ########################################
+[   46s] Updating / installing...
+[   46s] python39-zipp-3.8.1-1.2               ########################################
+[   46s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   47s] python39-tomli-2.0.1-1.3              ########################################
+[   47s] python39-pluggy-1.0.0-1.5             ########################################
+[   47s] python39-packaging-23.0-1.2           ########################################
+[   47s] python39-iniconfig-1.1.1-3.2          ########################################
+[   47s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   47s] python39-attrs-22.2.0-1.2             ########################################
+[   47s] python38-zipp-3.8.1-1.2               ########################################
+[   47s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   47s] python38-tomli-2.0.1-1.3              ########################################
+[   47s] python38-pluggy-1.0.0-1.5             ########################################
+[   47s] python38-packaging-23.0-1.2           ########################################
+[   47s] python38-iniconfig-1.1.1-3.2          ########################################
+[   47s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   47s] python38-attrs-22.2.0-1.2             ########################################
+[   47s] python311-zipp-3.8.1-1.2              ########################################
+[   47s] python311-importlib-metadata-6.0.0-1.2########################################
+[   47s] python311-tomli-2.0.1-1.3             ########################################
+[   47s] python311-pluggy-1.0.0-1.5            ########################################
+[   47s] python311-packaging-23.0-1.2          ########################################
+[   47s] python311-iniconfig-1.1.1-3.2         ########################################
+[   47s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   47s] python311-attrs-22.2.0-1.2            ########################################
+[   47s] python310-zipp-3.8.1-1.2              ########################################
+[   47s] python310-importlib-metadata-6.0.0-1.2########################################
+[   47s] python310-tomli-2.0.1-1.3             ########################################
+[   47s] python310-pluggy-1.0.0-1.5            ########################################
+[   47s] python310-iniconfig-1.1.1-3.2         ########################################
+[   47s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   47s] python310-attrs-22.2.0-1.2            ########################################
+[   47s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   47s] alts-1.2+3.b848aad-3.1                ########################################
+[   48s] python310-pytest-7.2.0-2.2            ########################################
+[   49s] python311-pytest-7.2.0-2.2            ########################################
+[   50s] python38-pytest-7.2.0-2.2             ########################################
+[   51s] python39-pytest-7.2.0-2.2             ########################################
+[   51s] fdupes-2.2.1-1.1                      ########################################
+[   53s] now finalizing build dir...
+[   53s] ... running 01-add_abuild_user_to_trusted_group
+[   54s] ... running 02-set_timezone_to_utc
+[   54s] ... running 03-set-permissions-secure
+[   54s] ... running 11-hack_uname_version_to_kernel_version
+[   63s] -----------------------------------------------------------------
+[   63s] I have the following modifications for python-avro.spec:
+[   64s] 22c22
+[   64s] < Release:        0
+[   64s] ---
+[   64s] > Release:        2.1
+[   72s] build target is riscv64-suse-linux
+[   72s] -----------------------------------------------------------------
+[   72s] ----- building python-avro.spec (user abuild)
+[   72s] -----------------------------------------------------------------
+[   72s] -----------------------------------------------------------------
+[   77s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/012abbc2fee0f6c8fc439bad6a661976-python-avro' /home/abuild/rpmbuild/SOURCES/python-avro.spec
+[  140s] Building target platforms: riscv64-suse-linux
+[  140s] Building for target riscv64-suse-linux
+[  140s] setting SOURCE_DATE_EPOCH=1674604800
+[  140s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.CgewUu
+[  141s] + umask 022
+[  141s] + cd /home/abuild/rpmbuild/BUILD
+[  141s] + cd /home/abuild/rpmbuild/BUILD
+[  141s] + rm -rf avro-1.11.1
+[  141s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/avro-1.11.1.tar.gz
+[  141s] + STATUS=0
+[  141s] + '[' 0 -ne 0 ']'
+[  141s] + cd avro-1.11.1
+[  141s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  141s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/py311.patch
+[  141s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  142s] + sed -i '1{\@^#!/usr/bin/env python@d}' avro/__init__.py avro/__main__.py avro/codecs.py avro/compatibility.py avro/constants.py avro/datafile.py avro/errors.py avro/io.py avro/ipc.py avro/name.py avro/protocol.py avro/schema.py avro/timezones.py avro/tool.py avro/utils.py avro/tether/__init__.py avro/tether/tether_task.py avro/tether/tether_task_runner.py avro/tether/util.py avro/test/__init__.py avro/test/gen_interop_data.py avro/test/mock_tether_parent.py avro/test/sample_http_client.py avro/test/sample_http_server.py avro/test/test_bench.py avro/test/test_compatibility.py avro/test/test_datafile.py avro/test/test_datafile_interop.py avro/test/test_init.py avro/test/test_io.py avro/test/test_ipc.py avro/test/test_protocol.py avro/test/test_schema.py avro/test/test_script.py avro/test/test_tether_task.py avro/test/test_tether_task_runner.py avro/test/test_tether_word_count.py avro/test/word_count_task.py
+[  142s] + RPM_EC=0
+[  142s] ++ jobs -p
+[  142s] + exit 0
+[  142s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Ng3iTr
+[  142s] + umask 022
+[  142s] + cd /home/abuild/rpmbuild/BUILD
+[  142s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64
+[  142s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64
+[  142s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  142s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64
+[  142s] + cd avro-1.11.1
+[  142s] + ref=/usr/lib/rpm
+[  142s] + mints=0
+[  142s] + case $(uname -m) in
+[  142s] ++ uname -m
+[  143s] + mints=20160911
+[  143s] + for s in guess sub
+[  143s] ++ find -maxdepth 8 -name config.guess
+[  143s] + for s in guess sub
+[  143s] ++ find -maxdepth 8 -name config.sub
+[  143s] ++ '[' -f _current_flavor ']'
+[  143s] ++ true
+[  143s] + last_flavor=
+[  143s] + '[' -z '' ']'
+[  143s] + last_flavor=tmp
+[  143s] + '[' tmp '!=' python38 ']'
+[  143s] + '[' -d build ']'
+[  143s] + '[' -d _build.python38 ']'
+[  143s] + echo python38
+[  143s] + python_flavor=python38
+[  143s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  149s] running build
+[  149s] running build_py
+[  149s] creating build
+[  149s] creating build/lib
+[  149s] creating build/lib/avro
+[  149s] copying avro/__init__.py -> build/lib/avro
+[  149s] copying avro/__main__.py -> build/lib/avro
+[  149s] copying avro/codecs.py -> build/lib/avro
+[  149s] copying avro/compatibility.py -> build/lib/avro
+[  150s] copying avro/constants.py -> build/lib/avro
+[  150s] copying avro/datafile.py -> build/lib/avro
+[  150s] copying avro/errors.py -> build/lib/avro
+[  150s] copying avro/io.py -> build/lib/avro
+[  150s] copying avro/ipc.py -> build/lib/avro
+[  150s] copying avro/name.py -> build/lib/avro
+[  150s] copying avro/protocol.py -> build/lib/avro
+[  150s] copying avro/schema.py -> build/lib/avro
+[  150s] copying avro/timezones.py -> build/lib/avro
+[  150s] copying avro/tool.py -> build/lib/avro
+[  150s] copying avro/utils.py -> build/lib/avro
+[  150s] creating build/lib/avro/test
+[  150s] copying avro/test/__init__.py -> build/lib/avro/test
+[  150s] copying avro/test/gen_interop_data.py -> build/lib/avro/test
+[  150s] copying avro/test/mock_tether_parent.py -> build/lib/avro/test
+[  150s] copying avro/test/sample_http_client.py -> build/lib/avro/test
+[  150s] copying avro/test/sample_http_server.py -> build/lib/avro/test
+[  150s] copying avro/test/test_bench.py -> build/lib/avro/test
+[  150s] copying avro/test/test_compatibility.py -> build/lib/avro/test
+[  150s] copying avro/test/test_datafile.py -> build/lib/avro/test
+[  150s] copying avro/test/test_datafile_interop.py -> build/lib/avro/test
+[  150s] copying avro/test/test_init.py -> build/lib/avro/test
+[  150s] copying avro/test/test_io.py -> build/lib/avro/test
+[  150s] copying avro/test/test_ipc.py -> build/lib/avro/test
+[  150s] copying avro/test/test_protocol.py -> build/lib/avro/test
+[  150s] copying avro/test/test_schema.py -> build/lib/avro/test
+[  150s] copying avro/test/test_script.py -> build/lib/avro/test
+[  150s] copying avro/test/test_tether_task.py -> build/lib/avro/test
+[  150s] copying avro/test/test_tether_task_runner.py -> build/lib/avro/test
+[  150s] copying avro/test/test_tether_word_count.py -> build/lib/avro/test
+[  150s] copying avro/test/word_count_task.py -> build/lib/avro/test
+[  150s] creating build/lib/avro/tether
+[  150s] copying avro/tether/__init__.py -> build/lib/avro/tether
+[  150s] copying avro/tether/tether_task.py -> build/lib/avro/tether
+[  150s] copying avro/tether/tether_task_runner.py -> build/lib/avro/tether
+[  150s] copying avro/tether/util.py -> build/lib/avro/tether
+[  150s] running egg_info
+[  150s] writing avro.egg-info/PKG-INFO
+[  150s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  150s] writing entry points to avro.egg-info/entry_points.txt
+[  150s] writing requirements to avro.egg-info/requires.txt
+[  150s] writing top-level names to avro.egg-info/top_level.txt
+[  150s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  150s] reading manifest template 'MANIFEST.in'
+[  150s] adding license file 'avro/LICENSE'
+[  150s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  150s] copying avro/HandshakeRequest.avsc -> build/lib/avro
+[  150s] copying avro/HandshakeResponse.avsc -> build/lib/avro
+[  150s] copying avro/LICENSE -> build/lib/avro
+[  150s] copying avro/NOTICE -> build/lib/avro
+[  150s] copying avro/VERSION.txt -> build/lib/avro
+[  150s] copying avro/interop.avsc -> build/lib/avro
+[  150s] copying avro/tether/InputProtocol.avpr -> build/lib/avro/tether
+[  150s] copying avro/tether/OutputProtocol.avpr -> build/lib/avro/tether
+[  150s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  150s]   warnings.warn(msg, warning_class)
+[  150s] ++ '[' -f _current_flavor ']'
+[  150s] ++ cat _current_flavor
+[  150s] + last_flavor=python38
+[  150s] + '[' -z python38 ']'
+[  150s] + '[' python38 '!=' python39 ']'
+[  150s] + '[' -d build ']'
+[  150s] + mv build _build.python38
+[  150s] + '[' -d _build.python39 ']'
+[  150s] + echo python39
+[  150s] + python_flavor=python39
+[  150s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  155s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  155s]   warnings.warn(msg, warning_class)
+[  155s] running build
+[  155s] running build_py
+[  155s] creating build
+[  155s] creating build/lib
+[  155s] creating build/lib/avro
+[  155s] copying avro/__init__.py -> build/lib/avro
+[  155s] copying avro/__main__.py -> build/lib/avro
+[  155s] copying avro/codecs.py -> build/lib/avro
+[  155s] copying avro/compatibility.py -> build/lib/avro
+[  155s] copying avro/constants.py -> build/lib/avro
+[  155s] copying avro/datafile.py -> build/lib/avro
+[  155s] copying avro/errors.py -> build/lib/avro
+[  155s] copying avro/io.py -> build/lib/avro
+[  155s] copying avro/ipc.py -> build/lib/avro
+[  155s] copying avro/name.py -> build/lib/avro
+[  155s] copying avro/protocol.py -> build/lib/avro
+[  155s] copying avro/schema.py -> build/lib/avro
+[  155s] copying avro/timezones.py -> build/lib/avro
+[  155s] copying avro/tool.py -> build/lib/avro
+[  155s] copying avro/utils.py -> build/lib/avro
+[  155s] creating build/lib/avro/test
+[  155s] copying avro/test/__init__.py -> build/lib/avro/test
+[  155s] copying avro/test/gen_interop_data.py -> build/lib/avro/test
+[  155s] copying avro/test/mock_tether_parent.py -> build/lib/avro/test
+[  155s] copying avro/test/sample_http_client.py -> build/lib/avro/test
+[  155s] copying avro/test/sample_http_server.py -> build/lib/avro/test
+[  155s] copying avro/test/test_bench.py -> build/lib/avro/test
+[  155s] copying avro/test/test_compatibility.py -> build/lib/avro/test
+[  155s] copying avro/test/test_datafile.py -> build/lib/avro/test
+[  155s] copying avro/test/test_datafile_interop.py -> build/lib/avro/test
+[  155s] copying avro/test/test_init.py -> build/lib/avro/test
+[  155s] copying avro/test/test_io.py -> build/lib/avro/test
+[  155s] copying avro/test/test_ipc.py -> build/lib/avro/test
+[  155s] copying avro/test/test_protocol.py -> build/lib/avro/test
+[  155s] copying avro/test/test_schema.py -> build/lib/avro/test
+[  155s] copying avro/test/test_script.py -> build/lib/avro/test
+[  155s] copying avro/test/test_tether_task.py -> build/lib/avro/test
+[  155s] copying avro/test/test_tether_task_runner.py -> build/lib/avro/test
+[  155s] copying avro/test/test_tether_word_count.py -> build/lib/avro/test
+[  155s] copying avro/test/word_count_task.py -> build/lib/avro/test
+[  155s] creating build/lib/avro/tether
+[  155s] copying avro/tether/__init__.py -> build/lib/avro/tether
+[  155s] copying avro/tether/tether_task.py -> build/lib/avro/tether
+[  155s] copying avro/tether/tether_task_runner.py -> build/lib/avro/tether
+[  155s] copying avro/tether/util.py -> build/lib/avro/tether
+[  155s] running egg_info
+[  155s] writing avro.egg-info/PKG-INFO
+[  155s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  155s] writing entry points to avro.egg-info/entry_points.txt
+[  155s] writing requirements to avro.egg-info/requires.txt
+[  155s] writing top-level names to avro.egg-info/top_level.txt
+[  155s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  155s] reading manifest template 'MANIFEST.in'
+[  155s] adding license file 'avro/LICENSE'
+[  155s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  155s] copying avro/HandshakeRequest.avsc -> build/lib/avro
+[  155s] copying avro/HandshakeResponse.avsc -> build/lib/avro
+[  155s] copying avro/LICENSE -> build/lib/avro
+[  155s] copying avro/NOTICE -> build/lib/avro
+[  155s] copying avro/VERSION.txt -> build/lib/avro
+[  155s] copying avro/interop.avsc -> build/lib/avro
+[  155s] copying avro/tether/InputProtocol.avpr -> build/lib/avro/tether
+[  155s] copying avro/tether/OutputProtocol.avpr -> build/lib/avro/tether
+[  156s] ++ '[' -f _current_flavor ']'
+[  156s] ++ cat _current_flavor
+[  156s] + last_flavor=python39
+[  156s] + '[' -z python39 ']'
+[  156s] + '[' python39 '!=' python311 ']'
+[  156s] + '[' -d build ']'
+[  156s] + mv build _build.python39
+[  156s] + '[' -d _build.python311 ']'
+[  156s] + echo python311
+[  156s] + python_flavor=python311
+[  156s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  160s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  160s]   warnings.warn(msg, warning_class)
+[  161s] running build
+[  161s] running build_py
+[  161s] creating build
+[  161s] creating build/lib
+[  161s] creating build/lib/avro
+[  161s] copying avro/__init__.py -> build/lib/avro
+[  161s] copying avro/__main__.py -> build/lib/avro
+[  161s] copying avro/codecs.py -> build/lib/avro
+[  161s] copying avro/compatibility.py -> build/lib/avro
+[  161s] copying avro/constants.py -> build/lib/avro
+[  161s] copying avro/datafile.py -> build/lib/avro
+[  161s] copying avro/errors.py -> build/lib/avro
+[  161s] copying avro/io.py -> build/lib/avro
+[  161s] copying avro/ipc.py -> build/lib/avro
+[  161s] copying avro/name.py -> build/lib/avro
+[  161s] copying avro/protocol.py -> build/lib/avro
+[  161s] copying avro/schema.py -> build/lib/avro
+[  161s] copying avro/timezones.py -> build/lib/avro
+[  161s] copying avro/tool.py -> build/lib/avro
+[  161s] copying avro/utils.py -> build/lib/avro
+[  161s] creating build/lib/avro/test
+[  161s] copying avro/test/__init__.py -> build/lib/avro/test
+[  161s] copying avro/test/gen_interop_data.py -> build/lib/avro/test
+[  161s] copying avro/test/mock_tether_parent.py -> build/lib/avro/test
+[  161s] copying avro/test/sample_http_client.py -> build/lib/avro/test
+[  161s] copying avro/test/sample_http_server.py -> build/lib/avro/test
+[  161s] copying avro/test/test_bench.py -> build/lib/avro/test
+[  161s] copying avro/test/test_compatibility.py -> build/lib/avro/test
+[  161s] copying avro/test/test_datafile.py -> build/lib/avro/test
+[  161s] copying avro/test/test_datafile_interop.py -> build/lib/avro/test
+[  161s] copying avro/test/test_init.py -> build/lib/avro/test
+[  161s] copying avro/test/test_io.py -> build/lib/avro/test
+[  161s] copying avro/test/test_ipc.py -> build/lib/avro/test
+[  161s] copying avro/test/test_protocol.py -> build/lib/avro/test
+[  161s] copying avro/test/test_schema.py -> build/lib/avro/test
+[  161s] copying avro/test/test_script.py -> build/lib/avro/test
+[  161s] copying avro/test/test_tether_task.py -> build/lib/avro/test
+[  161s] copying avro/test/test_tether_task_runner.py -> build/lib/avro/test
+[  161s] copying avro/test/test_tether_word_count.py -> build/lib/avro/test
+[  161s] copying avro/test/word_count_task.py -> build/lib/avro/test
+[  161s] creating build/lib/avro/tether
+[  161s] copying avro/tether/__init__.py -> build/lib/avro/tether
+[  161s] copying avro/tether/tether_task.py -> build/lib/avro/tether
+[  161s] copying avro/tether/tether_task_runner.py -> build/lib/avro/tether
+[  161s] copying avro/tether/util.py -> build/lib/avro/tether
+[  161s] running egg_info
+[  161s] writing avro.egg-info/PKG-INFO
+[  161s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  161s] writing entry points to avro.egg-info/entry_points.txt
+[  161s] writing requirements to avro.egg-info/requires.txt
+[  161s] writing top-level names to avro.egg-info/top_level.txt
+[  161s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  161s] reading manifest template 'MANIFEST.in'
+[  161s] adding license file 'avro/LICENSE'
+[  161s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  161s] copying avro/HandshakeRequest.avsc -> build/lib/avro
+[  161s] copying avro/HandshakeResponse.avsc -> build/lib/avro
+[  161s] copying avro/LICENSE -> build/lib/avro
+[  161s] copying avro/NOTICE -> build/lib/avro
+[  161s] copying avro/VERSION.txt -> build/lib/avro
+[  161s] copying avro/interop.avsc -> build/lib/avro
+[  161s] copying avro/tether/InputProtocol.avpr -> build/lib/avro/tether
+[  161s] copying avro/tether/OutputProtocol.avpr -> build/lib/avro/tether
+[  161s] ++ '[' -f _current_flavor ']'
+[  161s] ++ cat _current_flavor
+[  161s] + last_flavor=python311
+[  161s] + '[' -z python311 ']'
+[  161s] + '[' python311 '!=' python310 ']'
+[  161s] + '[' -d build ']'
+[  161s] + mv build _build.python311
+[  161s] + '[' -d _build.python310 ']'
+[  161s] + echo python310
+[  161s] + python_flavor=python310
+[  161s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  166s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  166s]   warnings.warn(msg, warning_class)
+[  167s] running build
+[  167s] running build_py
+[  167s] creating build
+[  167s] creating build/lib
+[  167s] creating build/lib/avro
+[  167s] copying avro/__init__.py -> build/lib/avro
+[  167s] copying avro/__main__.py -> build/lib/avro
+[  167s] copying avro/codecs.py -> build/lib/avro
+[  167s] copying avro/compatibility.py -> build/lib/avro
+[  167s] copying avro/constants.py -> build/lib/avro
+[  167s] copying avro/datafile.py -> build/lib/avro
+[  167s] copying avro/errors.py -> build/lib/avro
+[  167s] copying avro/io.py -> build/lib/avro
+[  167s] copying avro/ipc.py -> build/lib/avro
+[  167s] copying avro/name.py -> build/lib/avro
+[  167s] copying avro/protocol.py -> build/lib/avro
+[  167s] copying avro/schema.py -> build/lib/avro
+[  167s] copying avro/timezones.py -> build/lib/avro
+[  167s] copying avro/tool.py -> build/lib/avro
+[  167s] copying avro/utils.py -> build/lib/avro
+[  167s] creating build/lib/avro/test
+[  167s] copying avro/test/__init__.py -> build/lib/avro/test
+[  167s] copying avro/test/gen_interop_data.py -> build/lib/avro/test
+[  167s] copying avro/test/mock_tether_parent.py -> build/lib/avro/test
+[  167s] copying avro/test/sample_http_client.py -> build/lib/avro/test
+[  167s] copying avro/test/sample_http_server.py -> build/lib/avro/test
+[  167s] copying avro/test/test_bench.py -> build/lib/avro/test
+[  167s] copying avro/test/test_compatibility.py -> build/lib/avro/test
+[  167s] copying avro/test/test_datafile.py -> build/lib/avro/test
+[  167s] copying avro/test/test_datafile_interop.py -> build/lib/avro/test
+[  167s] copying avro/test/test_init.py -> build/lib/avro/test
+[  167s] copying avro/test/test_io.py -> build/lib/avro/test
+[  167s] copying avro/test/test_ipc.py -> build/lib/avro/test
+[  167s] copying avro/test/test_protocol.py -> build/lib/avro/test
+[  167s] copying avro/test/test_schema.py -> build/lib/avro/test
+[  167s] copying avro/test/test_script.py -> build/lib/avro/test
+[  167s] copying avro/test/test_tether_task.py -> build/lib/avro/test
+[  167s] copying avro/test/test_tether_task_runner.py -> build/lib/avro/test
+[  167s] copying avro/test/test_tether_word_count.py -> build/lib/avro/test
+[  167s] copying avro/test/word_count_task.py -> build/lib/avro/test
+[  167s] creating build/lib/avro/tether
+[  167s] copying avro/tether/__init__.py -> build/lib/avro/tether
+[  167s] copying avro/tether/tether_task.py -> build/lib/avro/tether
+[  167s] copying avro/tether/tether_task_runner.py -> build/lib/avro/tether
+[  167s] copying avro/tether/util.py -> build/lib/avro/tether
+[  167s] running egg_info
+[  167s] writing avro.egg-info/PKG-INFO
+[  167s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  167s] writing entry points to avro.egg-info/entry_points.txt
+[  167s] writing requirements to avro.egg-info/requires.txt
+[  167s] writing top-level names to avro.egg-info/top_level.txt
+[  167s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  167s] reading manifest template 'MANIFEST.in'
+[  167s] adding license file 'avro/LICENSE'
+[  167s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  167s] copying avro/HandshakeRequest.avsc -> build/lib/avro
+[  167s] copying avro/HandshakeResponse.avsc -> build/lib/avro
+[  167s] copying avro/LICENSE -> build/lib/avro
+[  167s] copying avro/NOTICE -> build/lib/avro
+[  167s] copying avro/VERSION.txt -> build/lib/avro
+[  167s] copying avro/interop.avsc -> build/lib/avro
+[  167s] copying avro/tether/InputProtocol.avpr -> build/lib/avro/tether
+[  167s] copying avro/tether/OutputProtocol.avpr -> build/lib/avro/tether
+[  168s] + RPM_EC=0
+[  168s] ++ jobs -p
+[  168s] + exit 0
+[  168s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.XfRMvb
+[  168s] + umask 022
+[  168s] + cd /home/abuild/rpmbuild/BUILD
+[  168s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64
+[  168s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  168s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64
+[  168s] + cd avro-1.11.1
+[  168s] ++ '[' -f _current_flavor ']'
+[  168s] ++ cat _current_flavor
+[  168s] + last_flavor=python310
+[  168s] + '[' -z python310 ']'
+[  168s] + '[' python310 '!=' python38 ']'
+[  168s] + '[' -d build ']'
+[  168s] + mv build _build.python310
+[  168s] + '[' -d _build.python38 ']'
+[  168s] + mv _build.python38 build
+[  168s] + echo python38
+[  168s] + python_flavor=python38
+[  168s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64 --prefix /usr
+[  174s] running install
+[  174s] running install_lib
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/codecs.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/errors.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/name.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/timezones.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/tool.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/utils.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/gen_interop_data.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/mock_tether_parent.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/sample_http_client.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/sample_http_server.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_bench.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_datafile_interop.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_init.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_script.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/test_tether_word_count.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] copying build/lib/avro/test/word_count_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test
+[  174s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/InputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/tether/OutputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether
+[  174s] copying build/lib/avro/HandshakeRequest.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/HandshakeResponse.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/LICENSE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/NOTICE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/VERSION.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] copying build/lib/avro/interop.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__init__.py to __init__.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__main__.py to __main__.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/codecs.py to codecs.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/compatibility.py to compatibility.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/constants.py to constants.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/datafile.py to datafile.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/errors.py to errors.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/io.py to io.cpython-38.pyc
+[  174s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/ipc.py to ipc.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/name.py to name.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/protocol.py to protocol.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/schema.py to schema.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/timezones.py to timezones.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tool.py to tool.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/utils.py to utils.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__init__.py to __init__.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/gen_interop_data.py to gen_interop_data.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/mock_tether_parent.py to mock_tether_parent.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/sample_http_client.py to sample_http_client.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/sample_http_server.py to sample_http_server.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_bench.py to test_bench.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_compatibility.py to test_compatibility.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_datafile.py to test_datafile.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_datafile_interop.py to test_datafile_interop.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_init.py to test_init.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_io.py to test_io.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_ipc.py to test_ipc.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_protocol.py to test_protocol.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_schema.py to test_schema.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_script.py to test_script.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_tether_task.py to test_tether_task.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_tether_task_runner.py to test_tether_task_runner.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/test_tether_word_count.py to test_tether_word_count.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/word_count_task.py to word_count_task.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__init__.py to __init__.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/tether_task.py to tether_task.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/tether_task_runner.py to tether_task_runner.cpython-38.pyc
+[  175s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/util.py to util.cpython-38.pyc
+[  175s] writing byte-compilation script '/tmp/tmp2kb7_4_1.py'
+[  175s] /usr/bin/python3.8 /tmp/tmp2kb7_4_1.py
+[  181s] removing /tmp/tmp2kb7_4_1.py
+[  181s] running install_egg_info
+[  181s] running egg_info
+[  181s] writing avro.egg-info/PKG-INFO
+[  181s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  181s] writing entry points to avro.egg-info/entry_points.txt
+[  181s] writing requirements to avro.egg-info/requires.txt
+[  181s] writing top-level names to avro.egg-info/top_level.txt
+[  181s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  181s] reading manifest template 'MANIFEST.in'
+[  181s] adding license file 'avro/LICENSE'
+[  181s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  181s] Copying avro.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro-1.11.1-py3.8.egg-info
+[  181s] running install_scripts
+[  182s] Installing avro script to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin
+[  182s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  182s]   warnings.warn(msg, warning_class)
+[  182s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  182s]   warnings.warn(
+[  182s] ++ '[' -f _current_flavor ']'
+[  182s] ++ cat _current_flavor
+[  182s] + last_flavor=python38
+[  182s] + '[' -z python38 ']'
+[  182s] + '[' python38 '!=' python39 ']'
+[  182s] + '[' -d build ']'
+[  182s] + mv build _build.python38
+[  182s] + '[' -d _build.python39 ']'
+[  182s] + mv _build.python39 build
+[  182s] + echo python39
+[  182s] + python_flavor=python39
+[  182s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64 --prefix /usr
+[  186s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  186s]   warnings.warn(msg, warning_class)
+[  187s] running install
+[  187s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  187s]   warnings.warn(
+[  187s] running install_lib
+[  187s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9
+[  187s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages
+[  187s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/codecs.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/errors.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/name.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/timezones.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/tool.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/utils.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/gen_interop_data.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/mock_tether_parent.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/sample_http_client.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/sample_http_server.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_bench.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_datafile_interop.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_init.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_script.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/test_tether_word_count.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] copying build/lib/avro/test/word_count_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test
+[  187s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/InputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/tether/OutputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether
+[  187s] copying build/lib/avro/HandshakeRequest.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/HandshakeResponse.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/LICENSE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/NOTICE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/VERSION.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] copying build/lib/avro/interop.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__init__.py to __init__.cpython-39.pyc
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__main__.py to __main__.cpython-39.pyc
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/codecs.py to codecs.cpython-39.pyc
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/compatibility.py to compatibility.cpython-39.pyc
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/constants.py to constants.cpython-39.pyc
+[  187s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/datafile.py to datafile.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/errors.py to errors.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/io.py to io.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/ipc.py to ipc.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/name.py to name.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/protocol.py to protocol.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/schema.py to schema.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/timezones.py to timezones.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tool.py to tool.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/utils.py to utils.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__init__.py to __init__.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/gen_interop_data.py to gen_interop_data.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/mock_tether_parent.py to mock_tether_parent.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/sample_http_client.py to sample_http_client.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/sample_http_server.py to sample_http_server.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_bench.py to test_bench.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_compatibility.py to test_compatibility.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_datafile.py to test_datafile.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_datafile_interop.py to test_datafile_interop.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_init.py to test_init.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_io.py to test_io.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_ipc.py to test_ipc.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_protocol.py to test_protocol.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_schema.py to test_schema.cpython-39.pyc
+[  188s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_script.py to test_script.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_tether_task.py to test_tether_task.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_tether_task_runner.py to test_tether_task_runner.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/test_tether_word_count.py to test_tether_word_count.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/word_count_task.py to word_count_task.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__init__.py to __init__.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/tether_task.py to tether_task.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/tether_task_runner.py to tether_task_runner.cpython-39.pyc
+[  189s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/util.py to util.cpython-39.pyc
+[  189s] writing byte-compilation script '/tmp/tmp6b41msfc.py'
+[  189s] /usr/bin/python3.9 /tmp/tmp6b41msfc.py
+[  194s] removing /tmp/tmp6b41msfc.py
+[  194s] running install_egg_info
+[  194s] running egg_info
+[  194s] writing avro.egg-info/PKG-INFO
+[  194s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  194s] writing entry points to avro.egg-info/entry_points.txt
+[  194s] writing requirements to avro.egg-info/requires.txt
+[  194s] writing top-level names to avro.egg-info/top_level.txt
+[  195s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  195s] reading manifest template 'MANIFEST.in'
+[  195s] adding license file 'avro/LICENSE'
+[  195s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  195s] Copying avro.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro-1.11.1-py3.9.egg-info
+[  195s] running install_scripts
+[  195s] Installing avro script to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin
+[  195s] ++ '[' -f _current_flavor ']'
+[  195s] ++ cat _current_flavor
+[  195s] + last_flavor=python39
+[  195s] + '[' -z python39 ']'
+[  195s] + '[' python39 '!=' python311 ']'
+[  195s] + '[' -d build ']'
+[  195s] + mv build _build.python39
+[  196s] + '[' -d _build.python311 ']'
+[  196s] + mv _build.python311 build
+[  196s] + echo python311
+[  196s] + python_flavor=python311
+[  196s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64 --prefix /usr
+[  200s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  200s]   warnings.warn(msg, warning_class)
+[  200s] running install
+[  200s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  200s]   warnings.warn(
+[  200s] running install_lib
+[  200s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11
+[  200s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages
+[  200s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/codecs.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/errors.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/name.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/timezones.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/tool.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/utils.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/gen_interop_data.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/mock_tether_parent.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/sample_http_client.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/sample_http_server.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_bench.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_datafile_interop.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_init.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_script.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/test_tether_word_count.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] copying build/lib/avro/test/word_count_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test
+[  200s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/InputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/tether/OutputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether
+[  200s] copying build/lib/avro/HandshakeRequest.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  200s] copying build/lib/avro/HandshakeResponse.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  201s] copying build/lib/avro/LICENSE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  201s] copying build/lib/avro/NOTICE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  201s] copying build/lib/avro/VERSION.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  201s] copying build/lib/avro/interop.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__init__.py to __init__.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__main__.py to __main__.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/codecs.py to codecs.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/compatibility.py to compatibility.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/constants.py to constants.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/datafile.py to datafile.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/errors.py to errors.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/io.py to io.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/ipc.py to ipc.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/name.py to name.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/protocol.py to protocol.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/schema.py to schema.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/timezones.py to timezones.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tool.py to tool.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/utils.py to utils.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__init__.py to __init__.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/gen_interop_data.py to gen_interop_data.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/mock_tether_parent.py to mock_tether_parent.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/sample_http_client.py to sample_http_client.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/sample_http_server.py to sample_http_server.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_bench.py to test_bench.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_compatibility.py to test_compatibility.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_datafile.py to test_datafile.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_datafile_interop.py to test_datafile_interop.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_init.py to test_init.cpython-311.pyc
+[  201s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_io.py to test_io.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_ipc.py to test_ipc.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_protocol.py to test_protocol.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_schema.py to test_schema.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_script.py to test_script.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_tether_task.py to test_tether_task.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_tether_task_runner.py to test_tether_task_runner.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/test_tether_word_count.py to test_tether_word_count.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/word_count_task.py to word_count_task.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__init__.py to __init__.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/tether_task.py to tether_task.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/tether_task_runner.py to tether_task_runner.cpython-311.pyc
+[  202s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/util.py to util.cpython-311.pyc
+[  202s] writing byte-compilation script '/tmp/tmp998q5yk9.py'
+[  202s] /usr/bin/python3.11 /tmp/tmp998q5yk9.py
+[  207s] removing /tmp/tmp998q5yk9.py
+[  207s] running install_egg_info
+[  207s] running egg_info
+[  207s] writing avro.egg-info/PKG-INFO
+[  207s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  207s] writing entry points to avro.egg-info/entry_points.txt
+[  207s] writing requirements to avro.egg-info/requires.txt
+[  207s] writing top-level names to avro.egg-info/top_level.txt
+[  207s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  207s] reading manifest template 'MANIFEST.in'
+[  207s] adding license file 'avro/LICENSE'
+[  207s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  207s] Copying avro.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro-1.11.1-py3.11.egg-info
+[  207s] running install_scripts
+[  208s] Installing avro script to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin
+[  208s] ++ '[' -f _current_flavor ']'
+[  208s] ++ cat _current_flavor
+[  208s] + last_flavor=python311
+[  208s] + '[' -z python311 ']'
+[  208s] + '[' python311 '!=' python310 ']'
+[  208s] + '[' -d build ']'
+[  208s] + mv build _build.python311
+[  208s] + '[' -d _build.python310 ']'
+[  208s] + mv _build.python310 build
+[  208s] + echo python310
+[  208s] + python_flavor=python310
+[  208s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64 --prefix /usr
+[  212s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  212s]   warnings.warn(msg, warning_class)
+[  213s] running install
+[  213s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  213s]   warnings.warn(
+[  213s] running install_lib
+[  213s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10
+[  213s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages
+[  213s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/codecs.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/errors.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/name.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/timezones.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/tool.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/utils.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/gen_interop_data.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/mock_tether_parent.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/sample_http_client.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/sample_http_server.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_bench.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_compatibility.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_datafile.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_datafile_interop.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_init.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_io.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_ipc.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_protocol.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_schema.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_script.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/test_tether_word_count.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] copying build/lib/avro/test/word_count_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test
+[  213s] creating /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/tether_task.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/tether_task_runner.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/util.py -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/InputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/tether/OutputProtocol.avpr -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether
+[  213s] copying build/lib/avro/HandshakeRequest.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/HandshakeResponse.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/LICENSE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/NOTICE -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/VERSION.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] copying build/lib/avro/interop.avsc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro
+[  213s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__init__.py to __init__.cpython-310.pyc
+[  213s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__main__.py to __main__.cpython-310.pyc
+[  213s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/codecs.py to codecs.cpython-310.pyc
+[  213s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/compatibility.py to compatibility.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/constants.py to constants.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/datafile.py to datafile.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/errors.py to errors.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/io.py to io.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/ipc.py to ipc.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/name.py to name.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/protocol.py to protocol.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/schema.py to schema.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/timezones.py to timezones.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tool.py to tool.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/utils.py to utils.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__init__.py to __init__.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/gen_interop_data.py to gen_interop_data.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/mock_tether_parent.py to mock_tether_parent.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/sample_http_client.py to sample_http_client.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/sample_http_server.py to sample_http_server.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_bench.py to test_bench.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_compatibility.py to test_compatibility.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_datafile.py to test_datafile.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_datafile_interop.py to test_datafile_interop.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_init.py to test_init.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_io.py to test_io.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_ipc.py to test_ipc.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_protocol.py to test_protocol.cpython-310.pyc
+[  214s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_schema.py to test_schema.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_script.py to test_script.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_tether_task.py to test_tether_task.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_tether_task_runner.py to test_tether_task_runner.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/test_tether_word_count.py to test_tether_word_count.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/word_count_task.py to word_count_task.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__init__.py to __init__.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/tether_task.py to tether_task.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/tether_task_runner.py to tether_task_runner.cpython-310.pyc
+[  215s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/util.py to util.cpython-310.pyc
+[  215s] writing byte-compilation script '/tmp/tmpr8roilg2.py'
+[  215s] /usr/bin/python3.10 /tmp/tmpr8roilg2.py
+[  220s] removing /tmp/tmpr8roilg2.py
+[  220s] running install_egg_info
+[  220s] running egg_info
+[  220s] writing avro.egg-info/PKG-INFO
+[  220s] writing dependency_links to avro.egg-info/dependency_links.txt
+[  220s] writing entry points to avro.egg-info/entry_points.txt
+[  220s] writing requirements to avro.egg-info/requires.txt
+[  220s] writing top-level names to avro.egg-info/top_level.txt
+[  220s] reading manifest file 'avro.egg-info/SOURCES.txt'
+[  220s] reading manifest template 'MANIFEST.in'
+[  220s] adding license file 'avro/LICENSE'
+[  220s] writing manifest file 'avro.egg-info/SOURCES.txt'
+[  220s] Copying avro.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro-1.11.1-py3.10.egg-info
+[  220s] running install_scripts
+[  221s] Installing avro script to /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin
+[  221s] + cp /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.8
+[  221s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.8
+[  221s] + cp /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.9
+[  221s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.9
+[  221s] + cp /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.11
+[  221s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.11
+[  221s] + cp /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.10
+[  221s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro-3.10
+[  222s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro
+[  222s] + alternative_target=/usr/bin/avro
+[  222s] + [[ /usr/bin/avro == /usr/share/man* ]]
+[  222s] + '[' 0 -eq 1 ']'
+[  222s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/etc/alternatives
+[  222s] + touch /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/etc/alternatives/avro
+[  222s] + ln -sf /etc/alternatives/avro /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/bin/avro
+[  222s] ++ '[' -f _current_flavor ']'
+[  222s] ++ cat _current_flavor
+[  222s] + last_flavor=python310
+[  222s] + '[' -z python310 ']'
+[  222s] + '[' python310 '!=' python38 ']'
+[  222s] + '[' -d build ']'
+[  222s] + mv build _build.python310
+[  222s] + '[' -d _build.python38 ']'
+[  222s] + mv _build.python38 build
+[  222s] + echo python38
+[  222s] + python_flavor=python38
+[  222s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro-1.11.1-py3.8.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro-1.11.1-py3.8.egg-info/zip-safe
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/utils.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/utils.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/tool.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/tool.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/timezones.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/timezones.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/schema.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/schema.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/name.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/name.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/ipc.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/ipc.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/io.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/io.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/errors.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/errors.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/datafile.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/datafile.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/constants.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/constants.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/codecs.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/__pycache__/codecs.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/util.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/util.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/tether/__pycache__/__init__.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/word_count_task.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/word_count_task.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_tether_task_runner.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_tether_task_runner.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_script.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_script.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_schema.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_schema.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_io.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_io.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_init.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_init.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_protocol.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_protocol.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_datafile.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_datafile.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_compatibility.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_compatibility.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_bench.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/test_bench.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/sample_http_server.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/sample_http_server.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/sample_http_client.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/sample_http_client.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/__init__.cpython-38.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/gen_interop_data.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages/avro/test/__pycache__/gen_interop_data.cpython-38.pyc
+[  222s] ++ '[' -f _current_flavor ']'
+[  222s] ++ cat _current_flavor
+[  222s] + last_flavor=python38
+[  222s] + '[' -z python38 ']'
+[  222s] + '[' python38 '!=' python39 ']'
+[  222s] + '[' -d build ']'
+[  222s] + mv build _build.python38
+[  222s] + '[' -d _build.python39 ']'
+[  222s] + mv _build.python39 build
+[  222s] + echo python39
+[  222s] + python_flavor=python39
+[  222s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro-1.11.1-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro-1.11.1-py3.9.egg-info/zip-safe
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/utils.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/utils.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/tool.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/tool.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/timezones.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/timezones.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/schema.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/schema.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/name.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/name.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/ipc.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/ipc.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/io.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/io.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/errors.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/errors.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/datafile.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/datafile.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/constants.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/constants.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/codecs.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/__pycache__/codecs.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/util.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/util.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/tether/__pycache__/__init__.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/word_count_task.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/word_count_task.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_script.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_script.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_schema.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_schema.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_io.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_io.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_init.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_init.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_protocol.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_protocol.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_datafile.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_datafile.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_compatibility.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_compatibility.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_bench.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/test_bench.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/sample_http_server.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/sample_http_server.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/sample_http_client.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/sample_http_client.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/__init__.cpython-39.pyc
+[  222s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/gen_interop_data.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.9/site-packages/avro/test/__pycache__/gen_interop_data.cpython-39.pyc
+[  222s] ++ '[' -f _current_flavor ']'
+[  222s] ++ cat _current_flavor
+[  223s] + last_flavor=python39
+[  223s] + '[' -z python39 ']'
+[  223s] + '[' python39 '!=' python311 ']'
+[  223s] + '[' -d build ']'
+[  223s] + mv build _build.python39
+[  223s] + '[' -d _build.python311 ']'
+[  223s] + mv _build.python311 build
+[  223s] + echo python311
+[  223s] + python_flavor=python311
+[  223s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro-1.11.1-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro-1.11.1-py3.11.egg-info/zip-safe
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/utils.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/utils.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/tool.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/tool.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/timezones.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/timezones.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/schema.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/schema.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/protocol.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/protocol.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/name.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/name.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/ipc.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/ipc.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/io.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/io.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/errors.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/errors.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/datafile.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/datafile.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/constants.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/constants.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/codecs.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/codecs.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/__main__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/__main__.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/__init__.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/compatibility.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/__pycache__/compatibility.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/util.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/util.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/tether_task.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/tether_task.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/__init__.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/word_count_task.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/word_count_task.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_word_count.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_word_count.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_task_runner.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_task_runner.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_script.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_script.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_schema.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_schema.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_task.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_tether_task.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_ipc.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_ipc.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_io.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_io.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_init.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_init.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_protocol.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_protocol.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_datafile.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_datafile.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_compatibility.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_compatibility.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_bench.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_bench.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/sample_http_server.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/sample_http_server.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/sample_http_client.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/sample_http_client.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_datafile_interop.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/test_datafile_interop.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/__init__.cpython-311.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/gen_interop_data.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.11/site-packages/avro/test/__pycache__/gen_interop_data.cpython-311.pyc
+[  223s] ++ '[' -f _current_flavor ']'
+[  223s] ++ cat _current_flavor
+[  223s] + last_flavor=python311
+[  223s] + '[' -z python311 ']'
+[  223s] + '[' python311 '!=' python310 ']'
+[  223s] + '[' -d build ']'
+[  223s] + mv build _build.python311
+[  223s] + '[' -d _build.python310 ']'
+[  223s] + mv _build.python310 build
+[  223s] + echo python310
+[  223s] + python_flavor=python310
+[  223s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro-1.11.1-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro-1.11.1-py3.10.egg-info/zip-safe
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/utils.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/utils.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/tool.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/tool.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/timezones.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/timezones.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/schema.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/schema.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/name.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/name.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/ipc.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/ipc.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/io.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/io.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/errors.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/errors.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/datafile.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/datafile.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/constants.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/constants.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/codecs.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/__pycache__/codecs.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/util.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/util.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/__init__.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/tether/__pycache__/tether_task_runner.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/word_count_task.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/word_count_task.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_script.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_script.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_schema.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_schema.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_io.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_io.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_init.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_init.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_protocol.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_protocol.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_datafile.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_datafile.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_compatibility.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_compatibility.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_bench.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/test_bench.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/sample_http_server.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/sample_http_server.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/sample_http_client.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/sample_http_client.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/mock_tether_parent.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/__init__.cpython-310.pyc
+[  223s] Linking /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/gen_interop_data.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.10/site-packages/avro/test/__pycache__/gen_interop_data.cpython-310.pyc
+[  223s] + /usr/lib/rpm/find-debuginfo -j4 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/avro-1.11.1
+[  224s] + /usr/lib/rpm/brp-compress
+[  225s] + /usr/lib/rpm/brp-suse
+[  225s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  225s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  225s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  226s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  226s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  226s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.7d7GSj
+[  226s] + umask 022
+[  226s] + cd /home/abuild/rpmbuild/BUILD
+[  226s] + cd avro-1.11.1
+[  226s] + set +x
+[  226s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  227s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  227s] Using alternative avro-3.8 for avro in ./build/flavorbin during Python 3.8 expansions.
+[  227s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  227s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  228s] Using alternative avro-3.9 for avro in ./build/flavorbin during Python 3.9 expansions.
+[  228s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  228s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  229s] Using alternative avro-3.11 for avro in ./build/flavorbin during Python 3.11 expansions.
+[  229s] Using alternative avro-3.10 for avro in ./build/flavorbin during Python 3.10 expansions.
+[  229s] + export PATH=/home/abuild/rpmbuild/BUILD/avro-1.11.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  229s] + PATH=/home/abuild/rpmbuild/BUILD/avro-1.11.1/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  229s] ++ '[' -f _current_flavor ']'
+[  229s] ++ cat _current_flavor
+[  229s] + last_flavor=python310
+[  229s] + '[' -z python310 ']'
+[  229s] + '[' python310 '!=' python38 ']'
+[  229s] + '[' -d build ']'
+[  229s] + mv build _build.python310
+[  229s] + '[' -d _build.python38 ']'
+[  229s] + mv _build.python38 build
+[  229s] + echo python38
+[  229s] + python_flavor=python38
+[  229s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-avro-1.11.1-2.1.riscv64/usr/lib/python3.8/site-packages
+[  229s] + PYTHONDONTWRITEBYTECODE=1
+[  229s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -k 'not test_server_with_path and not test_minimum_speed'
+[  234s] ============================= test session starts ==============================
+[  234s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  234s] cachedir: .pytest_cache
+[  234s] rootdir: /home/abuild/rpmbuild/BUILD/avro-1.11.1
+[  239s] collecting ... collected 89 items / 2 deselected / 87 selected
+[  239s] 
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility PASSED [  1%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_fixed_size_mismatch PASSED [  2%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_missing_enum_symbols PASSED [  3%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_missing_union_branch PASSED [  4%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_name_mismatch PASSED [  5%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_reader_field_missing_default_value PASSED [  6%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_schema_compatibility_type_mismatch PASSED [  8%]
+[  239s] avro/test/test_compatibility.py::TestCompatibility::test_simple_schema_promotion PASSED [  9%]
+[  242s] avro/test/test_datafile.py::TestDataFile::test_append PASSED             [ 10%]
+[  242s] avro/test/test_datafile.py::TestDataFile::test_context_manager PASSED    [ 11%]
+[  242s] avro/test/test_datafile.py::TestDataFile::test_empty_datafile PASSED     [ 12%]
+[  242s] avro/test/test_datafile.py::TestDataFile::test_metadata PASSED           [ 13%]
+[  243s] avro/test/test_datafile.py::TestDataFile::test_round_trip PASSED         [ 14%]
+[  243s] avro/test/test_datafile_interop.py::TestDataFileInterop::test_interop SKIPPED [ 16%]
+[  243s] avro/test/test_init.py::TestVersion::test_import_version PASSED          [ 17%]
+[  243s] avro/test/test_io.py::TestIncompatibleSchemaReading::test_deserialization_fails PASSED [ 18%]
+[  243s] avro/test/test_io.py::TestMisc::test_decimal_bytes_small_scale PASSED    [ 19%]
+[  243s] avro/test/test_io.py::TestMisc::test_decimal_fixed_small_scale PASSED    [ 20%]
+[  243s] avro/test/test_io.py::TestMisc::test_field_order PASSED                  [ 21%]
+[  243s] avro/test/test_io.py::TestMisc::test_no_default_value PASSED             [ 22%]
+[  243s] avro/test/test_io.py::TestMisc::test_projection PASSED                   [ 24%]
+[  243s] avro/test/test_io.py::TestMisc::test_type_exception_int PASSED           [ 25%]
+[  243s] avro/test/test_io.py::TestMisc::test_type_exception_long PASSED          [ 26%]
+[  243s] avro/test/test_io.py::TestMisc::test_type_exception_record PASSED        [ 27%]
+[  243s] avro/test/test_io.py::TestMisc::test_unknown_symbol PASSED               [ 28%]
+[  243s] avro/test/test_ipc.py::TestIPC::test_placeholder PASSED                  [ 29%]
+[  243s] avro/test/test_protocol.py::TestMisc::test_inner_namespace_not_rendered PASSED [ 31%]
+[  243s] avro/test/test_protocol.py::TestMisc::test_inner_namespace_set PASSED    [ 32%]
+[  243s] avro/test/test_schema.py::TestMisc::test_correct_recursive_extraction PASSED [ 33%]
+[  243s] avro/test/test_schema.py::TestMisc::test_decimal_valid_type PASSED       [ 34%]
+[  243s] avro/test/test_schema.py::TestMisc::test_equal_names PASSED              [ 35%]
+[  243s] avro/test/test_schema.py::TestMisc::test_exception_is_not_swallowed_on_parse_error PASSED [ 36%]
+[  243s] avro/test/test_schema.py::TestMisc::test_fixed_decimal_invalid_max_precision PASSED [ 37%]
+[  243s] avro/test/test_schema.py::TestMisc::test_fixed_decimal_valid_max_precision PASSED [ 39%]
+[  243s] avro/test/test_schema.py::TestMisc::test_fullname_default_specified PASSED [ 40%]
+[  243s] avro/test/test_schema.py::TestMisc::test_fullname_space_default_specified PASSED [ 41%]
+[  243s] avro/test/test_schema.py::TestMisc::test_fullname_space_specified PASSED [ 42%]
+[  243s] avro/test/test_schema.py::TestMisc::test_invalid_name PASSED             [ 43%]
+[  243s] avro/test/test_schema.py::TestMisc::test_name_default_specified PASSED   [ 44%]
+[  243s] avro/test/test_schema.py::TestMisc::test_name_is_none PASSED             [ 45%]
+[  243s] avro/test/test_schema.py::TestMisc::test_name_not_empty_string PASSED    [ 47%]
+[  243s] avro/test/test_schema.py::TestMisc::test_name_space_default_specified PASSED [ 48%]
+[  243s] avro/test/test_schema.py::TestMisc::test_name_space_specified PASSED     [ 49%]
+[  244s] avro/test/test_schema.py::TestMisc::test_null_namespace PASSED           [ 50%]
+[  244s] avro/test/test_schema.py::TestMisc::test_parse_invalid_symbol PASSED     [ 51%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_array PASSED       [ 52%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_fullname PASSED    [ 54%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_integer_canonical_form PASSED [ 55%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_large_record_handshake_request PASSED [ 56%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_large_record_handshake_response PASSED [ 57%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_large_record_interop PASSED [ 58%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_map PASSED         [ 59%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_order PASSED       [ 60%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_boolean PASSED [ 62%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_bytes PASSED [ 63%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_double PASSED [ 64%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_float PASSED [ 65%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_int PASSED [ 66%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_long PASSED [ 67%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_null PASSED [ 68%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_primitive_string PASSED [ 70%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_record_field PASSED [ 71%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_string_with_escaped_characters PASSED [ 72%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_strip PASSED       [ 73%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_union PASSED       [ 74%]
+[  244s] avro/test/test_schema.py::CanonicalFormTestCase::test_whitespace PASSED  [ 75%]
+[  246s] avro/test/test_script.py::TestCat::test_csv PASSED                       [ 77%]
+[  248s] avro/test/test_script.py::TestCat::test_csv_header PASSED                [ 78%]
+[  256s] avro/test/test_script.py::TestCat::test_fields PASSED                    [ 79%]
+[  258s] avro/test/test_script.py::TestCat::test_files PASSED                     [ 80%]
+[  260s] avro/test/test_script.py::TestCat::test_filter PASSED                    [ 81%]
+[  264s] avro/test/test_script.py::TestCat::test_help PASSED                      [ 82%]
+[  266s] avro/test/test_script.py::TestCat::test_json_pretty PASSED               [ 83%]
+[  268s] avro/test/test_script.py::TestCat::test_print PASSED                     [ 85%]
+[  270s] avro/test/test_script.py::TestCat::test_print_schema PASSED              [ 86%]
+[  272s] avro/test/test_script.py::TestCat::test_skip PASSED                      [ 87%]
+[  274s] avro/test/test_script.py::TestCat::test_version PASSED                   [ 88%]
+[  278s] avro/test/test_script.py::TestWrite::test_multi_file PASSED              [ 89%]
+[  282s] avro/test/test_script.py::TestWrite::test_outfile PASSED                 [ 90%]
+[  286s] avro/test/test_script.py::TestWrite::test_stdin PASSED                   [ 91%]
+[  289s] avro/test/test_script.py::TestWrite::test_version PASSED                 [ 93%]
+[  293s] avro/test/test_script.py::TestWrite::test_write_csv PASSED               [ 94%]
+[  297s] avro/test/test_script.py::TestWrite::test_write_json PASSED              [ 95%]
+[  300s] avro/test/test_tether_task.py::TestTetherTask::test_tether_task FAILED   [ 96%]
+[  304s] avro/test/test_tether_task_runner.py::TestTetherTaskRunner::test1 PASSED [ 97%]
+[  307s] avro/test/test_tether_task_runner.py::TestTetherTaskRunner::test2 PASSED [ 98%]
+[  307s] avro/test/test_tether_word_count.py::TestTetherWordCount::test_tether_word_count SKIPPED [100%]
+[  307s] 
+[  307s] =================================== FAILURES ===================================
+[  307s] _______________________ TestTetherTask.test_tether_task ________________________
+[  307s] 
+[  307s] self = <avro.test.test_tether_task.TestTetherTask testMethod=test_tether_task>
+[  307s] 
+[  307s]     def test_tether_task(self) -> None:
+[  307s]         """
+[  307s]         Test that the tether_task is working. We run the mock_tether_parent in a separate
+[  307s]         subprocess
+[  307s]         """
+[  307s]         task = avro.test.word_count_task.WordCountTask()
+[  307s]         proc = None
+[  307s]         pyfile = avro.test.mock_tether_parent.__file__
+[  307s]         server_port = avro.tether.util.find_port()
+[  307s]         input_port = avro.tether.util.find_port()
+[  307s]         try:
+[  307s]             # launch the server in a separate process
+[  307s]             proc = subprocess.Popen([sys.executable, pyfile, "start_server", str(server_port)])
+[  307s]     
+[  307s]             print(f"Mock server started process pid={proc.pid}")
+[  307s]     
+[  307s]             # Possible race condition? open tries to connect to the subprocess before the subprocess is fully started
+[  307s]             # so we give the subprocess time to start up
+[  307s]             time.sleep(1)
+[  307s]             task.open(input_port, clientPort=server_port)
+[  307s]     
+[  307s]             # TODO: We should validate that open worked by grabbing the STDOUT of the subproces
+[  307s]             # and ensuring that it outputted the correct message.
+[  307s]     
+[  307s]             # ***************************************************************
+[  307s]             # Test the mapper
+[  307s]             if avro.tether.tether_task.TaskType is None:
+[  307s]                 self.fail()
+[  307s]             task.configure(
+[  307s]                 avro.tether.tether_task.TaskType.MAP,
+[  307s]                 str(task.inschema),
+[  307s]                 str(task.midschema),
+[  307s]             )
+[  307s]     
+[  307s]             # Serialize some data so we can send it to the input function
+[  307s]             datum = "This is a line of text"
+[  307s]             writer = io.BytesIO()
+[  307s]             encoder = avro.io.BinaryEncoder(writer)
+[  307s]             datum_writer = avro.io.DatumWriter(task.inschema)
+[  307s]             datum_writer.write(datum, encoder)
+[  307s]     
+[  307s]             writer.seek(0)
+[  307s]             data = writer.read()
+[  307s]     
+[  307s]             # Call input to simulate calling map
+[  307s]             task.input(data, 1)
+[  307s]     
+[  307s]             # Test the reducer
+[  307s]             task.configure(
+[  307s]                 avro.tether.tether_task.TaskType.REDUCE,
+[  307s]                 str(task.midschema),
+[  307s]                 str(task.outschema),
+[  307s]             )
+[  307s]     
+[  307s]             # Serialize some data so we can send it to the input function
+[  307s]             writer = io.BytesIO()
+[  307s]             encoder = avro.io.BinaryEncoder(writer)
+[  307s]             datum_writer = avro.io.DatumWriter(task.midschema)
+[  307s]             datum_writer.write({"key": "word", "value": 2}, encoder)
+[  307s]     
+[  307s]             writer.seek(0)
+[  307s]             data = writer.read()
+[  307s]     
+[  307s]             # Call input to simulate calling reduce
+[  307s]             task.input(data, 1)
+[  307s]     
+[  307s] >           task.complete()
+[  307s] 
+[  307s] avro/test/test_tether_task.py:104: 
+[  307s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  307s] avro/tether/tether_task.py:366: in complete
+[  307s]     self.outputClient.request("complete", dict())
+[  307s] avro/tether/tether_task.py:149: in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s] avro/ipc.py:441: in __init__
+[  307s]     self.conn.connect()
+[  307s] /usr/lib64/python3.8/http/client.py:922: in connect
+[  307s]     self.sock = self._create_connection(
+[  307s] /usr/lib64/python3.8/socket.py:808: in create_connection
+[  307s]     raise err
+[  307s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  307s] 
+[  307s] address = ('127.0.0.1', 37563), timeout = <object object at 0x4003189760>
+[  307s] source_address = None
+[  307s] 
+[  307s]     def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+[  307s]                           source_address=None):
+[  307s]         """Connect to *address* and return the socket object.
+[  307s]     
+[  307s]         Convenience function.  Connect to *address* (a 2-tuple ``(host,
+[  307s]         port)``) and return the socket object.  Passing the optional
+[  307s]         *timeout* parameter will set the timeout on the socket instance
+[  307s]         before attempting to connect.  If no *timeout* is supplied, the
+[  307s]         global default timeout setting returned by :func:`getdefaulttimeout`
+[  307s]         is used.  If *source_address* is set it must be a tuple of (host, port)
+[  307s]         for the socket to bind as a source address before making the connection.
+[  307s]         A host of '' or port 0 tells the OS to use the default.
+[  307s]         """
+[  307s]     
+[  307s]         host, port = address
+[  307s]         err = None
+[  307s]         for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+[  307s]             af, socktype, proto, canonname, sa = res
+[  307s]             sock = None
+[  307s]             try:
+[  307s]                 sock = socket(af, socktype, proto)
+[  307s]                 if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
+[  307s]                     sock.settimeout(timeout)
+[  307s]                 if source_address:
+[  307s]                     sock.bind(source_address)
+[  307s] >               sock.connect(sa)
+[  307s] E               ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] /usr/lib64/python3.8/socket.py:796: ConnectionRefusedError
+[  307s] ----------------------------- Captured stdout call -----------------------------
+[  307s] Mock server started process pid=4377
+[  307s] ------------------------------ Captured log call -------------------------------
+[  307s] ERROR    TetherTask:tether_task.py:426 TetherTask.fail: failure occured message follows:
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 262, in open
+[  307s]     self.outputClient.request("configure", {"port": inputport})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] ERROR    TetherTask:tether_task.py:435 TetherTask.fail: an exception occured while trying to send the fail message to the output server.
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 262, in open
+[  307s]     self.outputClient.request("configure", {"port": inputport})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] During handling of the above exception, another exception occurred:
+[  307s] 
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 433, in fail
+[  307s]     self.outputClient.request("fail", {"message": message})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] WARNING  TetherTask:tether_task.py:351 failing: Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 334, in input
+[  307s]     self.map(inRecord, self.midCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 60, in map
+[  307s]     collector.collect({"key": w, "value": 1})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] ERROR    TetherTask:tether_task.py:426 TetherTask.fail: failure occured message follows:
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 334, in input
+[  307s]     self.map(inRecord, self.midCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 60, in map
+[  307s]     collector.collect({"key": w, "value": 1})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] ERROR    TetherTask:tether_task.py:435 TetherTask.fail: an exception occured while trying to send the fail message to the output server.
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 334, in input
+[  307s]     self.map(inRecord, self.midCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 60, in map
+[  307s]     collector.collect({"key": w, "value": 1})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] During handling of the above exception, another exception occurred:
+[  307s] 
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 433, in fail
+[  307s]     self.outputClient.request("fail", {"message": message})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] WARNING  TetherTask:tether_task.py:363 failing: Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 360, in complete
+[  307s]     self.reduceFlush(self.midRecord, self.outCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 91, in reduceFlush
+[  307s]     collector.collect({"key": record["key"], "value": self.psum})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] ERROR    TetherTask:tether_task.py:426 TetherTask.fail: failure occured message follows:
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 360, in complete
+[  307s]     self.reduceFlush(self.midRecord, self.outCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 91, in reduceFlush
+[  307s]     collector.collect({"key": record["key"], "value": self.psum})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] ERROR    TetherTask:tether_task.py:435 TetherTask.fail: an exception occured while trying to send the fail message to the output server.
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 360, in complete
+[  307s]     self.reduceFlush(self.midRecord, self.outCollector)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/word_count_task.py", line 91, in reduceFlush
+[  307s]     collector.collect({"key": record["key"], "value": self.psum})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 103, in collect
+[  307s]     self.outputClient.request("output", datum)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] 
+[  307s] During handling of the above exception, another exception occurred:
+[  307s] 
+[  307s] Traceback (most recent call last):
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 433, in fail
+[  307s]     self.outputClient.request("fail", {"message": message})
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/tether/tether_task.py", line 149, in request
+[  307s]     transciever = avro.ipc.HTTPTransceiver(self.server, self.port)
+[  307s]   File "/home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/ipc.py", line 441, in __init__
+[  307s]     self.conn.connect()
+[  307s]   File "/usr/lib64/python3.8/http/client.py", line 922, in connect
+[  307s]     self.sock = self._create_connection(
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 808, in create_connection
+[  307s]     raise err
+[  307s]   File "/usr/lib64/python3.8/socket.py", line 796, in create_connection
+[  307s]     sock.connect(sa)
+[  307s] ConnectionRefusedError: [Errno 111] Connection refused
+[  307s] =============================== warnings summary ===============================
+[  307s] avro/test/test_protocol.py:29
+[  307s]   /home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/test_protocol.py:29: PytestCollectionWarning: cannot collect test class 'TestProtocol' because it has a __init__ constructor (from: avro/test/test_protocol.py)
+[  307s]     class TestProtocol:
+[  307s] 
+[  307s] avro/test/test_schema.py:30
+[  307s]   /home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/test/test_schema.py:30: PytestCollectionWarning: cannot collect test class 'TestSchema' because it has a __init__ constructor (from: avro/test/test_schema.py)
+[  307s]     class TestSchema:
+[  307s] 
+[  307s] avro/test/test_schema.py::TestMisc::test_fixed_decimal_invalid_max_precision
+[  307s]   /home/abuild/rpmbuild/BUILD/avro-1.11.1/avro/schema.py:1138: IgnoredLogicalType: Invalid decimal precision 19. Max is 18.
+[  307s]     warnings.warn(warning)
+[  307s] 
+[  307s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  307s] =========================== short test summary info ============================
+[  307s] FAILED avro/test/test_tether_task.py::TestTetherTask::test_tether_task - Conn...
+[  307s] = 1 failed, 84 passed, 2 skipped, 2 deselected, 3 warnings in 73.10s (0:01:13) =
+[  307s] error: Bad exit status from /var/tmp/rpm-tmp.7d7GSj (%check)
+[  307s] 
+[  307s] RPM build errors:
+[  307s]     Bad exit status from /var/tmp/rpm-tmp.7d7GSj (%check)
+[  307s] ### VM INTERACTION START ###
+[  308s] [  300.026130][    T1] sysrq: Power Off
+[  308s] [  300.029043][  T294] reboot: Power down
+[  308s] ### VM INTERACTION END ###
+[  308s] 
+[  308s] old-cirrus1 failed "build python-avro.spec" at Sat Feb 18 21:29:59 UTC 2023.
+[  308s] 

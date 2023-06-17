@@ -1,0 +1,1061 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_6/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_6/root
+[    0s] 
+[    0s] 
+[    0s] goat07 started "build wezterm.spec" at Thu Feb 16 09:12:06 UTC 2023.
+[    0s] 
+[    0s] Building wezterm for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'b85eeb014d36777c43e221b26424c117'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_6/.build-srcdir/wezterm.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_6/.build-srcdir/wezterm.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/6/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_6/.build.rpmlist /var/cache/obs/worker/root_6/.build-srcdir/wezterm.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [5b590b84cfd18d0e3dd8d40de50e0bcb]
+[    1s] 
+[    1s] copying packages...
+[    1s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    1s]   breaking dependency python310-base -> libpython3_10-1_0
+[    1s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    1s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    1s] cycle: libgio-2_0-0 -> glib2-tools
+[    1s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    1s] cycle: Mesa-dri -> Mesa
+[    1s]   breaking dependency Mesa -> Mesa-dri
+[    1s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    1s]   breaking dependency Mesa -> Mesa-libEGL1
+[    1s] cycle: Mesa -> Mesa-libGL1
+[    1s]   breaking dependency Mesa-libGL1 -> Mesa
+[    1s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    1s]   breaking dependency Mesa -> Mesa-libGL1
+[    1s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    1s]   breaking dependency libglvnd -> Mesa-dri
+[    1s] cycle: openssl -> openssl-3
+[    1s]   breaking dependency openssl-3 -> openssl
+[    1s] cycle: fontconfig -> libfontconfig1
+[    1s]   breaking dependency libfontconfig1 -> fontconfig
+[    1s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    1s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    1s] cycle: gstreamer -> libgstreamer-1_0-0
+[    1s]   breaking dependency libgstreamer-1_0-0 -> gstreamer
+[    1s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstallocators-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgstapp-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstapp-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgstaudio-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstaudio-1_0-0
+[    1s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base -> libgstgl-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstgl-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstpbutils-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgstriff-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstriff-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgsttag-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgsttag-1_0-0
+[    1s] cycle: gstreamer-plugins-base -> libgstvideo-1_0-0
+[    1s]   breaking dependency gstreamer-plugins-base -> libgstvideo-1_0-0
+[    1s] done
+[    1s] Detected virtio-serial support
+[    2s] booting kvm...
+[    2s] ### VM INTERACTION START ###
+[    2s] Using virtio-serial support
+[    2s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_6/.mount/boot/kernel -initrd /var/cache/obs/worker/root_6/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_6/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_6/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_6/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 16
+[    5s] ### VM INTERACTION END ###
+[    5s] 2nd stage started in virtual machine
+[    5s] machine type: riscv64
+[    5s] Linux version: 6.1.10-1-default #1 SMP PREEMPT_DYNAMIC Mon Feb 6 07:27:26 UTC 2023 (2a0570b)
+[    5s] Increasing log level from now on...
+[    5s] [    2.458569][  T482] sysrq: Changing Loglevel
+[    5s] [    2.458615][  T482] sysrq: Loglevel set to 4
+[    5s] Enable sysrq operations
+[    5s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    5s] no label, UUID=250881aa-69b7-41a0-b383-45936f3a2d2b
+[    5s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    5s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    5s] swapon /dev/vdb
+[    5s] WARNING: udev not running, creating extra device nodes
+[    6s] logging output to //.build.log...
+[    6s] processing recipe /.build-srcdir/wezterm.spec ...
+[    6s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/wezterm.spec build ...
+[    6s] initializing rpm db...
+[    6s] querying package ids...
+[   20s] [1/315] cumulate Mesa-KHR-devel-22.3.5-350.1
+[   20s] [2/315] cumulate Mesa-libglapi0-22.3.5-350.1
+[   20s] [3/315] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   20s] [4/315] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   20s] [5/315] preinstalled attr-2.5.1-1.1
+[   20s] [6/315] preinstalled bash-5.2.15-8.1
+[   20s] [7/315] preinstalled bash-sh-5.2.15-8.1
+[   20s] [8/315] preinstalled binutils-2.39-3.1
+[   20s] [9/315] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   20s] [10/315] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   20s] [11/315] preinstalled build-mkbaselibs-20230208-1.1
+[   20s] [12/315] preinstalled bzip2-1.0.8-4.1
+[   20s] [13/315] preinstalled chkstat-1599_20221220-1.2
+[   20s] [14/315] preinstalled compat-usrmerge-build-84.87-5.1
+[   20s] [15/315] preinstalled compat-usrmerge-tools-84.87-5.1
+[   20s] [16/315] preinstalled coreutils-9.1-5.1
+[   20s] [17/315] preinstalled cpio-2.13-5.1
+[   20s] [18/315] preinstalled cpp-12-2.1
+[   20s] [19/315] preinstalled cpp12-12.2.1+git749-4.1
+[   20s] [20/315] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   20s] [21/315] preinstalled debugedit-5.0-5.1
+[   20s] [22/315] preinstalled diffutils-3.9-1.1
+[   20s] [23/315] preinstalled dwz-0.15-2.1
+[   20s] [24/315] preinstalled elfutils-0.188-3.2
+[   20s] [25/315] preinstalled file-5.44-1.1
+[   20s] [26/315] preinstalled file-magic-5.44-1.1
+[   20s] [27/315] preinstalled filesystem-84.87-12.1
+[   20s] [28/315] preinstalled fillup-1.42-279.1
+[   20s] [29/315] preinstalled findutils-4.9.0-2.1
+[   20s] [30/315] preinstalled gawk-5.2.1-2.1
+[   20s] [31/315] preinstalled gcc-12-2.1
+[   20s] [32/315] preinstalled gcc-PIE-12-2.1
+[   20s] [33/315] preinstalled gcc12-12.2.1+git749-4.1
+[   20s] [34/315] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   20s] [35/315] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   20s] [36/315] preinstalled gettext-tools-mini-0.21.1-1.1
+[   20s] [37/315] preinstalled glibc-2.37-1.1
+[   20s] [38/315] preinstalled glibc-devel-2.37-1.1
+[   20s] [39/315] preinstalled glibc-locale-base-2.37-1.1
+[   20s] [40/315] preinstalled grep-3.8-3.1
+[   20s] [41/315] preinstalled gzip-1.12-3.1
+[   20s] [42/315] cumulate hicolor-icon-theme-0.17-4.1
+[   20s] [43/315] preinstalled kernel-obs-build-6.1.10-1.1
+[   20s] [44/315] cumulate libX11-data-1.8.1-4.1
+[   20s] [45/315] cumulate libXau6-1.0.11-1.1
+[   20s] [46/315] preinstalled libacl1-2.3.1-2.1
+[   20s] [47/315] preinstalled libasan8-13.0.1+git5428-6.1
+[   20s] [48/315] preinstalled libasm1-0.188-3.2
+[   20s] [49/315] cumulate libasound2-1.2.8-1.1
+[   20s] [50/315] preinstalled libatomic1-13.0.1+git5428-6.1
+[   20s] [51/315] preinstalled libattr1-2.5.1-1.1
+[   20s] [52/315] preinstalled libaudit1-3.0.6-4.1
+[   20s] [53/315] preinstalled libblkid1-2.38.1-6.1
+[   20s] [54/315] cumulate libbrotlicommon1-1.0.9-1.1
+[   20s] [55/315] preinstalled libbz2-1-1.0.8-4.1
+[   20s] [56/315] cumulate libbz2-devel-1.0.8-4.1
+[   20s] [57/315] preinstalled libcap-ng0-0.8.3-1.1
+[   20s] [58/315] preinstalled libcap2-2.67-1.1
+[   20s] [59/315] cumulate libcdda_interface0-3.10.2-28.2
+[   20s] [60/315] cumulate libcom_err2-1.46.5-4.1
+[   20s] [61/315] preinstalled libcrypt1-4.4.33-1.1
+[   20s] [62/315] preinstalled libctf-nobfd0-2.39-3.1
+[   20s] [63/315] preinstalled libctf0-2.39-3.1
+[   20s] [64/315] cumulate libdatrie1-0.2.13-1.1
+[   20s] [65/315] preinstalled libdb-4_8-4.8.30-39.1
+[   20s] [66/315] cumulate libdrm2-2.4.115-2.1
+[   20s] [67/315] preinstalled libdw1-0.188-3.2
+[   20s] [68/315] preinstalled libeconf0-0.5.1-1.1
+[   20s] [69/315] cumulate libedit0-20210910.3.1-1.1
+[   20s] [70/315] preinstalled libelf1-0.188-3.2
+[   20s] [71/315] cumulate libexpat1-2.5.0-2.1
+[   20s] [72/315] preinstalled libfdisk1-2.38.1-6.1
+[   20s] [73/315] cumulate libffi8-3.4.4-1.1
+[   20s] [74/315] cumulate libfribidi0-1.0.12-1.1
+[   20s] [75/315] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   20s] [76/315] preinstalled libgcrypt20-1.10.1-1.1
+[   20s] [77/315] preinstalled libgdbm6-1.23-1.1
+[   20s] [78/315] preinstalled libgdbm_compat4-1.23-1.1
+[   20s] [79/315] cumulate libglib-2_0-0-2.74.5-1.1
+[   20s] [80/315] preinstalled libgmp10-6.2.1-4.1
+[   20s] [81/315] preinstalled libgomp1-13.0.1+git5428-6.1
+[   20s] [82/315] preinstalled libgpg-error0-1.46-1.1
+[   20s] [83/315] cumulate libgraphite2-3-1.3.14-3.1
+[   20s] [84/315] preinstalled libisl23-0.25-1.1
+[   20s] [85/315] cumulate libjbig2-2.1-4.1
+[   20s] [86/315] cumulate libjpeg8-8.2.2-72.1
+[   20s] [87/315] cumulate libkeyutils1-1.6.3-5.1
+[   20s] [88/315] preinstalled liblua5_4-5-5.4.4-8.1
+[   20s] [89/315] preinstalled liblzma5-5.4.1-1.1
+[   20s] [90/315] preinstalled libmagic1-5.44-1.1
+[   20s] [91/315] preinstalled libmount1-2.38.1-6.1
+[   20s] [92/315] preinstalled libmpc3-1.3.1-1.2
+[   20s] [93/315] cumulate libmpdec3-2.5.1-2.1
+[   20s] [94/315] preinstalled libmpfr6-4.2.0-1.1
+[   20s] [95/315] preinstalled libncurses6-6.4.20230128-5.1
+[   20s] [96/315] cumulate libnghttp2-14-1.51.0-7.2
+[   20s] [97/315] cumulate libogg0-1.3.5-1.1
+[   20s] [98/315] cumulate libopus0-1.3.1-3.2
+[   20s] [99/315] cumulate liborc-0_4-0-0.4.33-1.1
+[   20s] [100/315] preinstalled libpcre2-8-0-10.42-3.2
+[   20s] [101/315] cumulate libpixman-1-0-0.42.2-1.1
+[   20s] [102/315] preinstalled libpkgconf3-1.8.0-2.1
+[   20s] [103/315] cumulate libpng16-16-1.6.39-2.1
+[   20s] [104/315] preinstalled libpopt0-1.19-1.1
+[   20s] [105/315] preinstalled libreadline8-8.2-2.1
+[   20s] [106/315] cumulate librhash0-1.4.3-1.1
+[   20s] [107/315] preinstalled librpmbuild9-4.18.0-3.1
+[   20s] [108/315] cumulate libsasl2-3-2.1.28-4.2
+[   20s] [109/315] preinstalled libseccomp2-2.5.4-2.1
+[   20s] [110/315] preinstalled libselinux1-3.4-2.1
+[   20s] [111/315] preinstalled libsemanage-conf-3.4-1.1
+[   20s] [112/315] preinstalled libsemanage2-3.4-1.1
+[   20s] [113/315] preinstalled libsepol2-3.4-1.1
+[   20s] [114/315] preinstalled libsmartcols1-2.38.1-6.1
+[   20s] [115/315] cumulate libsqlite3-0-3.40.1-1.1
+[   20s] [116/315] cumulate libssh-config-0.10.4-1.2
+[   20s] [117/315] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   20s] [118/315] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   20s] [119/315] preinstalled libsubid4-4.13-3.1
+[   20s] [120/315] cumulate libthai-data-0.1.29-1.1
+[   20s] [121/315] cumulate libtheoradec1-1.1.1-30.1
+[   20s] [122/315] preinstalled libubsan1-13.0.1+git5428-6.1
+[   20s] [123/315] cumulate libudev-mini1-252.5-1.1
+[   20s] [124/315] cumulate libunistring5-1.1-1.1
+[   20s] [125/315] cumulate libunwind8-1.6.2-4.1
+[   20s] [126/315] preinstalled libutempter0-1.2.0-3.2
+[   20s] [127/315] preinstalled libuuid1-2.38.1-6.1
+[   20s] [128/315] cumulate libuv1-1.44.2-3.1
+[   20s] [129/315] cumulate libverto1-0.3.2-1.1
+[   20s] [130/315] cumulate libvisual-0_4-0-0.4.0-204.1
+[   20s] [131/315] cumulate libwayland-egl1-1.21.0-4.2
+[   20s] [132/315] preinstalled libxcrypt-devel-4.4.33-1.1
+[   20s] [133/315] cumulate libxml2-2-2.10.3-3.1
+[   20s] [134/315] cumulate libxshmfence1-1.3.2-1.1
+[   20s] [135/315] preinstalled libz1-1.2.13-2.1
+[   20s] [136/315] preinstalled libzstd1-1.5.2-2.1
+[   20s] [137/315] preinstalled linux-glibc-devel-6.1-1.1
+[   20s] [138/315] preinstalled login_defs-4.13-3.1
+[   20s] [139/315] preinstalled lua54-5.4.4-8.1
+[   20s] [140/315] preinstalled make-4.4-2.1
+[   20s] [141/315] cumulate ncurses-devel-6.4.20230128-5.1
+[   20s] [142/315] preinstalled ncurses-utils-6.4.20230128-5.1
+[   20s] [143/315] preinstalled pam-1.5.2-12.1
+[   20s] [144/315] preinstalled patch-2.7.6-6.1
+[   20s] [145/315] preinstalled perl-5.36.0-4.1
+[   20s] [146/315] preinstalled perl-base-5.36.0-4.1
+[   20s] [147/315] preinstalled permissions-1599_20221220-1.2
+[   20s] [148/315] preinstalled permissions-config-1599_20221220-1.2
+[   20s] [149/315] preinstalled pkgconf-1.8.0-2.1
+[   20s] [150/315] preinstalled pkgconf-m4-1.8.0-2.1
+[   20s] [151/315] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   20s] [152/315] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   20s] [153/315] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   20s] [154/315] cumulate python-rpm-macros-20230128.e704796-1.1
+[   20s] [155/315] preinstalled qemu-linux-user-7.1.0-50.1
+[   20s] [156/315] preinstalled rpm-4.18.0-3.1
+[   20s] [157/315] preinstalled rpm-build-4.18.0-3.1
+[   20s] [158/315] preinstalled rpm-build-perl-4.18.0-3.1
+[   20s] [159/315] preinstalled rpm-config-SUSE-20220926-1.1
+[   20s] [160/315] preinstalled rpmlint-mini-2.4.0+git20230206.a2c4626-9.3
+[   20s] [161/315] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   20s] [162/315] preinstalled sed-4.9-2.1
+[   20s] [163/315] preinstalled shadow-4.13-3.1
+[   20s] [164/315] preinstalled system-group-hardware-20170617-24.1
+[   20s] [165/315] preinstalled system-user-root-20190513-2.1
+[   20s] [166/315] preinstalled systemd-rpm-macros-19-1.1
+[   20s] [167/315] preinstalled sysuser-shadow-3.1-5.1
+[   20s] [168/315] preinstalled tar-1.34-9.1
+[   20s] [169/315] preinstalled terminfo-base-6.4.20230128-5.1
+[   20s] [170/315] preinstalled update-alternatives-1.21.8-1.1
+[   20s] [171/315] preinstalled util-linux-2.38.1-6.1
+[   20s] [172/315] preinstalled which-2.21-5.1
+[   20s] [173/315] cumulate xkeyboard-config-2.38-1.1
+[   20s] [174/315] cumulate xorgproto-devel-2022.2-2.1
+[   20s] [175/315] preinstalled xz-5.4.1-1.1
+[   20s] [176/315] cumulate zlib-devel-1.2.13-2.1
+[   20s] [177/315] cumulate zstd-1.5.2-2.1
+[   20s] [178/315] cumulate gcc12-c++-12.2.1+git749-4.1
+[   20s] [179/315] cumulate libLLVM15-15.0.7-1.1
+[   20s] [180/315] cumulate libX11-xcb1-1.8.1-4.1
+[   20s] [181/315] cumulate libbrotlidec1-1.0.9-1.1
+[   20s] [182/315] cumulate libbrotlienc1-1.0.9-1.1
+[   20s] [183/315] cumulate libcdda_paranoia0-3.10.2-28.2
+[   20s] [184/315] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   20s] [185/315] cumulate libdrm_nouveau2-2.4.115-2.1
+[   20s] [186/315] cumulate libdrm_radeon1-2.4.115-2.1
+[   20s] [187/315] cumulate libexpat-devel-2.5.0-2.1
+[   20s] [188/315] cumulate libffi-devel-3.4.4-1.1
+[   20s] [189/315] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   20s] [190/315] cumulate libidn2-0-2.3.4-1.1
+[   20s] [191/315] cumulate libopenssl3-3.0.7-3.1
+[   20s] [192/315] cumulate libtheoraenc1-1.1.1-30.1
+[   20s] [193/315] cumulate libvorbis0-1.3.7-2.1
+[   20s] [194/315] cumulate libwayland-client0-1.21.0-4.2
+[   20s] [195/315] cumulate libwayland-server0-1.21.0-4.2
+[   20s] [196/315] cumulate libxcb1-1.15-2.1
+[   20s] [197/315] cumulate libxkbcommon0-1.5.0-1.1
+[   20s] [198/315] cumulate libXau-devel-1.0.11-1.1
+[   20s] [199/315] cumulate libgobject-2_0-0-2.74.5-1.1
+[   20s] [200/315] cumulate libthai0-0.1.29-1.1
+[   20s] [201/315] cumulate libtiff6-4.5.0-2.1
+[   20s] [202/315] cumulate shared-mime-info-2.2-1.1
+[   20s] [203/315] cumulate krb5-mini-1.20.1-2.3
+[   20s] [204/315] cumulate gcc-c++-12-2.1
+[   20s] [205/315] cumulate libssh2-1-1.10.0-1.2
+[   20s] [206/315] cumulate libvorbisenc2-1.3.7-2.1
+[   20s] [207/315] cumulate libwayland-cursor0-1.21.0-4.2
+[   20s] [208/315] cumulate libxcb-composite0-1.15-2.1
+[   20s] [209/315] cumulate libxcb-damage0-1.15-2.1
+[   20s] [210/315] cumulate libxcb-dpms0-1.15-2.1
+[   20s] [211/315] cumulate libxcb-dri2-0-1.15-2.1
+[   20s] [212/315] cumulate libxcb-dri3-0-1.15-2.1
+[   20s] [213/315] cumulate libxcb-ewmh2-0.4.2-1.1
+[   20s] [214/315] cumulate libxcb-glx0-1.15-2.1
+[   20s] [215/315] cumulate libxcb-icccm4-0.4.2-1.1
+[   20s] [216/315] cumulate libxcb-keysyms1-0.4.1-1.1
+[   20s] [217/315] cumulate libxcb-present0-1.15-2.1
+[   20s] [218/315] cumulate libxcb-randr0-1.15-2.1
+[   20s] [219/315] cumulate libxcb-record0-1.15-2.1
+[   20s] [220/315] cumulate libxcb-render0-1.15-2.1
+[   20s] [221/315] cumulate libxcb-res0-1.15-2.1
+[   20s] [222/315] cumulate libxcb-screensaver0-1.15-2.1
+[   20s] [223/315] cumulate libxcb-shape0-1.15-2.1
+[   20s] [224/315] cumulate libxcb-shm0-1.15-2.1
+[   20s] [225/315] cumulate libxcb-sync1-1.15-2.1
+[   20s] [226/315] cumulate libxcb-util1-0.4.1-1.1
+[   20s] [227/315] cumulate libxcb-xf86dri0-1.15-2.1
+[   20s] [228/315] cumulate libxcb-xfixes0-1.15-2.1
+[   20s] [229/315] cumulate libxcb-xinerama0-1.15-2.1
+[   20s] [230/315] cumulate libxcb-xinput0-1.15-2.1
+[   20s] [231/315] cumulate libxcb-xkb1-1.15-2.1
+[   20s] [232/315] cumulate libxcb-xtest0-1.15-2.1
+[   20s] [233/315] cumulate libxcb-xv0-1.15-2.1
+[   20s] [234/315] cumulate libxcb-xvmc0-1.15-2.1
+[   20s] [235/315] cumulate libxkbcommon-devel-1.5.0-1.1
+[   20s] [236/315] cumulate lld15-15.0.7-1.1
+[   20s] [237/315] cumulate libX11-6-1.8.1-4.1
+[   20s] [238/315] cumulate libfreetype6-2.12.1-4.1
+[   20s] [239/315] cumulate libgraphene-1_0-0-1.10.8-1.1
+[   20s] [240/315] cumulate libldap2-2.6.3-3.2
+[   20s] [241/315] cumulate libpsl5-0.21.2-1.1
+[   20s] [242/315] cumulate libbrotli-devel-1.0.9-1.1
+[   20s] [243/315] cumulate libgbm1-22.3.5-350.1
+[   20s] [244/315] cumulate libgudev-1_0-0-237-2.1
+[   20s] [245/315] cumulate libssh4-0.10.4-1.2
+[   20s] [246/315] cumulate libXext6-1.3.5-1.1
+[   20s] [247/315] cumulate libXfixes3-6.0.0-2.1
+[   20s] [248/315] cumulate libXrender1-0.9.11-1.1
+[   21s] [249/315] cumulate rust1.67-1.67.1-1.1
+[   21s] [250/315] cumulate libharfbuzz0-7.0.0-1.1
+[   21s] [251/315] cumulate libxcb-image0-0.4.1-1.1
+[   21s] [252/315] cumulate libxkbcommon-x11-0-1.5.0-1.1
+[   21s] [253/315] cumulate freetype2-devel-2.12.1-4.1
+[   21s] [254/315] cumulate wayland-devel-1.21.0-4.2
+[   21s] [255/315] cumulate libcurl4-7.87.0-1.3
+[   21s] [256/315] cumulate libxcb-devel-1.15-2.1
+[   21s] [257/315] cumulate rust-1.67.1-1.1
+[   21s] [258/315] cumulate libXi6-1.8-1.1
+[   21s] [259/315] cumulate libXv1-1.0.12-1.1
+[   21s] [260/315] cumulate libXxf86vm1-1.1.5-1.1
+[   21s] [261/315] cumulate libexiv2-27-0.27.6-3.1
+[   21s] [262/315] cumulate xcb-util-devel-0.4.1-1.1
+[   21s] [263/315] cumulate xcb-util-image-devel-0.4.1-1.1
+[   21s] [264/315] cumulate xcb-util-keysyms-devel-0.4.1-1.1
+[   21s] [265/315] cumulate cargo1.67-1.67.1-1.1
+[   21s] [266/315] cumulate libxkbcommon-x11-devel-1.5.0-1.1
+[   21s] [267/315] cumulate xcb-util-wm-devel-0.4.2-1.1
+[   21s] [268/315] cumulate libX11-devel-1.8.1-4.1
+[   21s] [269/315] cumulate cargo-1.67.1-1.1
+[   21s] [270/315] cumulate cargo-auditable-0.5.2~0-1.1
+[   21s] [271/315] cumulate cargo-packaging-1.1.0+0-1.1
+[   21s] [272/315] cumulate libglvnd-1.6.0-1.1
+[   21s] [273/315] cumulate libfontconfig1-2.14.2-1.1
+[   21s] [274/315] cumulate openssl-3-3.0.7-3.1
+[   21s] [275/315] cumulate python310-base-3.10.9-2.2
+[   21s] [276/315] cumulate libgio-2_0-0-2.74.5-1.1
+[   21s] [277/315] cumulate gio-branding-upstream-2.74.5-1.1
+[   21s] [278/315] cumulate libglvnd-devel-1.6.0-1.1
+[   21s] [279/315] cumulate libpython3_10-1_0-3.10.9-2.2
+[   21s] [280/315] cumulate openssl-3.0.7-1.1
+[   21s] [281/315] cumulate python310-packaging-23.0-1.1
+[   21s] [282/315] cumulate fontconfig-2.14.2-1.1
+[   21s] [283/315] cumulate python310-3.10.9-2.1
+[   21s] [284/315] cumulate fontconfig-devel-2.14.2-1.1
+[   21s] [285/315] cumulate Mesa-22.3.5-350.1
+[   21s] [286/315] cumulate gdk-pixbuf-query-loaders-2.42.10-1.2
+[   21s] [287/315] cumulate glib2-tools-2.74.5-1.1
+[   21s] [288/315] cumulate libXft2-2.3.7-1.1
+[   21s] [289/315] cumulate libgexiv2-2-0.14.0-2.2
+[   21s] [290/315] cumulate cmake-mini-3.25.2-1.2
+[   21s] [291/315] cumulate libgstreamer-1_0-0-1.22.0-2.1
+[   21s] [292/315] cumulate libcairo2-1.17.6-1.1
+[   21s] [293/315] cumulate Mesa-libEGL1-22.3.5-350.1
+[   21s] [294/315] cumulate Mesa-libGL1-22.3.5-350.1
+[   21s] [295/315] cumulate cmake-3.25.2-1.1
+[   21s] [296/315] cumulate libopenssl-devel-3.0.7-1.1
+[   21s] [297/315] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   21s] [298/315] cumulate Mesa-libEGL-devel-22.3.5-350.1
+[   21s] [299/315] cumulate gstreamer-1.22.0-2.1
+[   21s] [300/315] cumulate Mesa-dri-22.3.5-350.1
+[   21s] [301/315] cumulate libgdk_pixbuf-2_0-0-2.42.10-1.2
+[   21s] [302/315] cumulate libpango-1_0-0-1.50.12-1.1
+[   21s] [303/315] cumulate libopenssl-3-devel-3.0.7-3.1
+[   21s] [304/315] cumulate gstreamer-plugins-base-1.22.0-1.1
+[   21s] [305/315] cumulate libgstallocators-1_0-0-1.22.0-1.1
+[   21s] [306/315] cumulate libgstapp-1_0-0-1.22.0-1.1
+[   21s] [307/315] cumulate libgsttag-1_0-0-1.22.0-1.1
+[   21s] [308/315] cumulate libssh2-devel-1.10.0-1.2
+[   21s] [309/315] cumulate libgstvideo-1_0-0-1.22.0-1.1
+[   21s] [310/315] cumulate libgstaudio-1_0-0-1.22.0-1.1
+[   21s] [311/315] cumulate libgstgl-1_0-0-1.22.0-1.1
+[   21s] [312/315] cumulate libgstriff-1_0-0-1.22.0-1.1
+[   21s] [313/315] cumulate libgstpbutils-1_0-0-1.22.0-1.1
+[   21s] [314/315] cumulate libnautilus-extension4-43.2-1.1
+[   21s] [315/315] cumulate python-nautilus-common-files-4.0-1.1
+[   21s] now installing cumulated packages
+[   21s] Preparing...                          ########################################
+[   21s] Updating / installing...
+[   21s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   21s] libexpat1-2.5.0-2.1                   ########################################
+[   21s] libdrm2-2.4.115-2.1                   ########################################
+[   21s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   21s] libffi8-3.4.4-1.1                     ########################################
+[   21s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   21s] libwayland-client0-1.21.0-4.2         ########################################
+[   21s] libpng16-16-1.6.39-2.1                ########################################
+[   21s] libwayland-server0-1.21.0-4.2         ########################################
+[   22s] zlib-devel-1.2.13-2.1                 ########################################
+[   22s] liborc-0_4-0-0.4.33-1.1               ########################################
+[   22s] libogg0-1.3.5-1.1                     ########################################
+[   22s] libjpeg8-8.2.2-72.1                   ########################################
+[   22s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   22s] libbrotlidec1-1.0.9-1.1               ########################################
+[   22s] libfreetype6-2.12.1-4.1               ########################################
+[   22s] libfontconfig1-2.14.2-1.1             ########################################
+[   22s] fontconfig-2.14.2-1.1                 ########################################
+[   22s] Mesa-libglapi0-22.3.5-350.1           ########################################
+[   22s] libvorbis0-1.3.7-2.1                  ########################################
+[   22s] libgbm1-22.3.5-350.1                  ########################################
+[   22s] libwayland-cursor0-1.21.0-4.2         ########################################
+[   22s] xorgproto-devel-2022.2-2.1            ########################################
+[   22s] libxshmfence1-1.3.2-1.1               ########################################
+[   22s] libxml2-2-2.10.3-3.1                  ########################################
+[   22s] libwayland-egl1-1.21.0-4.2            ########################################
+[   23s] libunistring5-1.1-1.1                 ########################################
+[   23s] libidn2-0-2.3.4-1.1                   ########################################
+[   23s] libcdda_interface0-3.10.2-28.2        ########################################
+[   23s] libXau6-1.0.11-1.1                    ########################################
+[   23s] libxcb1-1.15-2.1                      ########################################
+[   23s] libxcb-shm0-1.15-2.1                  ########################################
+[   23s] libxcb-dri2-0-1.15-2.1                ########################################
+[   23s] libxcb-dri3-0-1.15-2.1                ########################################
+[   23s] libxcb-present0-1.15-2.1              ########################################
+[   23s] libxcb-randr0-1.15-2.1                ########################################
+[   23s] libxcb-sync1-1.15-2.1                 ########################################
+[   23s] libxcb-xfixes0-1.15-2.1               ########################################
+[   23s] libxcb-glx0-1.15-2.1                  ########################################
+[   23s] libxcb-render0-1.15-2.1               ########################################
+[   23s] libxcb-util1-0.4.1-1.1                ########################################
+[   23s] libxcb-xkb1-1.15-2.1                  ########################################
+[   23s] libX11-data-1.8.1-4.1                 ########################################
+[   23s] libX11-6-1.8.1-4.1                    ########################################
+[   23s] libXext6-1.3.5-1.1                    ########################################
+[   23s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   23s] libXrender1-0.9.11-1.1                ########################################
+[   24s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   24s] libopenssl3-3.0.7-3.1                 ########################################
+[   24s] openssl-3.0.7-1.1                     ########################################
+[   24s] openssl-3-3.0.7-3.1                   ########################################
+[   25s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   26s] libopenssl-devel-3.0.7-1.1            ########################################
+[   26s] libssh2-1-1.10.0-1.2                  ########################################
+[   26s] libXft2-2.3.7-1.1                     ########################################
+[   26s] libXi6-1.8-1.1                        ########################################
+[   26s] libXv1-1.0.12-1.1                     ########################################
+[   26s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   26s] libXfixes3-6.0.0-2.1                  ########################################
+[   26s] libxcb-image0-0.4.1-1.1               ########################################
+[   26s] libxcb-composite0-1.15-2.1            ########################################
+[   26s] libxcb-damage0-1.15-2.1               ########################################
+[   26s] libxcb-dpms0-1.15-2.1                 ########################################
+[   26s] libxcb-ewmh2-0.4.2-1.1                ########################################
+[   26s] libxcb-icccm4-0.4.2-1.1               ########################################
+[   26s] libxcb-keysyms1-0.4.1-1.1             ########################################
+[   26s] libxcb-record0-1.15-2.1               ########################################
+[   26s] libxcb-res0-1.15-2.1                  ########################################
+[   26s] libxcb-screensaver0-1.15-2.1          ########################################
+[   26s] libxcb-shape0-1.15-2.1                ########################################
+[   26s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   26s] libxcb-xinerama0-1.15-2.1             ########################################
+[   26s] libxcb-xinput0-1.15-2.1               ########################################
+[   26s] libxcb-xtest0-1.15-2.1                ########################################
+[   26s] libxcb-xv0-1.15-2.1                   ########################################
+[   26s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   26s] libXau-devel-1.0.11-1.1               ########################################
+[   27s] libxcb-devel-1.15-2.1                 ########################################
+[   27s] libX11-devel-1.8.1-4.1                ########################################
+[   27s] libcdda_paranoia0-3.10.2-28.2         ########################################
+[   27s] libpsl5-0.21.2-1.1                    ########################################
+[   27s] shared-mime-info-2.2-1.1              ########################################
+[   31s] gio-branding-upstream-2.74.5-1.1      ########################################
+[   31s] libgio-2_0-0-2.74.5-1.1               ########################################
+[   31s] glib2-tools-2.74.5-1.1                ########################################
+[   32s] No schema files found: doing nothing.
+[   32s] gdk-pixbuf-query-loaders-2.42.10-1.2  ########################################
+[   32s] libvorbisenc2-1.3.7-2.1               ########################################
+[   32s] libbrotlienc1-1.0.9-1.1               ########################################
+[   32s] libbrotli-devel-1.0.9-1.1             ########################################
+[   32s] libtheoraenc1-1.1.1-30.1              ########################################
+[   32s] libgraphene-1_0-0-1.10.8-1.1          ########################################
+[   32s] libffi-devel-3.4.4-1.1                ########################################
+[   32s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   32s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   32s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   32s] libexpat-devel-2.5.0-2.1              ########################################
+[   32s] zstd-1.5.2-2.1                        ########################################
+[   32s] xkeyboard-config-2.38-1.1             ########################################
+[   32s] libxkbcommon0-1.5.0-1.1               ########################################
+[   32s] libxkbcommon-devel-1.5.0-1.1          ########################################
+[   32s] libxkbcommon-x11-0-1.5.0-1.1          ########################################
+[   33s] python-rpm-macros-20230128.e704796-1.1########################################
+[   33s] libvisual-0_4-0-0.4.0-204.1           ########################################
+[   33s] libverto1-0.3.2-1.1                   ########################################
+[   33s] libuv1-1.44.2-3.1                     ########################################
+[   33s] libunwind8-1.6.2-4.1                  ########################################
+[   33s] libudev-mini1-252.5-1.1               ########################################
+[   33s] libgudev-1_0-0-237-2.1                ########################################
+[   33s] libtheoradec1-1.1.1-30.1              ########################################
+[   33s] libthai-data-0.1.29-1.1               ########################################
+[   38s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   40s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   40s] libssh-config-0.10.4-1.2              ########################################
+[   40s] libsqlite3-0-3.40.1-1.1               ########################################
+[   40s] libsasl2-3-2.1.28-4.2                 ########################################
+[   40s] libldap2-2.6.3-3.2                    ########################################
+[   40s] librhash0-1.4.3-1.1                   ########################################
+[   40s] libpixman-1-0-0.42.2-1.1              ########################################
+[   40s] libopus0-1.3.1-3.2                    ########################################
+[   40s] libnghttp2-14-1.51.0-7.2              ########################################
+[   40s] libmpdec3-2.5.1-2.1                   ########################################
+[   40s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   40s] python310-3.10.9-2.1                  ########################################
+[   42s] python310-base-3.10.9-2.2             ########################################
+[   43s] python310-packaging-23.0-1.1          ########################################
+[   45s] cmake-mini-3.25.2-1.2                 ########################################
+[   45s] libkeyutils1-1.6.3-5.1                ########################################
+[   46s] libjbig2-2.1-4.1                      ########################################
+[   46s] libtiff6-4.5.0-2.1                    ########################################
+[   46s] libgdk_pixbuf-2_0-0-2.42.10-1.2       ########################################
+[   46s] libgraphite2-3-1.3.14-3.1             ########################################
+[   46s] libharfbuzz0-7.0.0-1.1                ########################################
+[   46s] libfribidi0-1.0.12-1.1                ########################################
+[   46s] libedit0-20210910.3.1-1.1             ########################################
+[   52s] libLLVM15-15.0.7-1.1                  ########################################
+[   52s] Mesa-libEGL1-22.3.5-350.1             ########################################
+[   52s] libglvnd-1.6.0-1.1                    ########################################
+[   52s] Mesa-libGL1-22.3.5-350.1              ########################################
+[   52s] Mesa-22.3.5-350.1                     ########################################
+[   53s] Mesa-dri-22.3.5-350.1                 ########################################
+[   53s] libcairo2-1.17.6-1.1                  ########################################
+[   53s] libglvnd-devel-1.6.0-1.1              ########################################
+[   53s] lld15-15.0.7-1.1                      ########################################
+[   54s] update-alternatives: using /usr/bin/lld-15.0.7 to provide /usr/bin/lld (lld) in auto mode
+[   54s] libdatrie1-0.2.13-1.1                 ########################################
+[   54s] libthai0-0.1.29-1.1                   ########################################
+[   54s] libpango-1_0-0-1.50.12-1.1            ########################################
+[   54s] libcom_err2-1.46.5-4.1                ########################################
+[   54s] krb5-mini-1.20.1-2.3                  ########################################
+[   54s] Updating /etc/sysconfig/kadmind ...
+[   54s] Updating /etc/sysconfig/krb5kdc ...
+[   54s] libssh4-0.10.4-1.2                    ########################################
+[   54s] libcurl4-7.87.0-1.3                   ########################################
+[   55s] libexiv2-27-0.27.6-3.1                ########################################
+[   55s] libgexiv2-2-0.14.0-2.2                ########################################
+[   55s] rust-1.67.1-1.1                       ########################################
+[   67s] rust1.67-1.67.1-1.1                   ########################################
+[   68s] cargo1.67-1.67.1-1.1                  ########################################
+[   68s] cargo-1.67.1-1.1                      ########################################
+[   68s] cargo-auditable-0.5.2~0-1.1           ########################################
+[   68s] libbz2-devel-1.0.8-4.1                ########################################
+[   68s] freetype2-devel-2.12.1-4.1            ########################################
+[   68s] libasound2-1.2.8-1.1                  ########################################
+[   68s] libgstreamer-1_0-0-1.22.0-2.1         ########################################
+[   68s] gstreamer-1.22.0-2.1                  ########################################
+[   68s] /usr/libexec/gstreamer-1.0/gst-ptp-helper: setting to root:root 0755 "cap_net_bind_service=ep". (missing capabilities)
+[   68s] libgstallocators-1_0-0-1.22.0-1.1     ########################################
+[   68s] libgstapp-1_0-0-1.22.0-1.1            ########################################
+[   69s] libgsttag-1_0-0-1.22.0-1.1            ########################################
+[   69s] libgstvideo-1_0-0-1.22.0-1.1          ########################################
+[   69s] libgstgl-1_0-0-1.22.0-1.1             ########################################
+[   69s] libgstaudio-1_0-0-1.22.0-1.1          ########################################
+[   69s] libgstriff-1_0-0-1.22.0-1.1           ########################################
+[   69s] libgstpbutils-1_0-0-1.22.0-1.1        ########################################
+[   69s] gstreamer-plugins-base-1.22.0-1.1     ########################################
+[   69s] libnautilus-extension4-43.2-1.1       ########################################
+[   69s] Mesa-KHR-devel-22.3.5-350.1           ########################################
+[   69s] Mesa-libEGL-devel-22.3.5-350.1        ########################################
+[   69s] python-nautilus-common-files-4.0-1.1  ########################################
+[   69s] fontconfig-devel-2.14.2-1.1           ########################################
+[   69s] cargo-packaging-1.1.0+0-1.1           ########################################
+[   69s] cmake-3.25.2-1.1                      ########################################
+[   69s] python-rpm-packaging-20210526+a18ca48-########################################
+[   69s] gcc-c++-12-2.1                        ########################################
+[   69s] libxkbcommon-x11-devel-1.5.0-1.1      ########################################
+[   69s] wayland-devel-1.21.0-4.2              ########################################
+[   69s] xcb-util-devel-0.4.1-1.1              ########################################
+[   69s] xcb-util-image-devel-0.4.1-1.1        ########################################
+[   69s] xcb-util-keysyms-devel-0.4.1-1.1      ########################################
+[   69s] xcb-util-wm-devel-0.4.2-1.1           ########################################
+[   69s] libssh2-devel-1.10.0-1.2              ########################################
+[   70s] ncurses-devel-6.4.20230128-5.1        ########################################
+[   70s] hicolor-icon-theme-0.17-4.1           ########################################
+[   75s] now finalizing build dir...
+[   75s] ... running 01-add_abuild_user_to_trusted_group
+[   75s] ... running 02-set_timezone_to_utc
+[   75s] ... running 03-set-permissions-secure
+[   76s] ... running 11-hack_uname_version_to_kernel_version
+[   79s] Running build time source services...
+[   80s] -----------------------------------------------------------------
+[   80s] I have the following modifications for wezterm.spec:
+[   80s] 23c23
+[   80s] < Release:        0
+[   80s] ---
+[   80s] > Release:        1.1
+[   84s] build target is riscv64-suse-linux
+[   84s] -----------------------------------------------------------------
+[   84s] ----- building wezterm.spec (user abuild)
+[   84s] -----------------------------------------------------------------
+[   84s] -----------------------------------------------------------------
+[   86s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/b85eeb014d36777c43e221b26424c117-wezterm' /home/abuild/rpmbuild/SOURCES/wezterm.spec
+[   86s] Building target platforms: riscv64-suse-linux
+[   86s] Building for target riscv64-suse-linux
+[   86s] setting SOURCE_DATE_EPOCH=1676332800
+[   86s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.xaOsTd
+[   86s] + umask 022
+[   86s] + cd /home/abuild/rpmbuild/BUILD
+[   86s] + cd /home/abuild/rpmbuild/BUILD
+[   86s] + rm -rf wezterm-20221119.145034.49b9839f+g221
+[   86s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/wezterm-20221119.145034.49b9839f+g221.tar.zst
+[   96s] + STATUS=0
+[   96s] + '[' 0 -ne 0 ']'
+[   96s] + cd wezterm-20221119.145034.49b9839f+g221
+[   96s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.zst
+[  128s] + STATUS=0
+[  128s] + '[' 0 -ne 0 ']'
+[  128s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  129s] + mkdir -p .cargo
+[  129s] + cp /home/abuild/rpmbuild/SOURCES/cargo_config .cargo/config
+[  129s] + tic -vvv -x -o terminfo termwiz/data/wezterm.terminfo
+[  129s] "termwiz/data/wezterm.terminfo", line 26, col 5, terminal 'wezterm': extended capability 'Tc'
+[  129s] "termwiz/data/wezterm.terminfo", line 29, col 16, terminal 'wezterm': extended capability 'Cr'
+[  129s] "termwiz/data/wezterm.terminfo", line 29, col 36, terminal 'wezterm': extended capability 'Cs'
+[  129s] "termwiz/data/wezterm.terminfo", line 29, col 62, terminal 'wezterm': extended capability 'Ms'
+[  129s] "termwiz/data/wezterm.terminfo", line 29, col 74, terminal 'wezterm': extended capability 'Se'
+[  129s] "termwiz/data/wezterm.terminfo", line 30, col 17, terminal 'wezterm': extended capability 'Ss'
+[  129s] "termwiz/data/wezterm.terminfo", line 31, col 20, terminal 'wezterm': extended capability 'Smulx'
+[  129s] "termwiz/data/wezterm.terminfo", line 32, col 33, terminal 'wezterm': extended capability 'Sync'
+[  129s] "termwiz/data/wezterm.terminfo", line 33, col 73, terminal 'wezterm': extended capability 'Setulc'
+[  129s] "termwiz/data/wezterm.terminfo", line 34, col 14, terminal 'wezterm': extended capability 'Smol'
+[  129s] "termwiz/data/wezterm.terminfo", line 78, col 61, terminal 'wezterm': extended capability 'rmxx'
+[  129s] "termwiz/data/wezterm.terminfo", line 85, col 58, terminal 'wezterm': extended capability 'smxx'
+[  129s] "termwiz/data/wezterm.terminfo", line 87, col 70, terminal 'wezterm': extended capability 'XM'
+[  129s] "termwiz/data/wezterm.terminfo", line 88, col 56, terminal 'wezterm': extended capability 'XM'
+[  129s] "termwiz/data/wezterm.terminfo", line 89, col 49, terminal 'wezterm': extended capability 'xm'
+[  129s] "termwiz/data/wezterm.terminfo", line 25, terminal 'wezterm': tsl uses 0 parameters, expected 1
+[  129s] "termwiz/data/wezterm.terminfo", line 25, terminal 'wezterm': extended xm capability has 4 parameters, expected 8
+[  129s] "termwiz/data/wezterm.terminfo", line 25, terminal 'wezterm': undocumented boolean capability Tc
+[  129s] "termwiz/data/wezterm.terminfo", line 25, terminal 'wezterm': undocumented string capability Setulc
+[  129s] "termwiz/data/wezterm.terminfo", line 25, terminal 'wezterm': undocumented string capability Sync
+[  129s] + printf 20221119.145034.49b9839f+g221
+[  129s] + RPM_EC=0
+[  129s] ++ jobs -p
+[  129s] + exit 0
+[  129s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.piqwFB
+[  129s] + umask 022
+[  129s] + cd /home/abuild/rpmbuild/BUILD
+[  129s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/wezterm-20221119.145034.49b9839f+g221-1.1.riscv64
+[  129s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/wezterm-20221119.145034.49b9839f+g221-1.1.riscv64
+[  129s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  129s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/wezterm-20221119.145034.49b9839f+g221-1.1.riscv64
+[  129s] + cd wezterm-20221119.145034.49b9839f+g221
+[  129s] + ref=/usr/lib/rpm
+[  129s] + mints=0
+[  129s] + case $(uname -m) in
+[  129s] ++ uname -m
+[  129s] + mints=20160911
+[  129s] + for s in guess sub
+[  129s] ++ find -maxdepth 8 -name config.guess
+[  130s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  130s] + grep -q config-patches@ ./deps/freetype/libpng/config.guess
+[  130s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./deps/freetype/libpng/config.guess
+[  130s] + timestamp=20180308
+[  130s] + test -n 20180308
+[  130s] + test 20180308 -ge 20160911
+[  130s] + for s in guess sub
+[  130s] ++ find -maxdepth 8 -name config.sub
+[  130s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  130s] + grep -q config-patches@ ./deps/freetype/libpng/config.sub
+[  130s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./deps/freetype/libpng/config.sub
+[  130s] + timestamp=20180308
+[  130s] + test -n 20180308
+[  130s] + test 20180308 -ge 20160911
+[  130s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  130s] + grep -q config-patches@ ./vendor/libz-sys/src/zlib-ng/tools/config.sub
+[  130s] + continue
+[  130s] + unset LIBSSH2_SYS_USE_PKG_CONFIG
+[  130s] + [[ -z '' ]]
+[  130s] + CARGO_AUDITABLE=auditable
+[  130s] + CARGO_FEATURE_VENDORED=1
+[  130s] + RUSTFLAGS='-Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2 -C incremental=false'
+[  130s] + /usr/bin/cargo auditable build -j16 --offline --release --all-features
+[  150s]    Compiling autocfg v1.1.0
+[  150s]    Compiling libc v0.2.139
+[  150s]    Compiling proc-macro2 v1.0.51
+[  150s]    Compiling cfg-if v1.0.0
+[  150s]    Compiling quote v1.0.23
+[  150s]    Compiling unicode-ident v1.0.6
+[  150s]    Compiling syn v1.0.107
+[  150s]    Compiling version_check v0.9.4
+[  150s]    Compiling pkg-config v0.3.26
+[  150s]    Compiling memchr v2.5.0
+[  150s]    Compiling once_cell v1.17.0
+[  150s]    Compiling bitflags v1.3.2
+[  150s]    Compiling log v0.4.17
+[  150s]    Compiling futures-core v0.3.26
+[  150s]    Compiling serde_derive v1.0.152
+[  151s]    Compiling serde v1.0.152
+[  152s]    Compiling crossbeam-utils v0.8.14
+[  154s]    Compiling pin-project-lite v0.2.9
+[  157s]    Compiling scopeguard v1.1.0
+[  159s]    Compiling thiserror v1.0.38
+[  159s]    Compiling smallvec v1.10.0
+[  160s]    Compiling futures-io v0.3.26
+[  161s]    Compiling futures-sink v0.3.26
+[  161s]    Compiling lazy_static v1.4.0
+[  161s]    Compiling typenum v1.16.0
+[  163s]    Compiling ahash v0.7.6
+[  164s]    Compiling pin-utils v0.1.0
+[  164s]    Compiling adler v1.0.2
+[  165s]    Compiling num-traits v0.2.15
+[  165s]    Compiling lock_api v0.4.9
+[  168s]    Compiling slab v0.4.7
+[  168s]    Compiling memoffset v0.6.5
+[  169s]    Compiling num-integer v0.1.45
+[  170s]    Compiling siphasher v0.3.10
+[  170s]    Compiling futures-task v0.3.26
+[  171s]    Compiling rand_core v0.6.4
+[  172s]    Compiling futures-channel v0.3.26
+[  173s]    Compiling generic-array v0.14.6
+[  176s]    Compiling jobserver v0.1.25
+[  177s]    Compiling rand v0.8.5
+[  178s]    Compiling phf_shared v0.11.1
+[  178s]    Compiling anyhow v1.0.69
+[  178s]    Compiling futures-util v0.3.26
+[  178s]    Compiling byteorder v1.4.3
+[  181s]    Compiling cc v1.0.79
+[  183s]    Compiling miniz_oxide v0.6.2
+[  184s]    Compiling memoffset v0.7.1
+[  184s]    Compiling indexmap v1.9.2
+[  185s]    Compiling fastrand v1.8.0
+[  185s]    Compiling event-listener v2.5.3
+[  187s]    Compiling getrandom v0.2.8
+[  187s]    Compiling num_cpus v1.15.0
+[  188s]    Compiling socket2 v0.4.7
+[  188s]    Compiling crossbeam-epoch v0.9.13
+[  190s]    Compiling parking v2.0.0
+[  190s]    Compiling strsim v0.10.0
+[  195s]    Compiling phf_generator v0.11.1
+[  198s]    Compiling crc32fast v1.3.2
+[  198s]    Compiling waker-fn v1.1.0
+[  199s]    Compiling concurrent-queue v2.1.0
+[  200s]    Compiling hashbrown v0.12.3
+[  200s]    Compiling crossbeam-channel v0.5.6
+[  201s]    Compiling futures-lite v1.12.0
+[  201s]    Compiling fnv v1.0.7
+[  211s]    Compiling crossbeam-deque v0.8.2
+[  215s]    Compiling nix v0.24.3
+[  216s]    Compiling polling v2.5.2
+[  216s]    Compiling rayon-core v1.10.2
+[  217s]    Compiling flate2 v1.0.25
+[  218s]    Compiling async-lock v2.6.0
+[  220s]    Compiling signal-hook-registry v1.4.1
+[  220s]    Compiling libz-sys v1.1.8
+[  222s]    Compiling async-io v1.12.0
+[  223s]    Compiling async-task v4.3.0
+[  227s]    Compiling nanorand v0.7.0
+[  228s]    Compiling dirs-sys v0.3.7
+[  229s]    Compiling mio v0.8.5
+[  229s]    Compiling spin v0.9.5
+[  231s]    Compiling aho-corasick v0.7.20
+[  232s]    Compiling either v1.8.1
+[  232s]    Compiling ucd-trie v0.1.5
+[  233s]    Compiling rustc-hash v1.1.0
+[  234s]    Compiling regex-syntax v0.6.28
+[  236s]    Compiling dirs v4.0.0
+[  238s]    Compiling rayon v1.6.1
+[  240s]    Compiling phf_codegen v0.11.1
+[  241s]    Compiling lua-src v544.0.1
+[  242s]    Compiling luajit-src v210.4.5+resty2cf5186
+[  243s]    Compiling num-rational v0.4.1
+[  243s]    Compiling nom v5.1.2
+[  243s]    Compiling weezl v0.1.7
+[  247s]    Compiling lab v0.11.0
+[  247s]    Compiling simd-adler32 v0.3.4
+[  248s]    Compiling downcast-rs v1.2.0
+[  250s]    Compiling regex-automata v0.1.10
+[  250s]    Compiling tinyvec_macros v0.1.1
+[  251s]    Compiling mlua v0.8.7
+[  252s]    Compiling tinyvec v1.6.0
+[  255s]    Compiling zune-inflate v0.2.50
+[  258s]    Compiling terminfo v0.7.5
+[  262s]    Compiling png v0.17.7
+[  262s]    Compiling threadpool v1.8.1
+[  269s]    Compiling hex v0.4.3
+[  272s]    Compiling regex v1.7.1
+[  272s]    Compiling base64 v0.21.0
+[  276s]    Compiling bit_field v0.10.1
+[  276s]    Compiling color_quant v1.1.0
+[  276s]    Compiling lebe v0.5.2
+[  278s]    Compiling percent-encoding v2.2.0
+[  280s]    Compiling half v2.2.1
+[  280s]    Compiling gif v0.11.4
+[  282s]    Compiling form_urlencoded v1.1.0
+[  284s]    Compiling jpeg-decoder v0.3.0
+[  290s]    Compiling unicode-normalization v0.1.22
+[  296s]    Compiling async-executor v1.5.0
+[  299s]    Compiling tiff v0.8.1
+[  300s]    Compiling libgit2-sys v0.14.2+1.5.1
+[  300s]    Compiling digest v0.9.0
+[  302s]    Compiling block-buffer v0.9.0
+[  305s]    Compiling async-channel v1.8.0
+[  306s]    Compiling phf_shared v0.10.0
+[  307s]    Compiling openssl-src v300.0.12+3.0.8
+[  311s]    Compiling opaque-debug v0.3.0
+[  312s]    Compiling scoped_threadpool v0.1.9
+[  312s]    Compiling unicode-bidi v0.3.10
+[  314s]    Compiling atomic-waker v1.1.0
+[  316s]    Compiling signal-hook v0.3.15
+[  320s]    Compiling deltae v0.3.0
+[  327s]    Compiling utf8parse v0.2.0
+[  328s]    Compiling idna v0.3.0
+[  331s]    Compiling vtparse v0.6.2 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/vtparse)
+[  334s]    Compiling blocking v1.3.0
+[  340s]    Compiling openssl-sys v0.9.71
+[  341s]    Compiling sha2 v0.9.9
+[  348s]    Compiling phf v0.10.1
+[  352s]    Compiling signal-hook v0.1.17
+[  353s]    Compiling termios v0.3.3
+[  353s]    Compiling serial-core v0.4.0
+[  354s]    Compiling termios v0.2.2
+[  360s]    Compiling ioctl-rs v0.1.6
+[  361s]    Compiling nix v0.25.1
+[  362s]    Compiling async-process v1.6.0
+[  363s]    Compiling async-fs v1.6.0
+[  363s]    Compiling async-net v1.7.0
+[  363s]    Compiling unicode-segmentation v1.10.1
+[  364s]    Compiling cassowary v0.3.0
+[  367s]    Compiling same-file v1.0.6
+[  367s]    Compiling finl_unicode v1.2.0
+[  367s]    Compiling memmem v0.1.1
+[  368s]    Compiling fixedbitset v0.4.2
+[  372s]    Compiling thiserror-impl v1.0.38
+[  374s]    Compiling futures-macro v0.3.26
+[  376s]    Compiling phf_macros v0.11.1
+[  377s]    Compiling wezterm-dynamic-derive v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/wezterm-dynamic/derive)
+[  379s]    Compiling bytemuck_derive v1.4.0
+[  381s]    Compiling pin-project-internal v1.0.12
+[  383s]    Compiling num-derive v0.3.3
+[  384s]    Compiling walkdir v2.3.2
+[  392s]    Compiling serial-unix v0.4.0
+[  394s]    Compiling url v2.3.1
+[  407s]    Compiling phf v0.11.1
+[  410s]    Compiling bstr v0.2.17
+[  411s]    Compiling csscolorparser v0.6.2
+[  411s]    Compiling bytemuck v1.13.0
+[  411s]    Compiling miniz_oxide v0.4.4
+[  418s]    Compiling serial v0.4.0
+[  420s]    Compiling euclid v0.22.7
+[  423s]    Compiling pin-project v1.0.12
+[  425s]    Compiling flume v0.10.14
+[  428s]    Compiling pest v2.5.5
+[  430s]    Compiling filedescriptor v0.8.2 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/filedescriptor)
+[  435s]    Compiling exr v1.5.3
+[  438s]    Compiling filetime v0.2.20
+[  438s]    Compiling inotify-sys v0.1.5
+[  439s]    Compiling dirs-sys-next v0.1.2
+[  441s]    Compiling nom8 v0.2.0
+[  445s]    Compiling shell-words v1.1.0
+[  449s]    Compiling dirs-next v2.0.0
+[  450s]    Compiling pest_meta v2.5.5
+[  453s]    Compiling semver-parser v0.10.2
+[  453s]    Compiling inotify v0.9.6
+[  454s]    Compiling smol v1.3.0
+[  455s]    Compiling lru v0.7.8
+[  456s]    Compiling match_cfg v0.1.0
+[  456s]    Compiling hostname v0.3.1
+[  459s]    Compiling notify v5.1.0
+[  459s]    Compiling promise v0.2.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/promise)
+[  462s]    Compiling pest_generator v2.5.5
+[  462s]    Compiling semver v0.11.0
+[  465s]    Compiling colorgrad v0.6.2
+[  479s]    Compiling image v0.24.5
+[  479s]    Compiling wezterm-config-derive v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/config/derive)
+[  480s]    Compiling enum-display-derive v0.1.1
+[  482s]    Compiling umask v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/umask)
+[  483s]    Compiling shlex v1.1.0
+[  487s]    Compiling parking_lot_core v0.9.7
+[  490s]    Compiling pest_derive v2.5.5
+[  491s]    Compiling itoa v1.0.5
+[  495s]    Compiling parking_lot v0.12.1
+[  498s]    Compiling foreign-types-shared v0.1.1
+[  498s]    Compiling openssl v0.10.38
+[  499s]    Compiling ordered-float v3.4.0
+[  501s]    Compiling serde_spanned v0.6.1
+[  501s]    Compiling toml_datetime v0.6.1
+[  502s]    Compiling portable-pty v0.8.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/pty)
+[  502s]    Compiling foreign-types v0.3.2
+[  502s]    Compiling ppv-lite86 v0.2.17
+[  503s]    Compiling xml-rs v0.8.4
+[  505s]    Compiling wezterm-dynamic v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/wezterm-dynamic)
+[  506s]    Compiling toml_edit v0.19.3
+[  506s]    Compiling num-bigint v0.3.3
+[  506s]    Compiling rand_chacha v0.3.1
+[  507s]    Compiling unicode-width v0.1.10
+[  508s]    Compiling num-iter v0.1.43
+[  509s]    Compiling num-rational v0.3.2
+[  509s]    Compiling libloading v0.7.4
+[  510s]    Compiling async-trait v0.1.64
+[  511s]    Compiling wezterm-color-types v0.2.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/color-types)
+[  512s]    Compiling wezterm-bidi v0.2.2 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/bidi)
+[  512s]    Compiling wezterm-input-types v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/wezterm-input-types)
+[  517s]    Compiling termwiz v0.19.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/termwiz)
+[  526s]    Compiling toml v0.7.2
+[  536s]    Compiling termcolor v1.2.0
+[  545s]    Compiling parking_lot_core v0.8.6
+[  545s]    Compiling io-lifetimes v1.0.5
+[  546s]    Compiling metrics v0.17.1
+[  550s]    Compiling tracing-attributes v0.1.23
+[  550s]    Compiling libssh-rs-sys v0.1.3 (https://github.com/wez/libssh-rs.git#2e6e586f)
+[  550s]    Compiling libssh2-sys v0.3.0
+[  550s]    Compiling num-complex v0.3.1
+[  556s]    Compiling time v0.1.43
+[  559s]    Compiling tracing-core v0.1.30
+[  560s]    Compiling instant v0.1.12
+[  561s]    Compiling rustix v0.36.8
+[  563s]    Compiling iana-time-zone v0.1.53
+[  566s]    Compiling pure-rust-locales v0.5.6
+[  571s]    Compiling num v0.3.1
+[  571s]    Compiling wezterm-term v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/term)
+[  572s]    Compiling metrics-macros v0.4.1
+[  577s]    Compiling bstr v0.1.4
+[  579s]    Compiling linux-raw-sys v0.1.4
+[  580s]    Compiling bytes v1.4.0
+[  581s]    Compiling camino v1.1.2
+[  586s]    Compiling filenamegen v0.2.4
+[  586s]    Compiling parking_lot v0.11.2
+[  589s]    Compiling rangeset v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/rangeset)
+[  592s]    Compiling unicode-linebreak v0.1.4
+[  594s]    Compiling tracing v0.1.37
+[  598s]    Compiling wayland-scanner v0.29.5
+[  599s]    Compiling chrono v0.4.23
+[  603s]    Compiling proc-macro-error-attr v1.0.4
+[  604s]    Compiling openssl-probe v0.1.5
+[  604s]    Compiling toml_datetime v0.5.1
+[  606s]    Compiling crossbeam-queue v0.3.8
+[  608s]    Compiling ryu v1.0.12
+[  609s]    Compiling is-terminal v0.4.3
+[  610s]    Compiling zstd-sys v2.0.7+zstd.1.5.4
+[  612s]    Compiling wayland-sys v0.29.5
+[  613s]    Compiling proc-macro-error v1.0.4
+[  613s]    Compiling khronos_api v3.1.0
+[  616s]    Compiling base64 v0.13.1
+[  617s]    Compiling names v0.12.0
+[  617s]    Compiling time-core v0.1.0
+[  619s]    Compiling time v0.3.17
+[  623s]    Compiling dlib v0.5.0
+[  624s]    Compiling futures-executor v0.3.26
+[  624s]    Compiling backtrace v0.3.67
+[  627s]    Compiling pathdiff v0.2.1
+[  628s]    Compiling gimli v0.27.1
+[  629s]    Compiling serde_json v1.0.93
+[  630s]    Compiling smawk v0.3.1
+[  630s]    Compiling open v3.2.0
+[  631s]    Compiling toml_edit v0.18.1
+[  633s]    Compiling textwrap v0.16.0
+[  634s]    Compiling futures v0.3.26
+[  635s]    Compiling wayland-client v0.29.5
+[  637s]    Compiling crossbeam v0.8.2
+[  638s]    Compiling enumflags2_derive v0.7.4
+[  639s]    Compiling tokio v1.25.0
+[  640s]    Compiling object v0.30.3
+[  643s]    Compiling static_assertions v1.1.0
+[  644s]    Compiling bintree v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/bintree)
+[  645s]    Compiling zstd-safe v5.0.2+zstd.1.5.2
+[  648s]    Compiling heck v0.4.1
+[  648s]    Compiling rustc-demangle v0.1.21
+[  654s]    Compiling proc-macro-crate v1.3.0
+[  654s]    Compiling os_str_bytes v6.4.1
+[  656s]    Compiling enumflags2 v0.7.5
+[  661s]    Compiling addr2line v0.19.0
+[  663s]    Compiling clap_lex v0.3.1
+[  666s]    Compiling clap_derive v4.1.0
+[  671s]    Compiling gl_generator v0.14.0
+[  672s]    Compiling wayland-commons v0.29.5
+[  675s]    Compiling tokio-macros v1.8.2
+[  678s]    Compiling quick-xml v0.22.0
+[  688s]    Compiling zvariant_derive v3.11.0
+[  688s]    Compiling freetype v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/deps/freetype)
+[  692s]    Compiling block-buffer v0.10.3
+[  692s]    Compiling crypto-common v0.1.6
+[  695s]    Compiling x11 v2.21.0
+[  695s]    Compiling memoffset v0.8.0
+[  698s]    Compiling safemem v0.3.3
+[  698s]    Compiling native-tls v0.2.11
+[  700s]    Compiling scoped-tls v1.0.1
+[  701s]    Compiling minimal-lexical v0.2.1
+[  703s]    Compiling line-wrap v0.1.1
+[  705s]    Compiling nom v7.1.3
+[  706s]    Compiling digest v0.10.6
+[  707s]    Compiling clap v4.1.4
+[  710s]    Compiling xcb v1.2.0
+[  711s]    Compiling quick-xml v0.26.0
+[  714s]    Compiling zvariant v3.11.0
+[  716s]    Compiling ahash v0.8.3
+[  720s]    Compiling arrayvec v0.7.2
+[  725s]    Compiling remove_dir_all v0.5.3
+[  727s]    Compiling unsafe-libyaml v0.2.5
+[  737s]    Compiling starship-battery v0.7.9
+[  737s]    Compiling ident_case v1.0.1
+[  738s]    Compiling leb128 v0.2.5
+[  740s]    Compiling cty v0.2.2
+[  740s]    Compiling varbincode v0.1.0
+[  741s]    Compiling raw-window-handle v0.5.0
+[  741s]    Compiling darling_core v0.14.3
+[  747s]    Compiling zbus_names v2.5.0
+[  751s]    Compiling serde_yaml v0.9.17
+[  769s]    Compiling tempfile v3.3.0
+[  771s]    Compiling plist v1.4.0
+[  773s]    Compiling sha1 v0.10.5
+[  776s]    Compiling zbus_macros v3.10.0
+[  782s]    Compiling wayland-protocols v0.29.5
+[  790s]    Compiling http v0.2.8
+[  792s]    Compiling async-broadcast v0.5.0
+[  797s]    Compiling serde_repr v0.1.10
+[  802s]    Compiling async-recursion v1.0.2
+[  803s]    Compiling derivative v2.2.0
+[  805s]    Compiling ring v0.16.20
+[  806s]    Compiling harfbuzz v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/deps/harfbuzz)
+[  806s]    Compiling uom v0.30.0
+[  812s]    Compiling fontconfig v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/deps/fontconfig)
+[  814s]    Compiling ordered-stream v0.2.0
+[  816s]    Compiling encoding_rs v0.8.32
+[  817s]    Compiling bit-vec v0.6.3
+[  820s]    Compiling httparse v1.8.0
+[  824s]    Compiling humantime v2.1.0
+[  824s]    Compiling vcpkg v0.2.15
+[  825s]    Compiling lazycell v1.3.0
+[  827s]    Compiling wezterm-toast-notification v0.1.0 (/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/wezterm-toast-notification)
+[  833s]    Compiling khronos-egl v4.1.0
+[  833s]    Compiling ash v0.37.2+1.3.238
+[  834s]    Compiling env_logger v0.10.0
+[  836s]    Compiling bit-set v0.5.3
+[  836s] error: failed to run custom build command for `ring v0.16.20`
+[  836s] 
+[  836s] Caused by:
+[  836s]   process didn't exit successfully: `/home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/target/release/build/ring-fde0454ba23538bc/build-script-build` (exit status: 101)
+[  836s]   --- stderr
+[  836s]   thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', /home/abuild/rpmbuild/BUILD/wezterm-20221119.145034.49b9839f+g221/vendor/ring/build.rs:358:10
+[  836s]   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[  836s] warning: build failed, waiting for other jobs to finish...
+[ 1083s] error: Bad exit status from /var/tmp/rpm-tmp.piqwFB (%build)
+[ 1083s] 
+[ 1083s] RPM build errors:
+[ 1083s]     Bad exit status from /var/tmp/rpm-tmp.piqwFB (%build)
+[ 1083s] ### VM INTERACTION START ###
+[ 1083s] [ 1080.482394][    T1] sysrq: Power Off
+[ 1083s] [ 1080.483699][   T18] reboot: Power down
+[ 1083s] ### VM INTERACTION END ###
+[ 1083s] 
+[ 1083s] goat07 failed "build wezterm.spec" at Thu Feb 16 09:30:09 UTC 2023.
+[ 1083s] 

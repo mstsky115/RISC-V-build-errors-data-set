@@ -1,0 +1,1414 @@
+[    0s] Memory limit set to 21970664KB
+[    1s] Using BUILD_ROOT=/var/cache/obs/worker/root_3
+[    1s] Using BUILD_ARCH=riscv64
+[    1s] 
+[    4s] 
+[    4s] oe-RISCV-worker27 started "build _service:extract_file:libnice.spec" at Sat Apr 23 12:28:52 UTC 2022.
+[    4s] 
+[    4s] Building libnice for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '4d62150cd54eb0628d5103903ef7dbda'
+[    4s] 
+[    4s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libnice.spec ...
+[    8s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libnice.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libnice.spec build ...
+[  107s] cycle: bash -> coreutils
+[  107s]   breaking dependency coreutils -> bash
+[  107s] cycle: bash -> coreutils -> info
+[  107s]   breaking dependency coreutils -> info
+[  107s] cycle: glibc -> filesystem -> bash -> coreutils
+[  107s]   breaking dependency filesystem -> bash
+[  107s] cycle: glibc -> filesystem -> coreutils
+[  107s]   breaking dependency coreutils -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  107s]   breaking dependency coreutils -> libacl
+[  107s] cycle: glibc -> filesystem -> coreutils -> attr
+[  107s]   breaking dependency coreutils -> attr
+[  107s] cycle: coreutils -> libcap -> bash
+[  107s]   breaking dependency coreutils -> libcap
+[  107s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  107s]   breaking dependency coreutils -> openssl-libs
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  107s]   breaking dependency libselinux -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  107s]   breaking dependency pcre2 -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  107s]   breaking dependency readline -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  107s]   breaking dependency coreutils -> libselinux
+[  107s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  107s]   breaking dependency ncurses -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  107s]   breaking dependency ncurses -> ncurses-libs
+[  107s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  107s]   breaking dependency ncurses -> libgcc
+[  107s] cycle: perl-Carp -> perl-libs
+[  107s]   breaking dependency perl-libs -> perl-Carp
+[  107s] cycle: perl-libs -> perl-Exporter
+[  107s]   breaking dependency perl-libs -> perl-Exporter
+[  107s] cycle: perl-Carp -> perl-Exporter
+[  107s]   breaking dependency perl-Exporter -> perl-Carp
+[  107s] cycle: nss-util -> nss
+[  107s]   breaking dependency nss -> nss-util
+[  107s] cycle: nss-softokn -> nss-util -> nss
+[  107s]   breaking dependency nss -> nss-softokn
+[  107s] cycle: systemd -> cryptsetup -> device-mapper
+[  107s]   breaking dependency systemd -> cryptsetup
+[  107s] cycle: audit -> systemd -> pam
+[  107s]   breaking dependency systemd -> pam
+[  107s] [1/84] preinstalling dbus...
+[  108s] [2/84] preinstalling libffi-devel...
+[  109s] [3/84] preinstalling nodejs-source-map...
+[  110s] [4/84] preinstalling python3-pip...
+[  114s] [5/84] preinstalling python3-setuptools_scm...
+[  114s] [6/84] preinstalling ncurses...
+[  120s] [7/84] preinstalling coreutils...
+[  124s] [8/84] preinstalling filesystem...
+[  127s] [9/84] preinstalling glibc...
+[  131s] [10/84] preinstalling libgcc...
+[  131s] [11/84] preinstalling diffutils...
+[  133s] [12/84] preinstalling libcap-ng...
+[  133s] [13/84] preinstalling libgpg-error...
+[  135s] [14/84] preinstalling libpcap...
+[  135s] [15/84] preinstalling libsmartcols...
+[  137s] [16/84] preinstalling libuuid...
+[  137s] [17/84] preinstalling libxcrypt...
+[  138s] [18/84] preinstalling lz4...
+[  139s] [19/84] preinstalling m4...
+[  140s] [20/84] preinstalling ncurses-libs...
+[  141s] [21/84] preinstalling nspr...
+[  142s] [22/84] preinstalling xz-libs...
+[  143s] [23/84] preinstalling zlib...
+[  144s] [24/84] preinstalling attr...
+[  144s] [25/84] preinstalling libdb...
+[  149s] [26/84] preinstalling zstd...
+[  151s] [27/84] preinstalling audit-libs...
+[  151s] [28/84] preinstalling file...
+[  152s] [29/84] preinstalling iptables-libs...
+[  153s] [30/84] preinstalling libacl...
+[  154s] [31/84] preinstalling libgcrypt...
+[  155s] [32/84] preinstalling openssl-libs...
+[  157s] [33/84] preinstalling readline...
+[  158s] [34/84] preinstalling bash...
+[  160s] [35/84] preinstalling cmake...
+[  173s] [36/84] preinstalling perl-libs...
+[  177s] [37/84] preinstalling dnf...
+[  177s] [38/84] preinstalling pcre2...
+[  179s] [39/84] preinstalling perl-Exporter...
+[  179s] [40/84] preinstalling bzip2...
+[  180s] [41/84] preinstalling hostname...
+[  181s] [42/84] preinstalling libcap...
+[  182s] [43/84] preinstalling pcre...
+[  183s] [44/84] preinstalling popt...
+[  184s] [45/84] preinstalling acl...
+[  185s] [46/84] preinstalling elfutils...
+[  187s] [47/84] preinstalling libblkid...
+[  188s] [48/84] preinstalling openssl...
+[  189s] [49/84] preinstalling sqlite...
+[  191s] [50/84] preinstalling tar...
+[  193s] [51/84] preinstalling info...
+[  194s] [52/84] preinstalling libgcrypt-devel...
+[  195s] [53/84] preinstalling lua...
+[  196s] [54/84] preinstalling libselinux...
+[  197s] [55/84] preinstalling perl-Carp...
+[  198s] [56/84] preinstalling copy-jdk-configs...
+[  199s] [57/84] preinstalling libfdisk...
+[  200s] [58/84] preinstalling perl-Digest-MD5...
+[  201s] [59/84] preinstalling grep...
+[  202s] [60/84] preinstalling rpm-libs...
+[  203s] [61/84] preinstalling chkconfig...
+[  204s] [62/84] preinstalling sed...
+[  206s] [63/84] preinstalling libmount...
+[  207s] [64/84] preinstalling libsemanage...
+[  208s] [65/84] preinstalling perl-constant...
+[  209s] [66/84] preinstalling findutils...
+[  210s] [67/84] preinstalling xz...
+[  211s] [68/84] preinstalling perl-Getopt-Long...
+[  211s] [69/84] preinstalling glib2...
+[  216s] [70/84] preinstalling nss...
+[  217s] [71/84] preinstalling perl-Data-Dumper...
+[  218s] [72/84] preinstalling systemd-libs...
+[  219s] [73/84] preinstalling systemd...
+[  224s] [74/84] preinstalling dbus-libs...
+[  226s] [75/84] preinstalling nss-util...
+[  227s] [76/84] preinstalling audit...
+[  228s] [77/84] preinstalling nss-softokn...
+[  230s] [78/84] preinstalling pam...
+[  232s] [79/84] preinstalling rpm...
+[  233s] [80/84] preinstalling openEuler-rpm-config...
+[  234s] [81/84] preinstalling util-linux...
+[  238s] [82/84] preinstalling device-mapper...
+[  239s] [83/84] preinstalling cryptsetup...
+[  241s] [84/84] preinstalling lvm2...
+[  244s] 
+[  247s] initializing rpm db...
+[  262s] reordering...cycle: coreutils -> bash
+[  262s]   breaking dependency coreutils -> bash
+[  262s] cycle: coreutils -> info
+[  262s]   breaking dependency coreutils -> info
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  262s]   breaking dependency coreutils -> gmp
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  262s]   breaking dependency coreutils -> glibc
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  262s]   breaking dependency coreutils -> libacl
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  262s]   breaking dependency coreutils -> attr
+[  262s] cycle: coreutils -> libcap
+[  262s]   breaking dependency coreutils -> libcap
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  262s]   breaking dependency openssl-libs -> glibc
+[  262s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  262s]   breaking dependency ca-certificates -> coreutils
+[  262s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  262s]   breaking dependency ca-certificates -> bash
+[  262s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  262s]   breaking dependency grep -> coreutils
+[  262s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  262s]   breaking dependency ca-certificates -> grep
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  262s]   breaking dependency p11-kit -> glibc
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  262s]   breaking dependency openssl-libs -> ca-certificates
+[  262s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  262s]   breaking dependency crypto-policies -> bash
+[  262s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  262s]   breaking dependency crypto-policies -> coreutils
+[  262s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  262s]   breaking dependency bash -> coreutils
+[  262s] cycle: filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  262s]   breaking dependency grep -> bash
+[  262s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  262s]   breaking dependency glibc -> basesystem
+[  262s] cycle: glibc -> glibc-common -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  262s]   breaking dependency glibc-common -> bash
+[  262s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  262s]   breaking dependency glibc-common -> coreutils
+[  262s] cycle: glibc -> glibc-common
+[  262s]   breaking dependency glibc-common -> glibc
+[  262s] cycle: glibc -> glibc-common -> libselinux
+[  262s]   breaking dependency libselinux -> glibc
+[  262s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  262s]   breaking dependency pcre2 -> glibc
+[  262s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  262s]   breaking dependency readline -> glibc
+[  262s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  262s]   breaking dependency libselinux -> pcre2
+[  262s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  262s]   breaking dependency libsepol -> coreutils
+[  262s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  262s]   breaking dependency filesystem -> coreutils
+[  262s] cycle: bash -> filesystem
+[  262s]   breaking dependency filesystem -> bash
+[  262s] cycle: filesystem -> setup
+[  262s]   breaking dependency filesystem -> setup
+[  262s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[  262s]   breaking dependency bash -> glibc
+[  262s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> ncurses-libs
+[  262s]   breaking dependency libsepol -> bash
+[  262s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  262s]   breaking dependency glibc -> glibc-common
+[  262s] cycle: systemd -> cryptsetup -> device-mapper
+[  262s]   breaking dependency systemd -> cryptsetup
+[  262s] cycle: perl-libs -> perl-Carp
+[  262s]   breaking dependency perl-libs -> perl-Carp
+[  262s] cycle: perl-libs -> perl-Exporter
+[  262s]   breaking dependency perl-libs -> perl-Exporter
+[  262s] cycle: perl-Carp -> perl-Exporter
+[  262s]   breaking dependency perl-Exporter -> perl-Carp
+[  262s] cycle: perl -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-PathTools
+[  262s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  262s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  262s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-File-Path
+[  262s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  262s]   breaking dependency perl -> perl-Getopt-Long
+[  262s] cycle: perl -> perl-Locale-Maketext
+[  262s]   breaking dependency perl -> perl-Locale-Maketext
+[  262s] cycle: perl -> perl-Pod-Simple
+[  262s]   breaking dependency perl -> perl-Pod-Simple
+[  262s] cycle: perl -> perl-Socket
+[  262s]   breaking dependency perl -> perl-Socket
+[  262s] cycle: perl -> perl-Storable
+[  262s]   breaking dependency perl -> perl-Storable
+[  262s] cycle: perl -> perl-Text-Tabs+Wrap
+[  262s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  262s] cycle: perl -> perl-Time-Local -> perl-constant
+[  262s]   breaking dependency perl -> perl-Time-Local
+[  262s] cycle: perl -> perl-constant
+[  262s]   breaking dependency perl -> perl-constant
+[  262s] cycle: perl -> perl-threads
+[  262s]   breaking dependency perl -> perl-threads
+[  262s] cycle: perl -> perl-threads-shared
+[  262s]   breaking dependency perl -> perl-threads-shared
+[  262s] cycle: perl -> perl-Archive-Tar
+[  262s]   breaking dependency perl -> perl-Archive-Tar
+[  262s] cycle: perl -> perl-B-Debug
+[  262s]   breaking dependency perl -> perl-B-Debug
+[  262s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  262s]   breaking dependency perl -> perl-CPAN-Meta
+[  262s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  262s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  262s] cycle: perl -> perl-CPAN-Meta-YAML
+[  262s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  262s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  262s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  262s] cycle: perl -> perl-Compress-Raw-Zlib
+[  262s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  262s] cycle: perl -> perl-Config-Perl-V
+[  262s]   breaking dependency perl -> perl-Config-Perl-V
+[  262s] cycle: perl -> perl-DB_File
+[  262s]   breaking dependency perl -> perl-DB_File
+[  262s] cycle: perl -> perl-Data-Dumper
+[  262s]   breaking dependency perl -> perl-Data-Dumper
+[  262s] cycle: perl -> perl-Devel-PPPort
+[  262s]   breaking dependency perl -> perl-Devel-PPPort
+[  262s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  262s]   breaking dependency perl -> perl-Digest
+[  262s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  262s]   breaking dependency perl -> perl-Digest-MD5
+[  262s] cycle: perl -> perl-Digest-SHA
+[  262s]   breaking dependency perl -> perl-Digest-SHA
+[  262s] cycle: perl -> perl-Encode
+[  262s]   breaking dependency perl -> perl-Encode
+[  262s] cycle: perl -> perl-Env
+[  262s]   breaking dependency perl -> perl-Env
+[  262s] cycle: perl -> perl-ExtUtils-Command
+[  262s]   breaking dependency perl -> perl-ExtUtils-Command
+[  262s] cycle: perl -> perl-ExtUtils-Install
+[  262s]   breaking dependency perl -> perl-ExtUtils-Install
+[  262s] cycle: perl -> perl-ExtUtils-Manifest
+[  262s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  262s] cycle: perl -> perl-ExtUtils-ParseXS
+[  262s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  262s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-File-Fetch
+[  262s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-File-Temp
+[  262s] cycle: perl -> perl-Filter
+[  262s]   breaking dependency perl -> perl-Filter
+[  262s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  262s]   breaking dependency perl -> perl-Filter-Simple
+[  262s] cycle: perl -> perl-HTTP-Tiny
+[  262s]   breaking dependency perl -> perl-HTTP-Tiny
+[  262s] cycle: perl -> perl-IO-Compress
+[  262s]   breaking dependency perl -> perl-IO-Compress
+[  262s] cycle: perl -> perl-IO-Socket-IP
+[  262s]   breaking dependency perl -> perl-IO-Socket-IP
+[  262s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  262s]   breaking dependency perl -> perl-IPC-Cmd
+[  262s] cycle: perl -> perl-IPC-SysV
+[  262s]   breaking dependency perl -> perl-IPC-SysV
+[  262s] cycle: perl -> perl-JSON-PP
+[  262s]   breaking dependency perl -> perl-JSON-PP
+[  262s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  262s]   breaking dependency perl -> perl-Locale-Codes
+[  262s] cycle: perl -> perl-MIME-Base64
+[  262s]   breaking dependency perl -> perl-MIME-Base64
+[  262s] cycle: perl -> perl-Math-BigInt
+[  262s]   breaking dependency perl -> perl-Math-BigInt
+[  262s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  262s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  262s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  262s]   breaking dependency perl -> perl-Math-BigRat
+[  262s] cycle: perl -> perl-Module-CoreList
+[  262s]   breaking dependency perl -> perl-Module-CoreList
+[  262s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-Module-Load
+[  262s] cycle: perl -> perl-Module-Load-Conditional
+[  262s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  262s] cycle: perl -> perl-Module-Metadata
+[  262s]   breaking dependency perl -> perl-Module-Metadata
+[  262s] cycle: perl -> perl-Params-Check
+[  262s]   breaking dependency perl -> perl-Params-Check
+[  262s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  262s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  262s] cycle: perl -> perl-Pod-Checker
+[  262s]   breaking dependency perl -> perl-Pod-Checker
+[  262s] cycle: perl -> perl-Pod-Escapes
+[  262s]   breaking dependency perl -> perl-Pod-Escapes
+[  262s] cycle: perl -> perl-Pod-Parser
+[  262s]   breaking dependency perl -> perl-Pod-Parser
+[  262s] cycle: perl -> perl-Pod-Perldoc
+[  262s]   breaking dependency perl -> perl-Pod-Perldoc
+[  262s] cycle: perl -> perl-Pod-Usage
+[  262s]   breaking dependency perl -> perl-Pod-Usage
+[  262s] cycle: perl -> perl-Sys-Syslog
+[  262s]   breaking dependency perl -> perl-Sys-Syslog
+[  262s] cycle: perl -> perl-Term-Cap
+[  262s]   breaking dependency perl -> perl-Term-Cap
+[  262s] cycle: perl -> perl-Test-Harness
+[  262s]   breaking dependency perl -> perl-Test-Harness
+[  262s] cycle: perl -> perl-Test-Simple
+[  262s]   breaking dependency perl -> perl-Test-Simple
+[  262s] cycle: perl -> perl-Text-Balanced
+[  262s]   breaking dependency perl -> perl-Text-Balanced
+[  262s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  262s]   breaking dependency perl -> perl-Thread-Queue
+[  262s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  262s]   breaking dependency perl -> perl-Unicode-Collate
+[  262s] cycle: perl -> perl-autodie
+[  262s]   breaking dependency perl -> perl-autodie
+[  262s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  262s]   breaking dependency perl -> perl-bignum
+[  262s] cycle: perl -> perl-devel
+[  262s]   breaking dependency perl -> perl-devel
+[  262s] cycle: perl -> perl-Encode-devel
+[  262s]   breaking dependency perl -> perl-Encode-devel
+[  262s] cycle: perl -> perl-experimental
+[  262s]   breaking dependency perl -> perl-experimental
+[  262s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  262s]   breaking dependency perl -> perl-libnet
+[  262s] cycle: perl -> perl-podlators
+[  262s]   breaking dependency perl -> perl-podlators
+[  262s] cycle: perl -> perl-version
+[  262s]   breaking dependency perl -> perl-version
+[  262s] cycle: glib2 -> gamin
+[  262s]   breaking dependency glib2 -> gamin
+[  262s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  262s]   breaking dependency systemd -> gnutls
+[  262s] cycle: systemd -> pam -> audit
+[  262s]   breaking dependency systemd -> pam
+[  262s] cycle: systemd -> shadow -> pam -> audit
+[  262s]   breaking dependency systemd -> shadow
+[  262s] cycle: pam -> libpwquality
+[  262s]   breaking dependency pam -> libpwquality
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  262s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  262s]   breaking dependency perl-podlators -> perl-Encode
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  262s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  262s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  262s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  262s] cycle: perl-Pod-Usage -> perl-podlators
+[  262s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  262s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  262s]   breaking dependency groff -> perl-Getopt-Long
+[  262s] cycle: libglvnd-egl -> mesa-libEGL
+[  262s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[  262s] cycle: libxcrypt-devel -> glibc-devel
+[  262s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  262s] cycle: cmake-data -> cmake
+[  262s]   breaking dependency cmake -> cmake-data
+[  262s] cycle: nss-util -> nss
+[  262s]   breaking dependency nss -> nss-util
+[  262s] cycle: nss-softokn -> nss-util -> nss
+[  262s]   breaking dependency nss -> nss-softokn
+[  262s] cycle: libglvnd-glx -> mesa-libGL
+[  262s]   breaking dependency mesa-libGL -> libglvnd-glx
+[  262s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  262s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  262s] cycle: openssh -> openssh-server
+[  262s]   breaking dependency openssh-server -> openssh
+[  262s] cycle: git -> perl-Git
+[  262s]   breaking dependency git -> perl-Git
+[  262s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  262s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  263s] done
+[  263s] querying package ids...
+[  305s] [1/429] installing cmake-filesystem-3.22.0-1.oe1
+[  306s] [2/429] installing fonts-filesystem-2.0.2-2.oe1
+[  307s] [3/429] installing fuse-common-3.9.2-5.oe1
+[  308s] [4/429] installing kernel-headers-5.10-3.oe1
+[  316s] [5/429] installing libreport-filesystem-2.13.1-5.oe1
+[  317s] [6/429] installing ncurses-base-6.1-14.oe1
+[  319s] [7/429] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  320s] [8/429] installing python-setuptools-59.4.0-3.oe1
+[  321s] [9/429] installing qt5-srpm-macros-5.15.2-1.oe1
+[  322s] [10/429] installing tzdata-2021a-2.oe1
+[  331s] [11/429] installing dnf-data-4.10.0-1.oe1
+[  332s] [12/429] installing openEuler-repos-1.0-2.5.oe1
+[  333s] [13/429] installing wqy-zenhei-fonts-0.9.46-21.oe1
+[  342s] [14/429] installing openEuler-release-20.03LTS-40.oe1
+[  343s] [15/429] installing filesystem-3.9-3.oe1
+[  354s] warning: group mail does not exist - using root
+[  354s] [16/429] installing emacs-filesystem-1:27.1-5.oe1
+[  355s] [17/429] installing libgcc-10.3.1-10.oe1
+[  357s] [18/429] installing setup-2.13.3-4.oe1
+[  358s] [19/429] installing glibc-2.34-74.oe1
+[  367s] [20/429] installing brotli-1.0.9-2.oe1
+[  370s] [21/429] installing cdparanoia-libs-10.2-31.oe1
+[  371s] [22/429] installing chrpath-0.16-12.oe1
+[  372s] [23/429] installing cpio-2.13-4.oe1
+[  374s] [24/429] installing diffutils-3.7-4.oe1
+[  376s] [25/429] installing expat-2.2.10-1.oe1
+[  377s] [26/429] installing fribidi-1.0.10-1.oe1
+[  378s] [27/429] installing gpm-libs-1.20.7-21.oe1
+[  379s] [28/429] installing json-c-0.15-1.oe1
+[  380s] [29/429] installing keyutils-libs-1.6.3-3.oe1
+[  382s] [30/429] installing libICE-1.0.10-2.oe1
+[  383s] [31/429] installing libXau-1.0.9-2.oe1
+[  384s] [32/429] installing libaio-0.3.112-1.oe1
+[  385s] [33/429] installing libargon2-20190702-1.oe1
+[  386s] [34/429] installing libatomic-10.3.1-10.oe1
+[  387s] [35/429] installing libcap-ng-0.7.11-1.oe1
+[  388s] [36/429] installing libdatrie-0.2.12-1.oe1
+[  390s] [37/429] installing libdrm-2.4.109-3.oe1
+[  391s] [38/429] installing libev-4.24-11.oe1
+[  392s] [39/429] installing libffi-3.3-31.oe1
+[  394s] [40/429] installing libglvnd-1:1.3.4-2.oe1
+[  395s] [41/429] installing libgomp-10.3.1-10.oe1
+[  397s] [42/429] installing libgpg-error-1.41-1.oe1
+[  398s] [43/429] installing libnghttp2-1.42.0-1.oe1
+[  399s] [44/429] installing libogg-2:1.3.3-3.oe1
+[  400s] [45/429] installing libpcap-14:1.9.1-7.oe1
+[  402s] [46/429] installing libpipeline-1.5.3-1.oe1
+[  403s] [47/429] installing libsigsegv-2.11-10.oe1
+[  404s] [48/429] installing libsmartcols-2.36.1-3.oe1
+[  406s] [49/429] installing libtasn1-4.16.0-2.oe1
+[  407s] [50/429] installing libtool-ltdl-2.4.6-34.oe1
+[  408s] [51/429] installing libunistring-0.9.10-8.oe1
+[  409s] [52/429] installing libuuid-2.36.1-3.oe1
+[  411s] [53/429] installing libuv-1:1.40.0-1.oe1
+[  412s] [54/429] installing libvisual-1:0.4.0-27.oe1
+[  414s] [55/429] installing libxcrypt-4.4.8-4.oe1
+[  415s] [56/429] installing libxshmfence-1.3-6.oe1
+[  416s] [57/429] installing libyaml-0.2.5-1.oe1
+[  417s] [58/429] installing lz4-1.9.3-1.oe1
+[  419s] [59/429] installing m4-1.4.18-14.oe1
+[  420s] [60/429] installing nspr-4.32.0-1.oe1
+[  421s] [61/429] installing opus-1.3.1-1.oe1
+[  422s] [62/429] installing pixman-0.38.0-1.oe1
+[  424s] [63/429] installing pkgconf-1.7.3-1.oe1
+[  425s] [64/429] installing rhash-1.3.5-5.oe1
+[  427s] [65/429] installing which-2.21-14.oe1
+[  428s] [66/429] installing xz-libs-5.2.5-1.oe1
+[  429s] [67/429] installing zlib-1.2.11-18.oe1
+[  430s] [68/429] installing attr-2.4.48-12.oe1
+[  432s] [69/429] installing basesystem-12-2.oe1
+[  434s] [70/429] installing libstdc++-10.3.1-10.oe1
+[  436s] [71/429] installing ncurses-libs-6.1-14.oe1
+[  437s] [72/429] installing libsepol-3.1-4.oe1
+[  438s] [73/429] installing libstdc++-devel-10.3.1-10.oe1
+[  449s] [74/429] installing audit-libs-1:3.0-2.oe1
+[  450s] [75/429] installing file-libs-5.39-6.oe1
+[  453s] [76/429] installing gmp-1:6.2.1-1.oe1
+[  455s] [77/429] installing iptables-libs-1.8.1-4.oe1
+[  456s] [78/429] installing less-563-2.oe1
+[  457s] [79/429] installing libacl-2.2.53-7.oe1
+[  458s] [80/429] installing libassuan-2.5.4-1.oe1
+[  460s] [81/429] installing libedit-3.1-27.oe1
+[  461s] [82/429] installing libffi-devel-3.3-31.oe1
+[  462s] [83/429] installing libgcrypt-1.8.7-1.oe1
+[  465s] [84/429] installing libpng-2:1.6.37-1.oe1
+[  466s] [85/429] installing libsepol-devel-3.1-4.oe1
+[  469s] [86/429] installing libthai-0.1.28-4.oe1
+[  471s] [87/429] installing libtheora-1:1.1.1-24.oe1
+[  472s] [88/429] installing libvorbis-1:1.3.6-5.oe1
+[  474s] [89/429] installing libxcb-1.14-1.oe1
+[  475s] [90/429] installing readline-8.0-2.oe1
+[  477s] [91/429] installing wayland-1.18.0-1.oe1
+[  478s] [92/429] installing zlib-devel-1.2.11-18.oe1
+[  479s] [93/429] installing cppunit-1.14.0-7.oe1
+[  480s] [94/429] installing fuse-2.9.9-6.oe1
+[  483s] [95/429] installing gc-8.0.4-2.oe1
+[  484s] [96/429] installing libSM-1.2.3-2.oe1
+[  485s] [97/429] installing libdb-5.3.28-35.oe1
+[  490s] [98/429] installing libicu-62.1-5.oe1
+[  504s] [99/429] installing libselinux-3.1-3.oe1
+[  505s] [100/429] installing libxml2-2.9.12-5.oe1
+[  507s] [101/429] installing bash-5.1-1.oe1
+[  511s] [102/429] installing perl-libs-4:5.28.0-435.oe1
+[  517s] [103/429] installing zstd-1.4.8-2.oe1
+[  520s] [104/429] installing ncurses-6.1-14.oe1
+[  533s] [105/429] installing thin-provisioning-tools-0.8.5-1.oe1
+[  535s] [106/429] installing perl-parent-1:0.237-4.oe1
+[  535s] [107/429] installing perl-perlfaq-5.20180915-5.oe1
+[  537s] [108/429] installing cppunit-devel-1.14.0-7.oe1
+[  538s] [109/429] installing libX11-1.6.9-2.oe1
+[  542s] [110/429] installing mesa-libglapi-21.3.1-1.oe1
+[  543s] [111/429] installing mpfr-4.1.0-2.oe1
+[  544s] [112/429] installing nettle-3.6-6.oe1
+[  547s] [113/429] installing pcre2-10.36-1.oe1
+[  549s] [114/429] installing perl-Exporter-5.74-1.oe1
+[  550s] [115/429] installing file-5.39-6.oe1
+[  552s] [116/429] installing gdbm-1:1.18.1-1.oe1
+[  553s] [117/429] installing patch-2.7.6-12.oe1
+[  554s] [118/429] installing qrencode-4.1.1-1
+[  556s] [119/429] installing sed-4.8-2.oe1
+[  558s] [120/429] installing acl-2.2.53-7.oe1
+[  560s] [121/429] installing libcomps-0.1.15-1.oe1
+[  561s] [122/429] installing pcre-8.44-1.oe1
+[  563s] [123/429] installing subunit-1.3.0-3.oe1
+[  564s] [124/429] installing glibc-common-2.34-74.oe1
+[  577s] [125/429] installing gmp-c++-1:6.2.1-1.oe1
+[  580s] [126/429] installing mesa-libgbm-21.3.1-1.oe1
+[  581s] [127/429] installing check-0.12.0-4.oe1
+[  583s] [128/429] installing crontabs-1.11-21.oe1
+[  584s] [129/429] installing gmp-devel-1:6.2.1-1.oe1
+[  588s] [130/429] installing libXext-1.3.4-2.oe1
+[  591s] [131/429] installing libXfixes-5.0.3-11.oe1
+[  593s] [132/429] installing libXpm-3.5.12-11.oe1
+[  595s] [133/429] installing libXrender-0.9.10-10.oe1
+[  597s] [134/429] installing perl-Carp-1.50-418.oe1
+[  598s] [135/429] installing perl-Perl-OSType-1.010-421.oe1
+[  599s] [136/429] installing perl-Term-ANSIColor-4.06-511.oe1
+[  601s] [137/429] installing libmpc-1.2.0-2.oe1
+[  602s] [138/429] installing subunit-devel-1.3.0-3.oe1
+[  604s] [139/429] installing grep-3.6-1.oe1
+[  607s] [140/429] installing libXt-1.2.0-0.oe1
+[  609s] [141/429] installing gawk-5.1.0-1.oe1
+[  611s] [142/429] installing mesa-libEGL-21.3.1-1.oe1
+[  613s] [143/429] installing libXv-1.0.11-11.oe1
+[  614s] [144/429] installing libXxf86vm-1.1.4-13.oe1
+[  616s] [145/429] installing libglvnd-egl-1:1.3.4-2.oe1
+[  617s] [146/429] installing libglvnd-gles-1:1.3.4-2.oe1
+[  619s] [147/429] installing nettle-devel-3.6-6.oe1
+[  622s] [148/429] installing perl-Text-ParseWords-3.30-419.oe1
+[  623s] [149/429] installing check-devel-0.12.0-4.oe1
+[  629s] [150/429] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  636s] [151/429] installing libXmu-1.1.3-1.oe1
+[  638s] [152/429] installing cpp-10.3.1-10.oe1
+[  648s] [153/429] installing openssl-libs-1:1.1.1f-2.oe1
+[  652s] [154/429] installing libXaw-1.0.13-13.oe1
+[  654s] [155/429] installing mesa-libGL-21.3.1-1.oe1
+[  657s] [156/429] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  660s] [157/429] installing libevent-2.1.12-4
+[  666s] [158/429] installing kmod-libs-27-4.oe1
+[  670s] [159/429] installing kmod-27-4.oe1
+[  676s] [160/429] installing libglvnd-glx-1:1.3.4-2.oe1
+[  680s] [161/429] installing nodejs-libs-1:16.10.0-1.oe1
+[  723s] [162/429] installing coreutils-8.31-4.oe1
+[  735s] [163/429] installing alsa-lib-1.2.4-1.oe1
+[  738s] [164/429] installing publicsuffix-list-20200718-1.oe1
+[  739s] [165/429] installing uname-build-checks-1.0-0.4.oe1
+[  741s] [166/429] installing bzip2-1.0.8-3.oe1
+[  743s] [167/429] installing gzip-1.10-1.oe1
+[  744s] [168/429] installing hostname-3.21-2.oe1
+[  746s] [169/429] installing libcap-2.32-2.oe1
+[  748s] [170/429] installing libseccomp-2.4.3-2.oe1
+[  751s] [171/429] installing npth-1.5-7.oe1
+[  752s] [172/429] installing orc-0.4.32-1.oe1
+[  756s] [173/429] installing popt-1.18-1.oe1
+[  759s] [174/429] installing sgml-common-0.6.3-51.oe1
+[  761s] [175/429] installing fipscheck-1.5.0-7.oe1
+[  763s] [176/429] installing libblkid-2.36.1-3.oe1
+[  766s] [177/429] installing libidn2-2.3.0-1.oe1
+[  768s] [178/429] installing libksba-1.3.5-12.oe1
+[  770s] [179/429] installing pcre-devel-8.44-1.oe1
+[  774s] [180/429] installing pcre2-devel-10.36-1.oe1
+[  777s] [181/429] installing tar-2:1.32-3.oe1
+[  780s] [182/429] installing tcl-1:8.6.10-3.oe1
+[  786s] [183/429] installing elfutils-0.185-5.oe1
+[  790s] Couldn't write '0' to 'kernel/yama/ptrace_scope', ignoring: No such file or directory
+[  790s] [184/429] installing graphite2-1.3.13-2.oe1
+[  793s] [185/429] installing info-6.7-2.oe1
+[  795s] [186/429] installing jsoncpp-1.9.4-1.oe1
+[  797s] [187/429] installing libgpg-error-devel-1.41-1.oe1
+[  799s] [188/429] installing lua-5.3.5-6.oe1
+[  801s] [189/429] installing slang-2.3.2-8.oe1
+[  804s] [190/429] installing xz-5.2.5-1.oe1
+[  806s] [191/429] installing glibc-devel-2.34-74.oe1
+[  819s] [192/429] installing libxslt-1.1.32-7.oe1
+[  822s] [193/429] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  824s] [194/429] installing perl-Time-HiRes-1.9760-2.oe1
+[  826s] [195/429] installing perl-Unicode-Normalize-1.26-419.oe1
+[  828s] [196/429] installing systemd-libs-243-22.oe1
+[  831s] [197/429] installing guile-5:2.0.14-15.oe1
+[  840s] [198/429] installing iso-codes-4.5.0-1.oe1
+[  852s] [199/429] installing dbus-libs-1:1.12.20-3.oe1
+[  854s] [200/429] installing libidn2-devel-2.3.0-1.oe1
+[  856s] [201/429] installing xz-devel-5.2.5-1.oe1
+[  859s] [202/429] installing zip-3.0-29.oe1
+[  861s] [203/429] installing libfdisk-2.36.1-3.oe1
+[  864s] [204/429] installing libtasn1-devel-4.16.0-2.oe1
+[  865s] [205/429] installing libxcrypt-devel-4.4.8-4.oe1
+[  867s] [206/429] installing newt-0.52.21-4.oe1
+[  870s] [207/429] installing orc-compiler-0.4.32-1.oe1
+[  871s] [208/429] installing p11-kit-0.23.22-1.oe1
+[  875s] [209/429] installing procps-ng-3.3.16-15.oe1
+[  878s] [210/429] installing libmount-2.36.1-3.oe1
+[  880s] [211/429] installing libselinux-devel-3.1-3.oe1
+[  882s] [212/429] installing lua-posix-33.3.1-12.oe1
+[  885s] [213/429] installing unzip-6.0-47.oe1
+[  887s] [214/429] installing cracklib-2.9.7-6.oe1
+[  894s] [215/429] installing docbook-dtds-1.0-78.oe1
+[  923s] [216/429] installing e2fsprogs-1.45.6-3.oe1
+[  928s] [217/429] installing findutils-2:4.7.0-7.oe1
+[  931s] [218/429] installing libsemanage-3.1-4.oe1
+[  932s] [219/429] installing make-1:4.2.1-15.oe1
+[  936s] [220/429] installing sqlite-3.24.0-9.oe1
+[  939s] [221/429] installing logrotate-3.15.1-2.oe1
+[  941s] [222/429] installing opensp-1.5.2-31.oe1
+[  944s] [223/429] installing freetype-2.10.2-3.oe1
+[  947s] [224/429] installing libgcrypt-devel-1.8.7-1.oe1
+[  949s] [225/429] installing gnupg2-2.2.27-2.oe1
+[  954s] [226/429] installing libarchive-3.5.1-1.oe1
+[  957s] [227/429] installing rpm-libs-4.15.1-25.oe1
+[  959s] [228/429] installing dbus-tools-1:1.12.20-3.oe1
+[  962s] [229/429] installing p11-kit-devel-0.23.22-1.oe1
+[  964s] [230/429] installing orc-devel-0.4.32-1.oe1
+[  966s] [231/429] installing copy-jdk-configs-4.0-1.oe1
+[  968s] [232/429] installing gpgme-1.15.1-1.oe1
+[  971s] [233/429] installing obs-env-1.0-5.oe1
+[  979s] [234/429] installing chkconfig-1.14-2.oe1
+[  982s] [235/429] installing docbook-style-xsl-1.79.2-9.oe1
+[  999s] [236/429] installing libxml2-devel-2.9.12-5.oe1
+[ 1011s] [237/429] installing openjade-1.3.2-60.oe1
+[ 1017s] [238/429] installing fontconfig-2.13.92-1.oe1
+[ 1023s] [239/429] installing glib2-2.66.8-1.oe1
+[ 1032s] [240/429] installing libcroco-0.6.12-13.oe1
+[ 1035s] [241/429] installing gamin-0.1.10-38.oe1
+[ 1037s] [242/429] installing gstreamer1-1.16.2-3.oe1
+[ 1042s] [243/429] installing libsecret-0.18.6-5.oe1
+[ 1045s] [244/429] installing libverto-0.3.1-2.oe1
+[ 1047s] [245/429] installing gobject-introspection-1.66.1-1.oe1
+[ 1050s] [246/429] installing libXft-2.3.3-1.oe1
+[ 1052s] [247/429] installing libmodulemd-2.13.0-1.oe1
+[ 1054s] [248/429] installing binutils-2.37-6.oe1
+[ 1064s] [249/429] installing babeltrace-1.5.8-1.oe1
+[ 1067s] [250/429] installing harfbuzz-2.7.4-1.oe1
+[ 1071s] [251/429] installing p11-kit-trust-0.23.22-1.oe1
+[ 1073s] [252/429] installing cairo-1.16.0-6.fc32
+[ 1075s] [253/429] installing ca-certificates-2020.2.46-2.oe1
+[ 1085s] [254/429] installing gettext-0.20.1-2.oe1
+[ 1090s] [255/429] installing krb5-libs-1.18.2-3.oe1
+[ 1093s] [256/429] installing pango-1.47.0-1.oe1
+[ 1095s] [257/429] installing gcc-10.3.1-10.oe1
+[ 1122s] [258/429] installing python-pip-wheel-19.2.3-2.fc32
+[ 1124s] [259/429] installing libtirpc-1.3.1-1.oe1
+[ 1126s] [260/429] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1128s] [261/429] installing libssh-0.9.5-1.oe1
+[ 1130s] [262/429] installing gcc-c++-10.3.1-10.oe1
+[ 1141s] [263/429] installing elinks-0.12-1.oe1
+[ 1145s] [264/429] installing gstreamer1-plugins-base-1.16.2-2.oe1
+[ 1150s] [265/429] installing openldap-2.4.46-15.oe1
+[ 1152s] [266/429] installing libnsl2-1.3.0-2.oe1
+[ 1156s] [267/429] installing python3-3.8.5-13.oe1
+[ 1185s] [268/429] installing python3-parameterized-0.6.1-9.fc32
+[ 1187s] [269/429] installing python3-pyparsing-2.4.5-1.fc32
+[ 1191s] [270/429] installing python3-setuptools-59.4.0-3.oe1
+[ 1197s] [271/429] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1199s] [272/429] installing python3-six-1.16.0-2.oe1
+[ 1202s] [273/429] installing python3-markupsafe-1.1.1-4.fc32
+[ 1204s] [274/429] installing python3-gpgme-1.15.1-1.oe1
+[ 1207s] [275/429] installing python3-lxml-4.4.1-3.fc32
+[ 1211s] [276/429] installing python3-libcomps-0.1.15-1.oe1
+[ 1213s] [277/429] installing libpsl-0.21.1-1.oe1
+[ 1215s] [278/429] installing gdb-headless-9.2-5.oe1
+[ 1221s] [279/429] installing python3-anytree-2.7.2-2.fc32
+[ 1224s] [280/429] installing python3-pygments-2.4.2-6.fc32
+[ 1231s] [281/429] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1232s] [282/429] installing gdb-9.2-5.oe1
+[ 1234s] [283/429] installing python3-mako-1.1.0-4.fc32
+[ 1237s] [284/429] installing python3-pip-19.2.3-2.fc32
+[ 1247s] [285/429] installing libcurl-7.79.1-1.oe1
+[ 1249s] [286/429] installing curl-7.79.1-1.oe1
+[ 1251s] [287/429] installing librepo-1.14.2-2.oe1
+[ 1253s] [288/429] installing rpm-4.15.1-25.oe1
+[ 1257s] [289/429] installing efi-srpm-macros-4-3.oe1
+[ 1260s] [290/429] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1263s] [291/429] installing libsolv-0.7.20-1.oe1
+[ 1266s] [292/429] installing python3-rpm-4.15.1-25.oe1
+[ 1268s] [293/429] installing openEuler-rpm-config-30-22.oe1
+[ 1270s] [294/429] installing cmake-3.22.0-1.oe1
+[ 1284s] [295/429] installing libdnf-0.65.0-2.oe1
+[ 1288s] [296/429] installing cmake-data-3.22.0-1.oe1
+[ 1306s] [297/429] installing python3-libdnf-0.65.0-2.oe1
+[ 1310s] [298/429] installing perl-4:5.28.0-435.oe1
+[ 1319s] [299/429] installing perl-B-Debug-1.26-4.oe1
+[ 1320s] [300/429] installing perl-Env-1.04-397.oe1
+[ 1322s] [301/429] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1324s] [302/429] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1325s] [303/429] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1327s] [304/429] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1329s] [305/429] installing perl-Params-Check-1:0.38-418.oe1
+[ 1330s] [306/429] installing perl-Term-Cap-1.17-510.oe1
+[ 1333s] [307/429] installing perl-TermReadKey-2.38-2.oe1
+[ 1335s] [308/429] installing perl-Text-Balanced-2.03-420.oe1
+[ 1336s] [309/429] installing perl-threads-1:2.22-419.oe1
+[ 1338s] [310/429] installing openssl-1:1.1.1f-2.oe1
+[ 1340s] [311/429] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1342s] [312/429] installing perl-Error-1:0.17029-1.oe1
+[ 1343s] [313/429] installing perl-Filter-2:1.59-2.oe1
+[ 1345s] [314/429] installing perl-IPC-SysV-2.07-5.oe1
+[ 1348s] [315/429] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1349s] [316/429] installing perl-SGMLSpm-1.03ii-45.oe1
+[ 1351s] [317/429] installing perl-constant-1.33-421.oe1
+[ 1352s] [318/429] installing docbook-style-dsssl-1.79-27.oe1
+[ 1361s] [319/429] installing perl-MIME-Base64-3.15-418.oe1
+[ 1363s] [320/429] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1365s] [321/429] installing perl-Socket-4:2.029-2.oe1
+[ 1367s] [322/429] installing perl-Storable-1:3.15-2.oe1
+[ 1369s] [323/429] installing python3-hawkey-0.65.0-2.oe1
+[ 1372s] [324/429] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1373s] [325/429] installing perl-Digest-1.17-419.oe1
+[ 1375s] [326/429] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1376s] [327/429] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1377s] [328/429] installing perl-Text-Diff-1.45-7.oe1
+[ 1379s] [329/429] installing perl-Time-Local-2:1.280-6.oe1
+[ 1380s] [330/429] installing perl-version-8:0.99.24-3.oe1
+[ 1382s] [331/429] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1384s] [332/429] installing perl-threads-shared-1.59-2.oe1
+[ 1386s] [333/429] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1388s] [334/429] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1391s] [335/429] installing perl-Locale-Codes-3.58-2.oe1
+[ 1394s] [336/429] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1396s] [337/429] installing perl-PathTools-3.75-4.oe1
+[ 1397s] [338/429] installing python3-dnf-4.10.0-1.oe1
+[ 1402s] [339/429] installing perl-Data-Dumper-2.172-3.oe1
+[ 1404s] [340/429] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1406s] [341/429] installing perl-Encode-4:2.98-9.oe1
+[ 1412s] [342/429] installing autogen-5.18.16-1.oe1
+[ 1415s] [343/429] installing nodejs-1:16.10.0-1.oe1
+[ 1418s] [344/429] installing systemd-243-22.oe1
+[ 1437s] /var/tmp/rpm-tmp.v5u7FG: line 8: groupadd: command not found
+[ 1437s] /var/tmp/rpm-tmp.v5u7FG: line 10: groupadd: command not found
+[ 1437s] /var/tmp/rpm-tmp.v5u7FG: line 13: groupadd: command not found
+[ 1437s] /var/tmp/rpm-tmp.v5u7FG: line 16: groupadd: command not found
+[ 1438s] [345/429] installing dbus-common-1:1.12.20-3.oe1
+[ 1440s] [346/429] installing nodejs-source-map-0.5.6-1.oe1
+[ 1442s] [347/429] installing perl-Module-Load-1:0.32-418.oe1
+[ 1445s] [348/429] installing nodejs-packaging-20-1.oe1
+[ 1447s] [349/429] installing dnf-4.10.0-1.oe1
+[ 1450s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1450s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1450s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1450s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1450s] [350/429] installing perl-File-Which-1.23-1.oe1
+[ 1452s] [351/429] installing perl-Thread-Queue-3.13-3.oe1
+[ 1454s] [352/429] installing perl-experimental-0.020-2.oe1
+[ 1456s] [353/429] installing perl-Digest-MD5-2.55-419.oe1
+[ 1458s] [354/429] installing perl-File-Path-2.16-4.oe1
+[ 1465s] [355/429] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1467s] [356/429] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1469s] [357/429] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1471s] [358/429] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1473s] [359/429] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1475s] [360/429] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1477s] [361/429] installing audit-1:3.0-2.oe1
+[ 1481s] [362/429] installing perl-DB_File-1.842-2.oe1
+[ 1484s] [363/429] installing perl-autodie-2.29-398.oe1
+[ 1486s] [364/429] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1491s] [365/429] installing perl-IO-Compress-2.081-6.oe1
+[ 1493s] [366/429] installing perl-podlators-1:4.14-1.oe1
+[ 1495s] [367/429] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1498s] [368/429] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1499s] [369/429] installing perl-bignum-0.50-4.oe1
+[ 1501s] [370/429] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1503s] [371/429] installing perl-libnet-3.11-420.oe1
+[ 1505s] [372/429] installing pam-1.5.1-1.oe1
+[ 1512s] [373/429] installing libpwquality-1.4.4-1.oe1
+[ 1515s] [374/429] installing perl-File-HomeDir-1.004-4.oe1
+[ 1517s] [375/429] installing shadow-2:4.8.1-5.oe1
+[ 1520s] [376/429] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1523s] [377/429] installing libutempter-1.1.6-16.oe1
+[ 1526s] [378/429] installing unbound-libs-1.10.1-4.oe1
+[ 1531s] [379/429] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1536s] [380/429] installing openssh-server-8.2p1-10.oe1
+[ 1540s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1540s] [381/429] installing groff-1.22.4-4.oe1
+[ 1549s] [382/429] installing dbus-1:1.12.20-3.oe1
+[ 1551s] [383/429] installing man-db-2.9.3-2.oe1
+[ 1557s] [384/429] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1558s] [385/429] installing gnutls-3.6.15-3.oe1
+[ 1562s] [386/429] installing util-linux-2.36.1-3.oe1
+[ 1571s] [387/429] installing nss-help-3.72.0-2.oe1
+[ 1573s] [388/429] installing util-linux-devel-2.36.1-3.oe1
+[ 1575s] [389/429] installing gnutls-devel-3.6.15-3.oe1
+[ 1578s] [390/429] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1580s] [391/429] installing device-mapper-8:1.02.172-1.oe1
+[ 1583s] [392/429] installing openssh-8.2p1-10.oe1
+[ 1587s] [393/429] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1589s] [394/429] installing cryptsetup-2.3.3-3.oe1
+[ 1593s] [395/429] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1596s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1596s] [396/429] installing nss-3.72.0-2.oe1
+[ 1607s] [397/429] installing glib2-devel-2.66.8-1.oe1
+[ 1632s] [398/429] installing openssh-clients-8.2p1-10.oe1
+[ 1635s] [399/429] installing gstreamer1-devel-1.16.2-3.oe1
+[ 1640s] [400/429] installing nss-util-3.72.0-2.oe1
+[ 1643s] [401/429] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1645s] [402/429] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1647s] [403/429] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1649s] [404/429] installing perl-Pod-Parser-1.63-397.oe1
+[ 1651s] [405/429] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1654s] [406/429] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1657s] [407/429] installing docbook-utils-0.6.14-47.oe1
+[ 1659s] [408/429] installing perl-Archive-Tar-2.30-421.oe1
+[ 1660s] [409/429] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1662s] [410/429] installing lvm2-8:2.03.11-1.oe1
+[ 1671s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1671s] [411/429] installing autoconf-2.69-30.oe1
+[ 1674s] [412/429] installing git-2.23.0-12.oe1
+[ 1687s] [413/429] installing nss-softokn-3.72.0-2.oe1
+[ 1691s] [414/429] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1693s] [415/429] installing perl-Git-2.23.0-12.oe1
+[ 1695s] [416/429] installing gstreamer1-plugins-base-devel-1.16.2-2.oe1
+[ 1700s] [417/429] installing gtk-doc-1.33.2-1.oe1
+[ 1704s] [418/429] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1708s] [419/429] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1710s] [420/429] installing automake-1.16.1-6.oe1
+[ 1713s] [421/429] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1715s] [422/429] installing libtool-2.4.6-34.oe1
+[ 1718s] [423/429] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1721s] [424/429] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1723s] [425/429] installing rpm-build-4.15.1-25.oe1
+[ 1725s] [426/429] installing gcc_secure-1.0-0.9.oe1
+[ 1727s] [427/429] installing gobject-introspection-devel-1.66.1-1.oe1
+[ 1736s] [428/429] installing perl-File-Fetch-0.56-4.oe1
+[ 1739s] [429/429] installing perl-devel-4:5.28.0-435.oe1
+[ 1751s] removing nis flags from /var/cache/obs/worker/root_3/etc/nsswitch.conf...
+[ 1752s] now finalizing build dir...
+[ 1765s] Running build time source services...
+[ 1784s] -----------------------------------------------------------------
+[ 1784s] ----- building libnice.spec (user abuild)
+[ 1784s] -----------------------------------------------------------------
+[ 1784s] -----------------------------------------------------------------
+[ 1792s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/4d62150cd54eb0628d5103903ef7dbda-libnice' /home/abuild/rpmbuild/SOURCES/libnice.spec
+[ 1793s] warning: bogus date in %changelog: Tue Nov 1 2021 Chenxi Mao <chenxi.mao@suse.com> - 0.1.14-11
+[ 1793s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Jsz5UR
+[ 1793s] + umask 022
+[ 1793s] + cd /home/abuild/rpmbuild/BUILD
+[ 1793s] + cd /home/abuild/rpmbuild/BUILD
+[ 1793s] + rm -rf libnice-0.1.14
+[ 1793s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/libnice-0.1.14.tar.gz
+[ 1793s] + /usr/bin/tar -xof -
+[ 1794s] + STATUS=0
+[ 1794s] + '[' 0 -ne 0 ']'
+[ 1794s] + cd libnice-0.1.14
+[ 1794s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 1794s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 1794s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libnice-0.1.14-85-g34d6044.patch
+[ 1796s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libnice-0.1.14-tests-i686.patch
+[ 1796s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 1797s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 1797s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libnice-0.1.14-tests-koji.patch
+[ 1797s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libnice-0.1.14-turn-verify.patch
+[ 1797s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 1797s] + chmod 0755 scripts/valgrind-test-driver
+[ 1797s] + sed -e 's/test-new-dribble/#&/' -e 's/test-send-recv/#&/' -i tests/Makefile.am
+[ 1797s] + autoreconf -fiv
+[ 1804s] autoreconf: Entering directory `.'
+[ 1805s] autoreconf: configure.ac: not using Gettext
+[ 1806s] autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+[ 1836s] autoreconf: configure.ac: tracing
+[ 1848s] autoreconf: running: libtoolize --copy --force
+[ 1858s] libtoolize: putting auxiliary files in '.'.
+[ 1858s] libtoolize: copying file './ltmain.sh'
+[ 1860s] libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+[ 1860s] libtoolize: copying file 'm4/libtool.m4'
+[ 1861s] libtoolize: copying file 'm4/ltoptions.m4'
+[ 1862s] libtoolize: copying file 'm4/ltsugar.m4'
+[ 1863s] libtoolize: copying file 'm4/ltversion.m4'
+[ 1865s] libtoolize: copying file 'm4/lt~obsolete.m4'
+[ 1897s] autoreconf: running: /usr/bin/autoconf --force
+[ 1912s] autoreconf: running: /usr/bin/autoheader --force
+[ 1924s] autoreconf: running: automake --add-missing --copy --force-missing
+[ 1948s] configure.ac:55: installing './compile'
+[ 1948s] configure.ac:15: installing './missing'
+[ 1950s] agent/Makefile.am: installing './depcomp'
+[ 1962s] tests/Makefile.am:107: warning: variable 'test_send_recv_SOURCES' is defined but no program or
+[ 1962s] tests/Makefile.am:107: library has 'test_send_recv' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:132: warning: variable 'test_credentials_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:132: library has 'test_credentials' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:136: warning: variable 'test_drop_invalid_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:136: library has 'test_drop_invalid' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:141: warning: variable 'test_gstreamer_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:141: library has 'test_gstreamer' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:130: warning: variable 'test_icetcp_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:130: library has 'test_icetcp' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:114: warning: variable 'test_mainloop_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:114: library has 'test_mainloop' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:126: warning: variable 'test_new_dribble_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:126: library has 'test_new_dribble' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:138: warning: variable 'test_nomination_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:138: library has 'test_nomination' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:108: warning: variable 'test_send_recv_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:108: library has 'test_send_recv' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:128: warning: variable 'test_tcp_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:128: library has 'test_tcp' as canonical name (possible typo)
+[ 1962s] tests/Makefile.am:134: warning: variable 'test_turn_LDADD' is defined but no program or
+[ 1962s] tests/Makefile.am:134: library has 'test_turn' as canonical name (possible typo)
+[ 1962s] autoreconf: Leaving directory `.'
+[ 1962s] + RPM_EC=0
+[ 1962s] ++ jobs -p
+[ 1962s] + exit 0
+[ 1962s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.HHP08N
+[ 1963s] + umask 022
+[ 1963s] + cd /home/abuild/rpmbuild/BUILD
+[ 1963s] + cd libnice-0.1.14
+[ 1963s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 1963s] + export CFLAGS
+[ 1963s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions'
+[ 1963s] + export CXXFLAGS
+[ 1963s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 1963s] + export FFLAGS
+[ 1963s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 1963s] + export FCFLAGS
+[ 1963s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 1963s] + export LDFLAGS
+[ 1963s] + '[' 1 = 1 ']'
+[ 1963s] +++ dirname ./configure
+[ 1963s] ++ find . -name config.guess -o -name config.sub
+[ 1963s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 1963s] ++ basename ./config.guess
+[ 1963s] + '[' -f /usr/lib/rpm/openEuler/config.guess ']'
+[ 1963s] + /usr/bin/rm -f ./config.guess
+[ 1963s] ++ basename ./config.guess
+[ 1963s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.guess ./config.guess
+[ 1963s] '/usr/lib/rpm/openEuler/config.guess' -> './config.guess'
+[ 1963s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 1963s] ++ basename ./config.sub
+[ 1963s] + '[' -f /usr/lib/rpm/openEuler/config.sub ']'
+[ 1963s] + /usr/bin/rm -f ./config.sub
+[ 1963s] ++ basename ./config.sub
+[ 1963s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.sub ./config.sub
+[ 1964s] '/usr/lib/rpm/openEuler/config.sub' -> './config.sub'
+[ 1964s] + '[' 1 = 1 ']'
+[ 1964s] + '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld' ']'
+[ 1964s] ++ find . -name ltmain.sh
+[ 1964s] + for i in $(find . -name ltmain.sh)
+[ 1964s] + /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld"~' ./ltmain.sh
+[ 1964s] + ./configure --build=riscv64-openEuler-linux-gnu --host=riscv64-openEuler-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-compile-warnings=yes --disable-static --without-gstreamer-0.10
+[ 1975s] checking build system type... riscv64-openEuler-linux-gnu
+[ 1976s] checking host system type... riscv64-openEuler-linux-gnu
+[ 1976s] checking target system type... riscv64-openEuler-linux-gnu
+[ 1977s] checking for a BSD-compatible install... /usr/bin/install -c
+[ 1977s] checking whether build environment is sane... yes
+[ 1977s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[ 1977s] checking for gawk... gawk
+[ 1978s] checking whether make sets $(MAKE)... yes
+[ 1978s] checking whether make supports nested variables... yes
+[ 1979s] checking whether make supports nested variables... (cached) yes
+[ 1979s] checking whether make supports the include directive... yes (GNU style)
+[ 1979s] checking for riscv64-openEuler-linux-gnu-gcc... no
+[ 1979s] checking for gcc... gcc
+[ 1988s] checking whether the C compiler works... yes
+[ 1988s] checking for C compiler default output file name... a.out
+[ 1990s] checking for suffix of executables... 
+[ 1993s] checking whether we are cross compiling... no
+[ 1995s] checking for suffix of object files... o
+[ 1996s] checking whether we are using the GNU C compiler... yes
+[ 1998s] checking whether gcc accepts -g... yes
+[ 2000s] checking for gcc option to accept ISO C89... none needed
+[ 2002s] checking whether gcc understands -c and -o together... yes
+[ 2002s] checking dependency style of gcc... none
+[ 2005s] checking how to run the C preprocessor... gcc -E
+[ 2008s] checking for grep that handles long lines and -e... /usr/bin/grep
+[ 2009s] checking for egrep... /usr/bin/grep -E
+[ 2016s] checking for ANSI C header files... yes
+[ 2018s] checking for sys/types.h... yes
+[ 2022s] checking for sys/stat.h... yes
+[ 2024s] checking for stdlib.h... yes
+[ 2026s] checking for string.h... yes
+[ 2028s] checking for memory.h... yes
+[ 2031s] checking for strings.h... yes
+[ 2033s] checking for inttypes.h... yes
+[ 2035s] checking for stdint.h... yes
+[ 2038s] checking for unistd.h... yes
+[ 2041s] checking minix/config.h usability... no
+[ 2043s] checking minix/config.h presence... no
+[ 2043s] checking for minix/config.h... no
+[ 2046s] checking whether it is safe to define __EXTENSIONS__... yes
+[ 2046s] checking for riscv64-openEuler-linux-gnu-gcc... gcc
+[ 2050s] checking whether we are using the GNU C compiler... (cached) yes
+[ 2050s] checking whether gcc accepts -g... (cached) yes
+[ 2050s] checking for gcc option to accept ISO C89... (cached) none needed
+[ 2050s] checking whether gcc understands -c and -o together... (cached) yes
+[ 2050s] checking dependency style of gcc... (cached) none
+[ 2050s] checking for riscv64-openEuler-linux-gnu-ar... no
+[ 2050s] checking for riscv64-openEuler-linux-gnu-lib... no
+[ 2050s] checking for riscv64-openEuler-linux-gnu-link... no
+[ 2050s] checking for ar... ar
+[ 2052s] checking the archiver (ar) interface... ar
+[ 2052s] checking how to print strings... printf
+[ 2052s] checking for a sed that does not truncate output... /usr/bin/sed
+[ 2052s] checking for fgrep... /usr/bin/grep -F
+[ 2053s] checking for ld used by gcc... /usr/bin/ld
+[ 2054s] checking if the linker (/usr/bin/ld) is GNU ld... yes
+[ 2054s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[ 2055s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[ 2055s] checking whether ln -s works... yes
+[ 2056s] checking the maximum length of command line arguments... 1572864
+[ 2056s] checking how to convert riscv64-openEuler-linux-gnu file names to riscv64-openEuler-linux-gnu format... func_convert_file_noop
+[ 2056s] checking how to convert riscv64-openEuler-linux-gnu file names to toolchain format... func_convert_file_noop
+[ 2056s] checking for /usr/bin/ld option to reload object files... -r
+[ 2056s] checking for riscv64-openEuler-linux-gnu-objdump... no
+[ 2056s] checking for objdump... objdump
+[ 2056s] checking how to recognize dependent libraries... pass_all
+[ 2056s] checking for riscv64-openEuler-linux-gnu-dlltool... no
+[ 2056s] checking for dlltool... no
+[ 2056s] checking how to associate runtime and link libraries... printf %s\n
+[ 2056s] checking for riscv64-openEuler-linux-gnu-ar... ar
+[ 2058s] checking for archiver @FILE support... @
+[ 2058s] checking for riscv64-openEuler-linux-gnu-strip... no
+[ 2058s] checking for strip... strip
+[ 2058s] checking for riscv64-openEuler-linux-gnu-ranlib... no
+[ 2058s] checking for ranlib... ranlib
+[ 2062s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[ 2063s] checking for sysroot... no
+[ 2063s] checking for a working dd... /usr/bin/dd
+[ 2063s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[ 2063s] checking for riscv64-openEuler-linux-gnu-mt... no
+[ 2063s] checking for mt... no
+[ 2064s] checking if : is a manifest tool... no
+[ 2066s] checking for dlfcn.h... yes
+[ 2066s] checking for objdir... .libs
+[ 2071s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[ 2071s] checking for gcc option to produce PIC... -fPIC -DPIC
+[ 2073s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[ 2077s] checking if gcc static flag -static works... yes
+[ 2080s] checking if gcc supports -c -o file.o... yes
+[ 2080s] checking if gcc supports -c -o file.o... (cached) yes
+[ 2082s] checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+[ 2085s] checking whether -lc should be explicitly linked in... no
+[ 2090s] checking dynamic linker characteristics... GNU/Linux ld.so
+[ 2090s] checking how to hardcode library paths into programs... immediate
+[ 2093s] checking for shl_load... no
+[ 2095s] checking for shl_load in -ldld... no
+[ 2097s] checking for dlopen... yes
+[ 2100s] checking whether a program can dlopen itself... yes
+[ 2104s] checking whether a statically linked program can dlopen itself... no
+[ 2105s] checking whether stripping libraries is possible... yes
+[ 2105s] checking if libtool supports shared libraries... yes
+[ 2105s] checking whether to build shared libraries... yes
+[ 2105s] checking whether to build static libraries... no
+[ 2105s] checking for glib-mkenums... /usr/bin/glib-mkenums
+[ 2105s] checking operating system... linux/other
+[ 2106s] checking for C/C++ restrict keyword... __restrict
+[ 2108s] checking for variable-length arrays... yes
+[ 2108s] checking whether to enable assertions... yes
+[ 2110s] checking for stdbool.h that conforms to C99... yes
+[ 2115s] checking for _Bool... yes
+[ 2117s] checking arpa/inet.h usability... yes
+[ 2118s] checking arpa/inet.h presence... yes
+[ 2118s] checking for arpa/inet.h... yes
+[ 2121s] checking net/in.h usability... no
+[ 2123s] checking net/in.h presence... no
+[ 2123s] checking for net/in.h... no
+[ 2126s] checking netdb.h usability... yes
+[ 2127s] checking netdb.h presence... yes
+[ 2127s] checking for netdb.h... yes
+[ 2129s] checking ifaddrs.h usability... yes
+[ 2131s] checking ifaddrs.h presence... yes
+[ 2131s] checking for ifaddrs.h... yes
+[ 2137s] checking for size_t... yes
+[ 2142s] checking for ssize_t... yes
+[ 2144s] checking to see if compiler understands -Werror -fno-strict-aliasing... yes
+[ 2145s] checking to see if compiler understands -Werror -Wall... yes
+[ 2146s] checking to see if compiler understands -Werror -Wextra... yes
+[ 2147s] checking to see if compiler understands -Werror -Wundef... yes
+[ 2149s] checking to see if compiler understands -Werror -Wnested-externs... yes
+[ 2150s] checking to see if compiler understands -Werror -Wwrite-strings... yes
+[ 2151s] checking to see if compiler understands -Werror -Wpointer-arith... yes
+[ 2153s] checking to see if compiler understands -Werror -Wmissing-declarations... yes
+[ 2154s] checking to see if compiler understands -Werror -Wmissing-prototypes... yes
+[ 2156s] checking to see if compiler understands -Werror -Wstrict-prototypes... no
+[ 2157s] checking to see if compiler understands -Werror -Wredundant-decls... yes
+[ 2158s] checking to see if compiler understands -Werror -Wno-unused-parameter... yes
+[ 2160s] checking to see if compiler understands -Werror -Wno-missing-field-initializers... yes
+[ 2161s] checking to see if compiler understands -Werror -Wdeclaration-after-statement... yes
+[ 2162s] checking to see if compiler understands -Werror -Wformat=2... yes
+[ 2164s] checking to see if compiler understands -Werror -Wold-style-definition... no
+[ 2165s] checking to see if compiler understands -Werror -Wcast-align... yes
+[ 2166s] checking to see if compiler understands -Werror -Wformat-nonliteral... yes
+[ 2168s] checking to see if compiler understands -Werror -Wformat-security... yes
+[ 2169s] checking to see if compiler understands -Werror -Wno-cast-function-type... yes
+[ 2171s] checking to see if compiler understands -Werror -Wsign-compare... yes
+[ 2172s] checking to see if compiler understands -Werror -Wstrict-aliasing... yes
+[ 2173s] checking to see if compiler understands -Werror -Wshadow... yes
+[ 2175s] checking to see if compiler understands -Werror -Winline... yes
+[ 2176s] checking to see if compiler understands -Werror -Wpacked... yes
+[ 2177s] checking to see if compiler understands -Werror -Wmissing-format-attribute... yes
+[ 2178s] checking to see if compiler understands -Werror -Winit-self... yes
+[ 2180s] checking to see if compiler understands -Werror -Wredundant-decls... yes
+[ 2181s] checking to see if compiler understands -Werror -Wmissing-include-dirs... yes
+[ 2184s] checking to see if compiler understands -Werror -Wunused-but-set-variable... yes
+[ 2185s] checking to see if compiler understands -Werror -Warray-bounds... yes
+[ 2187s] checking for library containing inet_pton... none required
+[ 2190s] checking for library containing socket... none required
+[ 2190s] configure: set LIBNICE_CFLAGS to -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds
+[ 2192s] checking for clock_gettime in -lrt... yes
+[ 2194s] checking for poll... yes
+[ 2194s] checking for riscv64-openEuler-linux-gnu-pkg-config... /usr/bin/riscv64-openEuler-linux-gnu-pkg-config
+[ 2194s] checking pkg-config is at least version 0.9.0... yes
+[ 2195s] checking for GNUTLS... yes
+[ 2195s] checking for GLIB... yes
+[ 2196s] checking for GST... yes
+[ 2197s] checking for GST_CHECK... yes
+[ 2198s] checking for GUPNP... no
+[ 2198s] checking whether to build static plugins or not... no
+[ 2199s] checking for gtk-doc... yes
+[ 2199s] checking for gtkdoc-check... gtkdoc-check.test
+[ 2199s] checking for gtkdoc-check... /usr/bin/gtkdoc-check
+[ 2199s] checking for gtkdoc-rebase... /usr/bin/gtkdoc-rebase
+[ 2199s] checking for gtkdoc-mkpdf... /usr/bin/gtkdoc-mkpdf
+[ 2199s] checking whether to build gtk-doc documentation... no
+[ 2199s] checking for GTKDOC_DEPS... yes
+[ 2200s] checking for gobject-introspection... yes
+[ 2201s] checking whether to ignore a specific network interface name prefix... no
+[ 2202s] checking that generated files are newer than configure... done
+[ 2202s] configure: creating ./config.status
+[ 2229s] config.status: creating Makefile
+[ 2230s] config.status: creating agent/Makefile
+[ 2231s] config.status: creating stun/Makefile
+[ 2232s] config.status: creating stun/tests/Makefile
+[ 2234s] config.status: creating stun/tools/Makefile
+[ 2235s] config.status: creating socket/Makefile
+[ 2236s] config.status: creating nice/Makefile
+[ 2237s] config.status: creating nice/nice.pc
+[ 2238s] config.status: creating random/Makefile
+[ 2239s] config.status: creating gst/Makefile
+[ 2240s] config.status: creating docs/Makefile
+[ 2241s] config.status: creating docs/reference/Makefile
+[ 2242s] config.status: creating docs/reference/libnice/Makefile
+[ 2243s] config.status: creating tests/Makefile
+[ 2244s] config.status: creating examples/Makefile
+[ 2245s] config.status: creating config.h
+[ 2245s] config.status: executing depfiles commands
+[ 2245s] config.status: executing libtool commands
+[ 2247s] + sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
+[ 2248s] + sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
+[ 2248s] + /usr/bin/make -O -j8 V=1 VERBOSE=1 V=1
+[ 2248s] /usr/bin/make  all-recursive
+[ 2249s] Making all in stun
+[ 2249s] Making all in .
+[ 2261s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2261s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stuncrc32.lo stuncrc32.c
+[ 2261s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stuncrc32.c  -fPIC -DPIC -o .libs/stuncrc32.o
+[ 2261s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2261s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2261s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stun5389.lo stun5389.c
+[ 2261s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stun5389.c  -fPIC -DPIC -o .libs/stun5389.o
+[ 2261s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2261s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2261s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o utils.lo utils.c
+[ 2261s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c utils.c  -fPIC -DPIC -o .libs/utils.o
+[ 2261s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o debug.lo debug.c
+[ 2262s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c debug.c  -fPIC -DPIC -o .libs/debug.o
+[ 2262s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o rand.lo rand.c
+[ 2262s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c rand.c  -fPIC -DPIC -o .libs/rand.o
+[ 2262s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2262s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stunhmac.lo stunhmac.c
+[ 2262s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stunhmac.c  -fPIC -DPIC -o .libs/stunhmac.o
+[ 2262s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2265s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2265s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stunmessage.lo stunmessage.c
+[ 2265s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stunmessage.c  -fPIC -DPIC -o .libs/stunmessage.o
+[ 2265s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2266s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2266s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stunagent.lo stunagent.c
+[ 2266s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stunagent.c  -fPIC -DPIC -o .libs/stunagent.o
+[ 2266s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2270s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2270s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o usages/timer.lo usages/timer.c
+[ 2270s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c usages/timer.c  -fPIC -DPIC -o usages/.libs/timer.o
+[ 2270s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2271s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2271s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o usages/ice.lo usages/ice.c
+[ 2272s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c usages/ice.c  -fPIC -DPIC -o usages/.libs/ice.o
+[ 2272s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2272s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2272s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o usages/turn.lo usages/turn.c
+[ 2272s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c usages/turn.c  -fPIC -DPIC -o usages/.libs/turn.o
+[ 2272s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2272s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2272s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I..  -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o usages/bind.lo usages/bind.c
+[ 2272s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1 -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c usages/bind.c  -fPIC -DPIC -o usages/.libs/bind.o
+[ 2272s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2281s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2281s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu99 -DG_LOG_DOMAIN=\"libnice-stun\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/p11-kit-1    -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libstun.la  stunagent.lo stunmessage.lo stun5389.lo stuncrc32.lo rand.lo stunhmac.lo utils.lo debug.lo usages/ice.lo usages/bind.lo usages/turn.lo usages/timer.lo -lrt -lgnutls  
+[ 2281s] libtool: link: ar cru .libs/libstun.a .libs/stunagent.o .libs/stunmessage.o .libs/stun5389.o .libs/stuncrc32.o .libs/rand.o .libs/stunhmac.o .libs/utils.o .libs/debug.o usages/.libs/ice.o usages/.libs/bind.o usages/.libs/turn.o usages/.libs/timer.o 
+[ 2281s] libtool: link: ranlib .libs/libstun.a
+[ 2281s] libtool: link: ( cd ".libs" && rm -f "libstun.la" && ln -s "../libstun.la" "libstun.la" )
+[ 2281s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun'
+[ 2282s] Making all in tools
+[ 2285s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2285s] gcc -DHAVE_CONFIG_H -I. -I../..  -I../..   -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stunbdc.o stunbdc.c
+[ 2285s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2286s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2286s] gcc -DHAVE_CONFIG_H -I. -I../..  -I../..   -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stund.o stund.c
+[ 2286s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2292s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2292s] /bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o stunbdc stunbdc.o ../../stun/libstun.la  
+[ 2292s] libtool: link: gcc -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -o stunbdc stunbdc.o  ../../stun/.libs/libstun.a -lrt -lgnutls
+[ 2292s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2293s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2293s] /bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o stund stund.o ../../stun/libstun.la 
+[ 2293s] libtool: link: gcc -std=gnu99 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -o stund stund.o  ../../stun/.libs/libstun.a -lrt -lgnutls
+[ 2293s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/stun/tools'
+[ 2293s] Making all in tests
+[ 2293s] make[3]: Nothing to be done for 'all'.
+[ 2293s] Making all in socket
+[ 2314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o tcp-passive.lo tcp-passive.c
+[ 2314s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c tcp-passive.c  -fPIC -DPIC -o .libs/tcp-passive.o
+[ 2314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o tcp-active.lo tcp-active.c
+[ 2314s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c tcp-active.c  -fPIC -DPIC -o .libs/tcp-active.o
+[ 2314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o udp-bsd.lo udp-bsd.c
+[ 2314s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c udp-bsd.c  -fPIC -DPIC -o .libs/udp-bsd.o
+[ 2314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2314s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o pseudossl.lo pseudossl.c
+[ 2314s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c pseudossl.c  -fPIC -DPIC -o .libs/pseudossl.o
+[ 2314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2315s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o socket.lo socket.c
+[ 2315s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c socket.c  -fPIC -DPIC -o .libs/socket.o
+[ 2315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2315s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o socks5.lo socks5.c
+[ 2315s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c socks5.c  -fPIC -DPIC -o .libs/socks5.o
+[ 2315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2316s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o tcp-bsd.lo tcp-bsd.c
+[ 2316s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c tcp-bsd.c  -fPIC -DPIC -o .libs/tcp-bsd.o
+[ 2316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2318s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o http.lo http.c
+[ 2318s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c http.c  -fPIC -DPIC -o .libs/http.o
+[ 2318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2330s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2330s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o udp-turn-over-tcp.lo udp-turn-over-tcp.c
+[ 2330s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c udp-turn-over-tcp.c  -fPIC -DPIC -o .libs/udp-turn-over-tcp.o
+[ 2330s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2337s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2337s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o udp-turn.lo udp-turn.c
+[ 2337s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c udp-turn.c  -fPIC -DPIC -o .libs/udp-turn.o
+[ 2337s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2347s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2347s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -DG_LOG_DOMAIN=\"libnice-socket\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I ../random -I ../agent -I ../ -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libsocket.la  socket.lo udp-bsd.lo tcp-bsd.lo tcp-active.lo tcp-passive.lo pseudossl.lo socks5.lo http.lo udp-turn.lo udp-turn-over-tcp.lo  
+[ 2347s] libtool: link: ar cru .libs/libsocket.a .libs/socket.o .libs/udp-bsd.o .libs/tcp-bsd.o .libs/tcp-active.o .libs/tcp-passive.o .libs/pseudossl.o .libs/socks5.o .libs/http.o .libs/udp-turn.o .libs/udp-turn-over-tcp.o 
+[ 2347s] libtool: link: ranlib .libs/libsocket.a
+[ 2347s] libtool: link: ( cd ".libs" && rm -f "libsocket.la" && ln -s "../libsocket.la" "libsocket.la" )
+[ 2347s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/socket'
+[ 2347s] Making all in random
+[ 2354s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2354s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o random.lo random.c
+[ 2354s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c random.c  -fPIC -DPIC -o .libs/random.o
+[ 2354s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2354s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2354s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o random-glib.lo random-glib.c
+[ 2354s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c random-glib.c  -fPIC -DPIC -o .libs/random-glib.o
+[ 2354s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2360s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2360s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libnice-random.la  random.lo random-glib.lo  
+[ 2360s] libtool: link: ar cru .libs/libnice-random.a .libs/random.o .libs/random-glib.o 
+[ 2360s] libtool: link: ranlib .libs/libnice-random.a
+[ 2360s] libtool: link: ( cd ".libs" && rm -f "libnice-random.la" && ln -s "../libnice-random.la" "libnice-random.la" )
+[ 2360s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/random'
+[ 2360s] Making all in agent
+[ 2364s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2364s] /usr/bin/glib-mkenums \
+[ 2364s] 	--fhead "#ifndef __AGENT_ENUM_TYPES_H__\n#define __AGENT_ENUM_TYPES_H__ 1\n\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n" \
+[ 2364s] 	--fprod "/* enumerations from \"@filename@\" */\n" \
+[ 2364s] 	--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define NICE_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+[ 2364s] 	--ftail "G_END_DECLS\n\n#endif /* !AGENT_ENUM_TYPES_H */" \
+[ 2364s] 	./agent.h > agent-enum-types.h
+[ 2364s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2368s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2368s] /usr/bin/glib-mkenums \
+[ 2368s] 	--fhead "#include <config.h>\n#include <glib-object.h>\n#include \"agent.h\"\n#include \"agent-enum-types.h\"" \
+[ 2368s] 	--fprod "\n/* enumerations from \"@filename@\" */" \
+[ 2368s] 	--vhead "GType\n@enum_name@_get_type (void)\n{\n  static GType type = 0;\n  if (!type) {\n    static const G@Type@Value values[] = {" \
+[ 2368s] 	--vprod "      { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+[ 2368s] 	--vtail "      { 0, NULL, NULL }\n    };\n    type = g_@type@_register_static (\"@EnumName@\", values);\n  }\n  return type;\n}\n\n" \
+[ 2368s] 	./agent.h > agent-enum-types.c
+[ 2368s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2368s] /usr/bin/make  all-am
+[ 2385s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2385s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o address.lo address.c
+[ 2385s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c address.c  -fPIC -DPIC -o .libs/address.o
+[ 2385s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2386s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2386s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o stream.lo stream.c
+[ 2386s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c stream.c  -fPIC -DPIC -o .libs/stream.o
+[ 2386s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2389s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2389s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o debug.lo debug.c
+[ 2389s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c debug.c  -fPIC -DPIC -o .libs/debug.o
+[ 2389s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2390s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2390s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o candidate.lo candidate.c
+[ 2390s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c candidate.c  -fPIC -DPIC -o .libs/candidate.o
+[ 2390s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2395s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2395s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o component.lo component.c
+[ 2395s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c component.c  -fPIC -DPIC -o .libs/component.o
+[ 2395s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2396s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2396s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o discovery.lo discovery.c
+[ 2396s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c discovery.c  -fPIC -DPIC -o .libs/discovery.o
+[ 2396s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2405s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2405s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o interfaces.lo interfaces.c
+[ 2405s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c interfaces.c  -fPIC -DPIC -o .libs/interfaces.o
+[ 2405s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2407s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2407s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o iostream.lo iostream.c
+[ 2407s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c iostream.c  -fPIC -DPIC -o .libs/iostream.o
+[ 2407s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2410s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2410s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o inputstream.lo inputstream.c
+[ 2410s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c inputstream.c  -fPIC -DPIC -o .libs/inputstream.o
+[ 2410s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2412s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2412s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o agent-enum-types.lo agent-enum-types.c
+[ 2412s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c agent-enum-types.c  -fPIC -DPIC -o .libs/agent-enum-types.o
+[ 2412s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2414s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2414s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o conncheck.lo conncheck.c
+[ 2414s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c conncheck.c  -fPIC -DPIC -o .libs/conncheck.o
+[ 2414s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2415s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2415s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o outputstream.lo outputstream.c
+[ 2415s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c outputstream.c  -fPIC -DPIC -o .libs/outputstream.o
+[ 2415s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2418s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2418s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o pseudotcp.lo pseudotcp.c
+[ 2418s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c pseudotcp.c  -fPIC -DPIC -o .libs/pseudotcp.o
+[ 2418s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2421s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2421s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c -o agent.lo agent.c
+[ 2421s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread -I .. -I ../random -I ../socket -I ../stun -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -c agent.c  -fPIC -DPIC -o .libs/agent.o
+[ 2421s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2437s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2437s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libagent.la  address.lo debug.lo candidate.lo component.lo agent.lo stream.lo conncheck.lo discovery.lo interfaces.lo pseudotcp.lo iostream.lo inputstream.lo outputstream.lo agent-enum-types.lo ../random/libnice-random.la ../socket/libsocket.la ../stun/libstun.la -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -pthread -lglib-2.0     
+[ 2437s] libtool: link: (cd .libs/libagent.lax/libnice-random.a && ar x "/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent/../random/.libs/libnice-random.a")
+[ 2437s] libtool: link: (cd .libs/libagent.lax/libsocket.a && ar x "/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent/../socket/.libs/libsocket.a")
+[ 2437s] libtool: link: (cd .libs/libagent.lax/libstun.a && ar x "/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent/../stun/.libs/libstun.a")
+[ 2437s] copying selected object files to avoid basename conflicts...
+[ 2437s] libtool: link: ln .libs/libagent.lax/libstun.a/debug.o .libs/libagent.lax/lt1-debug.o || cp .libs/libagent.lax/libstun.a/debug.o .libs/libagent.lax/lt1-debug.o
+[ 2437s] libtool: link: ar cru .libs/libagent.a .libs/address.o .libs/debug.o .libs/candidate.o .libs/component.o .libs/agent.o .libs/stream.o .libs/conncheck.o .libs/discovery.o .libs/interfaces.o .libs/pseudotcp.o .libs/iostream.o .libs/inputstream.o .libs/outputstream.o .libs/agent-enum-types.o .libs/libagent.lax/libnice-random.a/random-glib.o .libs/libagent.lax/libnice-random.a/random.o .libs/libagent.lax/libsocket.a/http.o .libs/libagent.lax/libsocket.a/pseudossl.o .libs/libagent.lax/libsocket.a/socket.o .libs/libagent.lax/libsocket.a/socks5.o .libs/libagent.lax/libsocket.a/tcp-active.o .libs/libagent.lax/libsocket.a/tcp-bsd.o .libs/libagent.lax/libsocket.a/tcp-passive.o .libs/libagent.lax/libsocket.a/udp-bsd.o .libs/libagent.lax/libsocket.a/udp-turn-over-tcp.o .libs/libagent.lax/libsocket.a/udp-turn.o .libs/libagent.lax/libstun.a/bind.o .libs/libagent.lax/lt1-debug.o .libs/libagent.lax/libstun.a/ice.o .libs/libagent.lax/libstun.a/rand.o .libs/libagent.lax/libstun.a/stun5389.o .libs/libagent.lax/libstun.a/stunagent.o .libs/libagent.lax/libstun.a/stuncrc32.o .libs/libagent.lax/libstun.a/stunhmac.o .libs/libagent.lax/libstun.a/stunmessage.o .libs/libagent.lax/libstun.a/timer.o .libs/libagent.lax/libstun.a/turn.o .libs/libagent.lax/libstun.a/utils.o
+[ 2437s] libtool: link: ranlib .libs/libagent.a
+[ 2437s] libtool: link: rm -fr .libs/libagent.lax .libs/libagent.lax
+[ 2437s] libtool: link: ( cd ".libs" && rm -f "libagent.la" && ln -s "../libagent.la" "libagent.la" )
+[ 2437s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2441s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2441s] CPPFLAGS="" CFLAGS="-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection" LDFLAGS="-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld" CC="gcc" PKG_CONFIG="/usr/bin/riscv64-openEuler-linux-gnu-pkg-config" GI_HOST_OS="" DLLTOOL="false"  /usr/bin/g-ir-scanner  --add-include-path=. --warn-all --accept-unprefixed --namespace=Nice --nsversion=0.1 --libtool="/bin/sh ../libtool"  --include=GObject-2.0 --include=Gio-2.0 --pkg-export=nice   --library=libagent.la  --cflags-begin -DG_LOG_DOMAIN=\"libnice\" -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_44 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_44 -fno-strict-aliasing -Wall -Wextra -Wundef -Wnested-externs -Wwrite-strings -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wno-unused-parameter -Wno-missing-field-initializers -Wdeclaration-after-statement -Wformat=2 -Wcast-align -Wformat-nonliteral -Wformat-security -Wno-cast-function-type -Wsign-compare -Wstrict-aliasing -Wshadow -Winline -Wpacked -Wmissing-format-attribute -Winit-self -Wredundant-decls -Wmissing-include-dirs -Wunused-but-set-variable -Warray-bounds -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -pthread   -I .. -I ../random -I ../socket -I ../stun  --cflags-end  agent.h candidate.h debug.h address.h interfaces.h pseudotcp.h libagent.la --output Nice-0.1.gir
+[ 2441s] Traceback (most recent call last):
+[ 2441s]   File "/usr/bin/g-ir-scanner", line 98, in <module>
+[ 2441s]     from giscanner.scannermain import scanner_main
+[ 2441s]   File "/usr/lib64/gobject-introspection/giscanner/scannermain.py", line 35, in <module>
+[ 2441s]     from giscanner.ast import Include, Namespace
+[ 2441s]   File "/usr/lib64/gobject-introspection/giscanner/ast.py", line 29, in <module>
+[ 2441s]     from .sourcescanner import CTYPE_TYPEDEF, CSYMBOL_TYPE_TYPEDEF
+[ 2441s]   File "/usr/lib64/gobject-introspection/giscanner/sourcescanner.py", line 35, in <module>
+[ 2441s]     from giscanner._giscanner import SourceScanner as CSourceScanner
+[ 2441s] ModuleNotFoundError: No module named 'giscanner._giscanner'
+[ 2441s] make[3]: *** [/usr/share/gobject-introspection-1.0/Makefile.introspection:156: Nice-0.1.gir] Error 1
+[ 2441s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libnice-0.1.14/agent'
+[ 2441s] make[2]: *** [Makefile:473: all] Error 2
+[ 2441s] make[1]: *** [Makefile:487: all-recursive] Error 1
+[ 2441s] make: *** [Makefile:418: all] Error 2
+[ 2441s] error: Bad exit status from /var/tmp/rpm-tmp.HHP08N (%build)
+[ 2441s] 
+[ 2441s] 
+[ 2441s] RPM build errors:
+[ 2441s]     bogus date in %changelog: Tue Nov 1 2021 Chenxi Mao <chenxi.mao@suse.com> - 0.1.14-11
+[ 2441s]     Bad exit status from /var/tmp/rpm-tmp.HHP08N (%build)
+[ 2441s] 
+[ 2442s] oe-RISCV-worker27 failed "build libnice.spec" at Sat Apr 23 13:09:30 UTC 2022.
+[ 2442s] 

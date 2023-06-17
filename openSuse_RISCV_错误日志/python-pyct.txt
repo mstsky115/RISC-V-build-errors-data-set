@@ -1,0 +1,1078 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud111 started "build python-pyct.spec" at Sun Feb 19 10:00:54 UTC 2023.
+[    0s] 
+[    0s] Building python-pyct for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '0b53246f737522cc664f6151d1611f9c'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-pyct.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-pyct.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-pyct.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [718d7b37bce08b907ee81939a96ff181]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 4096 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   12s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   12s] Increasing log level from now on...
+[   12s] [    4.809793][  T410] sysrq: Changing Loglevel
+[   12s] [    4.810020][  T410] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 1.5 GiB (1610608640 bytes)
+[   12s] no label, UUID=56f6de6a-54c3-472f-8eac-1894e273c047
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=1610612736, devsize=1610612736
+[   12s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/python-pyct.spec ...
+[   13s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-pyct.spec build ...
+[   14s] initializing rpm db...
+[   14s] querying package ids...
+[   46s] [1/268] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   46s] [2/268] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   46s] [3/268] preinstalled attr-2.5.1-1.1
+[   46s] [4/268] preinstalled bash-5.2.15-8.1
+[   46s] [5/268] preinstalled bash-sh-5.2.15-8.1
+[   46s] [6/268] preinstalled binutils-2.39-3.1
+[   46s] [7/268] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   46s] [8/268] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   46s] [9/268] preinstalled build-mkbaselibs-20230215-1.1
+[   46s] [10/268] preinstalled bzip2-1.0.8-4.1
+[   46s] [11/268] preinstalled chkstat-1599_20221220-1.2
+[   46s] [12/268] preinstalled compat-usrmerge-build-84.87-5.1
+[   46s] [13/268] preinstalled compat-usrmerge-tools-84.87-5.1
+[   46s] [14/268] preinstalled coreutils-9.1-5.1
+[   46s] [15/268] preinstalled cpio-2.13-5.1
+[   46s] [16/268] preinstalled cpp-12-2.1
+[   46s] [17/268] preinstalled cpp12-12.2.1+git749-4.1
+[   46s] [18/268] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   46s] [19/268] preinstalled debugedit-5.0-5.1
+[   46s] [20/268] preinstalled diffutils-3.9-1.1
+[   46s] [21/268] preinstalled dwz-0.15-2.1
+[   46s] [22/268] preinstalled elfutils-0.188-3.2
+[   46s] [23/268] cumulate fdupes-2.2.1-1.1
+[   46s] [24/268] preinstalled file-5.44-1.2
+[   46s] [25/268] preinstalled file-magic-5.44-1.2
+[   46s] [26/268] preinstalled filesystem-84.87-12.1
+[   46s] [27/268] preinstalled fillup-1.42-279.1
+[   46s] [28/268] preinstalled findutils-4.9.0-2.1
+[   46s] [29/268] preinstalled gawk-5.2.1-2.1
+[   46s] [30/268] preinstalled gcc-12-2.1
+[   46s] [31/268] preinstalled gcc-PIE-12-2.1
+[   46s] [32/268] preinstalled gcc12-12.2.1+git749-4.1
+[   46s] [33/268] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   46s] [34/268] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   46s] [35/268] preinstalled gettext-tools-mini-0.21.1-1.1
+[   46s] [36/268] preinstalled glibc-2.37-1.1
+[   46s] [37/268] preinstalled glibc-devel-2.37-1.1
+[   46s] [38/268] preinstalled glibc-locale-base-2.37-1.1
+[   46s] [39/268] preinstalled grep-3.8-3.1
+[   46s] [40/268] preinstalled gzip-1.12-3.1
+[   46s] [41/268] preinstalled kernel-obs-build-6.1.12-1.1
+[   46s] [42/268] preinstalled libacl1-2.3.1-2.1
+[   46s] [43/268] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   46s] [44/268] preinstalled libasan8-13.0.1+git5428-6.1
+[   46s] [45/268] preinstalled libasm1-0.188-3.2
+[   46s] [46/268] preinstalled libatomic1-13.0.1+git5428-6.1
+[   46s] [47/268] preinstalled libattr1-2.5.1-1.1
+[   46s] [48/268] preinstalled libaudit1-3.0.6-4.1
+[   46s] [49/268] preinstalled libblkid1-2.38.1-7.1
+[   46s] [50/268] preinstalled libbz2-1-1.0.8-4.1
+[   46s] [51/268] preinstalled libcap-ng0-0.8.3-1.1
+[   46s] [52/268] preinstalled libcap2-2.67-1.1
+[   46s] [53/268] preinstalled libcrypt1-4.4.33-1.1
+[   46s] [54/268] preinstalled libctf-nobfd0-2.39-3.1
+[   46s] [55/268] preinstalled libctf0-2.39-3.1
+[   46s] [56/268] preinstalled libdb-4_8-4.8.30-39.1
+[   46s] [57/268] preinstalled libdw1-0.188-3.2
+[   46s] [58/268] preinstalled libeconf0-0.5.1-1.1
+[   46s] [59/268] preinstalled libelf1-0.188-3.2
+[   46s] [60/268] preinstalled libexpat1-2.5.0-2.1
+[   46s] [61/268] preinstalled libfdisk1-2.38.1-7.1
+[   46s] [62/268] preinstalled libffi8-3.4.4-1.1
+[   46s] [63/268] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   46s] [64/268] preinstalled libgcrypt20-1.10.1-1.1
+[   46s] [65/268] preinstalled libgdbm6-1.23-1.1
+[   46s] [66/268] preinstalled libgdbm_compat4-1.23-1.1
+[   46s] [67/268] preinstalled libgmp10-6.2.1-4.1
+[   46s] [68/268] preinstalled libgomp1-13.0.1+git5428-6.1
+[   46s] [69/268] preinstalled libgpg-error0-1.46-1.1
+[   46s] [70/268] preinstalled libisl23-0.25-1.1
+[   46s] [71/268] preinstalled liblua5_4-5-5.4.4-8.1
+[   46s] [72/268] preinstalled liblzma5-5.4.1-1.1
+[   46s] [73/268] preinstalled libmagic1-5.44-1.2
+[   46s] [74/268] preinstalled libmount1-2.38.1-7.1
+[   46s] [75/268] preinstalled libmpc3-1.3.1-1.2
+[   46s] [76/268] preinstalled libmpdec3-2.5.1-2.1
+[   46s] [77/268] preinstalled libmpfr6-4.2.0-1.1
+[   46s] [78/268] preinstalled libncurses6-6.4.20230128-5.1
+[   46s] [79/268] preinstalled libopenssl3-3.0.7-3.1
+[   46s] [80/268] cumulate libp11-kit0-0.24.1-2.1
+[   46s] [81/268] preinstalled libpcre2-8-0-10.42-3.2
+[   46s] [82/268] preinstalled libpkgconf3-1.8.0-2.1
+[   46s] [83/268] preinstalled libpopt0-1.19-1.1
+[   46s] [84/268] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   46s] [85/268] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   46s] [86/268] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   46s] [87/268] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   46s] [88/268] preinstalled libreadline8-8.2-2.1
+[   46s] [89/268] preinstalled librpmbuild9-4.18.0-3.2
+[   46s] [90/268] preinstalled libseccomp2-2.5.4-2.1
+[   46s] [91/268] preinstalled libselinux1-3.4-2.1
+[   46s] [92/268] preinstalled libsemanage-conf-3.4-1.1
+[   46s] [93/268] preinstalled libsemanage2-3.4-1.1
+[   46s] [94/268] preinstalled libsepol2-3.4-1.1
+[   46s] [95/268] preinstalled libsmartcols1-2.38.1-7.1
+[   46s] [96/268] cumulate libsqlite3-0-3.40.1-1.1
+[   46s] [97/268] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   46s] [98/268] preinstalled libsubid4-4.13-3.1
+[   46s] [99/268] cumulate libtasn1-6-4.19.0-1.1
+[   46s] [100/268] preinstalled libubsan1-13.0.1+git5428-6.1
+[   46s] [101/268] preinstalled libutempter0-1.2.0-3.2
+[   46s] [102/268] preinstalled libuuid1-2.38.1-7.1
+[   46s] [103/268] preinstalled libxcrypt-devel-4.4.33-1.1
+[   46s] [104/268] cumulate libyaml-0-2-0.2.5-2.1
+[   46s] [105/268] preinstalled libz1-1.2.13-2.1
+[   46s] [106/268] preinstalled libzstd1-1.5.2-2.1
+[   46s] [107/268] preinstalled linux-glibc-devel-6.1-1.1
+[   46s] [108/268] preinstalled login_defs-4.13-3.1
+[   46s] [109/268] preinstalled lua54-5.4.4-8.1
+[   46s] [110/268] preinstalled make-4.4-2.1
+[   46s] [111/268] preinstalled ncurses-utils-6.4.20230128-5.1
+[   46s] [112/268] preinstalled pam-1.5.2-12.1
+[   46s] [113/268] preinstalled patch-2.7.6-6.1
+[   46s] [114/268] preinstalled perl-5.36.0-4.1
+[   46s] [115/268] preinstalled perl-base-5.36.0-4.1
+[   46s] [116/268] preinstalled permissions-1599_20221220-1.2
+[   46s] [117/268] preinstalled permissions-config-1599_20221220-1.2
+[   46s] [118/268] preinstalled pkgconf-1.8.0-2.1
+[   46s] [119/268] preinstalled pkgconf-m4-1.8.0-2.1
+[   46s] [120/268] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   46s] [121/268] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   46s] [122/268] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   46s] [123/268] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   46s] [124/268] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   46s] [125/268] cumulate python310-apipkg-3.0.1-1.2
+[   46s] [126/268] cumulate python310-attrs-22.2.0-1.2
+[   46s] [127/268] preinstalled python310-base-3.10.9-2.2
+[   46s] [128/268] cumulate python310-charset-normalizer-3.0.1-1.2
+[   46s] [129/268] cumulate python310-exceptiongroup-1.1.0-1.2
+[   46s] [130/268] cumulate python310-flake8-6.0.0-1.3
+[   46s] [131/268] cumulate python310-idna-3.4-1.2
+[   46s] [132/268] cumulate python310-iniconfig-1.1.1-3.2
+[   46s] [133/268] cumulate python310-mccabe-0.7.0-1.2
+[   46s] [134/268] preinstalled python310-packaging-23.0-1.1
+[   46s] [135/268] cumulate python310-param-1.12.3-1.3
+[   46s] [136/268] cumulate python310-pluggy-1.0.0-1.5
+[   46s] [137/268] cumulate python310-pycodestyle-2.10.0-4.2
+[   46s] [138/268] cumulate python310-pycparser-2.21-1.5
+[   46s] [139/268] cumulate python310-pyflakes-3.0.1-3.3
+[   46s] [140/268] preinstalled python310-setuptools-65.6.3-1.2
+[   46s] [141/268] cumulate python310-six-1.16.0-2.5
+[   46s] [142/268] cumulate python310-tomli-2.0.1-1.3
+[   46s] [143/268] cumulate python310-zipp-3.8.1-1.2
+[   46s] [144/268] cumulate python311-apipkg-3.0.1-1.2
+[   46s] [145/268] cumulate python311-attrs-22.2.0-1.2
+[   46s] [146/268] preinstalled python311-base-3.11.1-4.2
+[   46s] [147/268] cumulate python311-charset-normalizer-3.0.1-1.2
+[   46s] [148/268] cumulate python311-exceptiongroup-1.1.0-1.2
+[   46s] [149/268] cumulate python311-flake8-6.0.0-1.3
+[   46s] [150/268] cumulate python311-idna-3.4-1.2
+[   46s] [151/268] cumulate python311-iniconfig-1.1.1-3.2
+[   46s] [152/268] cumulate python311-mccabe-0.7.0-1.2
+[   46s] [153/268] cumulate python311-packaging-23.0-1.2
+[   46s] [154/268] cumulate python311-param-1.12.3-1.3
+[   46s] [155/268] cumulate python311-pluggy-1.0.0-1.5
+[   46s] [156/268] cumulate python311-pycodestyle-2.10.0-4.2
+[   46s] [157/268] cumulate python311-pycparser-2.21-1.5
+[   46s] [158/268] cumulate python311-pyflakes-3.0.1-3.3
+[   46s] [159/268] preinstalled python311-setuptools-65.6.3-1.2
+[   46s] [160/268] cumulate python311-six-1.16.0-2.5
+[   46s] [161/268] cumulate python311-tomli-2.0.1-1.3
+[   46s] [162/268] cumulate python311-zipp-3.8.1-1.2
+[   46s] [163/268] cumulate python38-apipkg-3.0.1-1.2
+[   46s] [164/268] cumulate python38-attrs-22.2.0-1.2
+[   46s] [165/268] preinstalled python38-base-3.8.16-3.2
+[   46s] [166/268] cumulate python38-charset-normalizer-3.0.1-1.2
+[   46s] [167/268] cumulate python38-exceptiongroup-1.1.0-1.2
+[   46s] [168/268] cumulate python38-flake8-6.0.0-1.3
+[   46s] [169/268] cumulate python38-idna-3.4-1.2
+[   46s] [170/268] cumulate python38-iniconfig-1.1.1-3.2
+[   46s] [171/268] cumulate python38-mccabe-0.7.0-1.2
+[   46s] [172/268] cumulate python38-packaging-23.0-1.2
+[   46s] [173/268] cumulate python38-param-1.12.3-1.3
+[   46s] [174/268] cumulate python38-pluggy-1.0.0-1.5
+[   46s] [175/268] cumulate python38-pycodestyle-2.10.0-4.2
+[   46s] [176/268] cumulate python38-pycparser-2.21-1.5
+[   46s] [177/268] cumulate python38-pyflakes-3.0.1-3.3
+[   46s] [178/268] preinstalled python38-setuptools-65.6.3-1.2
+[   46s] [179/268] cumulate python38-six-1.16.0-2.5
+[   46s] [180/268] cumulate python38-tomli-2.0.1-1.3
+[   46s] [181/268] cumulate python38-zipp-3.8.1-1.2
+[   46s] [182/268] cumulate python39-apipkg-3.0.1-1.2
+[   46s] [183/268] cumulate python39-attrs-22.2.0-1.2
+[   46s] [184/268] preinstalled python39-base-3.9.16-3.2
+[   46s] [185/268] cumulate python39-charset-normalizer-3.0.1-1.2
+[   46s] [186/268] cumulate python39-exceptiongroup-1.1.0-1.2
+[   46s] [187/268] cumulate python39-flake8-6.0.0-1.3
+[   46s] [188/268] cumulate python39-idna-3.4-1.2
+[   46s] [189/268] cumulate python39-iniconfig-1.1.1-3.2
+[   46s] [190/268] cumulate python39-mccabe-0.7.0-1.2
+[   46s] [191/268] cumulate python39-packaging-23.0-1.2
+[   46s] [192/268] cumulate python39-param-1.12.3-1.3
+[   46s] [193/268] cumulate python39-pluggy-1.0.0-1.5
+[   46s] [194/268] cumulate python39-pycodestyle-2.10.0-4.2
+[   46s] [195/268] cumulate python39-pycparser-2.21-1.5
+[   46s] [196/268] cumulate python39-pyflakes-3.0.1-3.3
+[   46s] [197/268] preinstalled python39-setuptools-65.6.3-1.2
+[   46s] [198/268] cumulate python39-six-1.16.0-2.5
+[   46s] [199/268] cumulate python39-tomli-2.0.1-1.3
+[   46s] [200/268] cumulate python39-zipp-3.8.1-1.2
+[   46s] [201/268] preinstalled qemu-linux-user-7.1.0-50.1
+[   46s] [202/268] preinstalled rpm-4.18.0-3.2
+[   46s] [203/268] preinstalled rpm-build-4.18.0-3.2
+[   46s] [204/268] preinstalled rpm-build-perl-4.18.0-3.2
+[   46s] [205/268] preinstalled rpm-config-SUSE-20220926-1.1
+[   46s] [206/268] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.5
+[   46s] [207/268] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   46s] [208/268] preinstalled sed-4.9-2.1
+[   46s] [209/268] preinstalled shadow-4.13-3.1
+[   46s] [210/268] preinstalled system-group-hardware-20170617-24.1
+[   46s] [211/268] preinstalled system-user-root-20190513-2.1
+[   46s] [212/268] preinstalled systemd-rpm-macros-19-1.1
+[   46s] [213/268] preinstalled sysuser-shadow-3.1-5.1
+[   46s] [214/268] preinstalled tar-1.34-9.1
+[   46s] [215/268] preinstalled terminfo-base-6.4.20230128-5.1
+[   46s] [216/268] preinstalled update-alternatives-1.21.8-1.1
+[   46s] [217/268] preinstalled util-linux-2.38.1-7.1
+[   46s] [218/268] preinstalled which-2.21-5.1
+[   46s] [219/268] preinstalled xz-5.4.1-1.1
+[   46s] [220/268] cumulate alts-1.2+3.b848aad-3.1
+[   46s] [221/268] cumulate python310-3.10.9-2.1
+[   46s] [222/268] cumulate python310-PyYAML-6.0-4.2
+[   46s] [223/268] cumulate python310-cffi-1.15.1-3.2
+[   46s] [224/268] cumulate python310-importlib-metadata-6.0.0-1.2
+[   46s] [225/268] cumulate python311-3.11.1-4.1
+[   46s] [226/268] cumulate python311-PyYAML-6.0-4.2
+[   46s] [227/268] cumulate python311-cffi-1.15.1-3.2
+[   46s] [228/268] cumulate python311-importlib-metadata-6.0.0-1.2
+[   46s] [229/268] cumulate python38-3.8.16-3.1
+[   46s] [230/268] cumulate python38-PyYAML-6.0-4.2
+[   46s] [231/268] cumulate python38-cffi-1.15.1-3.2
+[   46s] [232/268] cumulate python38-importlib-metadata-6.0.0-1.2
+[   46s] [233/268] cumulate python39-3.9.16-3.1
+[   46s] [234/268] cumulate python39-PyYAML-6.0-4.2
+[   46s] [235/268] cumulate python39-cffi-1.15.1-3.2
+[   46s] [236/268] cumulate python39-importlib-metadata-6.0.0-1.2
+[   46s] [237/268] cumulate p11-kit-0.24.1-2.1
+[   46s] [238/268] cumulate p11-kit-tools-0.24.1-2.1
+[   46s] [239/268] cumulate python310-py-1.11.0-3.2
+[   46s] [240/268] cumulate python311-py-1.11.0-3.2
+[   46s] [241/268] cumulate python38-py-1.11.0-3.2
+[   46s] [242/268] cumulate python39-py-1.11.0-3.2
+[   46s] [243/268] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   46s] [244/268] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   46s] [245/268] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   46s] [246/268] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   46s] [247/268] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   46s] [248/268] cumulate python310-cryptography-39.0.1-1.2
+[   46s] [249/268] cumulate python311-cryptography-39.0.1-1.2
+[   46s] [250/268] cumulate python38-cryptography-39.0.1-1.2
+[   46s] [251/268] cumulate python39-cryptography-39.0.1-1.2
+[   46s] [252/268] cumulate python310-pytest-7.2.0-2.2
+[   46s] [253/268] cumulate python311-pytest-7.2.0-2.2
+[   46s] [254/268] cumulate python38-pytest-7.2.0-2.2
+[   46s] [255/268] cumulate python39-pytest-7.2.0-2.2
+[   46s] [256/268] cumulate ca-certificates-mozilla-2.60-1.2
+[   46s] [257/268] cumulate python310-certifi-2022.9.24-1.2
+[   46s] [258/268] cumulate python311-certifi-2022.9.24-1.2
+[   46s] [259/268] cumulate python38-certifi-2022.9.24-1.2
+[   46s] [260/268] cumulate python39-certifi-2022.9.24-1.2
+[   46s] [261/268] cumulate python310-urllib3-1.26.14-1.2
+[   46s] [262/268] cumulate python311-urllib3-1.26.14-1.2
+[   46s] [263/268] cumulate python38-urllib3-1.26.14-1.2
+[   46s] [264/268] cumulate python39-urllib3-1.26.14-1.2
+[   46s] [265/268] cumulate python310-requests-2.28.2-1.2
+[   46s] [266/268] cumulate python311-requests-2.28.2-1.2
+[   46s] [267/268] cumulate python38-requests-2.28.2-1.2
+[   46s] [268/268] cumulate python39-requests-2.28.2-1.2
+[   46s] now installing cumulated packages
+[   47s] Preparing...                          ########################################
+[   47s] Updating / installing...
+[   47s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   48s] libsqlite3-0-3.40.1-1.1               ########################################
+[   48s] python310-3.10.9-2.1                  ########################################
+[   48s] python311-3.11.1-4.1                  ########################################
+[   48s] python38-3.8.16-3.1                   ########################################
+[   48s] python39-3.9.16-3.1                   ########################################
+[   48s] python39-iniconfig-1.1.1-3.2          ########################################
+[   48s] python39-idna-3.4-1.2                 ########################################
+[   48s] python38-iniconfig-1.1.1-3.2          ########################################
+[   48s] python38-idna-3.4-1.2                 ########################################
+[   48s] python311-iniconfig-1.1.1-3.2         ########################################
+[   48s] python311-idna-3.4-1.2                ########################################
+[   48s] python310-iniconfig-1.1.1-3.2         ########################################
+[   48s] python310-idna-3.4-1.2                ########################################
+[   48s] libtasn1-6-4.19.0-1.1                 ########################################
+[   49s] libp11-kit0-0.24.1-2.1                ########################################
+[   49s] p11-kit-0.24.1-2.1                    ########################################
+[   49s] p11-kit-tools-0.24.1-2.1              ########################################
+[   49s] ca-certificates-2+git20211004.3efbea9-########################################
+[   51s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   57s] python310-certifi-2022.9.24-1.2       ########################################
+[   57s] python311-certifi-2022.9.24-1.2       ########################################
+[   57s] python38-certifi-2022.9.24-1.2        ########################################
+[   57s] python39-certifi-2022.9.24-1.2        ########################################
+[   57s] python39-zipp-3.8.1-1.2               ########################################
+[   57s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   57s] python39-tomli-2.0.1-1.3              ########################################
+[   57s] python39-six-1.16.0-2.5               ########################################
+[   58s] python39-pyflakes-3.0.1-3.3           ########################################
+[   58s] python39-pycparser-2.21-1.5           ########################################
+[   58s] python39-cffi-1.15.1-3.2              ########################################
+[   59s] python39-cryptography-39.0.1-1.2      ########################################
+[   59s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   59s] python39-urllib3-1.26.14-1.2          ########################################
+[   59s] python39-pycodestyle-2.10.0-4.2       ########################################
+[   60s] python39-pluggy-1.0.0-1.5             ########################################
+[   60s] python39-packaging-23.0-1.2           ########################################
+[   60s] python39-mccabe-0.7.0-1.2             ########################################
+[   60s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   60s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   60s] python39-attrs-22.2.0-1.2             ########################################
+[   60s] python39-apipkg-3.0.1-1.2             ########################################
+[   60s] python39-py-1.11.0-3.2                ########################################
+[   60s] python38-zipp-3.8.1-1.2               ########################################
+[   60s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   60s] python38-tomli-2.0.1-1.3              ########################################
+[   61s] python38-six-1.16.0-2.5               ########################################
+[   61s] python38-pyflakes-3.0.1-3.3           ########################################
+[   61s] python38-pycparser-2.21-1.5           ########################################
+[   61s] python38-cffi-1.15.1-3.2              ########################################
+[   62s] python38-cryptography-39.0.1-1.2      ########################################
+[   62s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   62s] python38-urllib3-1.26.14-1.2          ########################################
+[   63s] python38-pycodestyle-2.10.0-4.2       ########################################
+[   63s] python38-pluggy-1.0.0-1.5             ########################################
+[   63s] python38-packaging-23.0-1.2           ########################################
+[   63s] python38-mccabe-0.7.0-1.2             ########################################
+[   63s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   63s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   63s] python38-attrs-22.2.0-1.2             ########################################
+[   63s] python38-apipkg-3.0.1-1.2             ########################################
+[   63s] python38-py-1.11.0-3.2                ########################################
+[   63s] python311-zipp-3.8.1-1.2              ########################################
+[   63s] python311-importlib-metadata-6.0.0-1.2########################################
+[   63s] python311-tomli-2.0.1-1.3             ########################################
+[   64s] python311-six-1.16.0-2.5              ########################################
+[   64s] python311-pyflakes-3.0.1-3.3          ########################################
+[   64s] python311-pycparser-2.21-1.5          ########################################
+[   64s] python311-cffi-1.15.1-3.2             ########################################
+[   65s] python311-cryptography-39.0.1-1.2     ########################################
+[   65s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   66s] python311-urllib3-1.26.14-1.2         ########################################
+[   66s] python311-pycodestyle-2.10.0-4.2      ########################################
+[   66s] python311-pluggy-1.0.0-1.5            ########################################
+[   66s] python311-packaging-23.0-1.2          ########################################
+[   66s] python311-mccabe-0.7.0-1.2            ########################################
+[   66s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   66s] python311-charset-normalizer-3.0.1-1.2########################################
+[   66s] python311-attrs-22.2.0-1.2            ########################################
+[   66s] python311-apipkg-3.0.1-1.2            ########################################
+[   67s] python311-py-1.11.0-3.2               ########################################
+[   67s] python310-zipp-3.8.1-1.2              ########################################
+[   67s] python310-importlib-metadata-6.0.0-1.2########################################
+[   67s] python310-tomli-2.0.1-1.3             ########################################
+[   67s] python310-six-1.16.0-2.5              ########################################
+[   67s] python310-pyflakes-3.0.1-3.3          ########################################
+[   67s] python310-pycparser-2.21-1.5          ########################################
+[   68s] python310-cffi-1.15.1-3.2             ########################################
+[   68s] python310-cryptography-39.0.1-1.2     ########################################
+[   69s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   69s] python310-urllib3-1.26.14-1.2         ########################################
+[   69s] python310-pycodestyle-2.10.0-4.2      ########################################
+[   69s] python310-pluggy-1.0.0-1.5            ########################################
+[   69s] python310-mccabe-0.7.0-1.2            ########################################
+[   69s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   69s] python310-charset-normalizer-3.0.1-1.2########################################
+[   69s] python310-attrs-22.2.0-1.2            ########################################
+[   69s] python310-apipkg-3.0.1-1.2            ########################################
+[   70s] python310-py-1.11.0-3.2               ########################################
+[   70s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   70s] alts-1.2+3.b848aad-3.1                ########################################
+[   70s] python310-pytest-7.2.0-2.2            ########################################
+[   71s] python311-pytest-7.2.0-2.2            ########################################
+[   72s] python38-pytest-7.2.0-2.2             ########################################
+[   73s] python39-pytest-7.2.0-2.2             ########################################
+[   73s] python310-requests-2.28.2-1.2         ########################################
+[   73s] python310-flake8-6.0.0-1.3            ########################################
+[   73s] python311-requests-2.28.2-1.2         ########################################
+[   73s] python311-flake8-6.0.0-1.3            ########################################
+[   74s] python38-requests-2.28.2-1.2          ########################################
+[   74s] python38-flake8-6.0.0-1.3             ########################################
+[   74s] python39-requests-2.28.2-1.2          ########################################
+[   74s] python39-flake8-6.0.0-1.3             ########################################
+[   74s] python310-PyYAML-6.0-4.2              ########################################
+[   75s] python311-PyYAML-6.0-4.2              ########################################
+[   75s] python38-PyYAML-6.0-4.2               ########################################
+[   75s] python39-PyYAML-6.0-4.2               ########################################
+[   75s] python39-param-1.12.3-1.3             ########################################
+[   75s] python38-param-1.12.3-1.3             ########################################
+[   75s] python311-param-1.12.3-1.3            ########################################
+[   75s] python310-param-1.12.3-1.3            ########################################
+[   75s] fdupes-2.2.1-1.1                      ########################################
+[   87s] now finalizing build dir...
+[   87s] ... running 01-add_abuild_user_to_trusted_group
+[   88s] ... running 02-set_timezone_to_utc
+[   88s] ... running 03-set-permissions-secure
+[   88s] ... running 11-hack_uname_version_to_kernel_version
+[   98s] -----------------------------------------------------------------
+[   98s] I have the following modifications for python-pyct.spec:
+[   98s] 22c22
+[   98s] < Release:        0
+[   98s] ---
+[   98s] > Release:        1.2
+[  107s] build target is riscv64-suse-linux
+[  107s] -----------------------------------------------------------------
+[  107s] ----- building python-pyct.spec (user abuild)
+[  107s] -----------------------------------------------------------------
+[  107s] -----------------------------------------------------------------
+[  111s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/0b53246f737522cc664f6151d1611f9c-python-pyct' /home/abuild/rpmbuild/SOURCES/python-pyct.spec
+[  144s] Building target platforms: riscv64-suse-linux
+[  144s] Building for target riscv64-suse-linux
+[  144s] setting SOURCE_DATE_EPOCH=1661040000
+[  145s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Lrhjft
+[  145s] + umask 022
+[  145s] + cd /home/abuild/rpmbuild/BUILD
+[  145s] + cd /home/abuild/rpmbuild/BUILD
+[  145s] + rm -rf pyct-0.4.8
+[  145s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pyct-0.4.8.tar.gz
+[  145s] + STATUS=0
+[  145s] + '[' 0 -ne 0 ']'
+[  145s] + cd pyct-0.4.8
+[  145s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  145s] + RPM_EC=0
+[  145s] ++ jobs -p
+[  145s] + exit 0
+[  145s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.G09zzz
+[  145s] + umask 022
+[  145s] + cd /home/abuild/rpmbuild/BUILD
+[  145s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64
+[  145s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64
+[  145s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  146s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64
+[  146s] + cd pyct-0.4.8
+[  146s] + ref=/usr/lib/rpm
+[  146s] + mints=0
+[  146s] + case $(uname -m) in
+[  146s] ++ uname -m
+[  146s] + mints=20160911
+[  146s] + for s in guess sub
+[  146s] ++ find -maxdepth 8 -name config.guess
+[  146s] + for s in guess sub
+[  146s] ++ find -maxdepth 8 -name config.sub
+[  146s] ++ '[' -f _current_flavor ']'
+[  146s] ++ true
+[  146s] + last_flavor=
+[  146s] + '[' -z '' ']'
+[  146s] + last_flavor=tmp
+[  146s] + '[' tmp '!=' python38 ']'
+[  146s] + '[' -d build ']'
+[  146s] + '[' -d _build.python38 ']'
+[  146s] + echo python38
+[  146s] + python_flavor=python38
+[  146s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  152s] running build
+[  152s] running build_py
+[  152s] creating build
+[  152s] creating build/lib
+[  152s] creating build/lib/pyct
+[  152s] copying pyct/__init__.py -> build/lib/pyct
+[  152s] copying pyct/__main__.py -> build/lib/pyct
+[  152s] copying pyct/build.py -> build/lib/pyct
+[  152s] copying pyct/cmd.py -> build/lib/pyct
+[  152s] copying pyct/report.py -> build/lib/pyct
+[  152s] creating build/lib/pyct/tests
+[  152s] copying pyct/tests/__init__.py -> build/lib/pyct/tests
+[  152s] copying pyct/tests/test_cmd.py -> build/lib/pyct/tests
+[  152s] copying pyct/tests/test_report.py -> build/lib/pyct/tests
+[  152s] running egg_info
+[  153s] writing pyct.egg-info/PKG-INFO
+[  153s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  153s] writing entry points to pyct.egg-info/entry_points.txt
+[  153s] writing requirements to pyct.egg-info/requires.txt
+[  153s] writing top-level names to pyct.egg-info/top_level.txt
+[  153s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  153s] reading manifest template 'MANIFEST.in'
+[  153s] adding license file 'LICENSE.txt'
+[  153s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  153s] copying pyct/.version -> build/lib/pyct
+[  153s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  153s]   warnings.warn(msg, warning_class)
+[  153s] ++ '[' -f _current_flavor ']'
+[  153s] ++ cat _current_flavor
+[  153s] + last_flavor=python38
+[  153s] + '[' -z python38 ']'
+[  153s] + '[' python38 '!=' python39 ']'
+[  153s] + '[' -d build ']'
+[  153s] + mv build _build.python38
+[  153s] + '[' -d _build.python39 ']'
+[  153s] + echo python39
+[  153s] + python_flavor=python39
+[  153s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  158s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  158s]   warnings.warn(msg, warning_class)
+[  159s] running build
+[  159s] running build_py
+[  159s] creating build
+[  159s] creating build/lib
+[  159s] creating build/lib/pyct
+[  159s] copying pyct/__init__.py -> build/lib/pyct
+[  159s] copying pyct/__main__.py -> build/lib/pyct
+[  159s] copying pyct/build.py -> build/lib/pyct
+[  159s] copying pyct/cmd.py -> build/lib/pyct
+[  159s] copying pyct/report.py -> build/lib/pyct
+[  159s] creating build/lib/pyct/tests
+[  159s] copying pyct/tests/__init__.py -> build/lib/pyct/tests
+[  159s] copying pyct/tests/test_cmd.py -> build/lib/pyct/tests
+[  159s] copying pyct/tests/test_report.py -> build/lib/pyct/tests
+[  159s] running egg_info
+[  159s] writing pyct.egg-info/PKG-INFO
+[  159s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  159s] writing entry points to pyct.egg-info/entry_points.txt
+[  159s] writing requirements to pyct.egg-info/requires.txt
+[  159s] writing top-level names to pyct.egg-info/top_level.txt
+[  159s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  159s] reading manifest template 'MANIFEST.in'
+[  159s] adding license file 'LICENSE.txt'
+[  159s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  159s] copying pyct/.version -> build/lib/pyct
+[  160s] ++ '[' -f _current_flavor ']'
+[  160s] ++ cat _current_flavor
+[  160s] + last_flavor=python39
+[  160s] + '[' -z python39 ']'
+[  160s] + '[' python39 '!=' python311 ']'
+[  160s] + '[' -d build ']'
+[  160s] + mv build _build.python39
+[  160s] + '[' -d _build.python311 ']'
+[  160s] + echo python311
+[  160s] + python_flavor=python311
+[  160s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  165s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  165s]   warnings.warn(msg, warning_class)
+[  165s] running build
+[  165s] running build_py
+[  166s] creating build
+[  166s] creating build/lib
+[  166s] creating build/lib/pyct
+[  166s] copying pyct/__init__.py -> build/lib/pyct
+[  166s] copying pyct/__main__.py -> build/lib/pyct
+[  166s] copying pyct/build.py -> build/lib/pyct
+[  166s] copying pyct/cmd.py -> build/lib/pyct
+[  166s] copying pyct/report.py -> build/lib/pyct
+[  166s] creating build/lib/pyct/tests
+[  166s] copying pyct/tests/__init__.py -> build/lib/pyct/tests
+[  166s] copying pyct/tests/test_cmd.py -> build/lib/pyct/tests
+[  166s] copying pyct/tests/test_report.py -> build/lib/pyct/tests
+[  166s] running egg_info
+[  166s] writing pyct.egg-info/PKG-INFO
+[  166s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  166s] writing entry points to pyct.egg-info/entry_points.txt
+[  166s] writing requirements to pyct.egg-info/requires.txt
+[  166s] writing top-level names to pyct.egg-info/top_level.txt
+[  166s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  166s] reading manifest template 'MANIFEST.in'
+[  166s] adding license file 'LICENSE.txt'
+[  166s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  166s] copying pyct/.version -> build/lib/pyct
+[  166s] ++ '[' -f _current_flavor ']'
+[  166s] ++ cat _current_flavor
+[  166s] + last_flavor=python311
+[  166s] + '[' -z python311 ']'
+[  166s] + '[' python311 '!=' python310 ']'
+[  166s] + '[' -d build ']'
+[  166s] + mv build _build.python311
+[  166s] + '[' -d _build.python310 ']'
+[  166s] + echo python310
+[  166s] + python_flavor=python310
+[  166s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  172s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  172s]   warnings.warn(msg, warning_class)
+[  172s] running build
+[  172s] running build_py
+[  172s] creating build
+[  172s] creating build/lib
+[  172s] creating build/lib/pyct
+[  172s] copying pyct/__init__.py -> build/lib/pyct
+[  172s] copying pyct/__main__.py -> build/lib/pyct
+[  172s] copying pyct/build.py -> build/lib/pyct
+[  172s] copying pyct/cmd.py -> build/lib/pyct
+[  172s] copying pyct/report.py -> build/lib/pyct
+[  172s] creating build/lib/pyct/tests
+[  172s] copying pyct/tests/__init__.py -> build/lib/pyct/tests
+[  172s] copying pyct/tests/test_cmd.py -> build/lib/pyct/tests
+[  172s] copying pyct/tests/test_report.py -> build/lib/pyct/tests
+[  172s] running egg_info
+[  173s] writing pyct.egg-info/PKG-INFO
+[  173s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  173s] writing entry points to pyct.egg-info/entry_points.txt
+[  173s] writing requirements to pyct.egg-info/requires.txt
+[  173s] writing top-level names to pyct.egg-info/top_level.txt
+[  173s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  173s] reading manifest template 'MANIFEST.in'
+[  173s] adding license file 'LICENSE.txt'
+[  173s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  173s] copying pyct/.version -> build/lib/pyct
+[  173s] + RPM_EC=0
+[  173s] ++ jobs -p
+[  173s] + exit 0
+[  173s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.tBWDkq
+[  173s] + umask 022
+[  173s] + cd /home/abuild/rpmbuild/BUILD
+[  173s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64
+[  173s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  173s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64
+[  174s] + cd pyct-0.4.8
+[  174s] ++ '[' -f _current_flavor ']'
+[  174s] ++ cat _current_flavor
+[  174s] + last_flavor=python310
+[  174s] + '[' -z python310 ']'
+[  174s] + '[' python310 '!=' python38 ']'
+[  174s] + '[' -d build ']'
+[  174s] + mv build _build.python310
+[  174s] + '[' -d _build.python38 ']'
+[  174s] + mv _build.python38 build
+[  174s] + echo python38
+[  174s] + python_flavor=python38
+[  174s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64 --prefix /usr
+[  180s] running install
+[  180s] running install_lib
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] copying build/lib/pyct/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] copying build/lib/pyct/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] copying build/lib/pyct/build.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] copying build/lib/pyct/cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] copying build/lib/pyct/report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests
+[  180s] copying build/lib/pyct/tests/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests
+[  180s] copying build/lib/pyct/tests/test_cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests
+[  180s] copying build/lib/pyct/tests/test_report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests
+[  180s] copying build/lib/pyct/.version -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/__init__.py to __init__.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/__main__.py to __main__.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/build.py to build.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/cmd.py to cmd.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/report.py to report.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/__init__.py to __init__.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/test_cmd.py to test_cmd.cpython-38.pyc
+[  180s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/test_report.py to test_report.cpython-38.pyc
+[  180s] writing byte-compilation script '/tmp/tmp8258qm7y.py'
+[  180s] /usr/bin/python3.8 /tmp/tmp8258qm7y.py
+[  186s] removing /tmp/tmp8258qm7y.py
+[  186s] running install_egg_info
+[  186s] running egg_info
+[  186s] writing pyct.egg-info/PKG-INFO
+[  186s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  186s] writing entry points to pyct.egg-info/entry_points.txt
+[  186s] writing requirements to pyct.egg-info/requires.txt
+[  186s] writing top-level names to pyct.egg-info/top_level.txt
+[  186s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  186s] reading manifest template 'MANIFEST.in'
+[  186s] adding license file 'LICENSE.txt'
+[  186s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  186s] Copying pyct.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct-0.4.8-py3.8.egg-info
+[  186s] running install_scripts
+[  187s] Installing pyct script to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin
+[  187s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  187s]   warnings.warn(msg, warning_class)
+[  187s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  187s]   warnings.warn(
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python38
+[  187s] + '[' -z python38 ']'
+[  187s] + '[' python38 '!=' python39 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python38
+[  187s] + '[' -d _build.python39 ']'
+[  187s] + mv _build.python39 build
+[  187s] + echo python39
+[  187s] + python_flavor=python39
+[  187s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64 --prefix /usr
+[  192s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  192s]   warnings.warn(msg, warning_class)
+[  193s] running install
+[  193s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  193s]   warnings.warn(
+[  193s] running install_lib
+[  193s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9
+[  193s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages
+[  193s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] copying build/lib/pyct/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] copying build/lib/pyct/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] copying build/lib/pyct/build.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] copying build/lib/pyct/cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] copying build/lib/pyct/report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests
+[  193s] copying build/lib/pyct/tests/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests
+[  193s] copying build/lib/pyct/tests/test_cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests
+[  193s] copying build/lib/pyct/tests/test_report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests
+[  193s] copying build/lib/pyct/.version -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/__init__.py to __init__.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/__main__.py to __main__.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/build.py to build.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/cmd.py to cmd.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/report.py to report.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/__init__.py to __init__.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/test_cmd.py to test_cmd.cpython-39.pyc
+[  193s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/test_report.py to test_report.cpython-39.pyc
+[  193s] writing byte-compilation script '/tmp/tmpyzcexl90.py'
+[  193s] /usr/bin/python3.9 /tmp/tmpyzcexl90.py
+[  198s] removing /tmp/tmpyzcexl90.py
+[  198s] running install_egg_info
+[  199s] running egg_info
+[  199s] writing pyct.egg-info/PKG-INFO
+[  199s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  199s] writing entry points to pyct.egg-info/entry_points.txt
+[  199s] writing requirements to pyct.egg-info/requires.txt
+[  199s] writing top-level names to pyct.egg-info/top_level.txt
+[  199s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  199s] reading manifest template 'MANIFEST.in'
+[  199s] adding license file 'LICENSE.txt'
+[  199s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  199s] Copying pyct.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct-0.4.8-py3.9.egg-info
+[  199s] running install_scripts
+[  199s] Installing pyct script to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin
+[  200s] ++ '[' -f _current_flavor ']'
+[  200s] ++ cat _current_flavor
+[  200s] + last_flavor=python39
+[  200s] + '[' -z python39 ']'
+[  200s] + '[' python39 '!=' python311 ']'
+[  200s] + '[' -d build ']'
+[  200s] + mv build _build.python39
+[  200s] + '[' -d _build.python311 ']'
+[  200s] + mv _build.python311 build
+[  200s] + echo python311
+[  200s] + python_flavor=python311
+[  200s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64 --prefix /usr
+[  204s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  204s]   warnings.warn(msg, warning_class)
+[  205s] running install
+[  205s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  205s]   warnings.warn(
+[  205s] running install_lib
+[  205s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11
+[  205s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages
+[  205s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] copying build/lib/pyct/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] copying build/lib/pyct/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] copying build/lib/pyct/build.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] copying build/lib/pyct/cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] copying build/lib/pyct/report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests
+[  205s] copying build/lib/pyct/tests/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests
+[  205s] copying build/lib/pyct/tests/test_cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests
+[  205s] copying build/lib/pyct/tests/test_report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests
+[  205s] copying build/lib/pyct/.version -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct
+[  205s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__init__.py to __init__.cpython-311.pyc
+[  205s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__main__.py to __main__.cpython-311.pyc
+[  205s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/build.py to build.cpython-311.pyc
+[  205s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/cmd.py to cmd.cpython-311.pyc
+[  206s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/report.py to report.cpython-311.pyc
+[  206s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__init__.py to __init__.cpython-311.pyc
+[  206s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/test_cmd.py to test_cmd.cpython-311.pyc
+[  206s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/test_report.py to test_report.cpython-311.pyc
+[  206s] writing byte-compilation script '/tmp/tmpvzfhk1se.py'
+[  206s] /usr/bin/python3.11 /tmp/tmpvzfhk1se.py
+[  210s] removing /tmp/tmpvzfhk1se.py
+[  210s] running install_egg_info
+[  211s] running egg_info
+[  211s] writing pyct.egg-info/PKG-INFO
+[  211s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  211s] writing entry points to pyct.egg-info/entry_points.txt
+[  211s] writing requirements to pyct.egg-info/requires.txt
+[  211s] writing top-level names to pyct.egg-info/top_level.txt
+[  211s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  211s] reading manifest template 'MANIFEST.in'
+[  211s] adding license file 'LICENSE.txt'
+[  211s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  211s] Copying pyct.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct-0.4.8-py3.11.egg-info
+[  211s] running install_scripts
+[  211s] Installing pyct script to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin
+[  212s] ++ '[' -f _current_flavor ']'
+[  212s] ++ cat _current_flavor
+[  212s] + last_flavor=python311
+[  212s] + '[' -z python311 ']'
+[  212s] + '[' python311 '!=' python310 ']'
+[  212s] + '[' -d build ']'
+[  212s] + mv build _build.python311
+[  212s] + '[' -d _build.python310 ']'
+[  212s] + mv _build.python310 build
+[  212s] + echo python310
+[  212s] + python_flavor=python310
+[  212s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64 --prefix /usr
+[  217s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  217s]   warnings.warn(msg, warning_class)
+[  217s] running install
+[  217s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  217s]   warnings.warn(
+[  218s] running install_lib
+[  218s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10
+[  218s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages
+[  218s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] copying build/lib/pyct/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] copying build/lib/pyct/__main__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] copying build/lib/pyct/build.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] copying build/lib/pyct/cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] copying build/lib/pyct/report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests
+[  218s] copying build/lib/pyct/tests/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests
+[  218s] copying build/lib/pyct/tests/test_cmd.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests
+[  218s] copying build/lib/pyct/tests/test_report.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests
+[  218s] copying build/lib/pyct/.version -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/__init__.py to __init__.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/__main__.py to __main__.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/build.py to build.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/cmd.py to cmd.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/report.py to report.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/__init__.py to __init__.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/test_cmd.py to test_cmd.cpython-310.pyc
+[  218s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/test_report.py to test_report.cpython-310.pyc
+[  218s] writing byte-compilation script '/tmp/tmpgxxwr9k_.py'
+[  218s] /usr/bin/python3.10 /tmp/tmpgxxwr9k_.py
+[  223s] removing /tmp/tmpgxxwr9k_.py
+[  223s] running install_egg_info
+[  223s] running egg_info
+[  223s] writing pyct.egg-info/PKG-INFO
+[  223s] writing dependency_links to pyct.egg-info/dependency_links.txt
+[  223s] writing entry points to pyct.egg-info/entry_points.txt
+[  223s] writing requirements to pyct.egg-info/requires.txt
+[  223s] writing top-level names to pyct.egg-info/top_level.txt
+[  224s] reading manifest file 'pyct.egg-info/SOURCES.txt'
+[  224s] reading manifest template 'MANIFEST.in'
+[  224s] adding license file 'LICENSE.txt'
+[  224s] writing manifest file 'pyct.egg-info/SOURCES.txt'
+[  224s] Copying pyct.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct-0.4.8-py3.10.egg-info
+[  224s] running install_scripts
+[  224s] Installing pyct script to /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin
+[  224s] ++ '[' -f _current_flavor ']'
+[  224s] ++ cat _current_flavor
+[  225s] + last_flavor=python310
+[  225s] + '[' -z python310 ']'
+[  225s] + '[' python310 '!=' python38 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python310
+[  225s] + '[' -d _build.python38 ']'
+[  225s] + mv _build.python38 build
+[  225s] + echo python38
+[  225s] + python_flavor=python38
+[  225s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/__pycache__/__init__.cpython-38.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/__pycache__/test_report.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.8/site-packages/pyct/tests/__pycache__/test_report.cpython-38.pyc
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  225s] + last_flavor=python38
+[  225s] + '[' -z python38 ']'
+[  225s] + '[' python38 '!=' python39 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python38
+[  225s] + '[' -d _build.python39 ']'
+[  225s] + mv _build.python39 build
+[  225s] + echo python39
+[  225s] + python_flavor=python39
+[  225s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/__pycache__/__init__.cpython-39.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/__pycache__/test_report.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.9/site-packages/pyct/tests/__pycache__/test_report.cpython-39.pyc
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  225s] + last_flavor=python39
+[  225s] + '[' -z python39 ']'
+[  225s] + '[' python39 '!=' python311 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python39
+[  225s] + '[' -d _build.python311 ']'
+[  225s] + mv _build.python311 build
+[  225s] + echo python311
+[  225s] + python_flavor=python311
+[  225s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/report.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/report.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/cmd.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/cmd.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/build.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/build.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/__main__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/__main__.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/__pycache__/__init__.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/test_report.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/test_report.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/test_cmd.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/test_cmd.cpython-311.pyc
+[  225s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.11/site-packages/pyct/tests/__pycache__/__init__.cpython-311.pyc
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  226s] + last_flavor=python311
+[  226s] + '[' -z python311 ']'
+[  226s] + '[' python311 '!=' python310 ']'
+[  226s] + '[' -d build ']'
+[  226s] + mv build _build.python311
+[  226s] + '[' -d _build.python310 ']'
+[  226s] + mv _build.python310 build
+[  226s] + echo python310
+[  226s] + python_flavor=python310
+[  226s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages
+[  226s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/__pycache__/test_report.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/__pycache__/test_report.cpython-310.pyc
+[  226s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/lib/python3.10/site-packages/pyct/tests/__pycache__/__init__.cpython-310.pyc
+[  226s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.8
+[  226s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.8
+[  226s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.9
+[  226s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.9
+[  226s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.11
+[  226s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.11
+[  226s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.10
+[  226s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct-3.10
+[  226s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct
+[  226s] + alternative_target=/usr/bin/pyct
+[  226s] + [[ /usr/bin/pyct == /usr/share/man* ]]
+[  226s] + '[' 0 -eq 1 ']'
+[  226s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/etc/alternatives
+[  226s] + touch /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/etc/alternatives/pyct
+[  226s] + ln -sf /etc/alternatives/pyct /home/abuild/rpmbuild/BUILDROOT/python-pyct-0.4.8-1.2.riscv64/usr/bin/pyct
+[  227s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/pyct-0.4.8
+[  228s] + /usr/lib/rpm/brp-compress
+[  228s] + /usr/lib/rpm/brp-suse
+[  228s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  228s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  228s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  229s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  229s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  229s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.8loKjA
+[  229s] + umask 022
+[  229s] + cd /home/abuild/rpmbuild/BUILD
+[  229s] + cd pyct-0.4.8
+[  229s] + rm -rf build _build.python311 _build.python38 _build.python39
+[  229s] ++ '[' -f _current_flavor ']'
+[  229s] ++ cat _current_flavor
+[  229s] + last_flavor=python310
+[  229s] + '[' -z python310 ']'
+[  229s] + '[' python310 '!=' python38 ']'
+[  229s] + '[' -d build ']'
+[  229s] + '[' -d _build.python38 ']'
+[  229s] + echo python38
+[  229s] + python_flavor=python38
+[  229s] + rm -rf build '_build*'
+[  229s] + pytest-3.8
+[  242s] ============================= test session starts ==============================
+[  242s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0
+[  242s] rootdir: /home/abuild/rpmbuild/BUILD/pyct-0.4.8
+[  242s] collected 19 items
+[  242s] 
+[  243s] pyct/tests/test_cmd.py ..............                                    [ 73%]
+[  243s] pyct/tests/test_report.py .....                                          [100%]
+[  243s] 
+[  243s] ============================== 19 passed in 8.04s ==============================
+[  243s] ++ '[' -f _current_flavor ']'
+[  243s] ++ cat _current_flavor
+[  243s] + last_flavor=python38
+[  243s] + '[' -z python38 ']'
+[  243s] + '[' python38 '!=' python39 ']'
+[  243s] + '[' -d build ']'
+[  243s] + '[' -d _build.python39 ']'
+[  243s] + echo python39
+[  243s] + python_flavor=python39
+[  243s] + rm -rf build '_build*'
+[  243s] + pytest-3.9
+[  255s] ============================= test session starts ==============================
+[  255s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0
+[  255s] rootdir: /home/abuild/rpmbuild/BUILD/pyct-0.4.8
+[  255s] collected 19 items
+[  255s] 
+[  256s] pyct/tests/test_cmd.py ..............                                    [ 73%]
+[  256s] pyct/tests/test_report.py .....                                          [100%]
+[  256s] 
+[  256s] ============================== 19 passed in 8.10s ==============================
+[  257s] ++ '[' -f _current_flavor ']'
+[  257s] ++ cat _current_flavor
+[  257s] + last_flavor=python39
+[  257s] + '[' -z python39 ']'
+[  257s] + '[' python39 '!=' python311 ']'
+[  257s] + '[' -d build ']'
+[  257s] + '[' -d _build.python311 ']'
+[  257s] + echo python311
+[  257s] + python_flavor=python311
+[  257s] + rm -rf build '_build*'
+[  257s] + pytest-3.11
+[  268s] ============================= test session starts ==============================
+[  268s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0
+[  268s] rootdir: /home/abuild/rpmbuild/BUILD/pyct-0.4.8
+[  268s] collected 19 items
+[  268s] 
+[  269s] pyct/tests/test_cmd.py ..............                                    [ 73%]
+[  270s] pyct/tests/test_report.py F....                                          [100%]
+[  270s] 
+[  270s] =================================== FAILURES ===================================
+[  270s] ______________________ test_report_gives_package_version _______________________
+[  270s] 
+[  270s] mock_import_module = <MagicMock name='import_module' id='275061195216'>
+[  270s] mock_print = <MagicMock name='print' id='275000200720'>
+[  270s] 
+[  270s]     @patch("builtins.print")
+[  270s]     @patch("importlib.import_module")
+[  270s]     def test_report_gives_package_version(mock_import_module, mock_print):
+[  270s]         module = TestModule()
+[  270s]         mock_import_module.return_value = module
+[  270s]     
+[  270s]         report("param")
+[  270s]     
+[  270s] >       mock_print.assert_called_with('param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param')
+[  270s] 
+[  270s] pyct/tests/test_report.py:16: 
+[  270s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  270s] 
+[  270s] self = <MagicMock name='print' id='275000200720'>
+[  270s] args = ('param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param',)
+[  270s] kwargs = {}
+[  270s] expected = "print('param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param')"
+[  270s] actual = 'not called.'
+[  270s] error_message = "expected call not found.\nExpected: print('param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param')\nActual: not called."
+[  270s] 
+[  270s]     def assert_called_with(self, /, *args, **kwargs):
+[  270s]         """assert that the last call was made with the specified arguments.
+[  270s]     
+[  270s]         Raises an AssertionError if the args and keyword args passed in are
+[  270s]         different to the last call to the mock."""
+[  270s]         if self.call_args is None:
+[  270s]             expected = self._format_mock_call_signature(args, kwargs)
+[  270s]             actual = 'not called.'
+[  270s]             error_message = ('expected call not found.\nExpected: %s\nActual: %s'
+[  270s]                     % (expected, actual))
+[  270s] >           raise AssertionError(error_message)
+[  270s] E           AssertionError: expected call not found.
+[  270s] E           Expected: print('param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param')
+[  270s] E           Actual: not called.
+[  270s] 
+[  270s] /usr/lib64/python3.11/unittest/mock.py:924: AssertionError
+[  270s] ----------------------------- Captured stdout call -----------------------------
+[  270s] param=1.9.3                    # /mock/opt/anaconda3/envs/pyct/lib/python3.7/site-packages/param
+[  270s] =========================== short test summary info ============================
+[  270s] FAILED pyct/tests/test_report.py::test_report_gives_package_version - Asserti...
+[  270s] ========================= 1 failed, 18 passed in 8.94s =========================
+[  271s] error: Bad exit status from /var/tmp/rpm-tmp.8loKjA (%check)
+[  271s] 
+[  271s] RPM build errors:
+[  271s]     Bad exit status from /var/tmp/rpm-tmp.8loKjA (%check)
+[  271s] ### VM INTERACTION START ###
+[  272s] [  264.563994][    T1] sysrq: Power Off
+[  272s] [  264.568814][  T361] reboot: Power down
+[  272s] ### VM INTERACTION END ###
+[  272s] 
+[  272s] cloud111 failed "build python-pyct.spec" at Sun Feb 19 10:05:26 UTC 2023.
+[  272s] 

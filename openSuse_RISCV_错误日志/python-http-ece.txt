@@ -1,0 +1,767 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    0s] 
+[    0s] lamb22 started "build python-http-ece.spec" at Sun Feb 19 07:12:01 UTC 2023.
+[    0s] 
+[    0s] Building python-http-ece for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'fdbc4a282a5ce11c492e166bef61e903'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/python-http-ece.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/python-http-ece.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/python-http-ece.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    7s] 
+[    7s] copying packages...
+[    7s] reordering...done
+[    7s] Detected virtio-serial support
+[    9s] booting kvm...
+[    9s] ### VM INTERACTION START ###
+[    9s] Using virtio-serial support
+[    9s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   20s] ### VM INTERACTION END ###
+[   20s] 2nd stage started in virtual machine
+[   21s] machine type: riscv64
+[   21s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   21s] Increasing log level from now on...
+[   21s] [   11.009403][  T411] sysrq: Changing Loglevel
+[   21s] [   11.009697][  T411] sysrq: Loglevel set to 4
+[   21s] Enable sysrq operations
+[   23s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   23s] no label, UUID=6900c2ad-e0a3-437b-ad2e-6fa70cd8fa8b
+[   23s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   23s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   23s] swapon /dev/vdb
+[   23s] WARNING: udev not running, creating extra device nodes
+[   24s] logging output to //.build.log...
+[   25s] processing recipe /.build-srcdir/python-http-ece.spec ...
+[   25s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-http-ece.spec build ...
+[   26s] initializing rpm db...
+[   27s] querying package ids...
+[   58s] [1/201] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   58s] [2/201] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   58s] [3/201] preinstalled attr-2.5.1-1.1
+[   58s] [4/201] preinstalled bash-5.2.15-8.1
+[   58s] [5/201] preinstalled bash-sh-5.2.15-8.1
+[   58s] [6/201] preinstalled binutils-2.39-3.1
+[   58s] [7/201] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   58s] [8/201] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   58s] [9/201] preinstalled build-mkbaselibs-20230215-1.1
+[   58s] [10/201] preinstalled bzip2-1.0.8-4.1
+[   58s] [11/201] preinstalled chkstat-1599_20221220-1.2
+[   58s] [12/201] preinstalled compat-usrmerge-build-84.87-5.1
+[   58s] [13/201] preinstalled compat-usrmerge-tools-84.87-5.1
+[   58s] [14/201] preinstalled coreutils-9.1-5.1
+[   58s] [15/201] preinstalled cpio-2.13-5.1
+[   58s] [16/201] preinstalled cpp-12-2.1
+[   58s] [17/201] preinstalled cpp12-12.2.1+git749-4.1
+[   58s] [18/201] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   58s] [19/201] preinstalled debugedit-5.0-5.1
+[   58s] [20/201] preinstalled diffutils-3.9-1.1
+[   58s] [21/201] preinstalled dwz-0.15-2.1
+[   58s] [22/201] preinstalled elfutils-0.188-3.2
+[   58s] [23/201] cumulate fdupes-2.2.1-1.1
+[   58s] [24/201] preinstalled file-5.44-1.2
+[   58s] [25/201] preinstalled file-magic-5.44-1.2
+[   58s] [26/201] preinstalled filesystem-84.87-12.1
+[   58s] [27/201] preinstalled fillup-1.42-279.1
+[   58s] [28/201] preinstalled findutils-4.9.0-2.1
+[   58s] [29/201] preinstalled gawk-5.2.1-2.1
+[   58s] [30/201] preinstalled gcc-12-2.1
+[   58s] [31/201] preinstalled gcc-PIE-12-2.1
+[   58s] [32/201] preinstalled gcc12-12.2.1+git749-4.1
+[   58s] [33/201] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   58s] [34/201] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   58s] [35/201] preinstalled gettext-tools-mini-0.21.1-1.1
+[   58s] [36/201] preinstalled glibc-2.37-1.1
+[   58s] [37/201] preinstalled glibc-devel-2.37-1.1
+[   58s] [38/201] preinstalled glibc-locale-base-2.37-1.1
+[   58s] [39/201] preinstalled grep-3.8-3.1
+[   58s] [40/201] preinstalled gzip-1.12-3.1
+[   58s] [41/201] preinstalled kernel-obs-build-6.1.12-1.1
+[   58s] [42/201] preinstalled libacl1-2.3.1-2.1
+[   58s] [43/201] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   58s] [44/201] preinstalled libasan8-13.0.1+git5428-6.1
+[   58s] [45/201] preinstalled libasm1-0.188-3.2
+[   58s] [46/201] preinstalled libatomic1-13.0.1+git5428-6.1
+[   58s] [47/201] preinstalled libattr1-2.5.1-1.1
+[   58s] [48/201] preinstalled libaudit1-3.0.6-4.1
+[   58s] [49/201] preinstalled libblkid1-2.38.1-7.1
+[   58s] [50/201] preinstalled libbz2-1-1.0.8-4.1
+[   58s] [51/201] preinstalled libcap-ng0-0.8.3-1.1
+[   58s] [52/201] preinstalled libcap2-2.67-1.1
+[   58s] [53/201] preinstalled libcrypt1-4.4.33-1.1
+[   58s] [54/201] preinstalled libctf-nobfd0-2.39-3.1
+[   58s] [55/201] preinstalled libctf0-2.39-3.1
+[   58s] [56/201] preinstalled libdb-4_8-4.8.30-39.1
+[   58s] [57/201] preinstalled libdw1-0.188-3.2
+[   58s] [58/201] preinstalled libeconf0-0.5.1-1.1
+[   58s] [59/201] preinstalled libelf1-0.188-3.2
+[   58s] [60/201] preinstalled libexpat1-2.5.0-2.1
+[   58s] [61/201] preinstalled libfdisk1-2.38.1-7.1
+[   58s] [62/201] preinstalled libffi8-3.4.4-1.1
+[   58s] [63/201] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   58s] [64/201] preinstalled libgcrypt20-1.10.1-1.1
+[   58s] [65/201] preinstalled libgdbm6-1.23-1.1
+[   58s] [66/201] preinstalled libgdbm_compat4-1.23-1.1
+[   58s] [67/201] preinstalled libgmp10-6.2.1-4.1
+[   58s] [68/201] preinstalled libgomp1-13.0.1+git5428-6.1
+[   58s] [69/201] preinstalled libgpg-error0-1.46-1.1
+[   58s] [70/201] preinstalled libisl23-0.25-1.1
+[   58s] [71/201] preinstalled liblua5_4-5-5.4.4-8.1
+[   58s] [72/201] preinstalled liblzma5-5.4.1-1.1
+[   58s] [73/201] preinstalled libmagic1-5.44-1.2
+[   58s] [74/201] preinstalled libmount1-2.38.1-7.1
+[   58s] [75/201] preinstalled libmpc3-1.3.1-1.2
+[   58s] [76/201] preinstalled libmpdec3-2.5.1-2.1
+[   58s] [77/201] preinstalled libmpfr6-4.2.0-1.1
+[   58s] [78/201] preinstalled libncurses6-6.4.20230128-5.1
+[   58s] [79/201] preinstalled libopenssl3-3.0.7-3.1
+[   58s] [80/201] preinstalled libpcre2-8-0-10.42-3.2
+[   58s] [81/201] preinstalled libpkgconf3-1.8.0-2.1
+[   58s] [82/201] preinstalled libpopt0-1.19-1.1
+[   58s] [83/201] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   58s] [84/201] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   58s] [85/201] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   58s] [86/201] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   58s] [87/201] preinstalled libreadline8-8.2-2.1
+[   58s] [88/201] preinstalled librpmbuild9-4.18.0-3.2
+[   58s] [89/201] preinstalled libseccomp2-2.5.4-2.1
+[   58s] [90/201] preinstalled libselinux1-3.4-2.1
+[   58s] [91/201] preinstalled libsemanage-conf-3.4-1.1
+[   58s] [92/201] preinstalled libsemanage2-3.4-1.1
+[   58s] [93/201] preinstalled libsepol2-3.4-1.1
+[   58s] [94/201] preinstalled libsmartcols1-2.38.1-7.1
+[   58s] [95/201] cumulate libsqlite3-0-3.40.1-1.1
+[   58s] [96/201] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   58s] [97/201] preinstalled libsubid4-4.13-3.1
+[   58s] [98/201] preinstalled libubsan1-13.0.1+git5428-6.1
+[   58s] [99/201] preinstalled libutempter0-1.2.0-3.2
+[   58s] [100/201] preinstalled libuuid1-2.38.1-7.1
+[   58s] [101/201] preinstalled libxcrypt-devel-4.4.33-1.1
+[   58s] [102/201] preinstalled libz1-1.2.13-2.1
+[   58s] [103/201] preinstalled libzstd1-1.5.2-2.1
+[   58s] [104/201] preinstalled linux-glibc-devel-6.1-1.1
+[   58s] [105/201] preinstalled login_defs-4.13-3.1
+[   58s] [106/201] preinstalled lua54-5.4.4-8.1
+[   58s] [107/201] preinstalled make-4.4-2.1
+[   58s] [108/201] preinstalled ncurses-utils-6.4.20230128-5.1
+[   58s] [109/201] preinstalled pam-1.5.2-12.1
+[   58s] [110/201] preinstalled patch-2.7.6-6.1
+[   58s] [111/201] preinstalled perl-5.36.0-4.1
+[   58s] [112/201] preinstalled perl-base-5.36.0-4.1
+[   58s] [113/201] preinstalled permissions-1599_20221220-1.2
+[   58s] [114/201] preinstalled permissions-config-1599_20221220-1.2
+[   58s] [115/201] preinstalled pkgconf-1.8.0-2.1
+[   58s] [116/201] preinstalled pkgconf-m4-1.8.0-2.1
+[   58s] [117/201] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   58s] [118/201] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   58s] [119/201] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   58s] [120/201] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   58s] [121/201] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   58s] [122/201] cumulate python310-attrs-22.2.0-1.2
+[   58s] [123/201] preinstalled python310-base-3.10.9-2.2
+[   58s] [124/201] cumulate python310-exceptiongroup-1.1.0-1.2
+[   58s] [125/201] cumulate python310-iniconfig-1.1.1-3.2
+[   58s] [126/201] preinstalled python310-packaging-23.0-1.1
+[   58s] [127/201] cumulate python310-pluggy-1.0.0-1.5
+[   58s] [128/201] cumulate python310-pycparser-2.21-1.5
+[   58s] [129/201] preinstalled python310-setuptools-65.6.3-1.2
+[   58s] [130/201] cumulate python310-tomli-2.0.1-1.3
+[   58s] [131/201] cumulate python310-zipp-3.8.1-1.2
+[   58s] [132/201] cumulate python311-attrs-22.2.0-1.2
+[   58s] [133/201] preinstalled python311-base-3.11.1-4.2
+[   58s] [134/201] cumulate python311-exceptiongroup-1.1.0-1.2
+[   58s] [135/201] cumulate python311-iniconfig-1.1.1-3.2
+[   58s] [136/201] cumulate python311-packaging-23.0-1.2
+[   58s] [137/201] cumulate python311-pluggy-1.0.0-1.5
+[   58s] [138/201] cumulate python311-pycparser-2.21-1.5
+[   58s] [139/201] preinstalled python311-setuptools-65.6.3-1.2
+[   58s] [140/201] cumulate python311-tomli-2.0.1-1.3
+[   58s] [141/201] cumulate python311-zipp-3.8.1-1.2
+[   58s] [142/201] cumulate python38-attrs-22.2.0-1.2
+[   58s] [143/201] preinstalled python38-base-3.8.16-3.2
+[   58s] [144/201] cumulate python38-exceptiongroup-1.1.0-1.2
+[   58s] [145/201] cumulate python38-iniconfig-1.1.1-3.2
+[   58s] [146/201] cumulate python38-packaging-23.0-1.2
+[   58s] [147/201] cumulate python38-pluggy-1.0.0-1.5
+[   58s] [148/201] cumulate python38-pycparser-2.21-1.5
+[   58s] [149/201] preinstalled python38-setuptools-65.6.3-1.2
+[   58s] [150/201] cumulate python38-tomli-2.0.1-1.3
+[   58s] [151/201] cumulate python38-zipp-3.8.1-1.2
+[   58s] [152/201] cumulate python39-attrs-22.2.0-1.2
+[   58s] [153/201] preinstalled python39-base-3.9.16-3.2
+[   58s] [154/201] cumulate python39-exceptiongroup-1.1.0-1.2
+[   58s] [155/201] cumulate python39-iniconfig-1.1.1-3.2
+[   58s] [156/201] cumulate python39-packaging-23.0-1.2
+[   58s] [157/201] cumulate python39-pluggy-1.0.0-1.5
+[   58s] [158/201] cumulate python39-pycparser-2.21-1.5
+[   58s] [159/201] preinstalled python39-setuptools-65.6.3-1.2
+[   58s] [160/201] cumulate python39-tomli-2.0.1-1.3
+[   58s] [161/201] cumulate python39-zipp-3.8.1-1.2
+[   58s] [162/201] preinstalled qemu-linux-user-7.1.0-50.1
+[   58s] [163/201] preinstalled rpm-4.18.0-3.2
+[   58s] [164/201] preinstalled rpm-build-4.18.0-3.2
+[   58s] [165/201] preinstalled rpm-build-perl-4.18.0-3.2
+[   58s] [166/201] preinstalled rpm-config-SUSE-20220926-1.1
+[   58s] [167/201] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   58s] [168/201] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   58s] [169/201] preinstalled sed-4.9-2.1
+[   58s] [170/201] preinstalled shadow-4.13-3.1
+[   58s] [171/201] preinstalled system-group-hardware-20170617-24.1
+[   58s] [172/201] preinstalled system-user-root-20190513-2.1
+[   58s] [173/201] preinstalled systemd-rpm-macros-19-1.1
+[   58s] [174/201] preinstalled sysuser-shadow-3.1-5.1
+[   58s] [175/201] preinstalled tar-1.34-9.1
+[   58s] [176/201] preinstalled terminfo-base-6.4.20230128-5.1
+[   58s] [177/201] preinstalled update-alternatives-1.21.8-1.1
+[   58s] [178/201] preinstalled util-linux-2.38.1-7.1
+[   58s] [179/201] preinstalled which-2.21-5.1
+[   58s] [180/201] preinstalled xz-5.4.1-1.1
+[   58s] [181/201] cumulate alts-1.2+3.b848aad-3.1
+[   58s] [182/201] cumulate python310-3.10.9-2.1
+[   58s] [183/201] cumulate python310-cffi-1.15.1-3.2
+[   58s] [184/201] cumulate python310-importlib-metadata-6.0.0-1.2
+[   58s] [185/201] cumulate python311-3.11.1-4.1
+[   58s] [186/201] cumulate python311-cffi-1.15.1-3.2
+[   58s] [187/201] cumulate python311-importlib-metadata-6.0.0-1.2
+[   58s] [188/201] cumulate python38-3.8.16-3.1
+[   58s] [189/201] cumulate python38-cffi-1.15.1-3.2
+[   58s] [190/201] cumulate python38-importlib-metadata-6.0.0-1.2
+[   58s] [191/201] cumulate python39-3.9.16-3.1
+[   58s] [192/201] cumulate python39-cffi-1.15.1-3.2
+[   58s] [193/201] cumulate python39-importlib-metadata-6.0.0-1.2
+[   58s] [194/201] cumulate python310-cryptography-39.0.1-1.2
+[   58s] [195/201] cumulate python311-cryptography-39.0.1-1.2
+[   58s] [196/201] cumulate python38-cryptography-39.0.1-1.2
+[   58s] [197/201] cumulate python39-cryptography-39.0.1-1.2
+[   58s] [198/201] cumulate python310-pytest-7.2.0-2.2
+[   58s] [199/201] cumulate python311-pytest-7.2.0-2.2
+[   58s] [200/201] cumulate python38-pytest-7.2.0-2.2
+[   58s] [201/201] cumulate python39-pytest-7.2.0-2.2
+[   58s] now installing cumulated packages
+[   59s] Preparing...                          ########################################
+[   59s] Updating / installing...
+[   59s] libsqlite3-0-3.40.1-1.1               ########################################
+[   59s] python310-3.10.9-2.1                  ########################################
+[   60s] python311-3.11.1-4.1                  ########################################
+[   60s] python38-3.8.16-3.1                   ########################################
+[   60s] python39-3.9.16-3.1                   ########################################
+[   60s] python39-zipp-3.8.1-1.2               ########################################
+[   60s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   60s] python39-tomli-2.0.1-1.3              ########################################
+[   60s] python39-pycparser-2.21-1.5           ########################################
+[   60s] python39-cffi-1.15.1-3.2              ########################################
+[   60s] python39-pluggy-1.0.0-1.5             ########################################
+[   60s] python39-packaging-23.0-1.2           ########################################
+[   60s] python39-iniconfig-1.1.1-3.2          ########################################
+[   60s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   60s] python39-attrs-22.2.0-1.2             ########################################
+[   60s] python38-zipp-3.8.1-1.2               ########################################
+[   60s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   60s] python38-tomli-2.0.1-1.3              ########################################
+[   60s] python38-pycparser-2.21-1.5           ########################################
+[   61s] python38-cffi-1.15.1-3.2              ########################################
+[   61s] python38-pluggy-1.0.0-1.5             ########################################
+[   61s] python38-packaging-23.0-1.2           ########################################
+[   61s] python38-iniconfig-1.1.1-3.2          ########################################
+[   61s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   61s] python38-attrs-22.2.0-1.2             ########################################
+[   61s] python311-zipp-3.8.1-1.2              ########################################
+[   61s] python311-importlib-metadata-6.0.0-1.2########################################
+[   61s] python311-tomli-2.0.1-1.3             ########################################
+[   61s] python311-pycparser-2.21-1.5          ########################################
+[   61s] python311-cffi-1.15.1-3.2             ########################################
+[   61s] python311-pluggy-1.0.0-1.5            ########################################
+[   61s] python311-packaging-23.0-1.2          ########################################
+[   61s] python311-iniconfig-1.1.1-3.2         ########################################
+[   61s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   61s] python311-attrs-22.2.0-1.2            ########################################
+[   61s] python310-zipp-3.8.1-1.2              ########################################
+[   62s] python310-importlib-metadata-6.0.0-1.2########################################
+[   62s] python310-tomli-2.0.1-1.3             ########################################
+[   62s] python310-pycparser-2.21-1.5          ########################################
+[   62s] python310-cffi-1.15.1-3.2             ########################################
+[   62s] python310-pluggy-1.0.0-1.5            ########################################
+[   62s] python310-iniconfig-1.1.1-3.2         ########################################
+[   62s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   62s] python310-attrs-22.2.0-1.2            ########################################
+[   62s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   62s] alts-1.2+3.b848aad-3.1                ########################################
+[   63s] python310-pytest-7.2.0-2.2            ########################################
+[   63s] python311-pytest-7.2.0-2.2            ########################################
+[   64s] python38-pytest-7.2.0-2.2             ########################################
+[   65s] python39-pytest-7.2.0-2.2             ########################################
+[   65s] python310-cryptography-39.0.1-1.2     ########################################
+[   66s] python311-cryptography-39.0.1-1.2     ########################################
+[   67s] python38-cryptography-39.0.1-1.2      ########################################
+[   67s] python39-cryptography-39.0.1-1.2      ########################################
+[   67s] fdupes-2.2.1-1.1                      ########################################
+[   70s] now finalizing build dir...
+[   70s] ... running 01-add_abuild_user_to_trusted_group
+[   71s] ... running 02-set_timezone_to_utc
+[   71s] ... running 03-set-permissions-secure
+[   71s] ... running 11-hack_uname_version_to_kernel_version
+[   80s] -----------------------------------------------------------------
+[   80s] I have the following modifications for python-http-ece.spec:
+[   80s] 22c22
+[   80s] < Release:        0
+[   80s] ---
+[   80s] > Release:        3.3
+[   87s] build target is riscv64-suse-linux
+[   87s] -----------------------------------------------------------------
+[   87s] ----- building python-http-ece.spec (user abuild)
+[   87s] -----------------------------------------------------------------
+[   87s] -----------------------------------------------------------------
+[   92s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/fdbc4a282a5ce11c492e166bef61e903-python-http-ece' /home/abuild/rpmbuild/SOURCES/python-http-ece.spec
+[  131s] Building target platforms: riscv64-suse-linux
+[  131s] Building for target riscv64-suse-linux
+[  131s] setting SOURCE_DATE_EPOCH=1647993600
+[  132s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.NXoYmT
+[  132s] + umask 022
+[  132s] + cd /home/abuild/rpmbuild/BUILD
+[  132s] + cd /home/abuild/rpmbuild/BUILD
+[  132s] + rm -rf http_ece-1.1.0
+[  132s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/http_ece-1.1.0.tar.gz
+[  132s] + STATUS=0
+[  132s] + '[' 0 -ne 0 ']'
+[  132s] + cd http_ece-1.1.0
+[  132s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  132s] + cp /home/abuild/rpmbuild/SOURCES/test_ece.py /home/abuild/rpmbuild/SOURCES/LICENSE .
+[  132s] + RPM_EC=0
+[  132s] ++ jobs -p
+[  132s] + exit 0
+[  132s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.O35BTK
+[  132s] + umask 022
+[  132s] + cd /home/abuild/rpmbuild/BUILD
+[  133s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64
+[  133s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64
+[  133s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  133s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64
+[  133s] + cd http_ece-1.1.0
+[  133s] + ref=/usr/lib/rpm
+[  133s] + mints=0
+[  133s] + case $(uname -m) in
+[  133s] ++ uname -m
+[  133s] + mints=20160911
+[  133s] + for s in guess sub
+[  133s] ++ find -maxdepth 8 -name config.guess
+[  133s] + for s in guess sub
+[  133s] ++ find -maxdepth 8 -name config.sub
+[  133s] ++ '[' -f _current_flavor ']'
+[  133s] ++ true
+[  133s] + last_flavor=
+[  133s] + '[' -z '' ']'
+[  133s] + last_flavor=tmp
+[  133s] + '[' tmp '!=' python38 ']'
+[  133s] + '[' -d build ']'
+[  133s] + '[' -d _build.python38 ']'
+[  133s] + echo python38
+[  133s] + python_flavor=python38
+[  133s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  137s] running build
+[  137s] running build_py
+[  138s] creating build
+[  138s] creating build/lib
+[  138s] creating build/lib/http_ece
+[  138s] copying http_ece/__init__.py -> build/lib/http_ece
+[  138s] ++ '[' -f _current_flavor ']'
+[  138s] ++ cat _current_flavor
+[  138s] + last_flavor=python38
+[  138s] + '[' -z python38 ']'
+[  138s] + '[' python38 '!=' python39 ']'
+[  138s] + '[' -d build ']'
+[  138s] + mv build _build.python38
+[  138s] + '[' -d _build.python39 ']'
+[  138s] + echo python39
+[  138s] + python_flavor=python39
+[  138s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  141s] running build
+[  141s] running build_py
+[  141s] creating build
+[  141s] creating build/lib
+[  141s] creating build/lib/http_ece
+[  141s] copying http_ece/__init__.py -> build/lib/http_ece
+[  142s] ++ '[' -f _current_flavor ']'
+[  142s] ++ cat _current_flavor
+[  142s] + last_flavor=python39
+[  142s] + '[' -z python39 ']'
+[  142s] + '[' python39 '!=' python311 ']'
+[  142s] + '[' -d build ']'
+[  142s] + mv build _build.python39
+[  142s] + '[' -d _build.python311 ']'
+[  142s] + echo python311
+[  142s] + python_flavor=python311
+[  142s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  145s] running build
+[  145s] running build_py
+[  145s] creating build
+[  145s] creating build/lib
+[  145s] creating build/lib/http_ece
+[  145s] copying http_ece/__init__.py -> build/lib/http_ece
+[  146s] ++ '[' -f _current_flavor ']'
+[  146s] ++ cat _current_flavor
+[  146s] + last_flavor=python311
+[  146s] + '[' -z python311 ']'
+[  146s] + '[' python311 '!=' python310 ']'
+[  146s] + '[' -d build ']'
+[  146s] + mv build _build.python311
+[  146s] + '[' -d _build.python310 ']'
+[  146s] + echo python310
+[  146s] + python_flavor=python310
+[  146s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  150s] running build
+[  150s] running build_py
+[  150s] creating build
+[  150s] creating build/lib
+[  150s] creating build/lib/http_ece
+[  150s] copying http_ece/__init__.py -> build/lib/http_ece
+[  150s] + RPM_EC=0
+[  150s] ++ jobs -p
+[  150s] + exit 0
+[  150s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.Dpf7tV
+[  150s] + umask 022
+[  150s] + cd /home/abuild/rpmbuild/BUILD
+[  150s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64
+[  150s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  150s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64
+[  151s] + cd http_ece-1.1.0
+[  151s] ++ '[' -f _current_flavor ']'
+[  151s] ++ cat _current_flavor
+[  151s] + last_flavor=python310
+[  151s] + '[' -z python310 ']'
+[  151s] + '[' python310 '!=' python38 ']'
+[  151s] + '[' -d build ']'
+[  151s] + mv build _build.python310
+[  151s] + '[' -d _build.python38 ']'
+[  151s] + mv _build.python38 build
+[  151s] + echo python38
+[  151s] + python_flavor=python38
+[  151s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64 --prefix /usr
+[  155s] running install
+[  155s] running install_lib
+[  155s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr
+[  155s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib
+[  155s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8
+[  155s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages
+[  155s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece
+[  155s] copying build/lib/http_ece/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece
+[  155s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece/__init__.py to __init__.cpython-38.pyc
+[  155s] writing byte-compilation script '/tmp/tmpivi9917y.py'
+[  155s] /usr/bin/python3.8 /tmp/tmpivi9917y.py
+[  159s] removing /tmp/tmpivi9917y.py
+[  159s] running install_egg_info
+[  159s] running egg_info
+[  159s] writing http_ece.egg-info/PKG-INFO
+[  159s] writing dependency_links to http_ece.egg-info/dependency_links.txt
+[  159s] writing requirements to http_ece.egg-info/requires.txt
+[  159s] writing top-level names to http_ece.egg-info/top_level.txt
+[  159s] reading manifest file 'http_ece.egg-info/SOURCES.txt'
+[  159s] reading manifest template 'MANIFEST.in'
+[  159s] adding license file 'LICENSE'
+[  159s] writing manifest file 'http_ece.egg-info/SOURCES.txt'
+[  159s] Copying http_ece.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece-1.1.0-py3.8.egg-info
+[  159s] running install_scripts
+[  160s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  160s]   warnings.warn(
+[  160s] ++ '[' -f _current_flavor ']'
+[  160s] ++ cat _current_flavor
+[  160s] + last_flavor=python38
+[  160s] + '[' -z python38 ']'
+[  160s] + '[' python38 '!=' python39 ']'
+[  160s] + '[' -d build ']'
+[  160s] + mv build _build.python38
+[  160s] + '[' -d _build.python39 ']'
+[  160s] + mv _build.python39 build
+[  160s] + echo python39
+[  160s] + python_flavor=python39
+[  160s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64 --prefix /usr
+[  164s] running install
+[  164s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  164s]   warnings.warn(
+[  164s] running install_lib
+[  164s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9
+[  164s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages
+[  164s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece
+[  164s] copying build/lib/http_ece/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece
+[  164s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece/__init__.py to __init__.cpython-39.pyc
+[  164s] writing byte-compilation script '/tmp/tmp0vrmrtxm.py'
+[  164s] /usr/bin/python3.9 /tmp/tmp0vrmrtxm.py
+[  168s] removing /tmp/tmp0vrmrtxm.py
+[  168s] running install_egg_info
+[  168s] running egg_info
+[  168s] writing http_ece.egg-info/PKG-INFO
+[  168s] writing dependency_links to http_ece.egg-info/dependency_links.txt
+[  168s] writing requirements to http_ece.egg-info/requires.txt
+[  168s] writing top-level names to http_ece.egg-info/top_level.txt
+[  168s] reading manifest file 'http_ece.egg-info/SOURCES.txt'
+[  168s] reading manifest template 'MANIFEST.in'
+[  168s] adding license file 'LICENSE'
+[  168s] writing manifest file 'http_ece.egg-info/SOURCES.txt'
+[  168s] Copying http_ece.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece-1.1.0-py3.9.egg-info
+[  168s] running install_scripts
+[  169s] ++ '[' -f _current_flavor ']'
+[  169s] ++ cat _current_flavor
+[  169s] + last_flavor=python39
+[  169s] + '[' -z python39 ']'
+[  169s] + '[' python39 '!=' python311 ']'
+[  169s] + '[' -d build ']'
+[  169s] + mv build _build.python39
+[  169s] + '[' -d _build.python311 ']'
+[  169s] + mv _build.python311 build
+[  169s] + echo python311
+[  169s] + python_flavor=python311
+[  169s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64 --prefix /usr
+[  172s] running install
+[  172s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  172s]   warnings.warn(
+[  172s] running install_lib
+[  173s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11
+[  173s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages
+[  173s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece
+[  173s] copying build/lib/http_ece/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece
+[  173s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece/__init__.py to __init__.cpython-311.pyc
+[  173s] writing byte-compilation script '/tmp/tmp3iarradq.py'
+[  173s] /usr/bin/python3.11 /tmp/tmp3iarradq.py
+[  176s] removing /tmp/tmp3iarradq.py
+[  176s] running install_egg_info
+[  176s] running egg_info
+[  176s] writing http_ece.egg-info/PKG-INFO
+[  176s] writing dependency_links to http_ece.egg-info/dependency_links.txt
+[  176s] writing requirements to http_ece.egg-info/requires.txt
+[  176s] writing top-level names to http_ece.egg-info/top_level.txt
+[  176s] reading manifest file 'http_ece.egg-info/SOURCES.txt'
+[  176s] reading manifest template 'MANIFEST.in'
+[  176s] adding license file 'LICENSE'
+[  176s] writing manifest file 'http_ece.egg-info/SOURCES.txt'
+[  176s] Copying http_ece.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece-1.1.0-py3.11.egg-info
+[  176s] running install_scripts
+[  177s] ++ '[' -f _current_flavor ']'
+[  177s] ++ cat _current_flavor
+[  177s] + last_flavor=python311
+[  177s] + '[' -z python311 ']'
+[  177s] + '[' python311 '!=' python310 ']'
+[  177s] + '[' -d build ']'
+[  177s] + mv build _build.python311
+[  177s] + '[' -d _build.python310 ']'
+[  177s] + mv _build.python310 build
+[  177s] + echo python310
+[  177s] + python_flavor=python310
+[  177s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64 --prefix /usr
+[  181s] running install
+[  181s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  181s]   warnings.warn(
+[  181s] running install_lib
+[  181s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10
+[  181s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages
+[  181s] creating /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece
+[  181s] copying build/lib/http_ece/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece
+[  181s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece/__init__.py to __init__.cpython-310.pyc
+[  181s] writing byte-compilation script '/tmp/tmpsob39htb.py'
+[  181s] /usr/bin/python3.10 /tmp/tmpsob39htb.py
+[  185s] removing /tmp/tmpsob39htb.py
+[  185s] running install_egg_info
+[  185s] running egg_info
+[  185s] writing http_ece.egg-info/PKG-INFO
+[  185s] writing dependency_links to http_ece.egg-info/dependency_links.txt
+[  185s] writing requirements to http_ece.egg-info/requires.txt
+[  185s] writing top-level names to http_ece.egg-info/top_level.txt
+[  185s] reading manifest file 'http_ece.egg-info/SOURCES.txt'
+[  185s] reading manifest template 'MANIFEST.in'
+[  185s] adding license file 'LICENSE'
+[  185s] writing manifest file 'http_ece.egg-info/SOURCES.txt'
+[  185s] Copying http_ece.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece-1.1.0-py3.10.egg-info
+[  185s] running install_scripts
+[  186s] ++ '[' -f _current_flavor ']'
+[  186s] ++ cat _current_flavor
+[  186s] + last_flavor=python310
+[  186s] + '[' -z python310 ']'
+[  186s] + '[' python310 '!=' python38 ']'
+[  186s] + '[' -d build ']'
+[  186s] + mv build _build.python310
+[  186s] + '[' -d _build.python38 ']'
+[  186s] + mv _build.python38 build
+[  186s] + echo python38
+[  186s] + python_flavor=python38
+[  186s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages
+[  186s] Linking /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages/http_ece/__pycache__/__init__.cpython-38.pyc
+[  186s] ++ '[' -f _current_flavor ']'
+[  186s] ++ cat _current_flavor
+[  186s] + last_flavor=python38
+[  186s] + '[' -z python38 ']'
+[  186s] + '[' python38 '!=' python39 ']'
+[  186s] + '[' -d build ']'
+[  186s] + mv build _build.python38
+[  186s] + '[' -d _build.python39 ']'
+[  186s] + mv _build.python39 build
+[  186s] + echo python39
+[  186s] + python_flavor=python39
+[  186s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages
+[  186s] Linking /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.9/site-packages/http_ece/__pycache__/__init__.cpython-39.pyc
+[  186s] ++ '[' -f _current_flavor ']'
+[  186s] ++ cat _current_flavor
+[  186s] + last_flavor=python39
+[  186s] + '[' -z python39 ']'
+[  186s] + '[' python39 '!=' python311 ']'
+[  186s] + '[' -d build ']'
+[  186s] + mv build _build.python39
+[  186s] + '[' -d _build.python311 ']'
+[  186s] + mv _build.python311 build
+[  186s] + echo python311
+[  186s] + python_flavor=python311
+[  186s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.11/site-packages/http_ece/__pycache__/__init__.cpython-311.pyc
+[  187s] ++ '[' -f _current_flavor ']'
+[  187s] ++ cat _current_flavor
+[  187s] + last_flavor=python311
+[  187s] + '[' -z python311 ']'
+[  187s] + '[' python311 '!=' python310 ']'
+[  187s] + '[' -d build ']'
+[  187s] + mv build _build.python311
+[  187s] + '[' -d _build.python310 ']'
+[  187s] + mv _build.python310 build
+[  187s] + echo python310
+[  187s] + python_flavor=python310
+[  187s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages
+[  187s] Linking /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.10/site-packages/http_ece/__pycache__/__init__.cpython-310.pyc
+[  187s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/http_ece-1.1.0
+[  188s] + /usr/lib/rpm/brp-compress
+[  188s] + /usr/lib/rpm/brp-suse
+[  188s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  188s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  188s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  189s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  189s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.dre5Ga
+[  189s] + umask 022
+[  189s] + cd /home/abuild/rpmbuild/BUILD
+[  189s] + cd http_ece-1.1.0
+[  189s] + set +x
+[  190s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  190s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  190s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  190s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  191s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  191s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  192s] + export PATH=/home/abuild/rpmbuild/BUILD/http_ece-1.1.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  192s] + PATH=/home/abuild/rpmbuild/BUILD/http_ece-1.1.0/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  192s] ++ '[' -f _current_flavor ']'
+[  192s] ++ cat _current_flavor
+[  192s] + last_flavor=python310
+[  192s] + '[' -z python310 ']'
+[  192s] + '[' python310 '!=' python38 ']'
+[  192s] + '[' -d build ']'
+[  192s] + mv build _build.python310
+[  192s] + '[' -d _build.python38 ']'
+[  192s] + mv _build.python38 build
+[  192s] + echo python38
+[  192s] + python_flavor=python38
+[  192s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-http-ece-1.1.0-3.3.riscv64/usr/lib/python3.8/site-packages
+[  192s] + PYTHONDONTWRITEBYTECODE=1
+[  192s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  196s] ============================= test session starts ==============================
+[  196s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  196s] cachedir: .pytest_cache
+[  196s] rootdir: /home/abuild/rpmbuild/BUILD/http_ece-1.1.0
+[  197s] collecting ... collected 19 items
+[  197s] 
+[  198s] test_ece.py::TestEce::test_derive_key_invalid_mode FAILED                [  5%]
+[  198s] test_ece.py::TestEce::test_derive_key_invalid_salt FAILED                [ 10%]
+[  198s] test_ece.py::TestEce::test_derive_key_invalid_version FAILED             [ 15%]
+[  199s] test_ece.py::TestEce::test_derive_key_no_private_key FAILED              [ 21%]
+[  199s] test_ece.py::TestEce::test_derive_key_no_secret FAILED                   [ 26%]
+[  199s] test_ece.py::TestEce::test_iv_bad_counter FAILED                         [ 31%]
+[  199s] test_ece.py::TestEceChecking::test_bad_early_delimiter PASSED            [ 36%]
+[  199s] test_ece.py::TestEceChecking::test_bad_final_delimiter PASSED            [ 42%]
+[  199s] test_ece.py::TestEceChecking::test_damage PASSED                         [ 47%]
+[  199s] test_ece.py::TestEceChecking::test_decrypt_bad_header PASSED             [ 52%]
+[  199s] test_ece.py::TestEceChecking::test_decrypt_bad_version PASSED            [ 57%]
+[  199s] test_ece.py::TestEceChecking::test_decrypt_small_rs PASSED               [ 63%]
+[  199s] test_ece.py::TestEceChecking::test_encrypt_bad_version PASSED            [ 68%]
+[  199s] test_ece.py::TestEceChecking::test_encrypt_long_keyid PASSED             [ 73%]
+[  199s] test_ece.py::TestEceChecking::test_encrypt_small_rs PASSED               [ 78%]
+[  199s] test_ece.py::TestEceChecking::test_overlong_padding PASSED               [ 84%]
+[  200s] test_ece.py::TestEceIntegration::test_types PASSED                       [ 89%]
+[  200s] test_ece.py::TestNode::test_decrypt SKIPPED (No ../encrypt_data.json...) [ 94%]
+[  200s] test_ece.py::TestNode::test_encrypt SKIPPED (No ../encrypt_data.json...) [100%]
+[  200s] 
+[  200s] =================================== FAILURES ===================================
+[  200s] _____________________ TestEce.test_derive_key_invalid_mode _____________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_derive_key_invalid_mode>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] _____________________ TestEce.test_derive_key_invalid_salt _____________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_derive_key_invalid_salt>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] ___________________ TestEce.test_derive_key_invalid_version ____________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_derive_key_invalid_version>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] ____________________ TestEce.test_derive_key_no_private_key ____________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_derive_key_no_private_key>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] ______________________ TestEce.test_derive_key_no_secret _______________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_derive_key_no_secret>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] _________________________ TestEce.test_iv_bad_counter __________________________
+[  200s] 
+[  200s] self = <test_ece.TestEce testMethod=test_iv_bad_counter>
+[  200s] 
+[  200s]     def setUp(self):
+[  200s]         self.private_key = make_key()
+[  200s] >       self.dh = self.private_key.public_key().public_numbers().encode_point()
+[  200s] E       AttributeError: 'EllipticCurvePublicNumbers' object has no attribute 'encode_point'
+[  200s] 
+[  200s] test_ece.py:56: AttributeError
+[  200s] =========================== short test summary info ============================
+[  200s] FAILED test_ece.py::TestEce::test_derive_key_invalid_mode - AttributeError: '...
+[  200s] FAILED test_ece.py::TestEce::test_derive_key_invalid_salt - AttributeError: '...
+[  200s] FAILED test_ece.py::TestEce::test_derive_key_invalid_version - AttributeError...
+[  200s] FAILED test_ece.py::TestEce::test_derive_key_no_private_key - AttributeError:...
+[  200s] FAILED test_ece.py::TestEce::test_derive_key_no_secret - AttributeError: 'Ell...
+[  200s] FAILED test_ece.py::TestEce::test_iv_bad_counter - AttributeError: 'EllipticC...
+[  200s] =================== 6 failed, 11 passed, 2 skipped in 3.65s ====================
+[  200s] error: Bad exit status from /var/tmp/rpm-tmp.dre5Ga (%check)
+[  200s] 
+[  200s] RPM build errors:
+[  200s]     Bad exit status from /var/tmp/rpm-tmp.dre5Ga (%check)
+[  200s] ### VM INTERACTION START ###
+[  201s] [  190.313572][    T1] sysrq: Power Off
+[  201s] [  190.316347][   T18] reboot: Power down
+[  201s] ### VM INTERACTION END ###
+[  201s] 
+[  201s] lamb22 failed "build python-http-ece.spec" at Sun Feb 19 07:15:22 UTC 2023.
+[  201s] 

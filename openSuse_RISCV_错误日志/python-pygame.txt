@@ -1,0 +1,1318 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_8/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_8/root
+[    0s] 
+[    1s] 
+[    1s] lamb59 started "build python-pygame.spec" at Sun Feb 19 03:09:17 UTC 2023.
+[    1s] 
+[    1s] Building python-pygame for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '8b3e3bf896ea259f7f13cef392efaf9f'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_8/.build-srcdir/python-pygame.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_8/.build-srcdir/python-pygame.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/8/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_8/.build.rpmlist /var/cache/obs/worker/root_8/.build-srcdir/python-pygame.spec build ...
+[    2s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-libX11-devel [9f7753549f2c313ae1471a0ad0c44cb8]
+[    5s] 
+[    5s] copying packages...
+[    6s] reordering...cycle: fontconfig -> libfontconfig1
+[    6s]   breaking dependency libfontconfig1 -> fontconfig
+[    6s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    6s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    6s] cycle: libgio-2_0-0 -> glib2-tools
+[    6s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    6s] cycle: imake -> xorg-cf-files
+[    6s]   breaking dependency xorg-cf-files -> imake
+[    6s] cycle: libpython3_10-1_0 -> python310-base
+[    6s]   breaking dependency python310-base -> libpython3_10-1_0
+[    6s] cycle: libpython3_11-1_0 -> python311-base
+[    6s]   breaking dependency python311-base -> libpython3_11-1_0
+[    6s] cycle: libpython3_8-1_0 -> python38-base
+[    6s]   breaking dependency python38-base -> libpython3_8-1_0
+[    6s] cycle: libpython3_9-1_0 -> python39-base
+[    6s]   breaking dependency python39-base -> libpython3_9-1_0
+[    6s] cycle: libv4l -> libv4l1-0
+[    6s]   breaking dependency libv4l1-0 -> libv4l
+[    6s] cycle: libv4l -> libv4l1-0 -> libv4l2-0
+[    6s]   breaking dependency libv4l2-0 -> libv4l
+[    6s] cycle: libv4l -> libv4l1-0 -> libv4l2-0 -> libv4lconvert0
+[    6s]   breaking dependency libv4l -> libv4l1-0
+[    6s] cycle: libv4l -> libv4l2-0 -> libv4lconvert0
+[    6s]   breaking dependency libv4lconvert0 -> libv4l
+[    6s] done
+[    6s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_8/.mount/boot/kernel -initrd /var/cache/obs/worker/root_8/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_8/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_8/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_8/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   13s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   13s] Increasing log level from now on...
+[   13s] [    4.790227][  T411] sysrq: Changing Loglevel
+[   13s] [    4.790533][  T411] sysrq: Loglevel set to 4
+[   13s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   13s] no label, UUID=09cd7df6-8e16-4350-9c34-82db92d0c1ad
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/python-pygame.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-pygame.spec build ...
+[   15s] initializing rpm db...
+[   15s] querying package ids...
+[   58s] [1/468] preinstalled Mesa-22.3.5-350.1
+[   58s] [2/468] preinstalled Mesa-KHR-devel-22.3.5-350.1
+[   58s] [3/468] preinstalled Mesa-dri-22.3.5-350.1
+[   58s] [4/468] cumulate Mesa-libEGL-devel-22.3.5-350.1
+[   58s] [5/468] preinstalled Mesa-libEGL1-22.3.5-350.1
+[   58s] [6/468] preinstalled Mesa-libGL-devel-22.3.5-350.1
+[   58s] [7/468] preinstalled Mesa-libGL1-22.3.5-350.1
+[   58s] [8/468] preinstalled Mesa-libglapi0-22.3.5-350.1
+[   58s] [9/468] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   58s] [10/468] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   58s] [11/468] preinstalled attr-2.5.1-1.1
+[   58s] [12/468] preinstalled bash-5.2.15-8.1
+[   58s] [13/468] preinstalled bash-sh-5.2.15-8.1
+[   58s] [14/468] preinstalled binutils-2.39-3.1
+[   58s] [15/468] cumulate bitstream-vera-fonts-1.10-316.1
+[   58s] [16/468] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   58s] [17/468] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   58s] [18/468] preinstalled build-mkbaselibs-20230215-1.1
+[   58s] [19/468] preinstalled bzip2-1.0.8-4.1
+[   58s] [20/468] preinstalled chkstat-1599_20221220-1.2
+[   58s] [21/468] preinstalled compat-usrmerge-build-84.87-5.1
+[   58s] [22/468] preinstalled compat-usrmerge-tools-84.87-5.1
+[   58s] [23/468] preinstalled coreutils-9.1-5.1
+[   58s] [24/468] preinstalled cpio-2.13-5.1
+[   58s] [25/468] preinstalled cpp-12-2.1
+[   58s] [26/468] preinstalled cpp12-12.2.1+git749-4.1
+[   58s] [27/468] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   58s] [28/468] cumulate dbus-1-common-1.14.6-1.1
+[   58s] [29/468] preinstalled debugedit-5.0-5.1
+[   58s] [30/468] preinstalled diffutils-3.9-1.1
+[   58s] [31/468] preinstalled dwz-0.15-2.1
+[   58s] [32/468] preinstalled elfutils-0.188-3.2
+[   58s] [33/468] cumulate fdupes-2.2.1-1.1
+[   58s] [34/468] preinstalled file-5.44-1.2
+[   58s] [35/468] preinstalled file-magic-5.44-1.2
+[   58s] [36/468] preinstalled filesystem-84.87-12.1
+[   58s] [37/468] preinstalled fillup-1.42-279.1
+[   58s] [38/468] preinstalled findutils-4.9.0-2.1
+[   58s] [39/468] cumulate fluid-soundfont-gm-3.1-5.3
+[   58s] [40/468] cumulate font-util-1.3.3-1.1
+[   58s] [41/468] cumulate fontcacheproto-devel-0.1.3-4.3
+[   58s] [42/468] preinstalled gawk-5.2.1-2.1
+[   58s] [43/468] preinstalled gcc-12-2.1
+[   58s] [44/468] preinstalled gcc-PIE-12-2.1
+[   58s] [45/468] preinstalled gcc12-12.2.1+git749-4.1
+[   58s] [46/468] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   58s] [47/468] cumulate gccmakedep-1.0.3-4.1
+[   58s] [48/468] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   58s] [49/468] preinstalled gettext-tools-mini-0.21.1-1.1
+[   58s] [50/468] preinstalled glibc-2.37-1.1
+[   58s] [51/468] preinstalled glibc-devel-2.37-1.1
+[   58s] [52/468] preinstalled glibc-locale-base-2.37-1.1
+[   58s] [53/468] preinstalled grep-3.8-3.1
+[   58s] [54/468] cumulate gtest-1.12.1-5.1
+[   58s] [55/468] preinstalled gzip-1.12-3.1
+[   58s] [56/468] cumulate iceauth-1.0.9-1.1
+[   58s] [57/468] preinstalled kernel-obs-build-6.1.12-1.1
+[   58s] [58/468] cumulate libFS6-1.0.9-1.1
+[   58s] [59/468] cumulate libGLU1-9.0.2-2.1
+[   58s] [60/468] preinstalled libICE-devel-1.1.1-1.1
+[   58s] [61/468] preinstalled libICE6-1.1.1-1.1
+[   58s] [62/468] preinstalled libLLVM15-15.0.7-1.1
+[   58s] [63/468] preinstalled libSM-devel-1.2.4-2.1
+[   58s] [64/468] preinstalled libSM6-1.2.4-2.1
+[   58s] [65/468] preinstalled libX11-6-1.8.1-4.1
+[   58s] [66/468] preinstalled libX11-data-1.8.1-4.1
+[   58s] [67/468] preinstalled libX11-devel-1.8.1-4.1
+[   58s] [68/468] preinstalled libX11-xcb1-1.8.1-4.1
+[   58s] [69/468] cumulate libXRes1-1.2.2-1.2
+[   58s] [70/468] preinstalled libXau-devel-1.0.11-1.1
+[   58s] [71/468] preinstalled libXau6-1.0.11-1.1
+[   58s] [72/468] cumulate libXcomposite1-0.4.6-1.1
+[   58s] [73/468] cumulate libXdamage1-1.1.6-1.2
+[   58s] [74/468] cumulate libXdmcp6-1.1.4-1.1
+[   58s] [75/468] cumulate libXevie1-1.0.3-12.3
+[   58s] [76/468] cumulate libXext-devel-1.3.5-1.1
+[   58s] [77/468] preinstalled libXext6-1.3.5-1.1
+[   58s] [78/468] cumulate libXfixes-devel-6.0.0-2.1
+[   58s] [79/468] preinstalled libXfixes3-6.0.0-2.1
+[   58s] [80/468] cumulate libXfontcache1-1.0.5-12.3
+[   58s] [81/468] cumulate libXi6-1.8-1.1
+[   58s] [82/468] cumulate libXinerama1-1.1.5-1.1
+[   58s] [83/468] cumulate libXmuu1-1.1.4-1.1
+[   58s] [84/468] cumulate libXp6-1.0.4-1.1
+[   58s] [85/468] cumulate libXpm4-3.5.14-2.1
+[   58s] [86/468] cumulate libXrender1-0.9.11-1.1
+[   58s] [87/468] cumulate libXss1-1.2.4-1.1
+[   58s] [88/468] preinstalled libXt-devel-1.2.1-1.1
+[   58s] [89/468] preinstalled libXt6-1.2.1-1.1
+[   58s] [90/468] cumulate libXtst6-1.2.4-1.1
+[   58s] [91/468] cumulate libXv1-1.0.12-1.1
+[   58s] [92/468] cumulate libXvMC1-1.0.13-1.1
+[   58s] [93/468] cumulate libXxf86dga1-1.1.6-1.1
+[   58s] [94/468] preinstalled libXxf86vm1-1.1.5-1.1
+[   58s] [95/468] preinstalled libacl1-2.3.1-2.1
+[   58s] [96/468] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   58s] [97/468] preinstalled libasan8-13.0.1+git5428-6.1
+[   58s] [98/468] preinstalled libasm1-0.188-3.2
+[   58s] [99/468] cumulate libasound2-1.2.8-1.1
+[   58s] [100/468] preinstalled libatomic1-13.0.1+git5428-6.1
+[   58s] [101/468] preinstalled libattr1-2.5.1-1.1
+[   58s] [102/468] preinstalled libaudit1-3.0.6-4.1
+[   58s] [103/468] cumulate libblkid-devel-2.38.1-7.1
+[   58s] [104/468] preinstalled libblkid1-2.38.1-7.1
+[   58s] [105/468] cumulate libblogger2-2.26-2.1
+[   58s] [106/468] cumulate libbrotlicommon1-1.0.9-1.1
+[   58s] [107/468] preinstalled libbz2-1-1.0.8-4.1
+[   58s] [108/468] cumulate libbz2-devel-1.0.8-4.1
+[   58s] [109/468] preinstalled libcap-ng0-0.8.3-1.1
+[   58s] [110/468] preinstalled libcap2-2.67-1.1
+[   58s] [111/468] cumulate libcelt0-2-0.11.3-1.3
+[   58s] [112/468] preinstalled libcrypt1-4.4.33-1.1
+[   58s] [113/468] preinstalled libctf-nobfd0-2.39-3.1
+[   58s] [114/468] preinstalled libctf0-2.39-3.1
+[   58s] [115/468] preinstalled libdb-4_8-4.8.30-39.1
+[   58s] [116/468] cumulate libdmx1-1.1.4-1.2
+[   58s] [117/468] preinstalled libdrm2-2.4.115-2.1
+[   58s] [118/468] preinstalled libdrm_amdgpu1-2.4.115-2.1
+[   58s] [119/468] preinstalled libdrm_nouveau2-2.4.115-2.1
+[   58s] [120/468] preinstalled libdrm_radeon1-2.4.115-2.1
+[   58s] [121/468] preinstalled libdw1-0.188-3.2
+[   58s] [122/468] preinstalled libeconf0-0.5.1-1.1
+[   58s] [123/468] preinstalled libedit0-20210910.3.1-1.1
+[   58s] [124/468] preinstalled libelf1-0.188-3.2
+[   58s] [125/468] cumulate libexpat-devel-2.5.0-2.1
+[   58s] [126/468] preinstalled libexpat1-2.5.0-2.1
+[   58s] [127/468] preinstalled libfdisk1-2.38.1-7.1
+[   58s] [128/468] cumulate libffi-devel-3.4.4-1.1
+[   58s] [129/468] preinstalled libffi8-3.4.4-1.1
+[   58s] [130/468] cumulate libfontenc1-1.1.7-1.1
+[   58s] [131/468] preinstalled libgbm1-22.3.5-350.1
+[   58s] [132/468] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   58s] [133/468] preinstalled libgcrypt20-1.10.1-1.1
+[   58s] [134/468] preinstalled libgdbm6-1.23-1.1
+[   58s] [135/468] preinstalled libgdbm_compat4-1.23-1.1
+[   58s] [136/468] cumulate libgfortran5-13.0.1+git5428-6.1
+[   58s] [137/468] cumulate libglib-2_0-0-2.74.5-1.1
+[   58s] [138/468] preinstalled libglvnd-1.6.0-1.1
+[   58s] [139/468] preinstalled libglvnd-devel-1.6.0-1.1
+[   58s] [140/468] preinstalled libgmp10-6.2.1-4.1
+[   58s] [141/468] preinstalled libgomp1-13.0.1+git5428-6.1
+[   58s] [142/468] preinstalled libgpg-error0-1.46-1.1
+[   58s] [143/468] cumulate libhwy1-1.0.3-1.1
+[   58s] [144/468] preinstalled libisl23-0.25-1.1
+[   58s] [145/468] cumulate libjack0-1.9.21-1.3
+[   58s] [146/468] cumulate libjbig2-2.1-4.1
+[   58s] [147/468] cumulate libjpeg8-8.2.2-72.1
+[   58s] [148/468] cumulate liblbxutil1-1.1.0-13.2
+[   58s] [149/468] cumulate liblcms2-2-2.14-3.3
+[   58s] [150/468] preinstalled liblua5_4-5-5.4.4-8.1
+[   58s] [151/468] preinstalled liblzma5-5.4.1-1.1
+[   58s] [152/468] preinstalled libmagic1-5.44-1.2
+[   58s] [153/468] preinstalled libmount1-2.38.1-7.1
+[   58s] [154/468] preinstalled libmpc3-1.3.1-1.2
+[   58s] [155/468] cumulate libmpdec3-2.5.1-2.1
+[   58s] [156/468] preinstalled libmpfr6-4.2.0-1.1
+[   58s] [157/468] cumulate libmpg123-0-1.31.2-1.1
+[   58s] [158/468] preinstalled libncurses6-6.4.20230128-5.1
+[   58s] [159/468] cumulate libogg0-1.3.5-1.1
+[   58s] [160/468] cumulate liboldX6-1.0.1-11.3
+[   58s] [161/468] cumulate libopus0-1.3.1-3.2
+[   58s] [162/468] cumulate libout123-0-1.31.2-1.1
+[   58s] [163/468] cumulate libpciaccess0-0.17-1.1
+[   58s] [164/468] cumulate libpcre2-16-0-10.42-3.2
+[   58s] [165/468] cumulate libpcre2-32-0-10.42-3.2
+[   58s] [166/468] preinstalled libpcre2-8-0-10.42-3.2
+[   58s] [167/468] cumulate libpcre2-posix3-10.42-3.2
+[   58s] [168/468] cumulate libpixman-1-0-0.42.2-1.1
+[   58s] [169/468] preinstalled libpkgconf3-1.8.0-2.1
+[   58s] [170/468] cumulate libpng16-16-1.6.39-2.1
+[   58s] [171/468] preinstalled libpopt0-1.19-1.1
+[   58s] [172/468] preinstalled libreadline8-8.2-2.1
+[   58s] [173/468] preinstalled librpmbuild9-4.18.0-3.2
+[   58s] [174/468] cumulate libsamplerate0-0.2.2-1.1
+[   58s] [175/468] preinstalled libseccomp2-2.5.4-2.1
+[   58s] [176/468] preinstalled libselinux1-3.4-2.1
+[   58s] [177/468] preinstalled libsemanage-conf-3.4-1.1
+[   58s] [178/468] preinstalled libsemanage2-3.4-1.1
+[   58s] [179/468] cumulate libsepol-devel-3.4-1.1
+[   58s] [180/468] preinstalled libsepol2-3.4-1.1
+[   58s] [181/468] preinstalled libsmartcols1-2.38.1-7.1
+[   58s] [182/468] cumulate libspeex1-1.2.1-1.1
+[   58s] [183/468] cumulate libspeexdsp1-1.2.1-1.1
+[   58s] [184/468] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   58s] [185/468] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   58s] [186/468] preinstalled libsubid4-4.13-3.1
+[   58s] [187/468] cumulate libsyn123-0-1.31.2-1.1
+[   58s] [188/468] cumulate libsystemd0-mini-252.5-1.1
+[   58s] [189/468] cumulate libturbojpeg0-8.2.2-72.1
+[   58s] [190/468] preinstalled libubsan1-13.0.1+git5428-6.1
+[   58s] [191/468] cumulate libudev-mini1-252.5-1.1
+[   58s] [192/468] preinstalled libutempter0-1.2.0-3.2
+[   58s] [193/468] preinstalled libuuid-devel-2.38.1-7.1
+[   58s] [194/468] preinstalled libuuid1-2.38.1-7.1
+[   58s] [195/468] preinstalled libwayland-client0-1.21.0-4.2
+[   58s] [196/468] preinstalled libwayland-server0-1.21.0-4.2
+[   58s] [197/468] cumulate libwebp7-1.2.4-1.2
+[   58s] [198/468] cumulate libwebpdecoder3-1.2.4-1.2
+[   58s] [199/468] preinstalled libxcb-composite0-1.15-2.1
+[   58s] [200/468] preinstalled libxcb-damage0-1.15-2.1
+[   58s] [201/468] preinstalled libxcb-devel-1.15-2.1
+[   58s] [202/468] preinstalled libxcb-dpms0-1.15-2.1
+[   58s] [203/468] preinstalled libxcb-dri2-0-1.15-2.1
+[   58s] [204/468] preinstalled libxcb-dri3-0-1.15-2.1
+[   58s] [205/468] preinstalled libxcb-glx0-1.15-2.1
+[   58s] [206/468] preinstalled libxcb-present0-1.15-2.1
+[   58s] [207/468] preinstalled libxcb-randr0-1.15-2.1
+[   58s] [208/468] preinstalled libxcb-record0-1.15-2.1
+[   58s] [209/468] preinstalled libxcb-render0-1.15-2.1
+[   58s] [210/468] preinstalled libxcb-res0-1.15-2.1
+[   58s] [211/468] preinstalled libxcb-screensaver0-1.15-2.1
+[   58s] [212/468] preinstalled libxcb-shape0-1.15-2.1
+[   58s] [213/468] preinstalled libxcb-shm0-1.15-2.1
+[   58s] [214/468] preinstalled libxcb-sync1-1.15-2.1
+[   58s] [215/468] cumulate libxcb-util1-0.4.1-1.1
+[   58s] [216/468] preinstalled libxcb-xf86dri0-1.15-2.1
+[   58s] [217/468] preinstalled libxcb-xfixes0-1.15-2.1
+[   58s] [218/468] preinstalled libxcb-xinerama0-1.15-2.1
+[   58s] [219/468] preinstalled libxcb-xinput0-1.15-2.1
+[   58s] [220/468] preinstalled libxcb-xkb1-1.15-2.1
+[   58s] [221/468] preinstalled libxcb-xtest0-1.15-2.1
+[   58s] [222/468] preinstalled libxcb-xv0-1.15-2.1
+[   58s] [223/468] preinstalled libxcb-xvmc0-1.15-2.1
+[   58s] [224/468] preinstalled libxcb1-1.15-2.1
+[   58s] [225/468] preinstalled libxcrypt-devel-4.4.33-1.1
+[   58s] [226/468] cumulate libxml2-2-2.10.3-3.1
+[   58s] [227/468] cumulate libxmp4-4.5.0+g613.8e4a5e15-1.1
+[   58s] [228/468] preinstalled libxshmfence1-1.3.2-1.1
+[   58s] [229/468] preinstalled libz1-1.2.13-2.1
+[   58s] [230/468] cumulate libzstd-devel-1.5.2-2.1
+[   58s] [231/468] preinstalled libzstd1-1.5.2-2.1
+[   58s] [232/468] preinstalled linux-glibc-devel-6.1-1.1
+[   58s] [233/468] cumulate lndir-1.0.4-1.1
+[   58s] [234/468] preinstalled login_defs-4.13-3.1
+[   58s] [235/468] cumulate logrotate-3.21.0-1.1
+[   58s] [236/468] preinstalled lua54-5.4.4-8.1
+[   58s] [237/468] preinstalled make-4.4-2.1
+[   58s] [238/468] cumulate makedepend-1.0.8-2.1
+[   58s] [239/468] cumulate ncurses-devel-6.4.20230128-5.1
+[   58s] [240/468] preinstalled ncurses-utils-6.4.20230128-5.1
+[   58s] [241/468] preinstalled pam-1.5.2-12.1
+[   58s] [242/468] preinstalled patch-2.7.6-6.1
+[   58s] [243/468] preinstalled perl-5.36.0-4.1
+[   58s] [244/468] preinstalled perl-base-5.36.0-4.1
+[   58s] [245/468] preinstalled permissions-1599_20221220-1.2
+[   58s] [246/468] preinstalled permissions-config-1599_20221220-1.2
+[   58s] [247/468] preinstalled pkgconf-1.8.0-2.1
+[   58s] [248/468] preinstalled pkgconf-m4-1.8.0-2.1
+[   58s] [249/468] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   58s] [250/468] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   58s] [251/468] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   58s] [252/468] cumulate printproto-devel-1.0.5-4.3
+[   58s] [253/468] cumulate python-rpm-macros-20230128.e704796-1.2
+[   58s] [254/468] preinstalled qemu-linux-user-7.1.0-50.1
+[   58s] [255/468] cumulate rgb-1.1.0-1.1
+[   58s] [256/468] preinstalled rpm-4.18.0-3.2
+[   58s] [257/468] preinstalled rpm-build-4.18.0-3.2
+[   58s] [258/468] preinstalled rpm-build-perl-4.18.0-3.2
+[   58s] [259/468] preinstalled rpm-config-SUSE-20220926-1.1
+[   58s] [260/468] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   58s] [261/468] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   58s] [262/468] preinstalled sed-4.9-2.1
+[   58s] [263/468] cumulate sessreg-1.1.3-1.1
+[   58s] [264/468] preinstalled shadow-4.13-3.1
+[   58s] [265/468] preinstalled system-group-hardware-20170617-24.1
+[   58s] [266/468] preinstalled system-user-root-20190513-2.1
+[   58s] [267/468] cumulate systemd-mini-252.5-1.1
+[   58s] [268/468] preinstalled systemd-rpm-macros-19-1.1
+[   58s] [269/468] preinstalled sysuser-shadow-3.1-5.1
+[   58s] [270/468] preinstalled tar-1.34-9.1
+[   58s] [271/468] preinstalled terminfo-base-6.4.20230128-5.1
+[   58s] [272/468] preinstalled update-alternatives-1.21.8-1.1
+[   58s] [273/468] preinstalled util-linux-2.38.1-7.1
+[   58s] [274/468] preinstalled which-2.21-5.1
+[   58s] [275/468] cumulate xbitmaps-1.1.2-1.2
+[   58s] [276/468] cumulate xbitmaps-devel-1.1.2-1.2
+[   58s] [277/468] cumulate xkeyboard-config-2.38-1.1
+[   58s] [278/468] cumulate xmodmap-1.0.11-1.1
+[   58s] [279/468] cumulate xorg-sgml-doctools-1.12-1.1
+[   58s] [280/468] preinstalled xorgproto-devel-2022.2-2.1
+[   58s] [281/468] cumulate xprop-1.2.6-1.1
+[   58s] [282/468] cumulate xterm-resize-378-1.1
+[   58s] [283/468] cumulate xtrans-1.4.0-3.1
+[   58s] [284/468] preinstalled xz-5.4.1-1.1
+[   58s] [285/468] cumulate xz-devel-5.4.1-1.1
+[   58s] [286/468] cumulate zlib-devel-1.2.13-2.1
+[   58s] [287/468] cumulate Mesa-libGLESv1_CM-devel-22.3.5-350.1
+[   58s] [288/468] cumulate Mesa-libGLESv2-devel-22.3.5-350.1
+[   58s] [289/468] cumulate alsa-devel-1.2.8-1.1
+[   58s] [290/468] cumulate alts-1.2+3.b848aad-3.1
+[   58s] [291/468] cumulate blog-2.26-2.1
+[   58s] [292/468] cumulate glu-devel-9.0.2-2.1
+[   58s] [293/468] cumulate libFLAC12-1.4.2-1.1
+[   58s] [294/468] cumulate libFS-devel-1.0.9-1.1
+[   58s] [295/468] cumulate libSDL2-2_0-0-2.26.3-1.1
+[   58s] [296/468] cumulate libXcursor1-1.2.1-1.1
+[   58s] [297/468] cumulate libXdmcp-devel-1.1.4-1.1
+[   58s] [298/468] cumulate libXmu6-1.1.4-1.1
+[   58s] [299/468] cumulate libXpm-devel-3.5.14-2.1
+[   58s] [300/468] cumulate libXprintUtil1-1.0.1-12.3
+[   58s] [301/468] cumulate libXrandr2-1.5.3-1.1
+[   58s] [302/468] cumulate libXrender-devel-0.9.11-1.1
+[   58s] [303/468] cumulate libXxf86vm-devel-1.1.5-1.1
+[   58s] [304/468] cumulate libblas3-3.9.0-6.1
+[   58s] [305/468] cumulate libbrotlidec1-1.0.9-1.1
+[   58s] [306/468] cumulate libbrotlienc1-1.0.9-1.1
+[   58s] [307/468] cumulate libfontenc-devel-1.1.7-1.1
+[   58s] [308/468] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   58s] [309/468] cumulate libgobject-2_0-0-2.74.5-1.1
+[   58s] [310/468] cumulate libgthread-2_0-0-2.74.5-1.1
+[   58s] [311/468] cumulate liblbxutil-devel-1.1.0-13.2
+[   58s] [312/468] cumulate liblcms2-devel-2.14-3.3
+[   58s] [313/468] cumulate libogg-devel-1.3.5-1.1
+[   58s] [314/468] cumulate liboldX-devel-1.0.1-11.3
+[   58s] [315/468] cumulate libopenssl3-3.0.7-3.1
+[   58s] [316/468] cumulate libopus-devel-1.3.1-3.2
+[   58s] [317/468] cumulate libpciaccess-devel-0.17-1.1
+[   58s] [318/468] cumulate libpixman-1-0-devel-0.42.2-1.1
+[   58s] [319/468] cumulate libportmidi2-2.0.4-2.1
+[   58s] [320/468] cumulate libstdc++-devel-12-2.1
+[   58s] [321/468] cumulate libvorbis0-1.3.7-2.1
+[   58s] [322/468] cumulate libwebpdemux2-1.2.4-1.2
+[   58s] [323/468] cumulate libwebpmux3-1.2.4-1.2
+[   58s] [324/468] cumulate libxkbfile1-1.1.2-1.1
+[   58s] [325/468] cumulate libxmp-devel-4.5.0+g613.8e4a5e15-1.1
+[   58s] [326/468] cumulate readline-devel-8.2-2.1
+[   58s] [327/468] cumulate speexdsp-devel-1.2.1-1.1
+[   58s] [328/468] cumulate xauth-1.1.2-1.3
+[   58s] [329/468] cumulate xcb-util-devel-0.4.1-1.1
+[   58s] [330/468] cumulate xrdb-1.2.1-2.1
+[   58s] [331/468] cumulate highway-devel-1.0.3-1.1
+[   58s] [332/468] cumulate libXcomposite-devel-0.4.6-1.1
+[   58s] [333/468] cumulate libXdamage-devel-1.1.6-1.2
+[   58s] [334/468] cumulate libXevie-devel-1.0.3-12.3
+[   58s] [335/468] cumulate libXinerama-devel-1.1.5-1.1
+[   58s] [336/468] cumulate libXres-devel-1.2.2-1.2
+[   58s] [337/468] cumulate libXss-devel-1.2.4-1.1
+[   58s] [338/468] cumulate libXv-devel-1.0.12-1.1
+[   58s] [339/468] cumulate libXxf86dga-devel-1.1.6-1.1
+[   58s] [340/468] cumulate libdbus-1-3-1.14.6-1.1
+[   58s] [341/468] cumulate libdmx-devel-1.1.4-1.2
+[   58s] [342/468] cumulate libjackserver0-1.9.21-1.3
+[   58s] [343/468] cumulate libjpeg8-devel-8.2.2-72.1
+[   58s] [344/468] cumulate libpng16-devel-1.6.39-2.1
+[   58s] [345/468] cumulate libtiff6-4.5.0-2.1
+[   58s] [346/468] cumulate shared-mime-info-2.2-1.1
+[   58s] [347/468] cumulate systemd-mini-devel-252.5-1.1
+[   58s] [348/468] cumulate xli-1.17+git20170726.0bb4fb4-1.3
+[   58s] [349/468] cumulate xset-1.2.5-1.1
+[   58s] [350/468] cumulate libXfontcache-devel-1.0.5-12.3
+[   58s] [351/468] cumulate libXi-devel-1.8-1.1
+[   58s] [352/468] cumulate libXp-devel-1.0.4-1.1
+[   58s] [353/468] cumulate libjacknet0-1.9.21-1.3
+[   58s] [354/468] cumulate mpg123-devel-1.31.2-1.1
+[   58s] [355/468] cumulate dbus-1-tools-1.14.6-1.1
+[   58s] [356/468] cumulate libFLAC++10-1.4.2-1.1
+[   58s] [357/468] cumulate libSDL2_ttf-2_0-0-2.20.2-1.1
+[   58s] [358/468] cumulate libXaw6-1.0.14-1.1
+[   58s] [359/468] cumulate libcblas3-3.9.0-6.1
+[   58s] [360/468] cumulate libvorbisenc2-1.3.7-2.1
+[   58s] [361/468] cumulate libxkbfile-devel-1.1.2-1.1
+[   58s] [362/468] cumulate libxkbui1-1.0.2-12.3
+[   58s] [363/468] cumulate xkbcomp-1.4.6-1.1
+[   58s] [364/468] cumulate dbus-1-daemon-1.14.6-1.1
+[   58s] [365/468] cumulate libXaw7-1.0.14-1.1
+[   58s] [366/468] cumulate libXprintAppUtil1-1.0.1-12.3
+[   58s] [367/468] cumulate libfreetype6-2.12.1-4.1
+[   58s] [368/468] cumulate liblapack3-3.9.0-6.1
+[   58s] [369/468] cumulate libpng16-compat-devel-1.6.39-2.1
+[   58s] [370/468] cumulate libvorbisfile3-1.3.7-2.1
+[   58s] [371/468] cumulate portmidi-devel-2.0.4-2.1
+[   58s] [372/468] cumulate setxkbmap-1.3.3-1.1
+[   58s] [373/468] cumulate speex-devel-1.2.1-1.1
+[   58s] [374/468] cumulate sysvinit-tools-3.00-4.1
+[   58s] [375/468] cumulate xsetroot-1.1.3-1.1
+[   58s] [376/468] cumulate libXcursor-devel-1.2.1-1.1
+[   58s] [377/468] cumulate libXprintUtil-devel-1.0.1-12.3
+[   58s] [378/468] cumulate libXrandr-devel-1.5.3-1.1
+[   58s] [379/468] cumulate libXtst-devel-1.2.4-1.1
+[   58s] [380/468] cumulate libXvMC-devel-1.0.13-1.1
+[   58s] [381/468] cumulate libbrotli-devel-1.0.9-1.1
+[   58s] [382/468] cumulate libjack-devel-1.9.21-1.3
+[   58s] [383/468] cumulate SDL2-devel-2.26.3-1.1
+[   58s] [384/468] cumulate libXmu-devel-1.1.4-1.1
+[   58s] [385/468] cumulate libjxl0_7-0.7.0-3.2
+[   58s] [386/468] cumulate libwebp-devel-1.2.4-1.2
+[   58s] [387/468] cumulate pcre2-devel-10.42-3.2
+[   58s] [388/468] cumulate libtiff-devel-4.5.0-2.1
+[   58s] [389/468] cumulate libXaw8-1.0.14-1.1
+[   58s] [390/468] cumulate libxkbui-devel-1.0.2-12.3
+[   58s] [391/468] cumulate xmessage-1.0.6-1.1
+[   58s] [392/468] cumulate SDL2_ttf-devel-2.20.2-1.1
+[   58s] [393/468] cumulate libXfont1-1.5.4-2.3
+[   58s] [394/468] cumulate libselinux-devel-3.4-2.1
+[   58s] [395/468] cumulate mkfontscale-1.2.2-1.1
+[   58s] [396/468] cumulate xconsole-1.0.8-1.1
+[   58s] [397/468] cumulate libXprintAppUtil-devel-1.0.1-12.3
+[   58s] [398/468] cumulate flac-devel-1.4.2-1.1
+[   58s] [399/468] cumulate freetype2-devel-2.12.1-4.1
+[   58s] [400/468] cumulate libjxl-devel-0.7.0-3.2
+[   58s] [401/468] cumulate libvorbis-devel-1.3.7-2.1
+[   58s] [402/468] cumulate dbus-1-1.14.6-1.1
+[   58s] [403/468] cumulate libSDL2_image-2_0-0-2.6.3-1.1
+[   58s] [404/468] cumulate libsndfile1-1.1.0-1.2
+[   58s] [405/468] cumulate dbus-1-devel-1.14.6-1.1
+[   58s] [406/468] cumulate libmount-devel-2.38.1-7.1
+[   58s] [407/468] cumulate libXfont-devel-1.5.4-2.3
+[   58s] [408/468] cumulate libinstpatch-1_0-2-1.1.6-2.1
+[   58s] [409/468] cumulate libpulse0-16.1-2.1
+[   58s] [410/468] cumulate libXaw-devel-1.0.14-1.1
+[   58s] [411/468] cumulate SDL2_image-devel-2.6.3-1.1
+[   58s] [412/468] cumulate libsndfile-devel-1.1.0-1.2
+[   58s] [413/468] cumulate libpulse-mainloop-glib0-16.1-2.1
+[   58s] [414/468] cumulate libfluidsynth3-2.3.1-1.1
+[   58s] [415/468] cumulate libSDL2_mixer-2_0-0-2.6.3-1.1
+[   58s] [416/468] cumulate libfontconfig1-2.14.2-1.1
+[   58s] [417/468] cumulate libv4lconvert0-1.22.1-1.1
+[   58s] [418/468] cumulate python310-base-3.10.9-2.2
+[   58s] [419/468] cumulate python311-base-3.11.1-4.2
+[   58s] [420/468] cumulate python38-base-3.8.16-3.2
+[   58s] [421/468] cumulate python39-base-3.9.16-3.2
+[   58s] [422/468] cumulate xorg-cf-files-1.0.7-1.1
+[   58s] [423/468] cumulate libgio-2_0-0-2.74.5-1.1
+[   58s] [424/468] cumulate gio-branding-upstream-2.74.5-1.1
+[   58s] [425/468] cumulate imake-1.0.9-1.1
+[   58s] [426/468] cumulate libpython3_10-1_0-3.10.9-2.2
+[   58s] [427/468] cumulate libpython3_11-1_0-3.11.1-4.2
+[   58s] [428/468] cumulate libpython3_8-1_0-3.8.16-3.2
+[   58s] [429/468] cumulate libpython3_9-1_0-3.9.16-3.2
+[   58s] [430/468] cumulate python310-packaging-23.0-1.1
+[   58s] [431/468] cumulate python310-setuptools-65.6.3-1.2
+[   58s] [432/468] cumulate python311-devel-3.11.1-4.2
+[   58s] [433/468] cumulate python311-setuptools-65.6.3-1.2
+[   58s] [434/468] cumulate python38-devel-3.8.16-3.2
+[   58s] [435/468] cumulate python38-setuptools-65.6.3-1.2
+[   58s] [436/468] cumulate python39-devel-3.9.16-3.2
+[   58s] [437/468] cumulate python39-setuptools-65.6.3-1.2
+[   58s] [438/468] cumulate fontconfig-2.14.2-1.1
+[   58s] [439/468] cumulate libv4l2-0-1.22.1-1.1
+[   58s] [440/468] cumulate fontconfig-devel-2.14.2-1.1
+[   58s] [441/468] cumulate libXft2-2.3.7-1.1
+[   58s] [442/468] cumulate glib2-tools-2.74.5-1.1
+[   58s] [443/468] cumulate python310-numpy-1.24.1-3.2
+[   58s] [444/468] cumulate python311-numpy-1.24.1-3.2
+[   58s] [445/468] cumulate python38-numpy-1.24.1-3.2
+[   58s] [446/468] cumulate python39-numpy-1.24.1-3.2
+[   59s] [447/468] cumulate fonts-config-20200609+git0.42e2b1b-1.2
+[   59s] [448/468] cumulate libv4l-1.22.1-1.1
+[   59s] [449/468] cumulate libv4l1-0-1.22.1-1.1
+[   59s] [450/468] cumulate python310-devel-3.10.9-2.2
+[   59s] [451/468] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   59s] [452/468] cumulate libXft-devel-2.3.7-1.1
+[   59s] [453/468] cumulate xterm-bin-378-1.1
+[   59s] [454/468] cumulate glib2-devel-2.74.5-1.1
+[   59s] [455/468] cumulate libv4l2rds0-1.22.1-1.1
+[   59s] [456/468] cumulate xorg-x11-fonts-core-7.6-44.1
+[   59s] [457/468] cumulate libinstpatch-devel-1.1.6-2.1
+[   59s] [458/468] cumulate libpulse-devel-16.1-2.1
+[   59s] [459/468] cumulate xinit-1.4.2-1.1
+[   59s] [460/468] cumulate xorg-x11-devel-7.6.1-2.2
+[   59s] [461/468] cumulate xorg-x11-fonts-7.6-44.1
+[   59s] [462/468] cumulate libv4l-devel-1.22.1-1.1
+[   59s] [463/468] cumulate fluidsynth-devel-2.3.1-1.1
+[   59s] [464/468] cumulate xdm-1.1.14-1.1
+[   59s] [465/468] cumulate xorg-x11-fonts-legacy-7.6-44.1
+[   59s] [466/468] cumulate SDL2_mixer-devel-2.6.3-1.1
+[   59s] [467/468] cumulate xorg-x11-essentials-7.6_1-16.3
+[   59s] [468/468] cumulate xorg-x11-7.6_1-16.3
+[   59s] now installing cumulated packages
+[   60s] Preparing...                          ########################################
+[   61s] Updating / installing...
+[   61s] libXext-devel-1.3.5-1.1               ########################################
+[   61s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   61s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   62s] zlib-devel-1.2.13-2.1                 ########################################
+[   62s] libsystemd0-mini-252.5-1.1            ########################################
+[   62s] libogg0-1.3.5-1.1                     ########################################
+[   62s] libjpeg8-8.2.2-72.1                   ########################################
+[   62s] libXrender1-0.9.11-1.1                ########################################
+[   62s] libXmuu1-1.1.4-1.1                    ########################################
+[   62s] libXfixes-devel-6.0.0-2.1             ########################################
+[   62s] libXrender-devel-0.9.11-1.1           ########################################
+[   63s] libvorbis0-1.3.7-2.1                  ########################################
+[   63s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   63s] libwebp7-1.2.4-1.2                    ########################################
+[   63s] libpng16-16-1.6.39-2.1                ########################################
+[   63s] libopus0-1.3.1-3.2                    ########################################
+[   63s] libmpdec3-2.5.1-2.1                   ########################################
+[   64s] libasound2-1.2.8-1.1                  ########################################
+[   64s] libSDL2-2_0-0-2.26.3-1.1              ########################################
+[   64s] libXpm4-3.5.14-2.1                    ########################################
+[   64s] xrdb-1.2.1-2.1                        ########################################
+[   64s] libFLAC12-1.4.2-1.1                   ########################################
+[   65s] libogg-devel-1.3.5-1.1                ########################################
+[   65s] libfontenc1-1.1.7-1.1                 ########################################
+[   65s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   65s] libbrotlidec1-1.0.9-1.1               ########################################
+[   65s] libfreetype6-2.12.1-4.1               ########################################
+[   65s] libfontconfig1-2.14.2-1.1             ########################################
+[   66s] fontconfig-2.14.2-1.1                 ########################################
+[   66s] mkfontscale-1.2.2-1.1                 ########################################
+[   66s] fonts-config-20200609+git0.42e2b1b-1.2########################################
+[   66s] Updating /etc/sysconfig/fonts-config ...
+[   67s] xorg-x11-fonts-core-7.6-44.1          ########################################
+[   68s] libXft2-2.3.7-1.1                     ########################################
+[   68s] libXp6-1.0.4-1.1                      ########################################
+[   68s] Mesa-libEGL-devel-22.3.5-350.1        ########################################
+[   68s] libXprintUtil1-1.0.1-12.3             ########################################
+[   68s] libbrotlienc1-1.0.9-1.1               ########################################
+[   68s] libbrotli-devel-1.0.9-1.1             ########################################
+[   68s] libfontenc-devel-1.1.7-1.1            ########################################
+[   68s] libXpm-devel-3.5.14-2.1               ########################################
+[   68s] alsa-devel-1.2.8-1.1                  ########################################
+[   68s] libvorbisenc2-1.3.7-2.1               ########################################
+[   69s] xauth-1.1.2-1.3                       ########################################
+[   69s] libXcursor1-1.2.1-1.1                 ########################################
+[   69s] xsetroot-1.1.3-1.1                    ########################################
+[   69s] libXrandr2-1.5.3-1.1                  ########################################
+[   69s] libv4l-1.22.1-1.1                     ########################################
+[   69s] libv4lconvert0-1.22.1-1.1             ########################################
+[   69s] libv4l2-0-1.22.1-1.1                  ########################################
+[   69s] libv4l1-0-1.22.1-1.1                  ########################################
+[   69s] xmodmap-1.0.11-1.1                    ########################################
+[   69s] xbitmaps-devel-1.1.2-1.2              ########################################
+[   69s] systemd-mini-252.5-1.1                warning: group systemd-journal does not exist - using root
+[   71s] ########################################
+[   71s] Creating group 'systemd-journal' with GID 486.
+[   71s] Creating group 'systemd-timesync' with GID 485.
+[   71s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   71s] Running in chroot, ignoring command 'daemon-reexec'
+[   72s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   72s] All rules containing unresolvable specifiers will be skipped.
+[   73s] sessreg-1.1.3-1.1                     ########################################
+[   73s] printproto-devel-1.0.5-4.3            ########################################
+[   73s] libXp-devel-1.0.4-1.1                 ########################################
+[   73s] libXprintUtil-devel-1.0.1-12.3        ########################################
+[   73s] makedepend-1.0.8-2.1                  ########################################
+[   73s] libxmp4-4.5.0+g613.8e4a5e15-1.1       ########################################
+[   73s] libspeex1-1.2.1-1.1                   ########################################
+[   74s] libsndfile1-1.1.0-1.2                 ########################################
+[   74s] libinstpatch-1_0-2-1.1.6-2.1          ########################################
+[   74s] liblcms2-2-2.14-3.3                   ########################################
+[   74s] libjack0-1.9.21-1.3                   ########################################
+[   75s] libhwy1-1.0.3-1.1                     ########################################
+[   75s] libjxl0_7-0.7.0-3.2                   ########################################
+[   75s] libgfortran5-13.0.1+git5428-6.1       ########################################
+[   76s] libblas3-3.9.0-6.1                    ########################################
+[   76s] update-alternatives: using /usr/lib64/blas/libblas.so.3 to provide /usr/lib64/libblas.so.3 (libblas.so.3_riscv64) in auto mode
+[   76s] libcblas3-3.9.0-6.1                   ########################################
+[   76s] update-alternatives: using /usr/lib64/blas/libcblas.so.3 to provide /usr/lib64/libcblas.so.3 (libcblas.so.3_riscv64) in auto mode
+[   77s] liblapack3-3.9.0-6.1                  ########################################
+[   78s] update-alternatives: using /usr/lib64/lapack/liblapack.so.3 to provide /usr/lib64/liblapack.so.3 (liblapack.so.3_riscv64) in auto mode
+[   78s] libcelt0-2-0.11.3-1.3                 ########################################
+[   78s] libblogger2-2.26-2.1                  ########################################
+[   78s] libXinerama1-1.1.5-1.1                ########################################
+[   78s] libXfontcache1-1.0.5-12.3             ########################################
+[   78s] xset-1.2.5-1.1                        ########################################
+[   78s] libXdmcp6-1.1.4-1.1                   ########################################
+[   78s] gccmakedep-1.0.3-4.1                  ########################################
+[   78s] imake-1.0.9-1.1                       ########################################
+[   78s] xorg-cf-files-1.0.7-1.1               ########################################
+[   78s] dbus-1-common-1.14.6-1.1              ########################################
+[   78s] libdbus-1-3-1.14.6-1.1                ########################################
+[   79s] libpulse0-16.1-2.1                    ########################################
+[   79s] libfluidsynth3-2.3.1-1.1              ########################################
+[   79s] libSDL2_mixer-2_0-0-2.6.3-1.1         ########################################
+[   79s] libpulse-mainloop-glib0-16.1-2.1      ########################################
+[   79s] dbus-1-tools-1.14.6-1.1               ########################################
+[   79s] dbus-1-daemon-1.14.6-1.1              ########################################
+[   79s] libXdmcp-devel-1.1.4-1.1              ########################################
+[   79s] libXinerama-devel-1.1.5-1.1           ########################################
+[   79s] blog-2.26-2.1                         ########################################
+[   79s] sysvinit-tools-3.00-4.1               ########################################
+[   79s] libjackserver0-1.9.21-1.3             ########################################
+[   80s] liblcms2-devel-2.14-3.3               ########################################
+[   80s] libxmp-devel-4.5.0+g613.8e4a5e15-1.1  ########################################
+[   80s] logrotate-3.21.0-1.1                  ########################################
+[   81s] libv4l2rds0-1.22.1-1.1                ########################################
+[   81s] libXrandr-devel-1.5.3-1.1             ########################################
+[   81s] libXcursor-devel-1.2.1-1.1            ########################################
+[   81s] libXprintAppUtil1-1.0.1-12.3          ########################################
+[   81s] libXprintAppUtil-devel-1.0.1-12.3     ########################################
+[   81s] Mesa-libGLESv1_CM-devel-22.3.5-350.1  ########################################
+[   81s] Mesa-libGLESv2-devel-22.3.5-350.1     ########################################
+[   82s] xorg-x11-fonts-7.6-44.1               ########################################
+[   88s] xorg-x11-fonts-legacy-7.6-44.1        ########################################
+[   89s] libXfont1-1.5.4-2.3                   ########################################
+[   89s] libFLAC++10-1.4.2-1.1                 ########################################
+[   90s] libSDL2_ttf-2_0-0-2.20.2-1.1          ########################################
+[   90s] libportmidi2-2.0.4-2.1                ########################################
+[   90s] libopus-devel-1.3.1-3.2               ########################################
+[   90s] libpng16-compat-devel-1.6.39-2.1      ########################################
+[   91s] libpng16-devel-1.6.39-2.1             ########################################
+[   91s] xli-1.17+git20170726.0bb4fb4-1.3      ########################################
+[   91s] libwebpdemux2-1.2.4-1.2               ########################################
+[   91s] libwebpmux3-1.2.4-1.2                 ########################################
+[   91s] libvorbisfile3-1.3.7-2.1              ########################################
+[   91s] libvorbis-devel-1.3.7-2.1             ########################################
+[   91s] libgthread-2_0-0-2.74.5-1.1           ########################################
+[   91s] libXxf86vm-devel-1.1.5-1.1            ########################################
+[   91s] xz-devel-5.4.1-1.1                    ########################################
+[   92s] xtrans-1.4.0-3.1                      ########################################
+[   92s] xterm-resize-378-1.1                  ########################################
+[   92s] xprop-1.2.6-1.1                       ########################################
+[   92s] xorg-sgml-doctools-1.12-1.1           ########################################
+[   92s] xkeyboard-config-2.38-1.1             ########################################
+[   93s] libxkbfile1-1.1.2-1.1                 ########################################
+[   93s] setxkbmap-1.3.3-1.1                   ########################################
+[   93s] libxkbfile-devel-1.1.2-1.1            ########################################
+[   93s] libxkbui1-1.0.2-12.3                  ########################################
+[   93s] libxkbui-devel-1.0.2-12.3             ########################################
+[   93s] xkbcomp-1.4.6-1.1                     ########################################
+[   93s] xbitmaps-1.1.2-1.2                    ########################################
+[   93s] libXmu6-1.1.4-1.1                     ########################################
+[   93s] libXaw7-1.0.14-1.1                    ########################################
+[   93s] xmessage-1.0.6-1.1                    ########################################
+[   93s] xconsole-1.0.8-1.1                    ########################################
+[   94s] xterm-bin-378-1.1                     ########################################
+[   94s] xinit-1.4.2-1.1                       ########################################
+[   94s] libXmu-devel-1.1.4-1.1                ########################################
+[   94s] xdm-1.1.14-1.1                        ########################################
+[   95s] Updating /etc/sysconfig/displaymanager ...
+[   95s] update-alternatives: using /usr/lib/X11/displaymanagers/console to provide /usr/lib/X11/displaymanagers/default-displaymanager (default-displaymanager) in auto mode
+[   95s] update-alternatives: using /usr/lib/X11/displaymanagers/xdm to provide /usr/lib/X11/displaymanagers/default-displaymanager (default-displaymanager) in auto mode
+[   95s] libXaw8-1.0.14-1.1                    ########################################
+[   96s] libXaw6-1.0.14-1.1                    ########################################
+[   96s] libXaw-devel-1.0.14-1.1               ########################################
+[   96s] rgb-1.1.0-1.1                         ########################################
+[   96s] python-rpm-macros-20230128.e704796-1.2########################################
+[   97s] ncurses-devel-6.4.20230128-5.1        ########################################
+[   97s] readline-devel-8.2-2.1                ########################################
+[   97s] lndir-1.0.4-1.1                       ########################################
+[   98s] libzstd-devel-1.5.2-2.1               ########################################
+[   98s] libxml2-2-2.10.3-3.1                  ########################################
+[   99s] shared-mime-info-2.2-1.1              ########################################
+[  113s] libxcb-util1-0.4.1-1.1                ########################################
+[  113s] xcb-util-devel-0.4.1-1.1              ########################################
+[  113s] libwebpdecoder3-1.2.4-1.2             ########################################
+[  114s] libwebp-devel-1.2.4-1.2               ########################################
+[  114s] libudev-mini1-252.5-1.1               ########################################
+[  114s] libturbojpeg0-8.2.2-72.1              ########################################
+[  114s] libjpeg8-devel-8.2.2-72.1             ########################################
+[  114s] libsyn123-0-1.31.2-1.1                ########################################
+[  133s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[  134s] libstdc++-devel-12-2.1                ########################################
+[  135s] flac-devel-1.4.2-1.1                  ########################################
+[  135s] libspeexdsp1-1.2.1-1.1                ########################################
+[  135s] speexdsp-devel-1.2.1-1.1              ########################################
+[  135s] speex-devel-1.2.1-1.1                 ########################################
+[  135s] libsndfile-devel-1.1.0-1.2            ########################################
+[  135s] libsepol-devel-3.4-1.1                ########################################
+[  136s] libsamplerate0-0.2.2-1.1              ########################################
+[  136s] libjacknet0-1.9.21-1.3                ########################################
+[  136s] libjack-devel-1.9.21-1.3              ########################################
+[  136s] libpixman-1-0-0.42.2-1.1              ########################################
+[  136s] libpixman-1-0-devel-0.42.2-1.1        ########################################
+[  136s] libpcre2-posix3-10.42-3.2             ########################################
+[  137s] libpcre2-32-0-10.42-3.2               ########################################
+[  137s] libpcre2-16-0-10.42-3.2               ########################################
+[  137s] pcre2-devel-10.42-3.2                 ########################################
+[  137s] libselinux-devel-3.4-2.1              ########################################
+[  137s] libpciaccess0-0.17-1.1                ########################################
+[  137s] libpciaccess-devel-0.17-1.1           ########################################
+[  137s] libout123-0-1.31.2-1.1                ########################################
+[  137s] liboldX6-1.0.1-11.3                   ########################################
+[  137s] liboldX-devel-1.0.1-11.3              ########################################
+[  137s] libmpg123-0-1.31.2-1.1                ########################################
+[  138s] liblbxutil1-1.1.0-13.2                ########################################
+[  138s] liblbxutil-devel-1.1.0-13.2           ########################################
+[  138s] libjbig2-2.1-4.1                      ########################################
+[  138s] libtiff6-4.5.0-2.1                    ########################################
+[  138s] libtiff-devel-4.5.0-2.1               ########################################
+[  138s] libSDL2_image-2_0-0-2.6.3-1.1         ########################################
+[  138s] libffi-devel-3.4.4-1.1                ########################################
+[  138s] libexpat-devel-2.5.0-2.1              ########################################
+[  138s] libdmx1-1.1.4-1.2                     ########################################
+[  138s] libdmx-devel-1.1.4-1.2                ########################################
+[  138s] libbz2-devel-1.0.8-4.1                ########################################
+[  140s] freetype2-devel-2.12.1-4.1            ########################################
+[  140s] fontconfig-devel-2.14.2-1.1           ########################################
+[  140s] libXft-devel-2.3.7-1.1                ########################################
+[  140s] libXfont-devel-1.5.4-2.3              ########################################
+[  140s] libblkid-devel-2.38.1-7.1             ########################################
+[  140s] libmount-devel-2.38.1-7.1             ########################################
+[  140s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  140s] alts-1.2+3.b848aad-3.1                ########################################
+[  140s] /usr/bin/systemd-sysusers --replace=/usr/lib/sysusers.d/dbus.conf -
+[  140s] Creating group 'messagebus' with GID 484.
+[  140s] Creating user 'messagebus' (User for D-Bus) with UID 484 and GID 484.
+[  141s] dbus-1-1.14.6-1.1                     ########################################
+[  141s] gio-branding-upstream-2.74.5-1.1      ########################################
+[  142s] libgio-2_0-0-2.74.5-1.1               ########################################
+[  142s] glib2-tools-2.74.5-1.1                ########################################
+[  143s] dbus-1-devel-1.14.6-1.1               ########################################
+[  143s] libXxf86dga1-1.1.6-1.1                ########################################
+[  143s] libXxf86dga-devel-1.1.6-1.1           ########################################
+[  143s] libXvMC1-1.0.13-1.1                   ########################################
+[  143s] libXv1-1.0.12-1.1                     ########################################
+[  143s] libXv-devel-1.0.12-1.1                ########################################
+[  143s] libXvMC-devel-1.0.13-1.1              ########################################
+[  143s] libXtst6-1.2.4-1.1                    ########################################
+[  143s] libXss1-1.2.4-1.1                     ########################################
+[  144s] libXss-devel-1.2.4-1.1                ########################################
+[  144s] libXi6-1.8-1.1                        ########################################
+[  144s] libXi-devel-1.8-1.1                   ########################################
+[  144s] libXtst-devel-1.2.4-1.1               ########################################
+[  144s] libXevie1-1.0.3-12.3                  ########################################
+[  144s] libXevie-devel-1.0.3-12.3             ########################################
+[  144s] libXdamage1-1.1.6-1.2                 ########################################
+[  144s] libXdamage-devel-1.1.6-1.2            ########################################
+[  144s] libXcomposite1-0.4.6-1.1              ########################################
+[  144s] libXcomposite-devel-0.4.6-1.1         ########################################
+[  144s] libXRes1-1.2.2-1.2                    ########################################
+[  144s] libXres-devel-1.2.2-1.2               ########################################
+[  144s] libGLU1-9.0.2-2.1                     ########################################
+[  145s] glu-devel-9.0.2-2.1                   ########################################
+[  145s] SDL2-devel-2.26.3-1.1                 ########################################
+[  145s] libFS6-1.0.9-1.1                      ########################################
+[  145s] libFS-devel-1.0.9-1.1                 ########################################
+[  146s] iceauth-1.0.9-1.1                     ########################################
+[  146s] xorg-x11-essentials-7.6_1-16.3        ########################################
+[  146s] gtest-1.12.1-5.1                      ########################################
+[  146s] highway-devel-1.0.3-1.1               ########################################
+[  146s] libjxl-devel-0.7.0-3.2                ########################################
+[  146s] fontcacheproto-devel-0.1.3-4.3        ########################################
+[  146s] libXfontcache-devel-1.0.5-12.3        ########################################
+[  146s] font-util-1.3.3-1.1                   ########################################
+[  146s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  147s] libopenssl3-3.0.7-3.1                 ########################################
+[  148s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[  153s] python310-base-3.10.9-2.2             ########################################
+[  154s] libpython3_11-1_0-3.11.1-4.2          ########################################
+[  160s] python311-base-3.11.1-4.2             ########################################
+[  161s] libpython3_8-1_0-3.8.16-3.2           ########################################
+[  166s] python38-base-3.8.16-3.2              ########################################
+[  167s] libpython3_9-1_0-3.9.16-3.2           ########################################
+[  171s] python39-base-3.9.16-3.2              ########################################
+[  172s] glib2-devel-2.74.5-1.1                ########################################
+[  172s] libinstpatch-devel-1.1.6-2.1          ########################################
+[  172s] libpulse-devel-16.1-2.1               ########################################
+[  172s] fluidsynth-devel-2.3.1-1.1            ########################################
+[  172s] python310-packaging-23.0-1.1          ########################################
+[  172s] python-rpm-packaging-20210526+a18ca48-########################################
+[  172s] SDL2_mixer-devel-2.6.3-1.1            ########################################
+[  172s] python39-devel-3.9.16-3.2             ########################################
+[  174s] python39-setuptools-65.6.3-1.2        ########################################
+[  177s] python39-numpy-1.24.1-3.2             ########################################
+[  177s] python38-devel-3.8.16-3.2             ########################################
+[  178s] python38-setuptools-65.6.3-1.2        ########################################
+[  181s] python38-numpy-1.24.1-3.2             ########################################
+[  182s] python311-devel-3.11.1-4.2            ########################################
+[  183s] python311-setuptools-65.6.3-1.2       ########################################
+[  187s] python311-numpy-1.24.1-3.2            ########################################
+[  188s] python310-setuptools-65.6.3-1.2       ########################################
+[  192s] python310-numpy-1.24.1-3.2            ########################################
+[  192s] python310-devel-3.10.9-2.2            ########################################
+[  192s] xorg-x11-devel-7.6.1-2.2              ########################################
+[  192s] SDL2_image-devel-2.6.3-1.1            ########################################
+[  192s] xorg-x11-7.6_1-16.3                   ########################################
+[  192s] SDL2_ttf-devel-2.20.2-1.1             ########################################
+[  192s] mpg123-devel-1.31.2-1.1               ########################################
+[  192s] systemd-mini-devel-252.5-1.1          ########################################
+[  192s] portmidi-devel-2.0.4-2.1              ########################################
+[  192s] libv4l-devel-1.22.1-1.1               ########################################
+[  213s] fluid-soundfont-gm-3.1-5.3            ########################################
+[  213s] fdupes-2.2.1-1.1                      ########################################
+[  213s] bitstream-vera-fonts-1.10-316.1       ########################################
+[  269s] now finalizing build dir...
+[  269s] ... running 01-add_abuild_user_to_trusted_group
+[  270s] ... running 02-set_timezone_to_utc
+[  270s] ... running 03-set-permissions-secure
+[  270s] ... running 11-hack_uname_version_to_kernel_version
+[  278s] -----------------------------------------------------------------
+[  278s] I have the following modifications for python-pygame.spec:
+[  278s] 22c22
+[  278s] < Release:        0
+[  278s] ---
+[  278s] > Release:        6.3
+[  284s] build target is riscv64-suse-linux
+[  284s] -----------------------------------------------------------------
+[  284s] ----- building python-pygame.spec (user abuild)
+[  284s] -----------------------------------------------------------------
+[  284s] -----------------------------------------------------------------
+[  288s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/8b3e3bf896ea259f7f13cef392efaf9f-python-pygame' /home/abuild/rpmbuild/SOURCES/python-pygame.spec
+[  320s] Building target platforms: riscv64-suse-linux
+[  320s] Building for target riscv64-suse-linux
+[  320s] setting SOURCE_DATE_EPOCH=1670803200
+[  321s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.PDl5k5
+[  321s] + umask 022
+[  321s] + cd /home/abuild/rpmbuild/BUILD
+[  321s] + cd /home/abuild/rpmbuild/BUILD
+[  321s] + rm -rf pygame-2.1.2
+[  321s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pygame-2.1.2.tar.gz
+[  325s] + STATUS=0
+[  325s] + '[' 0 -ne 0 ']'
+[  325s] + cd pygame-2.1.2
+[  325s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  325s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/adjust-surface-mask.patch
+[  325s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  325s] + sed -i 's/\r$//' docs/reST/ref/code_examples/draw_module_example.py
+[  325s] + sed -i 's/\r$//' docs/reST/ref/code_examples/joystick_calls.py
+[  326s] + sed -i 's/\r$//' docs/licenses/LICENSE.FLAC.txt docs/licenses/LICENSE.fluidsynth.txt docs/licenses/LICENSE.freetype.txt docs/licenses/LICENSE.jpeg.txt docs/licenses/LICENSE.modplug.txt docs/licenses/LICENSE.mpg123.txt docs/licenses/LICENSE.numpy.txt docs/licenses/LICENSE.ogg-vorbis.txt docs/licenses/LICENSE.opus.txt docs/licenses/LICENSE.opusfile.txt docs/licenses/LICENSE.png.txt docs/licenses/LICENSE.portmidi.txt docs/licenses/LICENSE.sdl2.txt docs/licenses/LICENSE.sdl2_image.txt docs/licenses/LICENSE.sdl2_mixer.txt docs/licenses/LICENSE.sdl_gfx.txt docs/licenses/LICENSE.sse2neon-h.txt docs/licenses/LICENSE.tiff.txt docs/licenses/LICENSE.webp.txt docs/licenses/LICENSE.zlib.txt
+[  326s] + find examples -name '*.py' -exec sed -i 's|^#!.*env python.*$|#!/usr/bin/python3|' '{}' ';'
+[  330s] + chmod a+x examples/__init__.py examples/aacircle.py examples/aliens.py examples/arraydemo.py examples/audiocapture.py examples/blend_fill.py examples/blit_blends.py examples/camera.py examples/chimp.py examples/cursors.py examples/dropevent.py examples/eventlist.py examples/font_viewer.py examples/fonty.py examples/freetype_misc.py examples/glcube.py examples/headless_no_windows_needed.py examples/joystick.py examples/liquid.py examples/mask.py examples/midi.py examples/moveit.py examples/music_drop_fade.py examples/pixelarray.py examples/playmus.py examples/prevent_display_stretching.py examples/resizing_new.py examples/scaletest.py examples/scrap_clipboard.py examples/scroll.py examples/setmodescale.py examples/sound.py examples/sound_array_demos.py examples/sprite_texture.py examples/stars.py examples/testsprite.py examples/textinput.py examples/vgrade.py examples/video.py
+[  330s] + chmod a-x docs/licenses/LICENSE.sdl_gfx.txt
+[  330s] + RPM_EC=0
+[  330s] ++ jobs -p
+[  330s] + exit 0
+[  330s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.4bSZRy
+[  330s] + umask 022
+[  330s] + cd /home/abuild/rpmbuild/BUILD
+[  330s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pygame-2.1.2-6.3.riscv64
+[  330s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pygame-2.1.2-6.3.riscv64
+[  331s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  331s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pygame-2.1.2-6.3.riscv64
+[  331s] + cd pygame-2.1.2
+[  331s] + ref=/usr/lib/rpm
+[  331s] + mints=0
+[  331s] + case $(uname -m) in
+[  331s] ++ uname -m
+[  331s] + mints=20160911
+[  331s] + for s in guess sub
+[  331s] ++ find -maxdepth 8 -name config.guess
+[  331s] + for s in guess sub
+[  331s] ++ find -maxdepth 8 -name config.sub
+[  331s] + export 'CFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  331s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fno-strict-aliasing'
+[  331s] + export PORTMIDI_INC_PORTTIME=1
+[  331s] + PORTMIDI_INC_PORTTIME=1
+[  331s] ++ '[' -f _current_flavor ']'
+[  331s] ++ true
+[  331s] + last_flavor=
+[  331s] + '[' -z '' ']'
+[  331s] + last_flavor=tmp
+[  331s] + '[' tmp '!=' python38 ']'
+[  331s] + '[' -d build ']'
+[  331s] + '[' -d _build.python38 ']'
+[  331s] + echo python38
+[  331s] + python_flavor=python38
+[  331s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  337s] 
+[  337s] 
+[  337s] WARNING, No "Setup" File Exists, Running "buildconfig/config.py"
+[  337s] Using UNIX configuration...
+[  337s] 
+[  341s] 
+[  341s] Hunting dependencies...
+[  341s] SDL     : found 2.26.3
+[  341s] FONT    : found
+[  341s] IMAGE   : found
+[  341s] MIXER   : found
+[  341s] PNG     : found
+[  341s] JPEG    : found
+[  341s] SCRAP   : found
+[  341s] PORTMIDI: found
+[  341s] PORTTIME: found
+[  341s] FREETYPE: found 24.3.18
+[  341s] 
+[  341s] If you get compiler errors during install, double-check
+[  341s] the compiler flags in the "Setup" file.
+[  341s] 
+[  347s] src_c/imageext.c: In function ‘image_load_ext’:
+[  347s] src_c/imageext.c:119:13: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  347s]   119 |         ext = find_extension(name);
+[  347s]       |             ^
+[  347s] src_c/imageext.c:108:9: warning: variable ‘lock_mutex’ set but not used [-Wunused-but-set-variable]
+[  347s]   108 |     int lock_mutex = 0;
+[  347s]       |         ^~~~~~~~~~
+[  361s] src_c/font.c: In function ‘font_dealloc’:
+[  361s] src_c/font.c:694:29: warning: initialization of ‘int **’ from incompatible pointer type ‘TTF_Font *’ {aka ‘struct _TTF_Font *’} [-Wincompatible-pointer-types]
+[  361s]   694 |             int **face_pp = font;
+[  361s]       |                             ^~~~
+[  361s] src_c/font.c: At top level:
+[  361s] src_c/font.c:79:1: warning: ‘utf_8_needs_UCS_4’ defined but not used [-Wunused-function]
+[  361s]    79 | utf_8_needs_UCS_4(const char *str)
+[  361s]       | ^~~~~~~~~~~~~~~~~
+[  394s] src_c/music.c: In function ‘_get_type_from_hint’:
+[  394s] src_c/music.c:305:22: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  394s]   305 |             namehint = dot + 1;
+[  394s]       |                      ^
+[  394s] In file included from src_c/pygame.h:30,
+[  394s]                  from src_c/music.c:27:
+[  394s] src_c/music.c: In function ‘_load_music’:
+[  394s] src_c/_pygame.h:228:47: warning: returning ‘PyObject *’ {aka ‘struct _object *’} from a function with incompatible return type ‘Mix_Music *’ {aka ‘struct _Mix_Music *’} [-Wincompatible-pointer-types]
+[  394s]   228 | #define RAISE(x, y) (PyErr_SetString((x), (y)), (PyObject *)NULL)
+[  394s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+[  394s] src_c/mixer.h:9:12: note: in expansion of macro ‘RAISE’
+[  394s]     9 |     return RAISE(pgExc_SDLError, "mixer not initialized")
+[  394s]       |            ^~~~~
+[  394s] src_c/music.c:377:5: note: in expansion of macro ‘MIXER_INIT_CHECK’
+[  394s]   377 |     MIXER_INIT_CHECK();
+[  394s]       |     ^~~~~~~~~~~~~~~~
+[  420s] src_c/pypm.c: In function ‘__pyx_pf_6pygame_4pypm_5Input___init__’:
+[  420s] src_c/pypm.c:4665:82: warning: passing argument 5 of ‘Pm_OpenInput’ from incompatible pointer type [-Wincompatible-pointer-types]
+[  420s]  4665 |   __pyx_v_err = Pm_OpenInput((&__pyx_v_self->midi), __pyx_t_2, NULL, __pyx_t_3, (&Pt_Time), NULL);
+[  420s]       |                                                                                 ~^~~~~~~~~
+[  420s]       |                                                                                  |
+[  420s]       |                                                                                  PtTimestamp (*)(void) {aka int (*)(void)}
+[  420s] In file included from src_c/pypm.c:621:
+[  420s] /usr/include/portmidi.h:399:31: note: expected ‘PmTimeProcPtr’ {aka ‘int (*)(void *)’} but argument is of type ‘PtTimestamp (*)(void)’ {aka ‘int (*)(void)’}
+[  420s]   399 |                 PmTimeProcPtr time_proc,
+[  420s]       |                 ~~~~~~~~~~~~~~^~~~~~~~~
+[  726s] src_c/SDL_gfx/SDL_gfxPrimitives.c: In function ‘_aalineColor’:
+[  726s] src_c/SDL_gfx/SDL_gfxPrimitives.c:2533:32: warning: variable ‘wgtcompmask’ set but not used [-Wunused-but-set-variable]
+[  726s]  2533 |         Uint32 erracctmp, wgt, wgtcompmask;
+[  726s]       |                                ^~~~~~~~~~~
+[  726s] src_c/SDL_gfx/SDL_gfxPrimitives.c: In function ‘arcColor’:
+[  726s] src_c/SDL_gfx/SDL_gfxPrimitives.c:3128:9: warning: multi-line comment [-Wcomment]
+[  726s]  3128 |         //     /|\
+[  726s]       |         ^
+[  726s] src_c/SDL_gfx/SDL_gfxPrimitives.c:3130:9: warning: multi-line comment [-Wcomment]
+[  726s]  3130 |         //   /  |  \
+[  726s]       |         ^
+[  793s] src_c/freetype/ft_render_cb.c: In function ‘__render_glyph_MONO3’:
+[  793s] src_c/freetype/ft_render_cb.c:662:19: warning: variable ‘full_color’ set but not used [-Wunused-but-set-variable]
+[  793s]   662 |         FT_UInt32 full_color;                                                 \
+[  793s]       |                   ^~~~~~~~~~
+[  793s] src_c/freetype/ft_render_cb.c:807:1: note: in expansion of macro ‘_CREATE_MONO_RENDER’
+[  793s]   807 | _CREATE_MONO_RENDER(3, GET_PIXEL24(_dst), _SET_PIXEL_24, _BLEND_PIXEL_24)
+[  793s]       | ^~~~~~~~~~~~~~~~~~~
+[  958s] In function ‘memcpy’,
+[  958s]     inlined from ‘pg_do_segfault’ at src_c/base.c:2047:5:
+[  958s] /usr/include/bits/string_fortified.h:29:10: warning: ‘__builtin_memcpy’ writing 10 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[  958s]    29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+[  958s]       |          ^
+[ 1011s] src_c/display.c: In function ‘pg_GetVideoInfo’:
+[ 1011s] src_c/display.c:409: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1011s]   409 | #pragma PG_WARN(hardcoding wm_available to 1)
+[ 1011s]       | 
+[ 1011s] src_c/display.c:410: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1011s]   410 | #pragma PG_WARN(setting available video RAM to 0 KB)
+[ 1011s]       | 
+[ 1011s] src_c/display.c: In function ‘pg_set_mode’:
+[ 1011s] src_c/display.c:992: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1011s]   992 | #pragma PG_WARN(Not setting bpp ?)
+[ 1011s]       | 
+[ 1011s] src_c/display.c:993: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1011s]   993 | #pragma PG_WARN(Add mode stuff.)
+[ 1011s]       | 
+[ 1011s] src_c/display.c:1019:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 1011s]  1019 |                         if (x == SDL_WINDOWPOS_UNDEFINED_DISPLAY(display))
+[ 1011s]       |                               ^~
+[ 1011s] src_c/display.c:1021:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 1011s]  1021 |                         if (y == SDL_WINDOWPOS_UNDEFINED_DISPLAY(display))
+[ 1011s]       |                               ^~
+[ 1012s] src_c/display.c: In function ‘pg_mode_ok’:
+[ 1012s] src_c/display.c:1417: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1012s]  1417 | #pragma PG_WARN(Ignoring most flags)
+[ 1012s]       | 
+[ 1012s] src_c/display.c: In function ‘pg_list_modes’:
+[ 1012s] src_c/display.c:1471: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1012s]  1471 | #pragma PG_WARN(Ignoring flags)
+[ 1012s]       | 
+[ 1012s] src_c/display.c:1499:43: warning: comparison of integer expressions of different signedness: ‘Uint32’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
+[ 1012s]  1499 |         if (SDL_BITSPERPIXEL(mode.format) != bpp)
+[ 1012s]       |                                           ^~
+[ 1012s] src_c/display.c: In function ‘pg_update’:
+[ 1012s] src_c/display.c:1618:15: warning: unused variable ‘obj’ [-Wunused-variable]
+[ 1012s]  1618 |     PyObject *obj;
+[ 1012s]       |               ^~~
+[ 1012s] src_c/display.c: At top level:
+[ 1012s] src_c/display.c:2568: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1012s]  2568 | #pragma PG_WARN(At some point should add GC slot functions.)
+[ 1012s]       | 
+[ 1062s] src_c/key.c: In function ‘_get_keycode_name’:
+[ 1062s] src_c/key.c:690: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1062s]   690 | #pragma PG_WARN(Add missing keycode names here ?)
+[ 1062s]       | 
+[ 1142s] src_c/surface.c: In function ‘surf_convert_alpha’:
+[ 1142s] src_c/surface.c:1684: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 1142s]  1684 | #pragma PG_WARN("srcsurf doesn't actually do anything?")
+[ 1142s]       | 
+[ 1236s] src_c/draw.c: In function ‘rect’:
+[ 1236s] src_c/draw.c:871:50: warning: unused variable ‘ret’ [-Wunused-variable]
+[ 1236s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 1236s]       |                                                  ^~~
+[ 1236s] src_c/draw.c:871:31: warning: unused variable ‘poly_args’ [-Wunused-variable]
+[ 1236s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 1236s]       |                               ^~~~~~~~~
+[ 1236s] src_c/draw.c:871:15: warning: unused variable ‘points’ [-Wunused-variable]
+[ 1236s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 1236s]       |               ^~~~~~
+[ 1266s] src_c/image.c: In function ‘image_load_basic’:
+[ 1266s] src_c/image.c:72:15: warning: unused variable ‘oencoded’ [-Wunused-variable]
+[ 1266s]    72 |     PyObject *oencoded;
+[ 1266s]       |               ^~~~~~~~
+[ 1294s] src_c/transform.c: In function ‘surf_rotate’:
+[ 1294s] src_c/transform.c:630:16: warning: returning ‘pgSurfaceObject *’ from a function with incompatible return type ‘PyObject *’ {aka ‘struct _object *’} [-Wincompatible-pointer-types]
+[ 1294s]   630 |         return surfobj;
+[ 1294s]       |                ^~~~~~~
+[ 1452s] src_c/_camera.c: In function ‘bgr32_to_rgb’:
+[ 1452s] src_c/_camera.c:592:17: warning: value computed is not used [-Wunused-value]
+[ 1452s]   592 |                 *s++;
+[ 1452s]       |                 ^~~~
+[ 1458s] src_c/camera_v4l2.c: In function ‘v4l2_process_image’:
+[ 1458s] src_c/camera_v4l2.c:190:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   190 |             if (buffer_size >= self->size * 3) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c:212:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   212 |             if (buffer_size >= self->size * 2) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c:234:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   234 |             if (buffer_size >= self->size * 2) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c:258:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   258 |             if (buffer_size >= self->size * 2) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c:282:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   282 |             if (buffer_size >= self->size) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c:308:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 1458s]   308 |             if (buffer_size >= (self->size * 3) / 2) {
+[ 1458s]       |                             ^~
+[ 1458s] src_c/camera_v4l2.c: In function ‘v4l2_query_buffer’:
+[ 1458s] src_c/camera_v4l2.c:342:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 1458s]   342 |     for (i = 0; i < self->n_buffers; ++i) {
+[ 1458s]       |                   ^
+[ 1479s] 
+[ 1479s] Continuing With "setup.py"
+[ 1479s] ++ '[' -f _current_flavor ']'
+[ 1479s] ++ cat _current_flavor
+[ 1480s] + last_flavor=python38
+[ 1480s] + '[' -z python38 ']'
+[ 1480s] + '[' python38 '!=' python39 ']'
+[ 1480s] + '[' -d build ']'
+[ 1480s] + mv build _build.python38
+[ 1480s] + '[' -d _build.python39 ']'
+[ 1480s] + echo python39
+[ 1480s] + python_flavor=python39
+[ 1480s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[ 1488s] src_c/imageext.c: In function ‘image_load_ext’:
+[ 1488s] src_c/imageext.c:119:13: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[ 1488s]   119 |         ext = find_extension(name);
+[ 1488s]       |             ^
+[ 1488s] src_c/imageext.c:108:9: warning: variable ‘lock_mutex’ set but not used [-Wunused-but-set-variable]
+[ 1488s]   108 |     int lock_mutex = 0;
+[ 1488s]       |         ^~~~~~~~~~
+[ 1498s] src_c/font.c: In function ‘font_dealloc’:
+[ 1498s] src_c/font.c:694:29: warning: initialization of ‘int **’ from incompatible pointer type ‘TTF_Font *’ {aka ‘struct _TTF_Font *’} [-Wincompatible-pointer-types]
+[ 1498s]   694 |             int **face_pp = font;
+[ 1498s]       |                             ^~~~
+[ 1498s] src_c/font.c: At top level:
+[ 1498s] src_c/font.c:79:1: warning: ‘utf_8_needs_UCS_4’ defined but not used [-Wunused-function]
+[ 1498s]    79 | utf_8_needs_UCS_4(const char *str)
+[ 1498s]       | ^~~~~~~~~~~~~~~~~
+[ 1528s] src_c/music.c: In function ‘_get_type_from_hint’:
+[ 1528s] src_c/music.c:305:22: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[ 1528s]   305 |             namehint = dot + 1;
+[ 1528s]       |                      ^
+[ 1528s] In file included from src_c/pygame.h:30,
+[ 1528s]                  from src_c/music.c:27:
+[ 1528s] src_c/music.c: In function ‘_load_music’:
+[ 1528s] src_c/_pygame.h:228:47: warning: returning ‘PyObject *’ {aka ‘struct _object *’} from a function with incompatible return type ‘Mix_Music *’ {aka ‘struct _Mix_Music *’} [-Wincompatible-pointer-types]
+[ 1528s]   228 | #define RAISE(x, y) (PyErr_SetString((x), (y)), (PyObject *)NULL)
+[ 1528s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+[ 1528s] src_c/mixer.h:9:12: note: in expansion of macro ‘RAISE’
+[ 1528s]     9 |     return RAISE(pgExc_SDLError, "mixer not initialized")
+[ 1528s]       |            ^~~~~
+[ 1528s] src_c/music.c:377:5: note: in expansion of macro ‘MIXER_INIT_CHECK’
+[ 1528s]   377 |     MIXER_INIT_CHECK();
+[ 1528s]       |     ^~~~~~~~~~~~~~~~
+[ 1548s] src_c/pypm.c: In function ‘__pyx_pf_6pygame_4pypm_5Input___init__’:
+[ 1548s] src_c/pypm.c:4665:82: warning: passing argument 5 of ‘Pm_OpenInput’ from incompatible pointer type [-Wincompatible-pointer-types]
+[ 1548s]  4665 |   __pyx_v_err = Pm_OpenInput((&__pyx_v_self->midi), __pyx_t_2, NULL, __pyx_t_3, (&Pt_Time), NULL);
+[ 1548s]       |                                                                                 ~^~~~~~~~~
+[ 1548s]       |                                                                                  |
+[ 1548s]       |                                                                                  PtTimestamp (*)(void) {aka int (*)(void)}
+[ 1548s] In file included from src_c/pypm.c:621:
+[ 1548s] /usr/include/portmidi.h:399:31: note: expected ‘PmTimeProcPtr’ {aka ‘int (*)(void *)’} but argument is of type ‘PtTimestamp (*)(void)’ {aka ‘int (*)(void)’}
+[ 1548s]   399 |                 PmTimeProcPtr time_proc,
+[ 1548s]       |                 ~~~~~~~~~~~~~~^~~~~~~~~
+[ 1867s] src_c/SDL_gfx/SDL_gfxPrimitives.c: In function ‘_aalineColor’:
+[ 1867s] src_c/SDL_gfx/SDL_gfxPrimitives.c:2533:32: warning: variable ‘wgtcompmask’ set but not used [-Wunused-but-set-variable]
+[ 1867s]  2533 |         Uint32 erracctmp, wgt, wgtcompmask;
+[ 1867s]       |                                ^~~~~~~~~~~
+[ 1867s] src_c/SDL_gfx/SDL_gfxPrimitives.c: In function ‘arcColor’:
+[ 1867s] src_c/SDL_gfx/SDL_gfxPrimitives.c:3128:9: warning: multi-line comment [-Wcomment]
+[ 1867s]  3128 |         //     /|\
+[ 1867s]       |         ^
+[ 1867s] src_c/SDL_gfx/SDL_gfxPrimitives.c:3130:9: warning: multi-line comment [-Wcomment]
+[ 1867s]  3130 |         //   /  |  \
+[ 1867s]       |         ^
+[ 1945s] src_c/freetype/ft_render_cb.c: In function ‘__render_glyph_MONO3’:
+[ 1945s] src_c/freetype/ft_render_cb.c:662:19: warning: variable ‘full_color’ set but not used [-Wunused-but-set-variable]
+[ 1945s]   662 |         FT_UInt32 full_color;                                                 \
+[ 1945s]       |                   ^~~~~~~~~~
+[ 1945s] src_c/freetype/ft_render_cb.c:807:1: note: in expansion of macro ‘_CREATE_MONO_RENDER’
+[ 1945s]   807 | _CREATE_MONO_RENDER(3, GET_PIXEL24(_dst), _SET_PIXEL_24, _BLEND_PIXEL_24)
+[ 1945s]       | ^~~~~~~~~~~~~~~~~~~
+[ 2126s] In function ‘memcpy’,
+[ 2126s]     inlined from ‘pg_do_segfault’ at src_c/base.c:2047:5:
+[ 2126s] /usr/include/bits/string_fortified.h:29:10: warning: ‘__builtin_memcpy’ writing 10 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+[ 2126s]    29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+[ 2126s]       |          ^
+[ 2190s] src_c/display.c: In function ‘pg_GetVideoInfo’:
+[ 2190s] src_c/display.c:409: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2190s]   409 | #pragma PG_WARN(hardcoding wm_available to 1)
+[ 2190s]       | 
+[ 2190s] src_c/display.c:410: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2190s]   410 | #pragma PG_WARN(setting available video RAM to 0 KB)
+[ 2190s]       | 
+[ 2190s] src_c/display.c: In function ‘pg_set_mode’:
+[ 2190s] src_c/display.c:992: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2190s]   992 | #pragma PG_WARN(Not setting bpp ?)
+[ 2190s]       | 
+[ 2190s] src_c/display.c:993: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2190s]   993 | #pragma PG_WARN(Add mode stuff.)
+[ 2190s]       | 
+[ 2191s] src_c/display.c:1019:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 2191s]  1019 |                         if (x == SDL_WINDOWPOS_UNDEFINED_DISPLAY(display))
+[ 2191s]       |                               ^~
+[ 2191s] src_c/display.c:1021:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 2191s]  1021 |                         if (y == SDL_WINDOWPOS_UNDEFINED_DISPLAY(display))
+[ 2191s]       |                               ^~
+[ 2191s] src_c/display.c: In function ‘pg_mode_ok’:
+[ 2191s] src_c/display.c:1417: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2191s]  1417 | #pragma PG_WARN(Ignoring most flags)
+[ 2191s]       | 
+[ 2191s] src_c/display.c: In function ‘pg_list_modes’:
+[ 2191s] src_c/display.c:1471: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2191s]  1471 | #pragma PG_WARN(Ignoring flags)
+[ 2191s]       | 
+[ 2191s] src_c/display.c:1499:43: warning: comparison of integer expressions of different signedness: ‘Uint32’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
+[ 2191s]  1499 |         if (SDL_BITSPERPIXEL(mode.format) != bpp)
+[ 2191s]       |                                           ^~
+[ 2191s] src_c/display.c: In function ‘pg_update’:
+[ 2191s] src_c/display.c:1618:15: warning: unused variable ‘obj’ [-Wunused-variable]
+[ 2191s]  1618 |     PyObject *obj;
+[ 2191s]       |               ^~~
+[ 2191s] src_c/display.c: At top level:
+[ 2191s] src_c/display.c:2568: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2191s]  2568 | #pragma PG_WARN(At some point should add GC slot functions.)
+[ 2191s]       | 
+[ 2235s] src_c/key.c: In function ‘_get_keycode_name’:
+[ 2235s] src_c/key.c:690: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2235s]   690 | #pragma PG_WARN(Add missing keycode names here ?)
+[ 2235s]       | 
+[ 2318s] src_c/surface.c: In function ‘surf_convert_alpha’:
+[ 2318s] src_c/surface.c:1684: warning: ignoring ‘#pragma PG_WARN ’ [-Wunknown-pragmas]
+[ 2318s]  1684 | #pragma PG_WARN("srcsurf doesn't actually do anything?")
+[ 2318s]       | 
+[ 2419s] src_c/draw.c: In function ‘rect’:
+[ 2419s] src_c/draw.c:871:50: warning: unused variable ‘ret’ [-Wunused-variable]
+[ 2419s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 2419s]       |                                                  ^~~
+[ 2419s] src_c/draw.c:871:31: warning: unused variable ‘poly_args’ [-Wunused-variable]
+[ 2419s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 2419s]       |                               ^~~~~~~~~
+[ 2419s] src_c/draw.c:871:15: warning: unused variable ‘points’ [-Wunused-variable]
+[ 2419s]   871 |     PyObject *points = NULL, *poly_args = NULL, *ret = NULL;
+[ 2419s]       |               ^~~~~~
+[ 2448s] src_c/image.c: In function ‘image_load_basic’:
+[ 2448s] src_c/image.c:72:15: warning: unused variable ‘oencoded’ [-Wunused-variable]
+[ 2448s]    72 |     PyObject *oencoded;
+[ 2448s]       |               ^~~~~~~~
+[ 2475s] src_c/transform.c: In function ‘surf_rotate’:
+[ 2475s] src_c/transform.c:630:16: warning: returning ‘pgSurfaceObject *’ from a function with incompatible return type ‘PyObject *’ {aka ‘struct _object *’} [-Wincompatible-pointer-types]
+[ 2475s]   630 |         return surfobj;
+[ 2475s]       |                ^~~~~~~
+[ 2658s] src_c/_camera.c: In function ‘bgr32_to_rgb’:
+[ 2658s] src_c/_camera.c:592:17: warning: value computed is not used [-Wunused-value]
+[ 2658s]   592 |                 *s++;
+[ 2658s]       |                 ^~~~
+[ 2666s] src_c/camera_v4l2.c: In function ‘v4l2_process_image’:
+[ 2666s] src_c/camera_v4l2.c:190:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   190 |             if (buffer_size >= self->size * 3) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c:212:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   212 |             if (buffer_size >= self->size * 2) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c:234:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   234 |             if (buffer_size >= self->size * 2) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c:258:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   258 |             if (buffer_size >= self->size * 2) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c:282:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   282 |             if (buffer_size >= self->size) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c:308:29: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+[ 2666s]   308 |             if (buffer_size >= (self->size * 3) / 2) {
+[ 2666s]       |                             ^~
+[ 2666s] src_c/camera_v4l2.c: In function ‘v4l2_query_buffer’:
+[ 2666s] src_c/camera_v4l2.c:342:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+[ 2666s]   342 |     for (i = 0; i < self->n_buffers; ++i) {
+[ 2666s]       |                   ^
+[ 2691s] ++ '[' -f _current_flavor ']'
+[ 2691s] ++ cat _current_flavor
+[ 2691s] + last_flavor=python39
+[ 2691s] + '[' -z python39 ']'
+[ 2691s] + '[' python39 '!=' python311 ']'
+[ 2691s] + '[' -d build ']'
+[ 2691s] + mv build _build.python39
+[ 2692s] + '[' -d _build.python311 ']'
+[ 2692s] + echo python311
+[ 2692s] + python_flavor=python311
+[ 2692s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[ 2700s] src_c/imageext.c: In function ‘image_load_ext’:
+[ 2700s] src_c/imageext.c:119:13: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[ 2700s]   119 |         ext = find_extension(name);
+[ 2700s]       |             ^
+[ 2700s] src_c/imageext.c:108:9: warning: variable ‘lock_mutex’ set but not used [-Wunused-but-set-variable]
+[ 2700s]   108 |     int lock_mutex = 0;
+[ 2700s]       |         ^~~~~~~~~~
+[ 2711s] src_c/font.c: In function ‘font_dealloc’:
+[ 2711s] src_c/font.c:694:29: warning: initialization of ‘int **’ from incompatible pointer type ‘TTF_Font *’ {aka ‘struct _TTF_Font *’} [-Wincompatible-pointer-types]
+[ 2711s]   694 |             int **face_pp = font;
+[ 2711s]       |                             ^~~~
+[ 2711s] src_c/font.c: At top level:
+[ 2711s] src_c/font.c:79:1: warning: ‘utf_8_needs_UCS_4’ defined but not used [-Wunused-function]
+[ 2711s]    79 | utf_8_needs_UCS_4(const char *str)
+[ 2711s]       | ^~~~~~~~~~~~~~~~~
+[ 2743s] src_c/music.c: In function ‘_get_type_from_hint’:
+[ 2743s] src_c/music.c:305:22: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[ 2743s]   305 |             namehint = dot + 1;
+[ 2743s]       |                      ^
+[ 2743s] In file included from src_c/pygame.h:30,
+[ 2743s]                  from src_c/music.c:27:
+[ 2743s] src_c/music.c: In function ‘_load_music’:
+[ 2743s] src_c/_pygame.h:228:47: warning: returning ‘PyObject *’ {aka ‘struct _object *’} from a function with incompatible return type ‘Mix_Music *’ {aka ‘struct _Mix_Music *’} [-Wincompatible-pointer-types]
+[ 2743s]   228 | #define RAISE(x, y) (PyErr_SetString((x), (y)), (PyObject *)NULL)
+[ 2743s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+[ 2743s] src_c/mixer.h:9:12: note: in expansion of macro ‘RAISE’
+[ 2743s]     9 |     return RAISE(pgExc_SDLError, "mixer not initialized")
+[ 2743s]       |            ^~~~~
+[ 2743s] src_c/music.c:377:5: note: in expansion of macro ‘MIXER_INIT_CHECK’
+[ 2743s]   377 |     MIXER_INIT_CHECK();
+[ 2743s]       |     ^~~~~~~~~~~~~~~~
+[ 2764s] src_c/pypm.c:209:12: fatal error: longintrepr.h: No such file or directory
+[ 2764s]   209 |   #include "longintrepr.h"
+[ 2764s]       |            ^~~~~~~~~~~~~~~
+[ 2764s] compilation terminated.
+[ 2764s] 
+[ 2764s] ---
+[ 2764s] For help with compilation see:
+[ 2764s]     https://www.pygame.org/wiki/Compilation
+[ 2764s] To contribute to pygame development see:
+[ 2764s]     https://www.pygame.org/contribute.html
+[ 2764s] ---
+[ 2764s] 
+[ 2764s] error: command '/usr/bin/gcc' failed with exit code 1
+[ 2765s] error: Bad exit status from /var/tmp/rpm-tmp.4bSZRy (%build)
+[ 2765s] 
+[ 2765s] RPM build errors:
+[ 2765s]     Bad exit status from /var/tmp/rpm-tmp.4bSZRy (%build)
+[ 2765s] ### VM INTERACTION START ###
+[ 2765s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[ 2765s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[ 2765s] Powering off.
+[ 2765s] [ 2757.885647][T16195] reboot: Power down
+[ 2765s] ### VM INTERACTION END ###
+[ 2765s] 
+[ 2765s] lamb59 failed "build python-pygame.spec" at Sun Feb 19 03:55:21 UTC 2023.
+[ 2765s] 

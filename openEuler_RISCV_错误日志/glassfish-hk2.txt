@@ -1,0 +1,2042 @@
+[    0s] Memory limit set to 21970664KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    4s] 
+[    5s] oe-RISCV-worker23 started "build _service:extract_file:glassfish-hk2.spec" at Fri Apr 15 15:22:19 UTC 2022.
+[    5s] 
+[    5s] Building glassfish-hk2 for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '611f70992a86c10e35da1f74cf03f545'
+[    5s] 
+[    5s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:glassfish-hk2.spec ...
+[   10s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:glassfish-hk2.spec
+[   11s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/_service:extract_file:glassfish-hk2.spec build ...
+[  107s] cycle: bash -> coreutils
+[  107s]   breaking dependency coreutils -> bash
+[  107s] cycle: bash -> coreutils -> info
+[  107s]   breaking dependency coreutils -> info
+[  107s] cycle: glibc -> filesystem -> bash -> coreutils
+[  107s]   breaking dependency filesystem -> bash
+[  107s] cycle: glibc -> filesystem -> coreutils
+[  107s]   breaking dependency coreutils -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  107s]   breaking dependency coreutils -> libacl
+[  107s] cycle: glibc -> filesystem -> coreutils -> attr
+[  107s]   breaking dependency coreutils -> attr
+[  107s] cycle: coreutils -> libcap -> bash
+[  107s]   breaking dependency coreutils -> libcap
+[  107s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  107s]   breaking dependency coreutils -> openssl-libs
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  107s]   breaking dependency libselinux -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  107s]   breaking dependency pcre2 -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  107s]   breaking dependency readline -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  107s]   breaking dependency coreutils -> libselinux
+[  107s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  107s]   breaking dependency ncurses -> glibc
+[  107s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  107s]   breaking dependency ncurses -> ncurses-libs
+[  107s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  107s]   breaking dependency ncurses -> libgcc
+[  107s] cycle: perl-Carp -> perl-libs
+[  107s]   breaking dependency perl-libs -> perl-Carp
+[  107s] cycle: perl-libs -> perl-Exporter
+[  107s]   breaking dependency perl-libs -> perl-Exporter
+[  107s] cycle: perl-Carp -> perl-Exporter
+[  107s]   breaking dependency perl-Exporter -> perl-Carp
+[  107s] cycle: nss-util -> nss
+[  107s]   breaking dependency nss -> nss-util
+[  107s] cycle: nss-softokn -> nss-util -> nss
+[  107s]   breaking dependency nss -> nss-softokn
+[  107s] cycle: systemd -> cryptsetup -> device-mapper
+[  107s]   breaking dependency systemd -> cryptsetup
+[  107s] cycle: audit -> systemd -> pam
+[  107s]   breaking dependency systemd -> pam
+[  107s] [1/84] preinstalling dbus...
+[  108s] [2/84] preinstalling libffi-devel...
+[  110s] [3/84] preinstalling nodejs-source-map...
+[  111s] [4/84] preinstalling python3-pip...
+[  114s] [5/84] preinstalling python3-setuptools_scm...
+[  115s] [6/84] preinstalling ncurses...
+[  121s] [7/84] preinstalling coreutils...
+[  125s] [8/84] preinstalling filesystem...
+[  128s] [9/84] preinstalling glibc...
+[  132s] [10/84] preinstalling libgcc...
+[  133s] [11/84] preinstalling diffutils...
+[  134s] [12/84] preinstalling libcap-ng...
+[  135s] [13/84] preinstalling libgpg-error...
+[  136s] [14/84] preinstalling libpcap...
+[  137s] [15/84] preinstalling libsmartcols...
+[  138s] [16/84] preinstalling libuuid...
+[  139s] [17/84] preinstalling libxcrypt...
+[  140s] [18/84] preinstalling lz4...
+[  141s] [19/84] preinstalling m4...
+[  142s] [20/84] preinstalling ncurses-libs...
+[  144s] [21/84] preinstalling nspr...
+[  145s] [22/84] preinstalling xz-libs...
+[  146s] [23/84] preinstalling zlib...
+[  146s] [24/84] preinstalling attr...
+[  147s] [25/84] preinstalling libdb...
+[  152s] [26/84] preinstalling zstd...
+[  154s] [27/84] preinstalling audit-libs...
+[  155s] [28/84] preinstalling file...
+[  156s] [29/84] preinstalling iptables-libs...
+[  157s] [30/84] preinstalling libacl...
+[  158s] [31/84] preinstalling libgcrypt...
+[  159s] [32/84] preinstalling openssl-libs...
+[  162s] [33/84] preinstalling readline...
+[  163s] [34/84] preinstalling bash...
+[  166s] [35/84] preinstalling cmake...
+[  180s] [36/84] preinstalling perl-libs...
+[  183s] [37/84] preinstalling dnf...
+[  185s] [38/84] preinstalling pcre2...
+[  187s] [39/84] preinstalling perl-Exporter...
+[  188s] [40/84] preinstalling bzip2...
+[  189s] [41/84] preinstalling elfutils...
+[  190s] [42/84] preinstalling hostname...
+[  191s] [43/84] preinstalling libcap...
+[  192s] [44/84] preinstalling pcre...
+[  194s] [45/84] preinstalling popt...
+[  195s] [46/84] preinstalling acl...
+[  196s] [47/84] preinstalling libblkid...
+[  197s] [48/84] preinstalling openssl...
+[  198s] [49/84] preinstalling sqlite...
+[  200s] [50/84] preinstalling tar...
+[  202s] [51/84] preinstalling info...
+[  203s] [52/84] preinstalling libgcrypt-devel...
+[  204s] [53/84] preinstalling lua...
+[  206s] [54/84] preinstalling libselinux...
+[  207s] [55/84] preinstalling perl-Carp...
+[  208s] [56/84] preinstalling copy-jdk-configs...
+[  209s] [57/84] preinstalling libfdisk...
+[  210s] [58/84] preinstalling perl-Digest-MD5...
+[  211s] [59/84] preinstalling grep...
+[  212s] [60/84] preinstalling rpm-libs...
+[  213s] [61/84] preinstalling chkconfig...
+[  215s] [62/84] preinstalling sed...
+[  216s] [63/84] preinstalling libmount...
+[  217s] [64/84] preinstalling libsemanage...
+[  218s] [65/84] preinstalling perl-constant...
+[  220s] [66/84] preinstalling findutils...
+[  222s] [67/84] preinstalling xz...
+[  223s] [68/84] preinstalling perl-Getopt-Long...
+[  224s] [69/84] preinstalling glib2...
+[  230s] [70/84] preinstalling nss...
+[  231s] [71/84] preinstalling perl-Data-Dumper...
+[  232s] [72/84] preinstalling systemd-libs...
+[  234s] [73/84] preinstalling systemd...
+[  239s] [74/84] preinstalling dbus-libs...
+[  240s] [75/84] preinstalling nss-util...
+[  242s] [76/84] preinstalling audit...
+[  243s] [77/84] preinstalling nss-softokn...
+[  245s] [78/84] preinstalling pam...
+[  247s] [79/84] preinstalling rpm...
+[  249s] [80/84] preinstalling openEuler-rpm-config...
+[  250s] [81/84] preinstalling util-linux...
+[  255s] [82/84] preinstalling device-mapper...
+[  256s] [83/84] preinstalling cryptsetup...
+[  258s] [84/84] preinstalling lvm2...
+[  262s] 
+[  265s] initializing rpm db...
+[  284s] reordering...cycle: bash -> coreutils
+[  284s]   breaking dependency coreutils -> bash
+[  284s] cycle: bash -> coreutils -> info
+[  284s]   breaking dependency coreutils -> info
+[  284s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  284s]   breaking dependency filesystem -> bash
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  284s]   breaking dependency coreutils -> gmp
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  284s]   breaking dependency coreutils -> glibc
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  284s]   breaking dependency coreutils -> libacl
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  284s]   breaking dependency coreutils -> attr
+[  284s] cycle: coreutils -> libcap -> bash
+[  284s]   breaking dependency coreutils -> libcap
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  284s]   breaking dependency openssl-libs -> glibc
+[  284s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  284s]   breaking dependency ca-certificates -> bash
+[  284s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  284s]   breaking dependency ca-certificates -> coreutils
+[  284s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  284s]   breaking dependency grep -> bash
+[  284s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  284s]   breaking dependency ca-certificates -> grep
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  284s]   breaking dependency p11-kit -> glibc
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  284s]   breaking dependency openssl-libs -> ca-certificates
+[  284s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  284s]   breaking dependency crypto-policies -> bash
+[  284s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  284s]   breaking dependency crypto-policies -> coreutils
+[  284s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency grep -> coreutils
+[  284s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency glibc -> basesystem
+[  284s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency glibc-common -> bash
+[  284s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency glibc-common -> coreutils
+[  284s] cycle: glibc -> glibc-common
+[  284s]   breaking dependency glibc-common -> glibc
+[  284s] cycle: glibc -> glibc-common -> libselinux
+[  284s]   breaking dependency libselinux -> glibc
+[  284s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  284s]   breaking dependency pcre2 -> glibc
+[  284s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  284s]   breaking dependency readline -> glibc
+[  284s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  284s]   breaking dependency libselinux -> pcre2
+[  284s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency bash -> coreutils
+[  284s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency libsepol -> bash
+[  284s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  284s]   breaking dependency coreutils -> openssl-libs
+[  284s] cycle: libselinux -> libsepol -> coreutils
+[  284s]   breaking dependency libsepol -> coreutils
+[  284s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  284s]   breaking dependency glibc -> glibc-common
+[  284s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  284s]   breaking dependency filesystem -> coreutils
+[  284s] cycle: filesystem -> setup
+[  284s]   breaking dependency filesystem -> setup
+[  284s] cycle: systemd -> cryptsetup -> device-mapper
+[  284s]   breaking dependency systemd -> cryptsetup
+[  284s] cycle: perl-libs -> perl-Carp
+[  284s]   breaking dependency perl-libs -> perl-Carp
+[  284s] cycle: perl-libs -> perl-Exporter
+[  284s]   breaking dependency perl-libs -> perl-Exporter
+[  284s] cycle: perl-Carp -> perl-Exporter
+[  284s]   breaking dependency perl-Exporter -> perl-Carp
+[  284s] cycle: perl -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-PathTools
+[  284s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  284s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  284s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-File-Path
+[  284s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  284s]   breaking dependency perl -> perl-Getopt-Long
+[  284s] cycle: perl -> perl-Locale-Maketext
+[  284s]   breaking dependency perl -> perl-Locale-Maketext
+[  284s] cycle: perl -> perl-Pod-Simple
+[  284s]   breaking dependency perl -> perl-Pod-Simple
+[  284s] cycle: perl -> perl-Socket
+[  284s]   breaking dependency perl -> perl-Socket
+[  284s] cycle: perl -> perl-Storable
+[  284s]   breaking dependency perl -> perl-Storable
+[  284s] cycle: perl -> perl-Text-Tabs+Wrap
+[  284s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  284s] cycle: perl -> perl-Time-Local -> perl-constant
+[  284s]   breaking dependency perl -> perl-Time-Local
+[  284s] cycle: perl -> perl-constant
+[  284s]   breaking dependency perl -> perl-constant
+[  284s] cycle: perl -> perl-threads
+[  284s]   breaking dependency perl -> perl-threads
+[  284s] cycle: perl -> perl-threads-shared
+[  284s]   breaking dependency perl -> perl-threads-shared
+[  284s] cycle: perl -> perl-Archive-Tar
+[  284s]   breaking dependency perl -> perl-Archive-Tar
+[  284s] cycle: perl -> perl-B-Debug
+[  284s]   breaking dependency perl -> perl-B-Debug
+[  284s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  284s]   breaking dependency perl -> perl-CPAN-Meta
+[  284s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  284s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  284s] cycle: perl -> perl-CPAN-Meta-YAML
+[  284s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  284s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  284s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  284s] cycle: perl -> perl-Compress-Raw-Zlib
+[  284s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  284s] cycle: perl -> perl-Config-Perl-V
+[  284s]   breaking dependency perl -> perl-Config-Perl-V
+[  284s] cycle: perl -> perl-DB_File
+[  284s]   breaking dependency perl -> perl-DB_File
+[  284s] cycle: perl -> perl-Data-Dumper
+[  284s]   breaking dependency perl -> perl-Data-Dumper
+[  284s] cycle: perl -> perl-Devel-PPPort
+[  284s]   breaking dependency perl -> perl-Devel-PPPort
+[  284s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  284s]   breaking dependency perl -> perl-Digest
+[  284s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  284s]   breaking dependency perl -> perl-Digest-MD5
+[  284s] cycle: perl -> perl-Digest-SHA
+[  284s]   breaking dependency perl -> perl-Digest-SHA
+[  284s] cycle: perl -> perl-Encode
+[  284s]   breaking dependency perl -> perl-Encode
+[  284s] cycle: perl -> perl-Env
+[  284s]   breaking dependency perl -> perl-Env
+[  284s] cycle: perl -> perl-ExtUtils-Command
+[  284s]   breaking dependency perl -> perl-ExtUtils-Command
+[  284s] cycle: perl -> perl-ExtUtils-Install
+[  284s]   breaking dependency perl -> perl-ExtUtils-Install
+[  284s] cycle: perl -> perl-ExtUtils-Manifest
+[  284s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  284s] cycle: perl -> perl-ExtUtils-ParseXS
+[  284s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  284s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-File-Fetch
+[  284s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-File-Temp
+[  284s] cycle: perl -> perl-Filter
+[  284s]   breaking dependency perl -> perl-Filter
+[  284s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  284s]   breaking dependency perl -> perl-Filter-Simple
+[  284s] cycle: perl -> perl-HTTP-Tiny
+[  284s]   breaking dependency perl -> perl-HTTP-Tiny
+[  284s] cycle: perl -> perl-IO-Compress
+[  284s]   breaking dependency perl -> perl-IO-Compress
+[  284s] cycle: perl -> perl-IO-Socket-IP
+[  284s]   breaking dependency perl -> perl-IO-Socket-IP
+[  284s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  284s]   breaking dependency perl -> perl-IPC-Cmd
+[  284s] cycle: perl -> perl-IPC-SysV
+[  284s]   breaking dependency perl -> perl-IPC-SysV
+[  284s] cycle: perl -> perl-JSON-PP
+[  284s]   breaking dependency perl -> perl-JSON-PP
+[  284s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  284s]   breaking dependency perl -> perl-Locale-Codes
+[  284s] cycle: perl -> perl-MIME-Base64
+[  284s]   breaking dependency perl -> perl-MIME-Base64
+[  284s] cycle: perl -> perl-Math-BigInt
+[  284s]   breaking dependency perl -> perl-Math-BigInt
+[  284s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  284s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  284s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  284s]   breaking dependency perl -> perl-Math-BigRat
+[  284s] cycle: perl -> perl-Module-CoreList
+[  284s]   breaking dependency perl -> perl-Module-CoreList
+[  284s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-Module-Load
+[  284s] cycle: perl -> perl-Module-Load-Conditional
+[  284s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  284s] cycle: perl -> perl-Module-Metadata
+[  284s]   breaking dependency perl -> perl-Module-Metadata
+[  284s] cycle: perl -> perl-Params-Check
+[  284s]   breaking dependency perl -> perl-Params-Check
+[  284s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  284s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  284s] cycle: perl -> perl-Pod-Checker
+[  284s]   breaking dependency perl -> perl-Pod-Checker
+[  284s] cycle: perl -> perl-Pod-Escapes
+[  284s]   breaking dependency perl -> perl-Pod-Escapes
+[  284s] cycle: perl -> perl-Pod-Parser
+[  284s]   breaking dependency perl -> perl-Pod-Parser
+[  284s] cycle: perl -> perl-Pod-Perldoc
+[  284s]   breaking dependency perl -> perl-Pod-Perldoc
+[  284s] cycle: perl -> perl-Pod-Usage
+[  284s]   breaking dependency perl -> perl-Pod-Usage
+[  284s] cycle: perl -> perl-Sys-Syslog
+[  284s]   breaking dependency perl -> perl-Sys-Syslog
+[  284s] cycle: perl -> perl-Term-Cap
+[  284s]   breaking dependency perl -> perl-Term-Cap
+[  284s] cycle: perl -> perl-Test-Harness
+[  284s]   breaking dependency perl -> perl-Test-Harness
+[  284s] cycle: perl -> perl-Test-Simple
+[  284s]   breaking dependency perl -> perl-Test-Simple
+[  284s] cycle: perl -> perl-Text-Balanced
+[  284s]   breaking dependency perl -> perl-Text-Balanced
+[  284s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  284s]   breaking dependency perl -> perl-Thread-Queue
+[  284s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  284s]   breaking dependency perl -> perl-Unicode-Collate
+[  284s] cycle: perl -> perl-autodie
+[  284s]   breaking dependency perl -> perl-autodie
+[  284s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  284s]   breaking dependency perl -> perl-bignum
+[  284s] cycle: perl -> perl-devel
+[  284s]   breaking dependency perl -> perl-devel
+[  284s] cycle: perl -> perl-Encode-devel
+[  284s]   breaking dependency perl -> perl-Encode-devel
+[  284s] cycle: perl -> perl-experimental
+[  284s]   breaking dependency perl -> perl-experimental
+[  284s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  284s]   breaking dependency perl -> perl-libnet
+[  284s] cycle: perl -> perl-podlators
+[  284s]   breaking dependency perl -> perl-podlators
+[  284s] cycle: perl -> perl-version
+[  284s]   breaking dependency perl -> perl-version
+[  284s] cycle: glib2 -> gamin
+[  284s]   breaking dependency glib2 -> gamin
+[  284s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  284s]   breaking dependency systemd -> gnutls
+[  284s] cycle: systemd -> pam -> audit
+[  284s]   breaking dependency systemd -> pam
+[  284s] cycle: systemd -> shadow -> pam -> audit
+[  284s]   breaking dependency systemd -> shadow
+[  284s] cycle: pam -> libpwquality
+[  284s]   breaking dependency pam -> libpwquality
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  284s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  284s]   breaking dependency perl-podlators -> perl-Encode
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  284s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  284s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  284s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  284s] cycle: perl-Pod-Usage -> perl-podlators
+[  284s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  284s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  284s]   breaking dependency groff -> perl-Getopt-Long
+[  284s] cycle: nss -> nss-util
+[  284s]   breaking dependency nss -> nss-util
+[  284s] cycle: nss -> nss-softokn -> nss-util
+[  284s]   breaking dependency nss -> nss-softokn
+[  284s] cycle: groovy-lib -> gpars
+[  284s]   breaking dependency groovy-lib -> gpars
+[  284s] cycle: libxcrypt-devel -> glibc-devel
+[  284s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  284s] cycle: batik-css -> batik
+[  284s]   breaking dependency batik -> batik-css
+[  284s] cycle: xalan-j2 -> xerces-j2
+[  284s]   breaking dependency xerces-j2 -> xalan-j2
+[  284s] cycle: cmake-data -> cmake
+[  284s]   breaking dependency cmake -> cmake-data
+[  284s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  284s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  284s] cycle: openssh -> openssh-server
+[  284s]   breaking dependency openssh-server -> openssh
+[  284s] cycle: git -> perl-Git
+[  284s]   breaking dependency git -> perl-Git
+[  284s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  284s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  286s] done
+[  286s] querying package ids...
+[  358s] [1/576] installing cmake-filesystem-3.22.0-1.oe1
+[  360s] [2/576] installing fonts-filesystem-2.0.2-2.oe1
+[  361s] [3/576] installing fuse-common-3.9.2-5.oe1
+[  363s] [4/576] installing javapackages-filesystem-5.3.0-3.oe1
+[  365s] [5/576] installing kernel-headers-5.10-3.oe1
+[  375s] [6/576] installing libreport-filesystem-2.13.1-5.oe1
+[  377s] [7/576] installing ncurses-base-6.1-14.oe1
+[  379s] [8/576] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  380s] [9/576] installing python-setuptools-59.4.0-3.oe1
+[  382s] [10/576] installing qt5-srpm-macros-5.15.2-1.oe1
+[  383s] [11/576] installing tzdata-2021a-2.oe1
+[  395s] [12/576] installing tzdata-java-2021a-2.oe1
+[  398s] [13/576] installing dnf-data-4.10.0-1.oe1
+[  400s] [14/576] installing openEuler-repos-1.0-2.5.oe1
+[  402s] [15/576] installing wqy-zenhei-fonts-0.9.46-21.oe1
+[  416s] [16/576] installing openEuler-release-20.03LTS-40.oe1
+[  418s] [17/576] installing filesystem-3.9-3.oe1
+[  434s] warning: group mail does not exist - using root
+[  435s] [18/576] installing emacs-filesystem-1:27.1-5.oe1
+[  437s] [19/576] installing libgcc-10.3.1-20220105.6.oe1
+[  439s] [20/576] installing setup-2.13.3-4.oe1
+[  442s] [21/576] installing glibc-2.34-64.oe1
+[  450s] [22/576] installing brotli-1.0.9-2.oe1
+[  453s] [23/576] installing chrpath-0.16-12.oe1
+[  455s] [24/576] installing cpio-2.13-4.oe1
+[  457s] [25/576] installing diffutils-3.7-4.oe1
+[  460s] [26/576] installing expat-2.2.10-1.oe1
+[  462s] [27/576] installing giflib-5.2.1-2.oe1
+[  464s] [28/576] installing json-c-0.15-1.oe1
+[  466s] [29/576] installing keyutils-libs-1.6.3-3.oe1
+[  468s] [30/576] installing libICE-1.0.10-2.oe1
+[  471s] [31/576] installing libXau-1.0.9-2.oe1
+[  472s] [32/576] installing libaio-0.3.112-1.oe1
+[  474s] [33/576] installing libargon2-20190702-1.oe1
+[  476s] [34/576] installing libatomic-10.3.1-20220105.6.oe1
+[  477s] [35/576] installing libcap-ng-0.7.11-1.oe1
+[  480s] [36/576] installing libev-4.24-11.oe1
+[  483s] [37/576] installing libffi-3.3-31.oe1
+[  485s] [38/576] installing libgomp-10.3.1-20220105.6.oe1
+[  486s] [39/576] installing libgpg-error-1.41-1.oe1
+[  489s] [40/576] installing libjpeg-turbo-2.0.6-1.oe1
+[  491s] [41/576] installing libnghttp2-1.42.0-1.oe1
+[  493s] [42/576] installing libpcap-14:1.9.1-7.oe1
+[  494s] [43/576] installing libpipeline-1.5.3-1.oe1
+[  496s] [44/576] installing libsigsegv-2.11-10.oe1
+[  498s] [45/576] installing libsmartcols-2.36.1-3.oe1
+[  500s] [46/576] installing libtasn1-4.16.0-2.oe1
+[  502s] [47/576] installing libtool-ltdl-2.4.6-34.oe1
+[  503s] [48/576] installing libunistring-0.9.10-8.oe1
+[  506s] [49/576] installing libuuid-2.36.1-3.oe1
+[  507s] [50/576] installing libuv-1:1.40.0-1.oe1
+[  509s] [51/576] installing libxcrypt-4.4.8-4.oe1
+[  511s] [52/576] installing libyaml-0.2.5-1.oe1
+[  513s] [53/576] installing lz4-1.9.3-1.oe1
+[  515s] [54/576] installing m4-1.4.18-14.oe1
+[  516s] [55/576] installing nspr-4.32.0-1.oe1
+[  518s] [56/576] installing pkgconf-1.7.3-1.oe1
+[  520s] [57/576] installing rhash-1.3.5-5.oe1
+[  522s] [58/576] installing which-2.21-14.oe1
+[  524s] [59/576] installing xz-libs-5.2.5-1.oe1
+[  526s] [60/576] installing zlib-1.2.11-18.oe1
+[  528s] [61/576] installing attr-2.4.48-12.oe1
+[  530s] [62/576] installing basesystem-12-2.oe1
+[  532s] [63/576] installing libstdc++-10.3.1-20220105.6.oe1
+[  535s] [64/576] installing ncurses-libs-6.1-14.oe1
+[  538s] [65/576] installing libsepol-3.1-4.oe1
+[  541s] [66/576] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  556s] [67/576] installing audit-libs-1:3.0-2.oe1
+[  558s] [68/576] installing elfutils-libelf-0.185-3.oe1
+[  561s] [69/576] installing file-libs-5.39-6.oe1
+[  566s] [70/576] installing gmp-1:6.2.1-3.oe1
+[  567s] [71/576] installing iptables-libs-1.8.1-4.oe1
+[  569s] [72/576] installing less-563-2.oe1
+[  571s] [73/576] installing libacl-2.2.53-7.oe1
+[  573s] [74/576] installing libassuan-2.5.4-1.oe1
+[  575s] [75/576] installing libedit-3.1-27.oe1
+[  577s] [76/576] installing libffi-devel-3.3-31.oe1
+[  578s] [77/576] installing libfontenc-1.1.4-2.oe1
+[  580s] [78/576] installing libgcrypt-1.8.7-1.oe1
+[  583s] [79/576] installing libpng-2:1.6.37-1.oe1
+[  585s] [80/576] installing libxcb-1.14-1.oe1
+[  588s] [81/576] installing readline-8.0-2.oe1
+[  590s] [82/576] installing fuse-2.9.9-6.oe1
+[  593s] [83/576] installing gc-8.0.4-2.oe1
+[  595s] [84/576] installing libSM-1.2.3-2.oe1
+[  598s] [85/576] installing libdb-5.3.28-35.oe1
+[  608s] [86/576] installing libselinux-3.1-3.oe1
+[  610s] [87/576] installing libxml2-2.9.12-5.oe1
+[  614s] [88/576] installing bash-5.1-1.oe1
+[  621s] [89/576] installing perl-libs-4:5.28.0-435.oe1
+[  629s] [90/576] installing zstd-1.4.8-2.oe1
+[  633s] [91/576] installing ncurses-6.1-14.oe1
+[  651s] [92/576] installing thin-provisioning-tools-0.8.5-1.oe1
+[  654s] [93/576] installing perl-parent-1:0.237-4.oe1
+[  656s] [94/576] installing perl-perlfaq-5.20180915-5.oe1
+[  658s] [95/576] installing libX11-1.6.9-2.oe1
+[  663s] [96/576] installing mpfr-4.1.0-1.oe1
+[  666s] [97/576] installing nettle-3.6-6.oe1
+[  669s] [98/576] installing pcre2-10.36-1.oe1
+[  673s] [99/576] installing perl-Exporter-5.74-1.oe1
+[  674s] [100/576] installing file-5.39-6.oe1
+[  677s] [101/576] installing gdbm-1:1.18.1-1.oe1
+[  680s] [102/576] installing patch-2.7.6-12.oe1
+[  682s] [103/576] installing qrencode-4.1.1-1
+[  684s] [104/576] installing sed-4.8-2.oe1
+[  687s] [105/576] installing acl-2.2.53-7.oe1
+[  688s] [106/576] installing libcomps-0.1.15-1.oe1
+[  691s] [107/576] installing pcre-8.44-1.oe1
+[  694s] [108/576] installing glibc-common-2.34-64.oe1
+[  713s] [109/576] installing coreutils-8.31-4.oe1
+[  725s] [110/576] installing alsa-lib-1.2.4-1.oe1
+[  730s] [111/576] installing crontabs-1.11-21.oe1
+[  732s] [112/576] installing elfutils-default-yama-scope-0.185-3.oe1
+[  734s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  734s] [113/576] installing libXcomposite-0.4.5-1.oe1
+[  737s] [114/576] installing libXext-1.3.4-2.oe1
+[  739s] [115/576] installing libXpm-3.5.12-11.oe1
+[  742s] [116/576] installing libXrender-0.9.10-10.oe1
+[  744s] [117/576] installing perl-Carp-1.50-418.oe1
+[  746s] [118/576] installing perl-Perl-OSType-1.010-421.oe1
+[  748s] [119/576] installing perl-Term-ANSIColor-4.06-511.oe1
+[  749s] [120/576] installing publicsuffix-list-20200718-1.oe1
+[  752s] [121/576] installing uname-build-checks-1.0-0.4.oe1
+[  754s] [122/576] installing bzip2-1.0.8-3.oe1
+[  756s] [123/576] installing gzip-1.10-1.oe1
+[  761s] [124/576] installing hostname-3.21-2.oe1
+[  764s] [125/576] installing libcap-2.32-2.oe1
+[  767s] [126/576] installing libmpc-1.2.0-2.oe1
+[  770s] [127/576] installing libseccomp-2.4.3-2.oe1
+[  773s] [128/576] installing lksctp-tools-1.0.16-11.oe1
+[  775s] [129/576] installing npth-1.5-7.oe1
+[  778s] [130/576] installing popt-1.18-1.oe1
+[  781s] [131/576] installing grep-3.6-1.oe1
+[  787s] [132/576] installing libXt-1.2.0-0.oe1
+[  792s] [133/576] installing libblkid-2.36.1-3.oe1
+[  796s] [134/576] installing libidn2-2.3.0-1.oe1
+[  799s] [135/576] installing libksba-1.3.5-12.oe1
+[  803s] [136/576] installing tar-2:1.32-3.oe1
+[  808s] [137/576] installing tcl-1:8.6.10-3.oe1
+[  816s] [138/576] installing apr-1.7.0-4.oe1
+[  818s] [139/576] installing info-6.7-2.oe1
+[  821s] [140/576] installing jsoncpp-1.9.4-1.oe1
+[  824s] [141/576] installing libgpg-error-devel-1.41-1.oe1
+[  827s] [142/576] installing lua-5.3.5-6.oe1
+[  830s] [143/576] installing slang-2.3.2-8.oe1
+[  835s] [144/576] installing gawk-5.0.1-2.oe1
+[  840s] [145/576] installing libxslt-1.1.32-7.oe1
+[  844s] [146/576] installing guile-5:2.0.14-15.oe1
+[  856s] [147/576] installing zip-3.0-29.oe1
+[  859s] [148/576] installing libXi-1.7.10-1.oe1
+[  861s] [149/576] installing libfdisk-2.36.1-3.oe1
+[  865s] [150/576] installing newt-0.52.21-4.oe1
+[  869s] [151/576] installing perl-Text-ParseWords-3.30-419.oe1
+[  871s] [152/576] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  882s] [153/576] installing elfutils-libs-0.185-3.oe1
+[  885s] [154/576] installing libXmu-1.1.3-1.oe1
+[  887s] [155/576] installing libmount-2.36.1-3.oe1
+[  891s] [156/576] installing lua-posix-33.3.1-12.oe1
+[  894s] [157/576] installing unzip-6.0-47.oe1
+[  897s] [158/576] installing cracklib-2.9.7-6.oe1
+[  906s] [159/576] installing e2fsprogs-1.45.6-3.oe1
+[  912s] [160/576] installing findutils-2:4.7.0-7.oe1
+[  917s] [161/576] installing libsemanage-3.1-4.oe1
+[  920s] [162/576] installing make-1:4.2.1-15.oe1
+[  922s] [163/576] installing sqlite-3.24.0-9.oe1
+[  927s] [164/576] installing xz-5.2.5-1.oe1
+[  930s] [165/576] installing logrotate-3.15.1-2.oe1
+[  933s] [166/576] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  936s] [167/576] installing perl-Time-HiRes-1.9760-2.oe1
+[  939s] [168/576] installing perl-Unicode-Normalize-1.26-419.oe1
+[  942s] [169/576] installing freetype-2.10.2-3.oe1
+[  946s] [170/576] installing glibc-devel-2.34-64.oe1
+[  965s] [171/576] installing libgcrypt-devel-1.8.7-1.oe1
+[  967s] [172/576] installing cpp-10.3.1-20220105.6.oe1
+[  987s] [173/576] installing gnupg2-2.2.27-2.oe1
+[  995s] [174/576] installing systemd-libs-243-22.oe1
+[  999s] [175/576] installing dbus-libs-1:1.12.20-3.oe1
+[ 1002s] [176/576] installing libxcrypt-devel-4.4.8-4.oe1
+[ 1005s] [177/576] installing p11-kit-0.23.22-1.oe1
+[ 1009s] [178/576] installing procps-ng-3.3.16-15.oe1
+[ 1013s] [179/576] installing copy-jdk-configs-4.0-1.oe1
+[ 1016s] [180/576] installing gpgme-1.15.1-1.oe1
+[ 1021s] [181/576] installing libXtst-1.2.3-10.oe1
+[ 1023s] [182/576] installing openssl-libs-1:1.1.1f-2.oe1
+[ 1028s] [183/576] installing chkconfig-1.14-2.oe1
+[ 1031s] [184/576] installing elfutils-0.185-3.oe1
+[ 1035s] [185/576] installing libXaw-1.0.13-13.oe1
+[ 1038s] [186/576] installing xorg-x11-font-utils-1:7.5-43.oe1
+[ 1040s] [187/576] installing fontconfig-2.13.92-1.oe1
+[ 1052s] [188/576] installing glib2-2.66.8-1.oe1
+[ 1062s] [189/576] installing dbus-tools-1:1.12.20-3.oe1
+[ 1064s] [190/576] installing ima-evm-utils-libs-1.2.1-8.oe1
+[ 1066s] [191/576] installing libevent-2.1.12-4
+[ 1069s] [192/576] installing libcroco-0.6.12-13.oe1
+[ 1072s] [193/576] installing libtcnative-1-0-1.2.23-3.oe1
+[ 1074s] [194/576] installing fipscheck-1.5.0-7.oe1
+[ 1079s] [195/576] installing gamin-0.1.10-38.oe1
+[ 1082s] [196/576] installing kmod-libs-27-4.oe1
+[ 1085s] [197/576] installing libsecret-0.18.6-5.oe1
+[ 1088s] [198/576] installing obs-env-1.0-5.oe1
+[ 1098s] [199/576] installing xorg-x11-fonts-others-7.5-24
+[ 1120s] [200/576] installing kmod-27-4.oe1
+[ 1122s] [201/576] installing binutils-2.37-6.oe1
+[ 1136s] [202/576] installing p11-kit-trust-0.23.22-1.oe1
+[ 1138s] [203/576] installing babeltrace-1.5.8-1.oe1
+[ 1141s] [204/576] installing libarchive-3.5.1-1.oe1
+[ 1144s] [205/576] installing nodejs-libs-1:16.10.0-1.oe1
+[ 1206s] [206/576] installing libverto-0.3.1-2.oe1
+[ 1208s] [207/576] installing ca-certificates-2020.2.46-2.oe1
+[ 1221s] [208/576] installing gettext-0.20.1-2.oe1
+[ 1227s] [209/576] installing gcc-10.3.1-20220105.6.oe1
+[ 1266s] [210/576] installing rpm-libs-4.15.1-25.oe1
+[ 1269s] [211/576] installing python-pip-wheel-19.2.3-2.fc32
+[ 1272s] [212/576] installing libmodulemd-2.13.0-1.oe1
+[ 1275s] [213/576] installing gcc-c++-10.3.1-20220105.6.oe1
+[ 1295s] [214/576] installing krb5-libs-1.18.2-3.oe1
+[ 1299s] [215/576] installing libtirpc-1.3.1-1.oe1
+[ 1302s] [216/576] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1304s] [217/576] installing libssh-0.9.5-1.oe1
+[ 1307s] [218/576] installing openldap-2.4.46-15.oe1
+[ 1310s] [219/576] installing libnsl2-1.3.0-2.oe1
+[ 1313s] [220/576] installing python3-3.8.5-13.oe1
+[ 1342s] [221/576] installing python3-pyparsing-2.4.5-1.fc32
+[ 1344s] [222/576] installing python3-setuptools-59.4.0-3.oe1
+[ 1350s] [223/576] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1353s] [224/576] installing python3-six-1.15.0-3.oe1
+[ 1355s] [225/576] installing python3-gpgme-1.15.1-1.oe1
+[ 1358s] [226/576] installing python3-lxml-4.4.1-3.fc32
+[ 1362s] [227/576] installing python3-libcomps-0.1.15-1.oe1
+[ 1364s] [228/576] installing libpsl-0.21.1-1.oe1
+[ 1367s] [229/576] installing gdb-headless-9.2-5.oe1
+[ 1375s] [230/576] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1377s] [231/576] installing gdb-9.2-5.oe1
+[ 1379s] [232/576] installing python3-javapackages-5.3.0-3.oe1
+[ 1383s] [233/576] installing python3-pip-19.2.3-2.fc32
+[ 1396s] [234/576] installing libcurl-7.79.1-1.oe1
+[ 1399s] [235/576] installing curl-7.79.1-1.oe1
+[ 1402s] [236/576] installing librepo-1.14.2-2.oe1
+[ 1404s] [237/576] installing rpm-4.15.1-25.oe1
+[ 1410s] [238/576] installing efi-srpm-macros-4-3.oe1
+[ 1412s] [239/576] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1414s] [240/576] installing libsolv-0.7.20-1.oe1
+[ 1417s] [241/576] installing python3-rpm-4.15.1-25.oe1
+[ 1420s] [242/576] installing openEuler-rpm-config-30-22.oe1
+[ 1422s] [243/576] installing cmake-3.22.0-1.oe1
+[ 1440s] [244/576] installing libdnf-0.65.0-2.oe1
+[ 1444s] [245/576] installing cmake-data-3.22.0-1.oe1
+[ 1465s] [246/576] installing python3-libdnf-0.65.0-2.oe1
+[ 1469s] [247/576] installing perl-4:5.28.0-435.oe1
+[ 1482s] [248/576] installing perl-B-Debug-1.26-4.oe1
+[ 1484s] [249/576] installing perl-Env-1.04-397.oe1
+[ 1486s] [250/576] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1489s] [251/576] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1490s] [252/576] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1492s] [253/576] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1494s] [254/576] installing perl-Params-Check-1:0.38-418.oe1
+[ 1497s] [255/576] installing perl-Term-Cap-1.17-510.oe1
+[ 1498s] [256/576] installing perl-TermReadKey-2.38-2.oe1
+[ 1501s] [257/576] installing perl-Text-Balanced-2.03-420.oe1
+[ 1502s] [258/576] installing perl-threads-1:2.22-419.oe1
+[ 1504s] [259/576] installing openssl-1:1.1.1f-2.oe1
+[ 1507s] [260/576] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1509s] [261/576] installing perl-Error-1:0.17029-1.oe1
+[ 1511s] [262/576] installing perl-Filter-2:1.59-2.oe1
+[ 1515s] [263/576] installing perl-IPC-SysV-2.07-5.oe1
+[ 1518s] [264/576] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1521s] [265/576] installing perl-constant-1.33-421.oe1
+[ 1523s] [266/576] installing perl-MIME-Base64-3.15-418.oe1
+[ 1526s] [267/576] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1529s] [268/576] installing perl-Socket-4:2.029-2.oe1
+[ 1531s] [269/576] installing perl-Storable-1:3.15-2.oe1
+[ 1535s] [270/576] installing python3-hawkey-0.65.0-2.oe1
+[ 1538s] [271/576] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1540s] [272/576] installing perl-Digest-1.17-419.oe1
+[ 1542s] [273/576] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1544s] [274/576] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1546s] [275/576] installing perl-Text-Diff-1.45-7.oe1
+[ 1548s] [276/576] installing perl-Time-Local-2:1.280-6.oe1
+[ 1550s] [277/576] installing perl-version-8:0.99.24-3.oe1
+[ 1552s] [278/576] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1555s] [279/576] installing perl-threads-shared-1.59-2.oe1
+[ 1558s] [280/576] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1560s] [281/576] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1563s] [282/576] installing perl-Locale-Codes-3.58-2.oe1
+[ 1567s] [283/576] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1570s] [284/576] installing perl-PathTools-3.75-4.oe1
+[ 1572s] [285/576] installing python3-dnf-4.10.0-1.oe1
+[ 1578s] [286/576] installing perl-Data-Dumper-2.172-3.oe1
+[ 1581s] [287/576] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1584s] [288/576] installing perl-Encode-4:2.98-9.oe1
+[ 1592s] [289/576] installing autogen-5.18.16-1.oe1
+[ 1595s] [290/576] installing nodejs-1:16.10.0-1.oe1
+[ 1599s] [291/576] installing systemd-243-22.oe1
+[ 1619s] /var/tmp/rpm-tmp.NQlPz5: line 8: groupadd: command not found
+[ 1619s] /var/tmp/rpm-tmp.NQlPz5: line 10: groupadd: command not found
+[ 1619s] /var/tmp/rpm-tmp.NQlPz5: line 13: groupadd: command not found
+[ 1619s] /var/tmp/rpm-tmp.NQlPz5: line 16: groupadd: command not found
+[ 1619s] [292/576] installing dbus-common-1:1.12.20-3.oe1
+[ 1622s] [293/576] installing nodejs-source-map-0.5.6-1.oe1
+[ 1624s] [294/576] installing perl-Module-Load-1:0.32-418.oe1
+[ 1626s] [295/576] installing nodejs-packaging-20-1.oe1
+[ 1629s] [296/576] installing dnf-4.10.0-1.oe1
+[ 1634s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1634s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1634s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1634s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1634s] [297/576] installing perl-File-Which-1.23-1.oe1
+[ 1636s] [298/576] installing perl-Thread-Queue-3.13-3.oe1
+[ 1638s] [299/576] installing perl-experimental-0.020-2.oe1
+[ 1640s] [300/576] installing perl-Digest-MD5-2.55-419.oe1
+[ 1643s] [301/576] installing perl-File-Path-2.16-4.oe1
+[ 1645s] [302/576] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1648s] [303/576] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1652s] [304/576] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1654s] [305/576] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1657s] [306/576] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1659s] [307/576] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1662s] [308/576] installing audit-1:3.0-2.oe1
+[ 1666s] [309/576] installing perl-DB_File-1.842-2.oe1
+[ 1670s] [310/576] installing perl-autodie-2.29-398.oe1
+[ 1672s] [311/576] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1678s] [312/576] installing perl-IO-Compress-2.081-6.oe1
+[ 1680s] [313/576] installing perl-podlators-1:4.14-1.oe1
+[ 1683s] [314/576] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1684s] [315/576] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1686s] [316/576] installing perl-bignum-0.50-4.oe1
+[ 1688s] [317/576] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1690s] [318/576] installing perl-libnet-3.11-420.oe1
+[ 1694s] [319/576] installing pam-1.5.1-1.oe1
+[ 1701s] [320/576] installing libpwquality-1.4.4-1.oe1
+[ 1704s] [321/576] installing perl-File-HomeDir-1.004-4.oe1
+[ 1708s] [322/576] installing shadow-2:4.8.1-5.oe1
+[ 1712s] [323/576] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1715s] [324/576] installing libutempter-1.1.6-16.oe1
+[ 1718s] [325/576] installing unbound-libs-1.10.1-4.oe1
+[ 1724s] [326/576] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1730s] [327/576] installing openssh-server-8.2p1-10.oe1
+[ 1735s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1735s] [328/576] installing groff-1.22.4-4.oe1
+[ 1745s] [329/576] installing dbus-1:1.12.20-3.oe1
+[ 1747s] [330/576] installing man-db-2.9.3-2.oe1
+[ 1754s] [331/576] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1756s] [332/576] installing gnutls-3.6.15-3.oe1
+[ 1762s] [333/576] installing util-linux-2.36.1-3.oe1
+[ 1775s] [334/576] installing nss-help-3.72.0-2.oe1
+[ 1778s] [335/576] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1780s] [336/576] installing device-mapper-8:1.02.172-1.oe1
+[ 1785s] [337/576] installing openssh-8.2p1-10.oe1
+[ 1789s] [338/576] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1791s] [339/576] installing cryptsetup-2.3.3-3.oe1
+[ 1796s] [340/576] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1801s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1801s] [341/576] installing nss-3.72.0-2.oe1
+[ 1810s] [342/576] installing openssh-clients-8.2p1-10.oe1
+[ 1814s] [343/576] installing nss-util-3.72.0-2.oe1
+[ 1817s] [344/576] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 1818s] [345/576] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 1821s] [346/576] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 1823s] [347/576] installing perl-Pod-Parser-1.63-397.oe1
+[ 1826s] [348/576] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 1828s] [349/576] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 1831s] [350/576] installing perl-Archive-Tar-2.30-421.oe1
+[ 1832s] [351/576] installing perl-JSON-PP-1:4.04-2.oe1
+[ 1834s] [352/576] installing lvm2-8:2.03.11-1.oe1
+[ 1842s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 1843s] [353/576] installing autoconf-2.69-30.oe1
+[ 1847s] [354/576] installing git-2.23.0-12.oe1
+[ 1861s] [355/576] installing nss-softokn-3.72.0-2.oe1
+[ 1866s] [356/576] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 1868s] [357/576] installing perl-Git-2.23.0-12.oe1
+[ 1870s] [358/576] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 1874s] [359/576] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 1877s] [360/576] installing automake-1.16.1-6.oe1
+[ 1882s] [361/576] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 1885s] [362/576] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 1887s] [363/576] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 1890s] [364/576] installing java-1.8.0-openjdk-headless-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 1952s] [365/576] installing rpm-build-4.15.1-25.oe1
+[ 1955s] [366/576] installing ant-lib-1.10.5-2.fc29
+[ 1959s] [367/576] installing aopalliance-1.0-19.oe1
+[ 1961s] [368/576] installing apache-commons-cli-1.4-6.oe1
+[ 1964s] [369/576] installing apache-commons-collections-3.2.2-11.oe1
+[ 1967s] [370/576] installing apache-commons-compress-1.17-6.oe1
+[ 1969s] [371/576] installing apache-commons-lang-2.6-23.oe1
+[ 1972s] [372/576] installing apache-commons-lang3-3.9-3.oe1
+[ 1974s] [373/576] installing apache-ivy-2.4.0-17.oe1
+[ 1988s] [374/576] installing apache-resource-bundles-2-23.oe1
+[ 1989s] [375/576] installing atinject-1-31.oe1
+[ 1991s] [376/576] installing avalon-logkit-2.1-32.oe1
+[ 1993s] [377/576] installing base64coder-20101219-23.oe1
+[ 1995s] [378/576] installing bean-validation-api-1.1.0-12.oe1
+[ 1999s] [379/576] installing beust-jcommander-1.71-7.oe1
+[ 2001s] [380/576] installing byte-buddy-agent-1.9.5-4.fc30
+[ 2003s] [381/576] installing classmate-1.3.1-6.oe1
+[ 2006s] [382/576] installing dain-snappy-0.4-7.oe1
+[ 2009s] [383/576] installing extra166y-1.7.0-11.oe1
+[ 2013s] [384/576] installing felix-utils-1.10.4-4.oe1
+[ 2015s] [385/576] installing geronimo-annotation-1.0-25.oe1
+[ 2017s] [386/576] installing geronimo-interceptor-1.0.1-20.oe1
+[ 2018s] [387/576] installing glassfish-annotation-api-1.2-16.oe1
+[ 2020s] [388/576] installing glassfish-el-api-3.0.1-0.7.b09.oe1
+[ 2022s] [389/576] installing glassfish-jaxb-api-2.2.12-11.oe1
+[ 2024s] [390/576] installing guava20-20.0-8.fc29
+[ 2028s] [391/576] installing hawtjni-runtime-1.16-4.oe1
+[ 2031s] [392/576] installing hibernate-jpa-2.0-api-1.0.1-1.oe1
+[ 2034s] [393/576] installing httpcomponents-core-4.4.10-4.oe1
+[ 2048s] [394/576] installing jboss-interceptors-1.2-api-1.0.0-9.oe1
+[ 2051s] [395/576] installing jboss-logging-3.3.0-5.oe1
+[ 2053s] [396/576] installing jcodings-1.0.9-15.oe1
+[ 2056s] [397/576] installing jdom2-2.0.6-14.oe1
+[ 2058s] [398/576] installing jsonp-1.0.4-1.oe1
+[ 2060s] [399/576] installing jzlib-1.1.3-11.oe1
+[ 2062s] [400/576] installing maven-monitor-2.2.1-60.oe1
+[ 2063s] [401/576] installing maven-resolver-api-1:1.1.1-3.oe1
+[ 2065s] [402/576] installing multiverse-0.7.0-10.oe1
+[ 2072s] [403/576] installing objenesis-2.6-4.oe1
+[ 2078s] [404/576] installing osgi-annotation-7.0.0-1.oe1
+[ 2080s] [405/576] installing osgi-core-7.0.0-1.oe1
+[ 2082s] [406/576] installing plexus-cipher-1.7-16.oe1
+[ 2085s] [407/576] installing plexus-classworlds-2.5.2-10.oe1
+[ 2087s] [408/576] installing plexus-containers-component-annotations-1.7.1-7.oe1
+[ 2093s] [409/576] installing plexus-interpolation-1.22-11.oe1
+[ 2095s] [410/576] installing plexus-utils-3.1.0-4.oe1
+[ 2097s] [411/576] installing protobuf-java-3.5.0-8.1.riscv64.fc29
+[ 2101s] [412/576] installing qdox-2.0-5.M9.oe1
+[ 2102s] [413/576] installing slf4j-1.7.25-8.oe1
+[ 2104s] [414/576] installing xml-commons-apis-1.4.01-29.oe1
+[ 2114s] [415/576] installing xmvn-api-3.0.0-25.oe1
+[ 2117s] [416/576] installing xmvn-core-3.0.0-25.oe1
+[ 2118s] [417/576] installing xpp3-1.1.4-21.oe1
+[ 2122s] [418/576] installing xz-java-1.8-4.oe1
+[ 2125s] [419/576] installing ecj-1:4.9-1.fc29
+[ 2130s] [420/576] installing netty-tcnative-1.1.33-1.oe1
+[ 2133s] [421/576] installing antlr-tool-2.7.7-60.oe1
+[ 2135s] [422/576] installing javapackages-tools-5.3.0-3.oe1
+[ 2138s] [423/576] installing tomcat-el-3.0-api-1:9.0.10-1.fc29
+[ 2141s] [424/576] installing tomcat-servlet-4.0-api-1:9.0.10-1.fc29
+[ 2144s] [425/576] installing gcc_secure-1.0-0.9.oe1
+[ 2146s] [426/576] installing perl-File-Fetch-0.56-4.oe1
+[ 2148s] [427/576] installing perl-devel-4:5.28.0-435.oe1
+[ 2164s] [428/576] installing java-1.8.0-openjdk-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 2167s] [429/576] installing apache-commons-codec-1.11-4.fc29
+[ 2169s] [430/576] installing apache-commons-logging-1.2-14.fc29
+[ 2171s] [431/576] installing bcel-6.2-3.fc29
+[ 2173s] [432/576] installing geronimo-validation-1.1-19.fc29
+[ 2175s] [433/576] installing osgi-compendium-6.0.0-6.fc29
+[ 2177s] [434/576] installing avalon-framework-4.3-22.oe1
+[ 2179s] [435/576] installing bytelist-1.0.8-16.fc29
+[ 2181s] [436/576] installing jansi-native-1.7-7.oe1
+[ 2184s] [437/576] installing javassist-3.18.1-10.oe1
+[ 2194s] [438/576] installing jcsp-1.1-0.13.oe1
+[ 2209s] [439/576] installing kxml-2.3.0-19.oe1
+[ 2211s] [440/576] installing maven-artifact-2.2.1-60.oe1
+[ 2213s] [441/576] installing maven-model-2.2.1-60.oe1
+[ 2215s] [442/576] installing maven-resolver-spi-1:1.1.1-3.oe1
+[ 2217s] [443/576] installing maven-resolver-util-1:1.1.1-3.oe1
+[ 2219s] [444/576] installing maven-wagon-provider-api-3.1.0-2.oe1
+[ 2220s] [445/576] installing plexus-build-api-0.0.7-23.oe1
+[ 2222s] [446/576] installing plexus-component-api-1.0-0.25.alpha16.oe1
+[ 2224s] [447/576] installing xstream-1.4.9-8.fc29
+[ 2226s] [448/576] installing jtidy-2:1.0-0.29.20100930svn1125.oe1
+[ 2228s] [449/576] installing log4j12-1.2.17-23.fc29
+[ 2231s] [450/576] installing maven-invoker-2.2-9.oe1
+[ 2234s] [451/576] installing netty3-3.10.6-5.fc29
+[ 2237s] [452/576] installing objectweb-asm-7.0-1.oe1
+[ 2239s] [453/576] installing plexus-sec-dispatcher-1.4-26.oe1
+[ 2241s] [454/576] installing velocity-1.7-26.oe1
+[ 2244s] [455/576] installing xml-commons-resolver-1.2-27.oe1
+[ 2246s] [456/576] installing xmvn-connector-aether-3.0.0-25.oe1
+[ 2248s] [457/576] installing cdi-api-1.2-9.oe1
+[ 2250s] [458/576] installing google-guice-4.1-13.oe1
+[ 2253s] [459/576] installing hibernate-validator-5.2.4-3.oe1
+[ 2255s] [460/576] installing xmvn-resolve-3.0.0-25.oe1
+[ 2256s] [461/576] installing xmvn-subst-3.0.0-25.oe1
+[ 2258s] [462/576] installing java-1.8.0-openjdk-devel-1:1.8.0.181.b15-1.1.riscv64.fc29
+[ 2280s] [463/576] installing bsf-2.4.0-32.oe1
+[ 2282s] [464/576] installing byte-buddy-1.9.5-4.fc30
+[ 2290s] [465/576] installing cglib-3.2.4-8.fc29
+[ 2292s] [466/576] installing fontbox-2.0.9-2.fc29
+[ 2295s] [467/576] installing apache-commons-configuration-1.10-13.oe1
+[ 2297s] [468/576] installing jakarta-commons-httpclient-1:3.1-30.oe1
+[ 2309s] [469/576] installing jansi-1.17.1-2.oe1
+[ 2311s] [470/576] installing maven-dependency-tree-3.0-7.oe1
+[ 2313s] [471/576] installing plexus-interactivity-api-1.0-0.27.alpha6.fc29
+[ 2315s] [472/576] installing plexus-languages-0.9.10-4.oe1
+[ 2317s] [473/576] installing snakeyaml-1.17-6.fc29
+[ 2320s] [474/576] installing felix-bundlerepository-2.0.10-6.oe1
+[ 2322s] [475/576] installing maven-resolver-impl-1:1.1.1-3.oe1
+[ 2324s] [476/576] installing xmvn-mojo-3.0.0-25.oe1
+[ 2326s] [477/576] installing aqute-bndlib-3.5.0-4.fc29
+[ 2329s] [478/576] installing httpcomponents-client-4.5.5-6.oe1
+[ 2332s] [479/576] installing sisu-inject-1:0.3.3-5.oe1
+[ 2340s] [480/576] installing xerces-j2-2.11.0-37.oe1
+[ 2344s] [481/576] installing xmvn-install-3.0.0-25.oe1
+[ 2346s] [482/576] installing jline-2.14.6-4.oe1
+[ 2350s] [483/576] installing testng-6.14.3-6.oe1
+[ 2353s] [484/576] installing easymock-3.5-4.fc29
+[ 2355s] [485/576] installing springframework-3.2.18-4.fc28
+[ 2358s] [486/576] installing mockito-2.23.9-3.fc30
+[ 2361s] [487/576] installing xalan-j2-2.7.1-38.fc29
+[ 2365s] [488/576] installing javapackages-local-5.3.0-3.oe1
+[ 2368s] [489/576] installing groovy-lib-2.4.8-7.fc29
+[ 2384s] [490/576] installing assertj-core-3.8.0-3.fc29
+[ 2387s] [491/576] installing springframework-expression-3.2.18-4.fc28
+[ 2389s] [492/576] installing hamcrest-1.3-25.oe1
+[ 2390s] [493/576] installing springframework-beans-3.2.18-4.fc28
+[ 2392s] [494/576] installing bsh-2.0-15.b6.oe1
+[ 2395s] [495/576] installing gpars-1.2.1-12.fc29
+[ 2397s] [496/576] installing scala-2.10.6-14.fc29
+[ 2423s] [497/576] installing xbean-4.9-3.oe1
+[ 2432s] [498/576] installing junit-1:4.12-14.oe1
+[ 2434s] [499/576] installing parboiled-1.1.6-17.oe1
+[ 2436s] [500/576] installing springframework-aop-3.2.18-4.fc28
+[ 2438s] [501/576] installing plexus-containers-container-default-1.7.1-7.oe1
+[ 2440s] [502/576] installing apache-commons-io-1:2.6-7.oe1
+[ 2444s] [503/576] installing maven-doxia-logging-api-1.7-12.oe1
+[ 2445s] [504/576] installing pegdown-1.4.2-14.oe1
+[ 2450s] [505/576] installing maven-plugin-registry-2.2.1-60.oe1
+[ 2452s] [506/576] installing plexus-i18n-1.0-0.12.b10.6.oe1
+[ 2454s] [507/576] installing plexus-resources-1.0-0.25.a7.oe1
+[ 2456s] [508/576] installing plexus-ant-factory-1.0-1.21.a2.2.oe1
+[ 2458s] [509/576] installing plexus-cli-1.6-9.oe1
+[ 2460s] [510/576] installing plexus-velocity-1.2-6.oe1
+[ 2463s] [511/576] installing xmlunit-1.6-10.oe1
+[ 2467s] [512/576] installing maven-profile-2.2.1-60.oe1
+[ 2469s] [513/576] installing maven-settings-2.2.1-60.oe1
+[ 2476s] [514/576] installing plexus-bsh-factory-1.0-1.20.a7.oe1
+[ 2479s] [515/576] installing springframework-context-3.2.18-4.fc28
+[ 2482s] [516/576] installing maven-doxia-sink-api-1.7-12.oe1
+[ 2483s] [517/576] installing maven-shared-utils-3.2.1-2.oe1
+[ 2486s] [518/576] installing plexus-io-3.0.0-4.oe1
+[ 2489s] [519/576] installing xmlgraphics-commons-2.2-3.oe1
+[ 2502s] [520/576] installing maven-reporting-api-3.0-17.oe1
+[ 2505s] [521/576] installing maven-verifier-1.6-8.oe1
+[ 2508s] [522/576] installing batik-1.10-2.fc29
+[ 2517s] [523/576] installing plexus-archiver-3.6.0-3.oe1
+[ 2523s] [524/576] installing maven-doxia-core-1.7-12.oe1
+[ 2525s] [525/576] installing maven-lib-1:3.5.4-8.oe1
+[ 2531s] [526/576] installing maven-artifact-resolver-1:1.0-21.oe1
+[ 2533s] [527/576] installing batik-css-1.10-2.fc29
+[ 2535s] [528/576] installing maven-common-artifact-filters-3.0.1-7.oe1
+[ 2539s] [529/576] installing maven-enforcer-api-1.4.1-11.oe1
+[ 2541s] [530/576] installing maven-plugin-testing-harness-3.3.0-14.oe1
+[ 2542s] [531/576] installing maven-shared-incremental-1.1-16.oe1
+[ 2546s] [532/576] installing maven-doxia-module-apt-1.7-12.oe1
+[ 2548s] [533/576] installing maven-doxia-module-fml-1.7-12.oe1
+[ 2550s] [534/576] installing maven-doxia-module-xdoc-1.7-12.oe1
+[ 2552s] [535/576] installing maven-doxia-module-xhtml-1.7-12.oe1
+[ 2553s] [536/576] installing maven-shared-io-1:3.0.0-7.oe1
+[ 2555s] [537/576] installing maven-artifact-manager-2.2.1-60.oe1
+[ 2557s] [538/576] installing maven-filtering-3.1.1-7.oe1
+[ 2560s] [539/576] installing maven-archiver-3.2.0-5.oe1
+[ 2563s] [540/576] installing fop-2.2-2.fc29
+[ 2571s] [541/576] installing xmvn-minimal-3.0.0-25.oe1
+[ 2573s] [542/576] installing maven-file-management-1:3.0.0-7.oe1
+[ 2575s] [543/576] installing maven-jar-plugin-3.1.0-3.oe1
+[ 2577s] [544/576] installing maven-resources-plugin-3.1.0-4.oe1
+[ 2582s] [545/576] installing maven-doxia-module-markdown-1.7-12.oe1
+[ 2584s] [546/576] installing maven-artifact-transfer-1:0.9.0-7.oe1
+[ 2586s] [547/576] installing maven-doxia-module-fo-1.7-12.oe1
+[ 2587s] [548/576] installing maven-project-2.2.1-60.oe1
+[ 2590s] [549/576] installing maven-osgi-1:0.2.0-2.oe1
+[ 2591s] [550/576] installing maven-antrun-plugin-1.8-8.oe1
+[ 2595s] [551/576] installing maven-dependency-analyzer-1.8-4.oe1
+[ 2598s] [552/576] installing maven-enforcer-rules-1.4.1-11.oe1
+[ 2599s] [553/576] installing plexus-containers-component-metadata-1.7.1-7.oe1
+[ 2601s] [554/576] installing maven-remote-resources-plugin-1.5-4.oe1
+[ 2603s] [555/576] installing maven-doxia-sitetools-1.7.5-5.oe1
+[ 2608s] [556/576] installing maven-enforcer-plugin-1.4.1-11.oe1
+[ 2610s] [557/576] installing maven-reporting-impl-3.0.0-5.oe1
+[ 2612s] [558/576] installing maven-javadoc-plugin-3.0.1-3.oe1
+[ 2614s] [559/576] installing plexus-pom-5.0-4.oe1
+[ 2617s] [560/576] installing apache-parent-19-5.oe1
+[ 2623s] [561/576] installing maven-plugin-bundle-3.5.0-5.oe1
+[ 2626s] [562/576] installing maven-dependency-plugin-3.0.2-4.oe1
+[ 2628s] [563/576] installing maven-parent-27-7.oe1
+[ 2630s] [564/576] installing plexus-components-pom-1.3.1-14.oe1
+[ 2631s] [565/576] installing plexus-compiler-2.8.2-4.oe1
+[ 2635s] [566/576] installing maven-plugin-tools-3.5.1-7.oe1
+[ 2640s] [567/576] installing maven-compiler-plugin-3.8.0-2.oe1
+[ 2641s] [568/576] installing maven-surefire-2.22.0-6.oe1
+[ 2643s] [569/576] installing maven-plugin-tools-generators-3.5.1-7.oe1
+[ 2645s] [570/576] installing kohsuke-pom-14-1.oe1
+[ 2646s] [571/576] installing maven-surefire-plugin-2.22.0-6.oe1
+[ 2647s] [572/576] installing maven-surefire-provider-junit-2.22.0-6.oe1
+[ 2649s] [573/576] installing maven-surefire-provider-testng-2.22.0-6.oe1
+[ 2650s] [574/576] installing maven-script-3.5.1-7.oe1
+[ 2652s] [575/576] installing args4j-2.33-6.oe1
+[ 2653s] [576/576] installing maven-local-5.3.0-3.oe1
+[ 2654s] removing nis flags from /var/cache/obs/worker/root_2/etc/nsswitch.conf...
+[ 2655s] now finalizing build dir...
+[ 2669s] Running build time source services...
+[ 2688s] -----------------------------------------------------------------
+[ 2688s] ----- building glassfish-hk2.spec (user abuild)
+[ 2688s] -----------------------------------------------------------------
+[ 2688s] -----------------------------------------------------------------
+[ 2697s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/611f70992a86c10e35da1f74cf03f545-glassfish-hk2' /home/abuild/rpmbuild/SOURCES/glassfish-hk2.spec
+[ 2698s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.4jKnLq
+[ 2698s] + umask 022
+[ 2698s] + cd /home/abuild/rpmbuild/BUILD
+[ 2698s] + cd /home/abuild/rpmbuild/BUILD
+[ 2698s] + rm -rf glassfish-hk2-2.5.0-RELEASE
+[ 2698s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/glassfish-hk2-2.5.0.tar.gz
+[ 2698s] + /usr/bin/tar -xof -
+[ 2704s] + STATUS=0
+[ 2704s] + '[' 0 -ne 0 ']'
+[ 2704s] + cd glassfish-hk2-2.5.0-RELEASE
+[ 2704s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2706s] + echo 'Patch #0 (0001-OSGi-metadata-fixes.patch):'
+[ 2706s] Patch #0 (0001-OSGi-metadata-fixes.patch):
+[ 2706s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 2706s] patching file class-model/osgi.bundle
+[ 2706s] patching file hk2-api/osgi.bundle
+[ 2706s] patching file hk2-core/osgi.bundle
+[ 2706s] patching file hk2-utils/osgi.bundle
+[ 2707s] + echo 'Patch #1 (0002-Fixed-tests.patch):'
+[ 2707s] Patch #1 (0002-Fixed-tests.patch):
+[ 2707s] + /usr/bin/patch --no-backup-if-mismatch -p1 --fuzz=0
+[ 2707s] patching file hk2-configuration/persistence/hk2-xml/test1/src/test/java/org/glassfish/hk2/xml/test/interop/InteropTest.java
+[ 2707s] patching file hk2-testing/hk2-runlevel-extras/src/test/java/org/jvnet/hk2/examples/runlevel/test/PrimaryITest.java
+[ 2707s] patching file hk2-testing/hk2-runlevel-extras/src/test/java/org/jvnet/hk2/examples/runlevel/test/SecondaryITest.java
+[ 2707s] + tar xf /home/abuild/rpmbuild/SOURCES/glassfish-hk2-extra-1.0.3.tar.gz --strip-components=1 glassfish-hk2-extra-1.0.3-RELEASE/osgi-resource-locator glassfish-hk2-extra-1.0.3-RELEASE/dependency-verifier glassfish-hk2-extra-1.0.3-RELEASE/dependency-visualizer
+[ 2708s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_set 'pom:dependency[pom:groupId ='\''org.glassfish.hk2'\'']/pom:version' 2.5.0 dependency-verifier
+[ 2710s] + for mod in osgi-resource-locator dependency-verifier dependency-visualizer
+[ 2710s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject pom:modules '<module>osgi-resource-locator</module>'
+[ 2713s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_parent osgi-resource-locator
+[ 2716s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_parent org.glassfish.hk2:hk2-parent:2.5.0 osgi-resource-locator
+[ 2718s] + for mod in osgi-resource-locator dependency-verifier dependency-visualizer
+[ 2718s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject pom:modules '<module>dependency-verifier</module>'
+[ 2721s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_parent dependency-verifier
+[ 2723s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_parent org.glassfish.hk2:hk2-parent:2.5.0 dependency-verifier
+[ 2725s] + for mod in osgi-resource-locator dependency-verifier dependency-visualizer
+[ 2725s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject pom:modules '<module>dependency-visualizer</module>'
+[ 2727s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_parent dependency-visualizer
+[ 2730s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_parent org.glassfish.hk2:hk2-parent:2.5.0 dependency-visualizer
+[ 2733s] + find . -name '*.jar' '!' -name gendir.jar -type f -print -delete
+[ 2734s] + find . -name '*.class' -print -delete
+[ 2735s] + rm hk2-runlevel/src/test/java/org/glassfish/hk2/runlevel/tests/listener/ListenerErrorTest.java
+[ 2736s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_parent bom .
+[ 2738s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r jakarta.servlet:jakarta.servlet-api javax.servlet:javax.servlet-api
+[ 2743s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r jakarta.annotation:jakarta.annotation-api javax.annotation:javax.annotation-api
+[ 2748s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r jakarta.el:jakarta.el-api javax.el:javax.el-api
+[ 2754s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r jakarta.json:jakarta.json-api javax.json:javax.json-api
+[ 2762s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r org.glassfish:jakarta.json org.glassfish:javax.json
+[ 2767s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r org.glassfish.hk2.external:jakarta.inject javax.inject:javax.inject
+[ 2773s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r org.glassfish.hk2.external:asm-repackaged 'org.ow2.asm:asm-all:${asm.version}'
+[ 2778s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep -r org.glassfish.hk2.external:aopalliance-repackaged 'aopalliance:aopalliance:${aopalliance.version}'
+[ 2783s] + find class-model maven-plugins/hk2-inhabitant-generator hk2-testing/hk2-junitrunner -name '*.java' -exec sed -i s/org.glassfish.hk2.external.org.objectweb.asm/org.objectweb.asm/g '{}' +
+[ 2784s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep :osgi-resource-locator ::1.0.3
+[ 2787s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.osgi:org.osgi.enterprise
+[ 2789s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_change_dep :org.osgi.enterprise org.osgi:osgi.cmpn:6.0.0 class-model
+[ 2791s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-download-plugin
+[ 2794s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-site-plugin
+[ 2796s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-eclipse-plugin
+[ 2799s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-enforcer-plugin
+[ 2801s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :findbugs-maven-plugin
+[ 2804s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :jacoco-maven-plugin
+[ 2806s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep :jacoco-maven-plugin
+[ 2809s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-jar-plugin osgi-resource-locator
+[ 2811s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-source-plugin osgi-resource-locator
+[ 2814s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-javadoc-plugin osgi-resource-locator
+[ 2816s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-release-plugin osgi-resource-locator
+[ 2819s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin :maven-gpg-plugin osgi-resource-locator
+[ 2821s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:plugin[pom:artifactId ='\''maven-jar-plugin'\'']/pom:executions' hk2
+[ 2823s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module external
+[ 2826s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module examples
+[ 2828s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module osgi-adapter-test osgi/adapter-tests
+[ 2831s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.ops4j.pax.exam:
+[ 2834s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.ops4j.pax.url:
+[ 2837s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.ops4j.pax.logging:
+[ 2839s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_disable_module jersey hk2-testing
+[ 2841s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep org.osgi:osgi_R4_core
+[ 2844s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep :com.springsource.org.junit
+[ 2846s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep -r :jboss-logging
+[ 2850s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_remove_dep -r :classmate
+[ 2858s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:plugin[pom:artifactId ='\''maven-surefire-plugin'\'']/pom:configuration' hk2-api
+[ 2863s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:plugin[pom:artifactId ='\''maven-surefire-plugin'\'']/pom:configuration' hk2-locator
+[ 2865s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_set 'pom:dependency[pom:groupId ='\''com.sun'\'']/pom:artifactId' tools hk2-testing/ant
+[ 2867s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:dependency[pom:groupId ='\''com.sun'\'']/pom:scope' hk2-testing/ant
+[ 2870s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:dependency[pom:groupId ='\''com.sun'\'']/pom:systemPath' hk2-testing/ant
+[ 2872s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:profiles/pom:profile[pom:id ='\''mac'\'']' hk2-testing/ant
+[ 2874s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_set pom:addClasspath false dependency-verifier
+[ 2877s] + mkdir -p hk2/target/classes
+[ 2877s] + rm maven-plugins/hk2-inhabitant-generator/src/main/resources/META-INF/MANIFEST.MF
+[ 2877s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.felix:maven-bundle-plugin maven-plugins/hk2-inhabitant-generator '
+[ 2877s] 
+[ 2877s] <configuration>
+[ 2877s]   <supportedProjectTypes>
+[ 2877s]    <supportedProjectType>maven-plugin</supportedProjectType>
+[ 2877s]   </supportedProjectTypes>
+[ 2877s] </configuration>
+[ 2877s] <executions>
+[ 2877s]   <execution>
+[ 2877s]     <id>bundle-manifest</id>
+[ 2877s]     <phase>process-classes</phase>
+[ 2877s]     <goals>
+[ 2877s]       <goal>manifest</goal>
+[ 2877s]     </goals>
+[ 2877s]   </execution>
+[ 2877s] </executions>'
+[ 2879s] + cp -p /home/abuild/rpmbuild/SOURCES/hk2-inhabitant-generator-osgi.bundle maven-plugins/hk2-inhabitant-generator/osgi.bundle
+[ 2879s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin 'org.glassfish.hk2:osgiversion-maven-plugin:${project.version}' maven-plugins/hk2-inhabitant-generator
+[ 2881s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin:2.4 maven-plugins/hk2-inhabitant-generator '
+[ 2881s] 
+[ 2881s] <configuration>
+[ 2881s]   <archive>
+[ 2881s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2881s]     <manifestEntries>
+[ 2881s]       <service>foo</service>
+[ 2881s]     </manifestEntries>
+[ 2881s]   </archive>
+[ 2881s] </configuration>'
+[ 2883s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove 'pom:plugin[pom:artifactId = '\''maven-jar-plugin'\'']/pom:configuration/pom:useDefaultManifestFile' . hk2-utils
+[ 2886s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject 'pom:plugin[pom:artifactId = '\''maven-jar-plugin'\'']/pom:configuration/pom:archive' '<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>' hk2-utils
+[ 2888s] +++ find bom/ class-model/ dependency-verifier/ dependency-visualizer/ examples/ external/ guice-bridge/ hk2-api/ hk2-configuration/ hk2-core/ hk2-extras/ hk2-jmx/ hk2-locator/ hk2-metadata-generator/ hk2-runlevel/ hk2-testing/ hk2-utils/ hk2/ javadocs/ maven-plugins/ osgi-resource-locator/ osgi/ spring-bridge/ -name pom.xml
+[ 2889s] ++ grep -l maven-bundle-plugin bom/pom.xml class-model/pom.xml dependency-verifier/pom.xml dependency-visualizer/pom.xml examples/caching/pom.xml examples/caching/runner/pom.xml examples/caching/system/pom.xml examples/configuration/pom.xml examples/configuration/webserver/pom.xml examples/configuration/xml/pom.xml examples/custom-resolver/pom.xml examples/events/pom.xml examples/events/threaded/pom.xml examples/operations/pom.xml examples/pom.xml examples/security-lockdown/alice/pom.xml examples/security-lockdown/mallory/pom.xml examples/security-lockdown/pom.xml examples/security-lockdown/runner/pom.xml examples/security-lockdown/system/pom.xml external/aopalliance/pom.xml external/asm-all/pom.xml external/jsr330/pom.xml external/pom.xml guice-bridge/pom.xml hk2-api/pom.xml hk2-configuration/hk2-integration/pom.xml hk2-configuration/manager/pom.xml hk2-configuration/persistence/hk2-xml/hk2-json/pom.xml hk2-configuration/persistence/hk2-xml/hk2-pbuf/pom.xml hk2-configuration/persistence/hk2-xml/integration-test/pom.xml hk2-configuration/persistence/hk2-xml/main/pom.xml hk2-configuration/persistence/hk2-xml/pom.xml hk2-configuration/persistence/hk2-xml/schema/pom.xml hk2-configuration/persistence/hk2-xml/test1/pom.xml hk2-configuration/persistence/pom.xml hk2-configuration/persistence/property-file/pom.xml hk2-configuration/pom.xml hk2-core/pom.xml hk2-extras/pom.xml hk2-jmx/pom.xml hk2-locator/pom.xml hk2-metadata-generator/main/pom.xml hk2-metadata-generator/pom.xml hk2-metadata-generator/test1/pom.xml hk2-runlevel/pom.xml hk2-testing/ant/pom.xml hk2-testing/collections/pom.xml hk2-testing/hk2-junitrunner/pom.xml hk2-testing/hk2-locator-extras/pom.xml hk2-testing/hk2-locator-no-proxies/pom.xml hk2-testing/hk2-locator-no-proxies2/pom.xml hk2-testing/hk2-mockito/pom.xml hk2-testing/hk2-runlevel-extras/pom.xml hk2-testing/hk2-testng/pom.xml hk2-testing/interceptor-events/pom.xml hk2-testing/jersey/jersey-guice/form-param/pom.xml hk2-testing/jersey/jersey-guice/pom.xml hk2-testing/jersey/pom.xml hk2-testing/pom.xml hk2-utils/pom.xml hk2/pom.xml javadocs/pom.xml maven-plugins/consolidatedbundle-maven-plugin/pom.xml maven-plugins/hk2-inhabitant-generator/pom.xml maven-plugins/osgiversion-maven-plugin/pom.xml maven-plugins/pom.xml osgi-resource-locator/pom.xml osgi/adapter-tests/contract-bundle/pom.xml osgi/adapter-tests/faux-sdp-bundle/pom.xml osgi/adapter-tests/no-hk2-bundle/pom.xml osgi/adapter-tests/osgi-adapter-test/pom.xml osgi/adapter-tests/sdp-management-bundle/pom.xml osgi/adapter-tests/test-module-startup/pom.xml osgi/adapter-tests/pom.xml osgi/adapter/pom.xml osgi/pom.xml spring-bridge/pom.xml
+[ 2889s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2889s] ++ dirname class-model/pom.xml
+[ 2889s] + '[' class-model = hk-utils ']'
+[ 2889s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin class-model/pom.xml '
+[ 2889s] 
+[ 2889s] <configuration>
+[ 2889s]   <archive>
+[ 2889s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2889s]   </archive>
+[ 2889s] </configuration>'
+[ 2892s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2892s] ++ dirname examples/caching/runner/pom.xml
+[ 2892s] + '[' examples/caching/runner = hk-utils ']'
+[ 2892s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/caching/runner/pom.xml '
+[ 2892s] 
+[ 2892s] <configuration>
+[ 2892s]   <archive>
+[ 2892s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2892s]   </archive>
+[ 2892s] </configuration>'
+[ 2894s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2894s] ++ dirname examples/caching/system/pom.xml
+[ 2894s] + '[' examples/caching/system = hk-utils ']'
+[ 2894s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/caching/system/pom.xml '
+[ 2894s] 
+[ 2894s] <configuration>
+[ 2894s]   <archive>
+[ 2894s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2894s]   </archive>
+[ 2894s] </configuration>'
+[ 2897s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2897s] ++ dirname examples/custom-resolver/pom.xml
+[ 2898s] + '[' examples/custom-resolver = hk-utils ']'
+[ 2898s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/custom-resolver/pom.xml '
+[ 2898s] 
+[ 2898s] <configuration>
+[ 2898s]   <archive>
+[ 2898s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2898s]   </archive>
+[ 2898s] </configuration>'
+[ 2900s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2900s] ++ dirname examples/events/threaded/pom.xml
+[ 2900s] + '[' examples/events/threaded = hk-utils ']'
+[ 2900s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/events/threaded/pom.xml '
+[ 2900s] 
+[ 2900s] <configuration>
+[ 2900s]   <archive>
+[ 2900s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2900s]   </archive>
+[ 2900s] </configuration>'
+[ 2902s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2902s] ++ dirname examples/operations/pom.xml
+[ 2902s] + '[' examples/operations = hk-utils ']'
+[ 2902s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/operations/pom.xml '
+[ 2902s] 
+[ 2902s] <configuration>
+[ 2902s]   <archive>
+[ 2902s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2902s]   </archive>
+[ 2902s] </configuration>'
+[ 2905s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2905s] ++ dirname examples/security-lockdown/alice/pom.xml
+[ 2905s] + '[' examples/security-lockdown/alice = hk-utils ']'
+[ 2905s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/security-lockdown/alice/pom.xml '
+[ 2905s] 
+[ 2905s] <configuration>
+[ 2905s]   <archive>
+[ 2905s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2905s]   </archive>
+[ 2905s] </configuration>'
+[ 2907s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2907s] ++ dirname examples/security-lockdown/mallory/pom.xml
+[ 2907s] + '[' examples/security-lockdown/mallory = hk-utils ']'
+[ 2907s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/security-lockdown/mallory/pom.xml '
+[ 2907s] 
+[ 2907s] <configuration>
+[ 2907s]   <archive>
+[ 2907s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2907s]   </archive>
+[ 2907s] </configuration>'
+[ 2909s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2909s] ++ dirname examples/security-lockdown/runner/pom.xml
+[ 2909s] + '[' examples/security-lockdown/runner = hk-utils ']'
+[ 2909s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/security-lockdown/runner/pom.xml '
+[ 2909s] 
+[ 2909s] <configuration>
+[ 2909s]   <archive>
+[ 2909s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2909s]   </archive>
+[ 2909s] </configuration>'
+[ 2911s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2911s] ++ dirname examples/security-lockdown/system/pom.xml
+[ 2911s] + '[' examples/security-lockdown/system = hk-utils ']'
+[ 2911s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin examples/security-lockdown/system/pom.xml '
+[ 2911s] 
+[ 2912s] <configuration>
+[ 2912s]   <archive>
+[ 2912s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2912s]   </archive>
+[ 2912s] </configuration>'
+[ 2915s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2915s] ++ dirname external/aopalliance/pom.xml
+[ 2915s] + '[' external/aopalliance = hk-utils ']'
+[ 2915s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin external/aopalliance/pom.xml '
+[ 2915s] 
+[ 2915s] <configuration>
+[ 2915s]   <archive>
+[ 2915s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2915s]   </archive>
+[ 2915s] </configuration>'
+[ 2917s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2917s] ++ dirname external/jsr330/pom.xml
+[ 2917s] + '[' external/jsr330 = hk-utils ']'
+[ 2917s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin external/jsr330/pom.xml '
+[ 2917s] 
+[ 2917s] <configuration>
+[ 2917s]   <archive>
+[ 2917s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2917s]   </archive>
+[ 2917s] </configuration>'
+[ 2919s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2919s] ++ dirname guice-bridge/pom.xml
+[ 2919s] + '[' guice-bridge = hk-utils ']'
+[ 2919s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin guice-bridge/pom.xml '
+[ 2919s] 
+[ 2919s] <configuration>
+[ 2919s]   <archive>
+[ 2919s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2919s]   </archive>
+[ 2919s] </configuration>'
+[ 2922s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2922s] ++ dirname hk2-api/pom.xml
+[ 2922s] + '[' hk2-api = hk-utils ']'
+[ 2922s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-api/pom.xml '
+[ 2922s] 
+[ 2922s] <configuration>
+[ 2922s]   <archive>
+[ 2922s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2922s]   </archive>
+[ 2922s] </configuration>'
+[ 2924s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2924s] ++ dirname hk2-configuration/hk2-integration/pom.xml
+[ 2924s] + '[' hk2-configuration/hk2-integration = hk-utils ']'
+[ 2924s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/hk2-integration/pom.xml '
+[ 2924s] 
+[ 2924s] <configuration>
+[ 2924s]   <archive>
+[ 2924s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2924s]   </archive>
+[ 2924s] </configuration>'
+[ 2926s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2926s] ++ dirname hk2-configuration/manager/pom.xml
+[ 2926s] + '[' hk2-configuration/manager = hk-utils ']'
+[ 2926s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/manager/pom.xml '
+[ 2926s] 
+[ 2926s] <configuration>
+[ 2926s]   <archive>
+[ 2926s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2926s]   </archive>
+[ 2926s] </configuration>'
+[ 2928s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2928s] ++ dirname hk2-configuration/persistence/hk2-xml/hk2-json/pom.xml
+[ 2928s] + '[' hk2-configuration/persistence/hk2-xml/hk2-json = hk-utils ']'
+[ 2928s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/hk2-json/pom.xml '
+[ 2928s] 
+[ 2928s] <configuration>
+[ 2928s]   <archive>
+[ 2928s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2928s]   </archive>
+[ 2928s] </configuration>'
+[ 2930s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2930s] ++ dirname hk2-configuration/persistence/hk2-xml/hk2-pbuf/pom.xml
+[ 2930s] + '[' hk2-configuration/persistence/hk2-xml/hk2-pbuf = hk-utils ']'
+[ 2930s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/hk2-pbuf/pom.xml '
+[ 2930s] 
+[ 2931s] <configuration>
+[ 2931s]   <archive>
+[ 2931s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2931s]   </archive>
+[ 2931s] </configuration>'
+[ 2933s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2933s] ++ dirname hk2-configuration/persistence/hk2-xml/integration-test/pom.xml
+[ 2933s] + '[' hk2-configuration/persistence/hk2-xml/integration-test = hk-utils ']'
+[ 2933s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/integration-test/pom.xml '
+[ 2933s] 
+[ 2933s] <configuration>
+[ 2933s]   <archive>
+[ 2933s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2933s]   </archive>
+[ 2933s] </configuration>'
+[ 2935s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2935s] ++ dirname hk2-configuration/persistence/hk2-xml/main/pom.xml
+[ 2935s] + '[' hk2-configuration/persistence/hk2-xml/main = hk-utils ']'
+[ 2935s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/main/pom.xml '
+[ 2935s] 
+[ 2935s] <configuration>
+[ 2935s]   <archive>
+[ 2935s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2935s]   </archive>
+[ 2935s] </configuration>'
+[ 2937s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2937s] ++ dirname hk2-configuration/persistence/hk2-xml/schema/pom.xml
+[ 2937s] + '[' hk2-configuration/persistence/hk2-xml/schema = hk-utils ']'
+[ 2937s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/schema/pom.xml '
+[ 2937s] 
+[ 2937s] <configuration>
+[ 2937s]   <archive>
+[ 2937s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2937s]   </archive>
+[ 2937s] </configuration>'
+[ 2939s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2939s] ++ dirname hk2-configuration/persistence/hk2-xml/test1/pom.xml
+[ 2940s] + '[' hk2-configuration/persistence/hk2-xml/test1 = hk-utils ']'
+[ 2940s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/hk2-xml/test1/pom.xml '
+[ 2940s] 
+[ 2940s] <configuration>
+[ 2940s]   <archive>
+[ 2940s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2940s]   </archive>
+[ 2940s] </configuration>'
+[ 2942s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2942s] ++ dirname hk2-configuration/persistence/property-file/pom.xml
+[ 2942s] + '[' hk2-configuration/persistence/property-file = hk-utils ']'
+[ 2942s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-configuration/persistence/property-file/pom.xml '
+[ 2942s] 
+[ 2942s] <configuration>
+[ 2942s]   <archive>
+[ 2942s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2942s]   </archive>
+[ 2942s] </configuration>'
+[ 2944s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2944s] ++ dirname hk2-core/pom.xml
+[ 2944s] + '[' hk2-core = hk-utils ']'
+[ 2944s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-core/pom.xml '
+[ 2944s] 
+[ 2944s] <configuration>
+[ 2944s]   <archive>
+[ 2944s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2944s]   </archive>
+[ 2944s] </configuration>'
+[ 2946s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2946s] ++ dirname hk2-extras/pom.xml
+[ 2946s] + '[' hk2-extras = hk-utils ']'
+[ 2946s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-extras/pom.xml '
+[ 2946s] 
+[ 2946s] <configuration>
+[ 2946s]   <archive>
+[ 2946s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2946s]   </archive>
+[ 2946s] </configuration>'
+[ 2948s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2948s] ++ dirname hk2-jmx/pom.xml
+[ 2948s] + '[' hk2-jmx = hk-utils ']'
+[ 2948s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-jmx/pom.xml '
+[ 2948s] 
+[ 2948s] <configuration>
+[ 2948s]   <archive>
+[ 2948s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2948s]   </archive>
+[ 2948s] </configuration>'
+[ 2951s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2951s] ++ dirname hk2-locator/pom.xml
+[ 2951s] + '[' hk2-locator = hk-utils ']'
+[ 2951s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-locator/pom.xml '
+[ 2951s] 
+[ 2951s] <configuration>
+[ 2951s]   <archive>
+[ 2951s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2951s]   </archive>
+[ 2951s] </configuration>'
+[ 2953s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2953s] ++ dirname hk2-runlevel/pom.xml
+[ 2953s] + '[' hk2-runlevel = hk-utils ']'
+[ 2953s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-runlevel/pom.xml '
+[ 2953s] 
+[ 2953s] <configuration>
+[ 2953s]   <archive>
+[ 2953s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2953s]   </archive>
+[ 2953s] </configuration>'
+[ 2956s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2956s] ++ dirname hk2-testing/collections/pom.xml
+[ 2956s] + '[' hk2-testing/collections = hk-utils ']'
+[ 2956s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-testing/collections/pom.xml '
+[ 2956s] 
+[ 2956s] <configuration>
+[ 2956s]   <archive>
+[ 2956s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2956s]   </archive>
+[ 2956s] </configuration>'
+[ 2958s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2958s] ++ dirname hk2-testing/hk2-junitrunner/pom.xml
+[ 2958s] + '[' hk2-testing/hk2-junitrunner = hk-utils ']'
+[ 2958s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-testing/hk2-junitrunner/pom.xml '
+[ 2958s] 
+[ 2958s] <configuration>
+[ 2958s]   <archive>
+[ 2958s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2958s]   </archive>
+[ 2958s] </configuration>'
+[ 2960s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2960s] ++ dirname hk2-testing/hk2-locator-extras/pom.xml
+[ 2960s] + '[' hk2-testing/hk2-locator-extras = hk-utils ']'
+[ 2960s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-testing/hk2-locator-extras/pom.xml '
+[ 2960s] 
+[ 2960s] <configuration>
+[ 2960s]   <archive>
+[ 2960s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2960s]   </archive>
+[ 2960s] </configuration>'
+[ 2963s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2963s] ++ dirname hk2-testing/hk2-locator-no-proxies/pom.xml
+[ 2963s] + '[' hk2-testing/hk2-locator-no-proxies = hk-utils ']'
+[ 2963s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-testing/hk2-locator-no-proxies/pom.xml '
+[ 2963s] 
+[ 2963s] <configuration>
+[ 2963s]   <archive>
+[ 2963s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2963s]   </archive>
+[ 2963s] </configuration>'
+[ 2965s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2965s] ++ dirname hk2-testing/hk2-locator-no-proxies2/pom.xml
+[ 2965s] + '[' hk2-testing/hk2-locator-no-proxies2 = hk-utils ']'
+[ 2965s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-testing/hk2-locator-no-proxies2/pom.xml '
+[ 2965s] 
+[ 2965s] <configuration>
+[ 2965s]   <archive>
+[ 2965s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2965s]   </archive>
+[ 2965s] </configuration>'
+[ 2967s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2967s] ++ dirname hk2-utils/pom.xml
+[ 2967s] + '[' hk2-utils = hk-utils ']'
+[ 2967s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2-utils/pom.xml '
+[ 2967s] 
+[ 2967s] <configuration>
+[ 2967s]   <archive>
+[ 2967s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2967s]   </archive>
+[ 2967s] </configuration>'
+[ 2970s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2970s] ++ dirname hk2/pom.xml
+[ 2971s] + '[' hk2 = hk-utils ']'
+[ 2971s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin hk2/pom.xml '
+[ 2971s] 
+[ 2971s] <configuration>
+[ 2971s]   <archive>
+[ 2971s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2971s]   </archive>
+[ 2971s] </configuration>'
+[ 2973s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2973s] ++ dirname maven-plugins/hk2-inhabitant-generator/pom.xml
+[ 2973s] + '[' maven-plugins/hk2-inhabitant-generator = hk-utils ']'
+[ 2973s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin maven-plugins/hk2-inhabitant-generator/pom.xml '
+[ 2973s] 
+[ 2973s] <configuration>
+[ 2973s]   <archive>
+[ 2973s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2973s]   </archive>
+[ 2973s] </configuration>'
+[ 2975s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2975s] ++ dirname osgi-resource-locator/pom.xml
+[ 2975s] + '[' osgi-resource-locator = hk-utils ']'
+[ 2975s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi-resource-locator/pom.xml '
+[ 2975s] 
+[ 2975s] <configuration>
+[ 2975s]   <archive>
+[ 2975s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2975s]   </archive>
+[ 2975s] </configuration>'
+[ 2978s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2978s] ++ dirname osgi/adapter-tests/contract-bundle/pom.xml
+[ 2978s] + '[' osgi/adapter-tests/contract-bundle = hk-utils ']'
+[ 2978s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter-tests/contract-bundle/pom.xml '
+[ 2978s] 
+[ 2978s] <configuration>
+[ 2978s]   <archive>
+[ 2978s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2978s]   </archive>
+[ 2978s] </configuration>'
+[ 2980s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2980s] ++ dirname osgi/adapter-tests/faux-sdp-bundle/pom.xml
+[ 2980s] + '[' osgi/adapter-tests/faux-sdp-bundle = hk-utils ']'
+[ 2980s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter-tests/faux-sdp-bundle/pom.xml '
+[ 2980s] 
+[ 2980s] <configuration>
+[ 2980s]   <archive>
+[ 2980s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2980s]   </archive>
+[ 2980s] </configuration>'
+[ 2982s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2982s] ++ dirname osgi/adapter-tests/no-hk2-bundle/pom.xml
+[ 2982s] + '[' osgi/adapter-tests/no-hk2-bundle = hk-utils ']'
+[ 2982s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter-tests/no-hk2-bundle/pom.xml '
+[ 2982s] 
+[ 2982s] <configuration>
+[ 2982s]   <archive>
+[ 2982s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2982s]   </archive>
+[ 2982s] </configuration>'
+[ 2984s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2984s] ++ dirname osgi/adapter-tests/sdp-management-bundle/pom.xml
+[ 2984s] + '[' osgi/adapter-tests/sdp-management-bundle = hk-utils ']'
+[ 2984s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter-tests/sdp-management-bundle/pom.xml '
+[ 2984s] 
+[ 2984s] <configuration>
+[ 2984s]   <archive>
+[ 2984s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2984s]   </archive>
+[ 2984s] </configuration>'
+[ 2987s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2987s] ++ dirname osgi/adapter-tests/test-module-startup/pom.xml
+[ 2987s] + '[' osgi/adapter-tests/test-module-startup = hk-utils ']'
+[ 2987s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter-tests/test-module-startup/pom.xml '
+[ 2987s] 
+[ 2987s] <configuration>
+[ 2987s]   <archive>
+[ 2987s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2987s]   </archive>
+[ 2987s] </configuration>'
+[ 2989s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2989s] ++ dirname osgi/adapter/pom.xml
+[ 2989s] + '[' osgi/adapter = hk-utils ']'
+[ 2989s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin osgi/adapter/pom.xml '
+[ 2989s] 
+[ 2989s] <configuration>
+[ 2989s]   <archive>
+[ 2989s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2989s]   </archive>
+[ 2989s] </configuration>'
+[ 2992s] + for mod in $(grep -l maven-bundle-plugin $(find */ -name pom.xml) )
+[ 2992s] ++ dirname spring-bridge/pom.xml
+[ 2992s] + '[' spring-bridge = hk-utils ']'
+[ 2992s] + /usr/bin/python3 /usr/share/java-utils/pom_editor.py pom_add_plugin org.apache.maven.plugins:maven-jar-plugin spring-bridge/pom.xml '
+[ 2992s] 
+[ 2992s] <configuration>
+[ 2992s]   <archive>
+[ 2992s]     <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+[ 2992s]   </archive>
+[ 2992s] </configuration>'
+[ 2994s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :::tests: __noinstall
+[ 2997s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-bom glassfish-hk2
+[ 2999s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-parent glassfish-hk2
+[ 3001s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2 hk2
+[ 3003s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-api api
+[ 3006s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-core core
+[ 3008s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-configuration configuration
+[ 3011s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-configuration-hub configuration
+[ 3013s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-configuration-integration configuration
+[ 3015s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-configuration-persistence configuration
+[ 3018s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-property-file configuration
+[ 3020s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-xml-parent configuration
+[ 3024s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-xml-schema configuration
+[ 3026s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-xml-integration-test __noinstall
+[ 3028s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-xml-test __noinstall
+[ 3030s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-json configuration
+[ 3032s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-pbuf configuration
+[ 3035s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-xml configuration
+[ 3037s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-extras extras
+[ 3039s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-jmx jmx
+[ 3042s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-locator locator
+[ 3044s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-metadata-generator metadata-generator
+[ 3046s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-metadata-generator-parent metadata-generator
+[ 3049s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-metadata-generator-test1 __noinstall
+[ 3051s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-runlevel runlevel
+[ 3053s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-utils utils
+[ 3056s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :class-model class-model
+[ 3058s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgi-resource-locator osgi-resource-locator
+[ 3060s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-dependency-verifier dependency-verifier
+[ 3062s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-dependency-visualizer dependency-visualizer
+[ 3065s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :guice-bridge guice-bridge
+[ 3067s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :spring-bridge spring-bridge
+[ 3070s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgi osgi
+[ 3072s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgi-adapter osgi
+[ 3074s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgi-adapter-tests-parent __noinstall
+[ 3077s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :contract-bundle __noinstall
+[ 3080s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :faux-sdp-bundle __noinstall
+[ 3082s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :no-hk2-bundle __noinstall
+[ 3084s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgi-adapter-test __noinstall
+[ 3087s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :sdp-management-bundle __noinstall
+[ 3089s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :test-module-startup __noinstall
+[ 3092s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-testing testing
+[ 3094s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-ant-test testing
+[ 3097s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-collections-tests testing
+[ 3099s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-junitrunner testing
+[ 3102s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-locator-extras testing
+[ 3104s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-locator-no-proxies testing
+[ 3107s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-locator-no-proxies2 testing
+[ 3109s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-mockito testing
+[ 3111s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-runlevel-extras testing
+[ 3114s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-testng testing
+[ 3116s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :interceptor-events testing
+[ 3119s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :maven-plugins maven-plugins
+[ 3121s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :consolidatedbundle-maven-plugin maven-plugins
+[ 3124s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :hk2-inhabitant-generator maven-plugins
+[ 3126s] + /usr/bin/python3 /usr/share/java-utils/mvn_package.py :osgiversion-maven-plugin maven-plugins
+[ 3129s] + RPM_EC=0
+[ 3129s] ++ jobs -p
+[ 3129s] + exit 0
+[ 3129s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.yt6f6K
+[ 3129s] + umask 022
+[ 3129s] + cd /home/abuild/rpmbuild/BUILD
+[ 3129s] + cd glassfish-hk2-2.5.0-RELEASE
+[ 3129s] + /usr/bin/python3 /usr/share/java-utils/mvn_build.py -- -Dhk2.mvn.plugins.version=2.5.0
+[ 3131s] Executing: xmvn --batch-mode --offline -Dhk2.mvn.plugins.version=2.5.0 verify org.fedoraproject.xmvn:xmvn-mojo:install org.apache.maven.plugins:maven-javadoc-plugin:aggregate org.fedoraproject.xmvn:xmvn-mojo:builddep
+[ 3131s] ['xmvn', '--batch-mode', '--offline', '-Dhk2.mvn.plugins.version=2.5.0', 'verify', 'org.fedoraproject.xmvn:xmvn-mojo:install', 'org.apache.maven.plugins:maven-javadoc-plugin:aggregate', 'org.fedoraproject.xmvn:xmvn-mojo:builddep']
+[ 3202s] [INFO] Scanning for projects...
+[ 3286s] [WARNING] 
+[ 3286s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-inhabitant-generator:maven-plugin:2.5.0
+[ 3286s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-inhabitant-generator:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/hk2-inhabitant-generator/pom.xml, line 50, column 21
+[ 3287s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-inhabitant-generator:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/hk2-inhabitant-generator/pom.xml, line 136, column 22
+[ 3287s] [WARNING] 
+[ 3287s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2:jar:2.5.0
+[ 3287s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2/pom.xml, line 43, column 21
+[ 3287s] [WARNING] 
+[ 3287s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-utils:jar:2.5.0
+[ 3287s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-utils:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/pom.xml, line 48, column 21
+[ 3287s] [WARNING] 
+[ 3287s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-property-file:jar:2.5.0
+[ 3287s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-property-file:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/property-file/pom.xml, line 48, column 21
+[ 3287s] [WARNING] 
+[ 3287s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-xml:jar:2.5.0
+[ 3288s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-xml:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/main/pom.xml, line 54, column 21
+[ 3288s] [WARNING] 
+[ 3288s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-xml-test:jar:2.5.0
+[ 3288s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-xml-test:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/test1/pom.xml, line 58, column 21
+[ 3288s] [WARNING] 
+[ 3288s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-xml-schema:jar:2.5.0
+[ 3288s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-xml-schema:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/schema/pom.xml, line 48, column 21
+[ 3288s] [WARNING] 
+[ 3288s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-xml-integration-test:jar:2.5.0
+[ 3289s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-xml-integration-test:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/integration-test/pom.xml, line 48, column 21
+[ 3289s] [WARNING] 
+[ 3289s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-json:jar:2.5.0
+[ 3289s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-json:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/hk2-json/pom.xml, line 48, column 21
+[ 3289s] [WARNING] 
+[ 3289s] [WARNING] Some problems were encountered while building the effective model for org.glassfish.hk2:hk2-pbuf:jar:2.5.0
+[ 3289s] [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ org.glassfish.hk2:hk2-pbuf:[unknown-version], /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-configuration/persistence/hk2-xml/hk2-pbuf/pom.xml, line 54, column 21
+[ 3289s] [WARNING] 
+[ 3289s] [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[ 3289s] [WARNING] 
+[ 3289s] [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[ 3289s] [WARNING] 
+[ 3291s] [INFO] ------------------------------------------------------------------------
+[ 3291s] [INFO] Reactor Build Order:
+[ 3291s] [INFO] 
+[ 3291s] [INFO] GlassFish HK2                                                      [pom]
+[ 3292s] [INFO] hk2-dependency-visualizer                                          [jar]
+[ 3292s] [INFO] maven-plugins                                                      [pom]
+[ 3292s] [INFO] OSGiVersion Maven Plugin                                  [maven-plugin]
+[ 3292s] [INFO] OSGi resource locator                                              [jar]
+[ 3292s] [INFO] HK2 Implementation Utilities                                       [jar]
+[ 3292s] [INFO] HK2 API module                                                     [jar]
+[ 3292s] [INFO] ServiceLocator Default Implementation                              [jar]
+[ 3292s] [INFO] HK2 core module                                                    [jar]
+[ 3292s] [INFO] OSGi code                                                          [pom]
+[ 3292s] [INFO] HK2 OSGi Adapter                                                   [jar]
+[ 3292s] [INFO] Static Analyser for verifying module dependency                    [jar]
+[ 3292s] [INFO] consolidated bundle Maven plugin                          [maven-plugin]
+[ 3292s] [INFO] Inhabitant Generator                                      [maven-plugin]
+[ 3292s] [INFO] HK2 Metadata Generator Subsystem                                   [pom]
+[ 3292s] [INFO] HK2 Metadata Generator                                             [jar]
+[ 3292s] [INFO] HK2 Metadata Generator Test One                                    [jar]
+[ 3292s] [INFO] HK2 Junit Runner                                                   [jar]
+[ 3292s] [INFO] Run Level Service                                                  [jar]
+[ 3292s] [INFO] Class Model for Hk2                                                [jar]
+[ 3293s] [INFO] osgi-adapter-tests-parent                                          [pom]
+[ 3293s] [INFO] Holds test contracts                                               [jar]
+[ 3293s] [INFO] Simulates a bundle                                                 [jar]
+[ 3293s] [INFO] Manages the faux sdp management bundle                             [jar]
+[ 3293s] [INFO] a test module startup                                              [jar]
+[ 3293s] [INFO] A bundle with no hk2 dependencies                                  [jar]
+[ 3293s] [INFO] HK2 Ant Inhabitant Generator Test                                  [jar]
+[ 3293s] [INFO] HK2 Locator unit tests                                             [jar]
+[ 3293s] [INFO] HK2 extras module                                                  [jar]
+[ 3293s] [INFO] HK2 TestNG runner                                                  [jar]
+[ 3293s] [INFO] HK2 RunLevel unit tests                                            [jar]
+[ 3293s] [INFO] HK2 Locator No Proxy Unit tests                                    [jar]
+[ 3293s] [INFO] HK2 Locator No Proxy Unit tests (2)                                [jar]
+[ 3293s] [INFO] Utilities for testing with HK2                                     [pom]
+[ 3293s] [INFO] Interceptor/Eventing Test Suite                                    [jar]
+[ 3293s] [INFO] HK2 Mockito                                                        [jar]
+[ 3294s] [INFO] Collections Tests                                                  [jar]
+[ 3294s] [INFO] HK2 Guice Bridge                                                   [jar]
+[ 3294s] [INFO] HK2 Spring Bridge                                                  [jar]
+[ 3294s] [INFO] HK2 JMX module                                                     [jar]
+[ 3294s] [INFO] HK2 module of HK2 itself                                           [jar]
+[ 3294s] [INFO] HK2 Bom Pom                                                        [pom]
+[ 3294s] [INFO] HK2 Configuration Subsystem                                        [pom]
+[ 3294s] [INFO] HK2 Configuration Hub                                              [jar]
+[ 3294s] [INFO] HK2 Configuration Integration                                      [jar]
+[ 3294s] [INFO] HK2 Configuration Persistence Modules                              [pom]
+[ 3294s] [INFO] HK2 Configuration Property File Reader                             [jar]
+[ 3294s] [INFO] HK2 XML Parser using JAXB                                          [pom]
+[ 3294s] [INFO] HK2 XML Reader using JAXB                                          [jar]
+[ 3294s] [INFO] HK2 JSON beans                                                     [jar]
+[ 3294s] [INFO] HK2 ProtoBuffer beans                                              [jar]
+[ 3294s] [INFO] HK2 XML Reader Test                                                [jar]
+[ 3294s] [INFO] HK2 XML Schema Utilities                                           [jar]
+[ 3295s] [INFO] HK2 XML Integration Test                                           [jar]
+[ 3334s] [INFO] 
+[ 3334s] [INFO] --------------------< org.glassfish.hk2:hk2-parent >--------------------
+[ 3334s] [INFO] Building GlassFish HK2 2.5.0                                      [1/54]
+[ 3334s] [INFO] --------------------------------[ pom ]---------------------------------
+[ 3334s] [INFO] 
+[ 3334s] [INFO] ------------< org.glassfish.hk2:hk2-dependency-visualizer >-------------
+[ 3334s] [INFO] Building hk2-dependency-visualizer 2.5.0                          [2/54]
+[ 3334s] [INFO] --------------------------------[ jar ]---------------------------------
+[ 3342s] [WARNING] The POM for com.sun:tools:jar:any is missing, no dependency information available
+[ 3344s] [INFO] 
+[ 3344s] [INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ hk2-dependency-visualizer ---
+[ 3363s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3363s] [WARNING] Please take a look into the FAQ: https://maven.apache.org/general.html#encoding-warning
+[ 3363s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3363s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/dependency-visualizer/src/main/command
+[ 3363s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/dependency-visualizer/src/main/resources
+[ 3363s] [INFO] 
+[ 3363s] [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ hk2-dependency-visualizer ---
+[ 3375s] [INFO] Changes detected - recompiling the module!
+[ 3375s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3375s] [INFO] Compiling 1 source file to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/dependency-visualizer/target/classes
+[ 3410s] [INFO] 
+[ 3410s] [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ hk2-dependency-visualizer ---
+[ 3410s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3410s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/dependency-visualizer/src/test/resources
+[ 3410s] [INFO] 
+[ 3410s] [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ hk2-dependency-visualizer ---
+[ 3411s] [INFO] No sources to compile
+[ 3411s] [INFO] 
+[ 3411s] [INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ hk2-dependency-visualizer ---
+[ 3430s] [INFO] No tests to run.
+[ 3430s] [INFO] 
+[ 3430s] [INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ hk2-dependency-visualizer ---
+[ 3448s] [INFO] Building jar: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/dependency-visualizer/target/hk2-dependency-visualizer.jar
+[ 3451s] [INFO] 
+[ 3451s] [INFO] ------------------< org.glassfish.hk2:maven-plugins >-------------------
+[ 3451s] [INFO] Building maven-plugins 2.5.0                                      [3/54]
+[ 3451s] [INFO] --------------------------------[ pom ]---------------------------------
+[ 3451s] [INFO] 
+[ 3451s] [INFO] -------------< org.glassfish.hk2:osgiversion-maven-plugin >-------------
+[ 3451s] [INFO] Building OSGiVersion Maven Plugin 2.5.0                           [4/54]
+[ 3451s] [INFO] ----------------------------[ maven-plugin ]----------------------------
+[ 3460s] [INFO] 
+[ 3460s] [INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ osgiversion-maven-plugin ---
+[ 3460s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3460s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/main/resources
+[ 3460s] [INFO] 
+[ 3460s] [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ osgiversion-maven-plugin ---
+[ 3461s] [INFO] Changes detected - recompiling the module!
+[ 3461s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3461s] [INFO] Compiling 2 source files to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/target/classes
+[ 3475s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/main/java/org/glassfish/hk2/maven/Version.java: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/main/java/org/glassfish/hk2/maven/Version.java uses unchecked or unsafe operations.
+[ 3475s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/main/java/org/glassfish/hk2/maven/Version.java: Recompile with -Xlint:unchecked for details.
+[ 3475s] [INFO] 
+[ 3475s] [INFO] --- maven-plugin-plugin:3.5.1:descriptor (default-descriptor) @ osgiversion-maven-plugin ---
+[ 3525s] [WARNING] Using platform encoding (UTF-8 actually) to read mojo source files, i.e. build is platform dependent!
+[ 3531s] [WARNING] com.sun.enterprise.module.maven.OsgiVersionMojo#project:
+[ 3531s] [WARNING]   The syntax
+[ 3531s] [WARNING]     @parameter expression="${property}"
+[ 3531s] [WARNING]   is deprecated, please use
+[ 3531s] [WARNING]     @parameter property="property"
+[ 3531s] [WARNING]   instead.
+[ 3532s] [INFO] java-javadoc mojo extractor found 1 mojo descriptor.
+[ 3587s] [INFO] java-annotations mojo extractor found 0 mojo descriptor.
+[ 3592s] [INFO] 
+[ 3592s] [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ osgiversion-maven-plugin ---
+[ 3592s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3593s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/test/resources
+[ 3593s] [INFO] 
+[ 3593s] [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ osgiversion-maven-plugin ---
+[ 3593s] [INFO] Changes detected - recompiling the module!
+[ 3593s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3593s] [INFO] Compiling 1 source file to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/target/test-classes
+[ 3600s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/test/java/org/glassfish/hk2/maven/VersionTest.java: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/test/java/org/glassfish/hk2/maven/VersionTest.java uses or overrides a deprecated API.
+[ 3600s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/src/test/java/org/glassfish/hk2/maven/VersionTest.java: Recompile with -Xlint:deprecation for details.
+[ 3600s] [INFO] 
+[ 3600s] [INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ osgiversion-maven-plugin ---
+[ 3608s] [INFO] 
+[ 3609s] [INFO] -------------------------------------------------------
+[ 3609s] [INFO]  T E S T S
+[ 3609s] [INFO] -------------------------------------------------------
+[ 3617s] [INFO] Running org.glassfish.hk2.maven.VersionTest
+[ 3620s] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.855 s - in org.glassfish.hk2.maven.VersionTest
+[ 3629s] [INFO] 
+[ 3629s] [INFO] Results:
+[ 3629s] [INFO] 
+[ 3629s] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[ 3629s] [INFO] 
+[ 3629s] [INFO] 
+[ 3629s] [INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ osgiversion-maven-plugin ---
+[ 3630s] [INFO] Building jar: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/maven-plugins/osgiversion-maven-plugin/target/osgiversion-maven-plugin.jar
+[ 3631s] [INFO] 
+[ 3631s] [INFO] --- maven-plugin-plugin:3.5.1:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ osgiversion-maven-plugin ---
+[ 3631s] [INFO] 
+[ 3631s] [INFO] --------------< org.glassfish.hk2:osgi-resource-locator >---------------
+[ 3631s] [INFO] Building OSGi resource locator 1.0.3                              [5/54]
+[ 3631s] [INFO] --------------------------------[ jar ]---------------------------------
+[ 3638s] [INFO] 
+[ 3638s] [INFO] --- osgiversion-maven-plugin:2.5.0:compute-osgi-version (compute-osgi-version) @ osgi-resource-locator ---
+[ 3646s] [INFO] 
+[ 3646s] [INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ osgi-resource-locator ---
+[ 3646s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3646s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/src/main/resources
+[ 3646s] [INFO] 
+[ 3646s] [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ osgi-resource-locator ---
+[ 3647s] [INFO] Changes detected - recompiling the module!
+[ 3647s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3647s] [INFO] Compiling 5 source files to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/target/classes
+[ 3670s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/src/main/java/org/glassfish/hk2/osgiresourcelocator/ServiceLoaderImpl.java: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/src/main/java/org/glassfish/hk2/osgiresourcelocator/ServiceLoaderImpl.java uses unchecked or unsafe operations.
+[ 3671s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/src/main/java/org/glassfish/hk2/osgiresourcelocator/ServiceLoaderImpl.java: Recompile with -Xlint:unchecked for details.
+[ 3671s] [INFO] 
+[ 3671s] [INFO] --- maven-bundle-plugin:3.5.0:manifest (bundle-manifest) @ osgi-resource-locator ---
+[ 3745s] [INFO] 
+[ 3745s] [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ osgi-resource-locator ---
+[ 3745s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3745s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/src/test/resources
+[ 3746s] [INFO] 
+[ 3746s] [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ osgi-resource-locator ---
+[ 3746s] [INFO] No sources to compile
+[ 3746s] [INFO] 
+[ 3746s] [INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ osgi-resource-locator ---
+[ 3748s] [INFO] No tests to run.
+[ 3748s] [INFO] 
+[ 3748s] [INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ osgi-resource-locator ---
+[ 3767s] [INFO] Building jar: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/osgi-resource-locator/target/osgi-resource-locator.jar
+[ 3769s] [INFO] 
+[ 3770s] [INFO] --------------------< org.glassfish.hk2:hk2-utils >---------------------
+[ 3770s] [INFO] Building HK2 Implementation Utilities 2.5.0                       [6/54]
+[ 3770s] [INFO] --------------------------------[ jar ]---------------------------------
+[ 3773s] [INFO] 
+[ 3773s] [INFO] --- osgiversion-maven-plugin:2.5.0:compute-osgi-version (compute-osgi-version) @ hk2-utils ---
+[ 3773s] [INFO] 
+[ 3773s] [INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ hk2-utils ---
+[ 3773s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3773s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/main/resources
+[ 3773s] [INFO] 
+[ 3773s] [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ hk2-utils ---
+[ 3774s] [INFO] Changes detected - recompiling the module!
+[ 3775s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3775s] [INFO] Compiling 39 source files to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/target/classes
+[ 3877s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/main/java/org/glassfish/hk2/utilities/cache/LRUHybridCache.java: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/main/java/org/glassfish/hk2/utilities/cache/LRUHybridCache.java uses unchecked or unsafe operations.
+[ 3877s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/main/java/org/glassfish/hk2/utilities/cache/LRUHybridCache.java: Recompile with -Xlint:unchecked for details.
+[ 3877s] [INFO] 
+[ 3877s] [INFO] --- maven-bundle-plugin:3.5.0:manifest (bundle-manifest) @ hk2-utils ---
+[ 3927s] [INFO] 
+[ 3927s] [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ hk2-utils ---
+[ 3927s] [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[ 3927s] [INFO] skip non existing resourceDirectory /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/resources
+[ 3927s] [INFO] 
+[ 3927s] [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ hk2-utils ---
+[ 3930s] [INFO] Changes detected - recompiling the module!
+[ 3930s] [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[ 3930s] [INFO] Compiling 77 source files to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/target/test-classes
+[ 4032s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/java/org/glassfish/hk2/utilities/reflection/PrettyTest.java: Some input files use or override a deprecated API.
+[ 4033s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/java/org/glassfish/hk2/utilities/reflection/PrettyTest.java: Recompile with -Xlint:deprecation for details.
+[ 4033s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/java/org/glassfish/hk2/utilities/test/LRUHybridCacheTest.java: /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/java/org/glassfish/hk2/utilities/test/LRUHybridCacheTest.java uses unchecked or unsafe operations.
+[ 4033s] [INFO] /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/src/test/java/org/glassfish/hk2/utilities/test/LRUHybridCacheTest.java: Recompile with -Xlint:unchecked for details.
+[ 4033s] [INFO] 
+[ 4033s] [INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ hk2-utils ---
+[ 4035s] [INFO] 
+[ 4035s] [INFO] -------------------------------------------------------
+[ 4035s] [INFO]  T E S T S
+[ 4036s] [INFO] -------------------------------------------------------
+[ 4044s] [INFO] Running org.glassfish.hk2.utilities.reflection.PrettyTest
+[ 4047s] [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.765 s - in org.glassfish.hk2.utilities.reflection.PrettyTest
+[ 4047s] [INFO] Running org.glassfish.hk2.utilities.reflection.ReflectionHelperTest
+[ 4052s] [INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.693 s - in org.glassfish.hk2.utilities.reflection.ReflectionHelperTest
+[ 4052s] [INFO] Running org.glassfish.hk2.utilities.reflection.ParameterizedTypeTest
+[ 4054s] [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.17 s - in org.glassfish.hk2.utilities.reflection.ParameterizedTypeTest
+[ 4054s] [INFO] Running org.glassfish.hk2.utilities.reflection.ClassReflectionHelperTest
+[ 4056s] [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s - in org.glassfish.hk2.utilities.reflection.ClassReflectionHelperTest
+[ 4056s] [INFO] Running org.glassfish.hk2.utilities.test.BeanReflectionHelperTest
+[ 4057s] [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s - in org.glassfish.hk2.utilities.test.BeanReflectionHelperTest
+[ 4057s] [INFO] Running org.glassfish.hk2.utilities.test.CacheTest
+[ 4059s] [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.198 s - in org.glassfish.hk2.utilities.test.CacheTest
+[ 4059s] [INFO] Running org.glassfish.hk2.utilities.test.TypeCheckerTest
+[ 4060s] [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s - in org.glassfish.hk2.utilities.test.TypeCheckerTest
+[ 4060s] [INFO] Running org.glassfish.hk2.utilities.test.LRUHybridCacheTest
+[ 4062s] [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.19 s - in org.glassfish.hk2.utilities.test.LRUHybridCacheTest
+[ 4062s] [INFO] Running org.glassfish.hk2.utilities.test.MultiMapTest
+[ 4064s] [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.326 s - in org.glassfish.hk2.utilities.test.MultiMapTest
+[ 4064s] [INFO] Running org.glassfish.hk2.utilities.test.ValidatorTest
+[ 4066s] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s - in org.glassfish.hk2.utilities.test.ValidatorTest
+[ 4066s] [INFO] Running org.glassfish.hk2.utilities.test.GeneralUtilitiesTest
+[ 4082s] [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.803 s - in org.glassfish.hk2.utilities.test.GeneralUtilitiesTest
+[ 4082s] [INFO] Running org.glassfish.hk2.utilities.general.test.WeakHashClockTest
+[ 5287s] [ERROR] Tests run: 32, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1,202.246 s <<< FAILURE! - in org.glassfish.hk2.utilities.general.test.WeakHashClockTest
+[ 5287s] [ERROR] testConcurrencyStrong(org.glassfish.hk2.utilities.general.test.WeakHashClockTest)  Time elapsed: 599.954 s  <<< FAILURE!
+[ 5287s] java.lang.AssertionError
+[ 5287s] 	at org.glassfish.hk2.utilities.general.test.WeakHashClockTest.testConcurrency(WeakHashClockTest.java:719)
+[ 5287s] 	at org.glassfish.hk2.utilities.general.test.WeakHashClockTest.testConcurrencyStrong(WeakHashClockTest.java:743)
+[ 5287s] 
+[ 5287s] [ERROR] testConcurrencyWeak(org.glassfish.hk2.utilities.general.test.WeakHashClockTest)  Time elapsed: 600.4 s  <<< FAILURE!
+[ 5287s] java.lang.AssertionError
+[ 5287s] 	at org.glassfish.hk2.utilities.general.test.WeakHashClockTest.testConcurrency(WeakHashClockTest.java:719)
+[ 5287s] 	at org.glassfish.hk2.utilities.general.test.WeakHashClockTest.testConcurrencyWeak(WeakHashClockTest.java:737)
+[ 5287s] 
+[ 5287s] [INFO] Running org.glassfish.hk2.utilities.general.test.GeneralUtilitiesTest
+[ 5289s] [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s - in org.glassfish.hk2.utilities.general.test.GeneralUtilitiesTest
+[ 5289s] [INFO] Running org.glassfish.hk2.utilities.general.test.WeakHashLRUTest
+[ 6083s] [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 792.459 s - in org.glassfish.hk2.utilities.general.test.WeakHashLRUTest
+[ 6083s] [INFO] Running org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest
+[ 7287s] [ERROR] Tests run: 30, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1,201.47 s <<< FAILURE! - in org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest
+[ 7287s] [ERROR] testConcurrencyStrong(org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest)  Time elapsed: 599.363 s  <<< FAILURE!
+[ 7287s] java.lang.AssertionError
+[ 7287s] 	at org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest.testConcurrency(WeakCARCacheTest.java:692)
+[ 7287s] 	at org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest.testConcurrencyStrong(WeakCARCacheTest.java:718)
+[ 7287s] 
+[ 7287s] [ERROR] testConcurrencyWeak(org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest)  Time elapsed: 600.274 s  <<< FAILURE!
+[ 7287s] java.lang.AssertionError
+[ 7287s] 	at org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest.testConcurrency(WeakCARCacheTest.java:692)
+[ 7287s] 	at org.glassfish.hk2.utilities.cache.test.WeakCARCacheTest.testConcurrencyWeak(WeakCARCacheTest.java:711)
+[ 7287s] 
+[ 7296s] [INFO] 
+[ 7296s] [INFO] Results:
+[ 7296s] [INFO] 
+[ 7296s] [ERROR] Failures: 
+[ 7296s] [ERROR]   WeakCARCacheTest.testConcurrencyStrong:718->testConcurrency:692
+[ 7296s] [ERROR]   WeakCARCacheTest.testConcurrencyWeak:711->testConcurrency:692
+[ 7296s] [ERROR]   WeakHashClockTest.testConcurrencyStrong:743->testConcurrency:719
+[ 7296s] [ERROR]   WeakHashClockTest.testConcurrencyWeak:737->testConcurrency:719
+[ 7296s] [INFO] 
+[ 7296s] [ERROR] Tests run: 196, Failures: 4, Errors: 0, Skipped: 0
+[ 7296s] [INFO] 
+[ 7296s] [INFO] 
+[ 7296s] [INFO] ------------------------------------------------------------------------
+[ 7296s] [INFO] Skipping GlassFish HK2
+[ 7296s] [INFO] This project has been banned from the build due to previous failures.
+[ 7296s] [INFO] ------------------------------------------------------------------------
+[ 7296s] [INFO] ------------------------------------------------------------------------
+[ 7296s] [INFO] Reactor Summary:
+[ 7296s] [INFO] 
+[ 7296s] [INFO] GlassFish HK2 2.5.0 ................................ SUCCESS [  0.210 s]
+[ 7297s] [INFO] hk2-dependency-visualizer .......................... SUCCESS [01:56 min]
+[ 7297s] [INFO] maven-plugins ...................................... SUCCESS [  0.190 s]
+[ 7297s] [INFO] OSGiVersion Maven Plugin ........................... SUCCESS [03:00 min]
+[ 7297s] [INFO] OSGi resource locator 1.0.3 ........................ SUCCESS [02:18 min]
+[ 7297s] [INFO] HK2 Implementation Utilities ....................... FAILURE [58:46 min]
+[ 7297s] [INFO] HK2 API module ..................................... SKIPPED
+[ 7297s] [INFO] ServiceLocator Default Implementation .............. SKIPPED
+[ 7297s] [INFO] HK2 core module .................................... SKIPPED
+[ 7297s] [INFO] OSGi code .......................................... SKIPPED
+[ 7297s] [INFO] HK2 OSGi Adapter ................................... SKIPPED
+[ 7297s] [INFO] Static Analyser for verifying module dependency .... SKIPPED
+[ 7297s] [INFO] consolidated bundle Maven plugin ................... SKIPPED
+[ 7297s] [INFO] Inhabitant Generator ............................... SKIPPED
+[ 7297s] [INFO] HK2 Metadata Generator Subsystem ................... SKIPPED
+[ 7297s] [INFO] HK2 Metadata Generator ............................. SKIPPED
+[ 7297s] [INFO] HK2 Metadata Generator Test One .................... SKIPPED
+[ 7297s] [INFO] HK2 Junit Runner ................................... SKIPPED
+[ 7297s] [INFO] Run Level Service .................................. SKIPPED
+[ 7297s] [INFO] Class Model for Hk2 ................................ SKIPPED
+[ 7297s] [INFO] osgi-adapter-tests-parent .......................... SKIPPED
+[ 7297s] [INFO] Holds test contracts ............................... SKIPPED
+[ 7297s] [INFO] Simulates a bundle ................................. SKIPPED
+[ 7297s] [INFO] Manages the faux sdp management bundle ............. SKIPPED
+[ 7297s] [INFO] a test module startup .............................. SKIPPED
+[ 7297s] [INFO] A bundle with no hk2 dependencies .................. SKIPPED
+[ 7297s] [INFO] HK2 Ant Inhabitant Generator Test .................. SKIPPED
+[ 7298s] [INFO] HK2 Locator unit tests ............................. SKIPPED
+[ 7298s] [INFO] HK2 extras module .................................. SKIPPED
+[ 7298s] [INFO] HK2 TestNG runner .................................. SKIPPED
+[ 7298s] [INFO] HK2 RunLevel unit tests ............................ SKIPPED
+[ 7298s] [INFO] HK2 Locator No Proxy Unit tests .................... SKIPPED
+[ 7298s] [INFO] HK2 Locator No Proxy Unit tests (2) ................ SKIPPED
+[ 7298s] [INFO] Utilities for testing with HK2 ..................... SKIPPED
+[ 7298s] [INFO] Interceptor/Eventing Test Suite .................... SKIPPED
+[ 7298s] [INFO] HK2 Mockito ........................................ SKIPPED
+[ 7298s] [INFO] Collections Tests .................................. SKIPPED
+[ 7298s] [INFO] HK2 Guice Bridge ................................... SKIPPED
+[ 7298s] [INFO] HK2 Spring Bridge .................................. SKIPPED
+[ 7298s] [INFO] HK2 JMX module ..................................... SKIPPED
+[ 7298s] [INFO] HK2 module of HK2 itself ........................... SKIPPED
+[ 7298s] [INFO] HK2 Bom Pom ........................................ SKIPPED
+[ 7298s] [INFO] HK2 Configuration Subsystem ........................ SKIPPED
+[ 7298s] [INFO] HK2 Configuration Hub .............................. SKIPPED
+[ 7298s] [INFO] HK2 Configuration Integration ...................... SKIPPED
+[ 7298s] [INFO] HK2 Configuration Persistence Modules .............. SKIPPED
+[ 7298s] [INFO] HK2 Configuration Property File Reader ............. SKIPPED
+[ 7298s] [INFO] HK2 XML Parser using JAXB .......................... SKIPPED
+[ 7298s] [INFO] HK2 XML Reader using JAXB .......................... SKIPPED
+[ 7298s] [INFO] HK2 JSON beans ..................................... SKIPPED
+[ 7298s] [INFO] HK2 ProtoBuffer beans .............................. SKIPPED
+[ 7298s] [INFO] HK2 XML Reader Test ................................ SKIPPED
+[ 7298s] [INFO] HK2 XML Schema Utilities ........................... SKIPPED
+[ 7298s] [INFO] HK2 XML Integration Test 2.5.0 ..................... SKIPPED
+[ 7298s] [INFO] ------------------------------------------------------------------------
+[ 7298s] [INFO] BUILD FAILURE
+[ 7299s] [INFO] ------------------------------------------------------------------------
+[ 7299s] [INFO] Total time: 01:08 h
+[ 7299s] [INFO] Finished at: 2022-04-15T17:23:54Z
+[ 7299s] [INFO] ------------------------------------------------------------------------
+[ 7299s] [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.0:test (default-test) on project hk2-utils: There are test failures.
+[ 7299s] [ERROR] 
+[ 7299s] [ERROR] Please refer to /home/abuild/rpmbuild/BUILD/glassfish-hk2-2.5.0-RELEASE/hk2-utils/target/surefire-reports for the individual test results.
+[ 7299s] [ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ 7299s] [ERROR] -> [Help 1]
+[ 7299s] [ERROR] 
+[ 7300s] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ 7300s] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ 7300s] [ERROR] 
+[ 7300s] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ 7300s] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ 7300s] [ERROR] 
+[ 7300s] [ERROR] After correcting the problems, you can resume the build with the command
+[ 7300s] [ERROR]   mvn <goals> -rf :hk2-utils
+[ 7302s] error: Bad exit status from /var/tmp/rpm-tmp.yt6f6K (%build)
+[ 7302s] 
+[ 7302s] 
+[ 7302s] RPM build errors:
+[ 7302s]     Bad exit status from /var/tmp/rpm-tmp.yt6f6K (%build)
+[ 7303s] 
+[ 7303s] oe-RISCV-worker23 failed "build glassfish-hk2.spec" at Fri Apr 15 17:23:58 UTC 2022.
+[ 7303s] 

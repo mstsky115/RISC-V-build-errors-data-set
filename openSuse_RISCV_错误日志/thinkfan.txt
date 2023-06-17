@@ -1,0 +1,400 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_6/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_6/root
+[    0s] 
+[    0s] 
+[    0s] lamb20 started "build thinkfan.spec" at Tue Mar  8 19:33:52 UTC 2022.
+[    0s] 
+[    0s] Building thinkfan for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'd049b37e11e36bfd9c7bc488b6f5149e'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_6/.build-srcdir/thinkfan.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_6/.build-srcdir/thinkfan.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/6/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_6/.build.rpmlist /var/cache/obs/worker/root_6/.build-srcdir/thinkfan.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [14eeee1d167c2ca00ec5fd55668b4884]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: python38-base -> libpython3_8-1_0
+[    3s]   breaking dependency python38-base -> libpython3_8-1_0
+[    3s] done
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using UART console
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_6/.mount/boot/kernel -initrd /var/cache/obs/worker/root_6/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_6/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_6/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_6/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   12s] machine type: riscv64
+[   13s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   13s] Increasing log level from now on...
+[   13s] [    7.671944][  T444] sysrq: Changing Loglevel
+[   13s] [    7.673083][  T444] sysrq: Loglevel set to 4
+[   13s] Enable sysrq operations
+[   13s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   13s] no label, UUID=32bb69b5-3cb8-409b-ab63-7136efceedf0
+[   13s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   13s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   13s] swapon /dev/vdb
+[   13s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   14s] processing recipe /.build-srcdir/thinkfan.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/thinkfan.spec build ...
+[   15s] initializing rpm db...
+[   16s] querying package ids...
+[   52s] [1/151] preinstalled aaa_base-84.87+git20211124.5486aad-1.1
+[   52s] [2/151] preinstalled aaa_base-malloccheck-84.87+git20211124.5486aad-1.1
+[   52s] [3/151] preinstalled attr-2.5.1-1.1
+[   52s] [4/151] preinstalled bash-5.1.16-6.1
+[   52s] [5/151] preinstalled bash-sh-5.1.16-6.1
+[   52s] [6/151] preinstalled binutils-2.38-1.1
+[   52s] [7/151] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   52s] [8/151] preinstalled build-compare-20210921T214418.86d06d9-1.1
+[   52s] [9/151] preinstalled build-mkbaselibs-20211125-1.1
+[   52s] [10/151] preinstalled bzip2-1.0.8-3.1
+[   52s] [11/151] preinstalled chkstat-1550_20210901-32.1
+[   52s] [12/151] preinstalled compat-usrmerge-build-84.87-5.1
+[   52s] [13/151] preinstalled compat-usrmerge-tools-84.87-5.1
+[   52s] [14/151] preinstalled coreutils-9.0-2.1
+[   52s] [15/151] preinstalled cpio-2.13-4.1
+[   52s] [16/151] preinstalled cpp-11-5.1
+[   52s] [17/151] preinstalled cpp11-11.2.1+git1173-2.1
+[   52s] [18/151] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   52s] [19/151] preinstalled diffutils-3.8-2.1
+[   52s] [20/151] preinstalled dwz-0.14-3.1
+[   52s] [21/151] preinstalled file-5.41-2.1
+[   52s] [22/151] preinstalled file-magic-5.41-2.1
+[   52s] [23/151] preinstalled filesystem-84.87-3.1
+[   52s] [24/151] preinstalled fillup-1.42-276.2
+[   52s] [25/151] preinstalled findutils-4.9.0-1.1
+[   52s] [26/151] preinstalled gawk-5.1.1-6.1
+[   52s] [27/151] preinstalled gcc-11-5.1
+[   52s] [28/151] preinstalled gcc-PIE-11-5.1
+[   52s] [29/151] preinstalled gcc11-11.2.1+git1173-2.1
+[   52s] [30/151] preinstalled gcc11-PIE-11.2.1+git1173-2.1
+[   52s] [31/151] preinstalled gettext-runtime-mini-0.21-3.1
+[   52s] [32/151] preinstalled gettext-tools-mini-0.21-3.1
+[   52s] [33/151] preinstalled glibc-2.35-2.1
+[   52s] [34/151] preinstalled glibc-devel-2.35-2.1
+[   52s] [35/151] preinstalled glibc-locale-base-2.35-2.1
+[   52s] [36/151] preinstalled grep-3.7-2.1
+[   52s] [37/151] preinstalled gzip-1.11-2.1
+[   52s] [38/151] preinstalled hostname-3.23-2.2
+[   52s] [39/151] preinstalled iproute2-5.16-1.1
+[   52s] [40/151] preinstalled kernel-obs-build-5.14.2-1.3
+[   52s] [41/151] preinstalled libacl1-2.3.1-1.1
+[   52s] [42/151] preinstalled libasan6-11.2.1+git1173-2.1
+[   52s] [43/151] preinstalled libatomic1-11.2.1+git1173-2.1
+[   52s] [44/151] preinstalled libattr1-2.5.1-1.1
+[   52s] [45/151] preinstalled libaudit1-3.0.6-2.1
+[   52s] [46/151] preinstalled libblkid1-2.37.3-1.1
+[   52s] [47/151] preinstalled libbz2-1-1.0.8-3.1
+[   52s] [48/151] preinstalled libcap-ng0-0.7.11-1.1
+[   52s] [49/151] preinstalled libcap2-2.63-2.1
+[   52s] [50/151] preinstalled libcrypt1-4.4.27-1.1
+[   52s] [51/151] preinstalled libctf-nobfd0-2.38-1.1
+[   52s] [52/151] preinstalled libctf0-2.38-1.1
+[   52s] [53/151] preinstalled libdb-4_8-4.8.30-38.3
+[   52s] [54/151] preinstalled libdw1-0.186-2.1
+[   52s] [55/151] preinstalled libeconf0-0.4.4+git20220104.962774f-1.1
+[   52s] [56/151] preinstalled libelf1-0.186-2.1
+[   52s] [57/151] cumulate libexpat1-2.4.7-1.1
+[   52s] [58/151] preinstalled libfdisk1-2.37.3-1.1
+[   52s] [59/151] cumulate libffi8-3.4.2-6.1
+[   52s] [60/151] preinstalled libgcc_s1-11.2.1+git1173-2.1
+[   52s] [61/151] preinstalled libgcrypt20-1.9.4-3.1
+[   52s] [62/151] preinstalled libgdbm6-1.23-1.1
+[   52s] [63/151] preinstalled libgdbm_compat4-1.23-1.1
+[   52s] [64/151] preinstalled libgmp10-6.2.1-4.1
+[   52s] [65/151] preinstalled libgomp1-11.2.1+git1173-2.1
+[   52s] [66/151] preinstalled libgpg-error0-1.44-1.1
+[   52s] [67/151] preinstalled libisl23-0.24-1.1
+[   52s] [68/151] preinstalled liblua5_4-5-5.4.4-1.1
+[   52s] [69/151] preinstalled liblzma5-5.2.5-2.2
+[   52s] [70/151] preinstalled libmagic1-5.41-2.1
+[   52s] [71/151] preinstalled libmnl0-1.0.4-2.2
+[   52s] [72/151] preinstalled libmount1-2.37.3-1.1
+[   52s] [73/151] preinstalled libmpc3-1.2.1-1.2
+[   52s] [74/151] cumulate libmpdec3-2.5.1-2.1
+[   52s] [75/151] preinstalled libmpfr6-4.1.0-2.1
+[   52s] [76/151] preinstalled libncurses6-6.3.20220219-11.1
+[   52s] [77/151] preinstalled libpcre1-8.45-1.1
+[   52s] [78/151] preinstalled libpcre2-8-0-10.39-1.1
+[   52s] [79/151] preinstalled libpkgconf3-1.8.0-1.1
+[   52s] [80/151] preinstalled libpopt0-1.18-2.1
+[   52s] [81/151] preinstalled libreadline8-8.1-3.1
+[   52s] [82/151] cumulate librhash0-1.4.2-1.1
+[   52s] [83/151] preinstalled librpmbuild9-4.17.0-4.1
+[   52s] [84/151] preinstalled libseccomp2-2.5.3-4.1
+[   52s] [85/151] preinstalled libselinux1-3.3-2.1
+[   52s] [86/151] preinstalled libsemanage-conf-3.3-2.1
+[   52s] [87/151] preinstalled libsemanage2-3.3-2.1
+[   53s] [88/151] preinstalled libsepol2-3.3-1.1
+[   53s] [89/151] preinstalled libsmartcols1-2.37.3-1.1
+[   53s] [90/151] preinstalled libstdc++6-11.2.1+git1173-2.1
+[   53s] [91/151] cumulate libstdc++6-devel-gcc11-11.2.1+git1173-2.1
+[   53s] [92/151] preinstalled libsubid4-4.11.1-1.1
+[   53s] [93/151] preinstalled libubsan1-11.2.1+git1173-2.1
+[   53s] [94/151] cumulate libudev-mini1-249.10-2.1
+[   53s] [95/151] preinstalled libutempter0-1.2.0-3.2
+[   53s] [96/151] preinstalled libuuid1-2.37.3-1.1
+[   53s] [97/151] cumulate libuv1-1.43.0-12.1
+[   53s] [98/151] preinstalled libxcrypt-devel-4.4.27-1.1
+[   53s] [99/151] cumulate libyaml-cpp0_7-0.7.0-1.1
+[   53s] [100/151] preinstalled libz1-1.2.11-18.3
+[   53s] [101/151] preinstalled libzstd1-1.5.2-1.1
+[   53s] [102/151] preinstalled linux-glibc-devel-5.16-1.1
+[   53s] [103/151] preinstalled login_defs-4.11.1-1.1
+[   53s] [104/151] preinstalled lua54-5.4.4-1.1
+[   53s] [105/151] preinstalled make-4.3-2.3
+[   53s] [106/151] preinstalled ncurses-utils-6.3.20220219-11.1
+[   53s] [107/151] preinstalled pam-1.5.2-5.1
+[   53s] [108/151] preinstalled pam_unix-1.5.2-5.1
+[   53s] [109/151] preinstalled patch-2.7.6-4.1
+[   53s] [110/151] preinstalled perl-5.34.0-2.1
+[   53s] [111/151] preinstalled perl-base-5.34.0-2.1
+[   53s] [112/151] preinstalled permissions-20210901.1550-32.1
+[   53s] [113/151] preinstalled permissions-config-1550_20210901-32.1
+[   53s] [114/151] preinstalled pkgconf-1.8.0-1.1
+[   53s] [115/151] preinstalled pkgconf-m4-1.8.0-1.1
+[   53s] [116/151] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   53s] [117/151] preinstalled polkit-default-privs-1550+20220303.95a78fb-1.1
+[   53s] [118/151] preinstalled post-build-checks-84.87+git20220128.77a97b9-1.1
+[   53s] [119/151] cumulate python-rpm-macros-20220106.80d3756-1.1
+[   53s] [120/151] preinstalled qemu-linux-user-6.2.0-54.1
+[   53s] [121/151] preinstalled rpm-4.17.0-4.1
+[   53s] [122/151] preinstalled rpm-build-4.17.0-4.1
+[   53s] [123/151] preinstalled rpm-build-perl-4.17.0-4.1
+[   53s] [124/151] preinstalled rpm-config-SUSE-0.g96-1.1
+[   53s] [125/151] preinstalled rpmlint-mini-2.2.0+git20220303.8fe2218-4.11
+[   53s] [126/151] preinstalled rpmlint-strict-2.2.0+git20220303.8fe2218-1.1
+[   53s] [127/151] preinstalled sed-4.8-3.2
+[   53s] [128/151] preinstalled shadow-4.11.1-1.1
+[   53s] [129/151] preinstalled system-group-hardware-20170617-24.1
+[   53s] [130/151] preinstalled system-user-root-20190513-2.1
+[   53s] [131/151] preinstalled systemd-rpm-macros-16-1.1
+[   53s] [132/151] preinstalled sysuser-shadow-3.1-4.1
+[   53s] [133/151] preinstalled tar-1.34-5.1
+[   53s] [134/151] preinstalled terminfo-base-6.3.20220219-11.1
+[   53s] [135/151] preinstalled update-alternatives-1.21.1-1.1
+[   53s] [136/151] preinstalled util-linux-2.37.3-1.1
+[   53s] [137/151] preinstalled which-2.21-4.4
+[   53s] [138/151] preinstalled xz-5.2.5-2.2
+[   53s] [139/151] cumulate gcc11-c++-11.2.1+git1173-2.1
+[   53s] [140/151] cumulate libatasmart4-0.19-10.2
+[   53s] [141/151] cumulate libopenssl1_1-1.1.1m-8.1
+[   53s] [142/151] cumulate yaml-cpp-devel-0.7.0-1.1
+[   53s] [143/151] cumulate gcc-c++-11-5.1
+[   53s] [144/151] cumulate libatasmart-devel-0.19-10.2
+[   53s] [145/151] cumulate libkmod2-29-8.1
+[   53s] [146/151] cumulate systemd-mini-249.10-2.1
+[   53s] [147/151] cumulate python38-base-3.8.12-4.1
+[   53s] [148/151] cumulate libpython3_8-1_0-3.8.12-4.1
+[   53s] [149/151] cumulate rpm-build-python-4.17.0-4.1
+[   53s] [150/151] cumulate cmake-mini-3.22.2-2.1
+[   53s] [151/151] cumulate cmake-3.22.2-2.1
+[   53s] now installing cumulated packages
+[   53s] Preparing...                          ########################################
+[   53s] Updating / installing...
+[   53s] libexpat1-2.4.7-1.1                   ########################################
+[   54s] python-rpm-macros-20220106.80d3756-1.1########################################
+[   54s] libyaml-cpp0_7-0.7.0-1.1              ########################################
+[   54s] libuv1-1.43.0-12.1                    ########################################
+[   54s] libudev-mini1-249.10-2.1              ########################################
+[   54s] libatasmart4-0.19-10.2                ########################################
+[   69s] libstdc++6-devel-gcc11-11.2.1+git1173-########################################
+[   72s] gcc11-c++-11.2.1+git1173-2.1          ########################################
+[   73s] librhash0-1.4.2-1.1                   ########################################
+[   73s] libmpdec3-2.5.1-2.1                   ########################################
+[   73s] libffi8-3.4.2-6.1                     ########################################
+[   73s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   74s] libopenssl1_1-1.1.1m-8.1              ########################################
+[   74s] libpython3_8-1_0-3.8.12-4.1           ########################################
+[   81s] python38-base-3.8.12-4.1              ########################################
+[   88s] cmake-mini-3.22.2-2.1                 ########################################
+[   89s] libkmod2-29-8.1                       ########################################
+[   89s] systemd-mini-249.10-2.1               warning: group systemd-journal does not exist - using root
+[   90s] ########################################
+[   91s] Creating group systemd-journal with gid 486.
+[   91s] Failed to open 'systemd-network.conf', ignoring: No such file or directory
+[   91s] Creating group systemd-timesync with gid 485.
+[   91s] Creating user systemd-timesync (systemd Time Synchronization) with uid 485 and gid 485.
+[   92s] Running in chroot, ignoring command 'daemon-reexec'
+[   92s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc detected, skipping
+[   92s] All rules containing unresolvable specifiers will be skipped.
+[   93s] cmake-3.22.2-2.1                      ########################################
+[   94s] rpm-build-python-4.17.0-4.1           ########################################
+[   94s] gcc-c++-11-5.1                        ########################################
+[   94s] libatasmart-devel-0.19-10.2           ########################################
+[   94s] yaml-cpp-devel-0.7.0-1.1              ########################################
+[   96s] now finalizing build dir...
+[   96s] ... running 01-add_abuild_user_to_trusted_group
+[   97s] ... running 02-set_timezone_to_utc
+[   97s] ... running 11-hack_uname_version_to_kernel_version
+[   99s] RTNETLINK answers: File exists
+[   99s] RTNETLINK answers: File exists
+[  107s] Running build time source services...
+[  116s] build target is riscv64-suse-linux
+[  116s] -----------------------------------------------------------------
+[  116s] I have the following modifications for thinkfan.spec:
+[  117s] 30c30
+[  117s] < Release:        0
+[  117s] ---
+[  117s] > Release:        2.1
+[  117s] -----------------------------------------------------------------
+[  117s] ----- building thinkfan.spec (user abuild)
+[  117s] -----------------------------------------------------------------
+[  117s] -----------------------------------------------------------------
+[  122s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/d049b37e11e36bfd9c7bc488b6f5149e-thinkfan' /home/abuild/rpmbuild/SOURCES/thinkfan.spec
+[  122s] Building target platforms: riscv64-suse-linux
+[  122s] Building for target riscv64-suse-linux
+[  122s] setting SOURCE_DATE_EPOCH=1646352000
+[  123s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.hvW4rh
+[  123s] + umask 022
+[  123s] + cd /home/abuild/rpmbuild/BUILD
+[  123s] + cd /home/abuild/rpmbuild/BUILD
+[  123s] + rm -rf thinkfan-1.3.1
+[  123s] + /usr/bin/bzip2 -dc /home/abuild/rpmbuild/SOURCES/thinkfan-1.3.1.tar.bz2
+[  123s] + /usr/bin/tar -xof -
+[  123s] + STATUS=0
+[  123s] + '[' 0 -ne 0 ']'
+[  123s] + cd thinkfan-1.3.1
+[  123s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  123s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/thinkfan-systemd.patch
+[  123s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  123s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/harden_thinkfan-sleep.service.patch
+[  123s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  123s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/harden_thinkfan-wakeup.service.patch
+[  123s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  123s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/harden_thinkfan.service.patch
+[  123s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  123s] + RPM_EC=0
+[  123s] ++ jobs -p
+[  123s] + exit 0
+[  124s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.UOVDd3
+[  124s] + umask 022
+[  124s] + cd /home/abuild/rpmbuild/BUILD
+[  124s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/thinkfan-1.3.1-2.1.riscv64
+[  124s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/thinkfan-1.3.1-2.1.riscv64
+[  124s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  124s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/thinkfan-1.3.1-2.1.riscv64
+[  124s] + cd thinkfan-1.3.1
+[  124s] + ref=/usr/lib/rpm
+[  124s] + mints=0
+[  124s] + case $(uname -m) in
+[  124s] ++ uname -m
+[  124s] + mints=20160911
+[  124s] + for s in guess sub
+[  124s] ++ find -maxdepth 8 -name config.guess
+[  124s] + for s in guess sub
+[  124s] ++ find -maxdepth 8 -name config.sub
+[  124s] + find . -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  125s] + mkdir -p build
+[  125s] + cd build
+[  125s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG' '-DCMAKE_CXX_FLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/thinkfan -DUSE_ATASMART:BOOL=ON -DCMAKE_BUILD_TYPE:STRING=Release
+[  131s] -- The C compiler identification is GNU 11.2.1
+[  137s] -- The CXX compiler identification is GNU 11.2.1
+[  137s] -- Detecting C compiler ABI info
+[  144s] -- Detecting C compiler ABI info - done
+[  144s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  144s] -- Detecting C compile features
+[  144s] -- Detecting C compile features - done
+[  144s] -- Detecting CXX compiler ABI info
+[  151s] -- Detecting CXX compiler ABI info - done
+[  152s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  152s] -- Detecting CXX compile features
+[  152s] -- Detecting CXX compile features - done
+[  152s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[  152s] -- Looking for pthread.h
+[  158s] -- Looking for pthread.h - found
+[  158s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[  165s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[  165s] -- Found Threads: TRUE  
+[  165s] -- Checking for module 'systemd'
+[  166s] --   Found systemd, version 249
+[  170s] -- Checking for module 'openrc'
+[  170s] --   Package 'openrc', required by 'virtual:world', not found
+[  170s] -- Checking for module 'yaml-cpp'
+[  171s] --   Found yaml-cpp, version 0.7.0
+[  174s] -- Checking for module 'libatasmart'
+[  175s] --   Found libatasmart, version 0.19
+[  179s] -- Configuring done
+[  179s] -- Generating done
+[  179s] CMake Warning:
+[  179s]   Manually-specified variables were not used by the project:
+[  179s] 
+[  179s]     BUILD_STATIC_LIBS
+[  179s]     CMAKE_Fortran_FLAGS
+[  179s]     CMAKE_INSTALL_DO_STRIP
+[  179s]     CMAKE_MODULES_INSTALL_DIR
+[  179s]     INCLUDE_INSTALL_DIR
+[  179s]     LIB_INSTALL_DIR
+[  179s]     LIB_SUFFIX
+[  179s]     SHARE_INSTALL_PREFIX
+[  179s]     SYSCONF_INSTALL_DIR
+[  179s] 
+[  179s] 
+[  179s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build
+[  179s] + /usr/bin/make -O -j8 V=1 VERBOSE=1 'CFLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  179s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1 -B/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  180s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build/CMakeFiles /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build//CMakeFiles/progress.marks
+[  180s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  180s] /usr/bin/make  -f CMakeFiles/thinkfan.dir/build.make CMakeFiles/thinkfan.dir/depend
+[  180s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  180s] cd /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1 /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1 /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build/CMakeFiles/thinkfan.dir/DependInfo.cmake
+[  180s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  180s] /usr/bin/make  -f CMakeFiles/thinkfan.dir/build.make CMakeFiles/thinkfan.dir/build
+[  213s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  213s] [ 88%] Building CXX object CMakeFiles/thinkfan.dir/src/error.cpp.o
+[  213s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/error.cpp.o -MF CMakeFiles/thinkfan.dir/src/error.cpp.o.d -o CMakeFiles/thinkfan.dir/src/error.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/error.cpp
+[  213s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  214s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  214s] [ 55%] Building CXX object CMakeFiles/thinkfan.dir/src/message.cpp.o
+[  214s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/message.cpp.o -MF CMakeFiles/thinkfan.dir/src/message.cpp.o.d -o CMakeFiles/thinkfan.dir/src/message.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/message.cpp
+[  214s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  216s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  216s] [ 22%] Building CXX object CMakeFiles/thinkfan.dir/src/fans.cpp.o
+[  216s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/fans.cpp.o -MF CMakeFiles/thinkfan.dir/src/fans.cpp.o.d -o CMakeFiles/thinkfan.dir/src/fans.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/fans.cpp
+[  216s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  221s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  221s] [ 11%] Building CXX object CMakeFiles/thinkfan.dir/src/sensors.cpp.o
+[  221s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/sensors.cpp.o -MF CMakeFiles/thinkfan.dir/src/sensors.cpp.o.d -o CMakeFiles/thinkfan.dir/src/sensors.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/sensors.cpp
+[  221s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  227s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  227s] [ 77%] Building CXX object CMakeFiles/thinkfan.dir/src/parser.cpp.o
+[  227s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/parser.cpp.o -MF CMakeFiles/thinkfan.dir/src/parser.cpp.o.d -o CMakeFiles/thinkfan.dir/src/parser.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/parser.cpp
+[  227s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  227s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  227s] [ 33%] Building CXX object CMakeFiles/thinkfan.dir/src/thinkfan.cpp.o
+[  227s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/thinkfan.cpp.o -MF CMakeFiles/thinkfan.dir/src/thinkfan.cpp.o.d -o CMakeFiles/thinkfan.dir/src/thinkfan.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/thinkfan.cpp
+[  227s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  235s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  235s] [ 66%] Building CXX object CMakeFiles/thinkfan.dir/src/config.cpp.o
+[  235s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/config.cpp.o -MF CMakeFiles/thinkfan.dir/src/config.cpp.o.d -o CMakeFiles/thinkfan.dir/src/config.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/config.cpp
+[  235s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  256s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  256s] [ 44%] Building CXX object CMakeFiles/thinkfan.dir/src/yamlconfig.cpp.o
+[  256s] /usr/bin/c++ -DHAVE_SYSTEMD -DPID_FILE=\"/run/thinkfan.pid\" -DUSE_ATASMART -DUSE_NVML -DUSE_YAML -DVERSION=\"1.3.1\" -I/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/include -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -Wall -std=c++1y -MD -MT CMakeFiles/thinkfan.dir/src/yamlconfig.cpp.o -MF CMakeFiles/thinkfan.dir/src/yamlconfig.cpp.o.d -o CMakeFiles/thinkfan.dir/src/yamlconfig.cpp.o -c /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/yamlconfig.cpp
+[  256s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  307s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  307s] [100%] Linking CXX executable thinkfan
+[  307s] /usr/bin/cmake -E cmake_link_script CMakeFiles/thinkfan.dir/link.txt --verbose=1
+[  308s] /usr/bin/c++ -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -DNDEBUG -O3 -DNDEBUG -flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now -rdynamic CMakeFiles/thinkfan.dir/src/thinkfan.cpp.o CMakeFiles/thinkfan.dir/src/config.cpp.o CMakeFiles/thinkfan.dir/src/fans.cpp.o CMakeFiles/thinkfan.dir/src/sensors.cpp.o CMakeFiles/thinkfan.dir/src/message.cpp.o CMakeFiles/thinkfan.dir/src/parser.cpp.o CMakeFiles/thinkfan.dir/src/error.cpp.o CMakeFiles/thinkfan.dir/src/yamlconfig.cpp.o -o thinkfan  -latasmart -ldl -lyaml-cpp 
+[  308s] /usr/lib64/gcc/riscv64-suse-linux/11/../../../../riscv64-suse-linux/bin/ld: /tmp/cc1FI7ZZ.ltrans0.ltrans.o: in function `.LEHB74':
+[  308s] /home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/src/fans.cpp:192: undefined reference to `__atomic_fetch_sub_1'
+[  308s] collect2: error: ld returned 1 exit status
+[  308s] make[2]: *** [CMakeFiles/thinkfan.dir/build.make:212: thinkfan] Error 1
+[  308s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/thinkfan-1.3.1/build'
+[  308s] make[1]: *** [CMakeFiles/Makefile2:86: CMakeFiles/thinkfan.dir/all] Error 2
+[  308s] make: *** [Makefile:139: all] Error 2
+[  308s] error: Bad exit status from /var/tmp/rpm-tmp.UOVDd3 (%build)
+[  308s] 
+[  308s] 
+[  308s] RPM build errors:
+[  308s]     Bad exit status from /var/tmp/rpm-tmp.UOVDd3 (%build)
+[  308s] ### VM INTERACTION START ###
+[  309s] Failed to write wtmp record, ignoring: Read-only file system
+[  309s] Failed to write utmp record: Read-only file system
+[  309s] Powering off.
+[  309s] [  304.203845][ T3755] reboot: Power down
+[  309s] ### VM INTERACTION END ###
+[  309s] 
+[  309s] lamb20 failed "build thinkfan.spec" at Tue Mar  8 19:39:01 UTC 2022.
+[  309s] 

@@ -1,0 +1,1397 @@
+[    0s] Memory limit set to 10955196KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    6s] 
+[    6s] oe-RISCV-worker29 started "build _service:extract_file:libgnome-keyring.spec" at Sat Apr 16 05:55:50 UTC 2022.
+[    6s] 
+[    6s] Building libgnome-keyring for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 '5165277f455d5009d18f46d80a97ac1b'
+[    6s] 
+[    6s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libgnome-keyring.spec ...
+[   12s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libgnome-keyring.spec
+[   13s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/_service:extract_file:libgnome-keyring.spec build ...
+[  151s] cycle: bash -> coreutils
+[  152s]   breaking dependency coreutils -> bash
+[  152s] cycle: bash -> coreutils -> info
+[  152s]   breaking dependency coreutils -> info
+[  152s] cycle: glibc -> filesystem -> bash -> coreutils
+[  152s]   breaking dependency filesystem -> bash
+[  152s] cycle: glibc -> filesystem -> coreutils
+[  152s]   breaking dependency coreutils -> glibc
+[  152s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  152s]   breaking dependency coreutils -> libacl
+[  152s] cycle: glibc -> filesystem -> coreutils -> attr
+[  152s]   breaking dependency coreutils -> attr
+[  152s] cycle: coreutils -> libcap -> bash
+[  152s]   breaking dependency coreutils -> libcap
+[  152s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  152s]   breaking dependency coreutils -> openssl-libs
+[  152s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  152s]   breaking dependency libselinux -> glibc
+[  152s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  152s]   breaking dependency pcre2 -> glibc
+[  152s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  152s]   breaking dependency readline -> glibc
+[  152s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  152s]   breaking dependency coreutils -> libselinux
+[  152s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  152s]   breaking dependency ncurses -> glibc
+[  152s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  152s]   breaking dependency ncurses -> ncurses-libs
+[  152s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  152s]   breaking dependency ncurses -> libgcc
+[  152s] cycle: perl-Carp -> perl-libs
+[  152s]   breaking dependency perl-libs -> perl-Carp
+[  152s] cycle: perl-libs -> perl-Exporter
+[  152s]   breaking dependency perl-libs -> perl-Exporter
+[  152s] cycle: perl-Carp -> perl-Exporter
+[  152s]   breaking dependency perl-Exporter -> perl-Carp
+[  152s] cycle: nss-util -> nss
+[  152s]   breaking dependency nss -> nss-util
+[  152s] cycle: nss-softokn -> nss-util -> nss
+[  152s]   breaking dependency nss -> nss-softokn
+[  152s] cycle: systemd -> cryptsetup -> device-mapper
+[  152s]   breaking dependency systemd -> cryptsetup
+[  152s] cycle: audit -> systemd -> pam
+[  152s]   breaking dependency systemd -> pam
+[  152s] [1/84] preinstalling dbus...
+[  153s] [2/84] preinstalling libffi-devel...
+[  154s] [3/84] preinstalling nodejs-source-map...
+[  155s] [4/84] preinstalling python3-pip...
+[  160s] [5/84] preinstalling python3-setuptools_scm...
+[  160s] [6/84] preinstalling ncurses...
+[  168s] [7/84] preinstalling coreutils...
+[  173s] [8/84] preinstalling filesystem...
+[  176s] [9/84] preinstalling glibc...
+[  181s] [10/84] preinstalling libgcc...
+[  182s] [11/84] preinstalling diffutils...
+[  183s] [12/84] preinstalling libcap-ng...
+[  184s] [13/84] preinstalling libgpg-error...
+[  185s] [14/84] preinstalling libpcap...
+[  187s] [15/84] preinstalling libsmartcols...
+[  188s] [16/84] preinstalling libuuid...
+[  189s] [17/84] preinstalling libxcrypt...
+[  190s] [18/84] preinstalling lz4...
+[  191s] [19/84] preinstalling m4...
+[  192s] [20/84] preinstalling ncurses-libs...
+[  193s] [21/84] preinstalling nspr...
+[  195s] [22/84] preinstalling xz-libs...
+[  196s] [23/84] preinstalling zlib...
+[  197s] [24/84] preinstalling attr...
+[  198s] [25/84] preinstalling libdb...
+[  203s] [26/84] preinstalling zstd...
+[  206s] [27/84] preinstalling audit-libs...
+[  207s] [28/84] preinstalling file...
+[  208s] [29/84] preinstalling iptables-libs...
+[  209s] [30/84] preinstalling libacl...
+[  210s] [31/84] preinstalling libgcrypt...
+[  211s] [32/84] preinstalling openssl-libs...
+[  213s] [33/84] preinstalling readline...
+[  215s] [34/84] preinstalling bash...
+[  218s] [35/84] preinstalling cmake...
+[  231s] [36/84] preinstalling perl-libs...
+[  235s] [37/84] preinstalling dnf...
+[  236s] [38/84] preinstalling pcre2...
+[  238s] [39/84] preinstalling perl-Exporter...
+[  239s] [40/84] preinstalling bzip2...
+[  240s] [41/84] preinstalling elfutils...
+[  242s] [42/84] preinstalling hostname...
+[  243s] [43/84] preinstalling libcap...
+[  244s] [44/84] preinstalling pcre...
+[  245s] [45/84] preinstalling popt...
+[  246s] [46/84] preinstalling acl...
+[  248s] [47/84] preinstalling libblkid...
+[  249s] [48/84] preinstalling openssl...
+[  250s] [49/84] preinstalling sqlite...
+[  252s] [50/84] preinstalling tar...
+[  254s] [51/84] preinstalling info...
+[  255s] [52/84] preinstalling libgcrypt-devel...
+[  256s] [53/84] preinstalling lua...
+[  257s] [54/84] preinstalling libselinux...
+[  258s] [55/84] preinstalling perl-Carp...
+[  259s] [56/84] preinstalling copy-jdk-configs...
+[  260s] [57/84] preinstalling libfdisk...
+[  261s] [58/84] preinstalling perl-Digest-MD5...
+[  262s] [59/84] preinstalling grep...
+[  264s] [60/84] preinstalling rpm-libs...
+[  265s] [61/84] preinstalling chkconfig...
+[  266s] [62/84] preinstalling sed...
+[  267s] [63/84] preinstalling libmount...
+[  268s] [64/84] preinstalling libsemanage...
+[  269s] [65/84] preinstalling perl-constant...
+[  270s] [66/84] preinstalling findutils...
+[  271s] [67/84] preinstalling xz...
+[  272s] [68/84] preinstalling perl-Getopt-Long...
+[  273s] [69/84] preinstalling glib2...
+[  278s] [70/84] preinstalling nss...
+[  279s] [71/84] preinstalling perl-Data-Dumper...
+[  280s] [72/84] preinstalling systemd-libs...
+[  283s] [73/84] preinstalling systemd...
+[  288s] [74/84] preinstalling dbus-libs...
+[  289s] [75/84] preinstalling nss-util...
+[  291s] [76/84] preinstalling audit...
+[  292s] [77/84] preinstalling nss-softokn...
+[  295s] [78/84] preinstalling pam...
+[  296s] [79/84] preinstalling rpm...
+[  298s] [80/84] preinstalling openEuler-rpm-config...
+[  299s] [81/84] preinstalling util-linux...
+[  305s] [82/84] preinstalling device-mapper...
+[  306s] [83/84] preinstalling cryptsetup...
+[  308s] [84/84] preinstalling lvm2...
+[  311s] 
+[  314s] initializing rpm db...
+[  332s] reordering...cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[  332s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[  332s] cycle: coreutils -> bash
+[  332s]   breaking dependency coreutils -> bash
+[  332s] cycle: coreutils -> info
+[  332s]   breaking dependency coreutils -> info
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  332s]   breaking dependency coreutils -> gmp
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  332s]   breaking dependency coreutils -> glibc
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  332s]   breaking dependency coreutils -> libacl
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  332s]   breaking dependency coreutils -> attr
+[  332s] cycle: coreutils -> libcap
+[  332s]   breaking dependency coreutils -> libcap
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  332s]   breaking dependency openssl-libs -> glibc
+[  332s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  332s]   breaking dependency ca-certificates -> coreutils
+[  332s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  332s]   breaking dependency ca-certificates -> bash
+[  332s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  332s]   breaking dependency grep -> coreutils
+[  332s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  332s]   breaking dependency ca-certificates -> grep
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  332s]   breaking dependency p11-kit -> glibc
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  332s]   breaking dependency openssl-libs -> ca-certificates
+[  332s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  332s]   breaking dependency crypto-policies -> bash
+[  332s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  332s]   breaking dependency crypto-policies -> coreutils
+[  332s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  332s]   breaking dependency bash -> coreutils
+[  332s] cycle: filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep -> bash
+[  332s]   breaking dependency grep -> bash
+[  332s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  332s]   breaking dependency glibc -> basesystem
+[  332s] cycle: glibc -> glibc-common -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  332s]   breaking dependency glibc-common -> bash
+[  332s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  332s]   breaking dependency glibc-common -> coreutils
+[  332s] cycle: glibc -> glibc-common
+[  332s]   breaking dependency glibc-common -> glibc
+[  332s] cycle: glibc -> glibc-common -> libselinux
+[  332s]   breaking dependency libselinux -> glibc
+[  332s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  332s]   breaking dependency pcre2 -> glibc
+[  332s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  332s]   breaking dependency readline -> glibc
+[  332s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  332s]   breaking dependency libselinux -> pcre2
+[  332s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  332s]   breaking dependency libsepol -> coreutils
+[  332s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  332s]   breaking dependency filesystem -> coreutils
+[  332s] cycle: bash -> filesystem
+[  332s]   breaking dependency filesystem -> bash
+[  332s] cycle: filesystem -> setup
+[  332s]   breaking dependency filesystem -> setup
+[  332s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[  332s]   breaking dependency bash -> glibc
+[  332s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> ncurses-libs
+[  332s]   breaking dependency libsepol -> bash
+[  332s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  332s]   breaking dependency glibc -> glibc-common
+[  332s] cycle: systemd -> cryptsetup -> device-mapper
+[  332s]   breaking dependency systemd -> cryptsetup
+[  332s] cycle: perl-libs -> perl-Carp
+[  332s]   breaking dependency perl-libs -> perl-Carp
+[  332s] cycle: perl-libs -> perl-Exporter
+[  332s]   breaking dependency perl-libs -> perl-Exporter
+[  332s] cycle: perl-Carp -> perl-Exporter
+[  332s]   breaking dependency perl-Exporter -> perl-Carp
+[  332s] cycle: perl -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-PathTools
+[  332s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  332s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  332s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-File-Path
+[  332s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  332s]   breaking dependency perl -> perl-Getopt-Long
+[  332s] cycle: perl -> perl-Locale-Maketext
+[  332s]   breaking dependency perl -> perl-Locale-Maketext
+[  332s] cycle: perl -> perl-Pod-Simple
+[  332s]   breaking dependency perl -> perl-Pod-Simple
+[  332s] cycle: perl -> perl-Socket
+[  332s]   breaking dependency perl -> perl-Socket
+[  332s] cycle: perl -> perl-Storable
+[  332s]   breaking dependency perl -> perl-Storable
+[  332s] cycle: perl -> perl-Text-Tabs+Wrap
+[  332s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  332s] cycle: perl -> perl-Time-Local -> perl-constant
+[  332s]   breaking dependency perl -> perl-Time-Local
+[  332s] cycle: perl -> perl-constant
+[  332s]   breaking dependency perl -> perl-constant
+[  332s] cycle: perl -> perl-threads
+[  332s]   breaking dependency perl -> perl-threads
+[  332s] cycle: perl -> perl-threads-shared
+[  332s]   breaking dependency perl -> perl-threads-shared
+[  332s] cycle: perl -> perl-Archive-Tar
+[  332s]   breaking dependency perl -> perl-Archive-Tar
+[  332s] cycle: perl -> perl-B-Debug
+[  332s]   breaking dependency perl -> perl-B-Debug
+[  332s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  332s]   breaking dependency perl -> perl-CPAN-Meta
+[  332s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  332s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  332s] cycle: perl -> perl-CPAN-Meta-YAML
+[  332s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  332s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  332s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  332s] cycle: perl -> perl-Compress-Raw-Zlib
+[  332s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  332s] cycle: perl -> perl-Config-Perl-V
+[  332s]   breaking dependency perl -> perl-Config-Perl-V
+[  332s] cycle: perl -> perl-DB_File
+[  332s]   breaking dependency perl -> perl-DB_File
+[  332s] cycle: perl -> perl-Data-Dumper
+[  332s]   breaking dependency perl -> perl-Data-Dumper
+[  332s] cycle: perl -> perl-Devel-PPPort
+[  332s]   breaking dependency perl -> perl-Devel-PPPort
+[  332s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  332s]   breaking dependency perl -> perl-Digest
+[  332s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  332s]   breaking dependency perl -> perl-Digest-MD5
+[  332s] cycle: perl -> perl-Digest-SHA
+[  332s]   breaking dependency perl -> perl-Digest-SHA
+[  332s] cycle: perl -> perl-Encode
+[  332s]   breaking dependency perl -> perl-Encode
+[  332s] cycle: perl -> perl-Env
+[  332s]   breaking dependency perl -> perl-Env
+[  332s] cycle: perl -> perl-ExtUtils-Command
+[  332s]   breaking dependency perl -> perl-ExtUtils-Command
+[  332s] cycle: perl -> perl-ExtUtils-Install
+[  332s]   breaking dependency perl -> perl-ExtUtils-Install
+[  332s] cycle: perl -> perl-ExtUtils-Manifest
+[  332s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  332s] cycle: perl -> perl-ExtUtils-ParseXS
+[  332s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  332s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-File-Fetch
+[  332s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-File-Temp
+[  332s] cycle: perl -> perl-Filter
+[  332s]   breaking dependency perl -> perl-Filter
+[  332s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  332s]   breaking dependency perl -> perl-Filter-Simple
+[  332s] cycle: perl -> perl-HTTP-Tiny
+[  332s]   breaking dependency perl -> perl-HTTP-Tiny
+[  332s] cycle: perl -> perl-IO-Compress
+[  332s]   breaking dependency perl -> perl-IO-Compress
+[  332s] cycle: perl -> perl-IO-Socket-IP
+[  332s]   breaking dependency perl -> perl-IO-Socket-IP
+[  332s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  332s]   breaking dependency perl -> perl-IPC-Cmd
+[  332s] cycle: perl -> perl-IPC-SysV
+[  332s]   breaking dependency perl -> perl-IPC-SysV
+[  332s] cycle: perl -> perl-JSON-PP
+[  332s]   breaking dependency perl -> perl-JSON-PP
+[  332s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  332s]   breaking dependency perl -> perl-Locale-Codes
+[  332s] cycle: perl -> perl-MIME-Base64
+[  332s]   breaking dependency perl -> perl-MIME-Base64
+[  332s] cycle: perl -> perl-Math-BigInt
+[  332s]   breaking dependency perl -> perl-Math-BigInt
+[  332s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  332s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  332s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  332s]   breaking dependency perl -> perl-Math-BigRat
+[  332s] cycle: perl -> perl-Module-CoreList
+[  332s]   breaking dependency perl -> perl-Module-CoreList
+[  332s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-Module-Load
+[  332s] cycle: perl -> perl-Module-Load-Conditional
+[  332s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  332s] cycle: perl -> perl-Module-Metadata
+[  332s]   breaking dependency perl -> perl-Module-Metadata
+[  332s] cycle: perl -> perl-Params-Check
+[  332s]   breaking dependency perl -> perl-Params-Check
+[  332s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  332s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  332s] cycle: perl -> perl-Pod-Checker
+[  332s]   breaking dependency perl -> perl-Pod-Checker
+[  332s] cycle: perl -> perl-Pod-Escapes
+[  332s]   breaking dependency perl -> perl-Pod-Escapes
+[  332s] cycle: perl -> perl-Pod-Parser
+[  332s]   breaking dependency perl -> perl-Pod-Parser
+[  332s] cycle: perl -> perl-Pod-Perldoc
+[  332s]   breaking dependency perl -> perl-Pod-Perldoc
+[  332s] cycle: perl -> perl-Pod-Usage
+[  332s]   breaking dependency perl -> perl-Pod-Usage
+[  332s] cycle: perl -> perl-Sys-Syslog
+[  332s]   breaking dependency perl -> perl-Sys-Syslog
+[  332s] cycle: perl -> perl-Term-Cap
+[  332s]   breaking dependency perl -> perl-Term-Cap
+[  332s] cycle: perl -> perl-Test-Harness
+[  332s]   breaking dependency perl -> perl-Test-Harness
+[  332s] cycle: perl -> perl-Test-Simple
+[  332s]   breaking dependency perl -> perl-Test-Simple
+[  332s] cycle: perl -> perl-Text-Balanced
+[  332s]   breaking dependency perl -> perl-Text-Balanced
+[  332s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  332s]   breaking dependency perl -> perl-Thread-Queue
+[  332s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  332s]   breaking dependency perl -> perl-Unicode-Collate
+[  332s] cycle: perl -> perl-autodie
+[  332s]   breaking dependency perl -> perl-autodie
+[  332s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  332s]   breaking dependency perl -> perl-bignum
+[  332s] cycle: perl -> perl-devel
+[  332s]   breaking dependency perl -> perl-devel
+[  332s] cycle: perl -> perl-Encode-devel
+[  332s]   breaking dependency perl -> perl-Encode-devel
+[  332s] cycle: perl -> perl-experimental
+[  332s]   breaking dependency perl -> perl-experimental
+[  332s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  332s]   breaking dependency perl -> perl-libnet
+[  332s] cycle: perl -> perl-podlators
+[  332s]   breaking dependency perl -> perl-podlators
+[  332s] cycle: perl -> perl-version
+[  332s]   breaking dependency perl -> perl-version
+[  332s] cycle: glib2 -> gamin
+[  332s]   breaking dependency glib2 -> gamin
+[  332s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  332s]   breaking dependency systemd -> gnutls
+[  332s] cycle: systemd -> pam -> audit
+[  332s]   breaking dependency systemd -> pam
+[  332s] cycle: systemd -> shadow -> pam -> audit
+[  332s]   breaking dependency systemd -> shadow
+[  332s] cycle: pam -> libpwquality
+[  332s]   breaking dependency pam -> libpwquality
+[  332s] cycle: hunspell-en -> hunspell
+[  332s]   breaking dependency hunspell -> hunspell-en
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  332s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  332s]   breaking dependency perl-podlators -> perl-Encode
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  332s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  332s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  332s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  332s] cycle: perl-Pod-Usage -> perl-podlators
+[  332s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  332s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  332s]   breaking dependency groff -> perl-Getopt-Long
+[  332s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  332s] cycle: fontconfig -> urw-base35-c059-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[  332s] cycle: fontconfig -> urw-base35-bookman-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[  332s] cycle: fontconfig -> urw-base35-p052-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[  332s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[  332s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[  332s] cycle: fontconfig -> urw-base35-gothic-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[  332s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[  332s] cycle: fontconfig -> urw-base35-z003-fonts
+[  332s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[  332s] cycle: libglvnd-egl -> mesa-libEGL
+[  332s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[  332s] cycle: libxcrypt-devel -> glibc-devel
+[  332s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  332s] cycle: cmake-data -> cmake
+[  332s]   breaking dependency cmake -> cmake-data
+[  332s] cycle: nss-util -> nss
+[  332s]   breaking dependency nss -> nss-util
+[  332s] cycle: nss-softokn -> nss-util -> nss
+[  332s]   breaking dependency nss -> nss-softokn
+[  332s] cycle: libglvnd-glx -> mesa-libGL
+[  332s]   breaking dependency mesa-libGL -> libglvnd-glx
+[  332s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  332s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  332s] cycle: openssh -> openssh-server
+[  332s]   breaking dependency openssh-server -> openssh
+[  332s] cycle: git -> perl-Git
+[  332s]   breaking dependency git -> perl-Git
+[  332s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  332s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  333s] done
+[  333s] querying package ids...
+[  383s] [1/496] installing adobe-mappings-pdf-20190401-2.oe1
+[  386s] [2/496] installing cmake-filesystem-3.22.0-1.oe1
+[  388s] [3/496] installing fonts-filesystem-2.0.2-2.oe1
+[  389s] [4/496] installing fuse-common-3.9.2-5.oe1
+[  394s] [5/496] installing kernel-headers-5.10-3.oe1
+[  403s] [6/496] installing libreport-filesystem-2.13.1-5.oe1
+[  404s] [7/496] installing ncurses-base-6.1-14.oe1
+[  406s] [8/496] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  407s] [9/496] installing python-setuptools-59.4.0-3.oe1
+[  409s] [10/496] installing qt5-srpm-macros-5.15.2-1.oe1
+[  411s] [11/496] installing tzdata-2021a-2.oe1
+[  421s] [12/496] installing xkeyboard-config-2.30-1.oe1
+[  428s] [13/496] installing dejavu-fonts-2.35-8.oe1
+[  439s] [14/496] installing dnf-data-4.10.0-1.oe1
+[  441s] [15/496] installing google-droid-sans-fonts-20120715-15.oe1
+[  447s] [16/496] installing openEuler-repos-1.0-2.5.oe1
+[  448s] [17/496] installing openEuler-release-20.03LTS-40.oe1
+[  450s] [18/496] installing adobe-mappings-cmap-lang-20190730-3.oe1
+[  459s] [19/496] installing filesystem-3.9-3.oe1
+[  471s] warning: group mail does not exist - using root
+[  471s] [20/496] installing adobe-mappings-cmap-20190730-3.oe1
+[  472s] [21/496] installing emacs-filesystem-1:27.1-5.oe1
+[  473s] [22/496] installing libgcc-10.3.1-20220105.6.oe1
+[  475s] [23/496] installing setup-2.13.3-4.oe1
+[  476s] [24/496] installing urw-base35-fonts-common-20170801-11
+[  479s] [25/496] installing glibc-2.34-64.oe1
+[  487s] [26/496] installing brotli-1.0.9-2.oe1
+[  489s] [27/496] installing cdparanoia-libs-10.2-31.oe1
+[  490s] [28/496] installing chrpath-0.16-12.oe1
+[  491s] [29/496] installing cpio-2.13-4.oe1
+[  493s] [30/496] installing diffutils-3.7-4.oe1
+[  498s] [31/496] installing expat-2.2.10-1.oe1
+[  499s] [32/496] installing fribidi-1.0.10-1.oe1
+[  500s] [33/496] installing giflib-5.2.1-2.oe1
+[  502s] [34/496] installing hyphen-2.8.8-14.oe1
+[  503s] [35/496] installing jansson-2.11-4.oe1
+[  505s] [36/496] installing jbig2dec-0.19-2.oe1
+[  506s] [37/496] installing jbigkit-libs-2.1-17.oe1
+[  508s] [38/496] installing json-c-0.15-1.oe1
+[  509s] [39/496] installing keyutils-libs-1.6.3-3.oe1
+[  510s] [40/496] installing lcms2-2.11-2.oe1
+[  512s] [41/496] installing libICE-1.0.10-2.oe1
+[  514s] [42/496] installing libXau-1.0.9-2.oe1
+[  515s] [43/496] installing libaio-0.3.112-1.oe1
+[  517s] [44/496] installing libargon2-20190702-1.oe1
+[  518s] [45/496] installing libatomic-10.3.1-20220105.6.oe1
+[  519s] [46/496] installing libcap-ng-0.7.11-1.oe1
+[  521s] [47/496] installing libdatrie-0.2.12-1.oe1
+[  522s] [48/496] installing libdrm-2.4.109-3.oe1
+[  523s] [49/496] installing libepoxy-1.5.3-2
+[  525s] [50/496] installing libev-4.24-11.oe1
+[  527s] [51/496] installing libffi-3.3-31.oe1
+[  529s] [52/496] installing libglvnd-1:1.3.4-2.oe1
+[  531s] [53/496] installing libgomp-10.3.1-20220105.6.oe1
+[  533s] [54/496] installing libgpg-error-1.41-1.oe1
+[  535s] [55/496] installing libijs-0.35-9.oe1
+[  536s] [56/496] installing libjpeg-turbo-2.0.6-1.oe1
+[  537s] [57/496] installing libnghttp2-1.42.0-1.oe1
+[  539s] [58/496] installing libogg-2:1.3.3-3.oe1
+[  540s] [59/496] installing libpcap-14:1.9.1-7.oe1
+[  542s] [60/496] installing libpipeline-1.5.3-1.oe1
+[  543s] [61/496] installing libsigsegv-2.11-10.oe1
+[  544s] [62/496] installing libsmartcols-2.36.1-3.oe1
+[  545s] [63/496] installing libtasn1-4.16.0-2.oe1
+[  548s] [64/496] installing libtool-ltdl-2.4.6-34.oe1
+[  549s] [65/496] installing libunistring-0.9.10-8.oe1
+[  552s] [66/496] installing libuuid-2.36.1-3.oe1
+[  554s] [67/496] installing libuv-1:1.40.0-1.oe1
+[  555s] [68/496] installing libvisual-1:0.4.0-27.oe1
+[  557s] [69/496] installing libwebp-1.1.0-3.oe1
+[  559s] [70/496] installing libxcrypt-4.4.8-4.oe1
+[  562s] [71/496] installing libxshmfence-1.3-6.oe1
+[  564s] [72/496] installing libyaml-0.2.5-1.oe1
+[  565s] [73/496] installing lz4-1.9.3-1.oe1
+[  567s] [74/496] installing m4-1.4.18-14.oe1
+[  569s] [75/496] installing mcpp-2.7.2-25.oe1
+[  571s] [76/496] installing nspr-4.32.0-1.oe1
+[  572s] [77/496] installing openjpeg2-2.3.1-6.oe1
+[  574s] [78/496] installing opus-1.3.1-1.oe1
+[  575s] [79/496] installing pixman-0.38.0-1.oe1
+[  576s] [80/496] installing pkgconf-1.7.3-1.oe1
+[  578s] [81/496] installing rhash-1.3.5-5.oe1
+[  581s] [82/496] installing which-2.21-14.oe1
+[  582s] [83/496] installing xz-libs-5.2.5-1.oe1
+[  583s] [84/496] installing zlib-1.2.11-18.oe1
+[  585s] [85/496] installing attr-2.4.48-12.oe1
+[  586s] [86/496] installing basesystem-12-2.oe1
+[  588s] [87/496] installing libidn-1.36-1.oe1
+[  589s] [88/496] installing libstdc++-10.3.1-20220105.6.oe1
+[  591s] [89/496] installing ncurses-libs-6.1-14.oe1
+[  593s] [90/496] installing libsepol-3.1-4.oe1
+[  595s] [91/496] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  608s] [92/496] installing audit-libs-1:3.0-2.oe1
+[  610s] [93/496] installing elfutils-libelf-0.185-3.oe1
+[  612s] [94/496] installing file-libs-5.39-6.oe1
+[  615s] [95/496] installing gmp-1:6.2.1-3.oe1
+[  618s] [96/496] installing iptables-libs-1.8.1-4.oe1
+[  619s] [97/496] installing less-563-2.oe1
+[  621s] [98/496] installing libacl-2.2.53-7.oe1
+[  623s] [99/496] installing libassuan-2.5.4-1.oe1
+[  624s] [100/496] installing libedit-3.1-27.oe1
+[  626s] [101/496] installing libffi-devel-3.3-31.oe1
+[  627s] [102/496] installing libfontenc-1.1.4-2.oe1
+[  628s] [103/496] installing libgcrypt-1.8.7-1.oe1
+[  630s] [104/496] installing libpng-2:1.6.37-1.oe1
+[  631s] [105/496] installing libsepol-devel-3.1-4.oe1
+[  637s] [106/496] installing libthai-0.1.28-4.oe1
+[  640s] [107/496] installing libtheora-1:1.1.1-24.oe1
+[  642s] [108/496] installing libvorbis-1:1.3.6-5.oe1
+[  643s] [109/496] installing libxcb-1.14-1.oe1
+[  645s] [110/496] installing readline-8.0-2.oe1
+[  648s] [111/496] installing wayland-1.18.0-1.oe1
+[  649s] [112/496] installing zlib-devel-1.2.11-18.oe1
+[  651s] [113/496] installing fuse-2.9.9-6.oe1
+[  653s] [114/496] installing gc-8.0.4-2.oe1
+[  654s] [115/496] installing libSM-1.2.3-2.oe1
+[  655s] [116/496] installing libdb-5.3.28-35.oe1
+[  663s] [117/496] installing libicu-62.1-5.oe1
+[  678s] [118/496] installing libselinux-3.1-3.oe1
+[  681s] [119/496] installing libxml2-2.9.12-5.oe1
+[  684s] [120/496] installing bash-5.1-1.oe1
+[  687s] [121/496] installing perl-libs-4:5.28.0-435.oe1
+[  696s] [122/496] installing woff2-1.0.2-6.oe1
+[  697s] [123/496] installing zstd-1.4.8-2.oe1
+[  701s] [124/496] installing hunspell-1.7.0-9.oe1
+[  703s] [125/496] installing mozjs52-52.9.0-1.0.riscv64
+[  717s] [126/496] installing ncurses-6.1-14.oe1
+[  732s] [127/496] installing thin-provisioning-tools-0.8.5-1.oe1
+[  734s] [128/496] installing libtiff-4.2.0-1.oe1
+[  736s] [129/496] installing hunspell-en-2020.12.07-1.oe1
+[  738s] [130/496] installing perl-parent-1:0.237-4.oe1
+[  739s] [131/496] installing perl-perlfaq-5.20180915-5.oe1
+[  741s] [132/496] installing libX11-1.6.9-2.oe1
+[  745s] [133/496] installing mesa-libglapi-21.3.1-1.oe1
+[  746s] [134/496] installing mpfr-4.1.0-1.oe1
+[  748s] [135/496] installing nettle-3.6-6.oe1
+[  751s] [136/496] installing pcre2-10.36-1.oe1
+[  754s] [137/496] installing perl-Exporter-5.74-1.oe1
+[  755s] [138/496] installing file-5.39-6.oe1
+[  757s] [139/496] installing gdbm-1:1.18.1-1.oe1
+[  761s] [140/496] installing libxkbcommon-1.0.3-1.oe1
+[  763s] [141/496] installing patch-2.7.6-12.oe1
+[  765s] [142/496] installing qrencode-4.1.1-1
+[  767s] [143/496] installing sed-4.8-2.oe1
+[  769s] [144/496] installing acl-2.2.53-7.oe1
+[  771s] [145/496] installing libcomps-0.1.15-1.oe1
+[  773s] [146/496] installing pcre-8.44-1.oe1
+[  774s] [147/496] installing glibc-common-2.34-64.oe1
+[  789s] [148/496] installing mesa-libgbm-21.3.1-1.oe1
+[  791s] [149/496] installing crontabs-1.11-21.oe1
+[  793s] [150/496] installing libXcomposite-0.4.5-1.oe1
+[  795s] [151/496] installing libXext-1.3.4-2.oe1
+[  797s] [152/496] installing libXfixes-5.0.3-11.oe1
+[  799s] [153/496] installing libXpm-3.5.12-11.oe1
+[  801s] [154/496] installing libXrender-0.9.10-10.oe1
+[  803s] [155/496] installing perl-Carp-1.50-418.oe1
+[  804s] [156/496] installing perl-Perl-OSType-1.010-421.oe1
+[  806s] [157/496] installing perl-Term-ANSIColor-4.06-511.oe1
+[  809s] [158/496] installing libmpc-1.2.0-2.oe1
+[  811s] [159/496] installing grep-3.6-1.oe1
+[  814s] [160/496] installing libXt-1.2.0-0.oe1
+[  816s] [161/496] installing libwpe-1.6.0-1.oe1
+[  821s] [162/496] installing gawk-5.0.1-2.oe1
+[  824s] [163/496] installing mesa-libEGL-21.3.1-1.oe1
+[  826s] [164/496] installing libXdamage-1.1.5-1.oe1
+[  828s] [165/496] installing libXi-1.7.10-1.oe1
+[  831s] [166/496] installing libXinerama-1.1.4-5.oe1
+[  833s] [167/496] installing libXv-1.0.11-11.oe1
+[  835s] [168/496] installing libXxf86misc-1.0.4-4.oe1
+[  838s] [169/496] installing libXxf86vm-1.1.4-13.oe1
+[  839s] [170/496] installing libglvnd-egl-1:1.3.4-2.oe1
+[  843s] [171/496] installing libglvnd-gles-1:1.3.4-2.oe1
+[  846s] [172/496] installing perl-Text-ParseWords-3.30-419.oe1
+[  849s] [173/496] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  858s] [174/496] installing libXcursor-1.2.0-1.oe1
+[  860s] [175/496] installing libXmu-1.1.3-1.oe1
+[  862s] [176/496] installing libXrandr-1.5.2-1.oe1
+[  864s] [177/496] installing cpp-10.3.1-20220105.6.oe1
+[  875s] [178/496] installing libXtst-1.2.3-10.oe1
+[  877s] [179/496] installing openssl-libs-1:1.1.1f-2.oe1
+[  882s] [180/496] installing libXaw-1.0.13-13.oe1
+[  885s] [181/496] installing mesa-libGL-21.3.1-1.oe1
+[  887s] [182/496] installing xorg-x11-server-utils-7.7-28
+[  890s] [183/496] installing ima-evm-utils-libs-1.2.1-8.oe1
+[  892s] [184/496] installing libevent-2.1.12-4
+[  895s] [185/496] installing kmod-libs-27-4.oe1
+[  897s] [186/496] installing kmod-27-4.oe1
+[  901s] [187/496] installing libglvnd-glx-1:1.3.4-2.oe1
+[  906s] [188/496] installing nodejs-libs-1:16.10.0-1.oe1
+[  951s] [189/496] installing coreutils-8.31-4.oe1
+[  961s] [190/496] installing adwaita-icon-theme-3.38.0-1.oe1
+[ 1010s] [191/496] installing alsa-lib-1.2.4-1.oe1
+[ 1014s] [192/496] installing elfutils-default-yama-scope-0.185-3.oe1
+[ 1016s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libseccomp.so.2: cannot open shared object file: No such file or directory
+[ 1016s] [193/496] installing hicolor-icon-theme-0.17-4.oe1
+[ 1019s] [194/496] installing publicsuffix-list-20200718-1.oe1
+[ 1022s] [195/496] installing uname-build-checks-1.0-0.4.oe1
+[ 1024s] [196/496] installing bzip2-1.0.8-3.oe1
+[ 1027s] [197/496] installing gzip-1.10-1.oe1
+[ 1030s] [198/496] installing hostname-3.21-2.oe1
+[ 1032s] [199/496] installing libcap-2.32-2.oe1
+[ 1036s] [200/496] installing liblockfile-1.14-3.oe1
+[ 1038s] [201/496] installing libpaper-1.1.24-25.oe1
+[ 1041s] [202/496] installing libseccomp-2.4.3-2.oe1
+[ 1043s] [203/496] installing npth-1.5-7.oe1
+[ 1045s] [204/496] installing orc-0.4.32-1.oe1
+[ 1048s] [205/496] installing popt-1.18-1.oe1
+[ 1051s] [206/496] installing sgml-common-0.6.3-51.oe1
+[ 1054s] [207/496] installing fipscheck-1.5.0-7.oe1
+[ 1056s] [208/496] installing libblkid-2.36.1-3.oe1
+[ 1060s] [209/496] installing libidn2-2.3.0-1.oe1
+[ 1063s] [210/496] installing libksba-1.3.5-12.oe1
+[ 1066s] [211/496] installing pcre-devel-8.44-1.oe1
+[ 1071s] [212/496] installing pcre2-devel-10.36-1.oe1
+[ 1075s] [213/496] installing tar-2:1.32-3.oe1
+[ 1080s] [214/496] installing tcl-1:8.6.10-3.oe1
+[ 1086s] [215/496] installing graphite2-1.3.13-2.oe1
+[ 1089s] [216/496] installing info-6.7-2.oe1
+[ 1091s] [217/496] installing jsoncpp-1.9.4-1.oe1
+[ 1094s] [218/496] installing libgpg-error-devel-1.41-1.oe1
+[ 1096s] [219/496] installing libmodman-2.0.1-19.oe1
+[ 1099s] [220/496] installing lua-5.3.5-6.oe1
+[ 1101s] [221/496] installing slang-2.3.2-8.oe1
+[ 1105s] [222/496] installing xz-5.2.5-1.oe1
+[ 1107s] [223/496] installing libxslt-1.1.32-7.oe1
+[ 1110s] [224/496] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[ 1113s] [225/496] installing perl-Time-HiRes-1.9760-2.oe1
+[ 1116s] [226/496] installing perl-Unicode-Normalize-1.26-419.oe1
+[ 1118s] [227/496] installing systemd-libs-243-22.oe1
+[ 1122s] [228/496] installing guile-5:2.0.14-15.oe1
+[ 1134s] [229/496] installing iso-codes-4.5.0-1.oe1
+[ 1152s] [230/496] installing dbus-libs-1:1.12.20-3.oe1
+[ 1160s] [231/496] installing libusbx-1.0.23-3.oe1
+[ 1162s] [232/496] installing zip-3.0-29.oe1
+[ 1165s] [233/496] installing bubblewrap-0.4.1-1.oe1
+[ 1167s] [234/496] installing libfdisk-2.36.1-3.oe1
+[ 1171s] [235/496] installing newt-0.52.21-4.oe1
+[ 1175s] [236/496] installing p11-kit-0.23.22-1.oe1
+[ 1179s] [237/496] installing procps-ng-3.3.16-15.oe1
+[ 1181s] [238/496] installing elfutils-libs-0.185-3.oe1
+[ 1184s] [239/496] installing libmount-2.36.1-3.oe1
+[ 1188s] [240/496] installing libselinux-devel-3.1-3.oe1
+[ 1191s] [241/496] installing lua-posix-33.3.1-12.oe1
+[ 1194s] [242/496] installing unzip-6.0-47.oe1
+[ 1196s] [243/496] installing cracklib-2.9.7-6.oe1
+[ 1204s] [244/496] installing e2fsprogs-1.45.6-3.oe1
+[ 1208s] [245/496] installing findutils-2:4.7.0-7.oe1
+[ 1211s] [246/496] installing libsemanage-3.1-4.oe1
+[ 1214s] [247/496] installing make-1:4.2.1-15.oe1
+[ 1216s] [248/496] installing sqlite-3.24.0-9.oe1
+[ 1221s] [249/496] installing logrotate-3.15.1-2.oe1
+[ 1223s] [250/496] installing freetype-2.10.2-3.oe1
+[ 1227s] [251/496] installing glibc-devel-2.34-64.oe1
+[ 1242s] [252/496] installing libgcrypt-devel-1.8.7-1.oe1
+[ 1244s] [253/496] installing gnupg2-2.2.27-2.oe1
+[ 1251s] [254/496] installing libarchive-3.5.1-1.oe1
+[ 1254s] [255/496] installing dbus-tools-1:1.12.20-3.oe1
+[ 1255s] [256/496] installing avahi-libs-0.8-6.oe1
+[ 1258s] [257/496] installing libxcrypt-devel-4.4.8-4.oe1
+[ 1260s] [258/496] installing copy-jdk-configs-4.0-1.oe1
+[ 1263s] [259/496] installing gpgme-1.15.1-1.oe1
+[ 1266s] [260/496] installing obs-env-1.0-5.oe1
+[ 1276s] [261/496] installing chkconfig-1.14-2.oe1
+[ 1279s] [262/496] installing dbus-devel-1:1.12.20-3.oe1
+[ 1282s] [263/496] installing elfutils-0.185-3.oe1
+[ 1284s] [264/496] installing xorg-x11-font-utils-1:7.5-43.oe1
+[ 1289s] [265/496] installing glib2-2.66.8-1.oe1
+[ 1297s] [266/496] installing rpm-libs-4.15.1-25.oe1
+[ 1299s] [267/496] installing fontconfig-2.13.92-1.oe1
+[ 1307s] [268/496] installing gsettings-desktop-schemas-3.38.0-1.oe1
+[ 1315s] [269/496] installing ModemManager-glib-1.8.0-7.oe1
+[ 1318s] [270/496] installing atk-2.36.0-1.oe1
+[ 1322s] [271/496] installing json-glib-1.6.2-1.oe1
+[ 1327s] [272/496] installing avahi-glib-0.8-6.oe1
+[ 1329s] [273/496] installing desktop-file-utils-0.26-2.oe1
+[ 1331s] [274/496] installing libcroco-0.6.12-13.oe1
+[ 1334s] [275/496] installing libgusb-0.3.0-5.oe1
+[ 1336s] [276/496] installing gamin-0.1.10-38.oe1
+[ 1339s] [277/496] installing gstreamer1-1.16.2-3.oe1
+[ 1345s] [278/496] installing libsecret-0.18.6-5.oe1
+[ 1348s] [279/496] installing libverto-0.3.1-2.oe1
+[ 1350s] [280/496] installing xorg-x11-fonts-7.5-24
+[ 1379s] [281/496] installing enchant2-2.2.15-2.oe1
+[ 1383s] [282/496] installing gobject-introspection-1.66.1-1.oe1
+[ 1391s] [283/496] installing libXft-2.3.3-1.oe1
+[ 1395s] [284/496] installing libmodulemd-2.13.0-1.oe1
+[ 1398s] [285/496] installing shared-mime-info-1.10-4.oe1
+[ 1419s] [286/496] installing binutils-2.37-6.oe1
+[ 1432s] [287/496] installing urw-base35-bookman-fonts-20170801-11
+[ 1436s] [288/496] installing urw-base35-c059-fonts-20170801-11
+[ 1440s] [289/496] installing urw-base35-d050000l-fonts-20170801-11
+[ 1443s] [290/496] installing urw-base35-gothic-fonts-20170801-11
+[ 1447s] [291/496] installing urw-base35-nimbus-mono-ps-fonts-20170801-11
+[ 1451s] [292/496] installing urw-base35-nimbus-roman-fonts-20170801-11
+[ 1455s] [293/496] installing urw-base35-nimbus-sans-fonts-20170801-11
+[ 1460s] [294/496] installing urw-base35-p052-fonts-20170801-11
+[ 1465s] [295/496] installing urw-base35-standard-symbols-ps-fonts-20170801-11
+[ 1469s] [296/496] installing urw-base35-z003-fonts-20170801-11
+[ 1473s] [297/496] installing harfbuzz-2.7.4-1.oe1
+[ 1477s] [298/496] installing p11-kit-trust-0.23.22-1.oe1
+[ 1481s] [299/496] installing webkit2gtk3-jsc-2.32.1-2.oe1
+[ 1489s] [300/496] installing babeltrace-1.5.8-1.oe1
+[ 1492s] [301/496] installing emacs-common-1:27.1-5.oe1
+[ 1563s] [302/496] installing wpebackend-fdo-1.6.1-1.oe1
+[ 1566s] [303/496] installing cairo-1.16.0-6.fc32
+[ 1570s] [304/496] installing colord-libs-1.4.3-6.oe1
+[ 1572s] [305/496] installing ca-certificates-2020.2.46-2.oe1
+[ 1583s] [306/496] installing gdk-pixbuf2-2.42.6-1.oe1
+[ 1587s] [307/496] installing gettext-0.20.1-2.oe1
+[ 1593s] [308/496] installing krb5-libs-1.18.2-3.oe1
+[ 1597s] [309/496] installing pango-1.47.0-1.oe1
+[ 1601s] [310/496] installing urw-base35-fonts-20170801-11
+[ 1603s] [311/496] installing cairo-gobject-1.16.0-6.fc32
+[ 1606s] [312/496] installing gcc-10.3.1-20220105.6.oe1
+[ 1640s] [313/496] installing python-pip-wheel-19.2.3-2.fc32
+[ 1644s] [314/496] installing libnotify-0.7.9-1.oe1
+[ 1647s] [315/496] installing libtirpc-1.3.1-1.oe1
+[ 1649s] [316/496] installing gdk-pixbuf2-modules-2.42.6-1.oe1
+[ 1652s] [317/496] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1653s] [318/496] installing libssh-0.9.5-1.oe1
+[ 1657s] [319/496] installing gcc-c++-10.3.1-20220105.6.oe1
+[ 1669s] [320/496] installing librsvg2-2.50.5-1.oe1
+[ 1676s] [321/496] installing gstreamer1-plugins-base-1.16.2-2.oe1
+[ 1682s] [322/496] installing openldap-2.4.46-15.oe1
+[ 1687s] [323/496] installing libnsl2-1.3.0-2.oe1
+[ 1691s] [324/496] installing python3-3.8.5-13.oe1
+[ 1721s] [325/496] installing python3-pyparsing-2.4.5-1.fc32
+[ 1723s] [326/496] installing python3-setuptools-59.4.0-3.oe1
+[ 1728s] [327/496] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1731s] [328/496] installing python3-markupsafe-1.1.1-4.fc32
+[ 1737s] [329/496] installing python3-gpgme-1.15.1-1.oe1
+[ 1741s] [330/496] installing python3-libcomps-0.1.15-1.oe1
+[ 1743s] [331/496] installing libpsl-0.21.1-1.oe1
+[ 1747s] [332/496] installing gdb-headless-9.2-5.oe1
+[ 1755s] [333/496] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1758s] [334/496] installing gdb-9.2-5.oe1
+[ 1760s] [335/496] installing python3-mako-1.1.0-4.fc32
+[ 1764s] [336/496] installing python3-pip-19.2.3-2.fc32
+[ 1775s] [337/496] installing libcurl-7.79.1-1.oe1
+[ 1778s] [338/496] installing curl-7.79.1-1.oe1
+[ 1780s] [339/496] installing librepo-1.14.2-2.oe1
+[ 1782s] [340/496] installing rpm-4.15.1-25.oe1
+[ 1788s] [341/496] installing efi-srpm-macros-4-3.oe1
+[ 1792s] [342/496] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1794s] [343/496] installing libsolv-0.7.20-1.oe1
+[ 1796s] [344/496] installing python3-rpm-4.15.1-25.oe1
+[ 1799s] [345/496] installing openEuler-rpm-config-30-22.oe1
+[ 1801s] [346/496] installing cmake-3.22.0-1.oe1
+[ 1817s] [347/496] installing libdnf-0.65.0-2.oe1
+[ 1821s] [348/496] installing cmake-data-3.22.0-1.oe1
+[ 1844s] [349/496] installing python3-libdnf-0.65.0-2.oe1
+[ 1849s] [350/496] installing perl-4:5.28.0-435.oe1
+[ 1858s] [351/496] installing perl-B-Debug-1.26-4.oe1
+[ 1860s] [352/496] installing perl-Env-1.04-397.oe1
+[ 1861s] [353/496] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1864s] [354/496] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1865s] [355/496] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1867s] [356/496] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1870s] [357/496] installing perl-Params-Check-1:0.38-418.oe1
+[ 1872s] [358/496] installing perl-Term-Cap-1.17-510.oe1
+[ 1874s] [359/496] installing perl-TermReadKey-2.38-2.oe1
+[ 1876s] [360/496] installing perl-Text-Balanced-2.03-420.oe1
+[ 1878s] [361/496] installing perl-threads-1:2.22-419.oe1
+[ 1881s] [362/496] installing openssl-1:1.1.1f-2.oe1
+[ 1883s] [363/496] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1885s] [364/496] installing perl-Error-1:0.17029-1.oe1
+[ 1888s] [365/496] installing perl-Filter-2:1.59-2.oe1
+[ 1891s] [366/496] installing perl-IPC-SysV-2.07-5.oe1
+[ 1894s] [367/496] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1896s] [368/496] installing perl-XML-Parser-1:2.44-3.oe1
+[ 1899s] [369/496] installing perl-constant-1.33-421.oe1
+[ 1901s] [370/496] installing perl-MIME-Base64-3.15-418.oe1
+[ 1904s] [371/496] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1906s] [372/496] installing perl-Socket-4:2.029-2.oe1
+[ 1908s] [373/496] installing perl-Storable-1:3.15-2.oe1
+[ 1911s] [374/496] installing gd-2.2.5-6.oe1
+[ 1914s] [375/496] installing python3-hawkey-0.65.0-2.oe1
+[ 1917s] [376/496] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1918s] [377/496] installing perl-Digest-1.17-419.oe1
+[ 1920s] [378/496] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1921s] [379/496] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1922s] [380/496] installing perl-Text-Diff-1.45-7.oe1
+[ 1924s] [381/496] installing perl-Time-Local-2:1.280-6.oe1
+[ 1925s] [382/496] installing perl-version-8:0.99.24-3.oe1
+[ 1929s] [383/496] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1931s] [384/496] installing perl-threads-shared-1.59-2.oe1
+[ 1934s] [385/496] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1938s] [386/496] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1940s] [387/496] installing perl-Locale-Codes-3.58-2.oe1
+[ 1943s] [388/496] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1945s] [389/496] installing perl-PathTools-3.75-4.oe1
+[ 1947s] [390/496] installing python3-dnf-4.10.0-1.oe1
+[ 1952s] [391/496] installing perl-Data-Dumper-2.172-3.oe1
+[ 1955s] [392/496] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1958s] [393/496] installing perl-Encode-4:2.98-9.oe1
+[ 1967s] [394/496] installing autogen-5.18.16-1.oe1
+[ 1970s] [395/496] installing nodejs-1:16.10.0-1.oe1
+[ 1974s] [396/496] installing systemd-243-22.oe1
+[ 1993s] /var/tmp/rpm-tmp.bJzPfn: line 8: groupadd: command not found
+[ 1993s] /var/tmp/rpm-tmp.bJzPfn: line 10: groupadd: command not found
+[ 1993s] /var/tmp/rpm-tmp.bJzPfn: line 13: groupadd: command not found
+[ 1993s] /var/tmp/rpm-tmp.bJzPfn: line 16: groupadd: command not found
+[ 1993s] [397/496] installing dbus-common-1:1.12.20-3.oe1
+[ 1996s] [398/496] installing nodejs-source-map-0.5.6-1.oe1
+[ 1999s] [399/496] installing perl-Module-Load-1:0.32-418.oe1
+[ 2000s] [400/496] installing nodejs-packaging-20-1.oe1
+[ 2003s] [401/496] installing dnf-4.10.0-1.oe1
+[ 2008s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 2008s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 2008s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 2008s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 2008s] [402/496] installing perl-File-Which-1.23-1.oe1
+[ 2010s] [403/496] installing perl-Thread-Queue-3.13-3.oe1
+[ 2011s] [404/496] installing perl-experimental-0.020-2.oe1
+[ 2013s] [405/496] installing perl-Digest-MD5-2.55-419.oe1
+[ 2016s] [406/496] installing perl-File-Path-2.16-4.oe1
+[ 2018s] [407/496] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 2020s] [408/496] installing perl-Module-Metadata-1.000036-3.oe1
+[ 2022s] [409/496] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 2025s] [410/496] installing perl-Encode-devel-4:2.98-9.oe1
+[ 2027s] [411/496] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 2029s] [412/496] installing perl-Math-BigRat-0.2614-2.oe1
+[ 2031s] [413/496] installing audit-1:3.0-2.oe1
+[ 2036s] [414/496] installing perl-DB_File-1.842-2.oe1
+[ 2038s] [415/496] installing perl-autodie-2.29-398.oe1
+[ 2040s] [416/496] installing perl-Unicode-Collate-1.25-4.oe1
+[ 2045s] [417/496] installing perl-IO-Compress-2.081-6.oe1
+[ 2047s] [418/496] installing perl-podlators-1:4.14-1.oe1
+[ 2050s] [419/496] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 2052s] [420/496] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 2054s] [421/496] installing perl-bignum-0.50-4.oe1
+[ 2058s] [422/496] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 2061s] [423/496] installing perl-libnet-3.11-420.oe1
+[ 2063s] [424/496] installing pam-1.5.1-1.oe1
+[ 2069s] [425/496] installing libpwquality-1.4.4-1.oe1
+[ 2071s] [426/496] installing perl-File-HomeDir-1.004-4.oe1
+[ 2073s] [427/496] installing shadow-2:4.8.1-5.oe1
+[ 2077s] [428/496] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 2080s] [429/496] installing libutempter-1.1.6-16.oe1
+[ 2083s] [430/496] installing unbound-libs-1.10.1-4.oe1
+[ 2089s] [431/496] installing dbus-daemon-1:1.12.20-3.oe1
+[ 2097s] [432/496] installing openssh-server-8.2p1-10.oe1
+[ 2103s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 2103s] [433/496] installing groff-1.22.4-4.oe1
+[ 2116s] [434/496] installing dbus-1:1.12.20-3.oe1
+[ 2119s] [435/496] installing man-db-2.9.3-2.oe1
+[ 2130s] [436/496] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 2132s] [437/496] installing gnutls-3.6.15-3.oe1
+[ 2138s] [438/496] installing util-linux-2.36.1-3.oe1
+[ 2147s] [439/496] installing nss-help-3.72.0-2.oe1
+[ 2150s] [440/496] installing util-linux-devel-2.36.1-3.oe1
+[ 2153s] [441/496] installing xdg-dbus-proxy-0.1.2-1.oe1
+[ 2155s] [442/496] installing NetworkManager-libnm-1:1.26.0-5
+[ 2161s] [443/496] installing at-spi2-core-2.39.1-1.oe1
+[ 2168s] [444/496] installing cups-libs-1:2.3.3-6.oe1
+[ 2171s] [445/496] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 2174s] [446/496] installing device-mapper-8:1.02.172-1.oe1
+[ 2177s] [447/496] installing openssh-8.2p1-10.oe1
+[ 2181s] [448/496] installing at-spi2-atk-2.38.0-1.oe1
+[ 2184s] [449/496] installing libproxy-0.4.15-13.oe1
+[ 2186s] [450/496] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 2188s] [451/496] installing cryptsetup-2.3.3-3.oe1
+[ 2194s] [452/496] installing device-mapper-event-8:1.02.172-1.oe1
+[ 2199s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 2199s] [453/496] installing nss-3.72.0-2.oe1
+[ 2211s] [454/496] installing glib2-devel-2.66.8-1.oe1
+[ 2242s] [455/496] installing openssh-clients-8.2p1-10.oe1
+[ 2245s] [456/496] installing nss-util-3.72.0-2.oe1
+[ 2251s] [457/496] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 2253s] [458/496] installing glib-networking-2.58.0-7.oe1
+[ 2257s] [459/496] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 2260s] [460/496] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 2262s] [461/496] installing perl-Pod-Parser-1.63-397.oe1
+[ 2264s] [462/496] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 2267s] [463/496] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 2270s] [464/496] installing perl-Archive-Tar-2.30-421.oe1
+[ 2272s] [465/496] installing perl-JSON-PP-1:4.04-2.oe1
+[ 2277s] [466/496] installing lvm2-8:2.03.11-1.oe1
+[ 2285s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 2285s] [467/496] installing autoconf-2.69-30.oe1
+[ 2289s] [468/496] installing git-2.23.0-12.oe1
+[ 2304s] [469/496] installing gtk3-3.24.30-2.oe1
+[ 2316s] [470/496] installing nss-softokn-3.72.0-2.oe1
+[ 2320s] [471/496] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 2322s] [472/496] installing libsoup-2.72.0-2.oe1
+[ 2328s] [473/496] installing perl-Git-2.23.0-12.oe1
+[ 2329s] [474/496] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 2333s] [475/496] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 2335s] [476/496] installing automake-1.16.1-6.oe1
+[ 2339s] [477/496] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 2343s] [478/496] installing gtk2-2.24.33-2.oe1
+[ 2353s] [479/496] installing ghostscript-9.52-5.oe1
+[ 2365s] [480/496] installing libtool-2.4.6-34.oe1
+[ 2368s] [481/496] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 2370s] [482/496] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 2372s] [483/496] installing geoclue2-2.5.7-1.oe1
+[ 2378s] [484/496] installing graphviz-2.44.1-4.oe1
+[ 2394s] [485/496] installing rpm-build-4.15.1-25.oe1
+[ 2398s] [486/496] installing graphviz-devel-2.44.1-4.oe1
+[ 2400s] [487/496] installing gcc_secure-1.0-0.9.oe1
+[ 2402s] [488/496] installing gobject-introspection-devel-1.66.1-1.oe1
+[ 2410s] [489/496] installing perl-File-Fetch-0.56-4.oe1
+[ 2412s] [490/496] installing perl-devel-4:5.28.0-435.oe1
+[ 2428s] [491/496] installing webkit2gtk3-2.32.1-2.oe1
+[ 2460s] [492/496] installing vala-devel-0.50.8-3.oe1
+[ 2468s] [493/496] installing emacs-1:27.1-5.oe1
+[ 2474s] [494/496] installing gettext-devel-0.20.1-2.oe1
+[ 2478s] [495/496] installing vala-0.50.8-3.oe1
+[ 2489s] [496/496] installing intltool-0.51.0-14.oe1
+[ 2492s] removing nis flags from /var/cache/obs/worker/root_3/etc/nsswitch.conf...
+[ 2493s] now finalizing build dir...
+[ 2508s] Running build time source services...
+[ 2529s] -----------------------------------------------------------------
+[ 2529s] ----- building libgnome-keyring.spec (user abuild)
+[ 2529s] -----------------------------------------------------------------
+[ 2529s] -----------------------------------------------------------------
+[ 2539s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/5165277f455d5009d18f46d80a97ac1b-libgnome-keyring' /home/abuild/rpmbuild/SOURCES/libgnome-keyring.spec
+[ 2540s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.uVhIRc
+[ 2540s] + umask 022
+[ 2540s] + cd /home/abuild/rpmbuild/BUILD
+[ 2540s] + cd /home/abuild/rpmbuild/BUILD
+[ 2540s] + rm -rf libgnome-keyring-3.12.0
+[ 2540s] + /usr/bin/xz -dc /home/abuild/rpmbuild/SOURCES/libgnome-keyring-3.12.0.tar.xz
+[ 2540s] + /usr/bin/tar -xof -
+[ 2541s] + STATUS=0
+[ 2541s] + '[' 0 -ne 0 ']'
+[ 2541s] + cd libgnome-keyring-3.12.0
+[ 2541s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2541s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/fix-compile-error.patch
+[ 2541s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2541s] + RPM_EC=0
+[ 2541s] ++ jobs -p
+[ 2541s] + exit 0
+[ 2542s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.8Dz0P6
+[ 2542s] + umask 022
+[ 2542s] + cd /home/abuild/rpmbuild/BUILD
+[ 2542s] + cd libgnome-keyring-3.12.0
+[ 2542s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection'
+[ 2542s] + export CFLAGS
+[ 2542s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions'
+[ 2542s] + export CXXFLAGS
+[ 2542s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2542s] + export FFLAGS
+[ 2542s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2542s] + export FCFLAGS
+[ 2542s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2542s] + export LDFLAGS
+[ 2542s] + '[' 1 = 1 ']'
+[ 2542s] +++ dirname ./configure
+[ 2542s] ++ find . -name config.guess -o -name config.sub
+[ 2542s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 2542s] ++ basename ./config.sub
+[ 2542s] + '[' -f /usr/lib/rpm/openEuler/config.sub ']'
+[ 2542s] + /usr/bin/rm -f ./config.sub
+[ 2542s] ++ basename ./config.sub
+[ 2542s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.sub ./config.sub
+[ 2542s] '/usr/lib/rpm/openEuler/config.sub' -> './config.sub'
+[ 2542s] + for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+[ 2542s] ++ basename ./config.guess
+[ 2542s] + '[' -f /usr/lib/rpm/openEuler/config.guess ']'
+[ 2542s] + /usr/bin/rm -f ./config.guess
+[ 2543s] ++ basename ./config.guess
+[ 2543s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.guess ./config.guess
+[ 2543s] '/usr/lib/rpm/openEuler/config.guess' -> './config.guess'
+[ 2543s] + '[' 1 = 1 ']'
+[ 2543s] + '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld' ']'
+[ 2543s] ++ find . -name ltmain.sh
+[ 2543s] + for i in $(find . -name ltmain.sh)
+[ 2543s] + /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld"~' ./ltmain.sh
+[ 2543s] + ./configure --build=riscv64-openEuler-linux-gnu --host=riscv64-openEuler-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-gtk-doc --enable-introspection=yes
+[ 2554s] checking for a BSD-compatible install... /usr/bin/install -c
+[ 2554s] checking whether build environment is sane... yes
+[ 2555s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[ 2555s] checking for gawk... gawk
+[ 2555s] checking whether make sets $(MAKE)... yes
+[ 2556s] checking whether make supports nested variables... yes
+[ 2556s] checking whether UID '399' is supported by ustar format... yes
+[ 2556s] checking whether GID '399' is supported by ustar format... yes
+[ 2557s] checking how to create a ustar tar archive... gnutar
+[ 2557s] checking whether make supports nested variables... (cached) yes
+[ 2557s] checking whether build environment is sane... yes
+[ 2557s] checking whether to enable maintainer-specific portions of Makefiles... yes
+[ 2558s] checking for style of include used by make... GNU
+[ 2558s] checking for riscv64-openEuler-linux-gnu-gcc... no
+[ 2558s] checking for gcc... gcc
+[ 2566s] checking whether the C compiler works... yes
+[ 2566s] checking for C compiler default output file name... a.out
+[ 2568s] checking for suffix of executables... 
+[ 2571s] checking whether we are cross compiling... no
+[ 2573s] checking for suffix of object files... o
+[ 2575s] checking whether we are using the GNU C compiler... yes
+[ 2576s] checking whether gcc accepts -g... yes
+[ 2579s] checking for gcc option to accept ISO C89... none needed
+[ 2579s] checking dependency style of gcc... none
+[ 2582s] checking how to run the C preprocessor... gcc -E
+[ 2586s] checking for grep that handles long lines and -e... /usr/bin/grep
+[ 2587s] checking for egrep... /usr/bin/grep -E
+[ 2595s] checking for ANSI C header files... yes
+[ 2598s] checking for sys/types.h... yes
+[ 2600s] checking for sys/stat.h... yes
+[ 2602s] checking for stdlib.h... yes
+[ 2605s] checking for string.h... yes
+[ 2607s] checking for memory.h... yes
+[ 2609s] checking for strings.h... yes
+[ 2612s] checking for inttypes.h... yes
+[ 2614s] checking for stdint.h... yes
+[ 2617s] checking for unistd.h... yes
+[ 2619s] checking minix/config.h usability... no
+[ 2621s] checking minix/config.h presence... no
+[ 2621s] checking for minix/config.h... no
+[ 2623s] checking whether it is safe to define __EXTENSIONS__... yes
+[ 2628s] checking for library containing strerror... none required
+[ 2628s] checking for riscv64-openEuler-linux-gnu-gcc... gcc
+[ 2633s] checking whether we are using the GNU C compiler... (cached) yes
+[ 2633s] checking whether gcc accepts -g... (cached) yes
+[ 2633s] checking for gcc option to accept ISO C89... (cached) none needed
+[ 2633s] checking dependency style of gcc... (cached) none
+[ 2641s] checking whether gcc and cc understand -c and -o together... yes
+[ 2641s] checking whether ln -s works... yes
+[ 2641s] checking whether make sets $(MAKE)... (cached) yes
+[ 2642s] checking build system type... riscv64-openEuler-linux-gnu
+[ 2643s] checking host system type... riscv64-openEuler-linux-gnu
+[ 2643s] checking how to print strings... printf
+[ 2643s] checking for a sed that does not truncate output... /usr/bin/sed
+[ 2644s] checking for fgrep... /usr/bin/grep -F
+[ 2645s] checking for ld used by gcc... /usr/bin/ld
+[ 2645s] checking if the linker (/usr/bin/ld) is GNU ld... yes
+[ 2645s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[ 2647s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[ 2647s] checking the maximum length of command line arguments... 1572864
+[ 2647s] checking whether the shell understands some XSI constructs... yes
+[ 2648s] checking whether the shell understands "+="... yes
+[ 2648s] checking how to convert riscv64-openEuler-linux-gnu file names to riscv64-openEuler-linux-gnu format... func_convert_file_noop
+[ 2648s] checking how to convert riscv64-openEuler-linux-gnu file names to toolchain format... func_convert_file_noop
+[ 2648s] checking for /usr/bin/ld option to reload object files... -r
+[ 2648s] checking for riscv64-openEuler-linux-gnu-objdump... no
+[ 2648s] checking for objdump... objdump
+[ 2648s] checking how to recognize dependent libraries... pass_all
+[ 2648s] checking for riscv64-openEuler-linux-gnu-dlltool... no
+[ 2648s] checking for dlltool... no
+[ 2648s] checking how to associate runtime and link libraries... printf %s\n
+[ 2648s] checking for riscv64-openEuler-linux-gnu-ar... no
+[ 2648s] checking for ar... ar
+[ 2650s] checking for archiver @FILE support... @
+[ 2650s] checking for riscv64-openEuler-linux-gnu-strip... no
+[ 2650s] checking for strip... strip
+[ 2650s] checking for riscv64-openEuler-linux-gnu-ranlib... no
+[ 2650s] checking for ranlib... ranlib
+[ 2656s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[ 2656s] checking for sysroot... no
+[ 2656s] checking for riscv64-openEuler-linux-gnu-mt... no
+[ 2656s] checking for mt... no
+[ 2656s] checking if : is a manifest tool... no
+[ 2659s] checking for dlfcn.h... yes
+[ 2659s] checking for objdir... .libs
+[ 2665s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[ 2665s] checking for gcc option to produce PIC... -fPIC -DPIC
+[ 2667s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[ 2671s] checking if gcc static flag -static works... yes
+[ 2674s] checking if gcc supports -c -o file.o... yes
+[ 2674s] checking if gcc supports -c -o file.o... (cached) yes
+[ 2675s] checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+[ 2678s] checking whether -lc should be explicitly linked in... no
+[ 2683s] checking dynamic linker characteristics... GNU/Linux ld.so
+[ 2683s] checking how to hardcode library paths into programs... immediate
+[ 2684s] checking whether stripping libraries is possible... yes
+[ 2684s] checking if libtool supports shared libraries... yes
+[ 2684s] checking whether to build shared libraries... yes
+[ 2684s] checking whether to build static libraries... no
+[ 2684s] checking whether NLS is requested... yes
+[ 2686s] checking for intltool >= 0.35.0... 0.51.0 found
+[ 2686s] checking for intltool-update... /usr/bin/intltool-update
+[ 2686s] checking for intltool-merge... /usr/bin/intltool-merge
+[ 2686s] checking for intltool-extract... /usr/bin/intltool-extract
+[ 2686s] checking for xgettext... /usr/bin/xgettext
+[ 2686s] checking for msgmerge... /usr/bin/msgmerge
+[ 2686s] checking for msgfmt... /usr/bin/msgfmt
+[ 2686s] checking for gmsgfmt... /usr/bin/msgfmt
+[ 2686s] checking for perl... /usr/bin/perl
+[ 2688s] checking for perl >= 5.8.1... 5.28.0
+[ 2689s] checking for XML::Parser... ok
+[ 2692s] checking for pkg-config... /usr/bin/pkg-config
+[ 2698s] checking for pid_t... yes
+[ 2701s] checking return type of signal handlers... void
+[ 2706s] checking for size_t... yes
+[ 2708s] checking for uid_t in sys/types.h... yes
+[ 2708s] checking for riscv64-openEuler-linux-gnu-pkg-config... (cached) /usr/bin/pkg-config
+[ 2708s] checking pkg-config is at least version 0.9.0... yes
+[ 2708s] checking for gtkdoc-check... no
+[ 2708s] checking for gtkdoc-rebase... no
+[ 2708s] checking for gtkdoc-mkpdf... no
+[ 2708s] checking whether to build gtk-doc documentation... no
+[ 2708s] checking for GLIB... yes
+[ 2711s] checking locale.h usability... yes
+[ 2713s] checking locale.h presence... yes
+[ 2713s] checking for locale.h... yes
+[ 2715s] checking for LC_MESSAGES... yes
+[ 2718s] checking libintl.h usability... yes
+[ 2719s] checking libintl.h presence... yes
+[ 2719s] checking for libintl.h... yes
+[ 2721s] checking for ngettext in libc... yes
+[ 2724s] checking for dgettext in libc... yes
+[ 2726s] checking for bind_textdomain_codeset... yes
+[ 2726s] checking for msgfmt... (cached) /usr/bin/msgfmt
+[ 2729s] checking for dcgettext... yes
+[ 2730s] checking if msgfmt accepts -c... yes
+[ 2730s] checking for gmsgfmt... (cached) /usr/bin/msgfmt
+[ 2730s] checking for xgettext... (cached) /usr/bin/xgettext
+[ 2733s] checking for gobject-introspection... yes
+[ 2734s] checking for riscv64-openEuler-linux-gnu-pkg-config... (cached) /usr/bin/pkg-config
+[ 2735s] checking pkg-config is at least version 0.9.0... yes
+[ 2737s] checking for struct cmsgcred... no
+[ 2740s] checking for getpeerucred... no
+[ 2743s] checking for getpeereid... no
+[ 2745s] checking for mlock... yes
+[ 2746s] checking for DBUS... yes
+[ 2747s] checking for riscv64-openEuler-linux-gnu-libgcrypt-config... no
+[ 2747s] checking for libgcrypt-config... /usr/bin/libgcrypt-config
+[ 2748s] checking for LIBGCRYPT - version >= 1.2.2... yes (1.8.7)
+[ 2748s] checking LIBGCRYPT API version... okay
+[ 2750s] checking for debug mode... default (-g, debug output, testable)
+[ 2750s] checking for more warnings... yes
+[ 2751s] checking whether gcc understands -Wno-strict-aliasing... yes
+[ 2753s] checking whether gcc understands -Wno-sign-compare... yes
+[ 2753s] checking build strict... no (quick tests, non-fatal warnings)
+[ 2753s] checking whether to build with gcov testing... no
+[ 2753s] checking code coverage... no
+[ 2755s] checking that generated files are newer than configure... done
+[ 2755s] checking that generated files are newer than configure... done
+[ 2755s] configure: creating ./config.status
+[ 2784s] config.status: creating Makefile
+[ 2785s] config.status: creating docs/Makefile
+[ 2786s] config.status: creating docs/reference/Makefile
+[ 2787s] config.status: creating docs/reference/gnome-keyring/Makefile
+[ 2789s] config.status: creating egg/Makefile
+[ 2790s] config.status: creating egg/tests/Makefile
+[ 2791s] config.status: creating library/Makefile
+[ 2792s] config.status: creating library/tests/Makefile
+[ 2793s] config.status: creating library/gnome-keyring-1.pc
+[ 2794s] config.status: creating library/gnome-keyring-1-uninstalled.pc
+[ 2795s] config.status: creating po/Makefile.in
+[ 2796s] config.status: creating config.h
+[ 2797s] config.status: executing depfiles commands
+[ 2797s] config.status: executing libtool commands
+[ 2801s] config.status: executing default-1 commands
+[ 2802s] config.status: executing po/stamp-it commands
+[ 2803s] 
+[ 2803s] CFLAGS: 	-Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare
+[ 2803s] 
+[ 2803s] OPTIONS:
+[ 2803s]   Introspection:        yes
+[ 2803s]   Vala:                 yes
+[ 2803s]   Debug Build:          default (-g, debug output, testable)
+[ 2803s]   Strict Build:         no (quick tests, non-fatal warnings)
+[ 2803s]   Code Coverage:        no
+[ 2803s] 
+[ 2804s] + sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' libtool
+[ 2805s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[ 2805s] /usr/bin/make  all-recursive
+[ 2806s] Making all in .
+[ 2806s] Making all in egg
+[ 2807s] Making all in .
+[ 2816s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2816s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-libgcrypt.lo `test -f 'egg-libgcrypt.c' || echo './'`egg-libgcrypt.c
+[ 2816s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-libgcrypt.c  -fPIC -DPIC -o .libs/libegg_la-egg-libgcrypt.o
+[ 2816s] egg-libgcrypt.c:94:15: warning: 'gcry_thread_cbs' is deprecated [-Wdeprecated-declarations]
+[ 2816s]    94 | static struct gcry_thread_cbs glib_thread_cbs = {
+[ 2816s]       |               ^~~~~~~~~~~~~~~
+[ 2816s] In file included from egg-libgcrypt.c:29:
+[ 2816s] /usr/include/gcrypt.h:211:8: note: declared here
+[ 2816s]   211 | struct gcry_thread_cbs
+[ 2816s]       |        ^~~~~~~~~~~~~~~
+[ 2816s] egg-libgcrypt.c:95:27: warning: excess elements in struct initializer
+[ 2816s]    95 |  GCRY_THREAD_OPTION_USER, NULL,
+[ 2816s]       |                           ^~~~
+[ 2816s] egg-libgcrypt.c:95:27: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:96:2: warning: excess elements in struct initializer
+[ 2816s]    96 |  glib_thread_mutex_init, glib_thread_mutex_destroy,
+[ 2816s]       |  ^~~~~~~~~~~~~~~~~~~~~~
+[ 2816s] egg-libgcrypt.c:96:2: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:96:26: warning: excess elements in struct initializer
+[ 2816s]    96 |  glib_thread_mutex_init, glib_thread_mutex_destroy,
+[ 2816s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2816s] egg-libgcrypt.c:96:26: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:97:2: warning: excess elements in struct initializer
+[ 2816s]    97 |  glib_thread_mutex_lock, glib_thread_mutex_unlock,
+[ 2816s]       |  ^~~~~~~~~~~~~~~~~~~~~~
+[ 2816s] egg-libgcrypt.c:97:2: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:97:26: warning: excess elements in struct initializer
+[ 2816s]    97 |  glib_thread_mutex_lock, glib_thread_mutex_unlock,
+[ 2816s]       |                          ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 2816s] egg-libgcrypt.c:97:26: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:2: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |  ^~~~
+[ 2816s] egg-libgcrypt.c:98:2: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:8: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |        ^~~~
+[ 2816s] egg-libgcrypt.c:98:8: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:14: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |              ^~~~
+[ 2816s] egg-libgcrypt.c:98:14: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:20: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |                    ^~~~
+[ 2816s] egg-libgcrypt.c:98:20: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:26: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |                          ^~~~
+[ 2816s] egg-libgcrypt.c:98:26: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:32: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |                                ^~~~
+[ 2816s] egg-libgcrypt.c:98:32: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:38: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |                                      ^~~~
+[ 2816s] egg-libgcrypt.c:98:38: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] egg-libgcrypt.c:98:44: warning: excess elements in struct initializer
+[ 2816s]    98 |  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+[ 2816s]       |                                            ^~~~
+[ 2816s] egg-libgcrypt.c:98:44: note: (near initialization for 'glib_thread_cbs')
+[ 2816s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2816s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2816s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-hkdf.lo `test -f 'egg-hkdf.c' || echo './'`egg-hkdf.c
+[ 2816s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-hkdf.c  -fPIC -DPIC -o .libs/libegg_la-egg-hkdf.o
+[ 2816s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-testing.lo `test -f 'egg-testing.c' || echo './'`egg-testing.c
+[ 2817s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-testing.c  -fPIC -DPIC -o .libs/libegg_la-egg-testing.o
+[ 2817s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-dh.lo `test -f 'egg-dh.c' || echo './'`egg-dh.c
+[ 2817s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-dh.c  -fPIC -DPIC -o .libs/libegg_la-egg-dh.o
+[ 2817s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2817s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-dbus.lo `test -f 'egg-dbus.c' || echo './'`egg-dbus.c
+[ 2817s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-dbus.c  -fPIC -DPIC -o .libs/libegg_la-egg-dbus.o
+[ 2817s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2821s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2821s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I..   -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o libegg_la-egg-secure-memory.lo `test -f 'egg-secure-memory.c' || echo './'`egg-secure-memory.c
+[ 2821s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I.. -I../build -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c egg-secure-memory.c  -fPIC -DPIC -o .libs/libegg_la-egg-secure-memory.o
+[ 2821s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2824s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2824s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libegg.la  libegg_la-egg-dbus.lo libegg_la-egg-dh.lo libegg_la-egg-hkdf.lo libegg_la-egg-libgcrypt.lo libegg_la-egg-secure-memory.lo libegg_la-egg-testing.lo  
+[ 2824s] libtool: link: ar cru .libs/libegg.a .libs/libegg_la-egg-dbus.o .libs/libegg_la-egg-dh.o .libs/libegg_la-egg-hkdf.o .libs/libegg_la-egg-libgcrypt.o .libs/libegg_la-egg-secure-memory.o .libs/libegg_la-egg-testing.o 
+[ 2824s] libtool: link: ranlib .libs/libegg.a
+[ 2824s] libtool: link: ( cd ".libs" && rm -f "libegg.la" && ln -s "../libegg.la" "libegg.la" )
+[ 2824s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg'
+[ 2824s] Making all in tests
+[ 2831s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2831s] gcc -DHAVE_CONFIG_H -I. -I../.. -I../.. -I../../egg -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20     -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c test-dh.c
+[ 2831s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2831s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2831s] gcc -DHAVE_CONFIG_H -I. -I../.. -I../.. -I../../egg -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20     -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c test-secmem.c
+[ 2831s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2832s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2832s] gcc -DHAVE_CONFIG_H -I. -I../.. -I../.. -I../../egg -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20     -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c test-hkdf.c
+[ 2832s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2837s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2837s] /bin/sh ../../libtool  --tag=CC   --mode=link gcc  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-secmem test-secmem.o ../../egg/libegg.la -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lglib-2.0  -ldbus-1  -lgcrypt -ldl -lgpg-error 
+[ 2837s] libtool: link: gcc -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-secmem test-secmem.o -Wl,--export-dynamic -pthread  ../../egg/.libs/libegg.a -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -ldbus-1 -lgcrypt -ldl -lgpg-error -pthread
+[ 2837s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2837s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2837s] /bin/sh ../../libtool  --tag=CC   --mode=link gcc  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-dh test-dh.o ../../egg/libegg.la -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lglib-2.0  -ldbus-1  -lgcrypt -ldl -lgpg-error 
+[ 2837s] libtool: link: gcc -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-dh test-dh.o -Wl,--export-dynamic -pthread  ../../egg/.libs/libegg.a -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -ldbus-1 -lgcrypt -ldl -lgpg-error -pthread
+[ 2837s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2838s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2838s] /bin/sh ../../libtool  --tag=CC   --mode=link gcc  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-hkdf test-hkdf.o ../../egg/libegg.la -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lglib-2.0  -ldbus-1  -lgcrypt -ldl -lgpg-error 
+[ 2838s] libtool: link: gcc -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld -o test-hkdf test-hkdf.o -Wl,--export-dynamic -pthread  ../../egg/.libs/libegg.a -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -ldbus-1 -lgcrypt -ldl -lgpg-error -pthread
+[ 2838s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/egg/tests'
+[ 2838s] Making all in library
+[ 2838s] Making all in .
+[ 2852s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2852s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gkr-debug.lo gkr-debug.c
+[ 2852s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gkr-debug.c  -fPIC -DPIC -o .libs/gkr-debug.o
+[ 2852s] gkr-debug.c: In function 'on_gkr_log_debug':
+[ 2852s] gkr-debug.c:88:2: warning: ignoring return value of 'write' declared with attribute 'warn_unused_result' [-Wunused-result]
+[ 2852s]    88 |  write (1, gstring->str, gstring->len);
+[ 2852s]       |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2852s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2852s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2852s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gnome-keyring-memory.lo gnome-keyring-memory.c
+[ 2852s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gnome-keyring-memory.c  -fPIC -DPIC -o .libs/gnome-keyring-memory.o
+[ 2852s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2854s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2854s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gkr-callback.lo gkr-callback.c
+[ 2854s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gkr-callback.c  -fPIC -DPIC -o .libs/gkr-callback.o
+[ 2854s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2854s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2854s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gkr-misc.lo gkr-misc.c
+[ 2854s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gkr-misc.c  -fPIC -DPIC -o .libs/gkr-misc.o
+[ 2854s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2855s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2855s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gkr-session.lo gkr-session.c
+[ 2855s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gkr-session.c  -fPIC -DPIC -o .libs/gkr-session.o
+[ 2855s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2857s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2857s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gkr-operation.lo gkr-operation.c
+[ 2857s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gkr-operation.c  -fPIC -DPIC -o .libs/gkr-operation.o
+[ 2857s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2857s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2857s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gnome-keyring-utils.lo gnome-keyring-utils.c
+[ 2857s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gnome-keyring-utils.c  -fPIC -DPIC -o .libs/gnome-keyring-utils.o
+[ 2857s] gnome-keyring-utils.c: In function 'gnome_keyring_attribute_list_free':
+[ 2857s] gnome-keyring-utils.c:505:10: warning: cast increases required alignment of target type [-Wcast-align]
+[ 2857s]   505 |  array = (GnomeKeyringAttribute *)attributes->data;
+[ 2857s]       |          ^
+[ 2857s] gnome-keyring-utils.c: In function 'gnome_keyring_attribute_list_copy':
+[ 2857s] gnome-keyring-utils.c:541:10: warning: cast increases required alignment of target type [-Wcast-align]
+[ 2857s]   541 |  array = (GnomeKeyringAttribute *)copy->data;
+[ 2857s]       |          ^
+[ 2857s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2876s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2876s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION    -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c -o gnome-keyring.lo gnome-keyring.c
+[ 2876s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -DPREFIX=\"/usr\" -DBINDIR=\"/usr/bin\" -DLIBEXECDIR=\"/usr/libexec\" -DGNOMELOCALEDIR=\"/usr/share/locale\" -DG_LOG_DOMAIN=\"Gkr\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20 -DGNOME_KEYRING_COMPILATION -Wall -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wcast-align -Wsign-compare -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -c gnome-keyring.c  -fPIC -DPIC -o .libs/gnome-keyring.o
+[ 2876s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2884s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2884s] /bin/sh ../libtool  --tag=CC   --mode=link gcc  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare  -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libgnome-keyring-testable.la   gkr-callback.lo gkr-debug.lo gkr-misc.lo gkr-operation.lo gkr-session.lo gnome-keyring.lo gnome-keyring-memory.lo gnome-keyring-utils.lo ../egg/libegg.la -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lglib-2.0  -ldbus-1  -lgcrypt -ldl -lgpg-error -lgcrypt -ldl -lgpg-error 
+[ 2884s] libtool: link: (cd .libs/libgnome-keyring-testable.lax/libegg.a && ar x "/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library/../egg/.libs/libegg.a")
+[ 2884s] libtool: link: ar cru .libs/libgnome-keyring-testable.a .libs/gkr-callback.o .libs/gkr-debug.o .libs/gkr-misc.o .libs/gkr-operation.o .libs/gkr-session.o .libs/gnome-keyring.o .libs/gnome-keyring-memory.o .libs/gnome-keyring-utils.o   .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-dbus.o .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-dh.o .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-hkdf.o .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-libgcrypt.o .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-secure-memory.o .libs/libgnome-keyring-testable.lax/libegg.a/libegg_la-egg-testing.o 
+[ 2884s] libtool: link: ranlib .libs/libgnome-keyring-testable.a
+[ 2884s] libtool: link: rm -fr .libs/libgnome-keyring-testable.lax
+[ 2884s] libtool: link: ( cd ".libs" && rm -f "libgnome-keyring-testable.la" && ln -s "../libgnome-keyring-testable.la" "libgnome-keyring-testable.la" )
+[ 2884s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2886s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2886s] /bin/sh ../libtool  --tag=CC   --mode=link gcc  -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare -version-info 2:0:2 -no-undefined -export-symbols-regex '^gnome_keyring_|^GNOME_KEYRING_|^SECMEM_.*' -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libgnome-keyring.la -rpath /usr/lib64 gkr-callback.lo gkr-debug.lo gkr-misc.lo gkr-operation.lo gkr-session.lo gnome-keyring.lo gnome-keyring-memory.lo gnome-keyring-utils.lo ../egg/libegg.la -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 -lglib-2.0  -ldbus-1  -lgcrypt -ldl -lgpg-error -lgcrypt -ldl -lgpg-error 
+[ 2886s] libtool: link: /usr/bin/nm -B  .libs/gkr-callback.o .libs/gkr-debug.o .libs/gkr-misc.o .libs/gkr-operation.o .libs/gkr-session.o .libs/gnome-keyring.o .libs/gnome-keyring-memory.o .libs/gnome-keyring-utils.o   ../egg/.libs/libegg.a | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' | /usr/bin/sed 's/.* //' | sort | uniq > .libs/libgnome-keyring.exp
+[ 2886s] libtool: link: /usr/bin/grep -E -e "^gnome_keyring_|^GNOME_KEYRING_|^SECMEM_.*" ".libs/libgnome-keyring.exp" > ".libs/libgnome-keyring.expT"
+[ 2886s] libtool: link: mv -f ".libs/libgnome-keyring.expT" ".libs/libgnome-keyring.exp"
+[ 2886s] libtool: link: echo "{ global:" > .libs/libgnome-keyring.ver
+[ 2886s] libtool: link:  cat .libs/libgnome-keyring.exp | sed -e "s/\(.*\)/\1;/" >> .libs/libgnome-keyring.ver
+[ 2886s] libtool: link:  echo "local: *; };" >> .libs/libgnome-keyring.ver
+[ 2886s] libtool: link:  gcc -Wl,-O1,--as-needed -shared  -fPIC -DPIC  .libs/gkr-callback.o .libs/gkr-debug.o .libs/gkr-misc.o .libs/gkr-operation.o .libs/gkr-session.o .libs/gnome-keyring.o .libs/gnome-keyring-memory.o .libs/gnome-keyring-utils.o  -Wl,--whole-archive ../egg/.libs/libegg.a -Wl,--no-whole-archive  -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -ldbus-1 -lgcrypt -ldl -lgpg-error -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -O2 -Wl,-z -Wl,relro -Wl,-z -Wl,now -Wl,--export-dynamic -pthread   -pthread -Wl,-soname -Wl,libgnome-keyring.so.0 -Wl,-version-script -Wl,.libs/libgnome-keyring.ver -o .libs/libgnome-keyring.so.0.2.0
+[ 2886s] libtool: link: (cd ".libs" && rm -f "libgnome-keyring.so.0" && ln -s "libgnome-keyring.so.0.2.0" "libgnome-keyring.so.0")
+[ 2886s] libtool: link: (cd ".libs" && rm -f "libgnome-keyring.so" && ln -s "libgnome-keyring.so.0.2.0" "libgnome-keyring.so")
+[ 2886s] libtool: link: ( cd ".libs" && rm -f "libgnome-keyring.la" && ln -s "../libgnome-keyring.la" "libgnome-keyring.la" )
+[ 2886s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2891s] make[3]: Entering directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2891s] CPPFLAGS="" CFLAGS="-Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -g -Wno-strict-aliasing -Wno-sign-compare" LDFLAGS="-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld" CC="gcc" PKG_CONFIG="/usr/bin/pkg-config" GI_HOST_OS="" DLLTOOL="false"  /usr/bin/g-ir-scanner  --add-include-path=. --warn-all --namespace=GnomeKeyring --nsversion=1.0 --libtool="/bin/sh ../libtool"  --include=GObject-2.0    --library=libgnome-keyring.la --c-include "gnome-keyring.h" --cflags-begin -DPREFIX=\""/usr"\" -DBINDIR=\""/usr/bin"\" -DLIBEXECDIR=\""/usr/libexec"\" -DGNOMELOCALEDIR=\""/usr/share/locale"\" -DG_LOG_DOMAIN=\""Gkr"\" -I.. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -pthread  -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include  -DGKR_DBUS_MAJOR_VERSION=1 -DGKR_DBUS_MINOR_VERSION=12 -DGKR_DBUS_MICRO_VERSION=20   -DGNOME_KEYRING_COMPILATION --cflags-end  gnome-keyring.c gnome-keyring.h gnome-keyring-memory.h gnome-keyring-memory.c gnome-keyring-result.h gnome-keyring-utils.c libgnome-keyring.la --output GnomeKeyring-1.0.gir
+[ 2891s] Traceback (most recent call last):
+[ 2891s]   File "/usr/bin/g-ir-scanner", line 98, in <module>
+[ 2891s]     from giscanner.scannermain import scanner_main
+[ 2891s]   File "/usr/lib64/gobject-introspection/giscanner/scannermain.py", line 35, in <module>
+[ 2891s]     from giscanner.ast import Include, Namespace
+[ 2891s]   File "/usr/lib64/gobject-introspection/giscanner/ast.py", line 29, in <module>
+[ 2891s]     from .sourcescanner import CTYPE_TYPEDEF, CSYMBOL_TYPE_TYPEDEF
+[ 2891s]   File "/usr/lib64/gobject-introspection/giscanner/sourcescanner.py", line 35, in <module>
+[ 2891s]     from giscanner._giscanner import SourceScanner as CSourceScanner
+[ 2891s] ModuleNotFoundError: No module named 'giscanner._giscanner'
+[ 2891s] make[3]: *** [/usr/share/gobject-introspection-1.0/Makefile.introspection:156: GnomeKeyring-1.0.gir] Error 1
+[ 2891s] make[3]: Leaving directory '/home/abuild/rpmbuild/BUILD/libgnome-keyring-3.12.0/library'
+[ 2891s] make[2]: *** [Makefile:769: all-recursive] Error 1
+[ 2891s] make[1]: *** [Makefile:481: all-recursive] Error 1
+[ 2891s] make: *** [Makefile:412: all] Error 2
+[ 2891s] error: Bad exit status from /var/tmp/rpm-tmp.8Dz0P6 (%build)
+[ 2891s] 
+[ 2891s] 
+[ 2891s] RPM build errors:
+[ 2891s]     Bad exit status from /var/tmp/rpm-tmp.8Dz0P6 (%build)
+[ 2891s] 
+[ 2891s] oe-RISCV-worker29 failed "build libgnome-keyring.spec" at Sat Apr 16 06:43:55 UTC 2022.
+[ 2891s] 

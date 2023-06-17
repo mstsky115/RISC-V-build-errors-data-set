@@ -1,0 +1,426 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_11/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_11/root
+[    0s] 
+[    0s] 
+[    0s] sheep83 started "build xplr.spec" at Fri Jan 13 23:04:44 UTC 2023.
+[    0s] 
+[    0s] Building xplr for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f918f3252714960823e075261db4c195'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_11/.build-srcdir/xplr.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_11/.build-srcdir/xplr.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/11/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_11/.build.rpmlist /var/cache/obs/worker/root_11/.build-srcdir/xplr.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [8a55e74dad9c5ed21b965a38be59a11b]
+[    2s] 
+[    2s] copying packages...
+[    3s] reordering...done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_11/.mount/boot/kernel -initrd /var/cache/obs/worker/root_11/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_11/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_11/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_11/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[    8s] ### VM INTERACTION END ###
+[    8s] 2nd stage started in virtual machine
+[    8s] machine type: riscv64
+[    9s] Linux version: 6.1.4-1-default #1 SMP PREEMPT_DYNAMIC Mon Jan 9 11:00:31 UTC 2023 (4b9b43c)
+[    9s] Increasing log level from now on...
+[    9s] [    4.342813][  T391] sysrq: Changing Loglevel
+[    9s] [    4.342921][  T391] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[    9s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[    9s] no label, UUID=76401a32-ccbe-4f50-aec5-97f8f787f99b
+[    9s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    9s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[    9s] swapon /dev/vdb
+[    9s] WARNING: udev not running, creating extra device nodes
+[   10s] logging output to //.build.log...
+[   10s] processing recipe /.build-srcdir/xplr.spec ...
+[   10s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/xplr.spec build ...
+[   11s] initializing rpm db...
+[   11s] querying package ids...
+[   31s] [1/154] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   31s] [2/154] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   31s] [3/154] preinstalled attr-2.5.1-1.1
+[   31s] [4/154] preinstalled bash-5.2.15-8.1
+[   31s] [5/154] preinstalled bash-sh-5.2.15-8.1
+[   31s] [6/154] preinstalled binutils-2.39-1.1
+[   31s] [7/154] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   31s] [8/154] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   31s] [9/154] preinstalled build-mkbaselibs-20230105-1.1
+[   31s] [10/154] preinstalled bzip2-1.0.8-4.1
+[   31s] [11/154] preinstalled chkstat-1599_20221220-1.2
+[   31s] [12/154] preinstalled compat-usrmerge-build-84.87-5.1
+[   31s] [13/154] preinstalled compat-usrmerge-tools-84.87-5.1
+[   31s] [14/154] preinstalled coreutils-9.1-5.1
+[   31s] [15/154] preinstalled cpio-2.13-5.1
+[   31s] [16/154] preinstalled cpp-12-2.1
+[   31s] [17/154] preinstalled cpp12-12.2.1+git537-1.2
+[   31s] [18/154] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   31s] [19/154] preinstalled debugedit-5.0-5.1
+[   31s] [20/154] preinstalled diffutils-3.8-3.1
+[   31s] [21/154] preinstalled dwz-0.15-2.1
+[   31s] [22/154] preinstalled elfutils-0.188-3.2
+[   31s] [23/154] preinstalled file-5.44-1.1
+[   31s] [24/154] preinstalled file-magic-5.44-1.1
+[   31s] [25/154] preinstalled filesystem-84.87-10.1
+[   31s] [26/154] preinstalled fillup-1.42-278.1
+[   31s] [27/154] preinstalled findutils-4.9.0-2.1
+[   31s] [28/154] preinstalled gawk-5.2.1-2.1
+[   31s] [29/154] preinstalled gcc-12-2.1
+[   31s] [30/154] preinstalled gcc-PIE-12-2.1
+[   31s] [31/154] preinstalled gcc12-12.2.1+git537-1.2
+[   31s] [32/154] preinstalled gcc12-PIE-12.2.1+git537-1.2
+[   31s] [33/154] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   31s] [34/154] preinstalled gettext-tools-mini-0.21.1-1.1
+[   31s] [35/154] preinstalled glibc-2.36-9.1
+[   31s] [36/154] preinstalled glibc-devel-2.36-9.1
+[   31s] [37/154] preinstalled glibc-locale-base-2.36-9.1
+[   31s] [38/154] preinstalled grep-3.8-3.1
+[   31s] [39/154] preinstalled gzip-1.12-3.1
+[   31s] [40/154] cumulate hicolor-icon-theme-0.17-4.1
+[   31s] [41/154] preinstalled kernel-obs-build-6.1.4-1.2
+[   31s] [42/154] preinstalled libacl1-2.3.1-2.1
+[   31s] [43/154] preinstalled libasan8-13.0.0+git197351-5.1
+[   31s] [44/154] preinstalled libasm1-0.188-3.2
+[   31s] [45/154] preinstalled libatomic1-13.0.0+git197351-5.1
+[   31s] [46/154] preinstalled libattr1-2.5.1-1.1
+[   31s] [47/154] preinstalled libaudit1-3.0.6-4.1
+[   31s] [48/154] preinstalled libblkid1-2.38.1-3.1
+[   31s] [49/154] cumulate libbrotlicommon1-1.0.9-1.1
+[   31s] [50/154] preinstalled libbz2-1-1.0.8-4.1
+[   31s] [51/154] preinstalled libcap-ng0-0.8.3-1.1
+[   31s] [52/154] preinstalled libcap2-2.66-1.1
+[   31s] [53/154] cumulate libcom_err2-1.46.5-4.1
+[   31s] [54/154] preinstalled libcrypt1-4.4.33-1.1
+[   31s] [55/154] preinstalled libctf-nobfd0-2.39-1.1
+[   31s] [56/154] preinstalled libctf0-2.39-1.1
+[   31s] [57/154] preinstalled libdb-4_8-4.8.30-39.1
+[   31s] [58/154] preinstalled libdw1-0.188-3.2
+[   31s] [59/154] preinstalled libeconf0-0.5.0-1.1
+[   31s] [60/154] cumulate libedit0-20210910.3.1-1.1
+[   31s] [61/154] preinstalled libelf1-0.188-3.2
+[   31s] [62/154] preinstalled libfdisk1-2.38.1-3.1
+[   31s] [63/154] preinstalled libgcc_s1-13.0.0+git197351-5.1
+[   31s] [64/154] preinstalled libgcrypt20-1.10.1-1.1
+[   31s] [65/154] preinstalled libgdbm6-1.23-1.1
+[   31s] [66/154] preinstalled libgdbm_compat4-1.23-1.1
+[   31s] [67/154] preinstalled libgmp10-6.2.1-4.1
+[   31s] [68/154] preinstalled libgomp1-13.0.0+git197351-5.1
+[   31s] [69/154] preinstalled libgpg-error0-1.46-1.1
+[   31s] [70/154] preinstalled libisl23-0.25-1.1
+[   31s] [71/154] cumulate libkeyutils1-1.6.3-5.1
+[   31s] [72/154] preinstalled liblua5_4-5-5.4.4-7.2
+[   31s] [73/154] preinstalled liblzma5-5.4.0-1.1
+[   31s] [74/154] preinstalled libmagic1-5.44-1.1
+[   31s] [75/154] preinstalled libmount1-2.38.1-3.1
+[   31s] [76/154] preinstalled libmpc3-1.3.1-1.2
+[   31s] [77/154] preinstalled libmpfr6-4.1.1-3.1
+[   31s] [78/154] preinstalled libncurses6-6.4.20230107-1.1
+[   31s] [79/154] cumulate libnghttp2-14-1.51.0-7.1
+[   31s] [80/154] preinstalled libpcre2-8-0-10.42-3.2
+[   31s] [81/154] preinstalled libpkgconf3-1.8.0-1.1
+[   31s] [82/154] preinstalled libpopt0-1.19-1.1
+[   31s] [83/154] preinstalled libreadline8-8.2-2.1
+[   31s] [84/154] preinstalled librpmbuild9-4.18.0-2.2
+[   31s] [85/154] cumulate libsasl2-3-2.1.28-3.1
+[   31s] [86/154] preinstalled libseccomp2-2.5.4-2.1
+[   31s] [87/154] preinstalled libselinux1-3.4-2.1
+[   31s] [88/154] preinstalled libsemanage-conf-3.4-1.1
+[   31s] [89/154] preinstalled libsemanage2-3.4-1.1
+[   31s] [90/154] preinstalled libsepol2-3.4-1.1
+[   31s] [91/154] preinstalled libsmartcols1-2.38.1-3.1
+[   31s] [92/154] cumulate libssh-config-0.10.4-1.1
+[   31s] [93/154] preinstalled libstdc++6-13.0.0+git197351-5.1
+[   31s] [94/154] preinstalled libsubid4-4.13-2.2
+[   31s] [95/154] preinstalled libubsan1-13.0.0+git197351-5.1
+[   31s] [96/154] cumulate libunistring5-1.1-1.1
+[   31s] [97/154] preinstalled libutempter0-1.2.0-3.2
+[   31s] [98/154] preinstalled libuuid1-2.38.1-3.1
+[   31s] [99/154] cumulate libverto1-0.3.2-1.1
+[   31s] [100/154] preinstalled libxcrypt-devel-4.4.33-1.1
+[   31s] [101/154] preinstalled libz1-1.2.12-3.2
+[   31s] [102/154] preinstalled libzstd1-1.5.2-2.1
+[   31s] [103/154] preinstalled linux-glibc-devel-6.1-1.1
+[   31s] [104/154] preinstalled login_defs-4.13-2.2
+[   31s] [105/154] preinstalled lua54-5.4.4-7.2
+[   31s] [106/154] preinstalled make-4.4-2.1
+[   31s] [107/154] preinstalled ncurses-utils-6.4.20230107-1.1
+[   31s] [108/154] preinstalled pam-1.5.2-11.2
+[   31s] [109/154] preinstalled patch-2.7.6-6.1
+[   31s] [110/154] preinstalled perl-5.36.0-3.1
+[   31s] [111/154] preinstalled perl-base-5.36.0-3.1
+[   31s] [112/154] preinstalled permissions-1599_20221220-1.2
+[   31s] [113/154] preinstalled permissions-config-1599_20221220-1.2
+[   31s] [114/154] preinstalled pkgconf-1.8.0-1.1
+[   31s] [115/154] preinstalled pkgconf-m4-1.8.0-1.1
+[   31s] [116/154] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   31s] [117/154] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   31s] [118/154] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   31s] [119/154] preinstalled qemu-linux-user-7.1.0-46.1
+[   31s] [120/154] preinstalled rpm-4.18.0-2.2
+[   31s] [121/154] preinstalled rpm-build-4.18.0-2.2
+[   31s] [122/154] preinstalled rpm-build-perl-4.18.0-2.2
+[   31s] [123/154] preinstalled rpm-config-SUSE-20220926-1.1
+[   31s] [124/154] preinstalled rpmlint-mini-2.4.0+git20230111.8ae3cb5-8.46
+[   31s] [125/154] preinstalled rpmlint-strict-2.4.0+git20230111.8ae3cb5-1.1
+[   31s] [126/154] preinstalled sed-4.9-2.1
+[   31s] [127/154] preinstalled shadow-4.13-2.2
+[   31s] [128/154] preinstalled system-group-hardware-20170617-24.1
+[   31s] [129/154] preinstalled system-user-root-20190513-2.1
+[   31s] [130/154] preinstalled systemd-rpm-macros-18-1.1
+[   31s] [131/154] preinstalled sysuser-shadow-3.1-5.1
+[   31s] [132/154] preinstalled tar-1.34-9.1
+[   31s] [133/154] preinstalled terminfo-base-6.4.20230107-1.1
+[   31s] [134/154] preinstalled update-alternatives-1.21.8-1.1
+[   31s] [135/154] preinstalled util-linux-2.38.1-3.1
+[   31s] [136/154] preinstalled which-2.21-5.1
+[   31s] [137/154] preinstalled xz-5.4.0-1.1
+[   31s] [138/154] cumulate zstd-1.5.2-2.1
+[   31s] [139/154] cumulate libLLVM15-15.0.6-1.1
+[   31s] [140/154] cumulate libbrotlidec1-1.0.9-1.1
+[   31s] [141/154] cumulate libidn2-0-2.3.4-1.1
+[   31s] [142/154] cumulate libopenssl1_1-1.1.1s-2.2
+[   31s] [143/154] cumulate krb5-mini-1.20.1-2.2
+[   31s] [144/154] cumulate lld15-15.0.6-1.1
+[   31s] [145/154] cumulate libldap2-2.6.3-3.1
+[   31s] [146/154] cumulate libpsl5-0.21.2-1.1
+[   31s] [147/154] cumulate libssh4-0.10.4-1.1
+[   31s] [148/154] cumulate rust1.66-1.66.0-2.1
+[   31s] [149/154] cumulate libcurl4-7.87.0-1.2
+[   31s] [150/154] cumulate rust-1.66.0-1.2
+[   31s] [151/154] cumulate cargo1.66-1.66.0-2.1
+[   31s] [152/154] cumulate cargo-1.66.0-1.2
+[   31s] [153/154] cumulate cargo-auditable-0.5.2~0-1.1
+[   31s] [154/154] cumulate cargo-packaging-1.1.0+0-1.1
+[   31s] now installing cumulated packages
+[   31s] Preparing...                          ########################################
+[   31s] Updating / installing...
+[   32s] libunistring5-1.1-1.1                 ########################################
+[   32s] libidn2-0-2.3.4-1.1                   ########################################
+[   32s] libpsl5-0.21.2-1.1                    ########################################
+[   32s] zstd-1.5.2-2.1                        ########################################
+[   32s] libverto1-0.3.2-1.1                   ########################################
+[   32s] libssh-config-0.10.4-1.1              ########################################
+[   32s] libsasl2-3-2.1.28-3.1                 ########################################
+[   32s] libnghttp2-14-1.51.0-7.1              ########################################
+[   32s] libkeyutils1-1.6.3-5.1                ########################################
+[   32s] libedit0-20210910.3.1-1.1             ########################################
+[   45s] libLLVM15-15.0.6-1.1                  ########################################
+[   46s] lld15-15.0.6-1.1                      ########################################
+[   46s] update-alternatives: using /usr/bin/lld-15.0.6 to provide /usr/bin/lld (lld) in auto mode
+[   46s] libcom_err2-1.46.5-4.1                ########################################
+[   47s] krb5-mini-1.20.1-2.2                  ########################################
+[   47s] Updating /etc/sysconfig/kadmind ...
+[   47s] Updating /etc/sysconfig/krb5kdc ...
+[   47s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   47s] libbrotlidec1-1.0.9-1.1               ########################################
+[   48s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   48s] libopenssl1_1-1.1.1s-2.2              ########################################
+[   48s] libldap2-2.6.3-3.1                    ########################################
+[   48s] libssh4-0.10.4-1.1                    ########################################
+[   49s] libcurl4-7.87.0-1.2                   ########################################
+[   49s] rust-1.66.0-1.2                       ########################################
+[   77s] rust1.66-1.66.0-2.1                   ########################################
+[   79s] cargo1.66-1.66.0-2.1                  ########################################
+[   79s] cargo-1.66.0-1.2                      ########################################
+[   79s] cargo-auditable-0.5.2~0-1.1           ########################################
+[   80s] cargo-packaging-1.1.0+0-1.1           ########################################
+[   80s] hicolor-icon-theme-0.17-4.1           ########################################
+[   82s] now finalizing build dir...
+[   82s] ... running 01-add_abuild_user_to_trusted_group
+[   82s] ... running 02-set_timezone_to_utc
+[   83s] ... running 03-set-permissions-secure
+[   83s] ... running 11-hack_uname_version_to_kernel_version
+[   89s] Running build time source services...
+[   92s] -----------------------------------------------------------------
+[   92s] I have the following modifications for xplr.spec:
+[   92s] 21c21
+[   92s] < Release:        0
+[   92s] ---
+[   92s] > Release:        1.1
+[   99s] build target is riscv64-suse-linux
+[   99s] -----------------------------------------------------------------
+[   99s] ----- building xplr.spec (user abuild)
+[   99s] -----------------------------------------------------------------
+[   99s] -----------------------------------------------------------------
+[  103s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f918f3252714960823e075261db4c195-xplr' /home/abuild/rpmbuild/SOURCES/xplr.spec
+[  103s] Building target platforms: riscv64-suse-linux
+[  103s] Building for target riscv64-suse-linux
+[  103s] setting SOURCE_DATE_EPOCH=1673568000
+[  104s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.aOpKri
+[  104s] + umask 022
+[  104s] + cd /home/abuild/rpmbuild/BUILD
+[  104s] + cd /home/abuild/rpmbuild/BUILD
+[  104s] + rm -rf xplr-0.20.2
+[  104s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/v0.20.2.tar.gz
+[  104s] + STATUS=0
+[  104s] + '[' 0 -ne 0 ']'
+[  104s] + cd xplr-0.20.2
+[  104s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.gz
+[  114s] + STATUS=0
+[  114s] + '[' 0 -ne 0 ']'
+[  114s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  114s] + mkdir -p .cargo
+[  114s] + cp /home/abuild/rpmbuild/SOURCES/cargo_config .cargo/config
+[  114s] + sed -i 's/-- version = "0.0.0"/version = "0.20.2"/' src/init.lua
+[  114s] + RPM_EC=0
+[  114s] ++ jobs -p
+[  114s] + exit 0
+[  114s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.IsR0zM
+[  114s] + umask 022
+[  114s] + cd /home/abuild/rpmbuild/BUILD
+[  115s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/xplr-0.20.2-1.1.riscv64
+[  115s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/xplr-0.20.2-1.1.riscv64
+[  115s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  115s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/xplr-0.20.2-1.1.riscv64
+[  115s] + cd xplr-0.20.2
+[  115s] + ref=/usr/lib/rpm
+[  115s] + mints=0
+[  115s] + case $(uname -m) in
+[  115s] ++ uname -m
+[  115s] + mints=20160911
+[  115s] + for s in guess sub
+[  115s] ++ find -maxdepth 8 -name config.guess
+[  115s] + for s in guess sub
+[  115s] ++ find -maxdepth 8 -name config.sub
+[  115s] + unset LIBSSH2_SYS_USE_PKG_CONFIG
+[  115s] + [[ -z '' ]]
+[  115s] + CARGO_AUDITABLE=auditable
+[  115s] + CARGO_FEATURE_VENDORED=1
+[  115s] + RUSTFLAGS='-Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2 -C incremental=false'
+[  115s] + /usr/bin/cargo auditable build -j6 --offline --release
+[  123s]    Compiling autocfg v1.1.0
+[  123s]    Compiling libc v0.2.139
+[  123s]    Compiling proc-macro2 v1.0.49
+[  123s]    Compiling unicode-ident v1.0.6
+[  123s]    Compiling quote v1.0.23
+[  123s]    Compiling syn v1.0.107
+[  129s]    Compiling serde_derive v1.0.152
+[  136s]    Compiling serde v1.0.152
+[  137s]    Compiling cfg-if v1.0.0
+[  138s]    Compiling memchr v2.5.0
+[  141s]    Compiling version_check v0.9.4
+[  142s]    Compiling log v0.4.17
+[  148s]    Compiling lock_api v0.4.9
+[  149s]    Compiling parking_lot_core v0.9.6
+[  150s]    Compiling signal-hook v0.3.14
+[  160s]    Compiling unicase v2.6.0
+[  161s]    Compiling signal-hook-registry v1.4.0
+[  170s]    Compiling smallvec v1.10.0
+[  171s]    Compiling scopeguard v1.1.0
+[  182s]    Compiling mio v0.8.5
+[  186s]    Compiling num-traits v0.2.15
+[  186s]    Compiling once_cell v1.17.0
+[  190s]    Compiling cc v1.0.78
+[  195s]    Compiling signal-hook-mio v0.2.3
+[  200s]    Compiling parking_lot v0.12.1
+[  210s]    Compiling bitflags v1.3.2
+[  212s]    Compiling crossterm v0.25.0
+[  221s]    Compiling lua-src v544.0.1
+[  229s]    Compiling luajit-src v210.4.5+resty2cf5186
+[  230s]    Compiling num-integer v0.1.45
+[  236s]    Compiling indexmap v1.9.2
+[  241s]    Compiling unicode-width v0.1.10
+[  242s]    Compiling erased-serde v0.3.24
+[  245s]    Compiling libm v0.2.6
+[  246s]    Compiling pkg-config v0.3.26
+[  253s]    Compiling thiserror v1.0.38
+[  257s]    Compiling mime_guess v2.0.4
+[  260s]    Compiling anyhow v1.0.68
+[  266s]    Compiling ryu v1.0.12
+[  271s]    Compiling hashbrown v0.12.3
+[  276s]    Compiling unicode-segmentation v1.10.0
+[  277s]    Compiling mlua v0.8.7
+[  280s]    Compiling cassowary v0.3.0
+[  284s]    Compiling minimal-lexical v0.2.1
+[  285s]    Compiling itoa v1.0.5
+[  291s]    Compiling serde_json v1.0.91
+[  295s] error: failed to run custom build command for `mlua v0.8.7`
+[  295s] 
+[  295s] Caused by:
+[  295s]   process didn't exit successfully: `/home/abuild/rpmbuild/BUILD/xplr-0.20.2/target/release/build/mlua-62ae5fed0d6677f9/build-script-main` (exit status: 101)
+[  295s]   --- stdout
+[  295s]   cargo:rerun-if-env-changed=CC_riscv64gc-unknown-linux-gnu
+[  295s]   CC_riscv64gc-unknown-linux-gnu = None
+[  295s]   cargo:rerun-if-env-changed=CC_riscv64gc_unknown_linux_gnu
+[  295s]   CC_riscv64gc_unknown_linux_gnu = None
+[  295s]   cargo:rerun-if-env-changed=HOST_CC
+[  295s]   HOST_CC = None
+[  295s]   cargo:rerun-if-env-changed=CC
+[  295s]   CC = None
+[  295s]   cargo:rerun-if-env-changed=CFLAGS_riscv64gc-unknown-linux-gnu
+[  295s]   CFLAGS_riscv64gc-unknown-linux-gnu = None
+[  295s]   cargo:rerun-if-env-changed=CFLAGS_riscv64gc_unknown_linux_gnu
+[  295s]   CFLAGS_riscv64gc_unknown_linux_gnu = None
+[  295s]   cargo:rerun-if-env-changed=HOST_CFLAGS
+[  295s]   HOST_CFLAGS = None
+[  295s]   cargo:rerun-if-env-changed=CFLAGS
+[  295s]   CFLAGS = None
+[  295s]   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+[  295s]   CRATE_CC_NO_DEFAULTS = None
+[  295s]   DEBUG = Some("false")
+[  295s]   CARGO_CFG_TARGET_FEATURE = None
+[  295s]   running "make" "-e"
+[  295s] 
+[  295s]   --- stderr
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:73:2: error: #error "No support for this architecture (yet)"
+[  295s]      73 | #error "No support for this architecture (yet)"
+[  295s]         |  ^~~~~
+[  295s]   lj_arch.h:472:2: error: #error "No target architecture defined"
+[  295s]     472 | #error "No target architecture defined"
+[  295s]         |  ^~~~~
+[  295s]   Makefile:274: *** Unsupported target architecture.  Stop.
+[  295s]   thread 'main' panicked at '
+[  295s]   Error building LuaJIT:
+[  295s]       Command: "make" "-e"
+[  295s]       Exit status: exit status: 2
+[  295s]       ', /home/abuild/rpmbuild/BUILD/xplr-0.20.2/vendor/luajit-src/src/lib.rs:200:13
+[  295s]   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[  295s] warning: build failed, waiting for other jobs to finish...
+[  379s] error: Bad exit status from /var/tmp/rpm-tmp.IsR0zM (%build)
+[  379s] 
+[  379s] RPM build errors:
+[  379s]     Bad exit status from /var/tmp/rpm-tmp.IsR0zM (%build)
+[  380s] ### VM INTERACTION START ###
+[  380s] [  375.777331][    T1] sysrq: Power Off
+[  380s] [  375.780335][    T7] reboot: Power down
+[  380s] ### VM INTERACTION END ###
+[  380s] 
+[  380s] sheep83 failed "build xplr.spec" at Fri Jan 13 23:11:04 UTC 2023.
+[  380s] 

@@ -1,0 +1,687 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_10/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_10/root
+[    0s] 
+[    1s] 
+[    1s] beatles started "build kanidm.spec" at Fri Feb 17 15:47:36 UTC 2023.
+[    1s] 
+[    1s] Building kanidm for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '9a17ff491bb27284e4386c17f1d9d2f9'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_10/.build-srcdir/kanidm.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_10/.build-srcdir/kanidm.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/10/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_10/.build.rpmlist /var/cache/obs/worker/root_10/.build-srcdir/kanidm.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7f1f24da28b81384a50e3930e651d4e0]
+[    2s] 
+[    2s] copying packages...
+[    2s] reordering...cycle: openssl -> openssl-3
+[    2s]   breaking dependency openssl-3 -> openssl
+[    2s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    2s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    2s] done
+[    2s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_10/.mount/boot/kernel -initrd /var/cache/obs/worker/root_10/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_10/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_10/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_10/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    6s] ### VM INTERACTION END ###
+[    6s] 2nd stage started in virtual machine
+[    7s] machine type: riscv64
+[    7s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[    7s] Increasing log level from now on...
+[    7s] [    2.813915][  T415] sysrq: Changing Loglevel
+[    7s] [    2.813997][  T415] sysrq: Loglevel set to 4
+[    7s] Enable sysrq operations
+[    7s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    7s] no label, UUID=2c27894a-7bb0-4ecc-9d78-dd20390563a4
+[    7s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    7s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    7s] swapon /dev/vdb
+[    7s] WARNING: udev not running, creating extra device nodes
+[    7s] logging output to //.build.log...
+[    8s] processing recipe /.build-srcdir/kanidm.spec ...
+[    8s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/kanidm.spec build ...
+[    8s] initializing rpm db...
+[    8s] querying package ids...
+[   20s] [1/162] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   20s] [2/162] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   20s] [3/162] preinstalled attr-2.5.1-1.1
+[   20s] [4/162] preinstalled bash-5.2.15-8.1
+[   20s] [5/162] preinstalled bash-sh-5.2.15-8.1
+[   20s] [6/162] preinstalled binutils-2.39-3.1
+[   20s] [7/162] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   20s] [8/162] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   20s] [9/162] preinstalled build-mkbaselibs-20230215-1.1
+[   20s] [10/162] preinstalled bzip2-1.0.8-4.1
+[   20s] [11/162] preinstalled chkstat-1599_20221220-1.2
+[   20s] [12/162] preinstalled compat-usrmerge-build-84.87-5.1
+[   20s] [13/162] preinstalled compat-usrmerge-tools-84.87-5.1
+[   20s] [14/162] preinstalled coreutils-9.1-5.1
+[   20s] [15/162] preinstalled cpio-2.13-5.1
+[   20s] [16/162] preinstalled cpp-12-2.1
+[   20s] [17/162] preinstalled cpp12-12.2.1+git749-4.1
+[   20s] [18/162] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   20s] [19/162] preinstalled debugedit-5.0-5.1
+[   20s] [20/162] preinstalled diffutils-3.9-1.1
+[   20s] [21/162] preinstalled dwz-0.15-2.1
+[   20s] [22/162] preinstalled elfutils-0.188-3.2
+[   20s] [23/162] preinstalled file-5.44-1.1
+[   20s] [24/162] preinstalled file-magic-5.44-1.1
+[   20s] [25/162] preinstalled filesystem-84.87-12.1
+[   20s] [26/162] preinstalled fillup-1.42-279.1
+[   20s] [27/162] preinstalled findutils-4.9.0-2.1
+[   20s] [28/162] preinstalled gawk-5.2.1-2.1
+[   20s] [29/162] preinstalled gcc-12-2.1
+[   20s] [30/162] preinstalled gcc-PIE-12-2.1
+[   20s] [31/162] preinstalled gcc12-12.2.1+git749-4.1
+[   20s] [32/162] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   20s] [33/162] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   20s] [34/162] preinstalled gettext-tools-mini-0.21.1-1.1
+[   20s] [35/162] preinstalled glibc-2.37-1.1
+[   20s] [36/162] preinstalled glibc-devel-2.37-1.1
+[   20s] [37/162] preinstalled glibc-locale-base-2.37-1.1
+[   20s] [38/162] preinstalled grep-3.8-3.1
+[   20s] [39/162] preinstalled gzip-1.12-3.1
+[   20s] [40/162] preinstalled kernel-obs-build-6.1.12-1.1
+[   20s] [41/162] preinstalled libacl1-2.3.1-2.1
+[   20s] [42/162] preinstalled libasan8-13.0.1+git5428-6.1
+[   20s] [43/162] preinstalled libasm1-0.188-3.2
+[   20s] [44/162] preinstalled libatomic1-13.0.1+git5428-6.1
+[   20s] [45/162] preinstalled libattr1-2.5.1-1.1
+[   20s] [46/162] preinstalled libaudit1-3.0.6-4.1
+[   20s] [47/162] preinstalled libblkid1-2.38.1-7.1
+[   20s] [48/162] cumulate libbrotlicommon1-1.0.9-1.1
+[   20s] [49/162] preinstalled libbz2-1-1.0.8-4.1
+[   20s] [50/162] preinstalled libcap-ng0-0.8.3-1.1
+[   20s] [51/162] preinstalled libcap2-2.67-1.1
+[   20s] [52/162] cumulate libcom_err2-1.46.5-4.1
+[   20s] [53/162] preinstalled libcrypt1-4.4.33-1.1
+[   20s] [54/162] preinstalled libctf-nobfd0-2.39-3.1
+[   20s] [55/162] preinstalled libctf0-2.39-3.1
+[   20s] [56/162] preinstalled libdb-4_8-4.8.30-39.1
+[   20s] [57/162] preinstalled libdw1-0.188-3.2
+[   20s] [58/162] preinstalled libeconf0-0.5.1-1.1
+[   20s] [59/162] cumulate libedit0-20210910.3.1-1.1
+[   20s] [60/162] preinstalled libelf1-0.188-3.2
+[   20s] [61/162] preinstalled libfdisk1-2.38.1-7.1
+[   20s] [62/162] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   20s] [63/162] preinstalled libgcrypt20-1.10.1-1.1
+[   20s] [64/162] preinstalled libgdbm6-1.23-1.1
+[   20s] [65/162] preinstalled libgdbm_compat4-1.23-1.1
+[   20s] [66/162] preinstalled libgmp10-6.2.1-4.1
+[   20s] [67/162] preinstalled libgomp1-13.0.1+git5428-6.1
+[   20s] [68/162] preinstalled libgpg-error0-1.46-1.1
+[   20s] [69/162] preinstalled libisl23-0.25-1.1
+[   20s] [70/162] cumulate libkeyutils1-1.6.3-5.1
+[   20s] [71/162] preinstalled liblua5_4-5-5.4.4-8.1
+[   20s] [72/162] preinstalled liblzma5-5.4.1-1.1
+[   20s] [73/162] preinstalled libmagic1-5.44-1.1
+[   20s] [74/162] preinstalled libmount1-2.38.1-7.1
+[   20s] [75/162] preinstalled libmpc3-1.3.1-1.2
+[   20s] [76/162] preinstalled libmpfr6-4.2.0-1.1
+[   20s] [77/162] preinstalled libncurses6-6.4.20230128-5.1
+[   20s] [78/162] cumulate libnghttp2-14-1.51.0-7.2
+[   20s] [79/162] preinstalled libpcre2-8-0-10.42-3.2
+[   20s] [80/162] preinstalled libpkgconf3-1.8.0-2.1
+[   20s] [81/162] preinstalled libpopt0-1.19-1.1
+[   20s] [82/162] preinstalled libreadline8-8.2-2.1
+[   20s] [83/162] preinstalled librpmbuild9-4.18.0-3.1
+[   20s] [84/162] cumulate libsasl2-3-2.1.28-4.2
+[   20s] [85/162] preinstalled libseccomp2-2.5.4-2.1
+[   20s] [86/162] preinstalled libselinux1-3.4-2.1
+[   20s] [87/162] preinstalled libsemanage-conf-3.4-1.1
+[   20s] [88/162] preinstalled libsemanage2-3.4-1.1
+[   20s] [89/162] preinstalled libsepol2-3.4-1.1
+[   20s] [90/162] preinstalled libsmartcols1-2.38.1-7.1
+[   20s] [91/162] cumulate libsqlite3-0-3.40.1-1.1
+[   20s] [92/162] cumulate libssh-config-0.10.4-1.2
+[   20s] [93/162] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   20s] [94/162] preinstalled libsubid4-4.13-3.1
+[   20s] [95/162] cumulate libsystemd0-mini-252.5-1.1
+[   20s] [96/162] preinstalled libubsan1-13.0.1+git5428-6.1
+[   20s] [97/162] cumulate libudev-mini1-252.5-1.1
+[   20s] [98/162] cumulate libunistring5-1.1-1.1
+[   20s] [99/162] preinstalled libutempter0-1.2.0-3.2
+[   20s] [100/162] preinstalled libuuid1-2.38.1-7.1
+[   20s] [101/162] cumulate libverto1-0.3.2-1.1
+[   20s] [102/162] preinstalled libxcrypt-devel-4.4.33-1.1
+[   20s] [103/162] preinstalled libz1-1.2.13-2.1
+[   20s] [104/162] preinstalled libzstd1-1.5.2-2.1
+[   20s] [105/162] preinstalled linux-glibc-devel-6.1-1.1
+[   20s] [106/162] preinstalled login_defs-4.13-3.1
+[   20s] [107/162] preinstalled lua54-5.4.4-8.1
+[   20s] [108/162] preinstalled make-4.4-2.1
+[   20s] [109/162] preinstalled ncurses-utils-6.4.20230128-5.1
+[   20s] [110/162] preinstalled pam-1.5.2-12.1
+[   20s] [111/162] cumulate pam-devel-1.5.2-12.1
+[   20s] [112/162] preinstalled patch-2.7.6-6.1
+[   20s] [113/162] preinstalled perl-5.36.0-4.1
+[   20s] [114/162] preinstalled perl-base-5.36.0-4.1
+[   20s] [115/162] preinstalled permissions-1599_20221220-1.2
+[   20s] [116/162] preinstalled permissions-config-1599_20221220-1.2
+[   20s] [117/162] preinstalled pkgconf-1.8.0-2.1
+[   20s] [118/162] preinstalled pkgconf-m4-1.8.0-2.1
+[   20s] [119/162] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   20s] [120/162] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   20s] [121/162] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   20s] [122/162] preinstalled qemu-linux-user-7.1.0-50.1
+[   20s] [123/162] preinstalled rpm-4.18.0-3.1
+[   20s] [124/162] preinstalled rpm-build-4.18.0-3.1
+[   20s] [125/162] preinstalled rpm-build-perl-4.18.0-3.1
+[   20s] [126/162] preinstalled rpm-config-SUSE-20220926-1.1
+[   20s] [127/162] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   20s] [128/162] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   20s] [129/162] preinstalled sed-4.9-2.1
+[   20s] [130/162] preinstalled shadow-4.13-3.1
+[   20s] [131/162] preinstalled system-group-hardware-20170617-24.1
+[   20s] [132/162] preinstalled system-user-root-20190513-2.1
+[   20s] [133/162] preinstalled systemd-rpm-macros-19-1.1
+[   20s] [134/162] preinstalled sysuser-shadow-3.1-5.1
+[   20s] [135/162] preinstalled tar-1.34-9.1
+[   20s] [136/162] preinstalled terminfo-base-6.4.20230128-5.1
+[   20s] [137/162] preinstalled update-alternatives-1.21.8-1.1
+[   20s] [138/162] preinstalled util-linux-2.38.1-7.1
+[   20s] [139/162] preinstalled which-2.21-5.1
+[   20s] [140/162] preinstalled xz-5.4.1-1.1
+[   20s] [141/162] cumulate zlib-devel-1.2.13-2.1
+[   20s] [142/162] cumulate zstd-1.5.2-2.1
+[   20s] [143/162] cumulate libLLVM15-15.0.7-1.1
+[   20s] [144/162] cumulate libbrotlidec1-1.0.9-1.1
+[   20s] [145/162] cumulate libidn2-0-2.3.4-1.1
+[   20s] [146/162] cumulate libopenssl3-3.0.7-3.1
+[   20s] [147/162] cumulate sqlite3-devel-3.40.1-1.1
+[   20s] [148/162] cumulate systemd-mini-devel-252.5-1.1
+[   20s] [149/162] cumulate krb5-mini-1.20.1-2.3
+[   20s] [150/162] cumulate lld15-15.0.7-1.1
+[   20s] [151/162] cumulate libldap2-2.6.3-3.2
+[   20s] [152/162] cumulate libpsl5-0.21.2-1.1
+[   20s] [153/162] cumulate libssh4-0.10.4-1.2
+[   20s] [154/162] cumulate rust1.67-1.67.1-1.1
+[   20s] [155/162] cumulate libcurl4-7.87.0-1.3
+[   20s] [156/162] cumulate rust-1.67.1-1.1
+[   20s] [157/162] cumulate cargo1.67-1.67.1-1.1
+[   20s] [158/162] cumulate cargo-1.67.1-1.1
+[   20s] [159/162] cumulate openssl-3-3.0.7-3.1
+[   20s] [160/162] cumulate openssl-3.0.7-1.1
+[   20s] [161/162] cumulate libopenssl-devel-3.0.7-1.1
+[   20s] [162/162] cumulate libopenssl-3-devel-3.0.7-3.1
+[   20s] now installing cumulated packages
+[   20s] Preparing...                          ########################################
+[   20s] Updating / installing...
+[   20s] libunistring5-1.1-1.1                 ########################################
+[   20s] libidn2-0-2.3.4-1.1                   ########################################
+[   20s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   21s] libopenssl3-3.0.7-3.1                 ########################################
+[   21s] openssl-3.0.7-1.1                     ########################################
+[   21s] openssl-3-3.0.7-3.1                   ########################################
+[   21s] libpsl5-0.21.2-1.1                    ########################################
+[   21s] zlib-devel-1.2.13-2.1                 ########################################
+[   22s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   23s] libverto1-0.3.2-1.1                   ########################################
+[   23s] libudev-mini1-252.5-1.1               ########################################
+[   23s] libsystemd0-mini-252.5-1.1            ########################################
+[   23s] libssh-config-0.10.4-1.2              ########################################
+[   23s] libsqlite3-0-3.40.1-1.1               ########################################
+[   23s] libsasl2-3-2.1.28-4.2                 ########################################
+[   24s] libldap2-2.6.3-3.2                    ########################################
+[   24s] libnghttp2-14-1.51.0-7.2              ########################################
+[   24s] libkeyutils1-1.6.3-5.1                ########################################
+[   24s] libedit0-20210910.3.1-1.1             ########################################
+[   30s] libLLVM15-15.0.7-1.1                  ########################################
+[   31s] lld15-15.0.7-1.1                      ########################################
+[   31s] update-alternatives: using /usr/bin/lld-15.0.7 to provide /usr/bin/lld (lld) in auto mode
+[   31s] libcom_err2-1.46.5-4.1                ########################################
+[   31s] krb5-mini-1.20.1-2.3                  ########################################
+[   31s] Updating /etc/sysconfig/kadmind ...
+[   31s] Updating /etc/sysconfig/krb5kdc ...
+[   32s] libssh4-0.10.4-1.2                    ########################################
+[   32s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   32s] libbrotlidec1-1.0.9-1.1               ########################################
+[   32s] libcurl4-7.87.0-1.3                   ########################################
+[   32s] rust-1.67.1-1.1                       ########################################
+[   46s] rust1.67-1.67.1-1.1                   ########################################
+[   48s] cargo1.67-1.67.1-1.1                  ########################################
+[   48s] cargo-1.67.1-1.1                      ########################################
+[   48s] sqlite3-devel-3.40.1-1.1              ########################################
+[   48s] systemd-mini-devel-252.5-1.1          ########################################
+[   48s] libopenssl-devel-3.0.7-1.1            ########################################
+[   48s] zstd-1.5.2-2.1                        ########################################
+[   48s] pam-devel-1.5.2-12.1                  ########################################
+[   49s] now finalizing build dir...
+[   49s] ... running 01-add_abuild_user_to_trusted_group
+[   49s] ... running 02-set_timezone_to_utc
+[   49s] ... running 03-set-permissions-secure
+[   50s] ... running 11-hack_uname_version_to_kernel_version
+[   53s] Running build time source services...
+[   54s] -----------------------------------------------------------------
+[   54s] I have the following modifications for kanidm.spec:
+[   54s] 23c23
+[   54s] < Release:        0
+[   54s] ---
+[   54s] > Release:        2.1
+[   57s] build target is riscv64-suse-linux
+[   57s] -----------------------------------------------------------------
+[   57s] ----- building kanidm.spec (user abuild)
+[   57s] -----------------------------------------------------------------
+[   57s] -----------------------------------------------------------------
+[   59s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/9a17ff491bb27284e4386c17f1d9d2f9-kanidm' /home/abuild/rpmbuild/SOURCES/kanidm.spec
+[   59s] Building target platforms: riscv64-suse-linux
+[   59s] Building for target riscv64-suse-linux
+[   59s] setting SOURCE_DATE_EPOCH=1676332800
+[   60s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.iJWMVw
+[   60s] + umask 022
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + rm -rf kanidm-1.1.0~alpha11~git0.d3a2a6b
+[   60s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/kanidm-1.1.0~alpha11~git0.d3a2a6b.tar.zst
+[   60s] + STATUS=0
+[   60s] + '[' 0 -ne 0 ']'
+[   60s] + cd kanidm-1.1.0~alpha11~git0.d3a2a6b
+[   60s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   60s] + cd /home/abuild/rpmbuild/BUILD
+[   60s] + rm -rf kanidm-1.1.0~alpha11~git0.d3a2a6b
+[   60s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/kanidm-1.1.0~alpha11~git0.d3a2a6b.tar.zst
+[   61s] + STATUS=0
+[   61s] + '[' 0 -ne 0 ']'
+[   61s] + cd kanidm-1.1.0~alpha11~git0.d3a2a6b
+[   61s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.zst
+[   83s] + STATUS=0
+[   83s] + '[' 0 -ne 0 ']'
+[   83s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   83s] + mkdir .cargo
+[   83s] + cp /home/abuild/rpmbuild/SOURCES/cargo_config .cargo/config
+[   83s] + find vendor -type f -name '*.rs' -exec chmod -x '{}' ';'
+[  394s] + RPM_EC=0
+[  394s] ++ jobs -p
+[  394s] + exit 0
+[  394s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.NGtVyY
+[  394s] + umask 022
+[  394s] + cd /home/abuild/rpmbuild/BUILD
+[  394s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/kanidm-1.1.0~alpha11~git0.d3a2a6b-2.1.riscv64
+[  394s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/kanidm-1.1.0~alpha11~git0.d3a2a6b-2.1.riscv64
+[  394s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  394s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/kanidm-1.1.0~alpha11~git0.d3a2a6b-2.1.riscv64
+[  394s] + cd kanidm-1.1.0~alpha11~git0.d3a2a6b
+[  394s] + ref=/usr/lib/rpm
+[  394s] + mints=0
+[  394s] + case $(uname -m) in
+[  394s] ++ uname -m
+[  394s] + mints=20160911
+[  394s] + for s in guess sub
+[  394s] ++ find -maxdepth 8 -name config.guess
+[  394s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  394s] + grep -q config-patches@ ./vendor/tikv-jemalloc-sys/jemalloc/build-aux/config.guess
+[  394s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./vendor/tikv-jemalloc-sys/jemalloc/build-aux/config.guess
+[  394s] + timestamp=20210101
+[  394s] + test -n 20210101
+[  394s] + test 20210101 -ge 20160911
+[  394s] + for s in guess sub
+[  394s] ++ find -maxdepth 8 -name config.sub
+[  395s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  395s] + grep -q config-patches@ ./vendor/libz-sys/src/zlib-ng/tools/config.sub
+[  395s] + continue
+[  395s] + for c in $(find -maxdepth 8 -name "config.$s")
+[  395s] + grep -q config-patches@ ./vendor/tikv-jemalloc-sys/jemalloc/build-aux/config.sub
+[  395s] ++ sed -n '/^timestamp=/{s///;s/[-'\''"]//g;p;q;}' ./vendor/tikv-jemalloc-sys/jemalloc/build-aux/config.sub
+[  395s] + timestamp=20210107
+[  395s] + test -n 20210107
+[  395s] + test 20210107 -ge 20160911
+[  395s] + export 'RUSTFLAGS=-Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2'
+[  395s] + RUSTFLAGS='-Clink-arg=-Wl,-z,relro,-z,now -C debuginfo=2'
+[  395s] + export KANIDM_BUILD_PROFILE=release_suse_generic
+[  395s] + KANIDM_BUILD_PROFILE=release_suse_generic
+[  395s] + cargo build --offline --release
+[  413s]    Compiling proc-macro2 v1.0.51
+[  413s]    Compiling quote v1.0.23
+[  413s]    Compiling unicode-ident v1.0.6
+[  413s]    Compiling syn v1.0.107
+[  413s]    Compiling version_check v0.9.4
+[  413s]    Compiling serde_derive v1.0.152
+[  413s]    Compiling serde v1.0.152
+[  413s]    Compiling libc v0.2.139
+[  416s]    Compiling autocfg v1.1.0
+[  418s]    Compiling cfg-if v1.0.0
+[  419s]    Compiling erased-serde v0.3.24
+[  419s]    Compiling memchr v2.5.0
+[  419s]    Compiling log v0.4.17
+[  421s]    Compiling value-bag v1.0.0-alpha.9
+[  423s]    Compiling itoa v1.0.5
+[  424s]    Compiling once_cell v1.17.0
+[  424s]    Compiling ryu v1.0.12
+[  425s]    Compiling pin-project-lite v0.2.9
+[  426s]    Compiling pkg-config v0.3.26
+[  428s]    Compiling jobserver v0.1.25
+[  431s]    Compiling serde_json v1.0.93
+[  432s]    Compiling cc v1.0.79
+[  434s]    Compiling futures-core v0.3.26
+[  436s]    Compiling getrandom v0.2.8
+[  436s]    Compiling typenum v1.16.0
+[  437s]    Compiling ahash v0.7.6
+[  438s]    Compiling generic-array v0.14.6
+[  439s]    Compiling futures-io v0.3.26
+[  440s]    Compiling bytes v1.4.0
+[  441s]    Compiling percent-encoding v2.2.0
+[  441s]    Compiling socket2 v0.4.7
+[  443s]    Compiling signal-hook-registry v1.4.1
+[  445s]    Compiling wasm-bindgen-shared v0.2.84
+[  449s]    Compiling tokio v1.25.0
+[  449s]    Compiling slab v0.4.7
+[  454s]    Compiling num_cpus v1.15.0
+[  455s]    Compiling openssl-sys v0.9.80
+[  458s]    Compiling bumpalo v3.12.0
+[  461s]    Compiling form_urlencoded v1.1.0
+[  461s]    Compiling thiserror v1.0.38
+[  463s]    Compiling tinyvec_macros v0.1.1
+[  464s]    Compiling wasm-bindgen v0.2.84
+[  464s]    Compiling indexmap v1.9.2
+[  464s]    Compiling tinyvec v1.6.0
+[  464s]    Compiling unicode-bidi v0.3.10
+[  466s]    Compiling futures-sink v0.3.26
+[  466s]    Compiling bitflags v1.3.2
+[  467s]    Compiling futures-channel v0.3.26
+[  467s]    Compiling pin-utils v0.1.0
+[  468s]    Compiling base64 v0.13.1
+[  469s]    Compiling tracing-core v0.1.30
+[  470s]    Compiling crossbeam-utils v0.8.14
+[  474s]    Compiling num-traits v0.2.15
+[  475s]    Compiling futures-task v0.3.26
+[  477s]    Compiling unicode-normalization v0.1.22
+[  479s]    Compiling futures-util v0.3.26
+[  482s]    Compiling proc-macro-hack v0.5.20+deprecated
+[  486s]    Compiling idna v0.3.0
+[  491s]    Compiling standback v0.2.17
+[  492s]    Compiling lazy_static v1.4.0
+[  493s]    Compiling ppv-lite86 v0.2.17
+[  494s]    Compiling fastrand v1.8.0
+[  495s]    Compiling num-integer v0.1.45
+[  498s]    Compiling proc-macro-error-attr v1.0.4
+[  501s]    Compiling proc-macro-error v1.0.4
+[  501s]    Compiling openssl v0.10.45
+[  503s]    Compiling regex-syntax v0.6.28
+[  504s]    Compiling foreign-types-shared v0.1.1
+[  505s]    Compiling foreign-types v0.3.2
+[  508s]    Compiling rand_core v0.6.4
+[  509s]    Compiling const_fn v0.4.9
+[  513s]    Compiling rand_chacha v0.3.1
+[  513s]    Compiling event-listener v2.5.3
+[  515s]    Compiling subtle v2.4.1
+[  517s]    Compiling rand v0.8.5
+[  519s]    Compiling time v0.2.27
+[  520s]    Compiling aho-corasick v0.7.20
+[  522s]    Compiling waker-fn v1.1.0
+[  522s]    Compiling strsim v0.10.0
+[  524s]    Compiling parking v2.0.0
+[  527s]    Compiling regex v1.7.1
+[  528s]    Compiling futures-lite v1.12.0
+[  529s]    Compiling profiles v1.1.0-alpha.11 (/home/abuild/rpmbuild/BUILD/kanidm-1.1.0~alpha11~git0.d3a2a6b/profiles)
+[  530s]    Compiling concurrent-queue v2.1.0
+[  533s]    Compiling time-core v0.1.0
+[  533s]    Compiling polling v2.5.2
+[  534s]    Compiling opaque-debug v0.3.0
+[  535s]    Compiling time-macros v0.2.6
+[  536s]    Compiling unicode-xid v0.2.4
+[  537s]    Compiling ctor v0.1.26
+[  538s]    Compiling tokio-macros v1.8.2
+[  541s]    Compiling thiserror-impl v1.0.38
+[  548s]    Compiling tracing-attributes v0.1.23
+[  548s]    Compiling futures-macro v0.3.26
+[  553s]    Compiling openssl-macros v0.1.0
+[  553s]    Compiling time-macros-impl v0.1.2
+[  567s]    Compiling time-macros v0.1.1
+[  568s]    Compiling async-lock v2.6.0
+[  573s]    Compiling pin-project-internal v1.0.12
+[  574s]    Compiling time v0.3.17
+[  583s]    Compiling tracing v0.1.37
+[  593s]    Compiling synstructure v0.12.6
+[  602s]    Compiling pin-project v1.0.12
+[  604s]    Compiling digest v0.9.0
+[  610s]    Compiling libz-sys v1.1.8
+[  614s]    Compiling async-io v1.12.0
+[  615s]    Compiling httparse v1.8.0
+[  619s]    Compiling regex-automata v0.1.10
+[  620s]    Compiling minimal-lexical v0.2.1
+[  621s]    Compiling async-task v4.3.0
+[  626s]    Compiling byteorder v1.4.3
+[  627s]    Compiling getrandom v0.1.16
+[  631s]    Compiling signal-hook v0.3.15
+[  632s]    Compiling fnv v1.0.7
+[  633s]    Compiling nom v7.1.3
+[  640s]    Compiling async-channel v1.8.0
+[  641s]    Compiling cipher v0.2.5
+[  644s]    Compiling libssh2-sys v0.2.23
+[  644s]    Compiling async-process v1.6.0
+[  648s]    Compiling sval v1.0.0-alpha.5
+[  652s]    Compiling serde_fmt v1.0.1
+[  668s]    Compiling url v2.3.1
+[  682s]    Compiling mio v0.8.5
+[  691s]    Compiling wasm-bindgen-backend v0.2.84
+[  692s]    Compiling hashbrown v0.12.3
+[  711s]    Compiling wasm-bindgen-macro-support v0.2.84
+[  711s]    Compiling smallvec v1.10.0
+[  714s]    Compiling serde_urlencoded v0.7.1
+[  722s]    Compiling uuid v1.3.0
+[  725s]    Compiling base64urlsafedata v0.1.2
+[  729s]    Compiling toml v0.5.11
+[  736s]    Compiling openssl-probe v0.1.5
+[  738s]    Compiling atomic-waker v1.1.0
+[  738s]    Compiling wasm-bindgen-macro v0.2.84
+[  741s]    Compiling blocking v1.3.0
+[  750s]    Compiling bincode v1.3.3
+[  759s]    Compiling js-sys v0.3.61
+[  759s]    Compiling async-executor v1.5.0
+[  764s]    Compiling universal-hash v0.4.1
+[  764s]    Compiling nom8 v0.2.0
+[  764s]    Compiling overload v0.1.1
+[  765s]    Compiling toml_datetime v0.5.1
+[  766s]    Compiling peg-runtime v0.8.1
+[  771s]    Compiling async-trait v0.1.64
+[  771s]    Compiling polyval v0.4.5
+[  773s]    Compiling nu-ansi-term v0.46.0
+[  774s]    Compiling peg-macros v0.8.1
+[  776s]    Compiling async-global-executor v2.3.1
+[  786s]    Compiling rand_core v0.5.1
+[  790s]    Compiling web-sys v0.3.61
+[  791s]    Compiling serde-wasm-bindgen v0.4.5
+[  797s]    Compiling toml_edit v0.18.1
+[  801s]    Compiling tokio-util v0.7.7
+[  807s]    Compiling tracing-log v0.1.3
+[  809s]    Compiling kv-log-macro v1.0.7
+[  810s]    Compiling aes-soft v0.6.4
+[  811s]    Compiling matchers v0.1.0
+[  814s]    Compiling crypto-mac v0.10.1
+[  815s]    Compiling sharded-slab v0.1.4
+[  816s]    Compiling block-buffer v0.9.0
+[  818s]    Compiling libgit2-sys v0.12.26+1.3.0
+[  819s]    Compiling thread_local v1.1.7
+[  819s]    Compiling heck v0.4.1
+[  821s]    Compiling anyhow v1.0.69
+[  825s]    Compiling clap_derive v3.2.18
+[  828s]    Compiling peg v0.8.1
+[  828s]    Compiling tracing-subscriber v0.3.16
+[  829s]    Compiling sha2 v0.9.9
+[  832s]    Compiling hmac v0.10.1
+[  835s]    Compiling proc-macro-crate v1.3.0
+[  842s]    Compiling aes v0.6.0
+[  842s]    Compiling async-std v1.12.0
+[  843s]    Compiling rand_chacha v0.2.2
+[  847s]    Compiling ghash v0.3.1
+[  850s]    Compiling ctr v0.6.0
+[  853s]    Compiling aead v0.3.2
+[  856s]    Compiling cookie v0.14.4
+[  858s]    Compiling crc32fast v1.3.2
+[  859s]    Compiling scopeguard v1.1.0
+[  861s]    Compiling ident_case v1.0.1
+[  864s]    Compiling arrayvec v0.5.2
+[  864s]    Compiling darling_core v0.14.3
+[  869s]    Compiling num_enum_derive v0.5.9
+[  870s]    Compiling aes-gcm v0.8.0
+[  872s]    Compiling rand v0.7.3
+[  876s]    Compiling webauthn-rs-proto v0.4.9
+[  895s]    Compiling hkdf v0.10.0
+[  898s]    Compiling http v0.2.8
+[  906s]    Compiling http-types v2.12.0
+[  911s]    Compiling adler v1.0.2
+[  915s]    Compiling half v1.8.2
+[  915s]    Compiling matches v0.1.10
+[  915s]    Compiling darling_macro v0.14.3
+[  916s]    Compiling idna v0.2.3
+[  916s]    Compiling miniz_oxide v0.6.2
+[  924s]    Compiling num_enum v0.5.9
+[  926s]    Compiling serde_qs v0.8.5
+[  926s]    Compiling time v0.1.45
+[  928s]    Compiling native-tls v0.2.11
+[  929s]    Compiling os_str_bytes v6.4.1
+[  932s]    Compiling either v1.8.1
+[  935s]    Compiling infer v0.2.3
+[  935s]    Compiling iana-time-zone v0.1.53
+[  937s]    Compiling chrono v0.4.23
+[  938s]    Compiling clap_lex v0.2.4
+[  941s]    Compiling flate2 v1.0.25
+[  944s]    Compiling darling v0.14.3
+[  945s]    Compiling scim_proto v0.1.1
+[  945s]    Compiling zeroize_derive v1.3.3
+[  947s]    Compiling crypto-mac v0.8.0
+[  948s]    Compiling simple-mutex v1.1.5
+[  949s]    Compiling blake3 v0.3.8
+[  950s]    Compiling atty v0.2.14
+[  951s]    Compiling memoffset v0.7.1
+[  952s]    Compiling cookie v0.16.2
+[  954s]    Compiling hex v0.4.3
+[  955s]    Compiling base32 v0.4.0
+[  955s]    Compiling urlencoding v2.1.2
+[  959s]    Compiling vcpkg v0.2.15
+[  962s]    Compiling textwrap v0.16.0
+[  962s]    Compiling termcolor v1.2.0
+[  963s]    Compiling try-lock v0.2.4
+[  965s]    Compiling want v0.3.0
+[  970s]    Compiling clap v3.2.23
+[  971s]    Compiling compact_jwt v0.2.9
+[  972s]    Compiling zeroize v1.5.7
+[  977s]    Compiling async-dup v1.2.2
+[  979s]    Compiling async-compression v0.3.15
+[  980s]    Compiling derive_builder_core v0.11.2
+[  982s]    Compiling libsqlite3-sys v0.25.2
+[  990s]    Compiling serde_cbor_2 v0.12.0-dev
+[  996s]    Compiling h2 v0.3.15
+[  997s]    Compiling http-body v0.4.5
+[ 1002s]    Compiling rusticata-macros v4.1.0
+[ 1008s]    Compiling asn1-rs-derive v0.1.0
+[ 1009s]    Compiling futures-executor v0.3.26
+[ 1017s]    Compiling displaydoc v0.2.3
+[ 1019s]    Compiling asn1-rs-impl v0.1.0
+[ 1029s]    Compiling num-bigint v0.4.3
+[ 1032s]    Compiling crossbeam-epoch v0.9.13
+[ 1034s]    Compiling lock_api v0.4.9
+[ 1036s]    Compiling arrayref v0.3.6
+[ 1037s]    Compiling tower-service v0.3.2
+[ 1037s]    Compiling psl-types v2.0.11
+[ 1039s]    Compiling constant_time_eq v0.1.5
+[ 1039s]    Compiling parking_lot_core v0.9.7
+[ 1041s]    Compiling httpdate v1.0.2
+[ 1041s]    Compiling cfg-if v0.1.10
+[ 1043s]    Compiling base64 v0.12.3
+[ 1048s]    Compiling bit-vec v0.6.3
+[ 1051s]    Compiling hyper v0.14.24
+[ 1053s]    Compiling bit-set v0.5.3
+[ 1054s]    Compiling publicsuffix v2.2.3
+[ 1057s]    Compiling asn1-rs v0.3.1
+[ 1058s]    Compiling futures v0.3.26
+[ 1059s]    Compiling derive_builder_macro v0.11.2
+[ 1059s]    Compiling clap_complete v3.2.5
+[ 1069s]    Compiling tokio-native-tls v0.3.1
+[ 1074s]    Compiling hmac v0.8.1
+[ 1076s]    Compiling pin-project-lite v0.1.12
+[ 1076s]    Compiling lexical-core v0.7.6
+[ 1077s]    Compiling static_assertions v1.1.0
+[ 1078s]    Compiling crossbeam-queue v0.3.8
+[ 1080s]    Compiling oid-registry v0.4.0
+[ 1083s]    Compiling hyper-tls v0.5.0
+[ 1088s]    Compiling cookie_store v0.16.1
+[ 1089s]    Compiling async-sse v4.1.0
+[ 1092s]    Compiling async-session v2.0.1
+[ 1094s]    Compiling derive_builder v0.11.2
+[ 1098s]    Compiling fancy-regex v0.8.0
+[ 1104s]    Compiling async-h1 v2.3.3
+[ 1110s]    Compiling http-client v6.5.3
+[ 1114s]    Compiling itertools v0.10.5
+[ 1114s]    Compiling femme v2.2.1
+[ 1121s]    Compiling quick-xml v0.18.1
+[ 1124s]    Compiling generic-array v0.12.4
+[ 1127s]    Compiling nom v5.1.2
+[ 1127s]    Compiling encoding_rs v0.8.32
+[ 1128s]    Compiling linked-hash-map v0.5.6
+[ 1130s]    Compiling route-recognizer v0.2.0
+[ 1130s]    Compiling quick-error v2.0.1
+[ 1132s]    Compiling nom v2.2.1
+[ 1132s]    Compiling ipnet v2.7.1
+[ 1132s]    Compiling byte-tools v0.3.1
+[ 1133s]    Compiling mime v0.3.16
+[ 1134s]    Compiling base64 v0.21.0
+[ 1137s]    Compiling zxcvbn v2.2.1
+[ 1139s]    Compiling block-padding v0.1.5
+[ 1141s]    Compiling lber v0.3.0
+[ 1142s]    Compiling tide v0.16.0
+[ 1142s]    Compiling lru-cache v0.1.2
+[ 1143s]    Compiling phonenumber v0.3.1+8.12.9
+[ 1145s]    Compiling reqwest v0.11.14
+[ 1149s]    Compiling der-parser v7.0.0
+[ 1152s]    Compiling parking_lot v0.12.1
+[ 1167s]    Compiling oncemutex v0.1.1
+[ 1169s]    Compiling data-encoding v2.3.3
+[ 1171s]    Compiling regex-cache v0.2.1
+[ 1176s]    Compiling x509-parser v0.13.2
+[ 1187s]    Compiling scheduled-thread-pool v0.2.6
+[ 1189s]    Compiling ldap3_proto v0.3.1
+[ 1198s]    Compiling block-buffer v0.7.3
+[ 1202s]    Compiling digest v0.8.1
+[ 1203s]    Compiling itertools v0.9.0
+[ 1205s]    Compiling hashlink v0.8.1
+[ 1213s]    Compiling validator_types v0.16.0
+[ 1218s]    Compiling smartstring v1.0.1
+[ 1220s]    Compiling if_chain v1.0.2
+[ 1221s]    Compiling fallible-iterator v0.2.0
+[ 1222s]    Compiling fallible-streaming-iterator v0.1.9
+[ 1226s]    Compiling fake-simd v0.1.2
+[ 1228s]    Compiling opaque-debug v0.2.3
+[ 1232s]    Compiling sha2 v0.8.2
+[ 1234s]    Compiling validator_derive v0.16.0
+[ 1248s]    Compiling webauthn-rs-core v0.4.9
+[ 1250s]    Compiling r2d2 v0.8.10
+[ 1257s]    Compiling tracing-forest v0.1.4 (https://github.com/QnnOkabayashi/tracing-forest.git?rev=48d78f7294ceee47a22eee5c80964143c4fb3fe1#48d78f72)
+[ 1264s]    Compiling kanidmd_lib v1.1.0-alpha.11 (/home/abuild/rpmbuild/BUILD/kanidm-1.1.0~alpha11~git0.d3a2a6b/kanidmd/lib)
+[ 1266s]    Compiling lru v0.7.8
+[ 1269s]    Compiling sptr v0.3.2
+[ 1270s]    Compiling sketching v1.1.0-alpha.11 (/home/abuild/rpmbuild/BUILD/kanidm-1.1.0~alpha11~git0.d3a2a6b/sketching)
+[ 1271s]    Compiling concread v0.4.1
+[ 1277s]    Compiling webauthn-rs v0.4.8
+[ 1284s]    Compiling validator v0.16.0
+[ 1297s]    Compiling sshkeys v0.3.2
+[ 1300s]    Compiling fernet v0.2.0
+[ 1302s]    Compiling smolset v1.3.1
+[ 1307s]    Compiling idlset v0.2.4
+[ 1309s] error[E0425]: cannot find value `AVG_RANGE_COMP_REQ` in this scope
+[ 1309s]    --> /home/abuild/rpmbuild/BUILD/kanidm-1.1.0~alpha11~git0.d3a2a6b/vendor/idlset/src/v2.rs:436:29
+[ 1309s]     |
+[ 1309s] 436 |             if list.len() < AVG_RANGE_COMP_REQ {
+[ 1309s]     |                             ^^^^^^^^^^^^^^^^^^ not found in this scope
+[ 1309s] 
+[ 1309s] error[E0425]: cannot find value `AVG_RANGE_COMP_REQ` in this scope
+[ 1309s]    --> /home/abuild/rpmbuild/BUILD/kanidm-1.1.0~alpha11~git0.d3a2a6b/vendor/idlset/src/v2.rs:445:62
+[ 1309s]     |
+[ 1309s] 445 |                     && (maybe.len() / maybe.len_ranges()) >= AVG_RANGE_COMP_REQ
+[ 1309s]     |                                                              ^^^^^^^^^^^^^^^^^^ not found in this scope
+[ 1309s] 
+[ 1310s]    Compiling touch v0.0.1
+[ 1311s] For more information about this error, try `rustc --explain E0425`.
+[ 1311s] error: could not compile `idlset` due to 2 previous errors
+[ 1311s] warning: build failed, waiting for other jobs to finish...
+[ 1880s] error: Bad exit status from /var/tmp/rpm-tmp.NGtVyY (%build)
+[ 1880s] 
+[ 1880s] RPM build errors:
+[ 1880s]     Bad exit status from /var/tmp/rpm-tmp.NGtVyY (%build)
+[ 1881s] ### VM INTERACTION START ###
+[ 1881s] [ 1876.940827][    T1] sysrq: Power Off
+[ 1881s] [ 1876.942412][    T7] reboot: Power down
+[ 1881s] ### VM INTERACTION END ###
+[ 1881s] 
+[ 1881s] beatles failed "build kanidm.spec" at Fri Feb 17 16:18:56 UTC 2023.
+[ 1881s] 

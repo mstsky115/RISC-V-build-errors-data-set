@@ -1,0 +1,636 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] lamb20 started "build fdo-client.spec" at Mon Feb  6 01:33:34 UTC 2023.
+[    0s] 
+[    0s] Building fdo-client for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'e42bc7e3b4e858c180311f5106ff68fd'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/fdo-client.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/fdo-client.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/fdo-client.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [d2b144e8b13e7ca9b822e439150d14f2]
+[    2s] 
+[    2s] copying packages...
+[    3s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] cycle: openssl -> openssl-3
+[    3s]   breaking dependency openssl-3 -> openssl
+[    3s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    8s] ### VM INTERACTION END ###
+[    8s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.8-1-default #1 SMP PREEMPT_DYNAMIC Tue Jan 24 06:29:25 UTC 2023 (baebfe0)
+[    9s] Increasing log level from now on...
+[    9s] [    4.551547][  T415] sysrq: Changing Loglevel
+[    9s] [    4.551808][  T415] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[    9s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[    9s] no label, UUID=09b4063c-43cc-4c54-9127-284848553e74
+[    9s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    9s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[    9s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   10s] logging output to //.build.log...
+[   10s] processing recipe /.build-srcdir/fdo-client.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/fdo-client.spec build ...
+[   11s] initializing rpm db...
+[   11s] querying package ids...
+[   32s] [1/152] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   32s] [2/152] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   32s] [3/152] preinstalled attr-2.5.1-1.1
+[   32s] [4/152] preinstalled bash-5.2.15-8.1
+[   32s] [5/152] preinstalled bash-sh-5.2.15-8.1
+[   32s] [6/152] preinstalled binutils-2.39-3.1
+[   32s] [7/152] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   32s] [8/152] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   32s] [9/152] preinstalled build-mkbaselibs-20230105-1.1
+[   32s] [10/152] preinstalled bzip2-1.0.8-4.1
+[   32s] [11/152] preinstalled chkstat-1599_20221220-1.2
+[   32s] [12/152] preinstalled compat-usrmerge-build-84.87-5.1
+[   32s] [13/152] preinstalled compat-usrmerge-tools-84.87-5.1
+[   32s] [14/152] preinstalled coreutils-9.1-5.1
+[   32s] [15/152] preinstalled cpio-2.13-5.1
+[   32s] [16/152] preinstalled cpp-12-2.1
+[   32s] [17/152] preinstalled cpp12-12.2.1+git749-4.1
+[   32s] [18/152] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   32s] [19/152] preinstalled debugedit-5.0-5.1
+[   32s] [20/152] preinstalled diffutils-3.9-1.1
+[   32s] [21/152] preinstalled dwz-0.15-2.1
+[   32s] [22/152] preinstalled elfutils-0.188-3.2
+[   32s] [23/152] preinstalled file-5.44-1.1
+[   32s] [24/152] preinstalled file-magic-5.44-1.1
+[   32s] [25/152] preinstalled filesystem-84.87-11.1
+[   32s] [26/152] preinstalled fillup-1.42-279.1
+[   32s] [27/152] preinstalled findutils-4.9.0-2.1
+[   32s] [28/152] preinstalled gawk-5.2.1-2.1
+[   32s] [29/152] preinstalled gcc-12-2.1
+[   32s] [30/152] preinstalled gcc-PIE-12-2.1
+[   32s] [31/152] preinstalled gcc12-12.2.1+git749-4.1
+[   32s] [32/152] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   32s] [33/152] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   32s] [34/152] preinstalled gettext-tools-mini-0.21.1-1.1
+[   32s] [35/152] preinstalled glibc-2.36-9.1
+[   32s] [36/152] preinstalled glibc-devel-2.36-9.1
+[   32s] [37/152] preinstalled glibc-locale-base-2.36-9.1
+[   32s] [38/152] preinstalled grep-3.8-3.1
+[   32s] [39/152] preinstalled gzip-1.12-3.1
+[   32s] [40/152] preinstalled kernel-obs-build-6.1.8-1.2
+[   32s] [41/152] preinstalled libacl1-2.3.1-2.1
+[   32s] [42/152] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   32s] [43/152] preinstalled libasan8-13.0.1+git5428-6.1
+[   32s] [44/152] preinstalled libasm1-0.188-3.2
+[   32s] [45/152] preinstalled libatomic1-13.0.1+git5428-6.1
+[   32s] [46/152] preinstalled libattr1-2.5.1-1.1
+[   32s] [47/152] preinstalled libaudit1-3.0.6-4.1
+[   32s] [48/152] preinstalled libblkid1-2.38.1-6.1
+[   32s] [49/152] preinstalled libbz2-1-1.0.8-4.1
+[   32s] [50/152] preinstalled libcap-ng0-0.8.3-1.1
+[   32s] [51/152] preinstalled libcap2-2.66-1.1
+[   32s] [52/152] preinstalled libcrypt1-4.4.33-1.1
+[   32s] [53/152] preinstalled libctf-nobfd0-2.39-3.1
+[   32s] [54/152] preinstalled libctf0-2.39-3.1
+[   32s] [55/152] preinstalled libdb-4_8-4.8.30-39.1
+[   32s] [56/152] preinstalled libdw1-0.188-3.2
+[   32s] [57/152] preinstalled libeconf0-0.5.1-1.1
+[   32s] [58/152] preinstalled libelf1-0.188-3.2
+[   32s] [59/152] cumulate libexpat1-2.5.0-2.1
+[   32s] [60/152] preinstalled libfdisk1-2.38.1-6.1
+[   32s] [61/152] cumulate libffi8-3.4.4-1.1
+[   32s] [62/152] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   32s] [63/152] preinstalled libgcrypt20-1.10.1-1.1
+[   32s] [64/152] preinstalled libgdbm6-1.23-1.1
+[   32s] [65/152] preinstalled libgdbm_compat4-1.23-1.1
+[   32s] [66/152] preinstalled libgmp10-6.2.1-4.1
+[   32s] [67/152] preinstalled libgomp1-13.0.1+git5428-6.1
+[   32s] [68/152] preinstalled libgpg-error0-1.46-1.1
+[   32s] [69/152] preinstalled libisl23-0.25-1.1
+[   32s] [70/152] preinstalled liblua5_4-5-5.4.4-8.1
+[   32s] [71/152] preinstalled liblzma5-5.4.1-1.1
+[   32s] [72/152] preinstalled libmagic1-5.44-1.1
+[   32s] [73/152] preinstalled libmount1-2.38.1-6.1
+[   32s] [74/152] preinstalled libmpc3-1.3.1-1.2
+[   32s] [75/152] cumulate libmpdec3-2.5.1-2.1
+[   32s] [76/152] preinstalled libmpfr6-4.2.0-1.1
+[   32s] [77/152] preinstalled libncurses6-6.4.20230121-3.1
+[   32s] [78/152] preinstalled libpcre2-8-0-10.42-3.2
+[   32s] [79/152] preinstalled libpkgconf3-1.8.0-2.1
+[   32s] [80/152] preinstalled libpopt0-1.19-1.1
+[   32s] [81/152] preinstalled libreadline8-8.2-2.1
+[   32s] [82/152] cumulate librhash0-1.4.3-1.1
+[   32s] [83/152] preinstalled librpmbuild9-4.18.0-3.1
+[   32s] [84/152] preinstalled libseccomp2-2.5.4-2.1
+[   32s] [85/152] preinstalled libselinux1-3.4-2.1
+[   32s] [86/152] preinstalled libsemanage-conf-3.4-1.1
+[   32s] [87/152] preinstalled libsemanage2-3.4-1.1
+[   32s] [88/152] preinstalled libsepol2-3.4-1.1
+[   32s] [89/152] preinstalled libsmartcols1-2.38.1-6.1
+[   32s] [90/152] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   32s] [91/152] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   32s] [92/152] preinstalled libsubid4-4.13-3.1
+[   32s] [93/152] preinstalled libubsan1-13.0.1+git5428-6.1
+[   32s] [94/152] preinstalled libutempter0-1.2.0-3.2
+[   32s] [95/152] preinstalled libuuid1-2.38.1-6.1
+[   32s] [96/152] cumulate libuv1-1.44.2-3.1
+[   32s] [97/152] preinstalled libxcrypt-devel-4.4.33-1.1
+[   32s] [98/152] preinstalled libz1-1.2.13-2.1
+[   32s] [99/152] preinstalled libzstd1-1.5.2-2.1
+[   32s] [100/152] preinstalled linux-glibc-devel-6.1-1.1
+[   32s] [101/152] preinstalled login_defs-4.13-3.1
+[   32s] [102/152] preinstalled lua54-5.4.4-8.1
+[   32s] [103/152] preinstalled make-4.4-2.1
+[   32s] [104/152] preinstalled ncurses-utils-6.4.20230121-3.1
+[   32s] [105/152] preinstalled pam-1.5.2-12.1
+[   32s] [106/152] preinstalled patch-2.7.6-6.1
+[   32s] [107/152] preinstalled perl-5.36.0-4.1
+[   32s] [108/152] preinstalled perl-base-5.36.0-4.1
+[   32s] [109/152] preinstalled permissions-1599_20221220-1.2
+[   32s] [110/152] preinstalled permissions-config-1599_20221220-1.2
+[   32s] [111/152] preinstalled pkgconf-1.8.0-2.1
+[   32s] [112/152] preinstalled pkgconf-m4-1.8.0-2.1
+[   32s] [113/152] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   32s] [114/152] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   32s] [115/152] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   32s] [116/152] cumulate python-rpm-macros-20230128.e704796-1.1
+[   32s] [117/152] preinstalled qemu-linux-user-7.1.0-48.1
+[   32s] [118/152] preinstalled rpm-4.18.0-3.1
+[   32s] [119/152] preinstalled rpm-build-4.18.0-3.1
+[   32s] [120/152] preinstalled rpm-build-perl-4.18.0-3.1
+[   32s] [121/152] preinstalled rpm-config-SUSE-20220926-1.1
+[   32s] [122/152] preinstalled rpmlint-mini-2.4.0+git20230125.20e5b58-8.54
+[   32s] [123/152] preinstalled rpmlint-strict-2.4.0+git20230125.20e5b58-1.1
+[   32s] [124/152] preinstalled sed-4.9-2.1
+[   32s] [125/152] preinstalled shadow-4.13-3.1
+[   32s] [126/152] preinstalled system-group-hardware-20170617-24.1
+[   32s] [127/152] preinstalled system-user-root-20190513-2.1
+[   32s] [128/152] preinstalled systemd-rpm-macros-19-1.1
+[   32s] [129/152] preinstalled sysuser-shadow-3.1-5.1
+[   32s] [130/152] preinstalled tar-1.34-9.1
+[   32s] [131/152] preinstalled terminfo-base-6.4.20230121-3.1
+[   32s] [132/152] preinstalled update-alternatives-1.21.8-1.1
+[   32s] [133/152] preinstalled util-linux-2.38.1-6.1
+[   32s] [134/152] cumulate vim-data-common-9.0.1270-1.1
+[   32s] [135/152] preinstalled which-2.21-5.1
+[   32s] [136/152] preinstalled xz-5.4.1-1.1
+[   32s] [137/152] cumulate zlib-devel-1.2.13-2.1
+[   32s] [138/152] cumulate alts-1.2+3.b848aad-3.1
+[   32s] [139/152] cumulate gcc12-c++-12.2.1+git749-4.1
+[   32s] [140/152] cumulate libopenssl3-3.0.7-3.1
+[   32s] [141/152] cumulate gcc-c++-12-2.1
+[   32s] [142/152] cumulate vim-9.0.1270-1.1
+[   32s] [143/152] cumulate openssl-3-3.0.7-3.1
+[   32s] [144/152] cumulate python310-base-3.10.9-2.2
+[   32s] [145/152] cumulate libpython3_10-1_0-3.10.9-2.2
+[   32s] [146/152] cumulate openssl-3.0.7-1.1
+[   32s] [147/152] cumulate python310-packaging-23.0-1.1
+[   32s] [148/152] cumulate cmake-mini-3.25.2-1.2
+[   32s] [149/152] cumulate cmake-3.25.2-1.1
+[   32s] [150/152] cumulate libopenssl-devel-3.0.7-1.1
+[   32s] [151/152] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   32s] [152/152] cumulate libopenssl-3-devel-3.0.7-3.1
+[   32s] now installing cumulated packages
+[   33s] Preparing...                          ########################################
+[   33s] Updating / installing...
+[   33s] libexpat1-2.5.0-2.1                   ########################################
+[   33s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   33s] libopenssl3-3.0.7-3.1                 ########################################
+[   33s] openssl-3.0.7-1.1                     ########################################
+[   34s] openssl-3-3.0.7-3.1                   ########################################
+[   34s] zlib-devel-1.2.13-2.1                 ########################################
+[   36s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   37s] vim-data-common-9.0.1270-1.1          ########################################
+[   37s] python-rpm-macros-20230128.e704796-1.1########################################
+[   37s] libuv1-1.44.2-3.1                     ########################################
+[   47s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   50s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   50s] librhash0-1.4.3-1.1                   ########################################
+[   50s] libmpdec3-2.5.1-2.1                   ########################################
+[   50s] libffi8-3.4.4-1.1                     ########################################
+[   51s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   55s] python310-base-3.10.9-2.2             ########################################
+[   55s] python310-packaging-23.0-1.1          ########################################
+[   60s] cmake-mini-3.25.2-1.2                 ########################################
+[   60s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   60s] alts-1.2+3.b848aad-3.1                ########################################
+[   61s] vim-9.0.1270-1.1                      ########################################
+[   61s] cmake-3.25.2-1.1                      ########################################
+[   61s] python-rpm-packaging-20210526+a18ca48-########################################
+[   61s] gcc-c++-12-2.1                        ########################################
+[   61s] libopenssl-devel-3.0.7-1.1            ########################################
+[   63s] now finalizing build dir...
+[   63s] ... running 01-add_abuild_user_to_trusted_group
+[   63s] ... running 02-set_timezone_to_utc
+[   64s] ... running 03-set-permissions-secure
+[   64s] ... running 11-hack_uname_version_to_kernel_version
+[   69s] Running build time source services...
+[   72s] -----------------------------------------------------------------
+[   72s] I have the following modifications for fdo-client.spec:
+[   72s] 21c21
+[   72s] < Release:        0
+[   72s] ---
+[   72s] > Release:        1.2
+[   78s] build target is riscv64-suse-linux
+[   78s] -----------------------------------------------------------------
+[   78s] ----- building fdo-client.spec (user abuild)
+[   78s] -----------------------------------------------------------------
+[   78s] -----------------------------------------------------------------
+[   81s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/e42bc7e3b4e858c180311f5106ff68fd-fdo-client' /home/abuild/rpmbuild/SOURCES/fdo-client.spec
+[   81s] warning: line 35: It's not recommended to have unversioned Obsoletes: Obsoletes:      sdo-client
+[   81s] Building target platforms: riscv64-suse-linux
+[   81s] Building for target riscv64-suse-linux
+[   81s] setting SOURCE_DATE_EPOCH=1634256000
+[   82s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.sywZbC
+[   82s] + umask 022
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + rm -rf fdo-client-1.0.0+git20210816.baa09b5
+[   82s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/fdo-client-1.0.0+git20210816.baa09b5.tar.xz
+[   82s] + STATUS=0
+[   82s] + '[' 0 -ne 0 ']'
+[   82s] + cd fdo-client-1.0.0+git20210816.baa09b5
+[   82s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/fdo-client-1.0.0+git20210816.baa09b5.tar.xz
+[   83s] + STATUS=0
+[   83s] + '[' 0 -ne 0 ']'
+[   83s] + cd fdo-client-1.0.0+git20210816.baa09b5
+[   83s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/safestringlib-1.0.0+git20171208.5da1bad.tar.xz
+[   83s] + STATUS=0
+[   83s] + '[' 0 -ne 0 ']'
+[   83s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   83s] + cd /home/abuild/rpmbuild/BUILD
+[   83s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/fdo-client-1.0.0+git20210816.baa09b5.tar.xz
+[   84s] + STATUS=0
+[   84s] + '[' 0 -ne 0 ']'
+[   84s] + cd fdo-client-1.0.0+git20210816.baa09b5
+[   84s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/tinycbor-1.0.0+git20191022.755f9ef.tar.xz
+[   84s] + STATUS=0
+[   84s] + '[' 0 -ne 0 ']'
+[   84s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   84s] + echo 'Patch #0 (build.patch):'
+[   84s] Patch #0 (build.patch):
+[   84s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   84s] patching file cmake/blob_path.cmake
+[   84s] patching file cmake/cli_input.cmake
+[   84s] + echo 'Patch #1 (gcc.patch):'
+[   84s] Patch #1 (gcc.patch):
+[   84s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[   84s] patching file lib/fdoprotctx.c
+[   84s] patching file lib/credentials_from_file.c
+[   84s] + RPM_EC=0
+[   84s] ++ jobs -p
+[   84s] + exit 0
+[   84s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.ZJ0rfm
+[   85s] + umask 022
+[   85s] + cd /home/abuild/rpmbuild/BUILD
+[   85s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/fdo-client-1.0.0+git20210816.baa09b5-1.2.riscv64
+[   85s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/fdo-client-1.0.0+git20210816.baa09b5-1.2.riscv64
+[   85s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   85s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/fdo-client-1.0.0+git20210816.baa09b5-1.2.riscv64
+[   85s] + cd fdo-client-1.0.0+git20210816.baa09b5
+[   85s] + ref=/usr/lib/rpm
+[   85s] + mints=0
+[   85s] + case $(uname -m) in
+[   85s] ++ uname -m
+[   85s] + mints=20160911
+[   85s] + for s in guess sub
+[   85s] ++ find -maxdepth 8 -name config.guess
+[   85s] + for s in guess sub
+[   85s] ++ find -maxdepth 8 -name config.sub
+[   85s] + pushd .
+[   85s] ~/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5 ~/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5
+[   85s] + cd safestringlib-1.0.0+git20171208.5da1bad
+[   85s] + mkdir obj
+[   85s] + make
+[   85s] gcc -z noexecstack -z relo -z now -c -o obj/abort_handler_s.o safeclib/abort_handler_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   86s] In file included from safeclib/abort_handler_s.c:32:
+[   86s] safeclib/abort_handler_s.c: In function 'abort_handler_s':
+[   86s] safeclib/safeclib_private.h:80:23: warning: implicit declaration of function 'abort' [-Wimplicit-function-declaration]
+[   86s]    80 | #define slabort()     abort()
+[   86s]       |                       ^~~~~
+[   86s] safeclib/abort_handler_s.c:72:9: note: in expansion of macro 'slabort'
+[   86s]    72 |         slabort();
+[   86s]       |         ^~~~~~~
+[   86s] safeclib/abort_handler_s.c:33:1: note: include '<stdlib.h>' or provide a declaration of 'abort'
+[   86s]    32 | #include "safeclib_private.h"
+[   86s]   +++ |+#include <stdlib.h>
+[   86s]    33 | 
+[   86s] safeclib/safeclib_private.h:80:23: warning: incompatible implicit declaration of built-in function 'abort' [-Wbuiltin-declaration-mismatch]
+[   86s]    80 | #define slabort()     abort()
+[   86s]       |                       ^~~~~
+[   86s] safeclib/abort_handler_s.c:72:9: note: in expansion of macro 'slabort'
+[   86s]    72 |         slabort();
+[   86s]       |         ^~~~~~~
+[   86s] safeclib/safeclib_private.h:80:23: note: include '<stdlib.h>' or provide a declaration of 'abort'
+[   86s]    80 | #define slabort()     abort()
+[   86s]       |                       ^~~~~
+[   86s] safeclib/abort_handler_s.c:72:9: note: in expansion of macro 'slabort'
+[   86s]    72 |         slabort();
+[   86s]       |         ^~~~~~~
+[   87s] gcc -z noexecstack -z relo -z now -c -o obj/stpcpy_s.o safeclib/stpcpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   89s] gcc -z noexecstack -z relo -z now -c -o obj/strlastsame_s.o safeclib/strlastsame_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   92s] gcc -z noexecstack -z relo -z now -c -o obj/ignore_handler_s.o safeclib/ignore_handler_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   93s] gcc -z noexecstack -z relo -z now -c -o obj/stpncpy_s.o safeclib/stpncpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   95s] gcc -z noexecstack -z relo -z now -c -o obj/strljustify_s.o safeclib/strljustify_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[   97s] gcc -z noexecstack -z relo -z now -c -o obj/memcmp16_s.o safeclib/memcmp16_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  100s] gcc -z noexecstack -z relo -z now -c -o obj/strcasecmp_s.o safeclib/strcasecmp_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  100s] safeclib/strcasecmp_s.c: In function 'strcasecmp_s':
+[  100s] safeclib/strcasecmp_s.c:132:13: warning: implicit declaration of function 'toupper' [-Wimplicit-function-declaration]
+[  100s]   132 |         if (toupper(*udest) != toupper(*usrc)) {
+[  100s]       |             ^~~~~~~
+[  100s] safeclib/strcasecmp_s.c:35:1: note: include '<ctype.h>' or provide a declaration of 'toupper'
+[  100s]    34 | #include "safe_str_lib.h"
+[  100s]   +++ |+#include <ctype.h>
+[  100s]    35 | 
+[  102s] gcc -z noexecstack -z relo -z now -c -o obj/strncat_s.o safeclib/strncat_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  104s] gcc -z noexecstack -z relo -z now -c -o obj/memcmp32_s.o safeclib/memcmp32_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  106s] gcc -z noexecstack -z relo -z now -c -o obj/strcasestr_s.o safeclib/strcasestr_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  107s] safeclib/strcasestr_s.c: In function 'strcasestr_s':
+[  107s] safeclib/strcasestr_s.c:156:17: warning: implicit declaration of function 'toupper' [-Wimplicit-function-declaration]
+[  107s]   156 |             if (toupper(dest[i]) != toupper(src[i])) {
+[  107s]       |                 ^~~~~~~
+[  107s] safeclib/strcasestr_s.c:35:1: note: include '<ctype.h>' or provide a declaration of 'toupper'
+[  107s]    34 | #include "safe_str_lib.h"
+[  107s]   +++ |+#include <ctype.h>
+[  107s]    35 | 
+[  109s] gcc -z noexecstack -z relo -z now -c -o obj/strncpy_s.o safeclib/strncpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  111s] gcc -z noexecstack -z relo -z now -c -o obj/memcmp_s.o safeclib/memcmp_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  113s] gcc -z noexecstack -z relo -z now -c -o obj/strcat_s.o safeclib/strcat_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  115s] gcc -z noexecstack -z relo -z now -c -o obj/strnlen_s.o safeclib/strnlen_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  117s] gcc -z noexecstack -z relo -z now -c -o obj/memcpy16_s.o safeclib/memcpy16_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  119s] gcc -z noexecstack -z relo -z now -c -o obj/strcmpfld_s.o safeclib/strcmpfld_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  121s] gcc -z noexecstack -z relo -z now -c -o obj/strnterminate_s.o safeclib/strnterminate_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  123s] gcc -z noexecstack -z relo -z now -c -o obj/memcpy32_s.o safeclib/memcpy32_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  125s] gcc -z noexecstack -z relo -z now -c -o obj/strcmp_s.o safeclib/strcmp_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  127s] gcc -z noexecstack -z relo -z now -c -o obj/strpbrk_s.o safeclib/strpbrk_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  129s] gcc -z noexecstack -z relo -z now -c -o obj/memcpy_s.o safeclib/memcpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  131s] gcc -z noexecstack -z relo -z now -c -o obj/strcpyfldin_s.o safeclib/strcpyfldin_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  134s] gcc -z noexecstack -z relo -z now -c -o obj/strprefix_s.o safeclib/strprefix_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  136s] gcc -z noexecstack -z relo -z now -c -o obj/memmove16_s.o safeclib/memmove16_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  137s] gcc -z noexecstack -z relo -z now -c -o obj/strcpyfldout_s.o safeclib/strcpyfldout_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  140s] gcc -z noexecstack -z relo -z now -c -o obj/strremovews_s.o safeclib/strremovews_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  142s] gcc -z noexecstack -z relo -z now -c -o obj/memmove32_s.o safeclib/memmove32_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  144s] gcc -z noexecstack -z relo -z now -c -o obj/strcpyfld_s.o safeclib/strcpyfld_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  146s] gcc -z noexecstack -z relo -z now -c -o obj/strspn_s.o safeclib/strspn_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  148s] gcc -z noexecstack -z relo -z now -c -o obj/memmove_s.o safeclib/memmove_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  150s] gcc -z noexecstack -z relo -z now -c -o obj/strcpy_s.o safeclib/strcpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  152s] gcc -z noexecstack -z relo -z now -c -o obj/strstr_s.o safeclib/strstr_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  155s] gcc -z noexecstack -z relo -z now -c -o obj/mem_primitives_lib.o safeclib/mem_primitives_lib.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  159s] gcc -z noexecstack -z relo -z now -c -o obj/strcspn_s.o safeclib/strcspn_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  162s] gcc -z noexecstack -z relo -z now -c -o obj/strtok_s.o safeclib/strtok_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  164s] gcc -z noexecstack -z relo -z now -c -o obj/strfirstchar_s.o safeclib/strfirstchar_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  166s] gcc -z noexecstack -z relo -z now -c -o obj/strtolowercase_s.o safeclib/strtolowercase_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  168s] gcc -z noexecstack -z relo -z now -c -o obj/memset16_s.o safeclib/memset16_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  170s] gcc -z noexecstack -z relo -z now -c -o obj/strfirstdiff_s.o safeclib/strfirstdiff_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  172s] gcc -z noexecstack -z relo -z now -c -o obj/strtouppercase_s.o safeclib/strtouppercase_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  174s] gcc -z noexecstack -z relo -z now -c -o obj/memset32_s.o safeclib/memset32_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  176s] gcc -z noexecstack -z relo -z now -c -o obj/strfirstsame_s.o safeclib/strfirstsame_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  178s] gcc -z noexecstack -z relo -z now -c -o obj/strzero_s.o safeclib/strzero_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  180s] gcc -z noexecstack -z relo -z now -c -o obj/memset_s.o safeclib/memset_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  181s] gcc -z noexecstack -z relo -z now -c -o obj/strisalphanumeric_s.o safeclib/strisalphanumeric_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  183s] gcc -z noexecstack -z relo -z now -c -o obj/wcpcpy_s.o safeclib/wcpcpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  186s] gcc -z noexecstack -z relo -z now -c -o obj/memzero16_s.o safeclib/memzero16_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  187s] gcc -z noexecstack -z relo -z now -c -o obj/strisascii_s.o safeclib/strisascii_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  189s] gcc -z noexecstack -z relo -z now -c -o obj/wcscat_s.o safeclib/wcscat_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  192s] gcc -z noexecstack -z relo -z now -c -o obj/memzero32_s.o safeclib/memzero32_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  193s] gcc -z noexecstack -z relo -z now -c -o obj/strisdigit_s.o safeclib/strisdigit_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  195s] gcc -z noexecstack -z relo -z now -c -o obj/wcscpy_s.o safeclib/wcscpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  198s] gcc -z noexecstack -z relo -z now -c -o obj/memzero_s.o safeclib/memzero_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  199s] gcc -z noexecstack -z relo -z now -c -o obj/strishex_s.o safeclib/strishex_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  201s] gcc -z noexecstack -z relo -z now -c -o obj/wcsncat_s.o safeclib/wcsncat_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  204s] gcc -z noexecstack -z relo -z now -c -o obj/strislowercase_s.o safeclib/strislowercase_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  206s] gcc -z noexecstack -z relo -z now -c -o obj/wcsncpy_s.o safeclib/wcsncpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  208s] gcc -z noexecstack -z relo -z now -c -o obj/safe_mem_constraint.o safeclib/safe_mem_constraint.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  210s] gcc -z noexecstack -z relo -z now -c -o obj/strismixedcase_s.o safeclib/strismixedcase_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  212s] gcc -z noexecstack -z relo -z now -c -o obj/wcsnlen_s.o safeclib/wcsnlen_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  214s] gcc -z noexecstack -z relo -z now -c -o obj/strispassword_s.o safeclib/strispassword_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  216s] gcc -z noexecstack -z relo -z now -c -o obj/wmemcmp_s.o safeclib/wmemcmp_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  218s] gcc -z noexecstack -z relo -z now -c -o obj/safe_str_constraint.o safeclib/safe_str_constraint.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  220s] gcc -z noexecstack -z relo -z now -c -o obj/strisuppercase_s.o safeclib/strisuppercase_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  222s] gcc -z noexecstack -z relo -z now -c -o obj/wmemcpy_s.o safeclib/wmemcpy_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  224s] gcc -z noexecstack -z relo -z now -c -o obj/strlastchar_s.o safeclib/strlastchar_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  226s] gcc -z noexecstack -z relo -z now -c -o obj/wmemmove_s.o safeclib/wmemmove_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  227s] gcc -z noexecstack -z relo -z now -c -o obj/snprintf_support.o safeclib/snprintf_support.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  231s] gcc -z noexecstack -z relo -z now -c -o obj/strlastdiff_s.o safeclib/strlastdiff_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  233s] gcc -z noexecstack -z relo -z now -c -o obj/wmemset_s.o safeclib/wmemset_s.c -Iinclude -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+[  235s] ar rcs libsafestring.a obj/abort_handler_s.o obj/stpcpy_s.o obj/strlastsame_s.o obj/ignore_handler_s.o obj/stpncpy_s.o obj/strljustify_s.o obj/memcmp16_s.o obj/strcasecmp_s.o obj/strncat_s.o obj/memcmp32_s.o obj/strcasestr_s.o obj/strncpy_s.o obj/memcmp_s.o obj/strcat_s.o obj/strnlen_s.o obj/memcpy16_s.o obj/strcmpfld_s.o obj/strnterminate_s.o obj/memcpy32_s.o obj/strcmp_s.o obj/strpbrk_s.o obj/memcpy_s.o obj/strcpyfldin_s.o obj/strprefix_s.o obj/memmove16_s.o obj/strcpyfldout_s.o obj/strremovews_s.o obj/memmove32_s.o obj/strcpyfld_s.o obj/strspn_s.o obj/memmove_s.o obj/strcpy_s.o obj/strstr_s.o obj/mem_primitives_lib.o obj/strcspn_s.o obj/strtok_s.o obj/strfirstchar_s.o obj/strtolowercase_s.o obj/memset16_s.o obj/strfirstdiff_s.o obj/strtouppercase_s.o obj/memset32_s.o obj/strfirstsame_s.o obj/strzero_s.o obj/memset_s.o obj/strisalphanumeric_s.o obj/wcpcpy_s.o obj/memzero16_s.o obj/strisascii_s.o obj/wcscat_s.o obj/memzero32_s.o obj/strisdigit_s.o obj/wcscpy_s.o obj/memzero_s.o obj/strishex_s.o obj/wcsncat_s.o obj/strislowercase_s.o obj/wcsncpy_s.o obj/safe_mem_constraint.o obj/strismixedcase_s.o obj/wcsnlen_s.o obj/strispassword_s.o obj/wmemcmp_s.o obj/safe_str_constraint.o obj/strisuppercase_s.o obj/wmemcpy_s.o obj/strlastchar_s.o obj/wmemmove_s.o obj/snprintf_support.o obj/strlastdiff_s.o obj/wmemset_s.o 
+[  235s] + popd
+[  235s] ~/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5
+[  235s] + cd tinycbor-1.0.0+git20191022.755f9ef
+[  235s] + make
+[  236s] .config file not yet created
+[  236s] make -f ./Makefile.configure OUT='>&9' configure 9> .config
+[  236s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/tinycbor-1.0.0+git20191022.755f9ef'
+[  244s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/tinycbor-1.0.0+git20191022.755f9ef'
+[  245s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborerrorstrings.o src/cborerrorstrings.c
+[  247s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborencoder.o src/cborencoder.c
+[  249s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborencoder_close_container_checked.o src/cborencoder_close_container_checked.c
+[  250s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborparser.o src/cborparser.c
+[  252s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborpretty.o src/cborpretty.c
+[  254s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborparser_dup_string.o src/cborparser_dup_string.c
+[  256s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborpretty_stdio.o src/cborpretty_stdio.c
+[  257s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cbortojson.o src/cbortojson.c
+[  260s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o src/cborvalidation.o src/cborvalidation.c
+[  262s] ar cqs lib/libtinycbor.a src/cborerrorstrings.o src/cborencoder.o src/cborencoder_close_container_checked.o src/cborparser.o src/cborpretty.o src/cborparser_dup_string.o src/cborpretty_stdio.o src/cbortojson.o src/cborvalidation.o
+[  262s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborerrorstrings.pic.o src/cborerrorstrings.c
+[  264s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborencoder.pic.o src/cborencoder.c
+[  266s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborencoder_close_container_checked.pic.o src/cborencoder_close_container_checked.c
+[  267s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborparser.pic.o src/cborparser.c
+[  269s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborpretty.pic.o src/cborpretty.c
+[  272s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborparser_dup_string.pic.o src/cborparser_dup_string.c
+[  273s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborpretty_stdio.pic.o src/cborpretty_stdio.c
+[  274s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cbortojson.pic.o src/cbortojson.c
+[  277s] cc  -I./src -std=gnu99 -Wall -Wextra -fPIC  -c -o src/cborvalidation.pic.o src/cborvalidation.c
+[  280s] cc -shared -Wl,-soname,libtinycbor.so.0.5 -o lib/libtinycbor.so.0.5.3 -Wl,--gc-sections src/cborerrorstrings.pic.o src/cborencoder.pic.o src/cborencoder_close_container_checked.pic.o src/cborparser.pic.o src/cborpretty.pic.o src/cborparser_dup_string.pic.o src/cborpretty_stdio.pic.o src/cbortojson.pic.o src/cborvalidation.pic.o -lm
+[  280s] cd lib ; ln -sf libtinycbor.so.0.5.3 libtinycbor.so ; ln -sf libtinycbor.so.0.5.3 libtinycbor.so.0.5
+[  280s] cc  -I./src -std=gnu99 -Wall -Wextra  -c -o tools/cbordump/cbordump.o tools/cbordump/cbordump.c
+[  282s] cc -o bin/cbordump -Wl,--gc-sections tools/cbordump/cbordump.o lib/libtinycbor.a -lm
+[  282s] sed > tinycbor.pc < tinycbor.pc.in \
+[  282s] 	-e 's,@prefix@,/usr/local,' \
+[  282s] 	-e 's,@exec_prefix@,/usr/local,' \
+[  282s] 	-e 's,@libdir@,/usr/local/lib,' \
+[  282s] 	-e 's,@includedir@,/usr/local/include,' \
+[  282s] 	-e 's,@version@,0.5.3,'
+[  283s] + cd /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5
+[  283s] + export SAFESTRING_ROOT=/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/safestringlib-1.0.0+git20171208.5da1bad
+[  283s] + SAFESTRING_ROOT=/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/safestringlib-1.0.0+git20171208.5da1bad
+[  283s] + export TINYCBOR_ROOT=/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/tinycbor-1.0.0+git20191022.755f9ef
+[  283s] + TINYCBOR_ROOT=/home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/tinycbor-1.0.0+git20191022.755f9ef
+[  283s] + export BLOB_PATH=/var/lib/fdo-client
+[  283s] + BLOB_PATH=/var/lib/fdo-client
+[  283s] + export RO_BLOB_PATH=/usr/share/fdo-client
+[  283s] + RO_BLOB_PATH=/usr/share/fdo-client
+[  283s] + cmake .
+[  285s] -- The C compiler identification is GNU 12.2.1
+[  287s] -- The CXX compiler identification is GNU 12.2.1
+[  287s] -- Detecting C compiler ABI info
+[  290s] -- Detecting C compiler ABI info - done
+[  290s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  290s] -- Detecting C compile features
+[  290s] -- Detecting C compile features - done
+[  290s] -- Detecting CXX compiler ABI info
+[  293s] -- Detecting CXX compiler ABI info - done
+[  293s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  293s] -- Detecting CXX compile features
+[  293s] -- Detecting CXX compile features - done
+[  293s] Selected TLS openssl
+[  293s] Selected DA ecdsa384
+[  293s] Selected AES_MODE gcm
+[  293s] Selected TARGET_OS linux
+[  293s] Selected HTTPPROXY true
+[  293s] Selected PROXY_DISCOVERY false
+[  293s] Selected DA_FILE der
+[  293s] Selected CRYPTO_HW false
+[  293s] Selected ARCH x86
+[  293s] Selected BUILD debug
+[  293s] Selected OPTIMIZE 1
+[  293s] Selected RETRY true
+[  293s] Selected BLOB_PATH /var/lib/fdo-client
+[  293s] Selected RO_BLOB_PATH /usr/share/fdo-client
+[  293s] Selected TPM2_TCTI_TYPE tabrmd
+[  293s] Selected RESALE true
+[  293s] Selected REUSE true
+[  293s] -- Configuring done
+[  294s] -- Generating done
+[  294s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5
+[  294s] + make
+[  295s] [  1%] Building C object CMakeFiles/client_sdk.dir/lib/credentials_from_file.c.o
+[  299s] [  3%] Building C object CMakeFiles/client_sdk.dir/lib/crypto_utils.c.o
+[  301s] [  4%] Building C object CMakeFiles/client_sdk.dir/lib/fdo.c.o
+[  308s] [  6%] Building C object CMakeFiles/client_sdk.dir/lib/fdoblockio.c.o
+[  313s] [  8%] Building C object CMakeFiles/client_sdk.dir/lib/fdocred.c.o
+[  317s] [  9%] Building C object CMakeFiles/client_sdk.dir/lib/fdonet.c.o
+[  322s] [ 11%] Building C object CMakeFiles/client_sdk.dir/lib/fdoprot.c.o
+[  325s] [ 13%] Building C object CMakeFiles/client_sdk.dir/lib/fdoprotctx.c.o
+[  329s] [ 14%] Building C object CMakeFiles/client_sdk.dir/lib/fdotypes.c.o
+[  344s] [ 16%] Building C object CMakeFiles/client_sdk.dir/lib/m-string.c.o
+[  348s] [ 18%] Building C object CMakeFiles/client_sdk.dir/lib/prot/di/msg10.c.o
+[  350s] [ 19%] Building C object CMakeFiles/client_sdk.dir/lib/prot/di/msg11.c.o
+[  353s] [ 21%] Building C object CMakeFiles/client_sdk.dir/lib/prot/di/msg12.c.o
+[  355s] [ 22%] Building C object CMakeFiles/client_sdk.dir/lib/prot/di/msg13.c.o
+[  358s] [ 24%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to1/msg30.c.o
+[  360s] [ 26%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to1/msg31.c.o
+[  362s] [ 27%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to1/msg32.c.o
+[  365s] [ 29%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to1/msg33.c.o
+[  368s] [ 31%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg60.c.o
+[  370s] [ 32%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg61.c.o
+[  374s] [ 34%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg62.c.o
+[  376s] [ 36%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg63.c.o
+[  379s] [ 37%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg64.c.o
+[  382s] [ 39%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg65.c.o
+[  385s] [ 40%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg66.c.o
+[  388s] [ 42%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg67.c.o
+[  390s] [ 44%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg68.c.o
+[  393s] [ 45%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg69.c.o
+[  396s] [ 47%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg70.c.o
+[  398s] [ 49%] Building C object CMakeFiles/client_sdk.dir/lib/prot/to2/msg71.c.o
+[  401s] [ 50%] Building C object CMakeFiles/client_sdk.dir/device_modules/fdo_sys/fdo_sys.c.o
+[  404s] [ 52%] Building C object CMakeFiles/client_sdk.dir/device_modules/fdo_sys/sys_utils_linux.c.o
+[  407s] [ 54%] Linking C static library build/libclient_sdk.a
+[  408s] [ 54%] Built target client_sdk
+[  409s] [ 55%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoOvVerify.c.o
+[  413s] [ 57%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoKeyExchange.c.o
+[  418s] [ 59%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoAes.c.o
+[  422s] [ 60%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoHmac.c.o
+[  426s] [ 62%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoDevSign.c.o
+[  430s] [ 63%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoCryptoCommon.c.o
+[  433s] [ 65%] Building C object crypto/CMakeFiles/crypto.dir/common/fdoDevAttest.c.o
+[  437s] [ 67%] Building C object crypto/CMakeFiles/crypto.dir/openssl/openssl_AESRoutines.c.o
+[  441s] [ 68%] Building C object crypto/CMakeFiles/crypto.dir/openssl/openssl_cryptoSupport.c.o
+[  445s] [ 70%] Building C object crypto/CMakeFiles/crypto.dir/openssl/openssl_SSLRoutines.c.o
+[  449s] [ 72%] Building C object crypto/CMakeFiles/crypto.dir/openssl/BN_support.c.o
+[  453s] [ 73%] Building C object crypto/CMakeFiles/crypto.dir/openssl/openssl_key_exchange_ecdh.c.o
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c: In function 'crypto_hal_kex_init':
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:80:9: error: 'EC_KEY_new_by_curve_name' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]    80 |         key = EC_KEY_new_by_curve_name(KEY_CURVE);
+[  455s]       |         ^~~
+[  455s] In file included from /usr/include/openssl/x509.h:33,
+[  455s]                  from /usr/include/openssl/ssl.h:31,
+[  455s]                  from /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/include/fdoCryptoHal.h:28,
+[  455s]                  from /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:13:
+[  455s] /usr/include/openssl/ec.h:998:31: note: declared here
+[  455s]   998 | OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new_by_curve_name(int nid);
+[  455s]       |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c: In function 'crypto_hal_kex_close':
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:134:17: error: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   134 |                 EC_KEY_free(key_ex_data->_key);
+[  455s]       |                 ^~~~~~~~~~~
+[  455s] /usr/include/openssl/ec.h:1003:28: note: declared here
+[  455s]  1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+[  455s]       |                            ^~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c: In function 'compute_publicBECDH':
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:188:9: error: 'EC_KEY_get0_group' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   188 |         group = EC_KEY_get0_group(key);
+[  455s]       |         ^~~~~
+[  455s] /usr/include/openssl/ec.h:1034:39: note: declared here
+[  455s]  1034 | OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+[  455s]       |                                       ^~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:195:9: error: 'EC_KEY_generate_key' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   195 |         if (EC_KEY_generate_key(key) == 0) {
+[  455s]       |         ^~
+[  455s] /usr/include/openssl/ec.h:1101:27: note: declared here
+[  455s]  1101 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_generate_key(EC_KEY *key);
+[  455s]       |                           ^~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:201:9: error: 'EC_KEY_get0_private_key' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   201 |         key_ex_data->_secretb = EC_KEY_get0_private_key(key);
+[  455s]       |         ^~~~~~~~~~~
+[  455s] /usr/include/openssl/ec.h:1048:37: note: declared here
+[  455s]  1048 | OSSL_DEPRECATEDIN_3_0 const BIGNUM *EC_KEY_get0_private_key(const EC_KEY *key);
+[  455s]       |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:208:9: error: 'EC_KEY_get0_public_key' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   208 |         point = EC_KEY_get0_public_key(key);
+[  455s]       |         ^~~~~
+[  455s] /usr/include/openssl/ec.h:1062:39: note: declared here
+[  455s]  1062 | OSSL_DEPRECATEDIN_3_0 const EC_POINT *EC_KEY_get0_public_key(const EC_KEY *key);
+[  455s]       |                                       ^~~~~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:213:9: error: 'EC_POINT_get_affine_coordinates_GFp' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   213 |         if (EC_POINT_get_affine_coordinates_GFp(group, point, x, y, ctx) == 0) {
+[  455s]       |         ^~
+[  455s] /usr/include/openssl/ec.h:659:27: note: declared here
+[  455s]   659 | OSSL_DEPRECATEDIN_3_0 int EC_POINT_get_affine_coordinates_GFp
+[  455s]       |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c: In function 'crypto_hal_set_peer_random':
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:472:9: error: 'EC_KEY_get0_group' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   472 |         group = EC_KEY_get0_group(key);
+[  455s]       |         ^~~~~
+[  455s] /usr/include/openssl/ec.h:1034:39: note: declared here
+[  455s]  1034 | OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+[  455s]       |                                       ^~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:478:9: error: 'EC_POINT_set_affine_coordinates_GFp' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   478 |         EC_POINT_set_affine_coordinates_GFp(group, point, Ax_bn, Ay_bn, ctx);
+[  455s]       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  455s] /usr/include/openssl/ec.h:646:27: note: declared here
+[  455s]   646 | OSSL_DEPRECATEDIN_3_0 int EC_POINT_set_affine_coordinates_GFp
+[  455s]       |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  455s] /home/abuild/rpmbuild/BUILD/fdo-client-1.0.0+git20210816.baa09b5/crypto/openssl/openssl_key_exchange_ecdh.c:508:9: error: 'EC_POINT_get_affine_coordinates_GFp' is deprecated: Since OpenSSL 3.0 [-Werror=deprecated-declarations]
+[  455s]   508 |         if (EC_POINT_get_affine_coordinates_GFp(group, Sh_se_point, Shx_bn,
+[  455s]       |         ^~
+[  455s] /usr/include/openssl/ec.h:659:27: note: declared here
+[  455s]   659 | OSSL_DEPRECATEDIN_3_0 int EC_POINT_get_affine_coordinates_GFp
+[  455s]       |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  457s] cc1: all warnings being treated as errors
+[  457s] make[2]: *** [crypto/CMakeFiles/crypto.dir/build.make:230: crypto/CMakeFiles/crypto.dir/openssl/openssl_key_exchange_ecdh.c.o] Error 1
+[  457s] make[1]: *** [CMakeFiles/Makefile2:308: crypto/CMakeFiles/crypto.dir/all] Error 2
+[  457s] make: *** [Makefile:91: all] Error 2
+[  457s] error: Bad exit status from /var/tmp/rpm-tmp.ZJ0rfm (%build)
+[  457s] 
+[  457s] RPM build warnings:
+[  457s]     line 35: It's not recommended to have unversioned Obsoletes: Obsoletes:      sdo-client
+[  457s] 
+[  457s] RPM build errors:
+[  457s]     Bad exit status from /var/tmp/rpm-tmp.ZJ0rfm (%build)
+[  458s] ### VM INTERACTION START ###
+[  458s] [  453.888035][    T1] sysrq: Power Off
+[  458s] [  453.892596][  T100] reboot: Power down
+[  458s] ### VM INTERACTION END ###
+[  458s] 
+[  458s] lamb20 failed "build fdo-client.spec" at Mon Feb  6 01:41:12 UTC 2023.
+[  458s] 

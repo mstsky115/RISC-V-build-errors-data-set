@@ -1,0 +1,1014 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] lamb56 started "build python-wirerope.spec" at Sat Feb 18 21:25:33 UTC 2023.
+[    0s] 
+[    0s] Building python-wirerope for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '4ce118145f881478732c04e0bd4967fc'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-wirerope.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-wirerope.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-wirerope.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    6s] 
+[    6s] copying packages...
+[    6s] reordering...done
+[    6s] Detected virtio-serial support
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using virtio-serial support
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   16s] machine type: riscv64
+[   16s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   16s] Increasing log level from now on...
+[   16s] [    7.497074][  T413] sysrq: Changing Loglevel
+[   16s] [    7.497263][  T413] sysrq: Loglevel set to 4
+[   16s] Enable sysrq operations
+[   17s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   17s] no label, UUID=df687086-60d5-4aac-bd00-45abca03bc22
+[   17s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   17s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   17s] swapon /dev/vdb
+[   17s] WARNING: udev not running, creating extra device nodes
+[   18s] logging output to //.build.log...
+[   18s] processing recipe /.build-srcdir/python-wirerope.spec ...
+[   18s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-wirerope.spec build ...
+[   19s] initializing rpm db...
+[   20s] querying package ids...
+[   58s] [1/188] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   58s] [2/188] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   58s] [3/188] preinstalled attr-2.5.1-1.1
+[   58s] [4/188] preinstalled bash-5.2.15-8.1
+[   58s] [5/188] preinstalled bash-sh-5.2.15-8.1
+[   58s] [6/188] preinstalled binutils-2.39-3.1
+[   58s] [7/188] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   58s] [8/188] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   58s] [9/188] preinstalled build-mkbaselibs-20230215-1.1
+[   58s] [10/188] preinstalled bzip2-1.0.8-4.1
+[   58s] [11/188] preinstalled chkstat-1599_20221220-1.2
+[   58s] [12/188] preinstalled compat-usrmerge-build-84.87-5.1
+[   58s] [13/188] preinstalled compat-usrmerge-tools-84.87-5.1
+[   58s] [14/188] preinstalled coreutils-9.1-5.1
+[   58s] [15/188] preinstalled cpio-2.13-5.1
+[   58s] [16/188] preinstalled cpp-12-2.1
+[   58s] [17/188] preinstalled cpp12-12.2.1+git749-4.1
+[   58s] [18/188] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   58s] [19/188] preinstalled debugedit-5.0-5.1
+[   58s] [20/188] preinstalled diffutils-3.9-1.1
+[   58s] [21/188] preinstalled dwz-0.15-2.1
+[   58s] [22/188] preinstalled elfutils-0.188-3.2
+[   58s] [23/188] cumulate fdupes-2.2.1-1.1
+[   58s] [24/188] preinstalled file-5.44-1.2
+[   58s] [25/188] preinstalled file-magic-5.44-1.2
+[   58s] [26/188] preinstalled filesystem-84.87-12.1
+[   58s] [27/188] preinstalled fillup-1.42-279.1
+[   58s] [28/188] preinstalled findutils-4.9.0-2.1
+[   58s] [29/188] preinstalled gawk-5.2.1-2.1
+[   58s] [30/188] preinstalled gcc-12-2.1
+[   58s] [31/188] preinstalled gcc-PIE-12-2.1
+[   58s] [32/188] preinstalled gcc12-12.2.1+git749-4.1
+[   58s] [33/188] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   58s] [34/188] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   58s] [35/188] preinstalled gettext-tools-mini-0.21.1-1.1
+[   58s] [36/188] preinstalled glibc-2.37-1.1
+[   58s] [37/188] preinstalled glibc-devel-2.37-1.1
+[   58s] [38/188] preinstalled glibc-locale-base-2.37-1.1
+[   58s] [39/188] preinstalled grep-3.8-3.1
+[   58s] [40/188] preinstalled gzip-1.12-3.1
+[   58s] [41/188] preinstalled kernel-obs-build-6.1.12-1.1
+[   58s] [42/188] preinstalled libacl1-2.3.1-2.1
+[   58s] [43/188] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   58s] [44/188] preinstalled libasan8-13.0.1+git5428-6.1
+[   58s] [45/188] preinstalled libasm1-0.188-3.2
+[   58s] [46/188] preinstalled libatomic1-13.0.1+git5428-6.1
+[   58s] [47/188] preinstalled libattr1-2.5.1-1.1
+[   58s] [48/188] preinstalled libaudit1-3.0.6-4.1
+[   58s] [49/188] preinstalled libblkid1-2.38.1-7.1
+[   58s] [50/188] preinstalled libbz2-1-1.0.8-4.1
+[   58s] [51/188] preinstalled libcap-ng0-0.8.3-1.1
+[   58s] [52/188] preinstalled libcap2-2.67-1.1
+[   58s] [53/188] preinstalled libcrypt1-4.4.33-1.1
+[   58s] [54/188] preinstalled libctf-nobfd0-2.39-3.1
+[   58s] [55/188] preinstalled libctf0-2.39-3.1
+[   58s] [56/188] preinstalled libdb-4_8-4.8.30-39.1
+[   58s] [57/188] preinstalled libdw1-0.188-3.2
+[   58s] [58/188] preinstalled libeconf0-0.5.1-1.1
+[   58s] [59/188] preinstalled libelf1-0.188-3.2
+[   58s] [60/188] preinstalled libexpat1-2.5.0-2.1
+[   58s] [61/188] preinstalled libfdisk1-2.38.1-7.1
+[   58s] [62/188] preinstalled libffi8-3.4.4-1.1
+[   58s] [63/188] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   58s] [64/188] preinstalled libgcrypt20-1.10.1-1.1
+[   58s] [65/188] preinstalled libgdbm6-1.23-1.1
+[   58s] [66/188] preinstalled libgdbm_compat4-1.23-1.1
+[   58s] [67/188] preinstalled libgmp10-6.2.1-4.1
+[   58s] [68/188] preinstalled libgomp1-13.0.1+git5428-6.1
+[   58s] [69/188] preinstalled libgpg-error0-1.46-1.1
+[   58s] [70/188] preinstalled libisl23-0.25-1.1
+[   58s] [71/188] preinstalled liblua5_4-5-5.4.4-8.1
+[   58s] [72/188] preinstalled liblzma5-5.4.1-1.1
+[   58s] [73/188] preinstalled libmagic1-5.44-1.2
+[   58s] [74/188] preinstalled libmount1-2.38.1-7.1
+[   58s] [75/188] preinstalled libmpc3-1.3.1-1.2
+[   58s] [76/188] preinstalled libmpdec3-2.5.1-2.1
+[   58s] [77/188] preinstalled libmpfr6-4.2.0-1.1
+[   58s] [78/188] preinstalled libncurses6-6.4.20230128-5.1
+[   58s] [79/188] preinstalled libopenssl3-3.0.7-3.1
+[   58s] [80/188] preinstalled libpcre2-8-0-10.42-3.2
+[   58s] [81/188] preinstalled libpkgconf3-1.8.0-2.1
+[   58s] [82/188] preinstalled libpopt0-1.19-1.1
+[   58s] [83/188] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   58s] [84/188] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   58s] [85/188] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   58s] [86/188] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   58s] [87/188] preinstalled libreadline8-8.2-2.1
+[   58s] [88/188] preinstalled librpmbuild9-4.18.0-3.2
+[   58s] [89/188] preinstalled libseccomp2-2.5.4-2.1
+[   58s] [90/188] preinstalled libselinux1-3.4-2.1
+[   58s] [91/188] preinstalled libsemanage-conf-3.4-1.1
+[   58s] [92/188] preinstalled libsemanage2-3.4-1.1
+[   58s] [93/188] preinstalled libsepol2-3.4-1.1
+[   58s] [94/188] preinstalled libsmartcols1-2.38.1-7.1
+[   58s] [95/188] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   58s] [96/188] preinstalled libsubid4-4.13-3.1
+[   58s] [97/188] preinstalled libubsan1-13.0.1+git5428-6.1
+[   58s] [98/188] preinstalled libutempter0-1.2.0-3.2
+[   58s] [99/188] preinstalled libuuid1-2.38.1-7.1
+[   58s] [100/188] preinstalled libxcrypt-devel-4.4.33-1.1
+[   58s] [101/188] preinstalled libz1-1.2.13-2.1
+[   58s] [102/188] preinstalled libzstd1-1.5.2-2.1
+[   58s] [103/188] preinstalled linux-glibc-devel-6.1-1.1
+[   58s] [104/188] preinstalled login_defs-4.13-3.1
+[   58s] [105/188] preinstalled lua54-5.4.4-8.1
+[   58s] [106/188] preinstalled make-4.4-2.1
+[   58s] [107/188] preinstalled ncurses-utils-6.4.20230128-5.1
+[   58s] [108/188] preinstalled pam-1.5.2-12.1
+[   58s] [109/188] preinstalled patch-2.7.6-6.1
+[   58s] [110/188] preinstalled perl-5.36.0-4.1
+[   58s] [111/188] preinstalled perl-base-5.36.0-4.1
+[   58s] [112/188] preinstalled permissions-1599_20221220-1.2
+[   58s] [113/188] preinstalled permissions-config-1599_20221220-1.2
+[   58s] [114/188] preinstalled pkgconf-1.8.0-2.1
+[   58s] [115/188] preinstalled pkgconf-m4-1.8.0-2.1
+[   58s] [116/188] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   58s] [117/188] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   58s] [118/188] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   58s] [119/188] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   58s] [120/188] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   58s] [121/188] cumulate python310-attrs-22.2.0-1.2
+[   58s] [122/188] preinstalled python310-base-3.10.9-2.2
+[   58s] [123/188] cumulate python310-exceptiongroup-1.1.0-1.2
+[   58s] [124/188] cumulate python310-iniconfig-1.1.1-3.2
+[   58s] [125/188] preinstalled python310-packaging-23.0-1.1
+[   58s] [126/188] cumulate python310-pluggy-1.0.0-1.5
+[   58s] [127/188] preinstalled python310-setuptools-65.6.3-1.2
+[   58s] [128/188] cumulate python310-six-1.16.0-2.5
+[   58s] [129/188] cumulate python310-tomli-2.0.1-1.3
+[   58s] [130/188] cumulate python310-zipp-3.8.1-1.2
+[   58s] [131/188] cumulate python311-attrs-22.2.0-1.2
+[   58s] [132/188] preinstalled python311-base-3.11.1-4.2
+[   58s] [133/188] cumulate python311-exceptiongroup-1.1.0-1.2
+[   58s] [134/188] cumulate python311-iniconfig-1.1.1-3.2
+[   58s] [135/188] cumulate python311-packaging-23.0-1.2
+[   58s] [136/188] cumulate python311-pluggy-1.0.0-1.5
+[   58s] [137/188] preinstalled python311-setuptools-65.6.3-1.2
+[   58s] [138/188] cumulate python311-six-1.16.0-2.5
+[   58s] [139/188] cumulate python311-tomli-2.0.1-1.3
+[   58s] [140/188] cumulate python311-zipp-3.8.1-1.2
+[   58s] [141/188] cumulate python38-attrs-22.2.0-1.2
+[   58s] [142/188] preinstalled python38-base-3.8.16-3.2
+[   58s] [143/188] cumulate python38-exceptiongroup-1.1.0-1.2
+[   58s] [144/188] cumulate python38-iniconfig-1.1.1-3.2
+[   58s] [145/188] cumulate python38-packaging-23.0-1.2
+[   58s] [146/188] cumulate python38-pluggy-1.0.0-1.5
+[   58s] [147/188] preinstalled python38-setuptools-65.6.3-1.2
+[   58s] [148/188] cumulate python38-six-1.16.0-2.5
+[   58s] [149/188] cumulate python38-tomli-2.0.1-1.3
+[   58s] [150/188] cumulate python38-zipp-3.8.1-1.2
+[   58s] [151/188] cumulate python39-attrs-22.2.0-1.2
+[   58s] [152/188] preinstalled python39-base-3.9.16-3.2
+[   58s] [153/188] cumulate python39-exceptiongroup-1.1.0-1.2
+[   58s] [154/188] cumulate python39-iniconfig-1.1.1-3.2
+[   58s] [155/188] cumulate python39-packaging-23.0-1.2
+[   58s] [156/188] cumulate python39-pluggy-1.0.0-1.5
+[   58s] [157/188] preinstalled python39-setuptools-65.6.3-1.2
+[   58s] [158/188] cumulate python39-six-1.16.0-2.5
+[   58s] [159/188] cumulate python39-tomli-2.0.1-1.3
+[   58s] [160/188] cumulate python39-zipp-3.8.1-1.2
+[   58s] [161/188] preinstalled qemu-linux-user-7.1.0-50.1
+[   58s] [162/188] preinstalled rpm-4.18.0-3.2
+[   58s] [163/188] preinstalled rpm-build-4.18.0-3.2
+[   58s] [164/188] preinstalled rpm-build-perl-4.18.0-3.2
+[   58s] [165/188] preinstalled rpm-config-SUSE-20220926-1.1
+[   58s] [166/188] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   58s] [167/188] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   58s] [168/188] preinstalled sed-4.9-2.1
+[   58s] [169/188] preinstalled shadow-4.13-3.1
+[   58s] [170/188] preinstalled system-group-hardware-20170617-24.1
+[   58s] [171/188] preinstalled system-user-root-20190513-2.1
+[   58s] [172/188] preinstalled systemd-rpm-macros-19-1.1
+[   58s] [173/188] preinstalled sysuser-shadow-3.1-5.1
+[   58s] [174/188] preinstalled tar-1.34-9.1
+[   58s] [175/188] preinstalled terminfo-base-6.4.20230128-5.1
+[   58s] [176/188] preinstalled update-alternatives-1.21.8-1.1
+[   58s] [177/188] preinstalled util-linux-2.38.1-7.1
+[   58s] [178/188] preinstalled which-2.21-5.1
+[   58s] [179/188] preinstalled xz-5.4.1-1.1
+[   58s] [180/188] cumulate alts-1.2+3.b848aad-3.1
+[   58s] [181/188] cumulate python310-importlib-metadata-6.0.0-1.2
+[   58s] [182/188] cumulate python311-importlib-metadata-6.0.0-1.2
+[   58s] [183/188] cumulate python38-importlib-metadata-6.0.0-1.2
+[   58s] [184/188] cumulate python39-importlib-metadata-6.0.0-1.2
+[   58s] [185/188] cumulate python310-pytest-7.2.0-2.2
+[   58s] [186/188] cumulate python311-pytest-7.2.0-2.2
+[   58s] [187/188] cumulate python38-pytest-7.2.0-2.2
+[   58s] [188/188] cumulate python39-pytest-7.2.0-2.2
+[   58s] now installing cumulated packages
+[   59s] Preparing...                          ########################################
+[   59s] Updating / installing...
+[   59s] python39-zipp-3.8.1-1.2               ########################################
+[   59s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   60s] python39-tomli-2.0.1-1.3              ########################################
+[   60s] python39-pluggy-1.0.0-1.5             ########################################
+[   60s] python39-packaging-23.0-1.2           ########################################
+[   60s] python39-iniconfig-1.1.1-3.2          ########################################
+[   60s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   60s] python39-attrs-22.2.0-1.2             ########################################
+[   60s] python38-zipp-3.8.1-1.2               ########################################
+[   60s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   60s] python38-tomli-2.0.1-1.3              ########################################
+[   60s] python38-pluggy-1.0.0-1.5             ########################################
+[   60s] python38-packaging-23.0-1.2           ########################################
+[   60s] python38-iniconfig-1.1.1-3.2          ########################################
+[   60s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   60s] python38-attrs-22.2.0-1.2             ########################################
+[   61s] python311-zipp-3.8.1-1.2              ########################################
+[   61s] python311-importlib-metadata-6.0.0-1.2########################################
+[   61s] python311-tomli-2.0.1-1.3             ########################################
+[   61s] python311-pluggy-1.0.0-1.5            ########################################
+[   61s] python311-packaging-23.0-1.2          ########################################
+[   61s] python311-iniconfig-1.1.1-3.2         ########################################
+[   61s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   61s] python311-attrs-22.2.0-1.2            ########################################
+[   61s] python310-zipp-3.8.1-1.2              ########################################
+[   61s] python310-importlib-metadata-6.0.0-1.2########################################
+[   61s] python310-tomli-2.0.1-1.3             ########################################
+[   61s] python310-pluggy-1.0.0-1.5            ########################################
+[   61s] python310-iniconfig-1.1.1-3.2         ########################################
+[   61s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   61s] python310-attrs-22.2.0-1.2            ########################################
+[   61s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   61s] alts-1.2+3.b848aad-3.1                ########################################
+[   62s] python310-pytest-7.2.0-2.2            ########################################
+[   64s] python311-pytest-7.2.0-2.2            ########################################
+[   65s] python38-pytest-7.2.0-2.2             ########################################
+[   66s] python39-pytest-7.2.0-2.2             ########################################
+[   67s] python39-six-1.16.0-2.5               ########################################
+[   67s] python38-six-1.16.0-2.5               ########################################
+[   67s] python311-six-1.16.0-2.5              ########################################
+[   67s] python310-six-1.16.0-2.5              ########################################
+[   67s] fdupes-2.2.1-1.1                      ########################################
+[   71s] now finalizing build dir...
+[   72s] ... running 01-add_abuild_user_to_trusted_group
+[   72s] ... running 02-set_timezone_to_utc
+[   73s] ... running 03-set-permissions-secure
+[   73s] ... running 11-hack_uname_version_to_kernel_version
+[   86s] -----------------------------------------------------------------
+[   86s] I have the following modifications for python-wirerope.spec:
+[   87s] 23c23
+[   87s] < Release:        0
+[   87s] ---
+[   87s] > Release:        1.2
+[   98s] build target is riscv64-suse-linux
+[   98s] -----------------------------------------------------------------
+[   98s] ----- building python-wirerope.spec (user abuild)
+[   98s] -----------------------------------------------------------------
+[   98s] -----------------------------------------------------------------
+[  104s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/4ce118145f881478732c04e0bd4967fc-python-wirerope' /home/abuild/rpmbuild/SOURCES/python-wirerope.spec
+[  154s] Building target platforms: riscv64-suse-linux
+[  154s] Building for target riscv64-suse-linux
+[  154s] setting SOURCE_DATE_EPOCH=1665446400
+[  155s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.H27eJF
+[  155s] + umask 022
+[  155s] + cd /home/abuild/rpmbuild/BUILD
+[  155s] + cd /home/abuild/rpmbuild/BUILD
+[  155s] + rm -rf wirerope-0.4.6
+[  155s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/wirerope-0.4.6.tar.gz
+[  156s] + STATUS=0
+[  156s] + '[' 0 -ne 0 ']'
+[  156s] + cd wirerope-0.4.6
+[  156s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  156s] + sed -i -e /addopts/d setup.cfg
+[  156s] + RPM_EC=0
+[  156s] ++ jobs -p
+[  156s] + exit 0
+[  156s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.JO8Xul
+[  156s] + umask 022
+[  156s] + cd /home/abuild/rpmbuild/BUILD
+[  156s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64
+[  156s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64
+[  156s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  157s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64
+[  157s] + cd wirerope-0.4.6
+[  157s] + ref=/usr/lib/rpm
+[  157s] + mints=0
+[  157s] + case $(uname -m) in
+[  157s] ++ uname -m
+[  157s] + mints=20160911
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.guess
+[  157s] + for s in guess sub
+[  157s] ++ find -maxdepth 8 -name config.sub
+[  158s] ++ '[' -f _current_flavor ']'
+[  158s] ++ true
+[  158s] + last_flavor=
+[  158s] + '[' -z '' ']'
+[  158s] + last_flavor=tmp
+[  158s] + '[' tmp '!=' python38 ']'
+[  158s] + '[' -d build ']'
+[  158s] + '[' -d _build.python38 ']'
+[  158s] + echo python38
+[  158s] + python_flavor=python38
+[  158s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  165s] running build
+[  165s] running build_py
+[  165s] creating build
+[  165s] creating build/lib
+[  165s] creating build/lib/wirerope
+[  165s] copying wirerope/__init__.py -> build/lib/wirerope
+[  165s] copying wirerope/_compat.py -> build/lib/wirerope
+[  165s] copying wirerope/_util.py -> build/lib/wirerope
+[  165s] copying wirerope/_version.py -> build/lib/wirerope
+[  165s] copying wirerope/callable.py -> build/lib/wirerope
+[  165s] copying wirerope/rope.py -> build/lib/wirerope
+[  165s] copying wirerope/wire.py -> build/lib/wirerope
+[  165s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  165s]   warnings.warn(msg, warning_class)
+[  166s] ++ '[' -f _current_flavor ']'
+[  166s] ++ cat _current_flavor
+[  166s] + last_flavor=python38
+[  166s] + '[' -z python38 ']'
+[  166s] + '[' python38 '!=' python39 ']'
+[  166s] + '[' -d build ']'
+[  166s] + mv build _build.python38
+[  166s] + '[' -d _build.python39 ']'
+[  166s] + echo python39
+[  166s] + python_flavor=python39
+[  166s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  172s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  172s]   warnings.warn(msg, warning_class)
+[  172s] running build
+[  172s] running build_py
+[  172s] creating build
+[  172s] creating build/lib
+[  172s] creating build/lib/wirerope
+[  172s] copying wirerope/__init__.py -> build/lib/wirerope
+[  172s] copying wirerope/_compat.py -> build/lib/wirerope
+[  172s] copying wirerope/_util.py -> build/lib/wirerope
+[  172s] copying wirerope/_version.py -> build/lib/wirerope
+[  172s] copying wirerope/callable.py -> build/lib/wirerope
+[  172s] copying wirerope/rope.py -> build/lib/wirerope
+[  172s] copying wirerope/wire.py -> build/lib/wirerope
+[  173s] ++ '[' -f _current_flavor ']'
+[  173s] ++ cat _current_flavor
+[  173s] + last_flavor=python39
+[  173s] + '[' -z python39 ']'
+[  173s] + '[' python39 '!=' python311 ']'
+[  173s] + '[' -d build ']'
+[  173s] + mv build _build.python39
+[  173s] + '[' -d _build.python311 ']'
+[  173s] + echo python311
+[  173s] + python_flavor=python311
+[  173s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  179s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  179s]   warnings.warn(msg, warning_class)
+[  179s] running build
+[  179s] running build_py
+[  179s] creating build
+[  179s] creating build/lib
+[  179s] creating build/lib/wirerope
+[  179s] copying wirerope/__init__.py -> build/lib/wirerope
+[  179s] copying wirerope/_compat.py -> build/lib/wirerope
+[  179s] copying wirerope/_util.py -> build/lib/wirerope
+[  179s] copying wirerope/_version.py -> build/lib/wirerope
+[  179s] copying wirerope/callable.py -> build/lib/wirerope
+[  179s] copying wirerope/rope.py -> build/lib/wirerope
+[  179s] copying wirerope/wire.py -> build/lib/wirerope
+[  180s] ++ '[' -f _current_flavor ']'
+[  180s] ++ cat _current_flavor
+[  180s] + last_flavor=python311
+[  180s] + '[' -z python311 ']'
+[  180s] + '[' python311 '!=' python310 ']'
+[  180s] + '[' -d build ']'
+[  180s] + mv build _build.python311
+[  180s] + '[' -d _build.python310 ']'
+[  180s] + echo python310
+[  180s] + python_flavor=python310
+[  180s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  185s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  185s]   warnings.warn(msg, warning_class)
+[  185s] running build
+[  185s] running build_py
+[  185s] creating build
+[  185s] creating build/lib
+[  185s] creating build/lib/wirerope
+[  185s] copying wirerope/__init__.py -> build/lib/wirerope
+[  185s] copying wirerope/_compat.py -> build/lib/wirerope
+[  185s] copying wirerope/_util.py -> build/lib/wirerope
+[  185s] copying wirerope/_version.py -> build/lib/wirerope
+[  185s] copying wirerope/callable.py -> build/lib/wirerope
+[  185s] copying wirerope/rope.py -> build/lib/wirerope
+[  185s] copying wirerope/wire.py -> build/lib/wirerope
+[  186s] + RPM_EC=0
+[  186s] ++ jobs -p
+[  186s] + exit 0
+[  186s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.Dsalcy
+[  186s] + umask 022
+[  186s] + cd /home/abuild/rpmbuild/BUILD
+[  186s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64
+[  186s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  186s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64
+[  186s] + cd wirerope-0.4.6
+[  186s] ++ '[' -f _current_flavor ']'
+[  186s] ++ cat _current_flavor
+[  186s] + last_flavor=python310
+[  186s] + '[' -z python310 ']'
+[  186s] + '[' python310 '!=' python38 ']'
+[  186s] + '[' -d build ']'
+[  186s] + mv build _build.python310
+[  186s] + '[' -d _build.python38 ']'
+[  186s] + mv _build.python38 build
+[  186s] + echo python38
+[  186s] + python_flavor=python38
+[  186s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64 --prefix /usr
+[  194s] running install
+[  194s] running install_lib
+[  194s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr
+[  194s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib
+[  194s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8
+[  194s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages
+[  194s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/_compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/_util.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/_version.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/callable.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/rope.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] copying build/lib/wirerope/wire.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__init__.py to __init__.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/_compat.py to _compat.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/_util.py to _util.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/_version.py to _version.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/callable.py to callable.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/rope.py to rope.cpython-38.pyc
+[  194s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/wire.py to wire.cpython-38.pyc
+[  194s] writing byte-compilation script '/tmp/tmproipkoft.py'
+[  194s] /usr/bin/python3.8 /tmp/tmproipkoft.py
+[  201s] removing /tmp/tmproipkoft.py
+[  201s] running install_egg_info
+[  201s] running egg_info
+[  201s] creating wirerope.egg-info
+[  201s] writing wirerope.egg-info/PKG-INFO
+[  201s] writing dependency_links to wirerope.egg-info/dependency_links.txt
+[  201s] writing requirements to wirerope.egg-info/requires.txt
+[  201s] writing top-level names to wirerope.egg-info/top_level.txt
+[  201s] writing manifest file 'wirerope.egg-info/SOURCES.txt'
+[  201s] reading manifest file 'wirerope.egg-info/SOURCES.txt'
+[  201s] adding license file 'LICENSE'
+[  201s] writing manifest file 'wirerope.egg-info/SOURCES.txt'
+[  201s] Copying wirerope.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope-0.4.6-py3.8.egg-info
+[  201s] running install_scripts
+[  202s] /usr/lib/python3.8/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  202s]   warnings.warn(msg, warning_class)
+[  202s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  202s]   warnings.warn(
+[  202s] ++ '[' -f _current_flavor ']'
+[  202s] ++ cat _current_flavor
+[  202s] + last_flavor=python38
+[  202s] + '[' -z python38 ']'
+[  202s] + '[' python38 '!=' python39 ']'
+[  202s] + '[' -d build ']'
+[  202s] + mv build _build.python38
+[  202s] + '[' -d _build.python39 ']'
+[  202s] + mv _build.python39 build
+[  203s] + echo python39
+[  203s] + python_flavor=python39
+[  203s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64 --prefix /usr
+[  207s] /usr/lib/python3.9/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  207s]   warnings.warn(msg, warning_class)
+[  208s] running install
+[  208s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  208s]   warnings.warn(
+[  208s] running install_lib
+[  208s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9
+[  208s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages
+[  208s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/_compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/_util.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/_version.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/callable.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/rope.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] copying build/lib/wirerope/wire.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__init__.py to __init__.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/_compat.py to _compat.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/_util.py to _util.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/_version.py to _version.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/callable.py to callable.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/rope.py to rope.cpython-39.pyc
+[  208s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/wire.py to wire.cpython-39.pyc
+[  208s] writing byte-compilation script '/tmp/tmpusgzlsbg.py'
+[  208s] /usr/bin/python3.9 /tmp/tmpusgzlsbg.py
+[  213s] removing /tmp/tmpusgzlsbg.py
+[  213s] running install_egg_info
+[  213s] running egg_info
+[  213s] writing wirerope.egg-info/PKG-INFO
+[  213s] writing dependency_links to wirerope.egg-info/dependency_links.txt
+[  213s] writing requirements to wirerope.egg-info/requires.txt
+[  213s] writing top-level names to wirerope.egg-info/top_level.txt
+[  213s] reading manifest file 'wirerope.egg-info/SOURCES.txt'
+[  213s] adding license file 'LICENSE'
+[  213s] writing manifest file 'wirerope.egg-info/SOURCES.txt'
+[  213s] Copying wirerope.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope-0.4.6-py3.9.egg-info
+[  213s] running install_scripts
+[  214s] ++ '[' -f _current_flavor ']'
+[  214s] ++ cat _current_flavor
+[  214s] + last_flavor=python39
+[  214s] + '[' -z python39 ']'
+[  214s] + '[' python39 '!=' python311 ']'
+[  214s] + '[' -d build ']'
+[  214s] + mv build _build.python39
+[  214s] + '[' -d _build.python311 ']'
+[  214s] + mv _build.python311 build
+[  214s] + echo python311
+[  214s] + python_flavor=python311
+[  214s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64 --prefix /usr
+[  218s] /usr/lib/python3.11/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  218s]   warnings.warn(msg, warning_class)
+[  219s] running install
+[  219s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  219s]   warnings.warn(
+[  219s] running install_lib
+[  219s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11
+[  219s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages
+[  219s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/_compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/_util.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/_version.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/callable.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/rope.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] copying build/lib/wirerope/wire.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__init__.py to __init__.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/_compat.py to _compat.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/_util.py to _util.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/_version.py to _version.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/callable.py to callable.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/rope.py to rope.cpython-311.pyc
+[  219s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/wire.py to wire.cpython-311.pyc
+[  219s] writing byte-compilation script '/tmp/tmp5yy_pwtr.py'
+[  219s] /usr/bin/python3.11 /tmp/tmp5yy_pwtr.py
+[  223s] removing /tmp/tmp5yy_pwtr.py
+[  223s] running install_egg_info
+[  224s] running egg_info
+[  224s] writing wirerope.egg-info/PKG-INFO
+[  224s] writing dependency_links to wirerope.egg-info/dependency_links.txt
+[  224s] writing requirements to wirerope.egg-info/requires.txt
+[  224s] writing top-level names to wirerope.egg-info/top_level.txt
+[  224s] reading manifest file 'wirerope.egg-info/SOURCES.txt'
+[  224s] adding license file 'LICENSE'
+[  224s] writing manifest file 'wirerope.egg-info/SOURCES.txt'
+[  224s] Copying wirerope.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope-0.4.6-py3.11.egg-info
+[  224s] running install_scripts
+[  224s] ++ '[' -f _current_flavor ']'
+[  224s] ++ cat _current_flavor
+[  225s] + last_flavor=python311
+[  225s] + '[' -z python311 ']'
+[  225s] + '[' python311 '!=' python310 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python311
+[  225s] + '[' -d _build.python310 ']'
+[  225s] + mv _build.python310 build
+[  225s] + echo python310
+[  225s] + python_flavor=python310
+[  225s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64 --prefix /usr
+[  229s] /usr/lib/python3.10/site-packages/setuptools/config/setupcfg.py:508: SetuptoolsDeprecationWarning: The license_file parameter is deprecated, use license_files instead.
+[  229s]   warnings.warn(msg, warning_class)
+[  229s] running install
+[  229s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  229s]   warnings.warn(
+[  230s] running install_lib
+[  230s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10
+[  230s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages
+[  230s] creating /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/_compat.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/_util.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/_version.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/callable.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/rope.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] copying build/lib/wirerope/wire.py -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__init__.py to __init__.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/_compat.py to _compat.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/_util.py to _util.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/_version.py to _version.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/callable.py to callable.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/rope.py to rope.cpython-310.pyc
+[  230s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/wire.py to wire.cpython-310.pyc
+[  230s] writing byte-compilation script '/tmp/tmpe9uydnov.py'
+[  230s] /usr/bin/python3.10 /tmp/tmpe9uydnov.py
+[  234s] removing /tmp/tmpe9uydnov.py
+[  234s] running install_egg_info
+[  235s] running egg_info
+[  235s] writing wirerope.egg-info/PKG-INFO
+[  235s] writing dependency_links to wirerope.egg-info/dependency_links.txt
+[  235s] writing requirements to wirerope.egg-info/requires.txt
+[  235s] writing top-level names to wirerope.egg-info/top_level.txt
+[  235s] reading manifest file 'wirerope.egg-info/SOURCES.txt'
+[  235s] adding license file 'LICENSE'
+[  235s] writing manifest file 'wirerope.egg-info/SOURCES.txt'
+[  235s] Copying wirerope.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope-0.4.6-py3.10.egg-info
+[  235s] running install_scripts
+[  236s] ++ '[' -f _current_flavor ']'
+[  236s] ++ cat _current_flavor
+[  236s] + last_flavor=python310
+[  236s] + '[' -z python310 ']'
+[  236s] + '[' python310 '!=' python38 ']'
+[  236s] + '[' -d build ']'
+[  236s] + mv build _build.python310
+[  236s] + '[' -d _build.python38 ']'
+[  236s] + mv _build.python38 build
+[  236s] + echo python38
+[  236s] + python_flavor=python38
+[  236s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages
+[  236s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/wire.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/wire.cpython-38.pyc
+[  236s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/rope.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/rope.cpython-38.pyc
+[  236s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/_version.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/_version.cpython-38.pyc
+[  236s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/_util.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/_util.cpython-38.pyc
+[  236s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages/wirerope/__pycache__/__init__.cpython-38.pyc
+[  236s] ++ '[' -f _current_flavor ']'
+[  236s] ++ cat _current_flavor
+[  236s] + last_flavor=python38
+[  236s] + '[' -z python38 ']'
+[  236s] + '[' python38 '!=' python39 ']'
+[  236s] + '[' -d build ']'
+[  236s] + mv build _build.python38
+[  236s] + '[' -d _build.python39 ']'
+[  236s] + mv _build.python39 build
+[  236s] + echo python39
+[  236s] + python_flavor=python39
+[  236s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/wire.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/wire.cpython-39.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/rope.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/rope.cpython-39.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/_version.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/_version.cpython-39.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/_util.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/_util.cpython-39.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages/wirerope/__pycache__/__init__.cpython-39.pyc
+[  237s] ++ '[' -f _current_flavor ']'
+[  237s] ++ cat _current_flavor
+[  237s] + last_flavor=python39
+[  237s] + '[' -z python39 ']'
+[  237s] + '[' python39 '!=' python311 ']'
+[  237s] + '[' -d build ']'
+[  237s] + mv build _build.python39
+[  237s] + '[' -d _build.python311 ']'
+[  237s] + mv _build.python311 build
+[  237s] + echo python311
+[  237s] + python_flavor=python311
+[  237s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/wire.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/wire.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/rope.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/rope.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/callable.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/callable.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_version.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_version.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_util.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_util.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_compat.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/_compat.cpython-311.pyc
+[  237s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/__pycache__/__init__.cpython-311.pyc
+[  237s] ++ '[' -f _current_flavor ']'
+[  237s] ++ cat _current_flavor
+[  237s] + last_flavor=python311
+[  237s] + '[' -z python311 ']'
+[  237s] + '[' python311 '!=' python310 ']'
+[  237s] + '[' -d build ']'
+[  237s] + mv build _build.python311
+[  238s] + '[' -d _build.python310 ']'
+[  238s] + mv _build.python310 build
+[  238s] + echo python310
+[  238s] + python_flavor=python310
+[  238s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/wire.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/wire.cpython-310.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/rope.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/rope.cpython-310.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/_version.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/_version.cpython-310.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/_util.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/_util.cpython-310.pyc
+[  238s] Linking /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.10/site-packages/wirerope/__pycache__/__init__.cpython-310.pyc
+[  238s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/wirerope-0.4.6
+[  239s] + /usr/lib/rpm/brp-compress
+[  239s] + /usr/lib/rpm/brp-suse
+[  239s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  239s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  240s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  241s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.PhZ1z4
+[  241s] + umask 022
+[  241s] + cd /home/abuild/rpmbuild/BUILD
+[  241s] + cd wirerope-0.4.6
+[  241s] + set +x
+[  241s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  242s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  243s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  243s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  244s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  244s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  245s] + export PATH=/home/abuild/rpmbuild/BUILD/wirerope-0.4.6/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  245s] + PATH=/home/abuild/rpmbuild/BUILD/wirerope-0.4.6/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  245s] ++ '[' -f _current_flavor ']'
+[  245s] ++ cat _current_flavor
+[  246s] + last_flavor=python310
+[  246s] + '[' -z python310 ']'
+[  246s] + '[' python310 '!=' python38 ']'
+[  246s] + '[' -d build ']'
+[  246s] + mv build _build.python310
+[  246s] + '[' -d _build.python38 ']'
+[  246s] + mv _build.python38 build
+[  246s] + echo python38
+[  246s] + python_flavor=python38
+[  246s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.8/site-packages
+[  246s] + PYTHONDONTWRITEBYTECODE=1
+[  246s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  253s] ============================= test session starts ==============================
+[  253s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  253s] cachedir: .pytest_cache
+[  253s] rootdir: /home/abuild/rpmbuild/BUILD/wirerope-0.4.6, configfile: setup.cfg
+[  257s] collecting ... collected 9 items
+[  257s] 
+[  257s] tests/test_callable.py::test_callable_attributes PASSED                  [ 11%]
+[  257s] tests/test_wire.py::test_hybridmethod PASSED                             [ 22%]
+[  257s] tests/test_wire.py::test_hybridproperty PASSED                           [ 33%]
+[  257s] tests/test_wire.py::test_default_wire PASSED                             [ 44%]
+[  257s] tests/test_wire.py::test_wire_super PASSED                               [ 55%]
+[  257s] tests/test_wire.py::test_callable_wire PASSED                            [ 66%]
+[  257s] tests/test_wire.py::test_wire PASSED                                     [ 77%]
+[  257s] tests/test_wire.py::test_unwirable PASSED                                [ 88%]
+[  257s] tests/test_wirerope.py::test_package PASSED                              [100%]
+[  257s] 
+[  257s] ============================== 9 passed in 3.91s ===============================
+[  258s] ++ '[' -f _current_flavor ']'
+[  258s] ++ cat _current_flavor
+[  258s] + last_flavor=python38
+[  258s] + '[' -z python38 ']'
+[  258s] + '[' python38 '!=' python39 ']'
+[  258s] + '[' -d build ']'
+[  258s] + mv build _build.python38
+[  258s] + '[' -d _build.python39 ']'
+[  258s] + mv _build.python39 build
+[  258s] + echo python39
+[  258s] + python_flavor=python39
+[  258s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.9/site-packages
+[  258s] + PYTHONDONTWRITEBYTECODE=1
+[  258s] + pytest-3.9 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  263s] ============================= test session starts ==============================
+[  263s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  263s] cachedir: .pytest_cache
+[  263s] rootdir: /home/abuild/rpmbuild/BUILD/wirerope-0.4.6, configfile: setup.cfg
+[  266s] collecting ... collected 9 items
+[  266s] 
+[  266s] tests/test_callable.py::test_callable_attributes PASSED                  [ 11%]
+[  266s] tests/test_wire.py::test_hybridmethod PASSED                             [ 22%]
+[  266s] tests/test_wire.py::test_hybridproperty PASSED                           [ 33%]
+[  266s] tests/test_wire.py::test_default_wire PASSED                             [ 44%]
+[  266s] tests/test_wire.py::test_wire_super PASSED                               [ 55%]
+[  266s] tests/test_wire.py::test_callable_wire PASSED                            [ 66%]
+[  266s] tests/test_wire.py::test_wire PASSED                                     [ 77%]
+[  266s] tests/test_wire.py::test_unwirable PASSED                                [ 88%]
+[  266s] tests/test_wirerope.py::test_package PASSED                              [100%]
+[  266s] 
+[  266s] ============================== 9 passed in 3.32s ===============================
+[  267s] ++ '[' -f _current_flavor ']'
+[  267s] ++ cat _current_flavor
+[  267s] + last_flavor=python39
+[  267s] + '[' -z python39 ']'
+[  267s] + '[' python39 '!=' python311 ']'
+[  267s] + '[' -d build ']'
+[  267s] + mv build _build.python39
+[  267s] + '[' -d _build.python311 ']'
+[  267s] + mv _build.python311 build
+[  267s] + echo python311
+[  267s] + python_flavor=python311
+[  267s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages
+[  267s] + PYTHONDONTWRITEBYTECODE=1
+[  267s] + pytest-3.11 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v
+[  272s] ============================= test session starts ==============================
+[  272s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.11
+[  272s] cachedir: .pytest_cache
+[  272s] rootdir: /home/abuild/rpmbuild/BUILD/wirerope-0.4.6, configfile: setup.cfg
+[  274s] collecting ... collected 9 items
+[  274s] 
+[  275s] tests/test_callable.py::test_callable_attributes FAILED                  [ 11%]
+[  275s] tests/test_wire.py::test_hybridmethod PASSED                             [ 22%]
+[  275s] tests/test_wire.py::test_hybridproperty PASSED                           [ 33%]
+[  275s] tests/test_wire.py::test_default_wire FAILED                             [ 44%]
+[  275s] tests/test_wire.py::test_wire_super PASSED                               [ 55%]
+[  275s] tests/test_wire.py::test_callable_wire PASSED                            [ 66%]
+[  275s] tests/test_wire.py::test_wire PASSED                                     [ 77%]
+[  275s] tests/test_wire.py::test_unwirable PASSED                                [ 88%]
+[  275s] tests/test_wirerope.py::test_package PASSED                              [100%]
+[  275s] 
+[  275s] =================================== FAILURES ===================================
+[  275s] ___________________________ test_callable_attributes ___________________________
+[  275s] 
+[  275s]     def test_callable_attributes():
+[  275s]     
+[  275s]         def f():
+[  275s]             pass
+[  275s]         w = Callable(f)
+[  275s]         assert w.is_barefunction is True
+[  275s]         assert w.is_boundmethod is False
+[  275s]         assert w.is_descriptor is False
+[  275s]         assert w.is_membermethod is False
+[  275s]         assert w.is_boundmethod is False
+[  275s]         assert w.is_classmethod is False
+[  275s]         assert w.is_property is False
+[  275s]     
+[  275s]         class A():
+[  275s]     
+[  275s]             def m(self):
+[  275s]                 pass
+[  275s]             w = Callable(m)
+[  275s]             assert w.is_barefunction is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_descriptor is False
+[  275s]             assert w.is_membermethod is True
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_classmethod is False
+[  275s]             assert w.is_property is False
+[  275s]     
+[  275s]             @classmethod
+[  275s]             def c(cls):
+[  275s]                 pass
+[  275s]             w = Callable(c)
+[  275s]             assert w.is_barefunction is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_descriptor is True
+[  275s]             assert w.is_membermethod is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_classmethod is True
+[  275s]             assert w.is_property is False
+[  275s]     
+[  275s]             @staticmethod
+[  275s]             def s():
+[  275s]                 pass
+[  275s]             w = Callable(s)
+[  275s]             assert w.is_barefunction is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_descriptor is True
+[  275s]             assert w.is_membermethod is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_classmethod is False
+[  275s]             assert w.is_property is False
+[  275s]     
+[  275s]             @property
+[  275s]             def p(self):
+[  275s]                 pass
+[  275s]             w = Callable(p)
+[  275s]             assert w.is_barefunction is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_descriptor is True
+[  275s]             assert w.is_membermethod is False
+[  275s]             assert w.is_boundmethod is False
+[  275s]             assert w.is_classmethod is False
+[  275s]             assert w.is_property is True
+[  275s]     
+[  275s]         w = Callable(A.m)
+[  275s]         assert w.is_barefunction is False
+[  275s]         assert w.is_boundmethod is False
+[  275s]         assert w.is_descriptor is False
+[  275s]         assert w.is_membermethod is True
+[  275s]         assert w.is_boundmethod is False
+[  275s]         assert w.is_classmethod is False
+[  275s]         assert w.is_property is False
+[  275s]     
+[  275s]         a = A()
+[  275s]     
+[  275s] >       w = Callable(a.m)
+[  275s] 
+[  275s] tests/test_callable.py:77: 
+[  275s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/callable.py:107: in __init__
+[  275s]     if self.is_descriptor:
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/_util.py:32: in __get__
+[  275s]     value = self.__func__(obj)
+[  275s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  275s] 
+[  275s] self = <wirerope.callable.Callable object at 0x4003ffd090>
+[  275s] 
+[  275s]     @cached_property
+[  275s]     def is_descriptor(self):
+[  275s]         if self.is_boundmethod:
+[  275s]             return False
+[  275s] >       is_descriptor = type(self.wrapped_object).__get__ \
+[  275s]             is not types.FunctionType.__get__  # noqa
+[  275s] E       AttributeError: type object 'method' has no attribute '__get__'
+[  275s] 
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/callable.py:147: AttributeError
+[  275s] ______________________________ test_default_wire _______________________________
+[  275s] 
+[  275s]     def test_default_wire():
+[  275s]         class TestWire(Wire):
+[  275s]             pass
+[  275s]     
+[  275s]         rope = WireRope(TestWire, wraps=True)
+[  275s]     
+[  275s]         @rope
+[  275s]         def function(v):
+[  275s]             '''function'''
+[  275s]             return v
+[  275s]     
+[  275s]         class X(object):
+[  275s]             def baremethod(self, v):
+[  275s]                 '''baremethod'''
+[  275s]                 return (self, v)
+[  275s]     
+[  275s]             @rope
+[  275s]             def method(self, v):
+[  275s]                 '''method'''
+[  275s]                 return (self, v)
+[  275s]     
+[  275s]             @rope
+[  275s]             @classmethod
+[  275s]             def cmethod(cls, v):
+[  275s]                 '''cmethod'''
+[  275s]                 return (cls, v)
+[  275s]     
+[  275s]             @rope
+[  275s]             @staticmethod
+[  275s]             def smethod(v):
+[  275s]                 '''smethod'''
+[  275s]                 return (None, v)
+[  275s]     
+[  275s]             @rope
+[  275s]             @hybridmethod
+[  275s]             def hmethod(self_or_cls, v):
+[  275s]                 '''hmethod'''
+[  275s]                 return (self_or_cls, v)
+[  275s]     
+[  275s]             @rope
+[  275s]             @property
+[  275s]             def property(self):
+[  275s]                 '''property'''
+[  275s]                 return (self, )
+[  275s]     
+[  275s]             @rope
+[  275s]             @hybridproperty
+[  275s]             def hproperty(self_or_cls):
+[  275s]                 '''hproperty'''
+[  275s]                 return (self_or_cls,)
+[  275s]     
+[  275s]         assert isinstance(function, RopeCore)
+[  275s]         assert isinstance(X.method, Wire)  # triggered descriptor
+[  275s]         assert isinstance(X.cmethod, Wire)  # triggered descriptor
+[  275s]         assert isinstance(X.smethod, Wire)  # triggered descriptor
+[  275s]         assert isinstance(X.hmethod, Wire)  # triggered descriptor
+[  275s]         # assert isinstance(X.property, Wire)  # triggered descriptor
+[  275s]     
+[  275s]         x = X()
+[  275s]     
+[  275s] >       boundmethod = rope(x.baremethod)
+[  275s] 
+[  275s] tests/test_wire.py:124: 
+[  275s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/rope.py:158: in __call__
+[  275s]     cw = Callable(function)
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/callable.py:107: in __init__
+[  275s]     if self.is_descriptor:
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/_util.py:32: in __get__
+[  275s]     value = self.__func__(obj)
+[  275s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  275s] 
+[  275s] self = <wirerope.callable.Callable object at 0x4004042810>
+[  275s] 
+[  275s]     @cached_property
+[  275s]     def is_descriptor(self):
+[  275s]         if self.is_boundmethod:
+[  275s]             return False
+[  275s] >       is_descriptor = type(self.wrapped_object).__get__ \
+[  275s]             is not types.FunctionType.__get__  # noqa
+[  275s] E       AttributeError: type object 'method' has no attribute '__get__'
+[  275s] 
+[  275s] ../../BUILDROOT/python-wirerope-0.4.6-1.2.riscv64/usr/lib/python3.11/site-packages/wirerope/callable.py:147: AttributeError
+[  275s] =========================== short test summary info ============================
+[  275s] FAILED tests/test_callable.py::test_callable_attributes - AttributeError: typ...
+[  275s] FAILED tests/test_wire.py::test_default_wire - AttributeError: type object 'm...
+[  275s] ========================= 2 failed, 7 passed in 3.77s ==========================
+[  276s] error: Bad exit status from /var/tmp/rpm-tmp.PhZ1z4 (%check)
+[  276s] 
+[  276s] RPM build errors:
+[  276s]     Bad exit status from /var/tmp/rpm-tmp.PhZ1z4 (%check)
+[  276s] ### VM INTERACTION START ###
+[  277s] [  268.511299][    T1] sysrq: Power Off
+[  277s] [  268.544870][   T18] reboot: Power down
+[  277s] ### VM INTERACTION END ###
+[  277s] 
+[  277s] lamb56 failed "build python-wirerope.spec" at Sat Feb 18 21:30:10 UTC 2023.
+[  277s] 

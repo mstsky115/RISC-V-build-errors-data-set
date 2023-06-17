@@ -1,0 +1,746 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] lamb10 started "build wrk.spec" at Wed Jan 11 16:15:11 UTC 2023.
+[    0s] 
+[    0s] Building wrk for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '83f747cf6fcbe6f9d78771da8d87454e'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/wrk.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/wrk.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/wrk.spec build ...
+[    1s] cycle: rpm-config-SUSE -> rpm
+[    1s]   breaking dependency rpm-config-SUSE -> rpm
+[    1s] [1/34] preinstalling filesystem...
+[    1s] [2/34] preinstalling permissions...
+[    1s] [3/34] preinstalling glibc...
+[    2s] [4/34] preinstalling diffutils...
+[    2s] [5/34] preinstalling fillup...
+[    2s] [6/34] preinstalling libacl1...
+[    2s] [7/34] preinstalling libattr1...
+[    2s] [8/34] preinstalling libbz2-1...
+[    2s] [9/34] preinstalling libcap2...
+[    2s] [10/34] preinstalling libgcc_s1...
+[    2s] [11/34] preinstalling libgpg-error0...
+[    2s] [12/34] preinstalling liblua5_4-5...
+[    2s] [13/34] preinstalling liblzma5...
+[    2s] [14/34] preinstalling libpcre2-8-0...
+[    2s] [15/34] preinstalling libpopt0...
+[    2s] [16/34] preinstalling libz1...
+[    2s] [17/34] preinstalling libzstd1...
+[    2s] [18/34] preinstalling attr...
+[    2s] [19/34] preinstalling libelf1...
+[    2s] [20/34] preinstalling libgcrypt20...
+[    2s] [21/34] preinstalling libncurses6...
+[    2s] [22/34] preinstalling libselinux1...
+[    2s] [23/34] preinstalling libreadline8...
+[    2s] [24/34] preinstalling sed...
+[    2s] [25/34] preinstalling tar...
+[    2s] [26/34] preinstalling bash...
+[    2s] [27/34] preinstalling bash-sh...
+[    2s] [28/34] preinstalling grep...
+[    2s] [29/34] preinstalling qemu-linux-user...
+[    3s] [30/34] preinstalling pam...
+[    3s] [31/34] preinstalling coreutils...
+[    3s] [32/34] preinstalling aaa_base...
+[    3s] [33/34] preinstalling rpm-config-SUSE...
+[    3s] [34/34] preinstalling rpm...
+[    3s] 
+[    3s] [1/9] preinstalling kernel-obs-build...
+[    3s] [2/9] preinstalling libblkid1...
+[    3s] [3/9] preinstalling libcrypt1...
+[    3s] [4/9] preinstalling libdb-4_8...
+[    3s] [5/9] preinstalling libsmartcols1...
+[    3s] [6/9] preinstalling libuuid1...
+[    3s] [7/9] preinstalling libmount1...
+[    3s] [8/9] preinstalling perl-base...
+[    3s] [9/9] preinstalling util-linux...
+[    3s] copying packages...
+[    4s] reordering...cycle: libncurses6 -> terminfo-base
+[    4s]   breaking dependency terminfo-base -> libncurses6
+[    4s] cycle: binutils -> libctf0
+[    4s]   breaking dependency binutils -> libctf0
+[    4s] cycle: rpm-config-SUSE -> rpm
+[    4s]   breaking dependency rpm -> rpm-config-SUSE
+[    4s] cycle: libopenssl-1_1-devel -> libopenssl-devel
+[    4s]   breaking dependency libopenssl-devel -> libopenssl-1_1-devel
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[   10s] machine type: riscv64
+[   10s] Linux version: 6.1.4-1-default #1 SMP PREEMPT_DYNAMIC Mon Jan  9 11:00:31 UTC 2023 (4b9b43c)
+[   10s] Increasing log level from now on...
+[   10s] [    4.513900][  T401] sysrq: Changing Loglevel
+[   10s] [    4.514037][  T401] sysrq: Loglevel set to 4
+[   10s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=3a5a0220-465f-4389-8f78-38dcf8202941
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/wrk.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/wrk.spec build ...
+[   12s] initializing rpm db...
+[   13s] querying package ids...
+[   26s] [1/134] cumulate compat-usrmerge-tools-84.87-5.1
+[   26s] [2/134] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   26s] [3/134] cumulate file-magic-5.43-2.2
+[   26s] [4/134] cumulate kernel-obs-build-6.1.4-1.1
+[   26s] [5/134] cumulate libsemanage-conf-3.4-1.1
+[   26s] [6/134] cumulate pkgconf-m4-1.8.0-1.1
+[   26s] [7/134] cumulate rpmlint-strict-2.4.0+git20221220.12af927-1.2
+[   26s] [8/134] cumulate system-user-root-20190513-2.1
+[   26s] [9/134] cumulate filesystem-84.87-10.1
+[   26s] [10/134] cumulate glibc-2.36-9.1
+[   26s] [11/134] cumulate diffutils-3.8-3.1
+[   26s] [12/134] cumulate fillup-1.42-278.1
+[   26s] [13/134] cumulate libacl1-2.3.1-2.1
+[   26s] [14/134] cumulate libatomic1-13.0.0+git197351-5.1
+[   26s] [15/134] cumulate libattr1-2.5.1-1.1
+[   26s] [16/134] cumulate libaudit1-3.0.6-4.1
+[   26s] [17/134] cumulate libblkid1-2.38.1-3.1
+[   26s] [18/134] cumulate libbz2-1-1.0.8-4.1
+[   26s] [19/134] cumulate libcap-ng0-0.8.3-1.1
+[   26s] [20/134] cumulate libcap2-2.66-1.1
+[   26s] [21/134] cumulate libcrypt1-4.4.33-1.1
+[   26s] [22/134] cumulate libeconf0-0.5.0-1.1
+[   26s] [23/134] cumulate libgcc_s1-13.0.0+git197351-5.1
+[   26s] [24/134] cumulate libgdbm6-1.23-1.1
+[   26s] [25/134] cumulate libgmp10-6.2.1-4.1
+[   26s] [26/134] cumulate libgomp1-13.0.0+git197351-5.1
+[   26s] [27/134] cumulate libgpg-error0-1.46-1.1
+[   26s] [28/134] cumulate liblua5_4-5-5.4.4-7.2
+[   26s] [29/134] cumulate liblzma5-5.4.0-1.1
+[   26s] [30/134] cumulate libpcre2-8-0-10.42-3.2
+[   26s] [31/134] cumulate libpkgconf3-1.8.0-1.1
+[   26s] [32/134] cumulate libpopt0-1.19-1.1
+[   26s] [33/134] cumulate libseccomp2-2.5.4-2.1
+[   26s] [34/134] cumulate libsepol2-3.4-1.1
+[   26s] [35/134] cumulate libsmartcols1-2.38.1-3.1
+[   26s] [36/134] cumulate libuuid1-2.38.1-3.1
+[   26s] [37/134] cumulate libz1-1.2.12-3.2
+[   26s] [38/134] cumulate libzstd1-1.5.2-2.1
+[   26s] [39/134] cumulate patch-2.7.6-6.1
+[   26s] [40/134] cumulate update-alternatives-1.21.8-1.1
+[   26s] [41/134] cumulate attr-2.5.1-1.1
+[   26s] [42/134] cumulate libctf-nobfd0-2.39-1.1
+[   26s] [43/134] cumulate libelf1-0.188-3.2
+[   26s] [44/134] cumulate libgcrypt20-1.10.1-1.1
+[   26s] [45/134] cumulate libgdbm_compat4-1.23-1.1
+[   26s] [46/134] cumulate libisl23-0.25-1.1
+[   26s] [47/134] cumulate libmpfr6-4.1.1-3.1
+[   26s] [48/134] cumulate libselinux1-3.4-2.1
+[   26s] [49/134] cumulate libstdc++6-13.0.0+git197351-5.1
+[   26s] [50/134] cumulate perl-base-5.36.0-3.1
+[   26s] [51/134] cumulate pkgconf-1.8.0-1.1
+[   26s] [52/134] cumulate chkstat-1599_20221220-1.2
+[   26s] [53/134] cumulate libfdisk1-2.38.1-3.1
+[   26s] [54/134] cumulate libopenssl1_1-1.1.1s-2.2
+[   26s] [55/134] cumulate libmagic1-5.43-2.2
+[   26s] [56/134] cumulate build-mkbaselibs-20230105-1.1
+[   26s] [57/134] cumulate rpm-build-perl-4.18.0-2.2
+[   26s] [58/134] cumulate dwz-0.15-2.1
+[   26s] [59/134] cumulate findutils-4.9.0-2.1
+[   26s] [60/134] cumulate file-5.43-2.2
+[   26s] [61/134] cumulate libasan8-13.0.0+git197351-5.1
+[   26s] [62/134] cumulate libdb-4_8-4.8.30-39.1
+[   26s] [63/134] cumulate libmount1-2.38.1-3.1
+[   26s] [64/134] cumulate libmpc3-1.3.1-1.2
+[   26s] [65/134] cumulate libsubid4-4.13-2.2
+[   26s] [66/134] cumulate libubsan1-13.0.0+git197351-5.1
+[   26s] [67/134] cumulate sed-4.9-2.1
+[   26s] [68/134] cumulate tar-1.34-9.1
+[   26s] [69/134] cumulate libdw1-0.188-3.2
+[   26s] [70/134] cumulate libsemanage2-3.4-1.1
+[   26s] [71/134] cumulate libasm1-0.188-3.2
+[   26s] [72/134] cumulate cpp12-12.2.1+git537-1.2
+[   26s] [73/134] cumulate perl-5.36.0-3.1
+[   26s] [74/134] cumulate brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   26s] [75/134] cumulate terminfo-base-6.4.20230107-1.1
+[   26s] [76/134] cumulate libncurses6-6.4.20230107-1.1
+[   26s] [77/134] cumulate libreadline8-8.2-2.1
+[   26s] [78/134] cumulate ncurses-utils-6.4.20230107-1.1
+[   26s] [79/134] cumulate bash-5.2.15-7.3
+[   26s] [80/134] cumulate bash-sh-5.2.15-7.3
+[   26s] [81/134] cumulate grep-3.8-3.1
+[   26s] [82/134] cumulate login_defs-4.13-2.2
+[   26s] [83/134] cumulate qemu-linux-user-7.1.0-46.1
+[   26s] [84/134] cumulate sysuser-shadow-3.1-5.1
+[   26s] [85/134] cumulate cpio-2.13-5.1
+[   26s] [86/134] cumulate cpp-12-2.1
+[   26s] [87/134] cumulate make-4.4-2.1
+[   26s] [88/134] cumulate which-2.21-5.1
+[   26s] [89/134] cumulate bzip2-1.0.8-4.1
+[   26s] [90/134] cumulate gettext-runtime-mini-0.21.1-1.1
+[   26s] [91/134] cumulate gzip-1.12-3.1
+[   26s] [92/134] cumulate pkgconf-pkg-config-1.8.0-1.1
+[   26s] [93/134] cumulate unzip-6.00-41.1
+[   26s] [94/134] cumulate xz-5.4.0-1.1
+[   26s] [95/134] cumulate elfutils-0.188-3.2
+[   26s] [96/134] cumulate gawk-5.2.1-2.1
+[   26s] [97/134] cumulate lua54-5.4.4-7.2
+[   26s] [98/134] cumulate binutils-2.39-1.1
+[   26s] [99/134] cumulate coreutils-9.1-5.1
+[   26s] [100/134] cumulate compat-usrmerge-build-84.87-5.1
+[   26s] [101/134] cumulate systemd-rpm-macros-18-1.1
+[   26s] [102/134] cumulate libxcrypt-devel-4.4.33-1.1
+[   26s] [103/134] cumulate linux-glibc-devel-6.1-1.1
+[   26s] [104/134] cumulate system-group-hardware-20170617-24.1
+[   26s] [105/134] cumulate glibc-locale-base-2.36-9.1
+[   26s] [106/134] cumulate libctf0-2.39-1.1
+[   26s] [107/134] cumulate openssl-1_1-1.1.1s-2.2
+[   26s] [108/134] cumulate gettext-tools-mini-0.21.1-1.1
+[   26s] [109/134] cumulate permissions-config-1599_20221220-1.2
+[   26s] [110/134] cumulate polkit-default-privs-1550+20221102.9f111fa-1.1
+[   26s] [111/134] cumulate aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   26s] [112/134] cumulate debugedit-5.0-5.1
+[   26s] [113/134] cumulate rpm-4.18.0-2.2
+[   26s] [114/134] cumulate aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   26s] [115/134] cumulate openssl-1.1.1s-1.1
+[   26s] [116/134] cumulate permissions-1599_20221220-1.2
+[   26s] [117/134] cumulate glibc-devel-2.36-9.1
+[   26s] [118/134] cumulate rpm-config-SUSE-20220926-1.1
+[   26s] [119/134] cumulate rpmlint-mini-2.4.0+git20221220.12af927-8.45
+[   26s] [120/134] cumulate build-compare-20221206T204012.bb70754-1.2
+[   26s] [121/134] cumulate librpmbuild9-4.18.0-2.2
+[   26s] [122/134] cumulate zlib-devel-1.2.12-3.2
+[   26s] [123/134] cumulate libopenssl-devel-1.1.1s-1.1
+[   26s] [124/134] cumulate libutempter0-1.2.0-3.2
+[   26s] [125/134] cumulate pam-1.5.2-11.2
+[   26s] [126/134] cumulate post-build-checks-84.87+git20230106.3a359c5-1.1
+[   26s] [127/134] cumulate gcc12-12.2.1+git537-1.2
+[   26s] [128/134] cumulate gcc12-PIE-12.2.1+git537-1.2
+[   26s] [129/134] cumulate gcc-12-2.1
+[   26s] [130/134] cumulate libopenssl-1_1-devel-1.1.1s-2.2
+[   26s] [131/134] cumulate shadow-4.13-2.2
+[   26s] [132/134] cumulate util-linux-2.38.1-3.1
+[   26s] [133/134] cumulate gcc-PIE-12-2.1
+[   26s] [134/134] cumulate rpm-build-4.18.0-2.2
+[   26s] now installing cumulated packages
+[   27s] Preparing...                          ########################################
+[   27s] Updating / installing...
+[   27s] system-user-root-20190513-2.1         ########################################
+[   27s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   28s] pkgconf-m4-1.8.0-1.1                  ########################################
+[   28s] libsemanage-conf-3.4-1.1              ########################################
+[   29s] file-magic-5.43-2.2                   ########################################
+[   29s] compat-usrmerge-tools-84.87-5.1       ########################################
+[   29s] filesystem-84.87-10.1                 ########################################
+[   29s] glibc-2.36-9.1                        ########################################
+[   29s] libz1-1.2.12-3.2                      ########################################
+[   30s] libelf1-0.188-3.2                     ########################################
+[   30s] libgcc_s1-13.0.0+git197351-5.1        ########################################
+[   30s] libgmp10-6.2.1-4.1                    ########################################
+[   30s] libbz2-1-1.0.8-4.1                    ########################################
+[   30s] libcrypt1-4.4.33-1.1                  ########################################
+[   31s] perl-base-5.36.0-3.1                  ########################################
+[   31s] libstdc++6-13.0.0+git197351-5.1       ########################################
+[   31s] libacl1-2.3.1-2.1                     ########################################
+[   31s] libaudit1-3.0.6-4.1                   ########################################
+[   32s] libzstd1-1.5.2-2.1                    ########################################
+[   32s] terminfo-base-6.4.20230107-1.1        ########################################
+[   32s] libncurses6-6.4.20230107-1.1          ########################################
+[   32s] ncurses-utils-6.4.20230107-1.1        ########################################
+[   32s] libreadline8-8.2-2.1                  ########################################
+[   33s] bash-5.2.15-7.3                       ########################################
+[   33s] bash-sh-5.2.15-7.3                    ########################################
+[   33s] libmpfr6-4.1.1-3.1                    ########################################
+[   33s] gawk-5.2.1-2.1                        ########################################
+[   33s] fillup-1.42-278.1                     ########################################
+[   33s] libcap2-2.66-1.1                      ########################################
+[   33s] liblzma5-5.4.0-1.1                    ########################################
+[   34s] xz-5.4.0-1.1                          ########################################
+[   34s] libdw1-0.188-3.2                      ########################################
+[   34s] libmagic1-5.43-2.2                    ########################################
+[   34s] login_defs-4.13-2.2                   ########################################
+[   34s] cpio-2.13-5.1                         ########################################
+[   35s] libopenssl1_1-1.1.1s-2.2              ########################################
+[   35s] libattr1-2.5.1-1.1                    ########################################
+[   35s] libblkid1-2.38.1-3.1                  ########################################
+[   35s] libeconf0-0.5.0-1.1                   ########################################
+[   35s] libgomp1-13.0.0+git197351-5.1         ########################################
+[   35s] liblua5_4-5-5.4.4-7.2                 ########################################
+[   35s] libpopt0-1.19-1.1                     ########################################
+[   36s] update-alternatives-1.21.8-1.1        ########################################
+[   36s] chkstat-1599_20221220-1.2             ########################################
+[   36s] libmpc3-1.3.1-1.2                     ########################################
+[   36s] libisl23-0.25-1.1                     ########################################
+[   39s] cpp12-12.2.1+git537-1.2               ########################################
+[   39s] dwz-0.15-2.1                          ########################################
+[   39s] diffutils-3.8-3.1                     ########################################
+[   39s] libgdbm6-1.23-1.1                     ########################################
+[   40s] libpcre2-8-0-10.42-3.2                ########################################
+[   40s] libselinux1-3.4-2.1                   ########################################
+[   40s] coreutils-9.1-5.1                     ########################################
+[   41s] sed-4.9-2.1                           ########################################
+[   41s] grep-3.8-3.1                          ########################################
+[   41s] aaa_base-84.87+git20220822.6b9f7a3-1.1########################################
+[   41s] Updating /etc/sysconfig/language ...
+[   41s] Updating /etc/sysconfig/proxy ...
+[   42s] Updating /etc/sysconfig/windowmanager ...
+[   42s] openssl-1_1-1.1.1s-2.2                ########################################
+[   43s] findutils-4.9.0-2.1                   ########################################
+[   43s] libuuid1-2.38.1-3.1                   ########################################
+[   43s] libfdisk1-2.38.1-3.1                  ########################################
+[   43s] openssl-1.1.1s-1.1                    ########################################
+[   43s] aaa_base-malloccheck-84.87+git20220822########################################
+[   43s] systemd-rpm-macros-18-1.1             ########################################
+[   44s] linux-glibc-devel-6.1-1.1             ########################################
+[   45s] glibc-locale-base-2.36-9.1            ########################################
+[   46s] permissions-config-1599_20221220-1.2  ########################################
+[   46s] Updating /etc/sysconfig/security ...
+[   46s] Checking permissions and ownerships - using the permissions files
+[   46s] 	/usr/share/permissions/permissions
+[   46s] 	/usr/share/permissions/permissions.easy
+[   46s] 	/etc/permissions.local
+[   46s] /usr/sbin/unix2_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   46s] /usr/sbin/unix_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   46s] permissions-1599_20221220-1.2         ########################################
+[   47s] pam-1.5.2-11.2                        ########################################
+[   47s] polkit-default-privs-1550+20221102.9f1########################################
+[   47s] Updating /etc/sysconfig/security ...
+[   48s] can't open /etc/polkit-1/rules.d/90-default-privs.rules.new: No such file or directory
+[   48s] warning: %post(polkit-default-privs-1550+20221102.9f111fa-1.1.noarch) scriptlet failed, exit status 2
+[   48s] libmount1-2.38.1-3.1                  ########################################
+[   48s] libsubid4-4.13-2.2                    ########################################
+[   49s] tar-1.34-9.1                          ########################################
+[   49s] libgdbm_compat4-1.23-1.1              ########################################
+[   49s] cpp-12-2.1                            ########################################
+[   49s] lua54-5.4.4-7.2                       ########################################
+[   49s] update-alternatives: using /usr/bin/lua5.4 to provide /usr/bin/lua (lua) in auto mode
+[   49s] libasm1-0.188-3.2                     ########################################
+[   49s] elfutils-0.188-3.2                    ########################################
+[   49s] make-4.4-2.1                          ########################################
+[   49s] which-2.21-5.1                        ########################################
+[   50s] bzip2-1.0.8-4.1                       ########################################
+[   50s] gettext-runtime-mini-0.21.1-1.1       ########################################
+[   51s] gettext-tools-mini-0.21.1-1.1         ########################################
+[   51s] gzip-1.12-3.1                         ########################################
+[   51s] libasan8-13.0.0+git197351-5.1         ########################################
+[   52s] libdb-4_8-4.8.30-39.1                 ########################################
+[   59s] perl-5.36.0-3.1                       ########################################
+[   59s] libubsan1-13.0.0+git197351-5.1        ########################################
+[   59s] rpm-build-perl-4.18.0-2.2             ########################################
+[   59s] libctf-nobfd0-2.39-1.1                ########################################
+[   65s] binutils-2.39-1.1                     ########################################
+[   66s] update-alternatives: using /usr/bin/ld.bfd to provide /usr/bin/ld (ld) in auto mode
+[   66s] libctf0-2.39-1.1                      ########################################
+[   66s] debugedit-5.0-5.1                     ########################################
+[   66s] libatomic1-13.0.0+git197351-5.1       ########################################
+[   66s] libcap-ng0-0.8.3-1.1                  ########################################
+[   66s] libgpg-error0-1.46-1.1                ########################################
+[   66s] libgcrypt20-1.10.1-1.1                ########################################
+[   67s] rpm-config-SUSE-20220926-1.1          ########################################
+[   68s] rpm-4.18.0-2.2                        ########################################
+[   68s] Updating /etc/sysconfig/services ...
+[   68s] librpmbuild9-4.18.0-2.2               ########################################
+[   68s] libpkgconf3-1.8.0-1.1                 ########################################
+[   68s] pkgconf-1.8.0-1.1                     ########################################
+[   68s] pkgconf-pkg-config-1.8.0-1.1          ########################################
+[   68s] libxcrypt-devel-4.4.33-1.1            ########################################
+[   69s] glibc-devel-2.36-9.1                  ########################################
+[   85s] gcc12-12.2.1+git537-1.2               ########################################
+[   85s] gcc12-PIE-12.2.1+git537-1.2           ########################################
+[   85s] gcc-12-2.1                            ########################################
+[   85s] zlib-devel-1.2.12-3.2                 ########################################
+[   85s] libopenssl-1_1-devel-1.1.1s-2.2       ########################################
+[   85s] libseccomp2-2.5.4-2.1                 ########################################
+[   85s] file-5.43-2.2                         ########################################
+[   85s] libsepol2-3.4-1.1                     ########################################
+[   85s] libsemanage2-3.4-1.1                  ########################################
+[   86s] shadow-4.13-2.2                       ########################################
+[   88s] sysuser-shadow-3.1-5.1                ########################################
+[   88s] /usr/sbin/groupadd -r kmem
+[   88s] /usr/sbin/groupadd -r lock
+[   89s] /usr/sbin/groupadd -r -g 5 tty
+[   89s] /usr/sbin/groupadd -r utmp
+[   89s] /usr/sbin/groupadd -r audio
+[   89s] /usr/sbin/groupadd -r cdrom
+[   89s] /usr/sbin/groupadd -r dialout
+[   90s] /usr/sbin/groupadd -r disk
+[   90s] /usr/sbin/groupadd -r input
+[   90s] /usr/sbin/groupadd -r lp
+[   90s] /usr/sbin/groupadd -r render
+[   91s] /usr/sbin/groupadd -r sgx
+[   91s] /usr/sbin/groupadd -r tape
+[   91s] /usr/sbin/groupadd -r video
+[   91s] system-group-hardware-20170617-24.1   ########################################
+[   91s] libutempter0-1.2.0-3.2                ########################################
+[   92s] libsmartcols1-2.38.1-3.1              ########################################
+[   92s] util-linux-2.38.1-3.1                 ########################################
+[   93s] /usr/bin/wall: setting to root:tty 2755 (wrong permissions 0755)
+[   93s] /usr/bin/write: setting to root:tty 2755 (wrong permissions 0755)
+[   93s] patch-2.7.6-6.1                       ########################################
+[   93s] rpm-build-4.18.0-2.2                  ########################################
+[   93s] build-compare-20221206T204012.bb70754-########################################
+[   93s] libopenssl-devel-1.1.1s-1.1           ########################################
+[   93s] gcc-PIE-12-2.1                        ########################################
+[   93s] brp-check-suse-84.87+git20221115.2f7ad########################################
+[   93s] compat-usrmerge-build-84.87-5.1       ########################################
+[   97s] rpmlint-mini-2.4.0+git20221220.12af927########################################
+[   97s] post-build-checks-84.87+git20230106.3a########################################
+[   97s] unzip-6.00-41.1                       ########################################
+[   97s] update-alternatives: using /usr/bin/unzip-plain to provide /usr/bin/unzip (unzip) in auto mode
+[   97s] update-alternatives: using /usr/bin/funzip-plain to provide /usr/bin/funzip (funzip) in auto mode
+[   97s] update-alternatives: using /usr/bin/unzipsfx-plain to provide /usr/bin/unzipsfx (unzipsfx) in auto mode
+[   97s] update-alternatives: using /usr/bin/zipgrep-plain to provide /usr/bin/zipgrep (zipgrep) in auto mode
+[   97s] attr-2.5.1-1.1                        ########################################
+[  113s] qemu-linux-user-7.1.0-46.1            ########################################
+[  113s] build-mkbaselibs-20230105-1.1         ########################################
+[  113s] rpmlint-strict-2.4.0+git20221220.12af9########################################
+[  114s] kernel-obs-build-6.1.4-1.1            ########################################
+[  122s] now finalizing build dir...
+[  123s] ... running 01-add_abuild_user_to_trusted_group
+[  123s] ... running 02-set_timezone_to_utc
+[  124s] ... running 03-set-permissions-secure
+[  124s] ... running 11-hack_uname_version_to_kernel_version
+[  132s] -----------------------------------------------------------------
+[  132s] I have the following modifications for wrk.spec:
+[  133s] 21c21
+[  133s] < Release:        0
+[  133s] ---
+[  133s] > Release:        1.1
+[  139s] build target is riscv64-suse-linux
+[  139s] -----------------------------------------------------------------
+[  139s] ----- building wrk.spec (user abuild)
+[  139s] -----------------------------------------------------------------
+[  139s] -----------------------------------------------------------------
+[  143s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/83f747cf6fcbe6f9d78771da8d87454e-wrk' /home/abuild/rpmbuild/SOURCES/wrk.spec
+[  144s] Building target platforms: riscv64-suse-linux
+[  144s] Building for target riscv64-suse-linux
+[  144s] setting SOURCE_DATE_EPOCH=1673308800
+[  144s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.of6SQ1
+[  144s] + umask 022
+[  144s] + cd /home/abuild/rpmbuild/BUILD
+[  144s] + cd /home/abuild/rpmbuild/BUILD
+[  144s] + rm -rf wrk-4.2.0
+[  144s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/wrk-4.2.0.tar.gz
+[  145s] + STATUS=0
+[  145s] + '[' 0 -ne 0 ']'
+[  145s] + cd wrk-4.2.0
+[  145s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  145s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/wrk-4.2.0_distrofixes.patch
+[  145s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  146s] + RPM_EC=0
+[  146s] ++ jobs -p
+[  146s] + exit 0
+[  146s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.tDtRSD
+[  146s] + umask 022
+[  146s] + cd /home/abuild/rpmbuild/BUILD
+[  146s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/wrk-4.2.0-1.1.riscv64
+[  146s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/wrk-4.2.0-1.1.riscv64
+[  146s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  146s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/wrk-4.2.0-1.1.riscv64
+[  146s] + cd wrk-4.2.0
+[  146s] + ref=/usr/lib/rpm
+[  146s] + mints=0
+[  146s] + case $(uname -m) in
+[  146s] ++ uname -m
+[  147s] + mints=20160911
+[  147s] + for s in guess sub
+[  147s] ++ find -maxdepth 8 -name config.guess
+[  147s] + for s in guess sub
+[  147s] ++ find -maxdepth 8 -name config.sub
+[  147s] + /usr/bin/make -O -j8 V=1 VERBOSE=1 'OPTFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' WITH_OPENSSL=/usr
+[  148s] echo LuaJIT-2.1
+[  148s] LuaJIT-2.1
+[  148s] Archive:  deps/LuaJIT-2.1.zip
+[  148s] ec6edc5c39c25e4eb3fca51b753f9995e97215da
+[  148s]    creating: obj/LuaJIT-2.1/
+[  148s]   inflating: obj/LuaJIT-2.1/.gitignore  
+[  148s]   inflating: obj/LuaJIT-2.1/COPYRIGHT  
+[  148s]   inflating: obj/LuaJIT-2.1/Makefile  
+[  148s]   inflating: obj/LuaJIT-2.1/README   
+[  148s]    creating: obj/LuaJIT-2.1/doc/
+[  148s]   inflating: obj/LuaJIT-2.1/doc/bluequad-print.css  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/bluequad.css  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/contact.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_c_api.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_ffi.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_ffi_api.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_ffi_semantics.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_ffi_tutorial.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_jit.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/ext_profiler.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/extensions.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/faq.html  
+[  148s]    creating: obj/LuaJIT-2.1/doc/img/
+[  148s]  extracting: obj/LuaJIT-2.1/doc/img/contact.png  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/install.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/luajit.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/running.html  
+[  148s]   inflating: obj/LuaJIT-2.1/doc/status.html  
+[  148s]    creating: obj/LuaJIT-2.1/dynasm/
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_arm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_arm.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_arm64.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_arm64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_mips.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_mips.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_mips64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_ppc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_ppc.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_proto.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_x64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_x86.h  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dasm_x86.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/dynasm/dynasm.lua  
+[  148s]    creating: obj/LuaJIT-2.1/etc/
+[  148s]   inflating: obj/LuaJIT-2.1/etc/luajit.1  
+[  148s]   inflating: obj/LuaJIT-2.1/etc/luajit.pc  
+[  148s]    creating: obj/LuaJIT-2.1/src/
+[  148s]   inflating: obj/LuaJIT-2.1/src/.gitignore  
+[  148s]   inflating: obj/LuaJIT-2.1/src/Makefile  
+[  148s]   inflating: obj/LuaJIT-2.1/src/Makefile.dep  
+[  148s]    creating: obj/LuaJIT-2.1/src/host/
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/.gitignore  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/README  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm_asm.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm_fold.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm_lib.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm_libbc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/buildvm_peobj.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/genlibbc.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/genminilua.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/host/minilua.c  
+[  148s]    creating: obj/LuaJIT-2.1/src/jit/
+[  148s]  extracting: obj/LuaJIT-2.1/src/jit/.gitignore  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/bc.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/bcsave.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_arm.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_arm64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_arm64be.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mips.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mips64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mips64el.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mips64r6.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mips64r6el.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_mipsel.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_ppc.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_x64.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dis_x86.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/dump.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/p.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/v.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/jit/zone.lua  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lauxlib.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_aux.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_base.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_bit.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_debug.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_ffi.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_init.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_io.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_jit.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_math.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_os.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_package.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_string.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lib_table.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_alloc.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_alloc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_api.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_arch.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm_arm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm_arm64.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm_mips.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm_ppc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_asm_x86.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_assert.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_bc.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_bc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_bcdump.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_bcread.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_bcwrite.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_buf.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_buf.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_carith.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_carith.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ccall.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ccall.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ccallback.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ccallback.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cconv.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cconv.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cdata.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cdata.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_char.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_char.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_clib.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_clib.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cparse.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_cparse.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_crecord.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_crecord.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ctype.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ctype.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_debug.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_debug.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_def.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_dispatch.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_dispatch.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_emit_arm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_emit_arm64.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_emit_mips.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_emit_ppc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_emit_x86.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_err.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_err.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_errmsg.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ff.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ffrecord.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ffrecord.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_frame.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_func.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_func.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_gc.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_gc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_gdbjit.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_gdbjit.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ir.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ir.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_ircall.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_iropt.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_jit.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_lex.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_lex.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_lib.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_lib.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_load.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_mcode.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_mcode.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_meta.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_meta.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_obj.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_obj.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_dce.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_fold.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_loop.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_mem.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_narrow.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_sink.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_opt_split.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_parse.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_parse.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_prng.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_prng.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_profile.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_profile.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_record.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_record.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_snap.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_snap.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_state.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_state.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_str.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_str.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_strfmt.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_strfmt.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_strfmt_num.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_strscan.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_strscan.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_tab.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_tab.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target_arm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target_arm64.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target_mips.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target_ppc.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_target_x86.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_trace.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_trace.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_traceerr.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_udata.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_udata.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_vm.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_vmevent.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_vmevent.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lj_vmmath.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/ljamalg.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lua.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lua.hpp  
+[  148s]   inflating: obj/LuaJIT-2.1/src/luaconf.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/luajit.c  
+[  148s]   inflating: obj/LuaJIT-2.1/src/luajit.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/lualib.h  
+[  148s]   inflating: obj/LuaJIT-2.1/src/msvcbuild.bat  
+[  148s]   inflating: obj/LuaJIT-2.1/src/ps4build.bat  
+[  148s]   inflating: obj/LuaJIT-2.1/src/psvitabuild.bat  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_arm.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_arm64.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_mips.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_mips64.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_ppc.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_x64.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/vm_x86.dasc  
+[  148s]   inflating: obj/LuaJIT-2.1/src/xb1build.bat  
+[  148s]   inflating: obj/LuaJIT-2.1/src/xedkbuild.bat  
+[  148s] Building LuaJIT...
+[  148s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/wrk-4.2.0/obj/LuaJIT-2.1'
+[  148s] ==== Building LuaJIT 2.1.0-beta3 ====
+[  148s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/wrk-4.2.0/obj/LuaJIT-2.1'
+[  148s] /usr/bin/make -C src
+[  152s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/wrk-4.2.0/obj/LuaJIT-2.1/src'
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:69:2: error: #error "No support for this architecture (yet)"
+[  152s]    69 | #error "No support for this architecture (yet)"
+[  152s]       |  ^~~~~
+[  152s] lj_arch.h:424:2: error: #error "No target architecture defined"
+[  152s]   424 | #error "No target architecture defined"
+[  152s]       |  ^~~~~
+[  152s] Makefile:271: *** Unsupported target architecture.  Stop.
+[  152s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/wrk-4.2.0/obj/LuaJIT-2.1/src'
+[  152s] make[1]: *** [Makefile:113: src/luajit] Error 2
+[  152s] make: *** [Makefile:88: obj/lib/libluajit-5.1.a] Error 2
+[  152s] error: Bad exit status from /var/tmp/rpm-tmp.tDtRSD (%build)
+[  152s] 
+[  152s] RPM build errors:
+[  152s]     Bad exit status from /var/tmp/rpm-tmp.tDtRSD (%build)
+[  152s] ### VM INTERACTION START ###
+[  153s] [  147.616463][    T1] sysrq: Power Off
+[  153s] [  147.619807][   T18] reboot: Power down
+[  153s] ### VM INTERACTION END ###
+[  153s] 
+[  153s] lamb10 failed "build wrk.spec" at Wed Jan 11 16:17:44 UTC 2023.
+[  153s] 

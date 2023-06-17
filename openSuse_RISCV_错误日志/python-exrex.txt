@@ -1,0 +1,704 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_7/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_7/root
+[    0s] 
+[    0s] 
+[    0s] lamb62 started "build python-exrex.spec" at Sat Feb 18 20:04:32 UTC 2023.
+[    0s] 
+[    0s] Building python-exrex for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '0223e4d0c0796c55389443ddd4f6c6b4'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_7/.build-srcdir/python-exrex.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_7/.build-srcdir/python-exrex.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/7/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_7/.build.rpmlist /var/cache/obs/worker/root_7/.build-srcdir/python-exrex.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7f1f24da28b81384a50e3930e651d4e0]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[    5s]   breaking dependency python310-base -> libpython3_10-1_0
+[    5s] cycle: libpython3_11-1_0 -> python311-base
+[    5s]   breaking dependency python311-base -> libpython3_11-1_0
+[    5s] cycle: libpython3_8-1_0 -> python38-base
+[    5s]   breaking dependency python38-base -> libpython3_8-1_0
+[    5s] cycle: libpython3_9-1_0 -> python39-base
+[    5s]   breaking dependency python39-base -> libpython3_9-1_0
+[    5s] done
+[    5s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_7/.mount/boot/kernel -initrd /var/cache/obs/worker/root_7/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_7/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_7/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_7/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   17s] ### VM INTERACTION END ###
+[   17s] 2nd stage started in virtual machine
+[   18s] machine type: riscv64
+[   19s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   19s] Increasing log level from now on...
+[   19s] [   11.165884][  T414] sysrq: Changing Loglevel
+[   19s] [   11.166693][  T414] sysrq: Loglevel set to 4
+[   19s] Enable sysrq operations
+[   20s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   20s] no label, UUID=bca02e7b-5519-45cc-bc8d-f5db22563864
+[   20s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   20s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   20s] swapon /dev/vdb
+[   20s] WARNING: udev not running, creating extra device nodes
+[   22s] logging output to //.build.log...
+[   23s] processing recipe /.build-srcdir/python-exrex.spec ...
+[   23s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-exrex.spec build ...
+[   23s] initializing rpm db...
+[   24s] querying package ids...
+[   60s] [1/147] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   60s] [2/147] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   60s] [3/147] preinstalled attr-2.5.1-1.1
+[   60s] [4/147] preinstalled bash-5.2.15-8.1
+[   60s] [5/147] preinstalled bash-sh-5.2.15-8.1
+[   60s] [6/147] preinstalled binutils-2.39-3.1
+[   60s] [7/147] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   60s] [8/147] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   60s] [9/147] preinstalled build-mkbaselibs-20230215-1.1
+[   60s] [10/147] preinstalled bzip2-1.0.8-4.1
+[   60s] [11/147] preinstalled chkstat-1599_20221220-1.2
+[   60s] [12/147] preinstalled compat-usrmerge-build-84.87-5.1
+[   60s] [13/147] preinstalled compat-usrmerge-tools-84.87-5.1
+[   60s] [14/147] preinstalled coreutils-9.1-5.1
+[   60s] [15/147] preinstalled cpio-2.13-5.1
+[   60s] [16/147] preinstalled cpp-12-2.1
+[   60s] [17/147] preinstalled cpp12-12.2.1+git749-4.1
+[   60s] [18/147] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   60s] [19/147] preinstalled debugedit-5.0-5.1
+[   60s] [20/147] preinstalled diffutils-3.9-1.1
+[   60s] [21/147] preinstalled dwz-0.15-2.1
+[   60s] [22/147] preinstalled elfutils-0.188-3.2
+[   60s] [23/147] cumulate fdupes-2.2.1-1.1
+[   60s] [24/147] preinstalled file-5.44-1.1
+[   60s] [25/147] preinstalled file-magic-5.44-1.1
+[   60s] [26/147] preinstalled filesystem-84.87-12.1
+[   60s] [27/147] preinstalled fillup-1.42-279.1
+[   60s] [28/147] preinstalled findutils-4.9.0-2.1
+[   60s] [29/147] preinstalled gawk-5.2.1-2.1
+[   60s] [30/147] preinstalled gcc-12-2.1
+[   60s] [31/147] preinstalled gcc-PIE-12-2.1
+[   60s] [32/147] preinstalled gcc12-12.2.1+git749-4.1
+[   60s] [33/147] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   60s] [34/147] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   60s] [35/147] preinstalled gettext-tools-mini-0.21.1-1.1
+[   60s] [36/147] preinstalled glibc-2.37-1.1
+[   60s] [37/147] preinstalled glibc-devel-2.37-1.1
+[   60s] [38/147] preinstalled glibc-locale-base-2.37-1.1
+[   60s] [39/147] preinstalled grep-3.8-3.1
+[   60s] [40/147] preinstalled gzip-1.12-3.1
+[   60s] [41/147] preinstalled kernel-obs-build-6.1.12-1.1
+[   60s] [42/147] preinstalled libacl1-2.3.1-2.1
+[   60s] [43/147] preinstalled libasan8-13.0.1+git5428-6.1
+[   60s] [44/147] preinstalled libasm1-0.188-3.2
+[   60s] [45/147] preinstalled libatomic1-13.0.1+git5428-6.1
+[   60s] [46/147] preinstalled libattr1-2.5.1-1.1
+[   60s] [47/147] preinstalled libaudit1-3.0.6-4.1
+[   60s] [48/147] preinstalled libblkid1-2.38.1-7.1
+[   60s] [49/147] preinstalled libbz2-1-1.0.8-4.1
+[   60s] [50/147] preinstalled libcap-ng0-0.8.3-1.1
+[   60s] [51/147] preinstalled libcap2-2.67-1.1
+[   60s] [52/147] preinstalled libcrypt1-4.4.33-1.1
+[   60s] [53/147] preinstalled libctf-nobfd0-2.39-3.1
+[   60s] [54/147] preinstalled libctf0-2.39-3.1
+[   60s] [55/147] preinstalled libdb-4_8-4.8.30-39.1
+[   60s] [56/147] preinstalled libdw1-0.188-3.2
+[   60s] [57/147] preinstalled libeconf0-0.5.1-1.1
+[   60s] [58/147] preinstalled libelf1-0.188-3.2
+[   60s] [59/147] cumulate libexpat1-2.5.0-2.1
+[   60s] [60/147] preinstalled libfdisk1-2.38.1-7.1
+[   60s] [61/147] cumulate libffi8-3.4.4-1.1
+[   60s] [62/147] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   60s] [63/147] preinstalled libgcrypt20-1.10.1-1.1
+[   60s] [64/147] preinstalled libgdbm6-1.23-1.1
+[   60s] [65/147] preinstalled libgdbm_compat4-1.23-1.1
+[   60s] [66/147] preinstalled libgmp10-6.2.1-4.1
+[   60s] [67/147] preinstalled libgomp1-13.0.1+git5428-6.1
+[   60s] [68/147] preinstalled libgpg-error0-1.46-1.1
+[   60s] [69/147] preinstalled libisl23-0.25-1.1
+[   60s] [70/147] preinstalled liblua5_4-5-5.4.4-8.1
+[   60s] [71/147] preinstalled liblzma5-5.4.1-1.1
+[   60s] [72/147] preinstalled libmagic1-5.44-1.1
+[   60s] [73/147] preinstalled libmount1-2.38.1-7.1
+[   60s] [74/147] preinstalled libmpc3-1.3.1-1.2
+[   60s] [75/147] cumulate libmpdec3-2.5.1-2.1
+[   60s] [76/147] preinstalled libmpfr6-4.2.0-1.1
+[   60s] [77/147] preinstalled libncurses6-6.4.20230128-5.1
+[   60s] [78/147] preinstalled libpcre2-8-0-10.42-3.2
+[   60s] [79/147] preinstalled libpkgconf3-1.8.0-2.1
+[   60s] [80/147] preinstalled libpopt0-1.19-1.1
+[   60s] [81/147] preinstalled libreadline8-8.2-2.1
+[   60s] [82/147] preinstalled librpmbuild9-4.18.0-3.1
+[   60s] [83/147] preinstalled libseccomp2-2.5.4-2.1
+[   60s] [84/147] preinstalled libselinux1-3.4-2.1
+[   60s] [85/147] preinstalled libsemanage-conf-3.4-1.1
+[   60s] [86/147] preinstalled libsemanage2-3.4-1.1
+[   60s] [87/147] preinstalled libsepol2-3.4-1.1
+[   60s] [88/147] preinstalled libsmartcols1-2.38.1-7.1
+[   60s] [89/147] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   60s] [90/147] preinstalled libsubid4-4.13-3.1
+[   60s] [91/147] preinstalled libubsan1-13.0.1+git5428-6.1
+[   60s] [92/147] preinstalled libutempter0-1.2.0-3.2
+[   60s] [93/147] preinstalled libuuid1-2.38.1-7.1
+[   60s] [94/147] preinstalled libxcrypt-devel-4.4.33-1.1
+[   60s] [95/147] preinstalled libz1-1.2.13-2.1
+[   60s] [96/147] preinstalled libzstd1-1.5.2-2.1
+[   60s] [97/147] preinstalled linux-glibc-devel-6.1-1.1
+[   60s] [98/147] preinstalled login_defs-4.13-3.1
+[   60s] [99/147] preinstalled lua54-5.4.4-8.1
+[   60s] [100/147] preinstalled make-4.4-2.1
+[   60s] [101/147] preinstalled ncurses-utils-6.4.20230128-5.1
+[   60s] [102/147] preinstalled pam-1.5.2-12.1
+[   60s] [103/147] preinstalled patch-2.7.6-6.1
+[   60s] [104/147] preinstalled perl-5.36.0-4.1
+[   60s] [105/147] preinstalled perl-base-5.36.0-4.1
+[   60s] [106/147] preinstalled permissions-1599_20221220-1.2
+[   60s] [107/147] preinstalled permissions-config-1599_20221220-1.2
+[   60s] [108/147] preinstalled pkgconf-1.8.0-2.1
+[   60s] [109/147] preinstalled pkgconf-m4-1.8.0-2.1
+[   60s] [110/147] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   60s] [111/147] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   60s] [112/147] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   60s] [113/147] cumulate python-rpm-macros-20230128.e704796-1.2
+[   60s] [114/147] preinstalled qemu-linux-user-7.1.0-50.1
+[   60s] [115/147] preinstalled rpm-4.18.0-3.1
+[   60s] [116/147] preinstalled rpm-build-4.18.0-3.1
+[   60s] [117/147] preinstalled rpm-build-perl-4.18.0-3.1
+[   60s] [118/147] preinstalled rpm-config-SUSE-20220926-1.1
+[   60s] [119/147] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   60s] [120/147] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   60s] [121/147] preinstalled sed-4.9-2.1
+[   60s] [122/147] preinstalled shadow-4.13-3.1
+[   60s] [123/147] preinstalled system-group-hardware-20170617-24.1
+[   60s] [124/147] preinstalled system-user-root-20190513-2.1
+[   60s] [125/147] preinstalled systemd-rpm-macros-19-1.1
+[   60s] [126/147] preinstalled sysuser-shadow-3.1-5.1
+[   60s] [127/147] preinstalled tar-1.34-9.1
+[   60s] [128/147] preinstalled terminfo-base-6.4.20230128-5.1
+[   60s] [129/147] preinstalled update-alternatives-1.21.8-1.1
+[   60s] [130/147] preinstalled util-linux-2.38.1-7.1
+[   60s] [131/147] preinstalled which-2.21-5.1
+[   60s] [132/147] preinstalled xz-5.4.1-1.1
+[   60s] [133/147] cumulate libopenssl3-3.0.7-3.1
+[   60s] [134/147] cumulate python310-base-3.10.9-2.2
+[   60s] [135/147] cumulate python311-base-3.11.1-4.2
+[   60s] [136/147] cumulate python38-base-3.8.16-3.2
+[   60s] [137/147] cumulate python39-base-3.9.16-3.2
+[   60s] [138/147] cumulate libpython3_10-1_0-3.10.9-2.2
+[   60s] [139/147] cumulate libpython3_11-1_0-3.11.1-4.2
+[   60s] [140/147] cumulate libpython3_8-1_0-3.8.16-3.2
+[   60s] [141/147] cumulate libpython3_9-1_0-3.9.16-3.2
+[   60s] [142/147] cumulate python310-packaging-23.0-1.1
+[   60s] [143/147] cumulate python310-setuptools-65.6.3-1.2
+[   60s] [144/147] cumulate python311-setuptools-65.6.3-1.2
+[   60s] [145/147] cumulate python38-setuptools-65.6.3-1.2
+[   60s] [146/147] cumulate python39-setuptools-65.6.3-1.2
+[   60s] [147/147] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   60s] now installing cumulated packages
+[   61s] Preparing...                          ########################################
+[   61s] Updating / installing...
+[   61s] libmpdec3-2.5.1-2.1                   ########################################
+[   61s] libffi8-3.4.4-1.1                     ########################################
+[   61s] libexpat1-2.5.0-2.1                   ########################################
+[   61s] python-rpm-macros-20230128.e704796-1.2########################################
+[   61s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   62s] libopenssl3-3.0.7-3.1                 ########################################
+[   63s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   70s] python310-base-3.10.9-2.2             ########################################
+[   72s] libpython3_11-1_0-3.11.1-4.2          ########################################
+[   82s] python311-base-3.11.1-4.2             ########################################
+[   83s] libpython3_8-1_0-3.8.16-3.2           ########################################
+[   91s] python38-base-3.8.16-3.2              ########################################
+[   92s] libpython3_9-1_0-3.9.16-3.2           ########################################
+[   99s] python39-base-3.9.16-3.2              ########################################
+[  100s] python310-packaging-23.0-1.1          ########################################
+[  100s] python-rpm-packaging-20210526+a18ca48-########################################
+[  102s] python39-setuptools-65.6.3-1.2        ########################################
+[  104s] python38-setuptools-65.6.3-1.2        ########################################
+[  105s] python311-setuptools-65.6.3-1.2       ########################################
+[  107s] python310-setuptools-65.6.3-1.2       ########################################
+[  107s] fdupes-2.2.1-1.1                      ########################################
+[  111s] now finalizing build dir...
+[  111s] ... running 01-add_abuild_user_to_trusted_group
+[  112s] ... running 02-set_timezone_to_utc
+[  112s] ... running 03-set-permissions-secure
+[  113s] ... running 11-hack_uname_version_to_kernel_version
+[  128s] -----------------------------------------------------------------
+[  128s] I have the following modifications for python-exrex.spec:
+[  128s] 24c24
+[  128s] < Release:        0
+[  128s] ---
+[  128s] > Release:        1.6
+[  139s] build target is riscv64-suse-linux
+[  139s] -----------------------------------------------------------------
+[  139s] ----- building python-exrex.spec (user abuild)
+[  139s] -----------------------------------------------------------------
+[  139s] -----------------------------------------------------------------
+[  145s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/0223e4d0c0796c55389443ddd4f6c6b4-python-exrex' /home/abuild/rpmbuild/SOURCES/python-exrex.spec
+[  195s] Building target platforms: riscv64-suse-linux
+[  195s] Building for target riscv64-suse-linux
+[  195s] setting SOURCE_DATE_EPOCH=1614211200
+[  195s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.w49uuc
+[  195s] + umask 022
+[  195s] + cd /home/abuild/rpmbuild/BUILD
+[  195s] + cd /home/abuild/rpmbuild/BUILD
+[  195s] + rm -rf exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  195s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/exrex-0.10.5+git119.tar.gz
+[  196s] + STATUS=0
+[  196s] + '[' 0 -ne 0 ']'
+[  196s] + cd exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  196s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  196s] + sed -i '1s/^#!.*//' exrex.py
+[  196s] + echo 'Patch #0 (fix-setup-encoding.patch):'
+[  196s] Patch #0 (fix-setup-encoding.patch):
+[  196s] + /usr/bin/patch --no-backup-if-mismatch -f -p1 --fuzz=0
+[  196s] patching file setup.py
+[  196s] + RPM_EC=0
+[  196s] ++ jobs -p
+[  196s] + exit 0
+[  196s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.7BfFm4
+[  197s] + umask 022
+[  197s] + cd /home/abuild/rpmbuild/BUILD
+[  197s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64
+[  197s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64
+[  197s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  197s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64
+[  197s] + cd exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  197s] + ref=/usr/lib/rpm
+[  197s] + mints=0
+[  197s] + case $(uname -m) in
+[  197s] ++ uname -m
+[  198s] + mints=20160911
+[  198s] + for s in guess sub
+[  198s] ++ find -maxdepth 8 -name config.guess
+[  198s] + for s in guess sub
+[  198s] ++ find -maxdepth 8 -name config.sub
+[  198s] ++ '[' -f _current_flavor ']'
+[  198s] ++ true
+[  198s] + last_flavor=
+[  198s] + '[' -z '' ']'
+[  198s] + last_flavor=tmp
+[  198s] + '[' tmp '!=' python38 ']'
+[  198s] + '[' -d build ']'
+[  198s] + '[' -d _build.python38 ']'
+[  198s] + echo python38
+[  198s] + python_flavor=python38
+[  198s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  204s] running build
+[  204s] running build_py
+[  204s] creating build
+[  204s] creating build/lib
+[  204s] copying exrex.py -> build/lib
+[  204s] running egg_info
+[  204s] creating exrex.egg-info
+[  204s] writing exrex.egg-info/PKG-INFO
+[  204s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  204s] writing entry points to exrex.egg-info/entry_points.txt
+[  204s] writing top-level names to exrex.egg-info/top_level.txt
+[  204s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  204s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  204s] reading manifest template 'MANIFEST.in'
+[  204s] adding license file 'COPYING'
+[  204s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  204s] running build_scripts
+[  204s] creating build/scripts-3.8
+[  204s] copying exrex.py -> build/scripts-3.8
+[  204s] changing mode of build/scripts-3.8/exrex.py from 644 to 755
+[  204s] ++ '[' -f _current_flavor ']'
+[  204s] ++ cat _current_flavor
+[  205s] + last_flavor=python38
+[  205s] + '[' -z python38 ']'
+[  205s] + '[' python38 '!=' python39 ']'
+[  205s] + '[' -d build ']'
+[  205s] + mv build _build.python38
+[  205s] + '[' -d _build.python39 ']'
+[  205s] + echo python39
+[  205s] + python_flavor=python39
+[  205s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  210s] running build
+[  210s] running build_py
+[  210s] creating build
+[  210s] creating build/lib
+[  210s] copying exrex.py -> build/lib
+[  210s] running egg_info
+[  210s] writing exrex.egg-info/PKG-INFO
+[  210s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  210s] writing entry points to exrex.egg-info/entry_points.txt
+[  210s] writing top-level names to exrex.egg-info/top_level.txt
+[  210s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  210s] reading manifest template 'MANIFEST.in'
+[  210s] adding license file 'COPYING'
+[  210s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  211s] running build_scripts
+[  211s] creating build/scripts-3.9
+[  211s] copying exrex.py -> build/scripts-3.9
+[  211s] changing mode of build/scripts-3.9/exrex.py from 644 to 755
+[  211s] ++ '[' -f _current_flavor ']'
+[  211s] ++ cat _current_flavor
+[  211s] + last_flavor=python39
+[  211s] + '[' -z python39 ']'
+[  211s] + '[' python39 '!=' python311 ']'
+[  211s] + '[' -d build ']'
+[  211s] + mv build _build.python39
+[  211s] + '[' -d _build.python311 ']'
+[  211s] + echo python311
+[  211s] + python_flavor=python311
+[  211s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  216s] running build
+[  216s] running build_py
+[  216s] creating build
+[  216s] creating build/lib
+[  216s] copying exrex.py -> build/lib
+[  216s] running egg_info
+[  216s] writing exrex.egg-info/PKG-INFO
+[  216s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  216s] writing entry points to exrex.egg-info/entry_points.txt
+[  216s] writing top-level names to exrex.egg-info/top_level.txt
+[  217s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  217s] reading manifest template 'MANIFEST.in'
+[  217s] adding license file 'COPYING'
+[  217s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  217s] running build_scripts
+[  217s] creating build/scripts-3.11
+[  217s] copying exrex.py -> build/scripts-3.11
+[  217s] changing mode of build/scripts-3.11/exrex.py from 644 to 755
+[  217s] ++ '[' -f _current_flavor ']'
+[  217s] ++ cat _current_flavor
+[  217s] + last_flavor=python311
+[  217s] + '[' -z python311 ']'
+[  217s] + '[' python311 '!=' python310 ']'
+[  217s] + '[' -d build ']'
+[  217s] + mv build _build.python311
+[  217s] + '[' -d _build.python310 ']'
+[  217s] + echo python310
+[  217s] + python_flavor=python310
+[  217s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[  223s] running build
+[  223s] running build_py
+[  223s] creating build
+[  223s] creating build/lib
+[  223s] copying exrex.py -> build/lib
+[  223s] running egg_info
+[  223s] writing exrex.egg-info/PKG-INFO
+[  223s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  223s] writing entry points to exrex.egg-info/entry_points.txt
+[  223s] writing top-level names to exrex.egg-info/top_level.txt
+[  223s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  223s] reading manifest template 'MANIFEST.in'
+[  223s] adding license file 'COPYING'
+[  223s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  223s] running build_scripts
+[  223s] creating build/scripts-3.10
+[  223s] copying exrex.py -> build/scripts-3.10
+[  223s] changing mode of build/scripts-3.10/exrex.py from 644 to 755
+[  224s] + RPM_EC=0
+[  224s] ++ jobs -p
+[  224s] + exit 0
+[  224s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.9skIne
+[  224s] + umask 022
+[  224s] + cd /home/abuild/rpmbuild/BUILD
+[  224s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64
+[  225s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  225s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64
+[  225s] + cd exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  225s] ++ '[' -f _current_flavor ']'
+[  225s] ++ cat _current_flavor
+[  225s] + last_flavor=python310
+[  225s] + '[' -z python310 ']'
+[  225s] + '[' python310 '!=' python38 ']'
+[  225s] + '[' -d build ']'
+[  225s] + mv build _build.python310
+[  225s] + '[' -d _build.python38 ']'
+[  225s] + mv _build.python38 build
+[  225s] + echo python38
+[  225s] + python_flavor=python38
+[  225s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64 --prefix /usr
+[  231s] running install
+[  232s] running install_lib
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8
+[  232s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages
+[  232s] copying build/lib/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages
+[  232s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages/exrex.py to exrex.cpython-38.pyc
+[  232s] writing byte-compilation script '/tmp/tmp5ibr3cir.py'
+[  232s] /usr/bin/python3.8 /tmp/tmp5ibr3cir.py
+[  238s] removing /tmp/tmp5ibr3cir.py
+[  238s] running install_egg_info
+[  238s] running egg_info
+[  238s] writing exrex.egg-info/PKG-INFO
+[  238s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  238s] writing entry points to exrex.egg-info/entry_points.txt
+[  238s] writing top-level names to exrex.egg-info/top_level.txt
+[  238s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  238s] reading manifest template 'MANIFEST.in'
+[  238s] adding license file 'COPYING'
+[  238s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  238s] Copying exrex.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages/exrex-0.10.6-py3.8.egg-info
+[  238s] running install_scripts
+[  238s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  238s] copying build/scripts-3.8/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  238s] changing mode of /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex.py to 755
+[  239s] Installing exrex script to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  239s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  239s]   warnings.warn(
+[  239s] ++ '[' -f _current_flavor ']'
+[  239s] ++ cat _current_flavor
+[  239s] + last_flavor=python38
+[  239s] + '[' -z python38 ']'
+[  239s] + '[' python38 '!=' python39 ']'
+[  239s] + '[' -d build ']'
+[  239s] + mv build _build.python38
+[  239s] + '[' -d _build.python39 ']'
+[  239s] + mv _build.python39 build
+[  239s] + echo python39
+[  239s] + python_flavor=python39
+[  239s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64 --prefix /usr
+[  245s] running install
+[  245s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  245s]   warnings.warn(
+[  245s] running install_lib
+[  245s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9
+[  245s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages
+[  245s] copying build/lib/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages
+[  245s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages/exrex.py to exrex.cpython-39.pyc
+[  245s] writing byte-compilation script '/tmp/tmplsugod41.py'
+[  245s] /usr/bin/python3.9 /tmp/tmplsugod41.py
+[  252s] removing /tmp/tmplsugod41.py
+[  252s] running install_egg_info
+[  252s] running egg_info
+[  252s] writing exrex.egg-info/PKG-INFO
+[  252s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  252s] writing entry points to exrex.egg-info/entry_points.txt
+[  252s] writing top-level names to exrex.egg-info/top_level.txt
+[  252s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  252s] reading manifest template 'MANIFEST.in'
+[  252s] adding license file 'COPYING'
+[  252s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  252s] Copying exrex.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages/exrex-0.10.6-py3.9.egg-info
+[  252s] running install_scripts
+[  253s] copying build/scripts-3.9/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  253s] changing mode of /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex.py to 755
+[  253s] Installing exrex script to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  253s] ++ '[' -f _current_flavor ']'
+[  253s] ++ cat _current_flavor
+[  253s] + last_flavor=python39
+[  253s] + '[' -z python39 ']'
+[  253s] + '[' python39 '!=' python311 ']'
+[  253s] + '[' -d build ']'
+[  253s] + mv build _build.python39
+[  253s] + '[' -d _build.python311 ']'
+[  253s] + mv _build.python311 build
+[  253s] + echo python311
+[  253s] + python_flavor=python311
+[  253s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64 --prefix /usr
+[  259s] running install
+[  259s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  259s]   warnings.warn(
+[  259s] running install_lib
+[  259s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11
+[  259s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages
+[  259s] copying build/lib/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages
+[  259s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages/exrex.py to exrex.cpython-311.pyc
+[  259s] writing byte-compilation script '/tmp/tmpkymbkzpd.py'
+[  259s] /usr/bin/python3.11 /tmp/tmpkymbkzpd.py
+[  264s] removing /tmp/tmpkymbkzpd.py
+[  264s] running install_egg_info
+[  265s] running egg_info
+[  265s] writing exrex.egg-info/PKG-INFO
+[  265s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  265s] writing entry points to exrex.egg-info/entry_points.txt
+[  265s] writing top-level names to exrex.egg-info/top_level.txt
+[  265s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  265s] reading manifest template 'MANIFEST.in'
+[  265s] adding license file 'COPYING'
+[  265s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  265s] Copying exrex.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages/exrex-0.10.6-py3.11.egg-info
+[  265s] running install_scripts
+[  265s] copying build/scripts-3.11/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  265s] changing mode of /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex.py to 755
+[  265s] Installing exrex script to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  266s] ++ '[' -f _current_flavor ']'
+[  266s] ++ cat _current_flavor
+[  266s] + last_flavor=python311
+[  266s] + '[' -z python311 ']'
+[  266s] + '[' python311 '!=' python310 ']'
+[  266s] + '[' -d build ']'
+[  266s] + mv build _build.python311
+[  266s] + '[' -d _build.python310 ']'
+[  266s] + mv _build.python310 build
+[  266s] + echo python310
+[  266s] + python_flavor=python310
+[  266s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64 --prefix /usr
+[  271s] running install
+[  271s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  271s]   warnings.warn(
+[  271s] running install_lib
+[  271s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10
+[  271s] creating /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages
+[  271s] copying build/lib/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages
+[  271s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages/exrex.py to exrex.cpython-310.pyc
+[  271s] writing byte-compilation script '/tmp/tmpm_t0dlhr.py'
+[  271s] /usr/bin/python3.10 /tmp/tmpm_t0dlhr.py
+[  276s] removing /tmp/tmpm_t0dlhr.py
+[  276s] running install_egg_info
+[  276s] running egg_info
+[  276s] writing exrex.egg-info/PKG-INFO
+[  277s] writing dependency_links to exrex.egg-info/dependency_links.txt
+[  277s] writing entry points to exrex.egg-info/entry_points.txt
+[  277s] writing top-level names to exrex.egg-info/top_level.txt
+[  277s] reading manifest file 'exrex.egg-info/SOURCES.txt'
+[  277s] reading manifest template 'MANIFEST.in'
+[  277s] adding license file 'COPYING'
+[  277s] writing manifest file 'exrex.egg-info/SOURCES.txt'
+[  277s] Copying exrex.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages/exrex-0.10.6-py3.10.egg-info
+[  277s] running install_scripts
+[  277s] copying build/scripts-3.10/exrex.py -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  277s] changing mode of /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex.py to 755
+[  277s] Installing exrex script to /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin
+[  278s] + cp /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.8
+[  278s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.8
+[  278s] + cp /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.9
+[  278s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.9
+[  278s] + cp /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.11
+[  278s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.11
+[  278s] + cp /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.10
+[  278s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex-3.10
+[  278s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex
+[  278s] + alternative_target=/usr/bin/exrex
+[  278s] + [[ /usr/bin/exrex == /usr/share/man* ]]
+[  278s] + '[' 0 -eq 1 ']'
+[  278s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/etc/alternatives
+[  278s] + touch /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/etc/alternatives/exrex
+[  278s] + ln -sf /etc/alternatives/exrex /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex
+[  278s] + rm /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/bin/exrex.py
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python310
+[  279s] + '[' -z python310 ']'
+[  279s] + '[' python310 '!=' python38 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python310
+[  279s] + '[' -d _build.python38 ']'
+[  279s] + mv _build.python38 build
+[  279s] + echo python38
+[  279s] + python_flavor=python38
+[  279s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages
+[  279s] Linking /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages/__pycache__/exrex.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages/__pycache__/exrex.cpython-38.pyc
+[  279s] ++ '[' -f _current_flavor ']'
+[  279s] ++ cat _current_flavor
+[  279s] + last_flavor=python38
+[  279s] + '[' -z python38 ']'
+[  279s] + '[' python38 '!=' python39 ']'
+[  279s] + '[' -d build ']'
+[  279s] + mv build _build.python38
+[  279s] + '[' -d _build.python39 ']'
+[  279s] + mv _build.python39 build
+[  279s] + echo python39
+[  279s] + python_flavor=python39
+[  279s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages/__pycache__/exrex.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages/__pycache__/exrex.cpython-39.pyc
+[  280s] ++ '[' -f _current_flavor ']'
+[  280s] ++ cat _current_flavor
+[  280s] + last_flavor=python39
+[  280s] + '[' -z python39 ']'
+[  280s] + '[' python39 '!=' python311 ']'
+[  280s] + '[' -d build ']'
+[  280s] + mv build _build.python39
+[  280s] + '[' -d _build.python311 ']'
+[  280s] + mv _build.python311 build
+[  280s] + echo python311
+[  280s] + python_flavor=python311
+[  280s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages/__pycache__/exrex.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages/__pycache__/exrex.cpython-311.pyc
+[  280s] ++ '[' -f _current_flavor ']'
+[  280s] ++ cat _current_flavor
+[  280s] + last_flavor=python311
+[  280s] + '[' -z python311 ']'
+[  280s] + '[' python311 '!=' python310 ']'
+[  280s] + '[' -d build ']'
+[  280s] + mv build _build.python311
+[  280s] + '[' -d _build.python310 ']'
+[  280s] + mv _build.python310 build
+[  280s] + echo python310
+[  280s] + python_flavor=python310
+[  280s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages
+[  280s] Linking /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages/__pycache__/exrex.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.10/site-packages/__pycache__/exrex.cpython-310.pyc
+[  280s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  282s] + /usr/lib/rpm/brp-compress
+[  282s] + /usr/lib/rpm/brp-suse
+[  282s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  282s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  283s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  283s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  283s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  284s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.rvgmjj
+[  284s] + umask 022
+[  284s] + cd /home/abuild/rpmbuild/BUILD
+[  284s] + cd exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9
+[  284s] ++ '[' -f _current_flavor ']'
+[  284s] ++ cat _current_flavor
+[  284s] + last_flavor=python310
+[  284s] + '[' -z python310 ']'
+[  284s] + '[' python310 '!=' python38 ']'
+[  284s] + '[' -d build ']'
+[  284s] + mv build _build.python310
+[  284s] + '[' -d _build.python38 ']'
+[  284s] + mv _build.python38 build
+[  284s] + echo python38
+[  284s] + python_flavor=python38
+[  284s] + LANG=C.UTF-8
+[  284s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.8/site-packages
+[  284s] + python3.8 ./tests.py
+[  305s] [+] generation test passed
+[  305s] [+] count test passed
+[  305s] [+] random generation test passed
+[  305s] [+] simplification test passed
+[  305s] ++ '[' -f _current_flavor ']'
+[  305s] ++ cat _current_flavor
+[  305s] + last_flavor=python38
+[  305s] + '[' -z python38 ']'
+[  305s] + '[' python38 '!=' python39 ']'
+[  305s] + '[' -d build ']'
+[  305s] + mv build _build.python38
+[  305s] + '[' -d _build.python39 ']'
+[  305s] + mv _build.python39 build
+[  306s] + echo python39
+[  306s] + python_flavor=python39
+[  306s] + LANG=C.UTF-8
+[  306s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.9/site-packages
+[  306s] + python3.9 ./tests.py
+[  326s] [+] generation test passed
+[  326s] [+] count test passed
+[  326s] [+] random generation test passed
+[  326s] [+] simplification test passed
+[  327s] ++ '[' -f _current_flavor ']'
+[  327s] ++ cat _current_flavor
+[  327s] + last_flavor=python39
+[  327s] + '[' -z python39 ']'
+[  327s] + '[' python39 '!=' python311 ']'
+[  327s] + '[' -d build ']'
+[  327s] + mv build _build.python39
+[  327s] + '[' -d _build.python311 ']'
+[  327s] + mv _build.python311 build
+[  327s] + echo python311
+[  327s] + python_flavor=python311
+[  327s] + LANG=C.UTF-8
+[  327s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-exrex-0.10.5+git119-1.6.riscv64/usr/lib/python3.11/site-packages
+[  327s] + python3.11 ./tests.py
+[  328s] Traceback (most recent call last):
+[  328s]   File "/home/abuild/rpmbuild/BUILD/exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9/./tests.py", line 21, in <module>
+[  328s]     from exrex import generate, count, getone, CATEGORIES, simplify
+[  328s]   File "/home/abuild/rpmbuild/BUILD/exrex-fd1e21ffc7c16fd5637a5c440224766417e840f9/exrex.py", line 25, in <module>
+[  328s]     from re import match, sre_parse, U
+[  328s] ImportError: cannot import name 'sre_parse' from 're' (/usr/lib64/python3.11/re/__init__.py)
+[  328s] error: Bad exit status from /var/tmp/rpm-tmp.rvgmjj (%check)
+[  328s] 
+[  328s] RPM build errors:
+[  328s]     Bad exit status from /var/tmp/rpm-tmp.rvgmjj (%check)
+[  328s] ### VM INTERACTION START ###
+[  329s] [  321.055581][    T1] sysrq: Power Off
+[  329s] [  321.059172][   T18] reboot: Power down
+[  329s] ### VM INTERACTION END ###
+[  329s] 
+[  329s] lamb62 failed "build python-exrex.spec" at Sat Feb 18 20:10:01 UTC 2023.
+[  329s] 

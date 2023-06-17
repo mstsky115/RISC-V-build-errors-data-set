@@ -1,0 +1,1137 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] lamb04 started "build xdg-user-dirs-gtk.spec" at Tue Oct 18 14:31:04 UTC 2022.
+[    0s] 
+[    0s] Building xdg-user-dirs-gtk for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '804cc985eb9293171a14562f2d39353f'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/xdg-user-dirs-gtk.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/xdg-user-dirs-gtk.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/xdg-user-dirs-gtk.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-gtk3-devel [1b0ef4de886a0f7e519076f8f1d4a783]
+[    6s] 
+[    6s] copying packages...
+[    7s] reordering...done
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using UART console
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   15s] machine type: riscv64
+[   16s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   16s] Increasing log level from now on...
+[   16s] [    7.026574][  T394] sysrq: Changing Loglevel
+[   16s] [    7.028072][  T394] sysrq: Loglevel set to 4
+[   16s] Enable sysrq operations
+[   16s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   16s] no label, UUID=18893be7-a9bd-4a81-9c5b-c0976309f7da
+[   16s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   17s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   17s] swapon /dev/vdb
+[   17s] WARNING: udev not running, creating extra device nodes
+[   17s] logging output to //.build.log...
+[   18s] processing recipe /.build-srcdir/xdg-user-dirs-gtk.spec ...
+[   18s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/xdg-user-dirs-gtk.spec build ...
+[   19s] initializing rpm db...
+[   19s] querying package ids...
+[   71s] [1/397] preinstalled Mesa-22.2.1-326.1
+[   71s] [2/397] preinstalled Mesa-KHR-devel-22.2.1-326.1
+[   71s] [3/397] preinstalled Mesa-dri-22.2.1-326.1
+[   71s] [4/397] preinstalled Mesa-libEGL-devel-22.2.1-326.1
+[   71s] [5/397] preinstalled Mesa-libEGL1-22.2.1-326.1
+[   71s] [6/397] preinstalled Mesa-libGL-devel-22.2.1-326.1
+[   71s] [7/397] preinstalled Mesa-libGL1-22.2.1-326.1
+[   71s] [8/397] preinstalled Mesa-libglapi0-22.2.1-326.1
+[   71s] [9/397] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   71s] [10/397] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   71s] [11/397] preinstalled alts-1.2+3.b848aad-2.1
+[   71s] [12/397] preinstalled at-spi2-core-2.46.0-1.1
+[   71s] [13/397] preinstalled at-spi2-core-devel-2.46.0-1.1
+[   71s] [14/397] preinstalled attr-2.5.1-1.1
+[   71s] [15/397] cumulate autoconf-archive-2022.09.03-1.1
+[   71s] [16/397] preinstalled bash-5.2.2-2.1
+[   71s] [17/397] preinstalled bash-sh-5.2.2-2.1
+[   71s] [18/397] preinstalled binutils-2.39-1.1
+[   71s] [19/397] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-2.1
+[   71s] [20/397] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   71s] [21/397] preinstalled build-mkbaselibs-20220927-1.1
+[   71s] [22/397] preinstalled bzip2-1.0.8-4.1
+[   71s] [23/397] preinstalled cairo-devel-1.17.6-1.1
+[   71s] [24/397] preinstalled chkstat-1599_20220912-2.1
+[   71s] [25/397] preinstalled compat-usrmerge-build-84.87-5.1
+[   71s] [26/397] preinstalled compat-usrmerge-tools-84.87-5.1
+[   71s] [27/397] preinstalled coreutils-9.1-4.1
+[   71s] [28/397] preinstalled cpio-2.13-4.1
+[   71s] [29/397] preinstalled cpp-12-2.1
+[   71s] [30/397] preinstalled cpp12-12.2.1+git416-4.1
+[   71s] [31/397] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   71s] [32/397] preinstalled cups-config-2.4.2-2.1
+[   71s] [33/397] preinstalled dbus-1-1.14.0-6.1
+[   71s] [34/397] preinstalled dbus-1-common-1.14.0-6.1
+[   71s] [35/397] preinstalled dbus-1-daemon-1.14.0-6.1
+[   71s] [36/397] preinstalled dbus-1-devel-1.14.0-6.1
+[   71s] [37/397] preinstalled dbus-1-tools-1.14.0-6.1
+[   71s] [38/397] preinstalled debugedit-5.0-4.1
+[   71s] [39/397] cumulate desktop-file-utils-0.26-5.1
+[   71s] [40/397] preinstalled diffutils-3.8-3.1
+[   71s] [41/397] preinstalled dwz-0.14-5.1
+[   71s] [42/397] preinstalled elfutils-0.187-9.2
+[   71s] [43/397] preinstalled file-5.43-1.1
+[   71s] [44/397] preinstalled file-magic-5.43-1.1
+[   71s] [45/397] preinstalled filesystem-84.87-9.1
+[   71s] [46/397] preinstalled fillup-1.42-278.1
+[   71s] [47/397] preinstalled findutils-4.9.0-1.1
+[   71s] [48/397] preinstalled fontconfig-2.14.0-1.1
+[   71s] [49/397] preinstalled fontconfig-devel-2.14.0-1.1
+[   71s] [50/397] preinstalled freetype2-devel-2.12.1-3.1
+[   71s] [51/397] preinstalled fribidi-devel-1.0.12-1.1
+[   71s] [52/397] preinstalled gawk-5.2.0-2.1
+[   71s] [53/397] preinstalled gcc-12-2.1
+[   71s] [54/397] preinstalled gcc-PIE-12-2.1
+[   71s] [55/397] preinstalled gcc12-12.2.1+git416-4.1
+[   71s] [56/397] preinstalled gcc12-PIE-12.2.1+git416-4.1
+[   71s] [57/397] preinstalled gdk-pixbuf-devel-2.42.9-3.1
+[   71s] [58/397] preinstalled gdk-pixbuf-query-loaders-2.42.9-3.1
+[   71s] [59/397] preinstalled gettext-its-gtk3-3.24.34-6.1
+[   71s] [60/397] preinstalled gettext-runtime-mini-0.21-4.1
+[   71s] [61/397] preinstalled gettext-tools-mini-0.21-4.1
+[   71s] [62/397] preinstalled gio-branding-upstream-2.74.0-2.1
+[   71s] [63/397] preinstalled girepository-1_0-1.74.0-2.1
+[   71s] [64/397] preinstalled glib2-devel-2.74.0-2.1
+[   71s] [65/397] preinstalled glib2-tools-2.74.0-2.1
+[   71s] [66/397] preinstalled glibc-2.36-6.1
+[   71s] [67/397] preinstalled glibc-devel-2.36-6.1
+[   71s] [68/397] preinstalled glibc-locale-base-2.36-6.1
+[   71s] [69/397] preinstalled graphite2-devel-1.3.14-3.1
+[   71s] [70/397] preinstalled grep-3.8-2.1
+[   71s] [71/397] preinstalled gtk3-data-3.24.34-6.1
+[   71s] [72/397] preinstalled gtk3-devel-3.24.34-6.1
+[   71s] [73/397] preinstalled gtk3-schema-3.24.34-6.1
+[   71s] [74/397] preinstalled gtk3-tools-3.24.34-6.1
+[   71s] [75/397] preinstalled gzip-1.12-2.1
+[   71s] [76/397] preinstalled harfbuzz-devel-5.3.0-1.1
+[   71s] [77/397] preinstalled hicolor-icon-theme-0.17-3.2
+[   71s] [78/397] preinstalled kernel-obs-build-5.14.2-1.3
+[   71s] [79/397] preinstalled krb5-mini-1.20-1.1
+[   71s] [80/397] preinstalled libLLVM15-15.0.2-1.1
+[   71s] [81/397] preinstalled libX11-6-1.8.1-2.1
+[   71s] [82/397] preinstalled libX11-data-1.8.1-2.1
+[   71s] [83/397] preinstalled libX11-devel-1.8.1-2.1
+[   71s] [84/397] preinstalled libX11-xcb1-1.8.1-2.1
+[   71s] [85/397] preinstalled libXau-devel-1.0.10-1.1
+[   71s] [86/397] preinstalled libXau6-1.0.10-1.1
+[   71s] [87/397] preinstalled libXcomposite-devel-0.4.5-1.2
+[   71s] [88/397] preinstalled libXcomposite1-0.4.5-1.2
+[   71s] [89/397] preinstalled libXcursor-devel-1.2.1-1.1
+[   71s] [90/397] preinstalled libXcursor1-1.2.1-1.1
+[   71s] [91/397] preinstalled libXdamage-devel-1.1.5-1.2
+[   71s] [92/397] preinstalled libXdamage1-1.1.5-1.2
+[   71s] [93/397] preinstalled libXext-devel-1.3.4-1.2
+[   71s] [94/397] preinstalled libXext6-1.3.4-1.2
+[   71s] [95/397] preinstalled libXfixes-devel-6.0.0-2.1
+[   71s] [96/397] preinstalled libXfixes3-6.0.0-2.1
+[   71s] [97/397] preinstalled libXft-devel-2.3.6-1.1
+[   71s] [98/397] preinstalled libXft2-2.3.6-1.1
+[   71s] [99/397] preinstalled libXi-devel-1.8-1.1
+[   71s] [100/397] preinstalled libXi6-1.8-1.1
+[   71s] [101/397] preinstalled libXinerama-devel-1.1.4-1.2
+[   71s] [102/397] preinstalled libXinerama1-1.1.4-1.2
+[   71s] [103/397] preinstalled libXrandr-devel-1.5.2-1.2
+[   71s] [104/397] preinstalled libXrandr2-1.5.2-1.2
+[   71s] [105/397] preinstalled libXrender-devel-0.9.10-1.3
+[   71s] [106/397] preinstalled libXrender1-0.9.10-1.3
+[   71s] [107/397] preinstalled libXtst-devel-1.2.4-1.1
+[   71s] [108/397] preinstalled libXtst6-1.2.4-1.1
+[   71s] [109/397] preinstalled libXxf86vm1-1.1.5-1.1
+[   71s] [110/397] preinstalled libacl1-2.3.1-2.1
+[   71s] [111/397] preinstalled libalternatives1-1.2+3.b848aad-2.1
+[   71s] [112/397] preinstalled libasan8-12.2.1+git416-4.1
+[   71s] [113/397] preinstalled libasm1-0.187-9.2
+[   71s] [114/397] preinstalled libatk-1_0-0-2.46.0-1.1
+[   71s] [115/397] preinstalled libatk-bridge-2_0-0-2.46.0-1.1
+[   71s] [116/397] preinstalled libatomic1-12.2.1+git416-4.1
+[   71s] [117/397] preinstalled libatspi0-2.46.0-1.1
+[   71s] [118/397] preinstalled libattr1-2.5.1-1.1
+[   71s] [119/397] preinstalled libaudit1-3.0.6-4.1
+[   71s] [120/397] preinstalled libavahi-client3-0.8-19.1
+[   71s] [121/397] preinstalled libavahi-common3-0.8-19.1
+[   71s] [122/397] preinstalled libblkid-devel-2.37.4-4.1
+[   71s] [123/397] preinstalled libblkid1-2.37.4-4.1
+[   71s] [124/397] preinstalled libbrotli-devel-1.0.9-1.1
+[   71s] [125/397] preinstalled libbrotlicommon1-1.0.9-1.1
+[   71s] [126/397] preinstalled libbrotlidec1-1.0.9-1.1
+[   71s] [127/397] preinstalled libbrotlienc1-1.0.9-1.1
+[   71s] [128/397] preinstalled libbz2-1-1.0.8-4.1
+[   71s] [129/397] preinstalled libbz2-devel-1.0.8-4.1
+[   71s] [130/397] preinstalled libcairo-gobject2-1.17.6-1.1
+[   71s] [131/397] preinstalled libcairo-script-interpreter2-1.17.6-1.1
+[   71s] [132/397] preinstalled libcairo2-1.17.6-1.1
+[   71s] [133/397] preinstalled libcap-ng0-0.8.3-1.1
+[   71s] [134/397] preinstalled libcap2-2.66-1.1
+[   71s] [135/397] preinstalled libcolord2-1.4.6-2.1
+[   71s] [136/397] preinstalled libcom_err2-1.46.5-3.1
+[   71s] [137/397] preinstalled libcrypt1-4.4.28-1.1
+[   71s] [138/397] preinstalled libctf-nobfd0-2.39-1.1
+[   71s] [139/397] preinstalled libctf0-2.39-1.1
+[   71s] [140/397] preinstalled libcups2-2.4.2-2.1
+[   71s] [141/397] preinstalled libdatrie-devel-0.2.13-1.1
+[   71s] [142/397] preinstalled libdatrie1-0.2.13-1.1
+[   71s] [143/397] preinstalled libdb-4_8-4.8.30-39.1
+[   71s] [144/397] preinstalled libdbus-1-3-1.14.0-6.1
+[   71s] [145/397] preinstalled libdrm2-2.4.113-1.1
+[   71s] [146/397] preinstalled libdrm_amdgpu1-2.4.113-1.1
+[   71s] [147/397] preinstalled libdrm_nouveau2-2.4.113-1.1
+[   71s] [148/397] preinstalled libdrm_radeon1-2.4.113-1.1
+[   71s] [149/397] preinstalled libdw1-0.187-9.2
+[   71s] [150/397] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   71s] [151/397] preinstalled libedit0-20210910.3.1-1.1
+[   71s] [152/397] preinstalled libelf1-0.187-9.2
+[   71s] [153/397] preinstalled libepoxy-devel-1.5.10-1.1
+[   71s] [154/397] preinstalled libepoxy0-1.5.10-1.1
+[   71s] [155/397] preinstalled libexpat-devel-2.4.9-1.1
+[   71s] [156/397] preinstalled libexpat1-2.4.9-1.1
+[   71s] [157/397] preinstalled libfdisk1-2.37.4-4.1
+[   71s] [158/397] preinstalled libffi-devel-3.4.3-2.1
+[   71s] [159/397] preinstalled libffi8-3.4.3-2.1
+[   71s] [160/397] preinstalled libfontconfig1-2.14.0-1.1
+[   71s] [161/397] preinstalled libfreetype6-2.12.1-3.1
+[   71s] [162/397] preinstalled libfribidi0-1.0.12-1.1
+[   71s] [163/397] preinstalled libgbm1-22.2.1-326.1
+[   71s] [164/397] preinstalled libgcc_s1-12.2.1+git416-4.1
+[   71s] [165/397] preinstalled libgcrypt20-1.9.4-6.1
+[   71s] [166/397] preinstalled libgdbm6-1.23-1.1
+[   71s] [167/397] preinstalled libgdbm_compat4-1.23-1.1
+[   71s] [168/397] preinstalled libgdk_pixbuf-2_0-0-2.42.9-3.1
+[   71s] [169/397] preinstalled libgio-2_0-0-2.74.0-2.1
+[   71s] [170/397] preinstalled libgirepository-1_0-1-1.74.0-2.1
+[   71s] [171/397] preinstalled libglib-2_0-0-2.74.0-2.1
+[   71s] [172/397] preinstalled libglvnd-1.5.0-1.1
+[   71s] [173/397] preinstalled libglvnd-devel-1.5.0-1.1
+[   71s] [174/397] preinstalled libgmodule-2_0-0-2.74.0-2.1
+[   71s] [175/397] preinstalled libgmp10-6.2.1-4.1
+[   71s] [176/397] preinstalled libgnutls30-3.7.7-2.1
+[   71s] [177/397] preinstalled libgobject-2_0-0-2.74.0-2.1
+[   71s] [178/397] preinstalled libgomp1-12.2.1+git416-4.1
+[   72s] [179/397] preinstalled libgpg-error0-1.45-1.1
+[   72s] [180/397] preinstalled libgraphite2-3-1.3.14-3.1
+[   72s] [181/397] preinstalled libgthread-2_0-0-2.74.0-2.1
+[   72s] [182/397] preinstalled libgtk-3-0-3.24.34-6.1
+[   72s] [183/397] preinstalled libharfbuzz-gobject0-5.3.0-1.1
+[   72s] [184/397] preinstalled libharfbuzz-icu0-5.3.0-1.1
+[   72s] [185/397] preinstalled libharfbuzz-subset0-5.3.0-1.1
+[   72s] [186/397] preinstalled libharfbuzz0-5.3.0-1.1
+[   72s] [187/397] preinstalled libhogweed6-3.8.1-1.1
+[   72s] [188/397] preinstalled libicu-devel-71.1-2.1
+[   72s] [189/397] preinstalled libicu71-71.1-2.1
+[   72s] [190/397] preinstalled libicu71-ledata-71.1-2.1
+[   72s] [191/397] preinstalled libidn2-0-2.3.3-1.1
+[   72s] [192/397] preinstalled libisl23-0.25-1.1
+[   72s] [193/397] preinstalled libjbig2-2.1-4.1
+[   72s] [194/397] preinstalled libjitterentropy3-3.4.1-1.1
+[   72s] [195/397] preinstalled libjpeg8-8.2.2-71.1
+[   72s] [196/397] preinstalled libjpeg8-devel-8.2.2-71.1
+[   72s] [197/397] preinstalled libkeyutils1-1.6.3-4.1
+[   72s] [198/397] preinstalled liblcms2-2-2.13.1-1.1
+[   72s] [199/397] cumulate libltdl7-2.4.7-2.1
+[   72s] [200/397] preinstalled liblua5_4-5-5.4.4-6.1
+[   72s] [201/397] preinstalled liblzma5-5.2.7-2.1
+[   72s] [202/397] preinstalled libmagic1-5.43-1.1
+[   72s] [203/397] preinstalled libmount-devel-2.37.4-4.1
+[   72s] [204/397] preinstalled libmount1-2.37.4-4.1
+[   72s] [205/397] preinstalled libmpc3-1.2.1-1.2
+[   72s] [206/397] preinstalled libmpdec3-2.5.1-2.1
+[   72s] [207/397] preinstalled libmpfr6-4.1.0-2.1
+[   72s] [208/397] preinstalled libncurses6-6.3.20221001-29.1
+[   72s] [209/397] preinstalled libnettle8-3.8.1-1.1
+[   72s] [210/397] preinstalled libopenssl1_1-1.1.1q-2.1
+[   72s] [211/397] preinstalled libp11-kit0-0.24.1-2.1
+[   72s] [212/397] preinstalled libpango-1_0-0-1.50.11-1.1
+[   72s] [213/397] preinstalled libpcre2-16-0-10.40-3.1
+[   72s] [214/397] preinstalled libpcre2-32-0-10.40-3.1
+[   72s] [215/397] preinstalled libpcre2-8-0-10.40-3.1
+[   72s] [216/397] preinstalled libpcre2-posix3-10.40-3.1
+[   72s] [217/397] preinstalled libpixman-1-0-0.40.0-1.2
+[   72s] [218/397] preinstalled libpixman-1-0-devel-0.40.0-1.2
+[   72s] [219/397] preinstalled libpkgconf3-1.8.0-1.1
+[   72s] [220/397] preinstalled libpng16-16-1.6.38-1.1
+[   72s] [221/397] preinstalled libpng16-compat-devel-1.6.38-1.1
+[   72s] [222/397] preinstalled libpng16-devel-1.6.38-1.1
+[   72s] [223/397] preinstalled libpopt0-1.19-1.1
+[   72s] [224/397] preinstalled libpython3_10-1_0-3.10.7-2.1
+[   72s] [225/397] preinstalled libreadline8-8.2-1.1
+[   72s] [226/397] preinstalled librpmbuild9-4.17.1.1-1.1
+[   72s] [227/397] preinstalled libseccomp2-2.5.4-2.1
+[   72s] [228/397] preinstalled libselinux-devel-3.4-2.1
+[   72s] [229/397] preinstalled libselinux1-3.4-2.1
+[   72s] [230/397] preinstalled libsemanage-conf-3.4-1.1
+[   72s] [231/397] preinstalled libsemanage2-3.4-1.1
+[   72s] [232/397] preinstalled libsepol-devel-3.4-1.1
+[   72s] [233/397] preinstalled libsepol2-3.4-1.1
+[   72s] [234/397] preinstalled libsmartcols1-2.37.4-4.1
+[   72s] [235/397] preinstalled libstdc++-devel-12-2.1
+[   72s] [236/397] preinstalled libstdc++6-12.2.1+git416-4.1
+[   72s] [237/397] preinstalled libstdc++6-devel-gcc12-12.2.1+git416-4.1
+[   72s] [238/397] preinstalled libsubid4-4.12.3-1.1
+[   72s] [239/397] preinstalled libsystemd0-mini-251.5-1.1
+[   72s] [240/397] preinstalled libtasn1-6-4.19.0-1.1
+[   72s] [241/397] preinstalled libthai-data-0.1.29-1.1
+[   72s] [242/397] preinstalled libthai-devel-0.1.29-1.1
+[   72s] [243/397] preinstalled libthai0-0.1.29-1.1
+[   72s] [244/397] preinstalled libtiff-devel-4.4.0-4.1
+[   72s] [245/397] preinstalled libtiff5-4.4.0-4.1
+[   72s] [246/397] preinstalled libturbojpeg0-8.2.2-71.1
+[   72s] [247/397] preinstalled libubsan1-12.2.1+git416-4.1
+[   72s] [248/397] preinstalled libudev-mini1-251.5-1.1
+[   72s] [249/397] preinstalled libunistring2-1.0-1.1
+[   72s] [250/397] preinstalled libutempter0-1.2.0-3.2
+[   72s] [251/397] preinstalled libuuid1-2.37.4-4.1
+[   72s] [252/397] preinstalled libverto1-0.3.2-1.1
+[   72s] [253/397] preinstalled libwayland-client0-1.21.0-4.1
+[   72s] [254/397] preinstalled libwayland-cursor0-1.21.0-4.1
+[   72s] [255/397] preinstalled libwayland-egl1-1.21.0-4.1
+[   72s] [256/397] preinstalled libwayland-server0-1.21.0-4.1
+[   72s] [257/397] preinstalled libxcb-composite0-1.15-1.1
+[   72s] [258/397] preinstalled libxcb-damage0-1.15-1.1
+[   72s] [259/397] preinstalled libxcb-devel-1.15-1.1
+[   72s] [260/397] preinstalled libxcb-dpms0-1.15-1.1
+[   72s] [261/397] preinstalled libxcb-dri2-0-1.15-1.1
+[   72s] [262/397] preinstalled libxcb-dri3-0-1.15-1.1
+[   72s] [263/397] preinstalled libxcb-glx0-1.15-1.1
+[   72s] [264/397] preinstalled libxcb-present0-1.15-1.1
+[   72s] [265/397] preinstalled libxcb-randr0-1.15-1.1
+[   72s] [266/397] preinstalled libxcb-record0-1.15-1.1
+[   72s] [267/397] preinstalled libxcb-render0-1.15-1.1
+[   72s] [268/397] preinstalled libxcb-res0-1.15-1.1
+[   72s] [269/397] preinstalled libxcb-screensaver0-1.15-1.1
+[   72s] [270/397] preinstalled libxcb-shape0-1.15-1.1
+[   72s] [271/397] preinstalled libxcb-shm0-1.15-1.1
+[   72s] [272/397] preinstalled libxcb-sync1-1.15-1.1
+[   72s] [273/397] preinstalled libxcb-xf86dri0-1.15-1.1
+[   72s] [274/397] preinstalled libxcb-xfixes0-1.15-1.1
+[   72s] [275/397] preinstalled libxcb-xinerama0-1.15-1.1
+[   72s] [276/397] preinstalled libxcb-xinput0-1.15-1.1
+[   72s] [277/397] preinstalled libxcb-xkb1-1.15-1.1
+[   72s] [278/397] preinstalled libxcb-xtest0-1.15-1.1
+[   72s] [279/397] preinstalled libxcb-xv0-1.15-1.1
+[   72s] [280/397] preinstalled libxcb-xvmc0-1.15-1.1
+[   72s] [281/397] preinstalled libxcb1-1.15-1.1
+[   72s] [282/397] preinstalled libxcrypt-devel-4.4.28-1.1
+[   72s] [283/397] preinstalled libxkbcommon-devel-1.4.1-1.1
+[   72s] [284/397] preinstalled libxkbcommon0-1.4.1-1.1
+[   72s] [285/397] preinstalled libxml2-2-2.10.3-1.1
+[   72s] [286/397] cumulate libxml2-tools-2.10.3-1.1
+[   72s] [287/397] preinstalled libxshmfence1-1.3-1.2
+[   72s] [288/397] cumulate libxslt1-1.1.34-4.1
+[   72s] [289/397] cumulate libyaml-0-2-0.2.5-2.1
+[   72s] [290/397] preinstalled libz1-1.2.12-2.1
+[   72s] [291/397] preinstalled libzstd1-1.5.2-1.1
+[   72s] [292/397] preinstalled linux-glibc-devel-6.0-1.1
+[   72s] [293/397] preinstalled login_defs-4.12.3-1.1
+[   72s] [294/397] preinstalled lua54-5.4.4-6.1
+[   72s] [295/397] cumulate m4-1.4.18-7.1
+[   72s] [296/397] preinstalled make-4.3-4.1
+[   72s] [297/397] preinstalled ncurses-utils-6.3.20221001-29.1
+[   72s] [298/397] preinstalled pam-1.5.2-8.1
+[   72s] [299/397] preinstalled pam_unix-1.5.2-8.1
+[   72s] [300/397] preinstalled pango-devel-1.50.11-1.1
+[   72s] [301/397] preinstalled patch-2.7.6-6.1
+[   72s] [302/397] preinstalled pcre2-devel-10.40-3.1
+[   72s] [303/397] preinstalled perl-5.36.0-3.1
+[   72s] [304/397] cumulate perl-Encode-Locale-1.05-1.9
+[   72s] [305/397] cumulate perl-HTML-Tagset-3.20-73.9
+[   72s] [306/397] cumulate perl-IO-HTML-1.004-1.6
+[   72s] [307/397] cumulate perl-LWP-MediaTypes-6.04-1.7
+[   72s] [308/397] cumulate perl-TimeDate-2.33-1.6
+[   72s] [309/397] cumulate perl-Try-Tiny-0.31-1.3
+[   72s] [310/397] cumulate perl-URI-5.16-1.1
+[   72s] [311/397] preinstalled perl-base-5.36.0-3.1
+[   72s] [312/397] preinstalled permissions-1599_20220912-2.1
+[   72s] [313/397] preinstalled permissions-config-1599_20220912-2.1
+[   72s] [314/397] preinstalled pkgconf-1.8.0-1.1
+[   72s] [315/397] preinstalled pkgconf-m4-1.8.0-1.1
+[   72s] [316/397] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   72s] [317/397] preinstalled polkit-default-privs-1550+20220919.3b55a1f-1.1
+[   72s] [318/397] preinstalled post-build-checks-84.87+git20220922.95e4f0a-1.1
+[   72s] [319/397] preinstalled python-rpm-macros-20220912.f91cae2-1.1
+[   72s] [320/397] preinstalled python-rpm-packaging-20210526+a18ca48-1.1
+[   72s] [321/397] cumulate python310-Pygments-2.13.0-1.1
+[   72s] [322/397] preinstalled python310-base-3.10.7-2.1
+[   72s] [323/397] cumulate python310-extras-1.0.0-5.7
+[   72s] [324/397] preinstalled python310-packaging-21.3-4.1
+[   72s] [325/397] preinstalled python310-pyparsing-3.0.9-2.1
+[   72s] [326/397] cumulate python310-python-mimeparse-1.6.0-4.9
+[   72s] [327/397] cumulate python310-setuptools-63.2.0-1.1
+[   72s] [328/397] cumulate python310-six-1.16.0-2.4
+[   72s] [329/397] preinstalled qemu-linux-user-7.1.0-39.1
+[   72s] [330/397] preinstalled rpm-4.17.1.1-1.1
+[   72s] [331/397] preinstalled rpm-build-4.17.1.1-1.1
+[   72s] [332/397] preinstalled rpm-build-perl-4.17.1.1-1.1
+[   72s] [333/397] preinstalled rpm-config-SUSE-20220926-1.1
+[   72s] [334/397] preinstalled rpmlint-mini-2.4.0+git20221014.b4aaa76-8.14
+[   72s] [335/397] preinstalled rpmlint-strict-2.4.0+git20221014.b4aaa76-1.1
+[   72s] [336/397] preinstalled sed-4.8-3.2
+[   72s] [337/397] preinstalled shadow-4.12.3-1.1
+[   72s] [338/397] preinstalled shared-mime-info-2.2-1.1
+[   72s] [339/397] preinstalled system-group-hardware-20170617-24.1
+[   72s] [340/397] preinstalled system-user-lp-20170617-24.1
+[   72s] [341/397] preinstalled system-user-root-20190513-2.1
+[   72s] [342/397] preinstalled systemd-rpm-macros-17-1.1
+[   72s] [343/397] preinstalled sysuser-shadow-3.1-5.1
+[   72s] [344/397] preinstalled tar-1.34-7.1
+[   72s] [345/397] preinstalled terminfo-base-6.3.20221001-29.1
+[   72s] [346/397] preinstalled timezone-2022e-1.1
+[   72s] [347/397] preinstalled typelib-1_0-Atk-1_0-2.46.0-1.1
+[   72s] [348/397] preinstalled typelib-1_0-Atspi-2_0-2.46.0-1.1
+[   72s] [349/397] preinstalled typelib-1_0-GdkPixbuf-2_0-2.42.9-3.1
+[   72s] [350/397] preinstalled typelib-1_0-GdkPixdata-2_0-2.42.9-3.1
+[   72s] [351/397] preinstalled typelib-1_0-Gtk-3_0-3.24.34-6.1
+[   72s] [352/397] preinstalled typelib-1_0-HarfBuzz-0_0-5.3.0-1.1
+[   72s] [353/397] preinstalled typelib-1_0-Pango-1_0-1.50.11-1.1
+[   72s] [354/397] preinstalled update-alternatives-1.21.8-1.1
+[   72s] [355/397] preinstalled util-linux-2.37.4-4.1
+[   72s] [356/397] preinstalled wayland-devel-1.21.0-4.1
+[   72s] [357/397] preinstalled which-2.21-5.1
+[   72s] [358/397] cumulate xdg-user-dirs-0.17-3.1
+[   72s] [359/397] preinstalled xkeyboard-config-2.36-1.1
+[   72s] [360/397] preinstalled xorgproto-devel-2022.2-1.1
+[   72s] [361/397] preinstalled xz-5.2.7-2.1
+[   72s] [362/397] preinstalled zlib-devel-1.2.12-2.1
+[   72s] [363/397] cumulate zstd-1.5.2-1.1
+[   72s] [364/397] cumulate autoconf-2.71-1.1
+[   72s] [365/397] cumulate libexslt0-1.1.34-4.1
+[   72s] [366/397] cumulate obs-service-recompress-0.5.2-1.1
+[   72s] [367/397] cumulate perl-HTTP-Date-6.05-1.6
+[   72s] [368/397] cumulate perl-Net-HTTP-6.22-1.3
+[   72s] [369/397] cumulate perl-WWW-RobotRules-6.02-9.9
+[   72s] [370/397] cumulate python310-PyYAML-6.0-4.1
+[   72s] [371/397] cumulate python310-pbr-5.10.0-1.1
+[   72s] [372/397] cumulate python310-python-dateutil-2.8.2-1.4
+[   72s] [373/397] cumulate update-desktop-files-84.87-5.2
+[   72s] [374/397] cumulate automake-1.16.5-3.1
+[   72s] [375/397] cumulate perl-File-Listing-6.15-1.3
+[   72s] [376/397] cumulate python310-linecache2-1.0.0-5.9
+[   72s] [377/397] cumulate libxslt-tools-1.1.34-4.1
+[   72s] [378/397] cumulate obs-service-obs_scm-common-0.10.33.1664344889.48d1960-1.1
+[   72s] [379/397] cumulate perl-HTTP-Message-6.41-1.1
+[   72s] [380/397] cumulate obs-service-tar-0.10.33.1664344889.48d1960-1.1
+[   72s] [381/397] cumulate perl-HTTP-Negotiate-6.01-9.9
+[   72s] [382/397] cumulate perl-HTTP-Cookies-6.10-1.5
+[   72s] [383/397] cumulate python310-traceback2-1.4.0-6.9
+[   72s] [384/397] cumulate sgml-skel-0.7.2-1.1
+[   72s] [385/397] cumulate libtool-2.4.7-2.1
+[   72s] [386/397] cumulate perl-HTML-Parser-3.79-1.1
+[   72s] [387/397] cumulate docbook_4-4.5-143.2
+[   72s] [388/397] cumulate python310-testtools-2.5.0-1.4
+[   72s] [389/397] cumulate perl-libwww-perl-6.67-1.2
+[   72s] [390/397] cumulate perl-XML-Parser-2.46-1.7
+[   72s] [391/397] cumulate docbook-xsl-stylesheets-1.79.2-2.2
+[   72s] [392/397] cumulate python310-libxml2-2.10.3-1.1
+[   72s] [393/397] cumulate intltool-0.51.0-7.2
+[   72s] [394/397] cumulate itstool-2.0.7-1.1
+[   72s] [395/397] cumulate gtk-doc-1.33.2-1.1
+[   72s] [396/397] cumulate yelp-tools-42.0-1.1
+[   72s] [397/397] cumulate gnome-common-3.18.0-3.2
+[   72s] now installing cumulated packages
+[   73s] Preparing...                          ########################################
+[   73s] Updating / installing...
+[   73s] perl-URI-5.16-1.1                     ########################################
+[   73s] libxml2-tools-2.10.3-1.1              ########################################
+[   73s] python310-six-1.16.0-2.4              ########################################
+[   73s] python310-extras-1.0.0-5.7            ########################################
+[   73s] perl-LWP-MediaTypes-6.04-1.7          ########################################
+[   73s] perl-Encode-Locale-1.05-1.9           ########################################
+[   73s] m4-1.4.18-7.1                         ########################################
+[   74s] autoconf-2.71-1.1                     ########################################
+[   74s] automake-1.16.5-3.1                   ########################################
+[   75s] libxslt1-1.1.34-4.1                   ########################################
+[   75s] libexslt0-1.1.34-4.1                  ########################################
+[   75s] libxslt-tools-1.1.34-4.1              ########################################
+[   75s] sgml-skel-0.7.2-1.1                   ########################################
+[   77s] docbook_4-4.5-143.2                   ########################################
+[   83s] docbook-xsl-stylesheets-1.79.2-2.2    ########################################
+[   84s] python310-python-dateutil-2.8.2-1.4   ########################################
+[   84s] perl-Net-HTTP-6.22-1.3                ########################################
+[   84s] perl-WWW-RobotRules-6.02-9.9          ########################################
+[   84s] zstd-1.5.2-1.1                        ########################################
+[   85s] python310-setuptools-63.2.0-1.1       ########################################
+[   86s] python310-pbr-5.10.0-1.1              ########################################
+[   86s] python310-linecache2-1.0.0-5.9        ########################################
+[   86s] python310-traceback2-1.4.0-6.9        ########################################
+[   86s] python310-python-mimeparse-1.6.0-4.9  ########################################
+[   86s] python310-testtools-2.5.0-1.4         ########################################
+[   86s] python310-libxml2-2.10.3-1.1          ########################################
+[   87s] itstool-2.0.7-1.1                     ########################################
+[   87s] yelp-tools-42.0-1.1                   ########################################
+[   88s] python310-Pygments-2.13.0-1.1         ########################################
+[   88s] gtk-doc-1.33.2-1.1                    ########################################
+[   89s] perl-Try-Tiny-0.31-1.3                ########################################
+[   89s] perl-TimeDate-2.33-1.6                ########################################
+[   89s] perl-HTTP-Date-6.05-1.6               ########################################
+[   89s] perl-File-Listing-6.15-1.3            ########################################
+[   89s] perl-IO-HTML-1.004-1.6                ########################################
+[   89s] perl-HTTP-Message-6.41-1.1            ########################################
+[   89s] perl-HTTP-Negotiate-6.01-9.9          ########################################
+[   89s] perl-HTTP-Cookies-6.10-1.5            ########################################
+[   89s] perl-HTML-Tagset-3.20-73.9            ########################################
+[   89s] perl-HTML-Parser-3.79-1.1             ########################################
+[   89s] perl-libwww-perl-6.67-1.2             ########################################
+[   89s] perl-XML-Parser-2.46-1.7              ########################################
+[   89s] intltool-0.51.0-7.2                   ########################################
+[   89s] libyaml-0-2-0.2.5-2.1                 ########################################
+[   89s] python310-PyYAML-6.0-4.1              ########################################
+[   89s] obs-service-obs_scm-common-0.10.33.166########################################
+[   89s] libltdl7-2.4.7-2.1                    ########################################
+[   90s] libtool-2.4.7-2.1                     ########################################
+[   90s] desktop-file-utils-0.26-5.1           ########################################
+[  100s] autoconf-archive-2022.09.03-1.1       ########################################
+[  100s] gnome-common-3.18.0-3.2               ########################################
+[  100s] update-desktop-files-84.87-5.2        ########################################
+[  100s] obs-service-tar-0.10.33.1664344889.48d########################################
+[  100s] obs-service-recompress-0.5.2-1.1      ########################################
+[  100s] xdg-user-dirs-0.17-3.1                ########################################
+[  103s] now finalizing build dir...
+[  104s] ... running 01-add_abuild_user_to_trusted_group
+[  105s] ... running 02-set_timezone_to_utc
+[  105s] ... running 03-set-permissions-secure
+[  105s] ... running 11-hack_uname_version_to_kernel_version
+[  109s] Unpacking xdg-user-dirs-gtk-0.11.obscpio ...
+[  111s] 501 blocks
+[  113s] Running build time source services...
+[  118s] Compressed xdg-user-dirs-gtk-0.11.tar to xdg-user-dirs-gtk-0.11.tar.xz
+[  125s] build target is riscv64-suse-linux
+[  125s] -----------------------------------------------------------------
+[  125s] I have the following modifications for xdg-user-dirs-gtk.spec:
+[  125s] 21c21
+[  125s] < Release:        0
+[  125s] ---
+[  125s] > Release:        1.1
+[  125s] -----------------------------------------------------------------
+[  125s] ----- building xdg-user-dirs-gtk.spec (user abuild)
+[  125s] -----------------------------------------------------------------
+[  125s] -----------------------------------------------------------------
+[  129s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/804cc985eb9293171a14562f2d39353f-xdg-user-dirs-gtk' /home/abuild/rpmbuild/SOURCES/xdg-user-dirs-gtk.spec
+[  130s] Building target platforms: riscv64-suse-linux
+[  130s] Building for target riscv64-suse-linux
+[  130s] setting SOURCE_DATE_EPOCH=1665705600
+[  130s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.3Y3zdj
+[  130s] + umask 022
+[  130s] + cd /home/abuild/rpmbuild/BUILD
+[  130s] + cd /home/abuild/rpmbuild/BUILD
+[  130s] + rm -rf xdg-user-dirs-gtk-0.11
+[  130s] + /usr/bin/xz -dc /home/abuild/rpmbuild/SOURCES/xdg-user-dirs-gtk-0.11.tar.xz
+[  130s] + /usr/bin/tar -xof -
+[  130s] + STATUS=0
+[  130s] + '[' 0 -ne 0 ']'
+[  130s] + cd xdg-user-dirs-gtk-0.11
+[  130s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  130s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/xdg-user-dirs-gtk-XFCE-autostart.patch
+[  130s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  130s] + RPM_EC=0
+[  131s] ++ jobs -p
+[  131s] + exit 0
+[  131s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.cMoz9K
+[  131s] + umask 022
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/xdg-user-dirs-gtk-0.11-1.1.riscv64
+[  131s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/xdg-user-dirs-gtk-0.11-1.1.riscv64
+[  131s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  131s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/xdg-user-dirs-gtk-0.11-1.1.riscv64
+[  131s] + cd xdg-user-dirs-gtk-0.11
+[  131s] + ref=/usr/lib/rpm
+[  131s] + mints=0
+[  131s] + case $(uname -m) in
+[  131s] ++ uname -m
+[  131s] + mints=20160911
+[  131s] + for s in guess sub
+[  131s] ++ find -maxdepth 8 -name config.guess
+[  131s] + for s in guess sub
+[  131s] ++ find -maxdepth 8 -name config.sub
+[  131s] + NOCONFIGURE=1
+[  131s] + ./autogen.sh
+[  132s] /usr/bin/gnome-autogen.sh
+[  132s] ***Warning*** PKG_NAME is deprecated, you may remove it from autogen.sh
+[  137s] configure.ac:13: warning: The macro `AC_ISC_POSIX' is obsolete.
+[  137s] configure.ac:13: You should run autoupdate.
+[  137s] ./lib/autoconf/specific.m4:550: AC_ISC_POSIX is expanded from...
+[  137s] configure.ac:13: the top level
+[  137s] configure.ac:68: warning: The macro `AC_TRY_COMPILE' is obsolete.
+[  137s] configure.ac:68: You should run autoupdate.
+[  137s] ./lib/autoconf/general.m4:2847: AC_TRY_COMPILE is expanded from...
+[  137s] configure.ac:68: the top level
+[  137s] configure.ac:83: warning: AC_OUTPUT should be used without arguments.
+[  137s] configure.ac:83: You should run autoupdate.
+[  137s] checking for automake >= 1.9...
+[  141s]   testing automake... found 1.16.5
+[  141s] checking for autoreconf >= 2.53...
+[  144s]   testing autoreconf... found 2.71
+[  147s] configure.ac:13: warning: The macro `AC_ISC_POSIX' is obsolete.
+[  147s] configure.ac:13: You should run autoupdate.
+[  147s] ./lib/autoconf/specific.m4:550: AC_ISC_POSIX is expanded from...
+[  147s] configure.ac:13: the top level
+[  147s] configure.ac:68: warning: The macro `AC_TRY_COMPILE' is obsolete.
+[  147s] configure.ac:68: You should run autoupdate.
+[  147s] ./lib/autoconf/general.m4:2847: AC_TRY_COMPILE is expanded from...
+[  147s] configure.ac:68: the top level
+[  147s] configure.ac:83: warning: AC_OUTPUT should be used without arguments.
+[  147s] configure.ac:83: You should run autoupdate.
+[  149s] checking for glib-gettext >= 2.2.0...
+[  150s]   testing glib-gettextize... found 2.74.0
+[  150s] checking for intltool >= 0.40.0...
+[  151s]   testing intltoolize... found 0.51.0
+[  151s] checking for pkg-config >= 0.22...
+[  152s]   testing pkg-config... found 1.8.0
+[  153s] Checking for required M4 macros...
+[  153s] Processing ./configure.ac
+[  157s] configure.ac:13: warning: The macro `AC_ISC_POSIX' is obsolete.
+[  157s] configure.ac:13: You should run autoupdate.
+[  157s] ./lib/autoconf/specific.m4:550: AC_ISC_POSIX is expanded from...
+[  157s] configure.ac:13: the top level
+[  157s] configure.ac:68: warning: The macro `AC_TRY_COMPILE' is obsolete.
+[  157s] configure.ac:68: You should run autoupdate.
+[  157s] ./lib/autoconf/general.m4:2847: AC_TRY_COMPILE is expanded from...
+[  157s] configure.ac:68: the top level
+[  157s] configure.ac:83: warning: AC_OUTPUT should be used without arguments.
+[  157s] configure.ac:83: You should run autoupdate.
+[  158s] Running glib-gettextize... Ignore non-fatal messages.
+[  158s] Copying file po/Makefile.in.in
+[  158s] 
+[  158s] Please add the files
+[  158s]   codeset.m4 gettext.m4 glibc21.m4 iconv.m4 isc-posix.m4 lcmessage.m4
+[  158s]   progtest.m4
+[  158s] from the /usr/share/aclocal directory to your autoconf macro directory
+[  158s] or directly to your aclocal.m4 file.
+[  158s] You will also need config.guess and config.sub, which you can get from
+[  158s] ftp://ftp.gnu.org/pub/gnu/config/.
+[  158s] 
+[  159s] Running intltoolize...
+[  161s] Running autoreconf...
+[  162s] autoreconf: export WARNINGS=no-portability
+[  162s] autoreconf: Entering directory '.'
+[  162s] autoreconf: configure.ac: not using Gettext
+[  163s] autoreconf: running: aclocal --force 
+[  175s] autoreconf: configure.ac: tracing
+[  185s] autoreconf: configure.ac: not using Libtool
+[  185s] autoreconf: running: intltoolize --copy --force
+[  187s] autoreconf: configure.ac: not using Gtkdoc
+[  187s] autoreconf: running: /usr/bin/autoconf --force
+[  193s] configure.ac:13: warning: The macro `AC_ISC_POSIX' is obsolete.
+[  193s] configure.ac:13: You should run autoupdate.
+[  193s] ./lib/autoconf/specific.m4:550: AC_ISC_POSIX is expanded from...
+[  193s] configure.ac:13: the top level
+[  193s] configure.ac:25: warning: The macro `GLIB_GNU_GETTEXT' is obsolete.
+[  193s] configure.ac:25: You should run autoupdate.
+[  193s] aclocal.m4:388: GLIB_GNU_GETTEXT is expanded from...
+[  193s] aclocal.m4:488: AM_GLIB_GNU_GETTEXT is expanded from...
+[  193s] configure.ac:25: the top level
+[  193s] configure.ac:25: warning: The macro `AC_TRY_LINK' is obsolete.
+[  193s] configure.ac:25: You should run autoupdate.
+[  193s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  193s] ./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+[  193s] ./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+[  193s] aclocal.m4:73: GLIB_LC_MESSAGES is expanded from...
+[  193s] aclocal.m4:388: GLIB_GNU_GETTEXT is expanded from...
+[  193s] aclocal.m4:488: AM_GLIB_GNU_GETTEXT is expanded from...
+[  193s] configure.ac:25: the top level
+[  193s] configure.ac:25: warning: The macro `AC_TRY_LINK' is obsolete.
+[  193s] configure.ac:25: You should run autoupdate.
+[  193s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:692: _AS_IF_ELSE is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  193s] ./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+[  193s] ./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  193s] ./lib/autoconf/headers.m4:89: _AC_CHECK_HEADER_COMPILE is expanded from...
+[  193s] ./lib/autoconf/headers.m4:56: AC_CHECK_HEADER is expanded from...
+[  193s] aclocal.m4:172: GLIB_WITH_NLS is expanded from...
+[  193s] aclocal.m4:388: GLIB_GNU_GETTEXT is expanded from...
+[  193s] aclocal.m4:488: AM_GLIB_GNU_GETTEXT is expanded from...
+[  193s] configure.ac:25: the top level
+[  193s] configure.ac:25: warning: The macro `AC_TRY_LINK' is obsolete.
+[  193s] configure.ac:25: You should run autoupdate.
+[  193s] ./lib/autoconf/general.m4:2920: AC_TRY_LINK is expanded from...
+[  193s] lib/m4sugar/m4sh.m4:699: AS_IF is expanded from...
+[  193s] ./lib/autoconf/headers.m4:89: _AC_CHECK_HEADER_COMPILE is expanded from...
+[  193s] ./lib/autoconf/headers.m4:56: AC_CHECK_HEADER is expanded from...
+[  193s] aclocal.m4:172: GLIB_WITH_NLS is expanded from...
+[  193s] aclocal.m4:388: GLIB_GNU_GETTEXT is expanded from...
+[  193s] aclocal.m4:488: AM_GLIB_GNU_GETTEXT is expanded from...
+[  193s] configure.ac:25: the top level
+[  193s] configure.ac:25: warning: The macro `AC_OUTPUT_COMMANDS' is obsolete.
+[  193s] configure.ac:25: You should run autoupdate.
+[  193s] ./lib/autoconf/status.m4:1025: AC_OUTPUT_COMMANDS is expanded from...
+[  193s] aclocal.m4:172: GLIB_WITH_NLS is expanded from...
+[  193s] aclocal.m4:388: GLIB_GNU_GETTEXT is expanded from...
+[  193s] aclocal.m4:488: AM_GLIB_GNU_GETTEXT is expanded from...
+[  193s] configure.ac:25: the top level
+[  193s] configure.ac:68: warning: The macro `AC_TRY_COMPILE' is obsolete.
+[  193s] configure.ac:68: You should run autoupdate.
+[  193s] ./lib/autoconf/general.m4:2847: AC_TRY_COMPILE is expanded from...
+[  193s] configure.ac:68: the top level
+[  193s] configure.ac:83: warning: AC_OUTPUT should be used without arguments.
+[  193s] configure.ac:83: You should run autoupdate.
+[  195s] autoreconf: running: /usr/bin/autoheader --force
+[  201s] autoreconf: running: automake --add-missing --copy --force-missing
+[  215s] configure.ac:12: installing './compile'
+[  215s] configure.ac:6: installing './install-sh'
+[  215s] configure.ac:6: installing './missing'
+[  215s] Makefile.am:11: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+[  215s] Makefile.am: installing './depcomp'
+[  216s] autoreconf: Leaving directory '.'
+[  216s] Skipping configure process.
+[  216s] + export CFLAGS=-Wno-error=deprecated-declarations
+[  216s] + CFLAGS=-Wno-error=deprecated-declarations
+[  216s] + CONFIG_SHELL=/usr/bin/bash
+[  216s] + export CONFIG_SHELL
+[  216s] + CFLAGS=-Wno-error=deprecated-declarations
+[  216s] + export CFLAGS
+[  216s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  216s] + export CXXFLAGS
+[  216s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  216s] + export FFLAGS
+[  216s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  216s] + export FCFLAGS
+[  216s] + LDFLAGS=-flto=auto
+[  216s] + export LDFLAGS
+[  216s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info
+[  223s] checking for a BSD-compatible install... /usr/bin/install -c
+[  223s] checking whether build environment is sane... yes
+[  223s] checking for a race-free mkdir -p... /usr/bin/mkdir -p
+[  224s] checking for gawk... gawk
+[  224s] checking whether make sets $(MAKE)... yes
+[  224s] checking whether make supports nested variables... yes
+[  224s] checking whether UID '399' is supported by ustar format... yes
+[  224s] checking whether GID '399' is supported by ustar format... yes
+[  225s] checking how to create a ustar tar archive... gnutar
+[  225s] checking whether build environment is sane... yes
+[  226s] checking whether to enable maintainer-specific portions of Makefiles... no
+[  226s] checking whether make supports the include directive... yes (GNU style)
+[  226s] checking for riscv64-suse-linux-gnu-gcc... no
+[  226s] checking for gcc... gcc
+[  231s] checking whether the C compiler works... yes
+[  231s] checking for C compiler default output file name... a.out
+[  235s] checking for suffix of executables... 
+[  239s] checking whether we are cross compiling... no
+[  240s] checking for suffix of object files... o
+[  241s] checking whether the compiler supports GNU C... yes
+[  242s] checking whether gcc accepts -g... yes
+[  244s] checking for gcc option to enable C11 features... none needed
+[  246s] checking whether gcc understands -c and -o together... yes
+[  246s] checking dependency style of gcc... none
+[  248s] checking for an ANSI C-conforming const... yes
+[  251s] checking for library containing strerror... none required
+[  251s] checking for riscv64-suse-linux-gnu-gcc... gcc
+[  253s] checking whether the compiler supports GNU C... (cached) yes
+[  253s] checking whether gcc accepts -g... (cached) yes
+[  253s] checking for gcc option to enable C11 features... (cached) none needed
+[  253s] checking whether gcc understands -c and -o together... (cached) yes
+[  253s] checking dependency style of gcc... (cached) none
+[  254s] checking how to run the C preprocessor... gcc -E
+[  256s] checking whether ln -s works... yes
+[  256s] checking whether make sets $(MAKE)... (cached) yes
+[  256s] checking for pkg-config... /usr/bin/pkg-config
+[  257s] checking for stdio.h... yes
+[  258s] checking for stdlib.h... yes
+[  259s] checking for string.h... yes
+[  260s] checking for inttypes.h... yes
+[  261s] checking for stdint.h... yes
+[  262s] checking for strings.h... yes
+[  264s] checking for sys/stat.h... yes
+[  265s] checking for sys/types.h... yes
+[  266s] checking for unistd.h... yes
+[  267s] checking for locale.h... yes
+[  271s] checking for LC_MESSAGES... yes
+[  272s] checking for CFPreferencesCopyAppValue... no
+[  273s] checking for CFLocaleCopyCurrent... no
+[  274s] checking for libintl.h... yes
+[  278s] checking for ngettext in libc... yes
+[  282s] checking for dgettext in libc... yes
+[  285s] checking for bind_textdomain_codeset... yes
+[  286s] checking for msgfmt... /usr/bin/msgfmt
+[  289s] checking for dcgettext... yes
+[  290s] checking if msgfmt accepts -c... yes
+[  290s] checking for gmsgfmt... /usr/bin/msgfmt
+[  290s] checking for xgettext... /usr/bin/xgettext
+[  294s] checking whether NLS is requested... yes
+[  295s] checking for intltool >= 0.35.0... 0.51.0 found
+[  295s] checking for intltool-update... /usr/bin/intltool-update
+[  295s] checking for intltool-merge... /usr/bin/intltool-merge
+[  295s] checking for intltool-extract... /usr/bin/intltool-extract
+[  295s] checking for xgettext... (cached) /usr/bin/xgettext
+[  295s] checking for msgmerge... /usr/bin/msgmerge
+[  295s] checking for msgfmt... (cached) /usr/bin/msgfmt
+[  295s] checking for gmsgfmt... (cached) /usr/bin/msgfmt
+[  295s] checking for perl... /usr/bin/perl
+[  296s] checking for perl >= 5.8.1... 5.36.0
+[  296s] checking for XML::Parser... ok
+[  296s] checking for riscv64-suse-linux-gnu-pkg-config... (cached) /usr/bin/pkg-config
+[  296s] checking pkg-config is at least version 0.9.0... yes
+[  298s] checking for GTK... yes
+[  298s] checking for xdg-user-dirs-update... /usr/bin/xdg-user-dirs-update
+[  298s] checking for more warnings... yes
+[  299s] checking whether gcc understands -Wno-strict-aliasing... yes
+[  300s] checking whether gcc understands -Wno-sign-compare... yes
+[  301s] checking that generated files are newer than configure... done
+[  301s] checking that generated files are newer than configure... done
+[  301s] configure: creating ./config.status
+[  305s] config.status: creating Makefile
+[  306s] config.status: creating po/Makefile.in
+[  307s] config.status: creating config.h
+[  307s] config.status: executing depfiles commands
+[  307s] config.status: executing default-1 commands
+[  308s] config.status: executing po/stamp-it commands
+[  309s] + /usr/bin/make -O -j4 V=1 VERBOSE=1
+[  310s] /usr/bin/make  all-recursive
+[  310s] Making all in po
+[  312s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] grep: warning: stray \ before #
+[  312s] grep: warning: stray \ before #
+[  312s] grep: warning: stray \ before #
+[  312s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] file=`echo an | sed 's,.*/,,'`.gmo \
+[  312s]   && rm -f $file && /usr/bin/msgfmt -o $file an.po
+[  312s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] file=`echo as | sed 's,.*/,,'`.gmo \
+[  312s]   && rm -f $file && /usr/bin/msgfmt -o $file as.po
+[  312s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] file=`echo ar | sed 's,.*/,,'`.gmo \
+[  312s]   && rm -f $file && /usr/bin/msgfmt -o $file ar.po
+[  312s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  312s] file=`echo af | sed 's,.*/,,'`.gmo \
+[  312s]   && rm -f $file && /usr/bin/msgfmt -o $file af.po
+[  312s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo be | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file be.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo ast | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file ast.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo be@latin | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file be@latin.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo bg | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file bg.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo bn_IN | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file bn_IN.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo ca | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file ca.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo bs | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file bs.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo crh | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file crh.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo cs | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file cs.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo da | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file da.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo csb | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file csb.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  313s] file=`echo de | sed 's,.*/,,'`.gmo \
+[  313s]   && rm -f $file && /usr/bin/msgfmt -o $file de.po
+[  313s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo el | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file el.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo en_GB | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file en_GB.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo dz | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file dz.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo eo | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file eo.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo es | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file es.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo et | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file et.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo eu | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file eu.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  314s] file=`echo fa | sed 's,.*/,,'`.gmo \
+[  314s]   && rm -f $file && /usr/bin/msgfmt -o $file fa.po
+[  314s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo fr | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file fr.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo fi | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file fi.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo fur | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file fur.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo gl | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file gl.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo gu | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file gu.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo he | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file he.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo hi | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file hi.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo hr | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file hr.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo hu | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file hu.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo id | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file id.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  315s] file=`echo is | sed 's,.*/,,'`.gmo \
+[  315s]   && rm -f $file && /usr/bin/msgfmt -o $file is.po
+[  315s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo it | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file it.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo ka | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file ka.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo ja | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file ja.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo kg | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file kg.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo kk | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file kk.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo ko | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file ko.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo kn | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file kn.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  316s] file=`echo ku | sed 's,.*/,,'`.gmo \
+[  316s]   && rm -f $file && /usr/bin/msgfmt -o $file ku.po
+[  316s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo lt | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file lt.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo lv | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file lv.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo ml | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file ml.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo mr | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file mr.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo nb | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file nb.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo nds | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file nds.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo ms | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file ms.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo ne | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file ne.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo nl | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file nl.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo oc | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file oc.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  317s] file=`echo nn | sed 's,.*/,,'`.gmo \
+[  317s]   && rm -f $file && /usr/bin/msgfmt -o $file nn.po
+[  317s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo or | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file or.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo pa | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file pa.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo pl | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file pl.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo ps | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file ps.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo pt | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file pt.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo pt_BR | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file pt_BR.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo ro | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file ro.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo ru | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file ru.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  318s] file=`echo si | sed 's,.*/,,'`.gmo \
+[  318s]   && rm -f $file && /usr/bin/msgfmt -o $file si.po
+[  318s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sl | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sl.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sk | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sk.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sq | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sq.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sr | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sr.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sr@latin | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sr@latin.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo sv | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file sv.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo ta | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file ta.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo th | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file th.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo tr | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file tr.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo te | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file te.po
+[  319s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  319s] file=`echo uk | sed 's,.*/,,'`.gmo \
+[  319s]   && rm -f $file && /usr/bin/msgfmt -o $file uk.po
+[  320s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] file=`echo vi | sed 's,.*/,,'`.gmo \
+[  320s]   && rm -f $file && /usr/bin/msgfmt -o $file vi.po
+[  320s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] file=`echo zh_CN | sed 's,.*/,,'`.gmo \
+[  320s]   && rm -f $file && /usr/bin/msgfmt -o $file zh_CN.po
+[  320s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] file=`echo zh_HK | sed 's,.*/,,'`.gmo \
+[  320s]   && rm -f $file && /usr/bin/msgfmt -o $file zh_HK.po
+[  320s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  320s] file=`echo zh_TW | sed 's,.*/,,'`.gmo \
+[  320s]   && rm -f $file && /usr/bin/msgfmt -o $file zh_TW.po
+[  320s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11/po'
+[  322s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  322s] LC_ALL=C /usr/bin/intltool-merge  -d -u -c ./po/.intltool-merge-cache ./po user-dirs-update-gtk.desktop.in user-dirs-update-gtk.desktop
+[  322s] Generating and caching the translation database
+[  322s] Merging translations into user-dirs-update-gtk.desktop.
+[  322s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  323s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  323s] gcc -DHAVE_CONFIG_H -I. -I. -I. -DLOCALEDIR=\"/usr/share/locale\" -DXDG_USER_DIRS_UPDATE=\"/usr/bin/xdg-user-dirs-update\" -I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/gio-unix-2.0 -I/usr/include/wayland -I/usr/include/libxkbcommon -I/usr/include/atk-1.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -pthread      -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-Werror 	-Wno-error=deprecated-declarations -Wno-strict-aliasing -Wno-sign-compare -c -o parse.o parse.c
+[  323s] parse.c: In function 'parse_xdg_dirs':
+[  323s] parse.c:138:10: error: cast increases required alignment of target type [-Werror=cast-align]
+[  323s]   138 |   return (XdgDirEntry *)g_array_free (array, FALSE);
+[  323s]       |          ^
+[  323s] cc1: all warnings being treated as errors
+[  323s] make[2]: *** [Makefile:535: parse.o] Error 1
+[  323s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  323s] make[2]: *** Waiting for unfinished jobs....
+[  328s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  328s] gcc -DHAVE_CONFIG_H -I. -I. -I. -DLOCALEDIR=\"/usr/share/locale\" -DXDG_USER_DIRS_UPDATE=\"/usr/bin/xdg-user-dirs-update\" -I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/gio-unix-2.0 -I/usr/include/wayland -I/usr/include/libxkbcommon -I/usr/include/atk-1.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -pthread      -Wall 	-Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes 	-Wnested-externs -Wpointer-arith 	-Wcast-align -Wsign-compare 	-Werror 	-Wno-error=deprecated-declarations -Wno-strict-aliasing -Wno-sign-compare -c -o update.o update.c
+[  328s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/xdg-user-dirs-gtk-0.11'
+[  328s] make[1]: *** [Makefile:572: all-recursive] Error 1
+[  328s] make: *** [Makefile:416: all] Error 2
+[  328s] error: Bad exit status from /var/tmp/rpm-tmp.cMoz9K (%build)
+[  328s] 
+[  328s] RPM build errors:
+[  328s]     Bad exit status from /var/tmp/rpm-tmp.cMoz9K (%build)
+[  329s] ### VM INTERACTION START ###
+[  329s] [  320.324911][    T1] sysrq: Power Off
+[  329s] [  320.327636][   T16] reboot: Power down
+[  329s] ### VM INTERACTION END ###
+[  329s] 
+[  329s] lamb04 failed "build xdg-user-dirs-gtk.spec" at Tue Oct 18 14:36:33 UTC 2022.
+[  329s] 

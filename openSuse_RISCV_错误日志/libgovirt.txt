@@ -1,0 +1,546 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] cloud104 started "build libgovirt.spec" at Wed Sep 21 16:13:02 UTC 2022.
+[    0s] 
+[    0s] Building libgovirt for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'f5d20bbccae228425e3f8bd73e172e79'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/libgovirt.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/libgovirt.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/libgovirt.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [a8e05609f2f9be62f44e4fec0edb7fcb]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...cycle: gio-branding-upstream -> libgio-2_0-0
+[    4s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    4s] cycle: libgio-2_0-0 -> glib2-tools
+[    4s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    4s] cycle: girepository-1_0 -> libgirepository-1_0-1
+[    4s]   breaking dependency libgirepository-1_0-1 -> girepository-1_0
+[    4s] cycle: libpython3_10-1_0 -> python310-base
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] done
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using UART console
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 2048 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   12s] ### VM INTERACTION END ###
+[   12s] 2nd stage started in virtual machine
+[   13s] machine type: riscv64
+[   13s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   13s] Increasing log level from now on...
+[   13s] [    6.502348][  T390] sysrq: Changing Loglevel
+[   13s] [    6.503835][  T390] sysrq: Loglevel set to 4
+[   13s] Enable sysrq operations
+[   14s] Setting up swapspace version 1, size = 1.5 GiB (1610608640 bytes)
+[   14s] no label, UUID=c9df40e8-cb41-4005-bffb-8abcd8529ca1
+[   14s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   14s] swapon: /dev/vdb: pagesize=4096, swapsize=1610612736, devsize=1610612736
+[   14s] swapon /dev/vdb
+[   14s] WARNING: udev not running, creating extra device nodes
+[   14s] logging output to //.build.log...
+[   15s] processing recipe /.build-srcdir/libgovirt.spec ...
+[   15s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/libgovirt.spec build ...
+[   15s] initializing rpm db...
+[   16s] querying package ids...
+[   43s] [1/225] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   43s] [2/225] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   43s] [3/225] preinstalled attr-2.5.1-1.1
+[   43s] [4/225] preinstalled bash-5.1.16-9.1
+[   43s] [5/225] preinstalled bash-sh-5.1.16-9.1
+[   43s] [6/225] preinstalled binutils-2.39-1.1
+[   43s] [7/225] preinstalled brp-check-suse-84.87+git20211116.6c5fe09-1.1
+[   43s] [8/225] preinstalled build-compare-20220823T100012.86340a1-1.1
+[   43s] [9/225] preinstalled build-mkbaselibs-20220613-1.1
+[   43s] [10/225] preinstalled bzip2-1.0.8-4.1
+[   43s] [11/225] preinstalled chkstat-1599_20220912-4.1
+[   43s] [12/225] preinstalled compat-usrmerge-build-84.87-5.1
+[   43s] [13/225] preinstalled compat-usrmerge-tools-84.87-5.1
+[   43s] [14/225] preinstalled coreutils-9.1-4.1
+[   43s] [15/225] preinstalled cpio-2.13-4.1
+[   43s] [16/225] preinstalled cpp-12-2.1
+[   43s] [17/225] preinstalled cpp12-12.2.1+git416-4.1
+[   43s] [18/225] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   43s] [19/225] preinstalled debugedit-5.0-4.1
+[   43s] [20/225] preinstalled diffutils-3.8-3.1
+[   43s] [21/225] preinstalled dwz-0.14-5.1
+[   43s] [22/225] preinstalled elfutils-0.187-11.1
+[   43s] [23/225] preinstalled file-5.43-1.1
+[   43s] [24/225] preinstalled file-magic-5.43-1.1
+[   43s] [25/225] preinstalled filesystem-84.87-8.1
+[   43s] [26/225] preinstalled fillup-1.42-278.1
+[   43s] [27/225] preinstalled findutils-4.9.0-1.1
+[   43s] [28/225] preinstalled gawk-5.2.0-1.1
+[   43s] [29/225] preinstalled gcc-12-2.1
+[   43s] [30/225] preinstalled gcc-PIE-12-2.1
+[   43s] [31/225] preinstalled gcc12-12.2.1+git416-4.1
+[   43s] [32/225] preinstalled gcc12-PIE-12.2.1+git416-4.1
+[   43s] [33/225] preinstalled gettext-runtime-mini-0.21-4.1
+[   43s] [34/225] preinstalled gettext-tools-mini-0.21-4.1
+[   43s] [35/225] preinstalled glibc-2.36-4.1
+[   43s] [36/225] preinstalled glibc-devel-2.36-4.1
+[   43s] [37/225] preinstalled glibc-locale-base-2.36-4.1
+[   43s] [38/225] preinstalled grep-3.8-1.1
+[   43s] [39/225] cumulate gsettings-desktop-schemas-43.0-1.1
+[   43s] [40/225] preinstalled gzip-1.12-2.1
+[   43s] [41/225] preinstalled kernel-obs-build-5.14.2-1.3
+[   43s] [42/225] preinstalled libacl1-2.3.1-2.1
+[   43s] [43/225] preinstalled libasan8-12.2.1+git416-4.1
+[   43s] [44/225] preinstalled libasm1-0.187-11.1
+[   43s] [45/225] preinstalled libatomic1-12.2.1+git416-4.1
+[   43s] [46/225] preinstalled libattr1-2.5.1-1.1
+[   43s] [47/225] preinstalled libaudit1-3.0.6-4.1
+[   43s] [48/225] cumulate libblkid-devel-2.37.4-4.1
+[   43s] [49/225] preinstalled libblkid1-2.37.4-4.1
+[   43s] [50/225] cumulate libbrotlicommon1-1.0.9-1.1
+[   43s] [51/225] preinstalled libbz2-1-1.0.8-4.1
+[   43s] [52/225] preinstalled libcap-ng0-0.8.3-1.1
+[   43s] [53/225] preinstalled libcap2-2.65-1.1
+[   43s] [54/225] cumulate libcom_err2-1.46.5-3.1
+[   43s] [55/225] preinstalled libcrypt1-4.4.27-1.1
+[   43s] [56/225] preinstalled libctf-nobfd0-2.39-1.1
+[   43s] [57/225] preinstalled libctf0-2.39-1.1
+[   43s] [58/225] preinstalled libdb-4_8-4.8.30-39.1
+[   43s] [59/225] preinstalled libdw1-0.187-11.1
+[   43s] [60/225] preinstalled libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   43s] [61/225] preinstalled libelf1-0.187-11.1
+[   43s] [62/225] cumulate libexpat1-2.4.8-1.1
+[   43s] [63/225] preinstalled libfdisk1-2.37.4-4.1
+[   43s] [64/225] cumulate libffi8-3.4.2-6.1
+[   43s] [65/225] preinstalled libgcc_s1-12.2.1+git416-4.1
+[   43s] [66/225] preinstalled libgcrypt20-1.9.4-6.1
+[   43s] [67/225] preinstalled libgdbm6-1.23-1.1
+[   43s] [68/225] preinstalled libgdbm_compat4-1.23-1.1
+[   43s] [69/225] cumulate libglib-2_0-0-2.74.0-1.1
+[   43s] [70/225] preinstalled libgmp10-6.2.1-4.1
+[   43s] [71/225] preinstalled libgomp1-12.2.1+git416-4.1
+[   43s] [72/225] preinstalled libgpg-error0-1.45-1.1
+[   43s] [73/225] preinstalled libisl23-0.25-1.1
+[   43s] [74/225] cumulate libjitterentropy3-3.4.1-1.1
+[   43s] [75/225] cumulate libkeyutils1-1.6.3-4.1
+[   43s] [76/225] preinstalled liblua5_4-5-5.4.4-6.1
+[   43s] [77/225] preinstalled liblzma5-5.2.6-1.1
+[   43s] [78/225] preinstalled libmagic1-5.43-1.1
+[   43s] [79/225] preinstalled libmount1-2.37.4-4.1
+[   43s] [80/225] preinstalled libmpc3-1.2.1-1.2
+[   43s] [81/225] cumulate libmpdec3-2.5.1-2.1
+[   43s] [82/225] preinstalled libmpfr6-4.1.0-2.1
+[   43s] [83/225] preinstalled libncurses6-6.3.20220910-28.1
+[   43s] [84/225] cumulate libnettle8-3.8.1-1.1
+[   43s] [85/225] cumulate libnghttp2-14-1.49.0-7.1
+[   43s] [86/225] preinstalled libpcre1-8.45-2.1
+[   43s] [87/225] cumulate libpcre16-0-8.45-2.1
+[   43s] [88/225] cumulate libpcre2-16-0-10.40-3.1
+[   43s] [89/225] cumulate libpcre2-32-0-10.40-3.1
+[   43s] [90/225] preinstalled libpcre2-8-0-10.40-3.1
+[   43s] [91/225] cumulate libpcre2-posix3-10.40-3.1
+[   43s] [92/225] cumulate libpcreposix0-8.45-2.1
+[   43s] [93/225] preinstalled libpkgconf3-1.8.0-1.1
+[   43s] [94/225] preinstalled libpopt0-1.18-3.1
+[   43s] [95/225] cumulate libproxy1-0.4.18-1.1
+[   43s] [96/225] preinstalled libreadline8-8.1-3.1
+[   43s] [97/225] preinstalled librpmbuild9-4.17.1.1-1.1
+[   43s] [98/225] preinstalled libseccomp2-2.5.4-2.1
+[   43s] [99/225] preinstalled libselinux1-3.4-2.1
+[   43s] [100/225] preinstalled libsemanage-conf-3.4-1.1
+[   43s] [101/225] preinstalled libsemanage2-3.4-1.1
+[   43s] [102/225] cumulate libsepol-devel-3.4-1.1
+[   43s] [103/225] preinstalled libsepol2-3.4-1.1
+[   43s] [104/225] preinstalled libsmartcols1-2.37.4-4.1
+[   43s] [105/225] cumulate libsqlite3-0-3.39.3-2.1
+[   43s] [106/225] preinstalled libstdc++6-12.2.1+git416-4.1
+[   43s] [107/225] cumulate libstdc++6-devel-gcc12-12.2.1+git416-4.1
+[   43s] [108/225] preinstalled libsubid4-4.12.3-1.1
+[   43s] [109/225] cumulate libtasn1-6-4.19.0-1.1
+[   43s] [110/225] preinstalled libubsan1-12.2.1+git416-4.1
+[   43s] [111/225] cumulate libunistring2-1.0-1.1
+[   43s] [112/225] preinstalled libutempter0-1.2.0-3.2
+[   43s] [113/225] preinstalled libuuid1-2.37.4-4.1
+[   43s] [114/225] cumulate libverto1-0.3.1-1.2
+[   43s] [115/225] preinstalled libxcrypt-devel-4.4.27-1.1
+[   43s] [116/225] cumulate libxml2-2-2.10.2-2.1
+[   43s] [117/225] preinstalled libz1-1.2.12-1.1
+[   43s] [118/225] preinstalled libzstd1-1.5.2-1.1
+[   43s] [119/225] preinstalled linux-glibc-devel-5.17-1.1
+[   43s] [120/225] preinstalled login_defs-4.12.3-1.1
+[   43s] [121/225] preinstalled lua54-5.4.4-6.1
+[   43s] [122/225] preinstalled make-4.3-4.1
+[   43s] [123/225] preinstalled ncurses-utils-6.3.20220910-28.1
+[   43s] [124/225] cumulate ninja-1.11.1-8.1
+[   43s] [125/225] preinstalled pam-1.5.2-7.1
+[   43s] [126/225] preinstalled pam_unix-1.5.2-7.1
+[   43s] [127/225] preinstalled patch-2.7.6-6.1
+[   43s] [128/225] preinstalled perl-5.36.0-3.1
+[   43s] [129/225] cumulate perl-Encode-Locale-1.05-1.9
+[   43s] [130/225] cumulate perl-HTML-Tagset-3.20-73.9
+[   43s] [131/225] cumulate perl-IO-HTML-1.004-1.6
+[   43s] [132/225] cumulate perl-LWP-MediaTypes-6.04-1.7
+[   43s] [133/225] cumulate perl-TimeDate-2.33-1.6
+[   43s] [134/225] cumulate perl-Try-Tiny-0.31-1.3
+[   44s] [135/225] cumulate perl-URI-5.12-1.1
+[   44s] [136/225] preinstalled perl-base-5.36.0-3.1
+[   44s] [137/225] preinstalled permissions-1599_20220912-4.1
+[   44s] [138/225] preinstalled permissions-config-1599_20220912-4.1
+[   44s] [139/225] preinstalled pkgconf-1.8.0-1.1
+[   44s] [140/225] preinstalled pkgconf-m4-1.8.0-1.1
+[   44s] [141/225] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   44s] [142/225] preinstalled polkit-default-privs-1550+20220919.3b55a1f-1.1
+[   44s] [143/225] preinstalled post-build-checks-84.87+git20220325.f46ef3c-1.1
+[   44s] [144/225] cumulate python-rpm-macros-20220912.f91cae2-1.1
+[   44s] [145/225] preinstalled qemu-linux-user-7.0.0-84.1
+[   44s] [146/225] preinstalled rpm-4.17.1.1-1.1
+[   44s] [147/225] preinstalled rpm-build-4.17.1.1-1.1
+[   44s] [148/225] preinstalled rpm-build-perl-4.17.1.1-1.1
+[   44s] [149/225] preinstalled rpm-config-SUSE-20220421-1.1
+[   44s] [150/225] preinstalled rpmlint-mini-2.3.0+git20220916.67eb412d-8.6
+[   44s] [151/225] preinstalled rpmlint-strict-2.3.0+git20220916.67eb412d-1.1
+[   44s] [152/225] preinstalled sed-4.8-3.2
+[   44s] [153/225] preinstalled shadow-4.12.3-1.1
+[   44s] [154/225] preinstalled system-group-hardware-20170617-24.1
+[   44s] [155/225] preinstalled system-user-root-20190513-2.1
+[   44s] [156/225] preinstalled systemd-rpm-macros-16-1.1
+[   44s] [157/225] preinstalled sysuser-shadow-3.1-5.1
+[   44s] [158/225] preinstalled tar-1.34-7.1
+[   44s] [159/225] preinstalled terminfo-base-6.3.20220910-28.1
+[   44s] [160/225] preinstalled update-alternatives-1.21.8-1.1
+[   44s] [161/225] preinstalled util-linux-2.37.4-4.1
+[   44s] [162/225] preinstalled which-2.21-5.1
+[   44s] [163/225] preinstalled xz-5.2.6-1.1
+[   44s] [164/225] cumulate xz-devel-5.2.6-1.1
+[   44s] [165/225] cumulate zlib-devel-1.2.12-1.1
+[   44s] [166/225] cumulate libbrotlidec1-1.0.9-1.1
+[   44s] [167/225] cumulate libbrotlienc1-1.0.9-1.1
+[   44s] [168/225] cumulate libffi-devel-3.4.2-6.1
+[   44s] [169/225] cumulate libgmodule-2_0-0-2.74.0-1.1
+[   44s] [170/225] cumulate libgthread-2_0-0-2.74.0-1.1
+[   44s] [171/225] cumulate libhogweed6-3.8.1-1.1
+[   44s] [172/225] cumulate libidn2-0-2.3.3-1.1
+[   44s] [173/225] cumulate libnghttp2-devel-1.49.0-7.1
+[   44s] [174/225] cumulate libopenssl1_1-1.1.1q-1.1
+[   44s] [175/225] cumulate libp11-kit0-0.24.1-2.1
+[   44s] [176/225] cumulate libstdc++-devel-12-2.1
+[   44s] [177/225] cumulate libxml2-tools-2.10.2-2.1
+[   44s] [178/225] cumulate perl-HTTP-Date-6.05-1.6
+[   44s] [179/225] cumulate perl-Net-HTTP-6.22-1.3
+[   44s] [180/225] cumulate perl-WWW-RobotRules-6.02-9.9
+[   44s] [181/225] cumulate sqlite3-devel-3.39.3-2.1
+[   44s] [182/225] cumulate libgobject-2_0-0-2.74.0-1.1
+[   44s] [183/225] cumulate pcre-tools-8.45-2.1
+[   44s] [184/225] cumulate shared-mime-info-2.2-1.1
+[   44s] [185/225] cumulate krb5-mini-1.20-1.1
+[   44s] [186/225] cumulate perl-File-Listing-6.15-1.3
+[   44s] [187/225] cumulate libpsl5-0.21.1-1.2
+[   44s] [188/225] cumulate libbrotli-devel-1.0.9-1.1
+[   44s] [189/225] cumulate libxml2-devel-2.10.2-2.1
+[   44s] [190/225] cumulate pcre2-devel-10.40-3.1
+[   44s] [191/225] cumulate perl-HTTP-Message-6.37-1.2
+[   44s] [192/225] cumulate libgnutls30-3.7.7-2.1
+[   44s] [193/225] cumulate libpsl-devel-0.21.1-1.2
+[   44s] [194/225] cumulate perl-HTTP-Negotiate-6.01-9.9
+[   44s] [195/225] cumulate libselinux-devel-3.4-2.1
+[   44s] [196/225] cumulate perl-HTTP-Cookies-6.10-1.5
+[   44s] [197/225] cumulate perl-HTML-Parser-3.78-1.3
+[   44s] [198/225] cumulate libmount-devel-2.37.4-4.1
+[   44s] [199/225] cumulate perl-libwww-perl-6.67-1.2
+[   44s] [200/225] cumulate perl-XML-Parser-2.46-1.7
+[   44s] [201/225] cumulate intltool-0.51.0-7.2
+[   44s] [202/225] cumulate python310-base-3.10.7-4.1
+[   44s] [203/225] cumulate libgio-2_0-0-2.74.0-1.1
+[   44s] [204/225] cumulate gio-branding-upstream-2.74.0-1.1
+[   44s] [205/225] cumulate libpython3_10-1_0-3.10.7-4.1
+[   44s] [206/225] cumulate python310-pyparsing-3.0.9-2.1
+[   44s] [207/225] cumulate meson-0.63.2-1.1
+[   44s] [208/225] cumulate libjson-glib-1_0-0-1.6.6-2.1
+[   44s] [209/225] cumulate glib2-tools-2.74.0-1.1
+[   44s] [210/225] cumulate libgirepository-1_0-1-1.74.0-1.1
+[   44s] [211/225] cumulate girepository-1_0-1.74.0-1.1
+[   44s] [212/225] cumulate python310-packaging-21.3-4.1
+[   44s] [213/225] cumulate glib-networking-2.74.0-1.1
+[   44s] [214/225] cumulate gobject-introspection-1.74.0-1.1
+[   44s] [215/225] cumulate glib2-devel-2.74.0-1.1
+[   44s] [216/225] cumulate typelib-1_0-Json-1_0-1.6.6-2.1
+[   44s] [217/225] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   44s] [218/225] cumulate gobject-introspection-devel-1.74.0-1.1
+[   44s] [219/225] cumulate libsoup-3_0-0-3.2.0-1.1
+[   44s] [220/225] cumulate typelib-1_0-Soup-3_0-3.2.0-1.1
+[   44s] [221/225] cumulate json-glib-devel-1.6.6-2.1
+[   44s] [222/225] cumulate librest-1_0-0-0.9.1-2.1
+[   44s] [223/225] cumulate typelib-1_0-Rest-1_0-0.9.1-2.1
+[   44s] [224/225] cumulate libsoup-devel-3.2.0-1.1
+[   44s] [225/225] cumulate librest-devel-0.9.1-2.1
+[   44s] now installing cumulated packages
+[   45s] Preparing...                          ########################################
+[   45s] Updating / installing...
+[   45s] libglib-2_0-0-2.74.0-1.1              ########################################
+[   45s] libffi8-3.4.2-6.1                     ########################################
+[   45s] libgobject-2_0-0-2.74.0-1.1           ########################################
+[   45s] libgmodule-2_0-0-2.74.0-1.1           ########################################
+[   46s] perl-URI-5.12-1.1                     ########################################
+[   46s] libxml2-2-2.10.2-2.1                  ########################################
+[   46s] zlib-devel-1.2.12-1.1                 ########################################
+[   46s] libunistring2-1.0-1.1                 ########################################
+[   46s] libbrotlicommon1-1.0.9-1.1            ########################################
+[   46s] libbrotlidec1-1.0.9-1.1               ########################################
+[   47s] libidn2-0-2.3.3-1.1                   ########################################
+[   47s] libpsl5-0.21.1-1.2                    ########################################
+[   47s] libffi-devel-3.4.2-6.1                ########################################
+[   47s] perl-LWP-MediaTypes-6.04-1.7          ########################################
+[   47s] perl-Encode-Locale-1.05-1.9           ########################################
+[   47s] libsqlite3-0-3.39.3-2.1               ########################################
+[   47s] libnghttp2-14-1.49.0-7.1              ########################################
+[   47s] libnettle8-3.8.1-1.1                  ########################################
+[   47s] libexpat1-2.4.8-1.1                   ########################################
+[   47s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   48s] libopenssl1_1-1.1.1q-1.1              ########################################
+[   48s] libhogweed6-3.8.1-1.1                 ########################################
+[   48s] libnghttp2-devel-1.49.0-7.1           ########################################
+[   48s] sqlite3-devel-3.39.3-2.1              ########################################
+[   48s] libpsl-devel-0.21.1-1.2               ########################################
+[   48s] libbrotlienc1-1.0.9-1.1               ########################################
+[   49s] libbrotli-devel-1.0.9-1.1             ########################################
+[   49s] libxml2-tools-2.10.2-2.1              ########################################
+[   49s] shared-mime-info-2.2-1.1              ########################################
+[   60s] perl-Net-HTTP-6.22-1.3                ########################################
+[   60s] perl-WWW-RobotRules-6.02-9.9          ########################################
+[   60s] libp11-kit0-0.24.1-2.1                ########################################
+[   61s] libgthread-2_0-0-2.74.0-1.1           ########################################
+[   61s] xz-devel-5.2.6-1.1                    ########################################
+[   61s] libxml2-devel-2.10.2-2.1              ########################################
+[   61s] python-rpm-macros-20220912.f91cae2-1.1########################################
+[   61s] perl-Try-Tiny-0.31-1.3                ########################################
+[   61s] perl-TimeDate-2.33-1.6                ########################################
+[   61s] perl-HTTP-Date-6.05-1.6               ########################################
+[   61s] perl-File-Listing-6.15-1.3            ########################################
+[   61s] perl-IO-HTML-1.004-1.6                ########################################
+[   61s] perl-HTTP-Message-6.37-1.2            ########################################
+[   61s] perl-HTTP-Negotiate-6.01-9.9          ########################################
+[   61s] perl-HTTP-Cookies-6.10-1.5            ########################################
+[   61s] perl-HTML-Tagset-3.20-73.9            ########################################
+[   61s] perl-HTML-Parser-3.78-1.3             ########################################
+[   61s] perl-libwww-perl-6.67-1.2             ########################################
+[   61s] perl-XML-Parser-2.46-1.7              ########################################
+[   61s] ninja-1.11.1-8.1                      ########################################
+[   61s] libverto1-0.3.1-1.2                   ########################################
+[   61s] libtasn1-6-4.19.0-1.1                 ########################################
+[   76s] libstdc++6-devel-gcc12-12.2.1+git416-4########################################
+[   76s] libstdc++-devel-12-2.1                ########################################
+[   76s] libsepol-devel-3.4-1.1                ########################################
+[   76s] libproxy1-0.4.18-1.1                  ########################################
+[   76s] libpcreposix0-8.45-2.1                ########################################
+[   76s] libpcre2-posix3-10.40-3.1             ########################################
+[   76s] libpcre2-32-0-10.40-3.1               ########################################
+[   76s] libpcre2-16-0-10.40-3.1               ########################################
+[   76s] pcre2-devel-10.40-3.1                 ########################################
+[   77s] libselinux-devel-3.4-2.1              ########################################
+[   77s] libpcre16-0-8.45-2.1                  ########################################
+[   77s] pcre-tools-8.45-2.1                   ########################################
+[   77s] libmpdec3-2.5.1-2.1                   ########################################
+[   77s] libpython3_10-1_0-3.10.7-4.1          ########################################
+[   83s] python310-base-3.10.7-4.1             ########################################
+[   83s] python310-pyparsing-3.0.9-2.1         ########################################
+[   83s] python310-packaging-21.3-4.1          ########################################
+[   83s] libkeyutils1-1.6.3-4.1                ########################################
+[   83s] libjitterentropy3-3.4.1-1.1           ########################################
+[   84s] libgnutls30-3.7.7-2.1                 ########################################
+[   84s] libcom_err2-1.46.5-3.1                ########################################
+[   85s] krb5-mini-1.20-1.1                    ########################################
+[   85s] Updating /etc/sysconfig/kadmind ...
+[   85s] Updating /etc/sysconfig/krb5kdc ...
+[   85s] libblkid-devel-2.37.4-4.1             ########################################
+[   85s] libmount-devel-2.37.4-4.1             ########################################
+[   85s] gsettings-desktop-schemas-43.0-1.1    ########################################
+[   85s] gio-branding-upstream-2.74.0-1.1      ########################################
+[   85s] libgio-2_0-0-2.74.0-1.1               ########################################
+[   86s] glib2-tools-2.74.0-1.1                ########################################
+[   86s] glib-networking-2.74.0-1.1            ########################################
+[   87s] glib2-devel-2.74.0-1.1                ########################################
+[   88s] libsoup-3_0-0-3.2.0-1.1               ########################################
+[   88s] libjson-glib-1_0-0-1.6.6-2.1          ########################################
+[   88s] girepository-1_0-1.74.0-1.1           ########################################
+[   88s] libgirepository-1_0-1-1.74.0-1.1      ########################################
+[   88s] typelib-1_0-Soup-3_0-3.2.0-1.1        ########################################
+[   88s] librest-1_0-0-0.9.1-2.1               ########################################
+[   88s] typelib-1_0-Rest-1_0-0.9.1-2.1        ########################################
+[   89s] libsoup-devel-3.2.0-1.1               ########################################
+[   91s] gobject-introspection-1.74.0-1.1      ########################################
+[   91s] typelib-1_0-Json-1_0-1.6.6-2.1        ########################################
+[   91s] json-glib-devel-1.6.6-2.1             ########################################
+[   91s] librest-devel-0.9.1-2.1               ########################################
+[   92s] gobject-introspection-devel-1.74.0-1.1########################################
+[   92s] python-rpm-packaging-20210526+a18ca48-########################################
+[   93s] meson-0.63.2-1.1                      ########################################
+[   93s] intltool-0.51.0-7.2                   ########################################
+[   98s] now finalizing build dir...
+[   98s] ... running 01-add_abuild_user_to_trusted_group
+[   98s] ... running 02-set_timezone_to_utc
+[   98s] ... running 03-set-permissions-secure
+[   99s] ... running 11-hack_uname_version_to_kernel_version
+[  114s] build target is riscv64-suse-linux
+[  114s] -----------------------------------------------------------------
+[  114s] I have the following modifications for libgovirt.spec:
+[  114s] 21c21
+[  114s] < Release:        0
+[  114s] ---
+[  114s] > Release:        1.1
+[  114s] -----------------------------------------------------------------
+[  114s] ----- building libgovirt.spec (user abuild)
+[  114s] -----------------------------------------------------------------
+[  114s] -----------------------------------------------------------------
+[  118s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/f5d20bbccae228425e3f8bd73e172e79-libgovirt' /home/abuild/rpmbuild/SOURCES/libgovirt.spec
+[  119s] Building target platforms: riscv64-suse-linux
+[  119s] Building for target riscv64-suse-linux
+[  119s] setting SOURCE_DATE_EPOCH=1660953600
+[  119s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.1Zy4yb
+[  119s] + umask 022
+[  119s] + cd /home/abuild/rpmbuild/BUILD
+[  119s] + cd /home/abuild/rpmbuild/BUILD
+[  119s] + rm -rf libgovirt-0.3.9
+[  119s] + /usr/bin/xz -dc /home/abuild/rpmbuild/SOURCES/libgovirt-0.3.9.tar.xz
+[  119s] + /usr/bin/tar -xof -
+[  119s] + STATUS=0
+[  119s] + '[' 0 -ne 0 ']'
+[  119s] + cd libgovirt-0.3.9
+[  119s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  119s] + RPM_EC=0
+[  119s] ++ jobs -p
+[  119s] + exit 0
+[  120s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.VRuJXk
+[  120s] + umask 022
+[  120s] + cd /home/abuild/rpmbuild/BUILD
+[  120s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/libgovirt-0.3.9-1.1.riscv64
+[  120s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/libgovirt-0.3.9-1.1.riscv64
+[  120s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  120s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/libgovirt-0.3.9-1.1.riscv64
+[  120s] + cd libgovirt-0.3.9
+[  120s] + ref=/usr/lib/rpm
+[  120s] + mints=0
+[  120s] + case $(uname -m) in
+[  120s] ++ uname -m
+[  120s] + mints=20160911
+[  120s] + for s in guess sub
+[  120s] ++ find -maxdepth 8 -name config.guess
+[  120s] + for s in guess sub
+[  120s] ++ find -maxdepth 8 -name config.sub
+[  120s] + CONFIG_SHELL=/usr/bin/bash
+[  120s] + export CONFIG_SHELL
+[  120s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  120s] + export CFLAGS
+[  120s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  120s] + export CXXFLAGS
+[  120s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  120s] + export FFLAGS
+[  120s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  120s] + export FCFLAGS
+[  120s] + LDFLAGS=-flto=auto
+[  120s] + export LDFLAGS
+[  120s] + /usr/bin/meson --buildtype=plain --prefix=/usr --libdir=/usr/lib64 --libexecdir=/usr/libexec --bindir=/usr/bin --sbindir=/usr/sbin --includedir=/usr/include --datadir=/usr/share --mandir=/usr/share/man --infodir=/usr/share/info --localedir=/usr/share/locale --sysconfdir=/etc --localstatedir=/var --sharedstatedir=/var/lib --wrap-mode=nodownload --auto-features=enabled . riscv64-suse-linux
+[  159s] The Meson build system
+[  159s] Version: 0.63.2
+[  159s] Source dir: /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9
+[  159s] Build dir: /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux
+[  159s] Build type: native build
+[  159s] Project name: libgovirt
+[  159s] Project version: 0.3.9
+[  159s] C compiler for the host machine: cc (gcc 12.2.1 "cc (SUSE Linux) 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984]")
+[  159s] C linker for the host machine: cc ld.bfd 2.39.0.20220810-1
+[  159s] Host machine cpu family: riscv64
+[  159s] Host machine cpu: riscv64
+[  159s] Found pkg-config: /usr/bin/pkg-config (1.8.0)
+[  159s] Run-time dependency gobject-2.0 found: YES 2.74.0
+[  159s] Run-time dependency gio-2.0 found: YES 2.74.0
+[  159s] Run-time dependency gthread-2.0 found: YES 2.74.0
+[  159s] Run-time dependency rest-1.0 found: YES 0.9.1
+[  159s] meson.build:90: WARNING: Consider using the built-in option for language standard version instead of using "-std=c99".
+[  159s] meson.build:90: WARNING: Consider using the built-in warning_level option instead of using "-Wall".
+[  159s] meson.build:90: WARNING: Consider using the built-in warning_level option instead of using "-Wextra".
+[  159s] meson.build:90: WARNING: Consider using the built-in werror option instead of using "-Werror".
+[  159s] Program glib-mkenums found: YES (/usr/bin/glib-mkenums)
+[  159s] Program glib-mkenums found: YES (/usr/bin/glib-mkenums)
+[  159s] Program glib-mkenums found: YES (/usr/bin/glib-mkenums)
+[  159s] Program glib-mkenums found: YES (/usr/bin/glib-mkenums)
+[  159s] Compiler for C supports link arguments -Wl,--version-script=/home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/govirt/govirt.sym: YES 
+[  159s] Run-time dependency gobject-introspection-1.0 found: YES 1.74.0
+[  159s] Dependency gobject-introspection-1.0 found: YES 1.74.0 (cached)
+[  159s] Program g-ir-scanner found: YES (/usr/bin/g-ir-scanner)
+[  159s] Dependency gobject-introspection-1.0 found: YES 1.74.0 (cached)
+[  159s] Program g-ir-compiler found: YES (/usr/bin/g-ir-compiler)
+[  159s] Program msgfmt found: YES (/usr/bin/msgfmt)
+[  159s] Program msginit found: YES (/usr/bin/msginit)
+[  159s] Program msgmerge found: YES (/usr/bin/msgmerge)
+[  159s] Program xgettext found: YES (/usr/bin/xgettext)
+[  159s] Configuring config.h using configuration
+[  159s] Build targets in project: 46
+[  159s] 
+[  159s] libgovirt 0.3.9
+[  159s] 
+[  159s]   User defined options
+[  159s]     auto_features : enabled
+[  159s]     bindir        : /usr/bin
+[  159s]     buildtype     : plain
+[  159s]     datadir       : /usr/share
+[  159s]     includedir    : /usr/include
+[  159s]     infodir       : /usr/share/info
+[  159s]     libdir        : /usr/lib64
+[  159s]     libexecdir    : /usr/libexec
+[  159s]     localedir     : /usr/share/locale
+[  159s]     localstatedir : /var
+[  159s]     mandir        : /usr/share/man
+[  159s]     prefix        : /usr
+[  159s]     sbindir       : /usr/sbin
+[  159s]     sharedstatedir: /var/lib
+[  159s]     sysconfdir    : /etc
+[  159s]     wrap_mode     : nodownload
+[  159s] 
+[  159s] Found ninja-1.11.1 at /usr/bin/ninja
+[  159s] + /usr/bin/meson compile -C riscv64-suse-linux -j 4 --verbose
+[  164s] ninja: Entering directory `/home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux'
+[  171s] [1/72] /usr/bin/meson --internal exe --unpickle /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux/meson-private/meson_exe_glib-mkenums_f3aed9f5999adecdbb9da47abf465862e6dca8ed.dat
+[  171s] [2/72] /usr/bin/meson --internal exe --unpickle /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux/meson-private/meson_exe_glib-mkenums_113f18f9fe7dda4000795b23da1c23359cbc2c01.dat
+[  172s] [3/72] /usr/bin/msgfmt ../po/bs.po -o po/bs/LC_MESSAGES/govirt-1.0.mo
+[  172s] [4/72] /usr/bin/meson --internal exe --unpickle /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux/meson-private/meson_exe_glib-mkenums_24fd67c639559fdf642b9dc55fc56c3d1d61d46f.dat
+[  172s] [5/72] /usr/bin/msgfmt ../po/ca.po -o po/ca/LC_MESSAGES/govirt-1.0.mo
+[  172s] [6/72] /usr/bin/msgfmt ../po/cs.po -o po/cs/LC_MESSAGES/govirt-1.0.mo
+[  172s] [7/72] /usr/bin/meson --internal exe --unpickle /home/abuild/rpmbuild/BUILD/libgovirt-0.3.9/riscv64-suse-linux/meson-private/meson_exe_glib-mkenums_ae11fd88461c47215623d339e07d84ce70cac1f1.dat
+[  177s] [8/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types-private.c.o -MF govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types-private.c.o.d -o govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types-private.c.o -c govirt/ovirt-enum-types-private.c
+[  178s] [9/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types.c.o -MF govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types.c.o.d -o govirt/libgovirt.so.2.3.1.p/meson-generated_.._ovirt-enum-types.c.o -c govirt/ovirt-enum-types.c
+[  178s] [10/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-action-rest-call.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-action-rest-call.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-action-rest-call.c.o -c ../govirt/ovirt-action-rest-call.c
+[  178s] [11/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-api.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-api.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-api.c.o -c ../govirt/ovirt-api.c
+[  184s] [12/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-cdrom.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-cdrom.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-cdrom.c.o -c ../govirt/ovirt-cdrom.c
+[  184s] [13/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-cluster.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-cluster.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-cluster.c.o -c ../govirt/ovirt-cluster.c
+[  184s] [14/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-data-center.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-data-center.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-data-center.c.o -c ../govirt/ovirt-data-center.c
+[  185s] [15/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-collection.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-collection.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-collection.c.o -c ../govirt/ovirt-collection.c
+[  187s] [16/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-error.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-error.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-error.c.o -c ../govirt/ovirt-error.c
+[  191s] [17/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-disk.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-disk.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-disk.c.o -c ../govirt/ovirt-disk.c
+[  191s] [18/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-host.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-host.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-host.c.o -c ../govirt/ovirt-host.c
+[  191s] [19/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-options.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-options.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-options.c.o -c ../govirt/ovirt-options.c
+[  195s] [20/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-proxy.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-proxy.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-proxy.c.o -c ../govirt/ovirt-proxy.c
+[  197s] [21/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-proxy-deprecated.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-proxy-deprecated.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-proxy-deprecated.c.o -c ../govirt/ovirt-proxy-deprecated.c
+[  199s] [22/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-resource-rest-call.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-resource-rest-call.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-resource-rest-call.c.o -c ../govirt/ovirt-resource-rest-call.c
+[  199s] [23/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-resource.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-resource.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-resource.c.o -c ../govirt/ovirt-resource.c
+[  202s] [24/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-rest-call.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-rest-call.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-rest-call.c.o -c ../govirt/ovirt-rest-call.c
+[  204s] [25/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-storage-domain.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-storage-domain.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-storage-domain.c.o -c ../govirt/ovirt-storage-domain.c
+[  205s] [26/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o -c ../govirt/ovirt-utils.c
+[  205s] FAILED: govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o 
+[  205s] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-utils.c.o -c ../govirt/ovirt-utils.c
+[  205s] ../govirt/ovirt-utils.c: In function ‘ovirt_rest_xml_node_get_str_array_from_path’:
+[  205s] ../govirt/ovirt-utils.c:137:12: error: cast increases required alignment of target type [-Werror=cast-align]
+[  205s]   137 |     return (GStrv) g_array_free(array, FALSE);
+[  205s]       |            ^
+[  205s] cc1: all warnings being treated as errors
+[  206s] [27/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-vm.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-vm.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-vm.c.o -c ../govirt/ovirt-vm.c
+[  208s] [28/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-vm-display.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-vm-display.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-vm-display.c.o -c ../govirt/ovirt-vm-display.c
+[  210s] [29/72] cc -Igovirt/libgovirt.so.2.3.1.p -Igovirt -I../govirt -I. -I.. -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/rest-1.0 -I/usr/include/libsoup-3.0 -I/usr/include/libxml2 -I/usr/include/json-glib-1.0 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -std=c99 '-DG_LOG_DOMAIN="libgovirt"' -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_66 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_66 -Wall -Wextra -Werror -Wcast-align -Wmissing-declarations -Wpointer-arith -Wcast-align -Wwrite-strings -Winit-self -Wreturn-type -Wformat-nonliteral -Wformat-security -Wmissing-include-dirs -Wmissing-format-attribute -Wclobbered -Wempty-body -Wignored-qualifiers -Wsign-compare -Wtype-limits -Wuninitialized -Waggregate-return -Wdeclaration-after-statement -Wshadow -Wno-strict-aliasing -Winline -Wmissing-parameter-type -Woverride-init -Wno-unused-parameter -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC -pthread -MD -MQ govirt/libgovirt.so.2.3.1.p/ovirt-vm-pool.c.o -MF govirt/libgovirt.so.2.3.1.p/ovirt-vm-pool.c.o.d -o govirt/libgovirt.so.2.3.1.p/ovirt-vm-pool.c.o -c ../govirt/ovirt-vm-pool.c
+[  210s] ninja: build stopped: subcommand failed.
+[  210s] error: Bad exit status from /var/tmp/rpm-tmp.VRuJXk (%build)
+[  210s] 
+[  210s] RPM build errors:
+[  210s]     Bad exit status from /var/tmp/rpm-tmp.VRuJXk (%build)
+[  210s] ### VM INTERACTION START ###
+[  211s] [  204.129009][    T1] sysrq: Power Off
+[  211s] [  204.132875][   T16] reboot: Power down
+[  211s] ### VM INTERACTION END ###
+[  211s] 
+[  211s] cloud104 failed "build libgovirt.spec" at Wed Sep 21 16:16:33 UTC 2022.
+[  211s] 

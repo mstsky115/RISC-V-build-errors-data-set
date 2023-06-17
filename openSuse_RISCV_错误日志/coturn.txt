@@ -1,0 +1,1022 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_7/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_7/root
+[    0s] 
+[    0s] 
+[    0s] lamb21 started "build coturn.spec" at Mon Feb  6 05:14:29 UTC 2023.
+[    0s] 
+[    0s] Building coturn for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '8706d8dcffa039a19480161a9ba09e98'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_7/.build-srcdir/coturn.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_7/.build-srcdir/coturn.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/7/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_7/.build.rpmlist /var/cache/obs/worker/root_7/.build-srcdir/coturn.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [43c0e995423831318afcb33e6cba4d6c]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] cycle: openssl -> openssl-3
+[    3s]   breaking dependency openssl-3 -> openssl
+[    3s] cycle: libopenssl-devel -> libopenssl-3-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    3s] cycle: postgresql-devel -> postgresql15-devel-mini
+[    3s]   breaking dependency postgresql15-devel-mini -> postgresql-devel
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_7/.mount/boot/kernel -initrd /var/cache/obs/worker/root_7/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_7/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_7/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_7/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    8s] ### VM INTERACTION END ###
+[    8s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.8-1-default #1 SMP PREEMPT_DYNAMIC Tue Jan 24 06:29:25 UTC 2023 (baebfe0)
+[    9s] Increasing log level from now on...
+[    9s] [    4.580532][  T411] sysrq: Changing Loglevel
+[    9s] [    4.580722][  T411] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=17b39d68-e79b-4d9a-b0bd-d7ed78079c6a
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   10s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/coturn.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/coturn.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   33s] [1/174] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   33s] [2/174] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   33s] [3/174] cumulate apparmor-parser-3.1.2-3.1
+[   33s] [4/174] cumulate apparmor-rpm-macros-1.0-6.2
+[   33s] [5/174] preinstalled attr-2.5.1-1.1
+[   33s] [6/174] preinstalled bash-5.2.15-8.1
+[   33s] [7/174] preinstalled bash-sh-5.2.15-8.1
+[   33s] [8/174] preinstalled binutils-2.39-3.1
+[   33s] [9/174] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   33s] [10/174] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   33s] [11/174] preinstalled build-mkbaselibs-20230105-1.1
+[   33s] [12/174] preinstalled bzip2-1.0.8-4.1
+[   33s] [13/174] preinstalled chkstat-1599_20221220-1.2
+[   33s] [14/174] preinstalled compat-usrmerge-build-84.87-5.1
+[   33s] [15/174] preinstalled compat-usrmerge-tools-84.87-5.1
+[   33s] [16/174] preinstalled coreutils-9.1-5.1
+[   33s] [17/174] preinstalled cpio-2.13-5.1
+[   33s] [18/174] preinstalled cpp-12-2.1
+[   33s] [19/174] preinstalled cpp12-12.2.1+git749-4.1
+[   33s] [20/174] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   33s] [21/174] preinstalled debugedit-5.0-5.1
+[   33s] [22/174] preinstalled diffutils-3.9-1.1
+[   33s] [23/174] preinstalled dwz-0.15-2.1
+[   33s] [24/174] preinstalled elfutils-0.188-3.2
+[   33s] [25/174] cumulate fdupes-2.2.1-1.1
+[   33s] [26/174] preinstalled file-5.44-1.1
+[   33s] [27/174] preinstalled file-magic-5.44-1.1
+[   33s] [28/174] preinstalled filesystem-84.87-11.1
+[   33s] [29/174] preinstalled fillup-1.42-279.1
+[   33s] [30/174] preinstalled findutils-4.9.0-2.1
+[   33s] [31/174] cumulate firewall-macros-1.3.0-1.1
+[   33s] [32/174] preinstalled gawk-5.2.1-2.1
+[   33s] [33/174] preinstalled gcc-12-2.1
+[   33s] [34/174] preinstalled gcc-PIE-12-2.1
+[   33s] [35/174] preinstalled gcc12-12.2.1+git749-4.1
+[   33s] [36/174] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   33s] [37/174] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   33s] [38/174] preinstalled gettext-tools-mini-0.21.1-1.1
+[   33s] [39/174] preinstalled glibc-2.36-9.1
+[   33s] [40/174] preinstalled glibc-devel-2.36-9.1
+[   33s] [41/174] preinstalled glibc-locale-base-2.36-9.1
+[   33s] [42/174] preinstalled grep-3.8-3.1
+[   33s] [43/174] preinstalled gzip-1.12-3.1
+[   33s] [44/174] preinstalled kernel-obs-build-6.1.8-1.2
+[   33s] [45/174] preinstalled libacl1-2.3.1-2.1
+[   33s] [46/174] cumulate libaio1-0.3.113-2.1
+[   33s] [47/174] preinstalled libasan8-13.0.1+git5428-6.1
+[   33s] [48/174] preinstalled libasm1-0.188-3.2
+[   33s] [49/174] preinstalled libatomic1-13.0.1+git5428-6.1
+[   33s] [50/174] preinstalled libattr1-2.5.1-1.1
+[   33s] [51/174] preinstalled libaudit1-3.0.6-4.1
+[   33s] [52/174] preinstalled libblkid1-2.38.1-6.1
+[   33s] [53/174] preinstalled libbz2-1-1.0.8-4.1
+[   33s] [54/174] preinstalled libcap-ng0-0.8.3-1.1
+[   33s] [55/174] preinstalled libcap2-2.66-1.1
+[   33s] [56/174] cumulate libcom_err2-1.46.5-4.1
+[   33s] [57/174] preinstalled libcrypt1-4.4.33-1.1
+[   33s] [58/174] preinstalled libctf-nobfd0-2.39-3.1
+[   33s] [59/174] preinstalled libctf0-2.39-3.1
+[   33s] [60/174] preinstalled libdb-4_8-4.8.30-39.1
+[   33s] [61/174] preinstalled libdw1-0.188-3.2
+[   33s] [62/174] preinstalled libeconf0-0.5.1-1.1
+[   33s] [63/174] preinstalled libelf1-0.188-3.2
+[   33s] [64/174] cumulate libexpat1-2.5.0-2.1
+[   33s] [65/174] preinstalled libfdisk1-2.38.1-6.1
+[   33s] [66/174] cumulate libffi8-3.4.4-1.1
+[   33s] [67/174] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   33s] [68/174] preinstalled libgcrypt20-1.10.1-1.1
+[   33s] [69/174] preinstalled libgdbm6-1.23-1.1
+[   33s] [70/174] preinstalled libgdbm_compat4-1.23-1.1
+[   33s] [71/174] preinstalled libgmp10-6.2.1-4.1
+[   33s] [72/174] preinstalled libgomp1-13.0.1+git5428-6.1
+[   33s] [73/174] preinstalled libgpg-error0-1.46-1.1
+[   33s] [74/174] preinstalled libisl23-0.25-1.1
+[   33s] [75/174] cumulate libkeyutils1-1.6.3-5.1
+[   33s] [76/174] preinstalled liblua5_4-5-5.4.4-8.1
+[   33s] [77/174] preinstalled liblzma5-5.4.1-1.1
+[   33s] [78/174] preinstalled libmagic1-5.44-1.1
+[   33s] [79/174] preinstalled libmount1-2.38.1-6.1
+[   33s] [80/174] preinstalled libmpc3-1.3.1-1.2
+[   33s] [81/174] cumulate libmpdec3-2.5.1-2.1
+[   33s] [82/174] preinstalled libmpfr6-4.2.0-1.1
+[   33s] [83/174] preinstalled libncurses6-6.4.20230121-3.1
+[   33s] [84/174] preinstalled libpcre2-8-0-10.42-3.2
+[   33s] [85/174] preinstalled libpkgconf3-1.8.0-2.1
+[   33s] [86/174] preinstalled libpopt0-1.19-1.1
+[   33s] [87/174] preinstalled libreadline8-8.2-2.1
+[   33s] [88/174] preinstalled librpmbuild9-4.18.0-3.1
+[   33s] [89/174] cumulate libsasl2-3-2.1.28-4.2
+[   33s] [90/174] preinstalled libseccomp2-2.5.4-2.1
+[   33s] [91/174] preinstalled libselinux1-3.4-2.1
+[   33s] [92/174] preinstalled libsemanage-conf-3.4-1.1
+[   33s] [93/174] preinstalled libsemanage2-3.4-1.1
+[   33s] [94/174] preinstalled libsepol2-3.4-1.1
+[   33s] [95/174] preinstalled libsmartcols1-2.38.1-6.1
+[   33s] [96/174] cumulate libsqlite3-0-3.40.1-1.1
+[   33s] [97/174] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   33s] [98/174] preinstalled libsubid4-4.13-3.1
+[   33s] [99/174] cumulate libtasn1-6-4.19.0-1.1
+[   33s] [100/174] preinstalled libubsan1-13.0.1+git5428-6.1
+[   33s] [101/174] preinstalled libutempter0-1.2.0-3.2
+[   33s] [102/174] preinstalled libuuid1-2.38.1-6.1
+[   33s] [103/174] cumulate libverto1-0.3.2-1.1
+[   33s] [104/174] cumulate libwrap0-7.6-895.1
+[   33s] [105/174] preinstalled libxcrypt-devel-4.4.33-1.1
+[   33s] [106/174] preinstalled libz1-1.2.13-2.1
+[   33s] [107/174] preinstalled libzstd1-1.5.2-2.1
+[   33s] [108/174] preinstalled linux-glibc-devel-6.1-1.1
+[   33s] [109/174] preinstalled login_defs-4.13-3.1
+[   33s] [110/174] preinstalled lua54-5.4.4-8.1
+[   33s] [111/174] preinstalled make-4.4-2.1
+[   33s] [112/174] cumulate mariadb-errormessages-10.10.2-23.2
+[   33s] [113/174] preinstalled ncurses-utils-6.4.20230121-3.1
+[   33s] [114/174] preinstalled pam-1.5.2-12.1
+[   33s] [115/174] preinstalled patch-2.7.6-6.1
+[   33s] [116/174] preinstalled perl-5.36.0-4.1
+[   33s] [117/174] preinstalled perl-base-5.36.0-4.1
+[   33s] [118/174] preinstalled permissions-1599_20221220-1.2
+[   33s] [119/174] preinstalled permissions-config-1599_20221220-1.2
+[   33s] [120/174] preinstalled pkgconf-1.8.0-2.1
+[   33s] [121/174] preinstalled pkgconf-m4-1.8.0-2.1
+[   33s] [122/174] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   33s] [123/174] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   33s] [124/174] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   33s] [125/174] cumulate python-rpm-macros-20230128.e704796-1.1
+[   33s] [126/174] preinstalled qemu-linux-user-7.1.0-48.1
+[   33s] [127/174] preinstalled rpm-4.18.0-3.1
+[   33s] [128/174] preinstalled rpm-build-4.18.0-3.1
+[   33s] [129/174] preinstalled rpm-build-perl-4.18.0-3.1
+[   33s] [130/174] preinstalled rpm-config-SUSE-20220926-1.1
+[   33s] [131/174] preinstalled rpmlint-mini-2.4.0+git20230125.20e5b58-9.1
+[   33s] [132/174] preinstalled rpmlint-strict-2.4.0+git20230125.20e5b58-1.1
+[   33s] [133/174] preinstalled sed-4.9-2.1
+[   33s] [134/174] preinstalled shadow-4.13-3.1
+[   33s] [135/174] preinstalled system-group-hardware-20170617-24.1
+[   33s] [136/174] preinstalled system-user-root-20190513-2.1
+[   33s] [137/174] cumulate systemd-mini-252.5-1.1
+[   33s] [138/174] preinstalled systemd-rpm-macros-19-1.1
+[   33s] [139/174] preinstalled sysuser-shadow-3.1-5.1
+[   33s] [140/174] cumulate sysuser-tools-3.1-5.1
+[   33s] [141/174] preinstalled tar-1.34-9.1
+[   33s] [142/174] preinstalled terminfo-base-6.4.20230121-3.1
+[   33s] [143/174] preinstalled update-alternatives-1.21.8-1.1
+[   33s] [144/174] preinstalled util-linux-2.38.1-6.1
+[   33s] [145/174] preinstalled which-2.21-5.1
+[   33s] [146/174] preinstalled xz-5.4.1-1.1
+[   33s] [147/174] cumulate zlib-devel-1.2.13-2.1
+[   33s] [148/174] cumulate apparmor-abstractions-3.1.2-3.1
+[   33s] [149/174] cumulate libaio-devel-0.3.113-2.1
+[   33s] [150/174] cumulate libopenssl3-3.0.7-3.1
+[   33s] [151/174] cumulate libp11-kit0-0.24.1-2.1
+[   33s] [152/174] cumulate sqlite3-devel-3.40.1-1.1
+[   33s] [153/174] cumulate tcpd-devel-7.6-895.1
+[   33s] [154/174] cumulate krb5-mini-1.20.1-2.3
+[   33s] [155/174] cumulate libevent-2_1-7-2.1.12-3.2
+[   33s] [156/174] cumulate libhiredis1_1_0-1.1.0-1.2
+[   33s] [157/174] cumulate libmariadb3-3.3.3-1.2
+[   33s] [158/174] cumulate libldap2-2.6.3-3.2
+[   33s] [159/174] cumulate p11-kit-0.24.1-2.1
+[   33s] [160/174] cumulate libmariadbd19-10.10.2-23.2
+[   33s] [161/174] cumulate hiredis-devel-1.1.0-1.2
+[   33s] [162/174] cumulate openssl-3-3.0.7-3.1
+[   33s] [163/174] cumulate python310-base-3.10.9-2.2
+[   33s] [164/174] cumulate libpython3_10-1_0-3.10.9-2.2
+[   33s] [165/174] cumulate openssl-3.0.7-1.1
+[   33s] [166/174] cumulate python310-packaging-23.0-1.1
+[   33s] [167/174] cumulate libevent-devel-2.1.12-3.2
+[   33s] [168/174] cumulate libopenssl-devel-3.0.7-1.1
+[   33s] [169/174] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   33s] [170/174] cumulate libopenssl-3-devel-3.0.7-3.1
+[   33s] [171/174] cumulate libmariadb-devel-3.3.3-1.2
+[   33s] [172/174] cumulate postgresql15-devel-mini-15.1-1.2
+[   33s] [173/174] cumulate postgresql-devel-15-2.1
+[   33s] [174/174] cumulate libmariadbd-devel-10.10.2-23.2
+[   33s] now installing cumulated packages
+[   34s] Preparing...                          ########################################
+[   34s] Updating / installing...
+[   34s] zlib-devel-1.2.13-2.1                 ########################################
+[   34s] libffi8-3.4.4-1.1                     ########################################
+[   34s] libaio1-0.3.113-2.1                   ########################################
+[   34s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   34s] libopenssl3-3.0.7-3.1                 ########################################
+[   35s] openssl-3.0.7-1.1                     ########################################
+[   35s] openssl-3-3.0.7-3.1                   ########################################
+[   37s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   38s] libopenssl-devel-3.0.7-1.1            ########################################
+[   38s] libevent-2_1-7-2.1.12-3.2             ########################################
+[   38s] libhiredis1_1_0-1.1.0-1.2             ########################################
+[   38s] libmariadb3-3.3.3-1.2                 ########################################
+[   39s] libmariadb-devel-3.3.3-1.2            ########################################
+[   39s] libaio-devel-0.3.113-2.1              ########################################
+[   39s] libp11-kit0-0.24.1-2.1                ########################################
+[   39s] systemd-mini-252.5-1.1                warning: group systemd-journal does not exist - using root
+[   40s] ########################################
+[   40s] Creating group 'systemd-journal' with GID 486.
+[   40s] Creating group 'systemd-timesync' with GID 485.
+[   40s] Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 485 and GID 485.
+[   41s] Running in chroot, ignoring command 'daemon-reexec'
+[   41s] /usr/lib/tmpfiles.d/journal-nocow.conf:26: Failed to resolve specifier: uninitialized /etc/ detected, skipping.
+[   41s] All rules containing unresolvable specifiers will be skipped.
+[   42s] apparmor-parser-3.1.2-3.1             ########################################
+[   42s] python-rpm-macros-20230128.e704796-1.1########################################
+[   43s] mariadb-errormessages-10.10.2-23.2    ########################################
+[   45s] libmariadbd19-10.10.2-23.2            ########################################
+[   45s] libwrap0-7.6-895.1                    ########################################
+[   45s] tcpd-devel-7.6-895.1                  ########################################
+[   45s] libverto1-0.3.2-1.1                   ########################################
+[   45s] libtasn1-6-4.19.0-1.1                 ########################################
+[   45s] libsqlite3-0-3.40.1-1.1               ########################################
+[   46s] libsasl2-3-2.1.28-4.2                 ########################################
+[   46s] libldap2-2.6.3-3.2                    ########################################
+[   46s] libmpdec3-2.5.1-2.1                   ########################################
+[   46s] libkeyutils1-1.6.3-5.1                ########################################
+[   46s] libexpat1-2.5.0-2.1                   ########################################
+[   46s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   50s] python310-base-3.10.9-2.2             ########################################
+[   50s] python310-packaging-23.0-1.1          ########################################
+[   50s] libcom_err2-1.46.5-4.1                ########################################
+[   51s] krb5-mini-1.20.1-2.3                  ########################################
+[   52s] Updating /etc/sysconfig/kadmind ...
+[   52s] Updating /etc/sysconfig/krb5kdc ...
+[   52s] postgresql15-devel-mini-15.1-1.2      ########################################
+[   53s] postgresql-devel-15-2.1               ########################################
+[   53s] python-rpm-packaging-20210526+a18ca48-########################################
+[   53s] libevent-devel-2.1.12-3.2             ########################################
+[   53s] sqlite3-devel-3.40.1-1.1              ########################################
+[   53s] p11-kit-0.24.1-2.1                    ########################################
+[   53s] libmariadbd-devel-10.10.2-23.2        ########################################
+[   53s] apparmor-abstractions-3.1.2-3.1       ########################################
+[   53s] hiredis-devel-1.1.0-1.2               ########################################
+[   53s] sysuser-tools-3.1-5.1                 ########################################
+[   53s] firewall-macros-1.3.0-1.1             ########################################
+[   53s] fdupes-2.2.1-1.1                      ########################################
+[   53s] apparmor-rpm-macros-1.0-6.2           ########################################
+[   53s] Running in chroot, ignoring command 'is-active'
+[   53s] Running in chroot, ignoring command 'reload'
+[   56s] now finalizing build dir...
+[   56s] ... running 01-add_abuild_user_to_trusted_group
+[   56s] ... running 02-set_timezone_to_utc
+[   56s] ... running 03-set-permissions-secure
+[   57s] ... running 11-hack_uname_version_to_kernel_version
+[   64s] -----------------------------------------------------------------
+[   64s] I have the following modifications for coturn.spec:
+[   64s] 28c28
+[   64s] < Release:        0
+[   64s] ---
+[   64s] > Release:        1.3
+[   70s] build target is riscv64-suse-linux
+[   70s] -----------------------------------------------------------------
+[   70s] ----- building coturn.spec (user abuild)
+[   70s] -----------------------------------------------------------------
+[   70s] -----------------------------------------------------------------
+[   73s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/8706d8dcffa039a19480161a9ba09e98-coturn' /home/abuild/rpmbuild/SOURCES/coturn.spec
+[   74s] Building target platforms: riscv64-suse-linux
+[   74s] Building for target riscv64-suse-linux
+[   74s] setting SOURCE_DATE_EPOCH=1670112000
+[   74s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.MDG8oq
+[   74s] + umask 022
+[   74s] + cd /home/abuild/rpmbuild/BUILD
+[   74s] + cd /home/abuild/rpmbuild/BUILD
+[   74s] + rm -rf coturn-4.6.1
+[   74s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/coturn-4.6.1.tar.gz
+[   75s] + STATUS=0
+[   75s] + '[' 0 -ne 0 ']'
+[   75s] + cd coturn-4.6.1
+[   75s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   75s] + RPM_EC=0
+[   75s] ++ jobs -p
+[   75s] + exit 0
+[   75s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.bSafGz
+[   75s] + umask 022
+[   75s] + cd /home/abuild/rpmbuild/BUILD
+[   75s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/coturn-4.6.1-1.3.riscv64
+[   75s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/coturn-4.6.1-1.3.riscv64
+[   75s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   75s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/coturn-4.6.1-1.3.riscv64
+[   75s] + cd coturn-4.6.1
+[   75s] + ref=/usr/lib/rpm
+[   75s] + mints=0
+[   75s] + case $(uname -m) in
+[   75s] ++ uname -m
+[   75s] + mints=20160911
+[   75s] + for s in guess sub
+[   75s] ++ find -maxdepth 8 -name config.guess
+[   76s] + for s in guess sub
+[   76s] ++ find -maxdepth 8 -name config.sub
+[   76s] + /usr/lib/rpm/sysusers-generate-pre /home/abuild/rpmbuild/SOURCES/coturn-user.conf %3
+[   76s] + CONFIG_SHELL=/usr/bin/bash
+[   76s] + export CONFIG_SHELL
+[   76s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g'
+[   76s] + export CFLAGS
+[   76s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g'
+[   76s] + export CXXFLAGS
+[   76s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g '
+[   76s] + export FFLAGS
+[   76s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g '
+[   76s] + export FCFLAGS
+[   76s] + LDFLAGS='-flto=auto -ffat-lto-objects'
+[   76s] + export LDFLAGS
+[   76s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --confdir=/etc/coturn --examplesdir=/usr/share/doc/packages/coturn --schemadir=/usr/share/coturn --manprefix=/usr/share --docdir=/usr/share/doc/packages/coturn --turndbdir=/var/lib/coturn --disable-rpath
+[   78s] install is /usr/bin/install
+[   78s] Use TMP dir /var/tmp
+[   82s] Compiler: cc
+[   86s] pkgconf is /usr/bin/pkgconf
+[   86s] pkg-config: pkgconf
+[   92s] Library option -lsocket cannot be used
+[   98s] Library option -lwldap32 cannot be used
+[  100s] Library option -lwldap64 cannot be used
+[  102s] Library option -lnsl cannot be used
+[  114s] Sockets code is fine: no sin_len field present
+[  123s] Ignore IP_RECVERR
+[  128s] OpenSSL Crypto lib found.
+[  128s] OpenSSL lib found.
+[  133s] Libevent2 runtime found.
+[  135s] Library option -lprom cannot be used
+[  135s] 
+[  135s] Warning: Libprom development libraries are not installed properly in required location.
+[  135s] Prometheus support will be disabled.
+[  135s] See the INSTALL file.
+[  135s] 
+[  136s] Systemd library not found. Building without systemd support.
+[  136s] SQLite3 library found.
+[  136s] PostgreSQL found.
+[  136s] MySQL found.
+[  136s] MongoDB not found. Building without MongoDB support.
+[  136s] Hiredis found.
+[  137s] PREFIX=/usr LOCALSTATEDIR=/var OSLIBS=-flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent  DBLIBS= -lsqlite3  -L/usr/lib/postgresql15/lib64 -lpq  -L/usr/lib64/ -lmariadb  -lhiredis  OSCFLAGS=-g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb DBCFLAGS=  -I/usr/include/pgsql -DOPENSSL_LOAD_CONF  -I/usr/include/mysql/  -I/usr/include/hiredis -D_FILE_OFFSET_BITS=64  --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --confdir=/etc/coturn --examplesdir=/usr/share/doc/packages/coturn --schemadir=/usr/share/coturn --manprefix=/usr/share --docdir=/usr/share/doc/packages/coturn --turndbdir=/var/lib/coturn --disable-rpath
+[  137s] Makefile created: success.
+[  137s] + /usr/bin/make -O -j8 V=1 VERBOSE=1
+[  138s] install -d sqlite
+[  138s] rm -rf sqlite/turndb
+[  138s] echo sqlite/turndb < turndb/schema.sql
+[  138s] sqlite/turndb
+[  138s] rm -rf include
+[  138s] mkdir -p include/turn/client
+[  138s] cp -pf src/client/*.h include/turn/client/
+[  138s] cp -pf src/client++/*.h include/turn/client/
+[  138s] cp -pf src/ns_turn_defs.h include/turn/
+[  141s] mkdir -p build/obj
+[  141s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  -c src/client/ns_turn_msg_addr.c -o build/obj/ns_turn_msg_addr.o
+[  144s] mkdir -p build/obj
+[  144s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  -c src/client/ns_turn_ioaddr.c -o build/obj/ns_turn_ioaddr.o
+[  144s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  144s]                  from src/client/ns_turn_ioaddr.c:31:
+[  144s] src/client/ns_turn_ioaddr.c: In function 'make_ioa_addr':
+[  144s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  144s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  144s]       |                         ^~~~~~~
+[  158s] mkdir -p build/obj
+[  158s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  -c src/client/ns_turn_msg.c -o build/obj/ns_turn_msg.o
+[  158s] src/client/ns_turn_msg.c: In function 'stun_produce_integrity_key_str':
+[  158s] src/client/ns_turn_msg.c:260:21: warning: implicit declaration of function 'FIPS_mode' [-Wimplicit-function-declaration]
+[  158s]   260 |                 if (FIPS_mode()) {
+[  158s]       |                     ^~~~~~~~~
+[  158s] src/client/ns_turn_msg.c:260:21: warning: nested extern declaration of 'FIPS_mode' [-Wnested-externs]
+[  158s] src/client/ns_turn_msg.c:171:9: warning: '__strncpy_chk' specified bound depends on the length of the source argument [-Wstringop-truncation]
+[  158s]   171 |         strncpy((char*)str+ulen+1,(const char*)realm,sz-ulen-1);
+[  158s]       |         ^
+[  158s] src/client/ns_turn_msg.c:163:23: note: length computed here
+[  158s]   163 |         size_t rlen = strlen((const char*)realm);
+[  158s]       |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  158s] src/client/ns_turn_msg.c: In function 'stun_attr_add_integrity_str':
+[  158s] src/client/ns_turn_msg.c:1855:12: warning: 'hmac' may be used uninitialized [-Wmaybe-uninitialized]
+[  158s]  1855 |         if(stun_attr_add_str(buf, len, STUN_ATTRIBUTE_MESSAGE_INTEGRITY, hmac, shasize)<0)
+[  158s]       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  158s] src/client/ns_turn_msg.c:1441:5: note: by argument 4 of type 'const uint8_t *' to 'stun_attr_add_str' declared here
+[  158s]  1441 | int stun_attr_add_str(uint8_t* buf, size_t *len, uint16_t attr, const uint8_t* avalue, int alen) {
+[  158s]       |     ^~~~~~~~~~~~~~~~~
+[  158s] src/client/ns_turn_msg.c:1837:17: note: 'hmac' declared here
+[  158s]  1837 |         uint8_t hmac[MAXSHASIZE];
+[  158s]       |                 ^~~~
+[  158s] src/client/ns_turn_msg.c: In function 'stun_check_message_integrity_str':
+[  158s] src/client/ns_turn_msg.c:1994:17: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  158s]  1994 |                 strncpy((char*)pwd,(const char*)upwd,sizeof(password_t));
+[  158s]       |                 ^
+[  158s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  158s]                  from src/client/ns_turn_msg.h:34,
+[  158s]                  from src/client/ns_turn_msg.c:31:
+[  158s] src/client/ns_turn_msg.c: In function 'convert_oauth_key_data':
+[  158s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 129 bytes from a string of length 479 [-Wstringop-truncation]
+[  158s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  158s]       |                         ^~~~~~~
+[  158s] mkdir -p lib
+[  158s] ar -r lib/libturnclient.a build/obj/ns_turn_ioaddr.o build/obj/ns_turn_msg_addr.o build/obj/ns_turn_msg.o 
+[  158s] ar: creating lib/libturnclient.a
+[  194s] pwd
+[  194s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1
+[  194s] mkdir -p bin
+[  194s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/stunclient/stunclient.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_stunclient -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent    
+[  194s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  194s]                  from src/apps/common/ns_turn_utils.h:39,
+[  194s]                  from src/apps/common/apputils.c:31:
+[  194s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  194s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  194s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  194s]       |                         ^~~~~~~
+[  194s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  194s]                  from src/apps/common/ns_turn_utils.h:39,
+[  194s]                  from src/apps/common/ns_turn_utils.c:31:
+[  194s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  194s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  194s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  194s]       |                         ^~~~~~~
+[  194s] pwd
+[  194s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1
+[  194s] mkdir -p bin
+[  194s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/oauth/oauth.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_oauth -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent 
+[  194s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  194s]                  from src/apps/common/ns_turn_utils.h:39,
+[  194s]                  from src/apps/common/apputils.c:31:
+[  194s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  194s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  194s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  194s]       |                         ^~~~~~~
+[  194s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  194s]                  from src/apps/common/ns_turn_utils.h:39,
+[  194s]                  from src/apps/common/ns_turn_utils.c:31:
+[  194s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  194s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  194s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  194s]       |                         ^~~~~~~
+[  196s] mkdir -p bin
+[  196s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/peer/mainudpserver.c src/apps/peer/udpserver.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_peer -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent   
+[  196s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  196s]                  from src/apps/common/ns_turn_utils.h:39,
+[  196s]                  from src/apps/peer/mainudpserver.c:31:
+[  196s] src/apps/peer/mainudpserver.c: In function 'main':
+[  196s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  196s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  196s]       |                         ^~~~~~~
+[  196s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  196s]                  from src/apps/common/apputils.h:38,
+[  196s]                  from src/apps/peer/udpserver.c:31:
+[  196s] src/apps/peer/udpserver.c: In function 'udp_create_server_socket.isra.0':
+[  196s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  196s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  196s]       |                         ^~~~~~~
+[  196s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  196s]                  from src/apps/common/ns_turn_utils.h:39,
+[  196s]                  from src/apps/common/apputils.c:31:
+[  196s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  196s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  196s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  196s]       |                         ^~~~~~~
+[  196s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  196s]                  from src/apps/common/ns_turn_utils.h:39,
+[  196s]                  from src/apps/common/ns_turn_utils.c:31:
+[  196s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  196s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  196s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  196s]       |                         ^~~~~~~
+[  197s] pwd
+[  197s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1
+[  197s] mkdir -p bin
+[  197s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/natdiscovery/natdiscovery.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_natdiscovery -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent 
+[  197s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  197s]                  from src/apps/common/ns_turn_utils.h:39,
+[  197s]                  from src/apps/common/apputils.c:31:
+[  197s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  197s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  197s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  197s]       |                         ^~~~~~~
+[  197s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  197s]                  from src/apps/common/ns_turn_utils.h:39,
+[  197s]                  from src/apps/common/ns_turn_utils.c:31:
+[  197s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  197s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  197s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  197s]       |                         ^~~~~~~
+[  198s] pwd
+[  198s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1
+[  198s] mkdir -p bin
+[  198s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/rfc5769/rfc5769check.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_rfc5769check -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent  
+[  198s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  198s]                  from src/apps/common/ns_turn_utils.h:39,
+[  198s]                  from src/apps/rfc5769/rfc5769check.c:38:
+[  198s] src/apps/rfc5769/rfc5769check.c: In function 'main':
+[  198s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  198s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  198s]       |                         ^~~~~~~
+[  198s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  198s]                  from src/apps/common/ns_turn_utils.h:39,
+[  198s]                  from src/apps/common/apputils.c:31:
+[  198s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  198s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  198s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  198s]       |                         ^~~~~~~
+[  198s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  198s]                  from src/apps/common/ns_turn_utils.h:39,
+[  198s]                  from src/apps/common/ns_turn_utils.c:31:
+[  198s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  198s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  198s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  198s]       |                         ^~~~~~~
+[  198s] /usr/lib64/gcc/riscv64-suse-linux/12/../../../../riscv64-suse-linux/bin/ld: /tmp/ccLaTNsE.ltrans0.ltrans.o: in function `.LVL282':
+[  198s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1/src/client/ns_turn_msg.c:162: undefined reference to `FIPS_mode'
+[  198s] collect2: error: ld returned 1 exit status
+[  198s] make: *** [Makefile:131: bin/turnutils_rfc5769check] Error 1
+[  198s] make: *** Waiting for unfinished jobs....
+[  240s] mkdir -p bin
+[  240s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  src/apps/uclient/uclient.c src/apps/uclient/startuclient.c src/apps/uclient/mainuclient.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c -o bin/turnutils_uclient -Llib -lturnclient -Llib -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent   
+[  240s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  240s]                  from src/apps/common/apputils.h:38,
+[  240s]                  from src/apps/uclient/startuclient.c:33:
+[  240s] src/apps/uclient/startuclient.c: In function 'clnet_connect':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/apps/uclient/startuclient.c: In function 'start_connection':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/apps/uclient/startuclient.c: In function 'start_c2c_connection':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  240s]                  from src/apps/common/apputils.h:38,
+[  240s]                  from src/apps/uclient/mainuclient.c:31:
+[  240s] src/apps/uclient/mainuclient.c: In function 'main':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 513 bytes from a string of length 1024 [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  240s]                  from src/apps/common/ns_turn_utils.h:39,
+[  240s]                  from src/apps/common/apputils.c:31:
+[  240s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  240s]                  from src/apps/common/ns_turn_utils.h:39,
+[  240s]                  from src/apps/common/ns_turn_utils.c:31:
+[  240s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  240s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  240s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  240s]       |                         ^~~~~~~
+[  240s] /usr/lib64/gcc/riscv64-suse-linux/12/../../../../riscv64-suse-linux/bin/ld: /tmp/ccIJFCQY.ltrans0.ltrans.o: in function `.L0 ':
+[  240s] /usr/include/bits/string_fortified.h:95: undefined reference to `FIPS_mode'
+[  240s] collect2: error: ld returned 1 exit status
+[  240s] make: *** [Makefile:111: bin/turnutils_uclient] Error 1
+[  473s] mkdir -p bin
+[  473s] rm -rf bin/turnadmin
+[  473s] cc  -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -g  -Wall -Wno-deprecated-declarations -Wextra -Wformat-security -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Wcast-qual -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -ffat-lto-objects -g -DLIBEV_OK -DTURN_HAS_DAEMON -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DOPENSSL_LOAD_CONF  -DTURN_NO_PROMETHEUS       -DINSTALL_PREFIX=/usr -DTURNDB=/var/lib/coturn/turndb -Isrc -Isrc/apps/common -Isrc/server -Isrc/client -Isrc/client++ -I/usr/include/ -I/usr/local/include/  -I/usr/include/pgsql -DOPENSSL_LOAD_CONF  -I/usr/include/mysql/  -I/usr/include/hiredis -D_FILE_OFFSET_BITS=64     -DTURN_NO_MONGO  -DTURN_NO_SYSTEMD src/apps/relay/ns_ioalib_engine_impl.c src/apps/relay/turn_ports.c src/apps/relay/http_server.c src/apps/relay/acme.c -Ilib src/apps/relay/mainrelay.c src/apps/relay/netengine.c src/apps/relay/libtelnet.c src/apps/relay/turn_admin_server.c src/apps/relay/userdb.c src/apps/relay/tls_listener.c src/apps/relay/dtls_listener.c src/apps/relay/prom_server.c src/apps/common/hiredis_libevent2.c src/apps/relay/dbdrivers/dbdriver.c src/apps/relay/dbdrivers/dbd_sqlite.c src/apps/relay/dbdrivers/dbd_pgsql.c src/apps/relay/dbdrivers/dbd_mysql.c src/apps/relay/dbdrivers/dbd_mongo.c src/apps/relay/dbdrivers/dbd_redis.c src/apps/common/apputils.c src/apps/common/ns_turn_utils.c src/apps/common/stun_buffer.c src/client/ns_turn_ioaddr.c src/client/ns_turn_msg_addr.c src/client/ns_turn_msg.c  src/server/ns_turn_allocation.c src/server/ns_turn_maps_rtcp.c src/server/ns_turn_maps.c src/server/ns_turn_server.c -o bin/turnserver -lsqlite3  -L/usr/lib/postgresql15/lib64 -lpq  -L/usr/lib64/ -lmariadb  -lhiredis  -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -lrt -lresolv -lcrypto  -lssl  -levent_core -levent_extra -levent_openssl -levent_pthreads -levent  
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/ns_ioalib_engine_impl.c:31:
+[  473s] src/apps/relay/ns_ioalib_engine_impl.c: In function 'create_ioa_engine':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/mainrelay.h:64,
+[  473s]                  from src/apps/relay/mainrelay.c:31:
+[  473s] src/apps/relay/mainrelay.c: In function 'set_option':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/mainrelay.c: In function 'read_config_file':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1035 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/mainrelay.c: In function 'main':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 128 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 2049 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/userdb.h:39,
+[  473s]                  from src/apps/relay/turn_admin_server.c:58:
+[  473s] src/apps/relay/turn_admin_server.c: In function 'cli_telnet_event_handler':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c: In function 'handle_https':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3590:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3590 |                                                 strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                                                 ^
+[  473s] src/apps/relay/turn_admin_server.c:3590:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s] src/apps/relay/turn_admin_server.c:3590:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s] src/apps/relay/turn_admin_server.c:3590:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 127 [-Wstringop-truncation]
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 127 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3517:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3517 |                                                 strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                                                 ^
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3417:49: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3417 |                                                 strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                                                 ^
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3382:41: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3382 |                                         strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                                         ^
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3370:41: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3370 |                                         strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                                         ^
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 33 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/turn_admin_server.c:3773:27: warning: 'strncpy' output may be truncated copying 127 bytes from a string of length 1024 [-Wstringop-truncation]
+[  473s]  3773 |                           strncpy(current_eff_realm(),realm0,STUN_MAX_REALM_SIZE);
+[  473s]       |                           ^
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/userdb.h:39,
+[  473s]                  from src/apps/relay/userdb.c:54:
+[  473s] src/apps/relay/userdb.c: In function 'get_realm.part.0':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/userdb.c: In function 'set_default_realm_name':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/userdb.c: In function 'start_user_check':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/userdb.c: In function 'add_ip_list_range':
+[  473s] src/ns_turn_defs.h:139:25: warning: '__strncpy_chk' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/apputils.h:38,
+[  473s]                  from src/apps/relay/tls_listener.c:31:
+[  473s] src/apps/relay/tls_listener.c: In function 'create_tls_listener_server':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/apputils.h:38,
+[  473s]                  from src/apps/relay/dtls_listener.c:31:
+[  473s] src/apps/relay/dtls_listener.c: In function 'create_dtls_listener_server':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/dbdrivers/dbd_sqlite.c: In function 'get_sqlite_connection':
+[  473s] src/apps/relay/dbdrivers/dbd_sqlite.c:142:17: warning: '__strncpy_chk' output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
+[  473s]   142 |                 strncpy(dir_fixed,home,szh);
+[  473s]       |                 ^
+[  473s] In function 'fix_user_directory',
+[  473s]     inlined from 'get_sqlite_connection' at src/apps/relay/dbdrivers/dbd_sqlite.c:183:3:
+[  473s] src/apps/relay/dbdrivers/dbd_sqlite.c:139:30: note: length computed here
+[  473s]   139 |                 size_t szh = strlen(home);
+[  473s]       |                              ^~~~~~~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/dbdrivers/../mainrelay.h:64,
+[  473s]                  from src/apps/relay/dbdrivers/dbd_sqlite.c:32:
+[  473s] src/apps/relay/dbdrivers/dbd_sqlite.c: In function 'sqlite_get_oauth_key':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 65 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/dbdrivers/../mainrelay.h:64,
+[  473s]                  from src/apps/relay/dbdrivers/dbd_pgsql.c:32:
+[  473s] src/apps/relay/dbdrivers/dbd_pgsql.c: In function 'pgsql_get_oauth_key':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 65 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/dbdrivers/../mainrelay.h:64,
+[  473s]                  from src/apps/relay/dbdrivers/dbd_mysql.c:32:
+[  473s] src/apps/relay/dbdrivers/dbd_mysql.c: In function 'mysql_get_oauth_key':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/relay/dbdrivers/../mainrelay.h:64,
+[  473s]                  from src/apps/relay/dbdrivers/dbd_redis.c:32:
+[  473s] src/apps/relay/dbdrivers/dbd_redis.c: In function 'redis_get_oauth_key':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 129 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 65 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/common/apputils.c:31:
+[  473s] src/apps/common/apputils.c: In function 'print_abs_file_name':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/apps/common/ns_turn_utils.c:31:
+[  473s] src/apps/common/ns_turn_utils.c: In function 'set_logfile':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 1025 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/client/ns_turn_ioaddr.c:31:
+[  473s] src/client/ns_turn_ioaddr.c: In function 'make_ioa_addr':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/client/ns_turn_msg.c: In function 'stun_produce_integrity_key_str':
+[  473s] src/client/ns_turn_msg.c:260:21: warning: implicit declaration of function 'FIPS_mode' [-Wimplicit-function-declaration]
+[  473s]   260 |                 if (FIPS_mode()) {
+[  473s]       |                     ^~~~~~~~~
+[  473s] src/client/ns_turn_msg.c:260:21: warning: nested extern declaration of 'FIPS_mode' [-Wnested-externs]
+[  473s] src/client/ns_turn_msg.c:171:9: warning: '__strncpy_chk' specified bound depends on the length of the source argument [-Wstringop-truncation]
+[  473s]   171 |         strncpy((char*)str+ulen+1,(const char*)realm,sz-ulen-1);
+[  473s]       |         ^
+[  473s] src/client/ns_turn_msg.c:163:23: note: length computed here
+[  473s]   163 |         size_t rlen = strlen((const char*)realm);
+[  473s]       |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[  473s] src/client/ns_turn_msg.c: In function 'stun_attr_add_integrity_str':
+[  473s] src/client/ns_turn_msg.c:1855:12: warning: 'hmac' may be used uninitialized [-Wmaybe-uninitialized]
+[  473s]  1855 |         if(stun_attr_add_str(buf, len, STUN_ATTRIBUTE_MESSAGE_INTEGRITY, hmac, shasize)<0)
+[  473s]       |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  473s] src/client/ns_turn_msg.c:1441:5: note: by argument 4 of type 'const uint8_t *' to 'stun_attr_add_str' declared here
+[  473s]  1441 | int stun_attr_add_str(uint8_t* buf, size_t *len, uint16_t attr, const uint8_t* avalue, int alen) {
+[  473s]       |     ^~~~~~~~~~~~~~~~~
+[  473s] src/client/ns_turn_msg.c:1837:17: note: 'hmac' declared here
+[  473s]  1837 |         uint8_t hmac[MAXSHASIZE];
+[  473s]       |                 ^~~~
+[  473s] src/client/ns_turn_msg.c: In function 'stun_check_message_integrity_str':
+[  473s] src/client/ns_turn_msg.c:1994:17: warning: 'strncpy' specified bound 257 equals destination size [-Wstringop-truncation]
+[  473s]  1994 |                 strncpy((char*)pwd,(const char*)upwd,sizeof(password_t));
+[  473s]       |                 ^
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/client/ns_turn_msg.h:34,
+[  473s]                  from src/client/ns_turn_msg.c:31:
+[  473s] src/client/ns_turn_msg.c: In function 'convert_oauth_key_data':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' output may be truncated copying 129 bytes from a string of length 479 [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] In file included from src/client/ns_turn_ioaddr.h:34,
+[  473s]                  from src/apps/common/ns_turn_utils.h:39,
+[  473s]                  from src/server/ns_turn_server.h:34,
+[  473s]                  from src/server/ns_turn_server.c:31:
+[  473s] src/server/ns_turn_server.c: In function 'inc_quota':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 513 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/server/ns_turn_server.c: In function 'turn_session_info_copy_from':
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 17 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/ns_turn_defs.h:139:25: warning: 'strncpy' specified bound 65 equals destination size [-Wstringop-truncation]
+[  473s]   139 |                         strncpy((char*)(dst),(const char*)(src),szdst);\
+[  473s]       |                         ^~~~~~~
+[  473s] src/apps/relay/dbdrivers/dbd_mysql.c: In function 'decryptPassword.constprop':
+[  473s] src/apps/relay/dbdrivers/dbd_mysql.c:100:9: warning: '__builtin___strcpy_chk' writing one too many bytes into a region of a size that depends on 'strlen' [-Wstringop-overflow=]
+[  473s]   100 |         strcpy(out,last);
+[  473s]       |         ^
+[  473s] src/apps/relay/dbdrivers/dbd_mysql.c:99:20: note: destination object of size [0, 1023] allocated by 'malloc'
+[  473s]    99 |         out=(char*)malloc(sizeof(char)*strlen(last));
+[  473s]       |                    ^
+[  473s] src/client/ns_turn_msg.c: In function 'stun_attr_add_integrity_str.constprop.isra':
+[  473s] src/client/ns_turn_msg.c:1855:12: warning: 'hmac' may be used uninitialized [-Wmaybe-uninitialized]
+[  473s]  1855 |         if(stun_attr_add_str(buf, len, STUN_ATTRIBUTE_MESSAGE_INTEGRITY, hmac, shasize)<0)
+[  473s]       |            ^
+[  473s] src/client/ns_turn_msg.c:1441:5: note: by argument 4 of type 'const uint8_t *' to 'stun_attr_add_str' declared here
+[  473s]  1441 | int stun_attr_add_str(uint8_t* buf, size_t *len, uint16_t attr, const uint8_t* avalue, int alen) {
+[  473s]       |     ^
+[  473s] src/client/ns_turn_msg.c:1837:17: note: 'hmac' declared here
+[  473s]  1837 |         uint8_t hmac[MAXSHASIZE];
+[  473s]       |                 ^
+[  473s] /usr/lib64/gcc/riscv64-suse-linux/12/../../../../riscv64-suse-linux/bin/ld: /tmp/cc7rEUJG.ltrans5.ltrans.o: in function `.L0 ':
+[  473s] /home/abuild/rpmbuild/BUILD/coturn-4.6.1/src/apps/common/ns_turn_utils.c:606: undefined reference to `FIPS_mode'
+[  473s] collect2: error: ld returned 1 exit status
+[  473s] make: *** [Makefile:136: bin/turnserver] Error 1
+[  473s] error: Bad exit status from /var/tmp/rpm-tmp.bSafGz (%build)
+[  473s] 
+[  473s] RPM build errors:
+[  473s]     Bad exit status from /var/tmp/rpm-tmp.bSafGz (%build)
+[  473s] ### VM INTERACTION START ###
+[  473s] [0;1;38;5;185mFailed to write wtmp record, ignoring: Read-only file system[0m
+[  473s] [0;1;38;5;185mFailed to write utmp record: Read-only file system[0m
+[  473s] Powering off.
+[  473s] [  468.968749][ T5041] reboot: Power down
+[  473s] ### VM INTERACTION END ###
+[  474s] 
+[  474s] lamb21 failed "build coturn.spec" at Mon Feb  6 05:22:23 UTC 2023.
+[  474s] 

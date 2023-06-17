@@ -1,0 +1,1336 @@
+[    0s] Memory limit set to 10955196KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] 
+[    4s] 
+[    4s] oe-RISCV-worker25 started "build _service:extract_file:libappindicator.spec" at Fri Apr 15 19:37:07 UTC 2022.
+[    4s] 
+[    4s] Building libappindicator for project 'openEuler:Mainline:RISC-V' repository 'advanced_riscv64' arch 'riscv64' srcmd5 'a8aa9775ccf71b50be63ed294c2b16a5'
+[    4s] 
+[    4s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:libappindicator.spec ...
+[    8s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:libappindicator.spec
+[    9s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/_service:extract_file:libappindicator.spec build ...
+[  129s] cycle: bash -> coreutils
+[  129s]   breaking dependency coreutils -> bash
+[  129s] cycle: bash -> coreutils -> info
+[  129s]   breaking dependency coreutils -> info
+[  129s] cycle: glibc -> filesystem -> bash -> coreutils
+[  129s]   breaking dependency filesystem -> bash
+[  129s] cycle: glibc -> filesystem -> coreutils
+[  129s]   breaking dependency coreutils -> glibc
+[  129s] cycle: glibc -> filesystem -> coreutils -> libacl
+[  129s]   breaking dependency coreutils -> libacl
+[  129s] cycle: glibc -> filesystem -> coreutils -> attr
+[  129s]   breaking dependency coreutils -> attr
+[  129s] cycle: coreutils -> libcap -> bash
+[  129s]   breaking dependency coreutils -> libcap
+[  129s] cycle: glibc -> filesystem -> coreutils -> openssl-libs
+[  129s]   breaking dependency coreutils -> openssl-libs
+[  129s] cycle: glibc -> filesystem -> coreutils -> libselinux
+[  129s]   breaking dependency libselinux -> glibc
+[  129s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2
+[  129s]   breaking dependency pcre2 -> glibc
+[  129s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline
+[  129s]   breaking dependency readline -> glibc
+[  129s] cycle: glibc -> filesystem -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  129s]   breaking dependency coreutils -> libselinux
+[  129s] cycle: glibc -> filesystem -> coreutils -> ncurses
+[  129s]   breaking dependency ncurses -> glibc
+[  129s] cycle: glibc -> filesystem -> coreutils -> ncurses -> ncurses-libs
+[  129s]   breaking dependency ncurses -> ncurses-libs
+[  129s] cycle: filesystem -> coreutils -> ncurses -> libgcc
+[  129s]   breaking dependency ncurses -> libgcc
+[  129s] cycle: perl-Carp -> perl-libs
+[  129s]   breaking dependency perl-libs -> perl-Carp
+[  129s] cycle: perl-libs -> perl-Exporter
+[  129s]   breaking dependency perl-libs -> perl-Exporter
+[  129s] cycle: perl-Carp -> perl-Exporter
+[  129s]   breaking dependency perl-Exporter -> perl-Carp
+[  129s] cycle: nss-util -> nss
+[  129s]   breaking dependency nss -> nss-util
+[  129s] cycle: nss-softokn -> nss-util -> nss
+[  129s]   breaking dependency nss -> nss-softokn
+[  129s] cycle: systemd -> cryptsetup -> device-mapper
+[  129s]   breaking dependency systemd -> cryptsetup
+[  129s] cycle: audit -> systemd -> pam
+[  129s]   breaking dependency systemd -> pam
+[  130s] [1/84] preinstalling dbus...
+[  130s] [2/84] preinstalling libffi-devel...
+[  131s] [3/84] preinstalling nodejs-source-map...
+[  132s] [4/84] preinstalling python3-pip...
+[  135s] [5/84] preinstalling python3-setuptools_scm...
+[  136s] [6/84] preinstalling ncurses...
+[  141s] [7/84] preinstalling coreutils...
+[  146s] [8/84] preinstalling filesystem...
+[  148s] [9/84] preinstalling glibc...
+[  152s] [10/84] preinstalling libgcc...
+[  153s] [11/84] preinstalling diffutils...
+[  154s] [12/84] preinstalling libcap-ng...
+[  155s] [13/84] preinstalling libgpg-error...
+[  156s] [14/84] preinstalling libpcap...
+[  157s] [15/84] preinstalling libsmartcols...
+[  157s] [16/84] preinstalling libuuid...
+[  158s] [17/84] preinstalling libxcrypt...
+[  159s] [18/84] preinstalling lz4...
+[  160s] [19/84] preinstalling m4...
+[  161s] [20/84] preinstalling ncurses-libs...
+[  162s] [21/84] preinstalling nspr...
+[  163s] [22/84] preinstalling xz-libs...
+[  164s] [23/84] preinstalling zlib...
+[  164s] [24/84] preinstalling attr...
+[  165s] [25/84] preinstalling libdb...
+[  169s] [26/84] preinstalling zstd...
+[  171s] [27/84] preinstalling audit-libs...
+[  172s] [28/84] preinstalling file...
+[  173s] [29/84] preinstalling iptables-libs...
+[  173s] [30/84] preinstalling libacl...
+[  174s] [31/84] preinstalling libgcrypt...
+[  175s] [32/84] preinstalling openssl-libs...
+[  177s] [33/84] preinstalling readline...
+[  178s] [34/84] preinstalling bash...
+[  180s] [35/84] preinstalling cmake...
+[  191s] [36/84] preinstalling perl-libs...
+[  194s] [37/84] preinstalling dnf...
+[  195s] [38/84] preinstalling pcre2...
+[  196s] [39/84] preinstalling perl-Exporter...
+[  197s] [40/84] preinstalling bzip2...
+[  198s] [41/84] preinstalling elfutils...
+[  199s] [42/84] preinstalling hostname...
+[  200s] [43/84] preinstalling libcap...
+[  200s] [44/84] preinstalling pcre...
+[  201s] [45/84] preinstalling popt...
+[  202s] [46/84] preinstalling acl...
+[  203s] [47/84] preinstalling libblkid...
+[  203s] [48/84] preinstalling openssl...
+[  205s] [49/84] preinstalling sqlite...
+[  206s] [50/84] preinstalling tar...
+[  207s] [51/84] preinstalling info...
+[  208s] [52/84] preinstalling libgcrypt-devel...
+[  209s] [53/84] preinstalling lua...
+[  210s] [54/84] preinstalling libselinux...
+[  210s] [55/84] preinstalling perl-Carp...
+[  211s] [56/84] preinstalling copy-jdk-configs...
+[  213s] [57/84] preinstalling libfdisk...
+[  214s] [58/84] preinstalling perl-Digest-MD5...
+[  214s] [59/84] preinstalling grep...
+[  215s] [60/84] preinstalling rpm-libs...
+[  216s] [61/84] preinstalling chkconfig...
+[  217s] [62/84] preinstalling sed...
+[  218s] [63/84] preinstalling libmount...
+[  218s] [64/84] preinstalling libsemanage...
+[  221s] [65/84] preinstalling perl-constant...
+[  222s] [66/84] preinstalling findutils...
+[  223s] [67/84] preinstalling xz...
+[  224s] [68/84] preinstalling perl-Getopt-Long...
+[  224s] [69/84] preinstalling glib2...
+[  230s] [70/84] preinstalling nss...
+[  232s] [71/84] preinstalling perl-Data-Dumper...
+[  232s] [72/84] preinstalling systemd-libs...
+[  233s] [73/84] preinstalling systemd...
+[  238s] [74/84] preinstalling dbus-libs...
+[  239s] [75/84] preinstalling nss-util...
+[  240s] [76/84] preinstalling audit...
+[  241s] [77/84] preinstalling nss-softokn...
+[  242s] [78/84] preinstalling pam...
+[  243s] [79/84] preinstalling rpm...
+[  245s] [80/84] preinstalling openEuler-rpm-config...
+[  246s] [81/84] preinstalling util-linux...
+[  249s] [82/84] preinstalling device-mapper...
+[  250s] [83/84] preinstalling cryptsetup...
+[  251s] [84/84] preinstalling lvm2...
+[  254s] 
+[  256s] initializing rpm db...
+[  270s] reordering...cycle: adobe-mappings-cmap -> adobe-mappings-cmap-lang
+[  270s]   breaking dependency adobe-mappings-cmap-lang -> adobe-mappings-cmap
+[  270s] cycle: bash -> coreutils
+[  270s]   breaking dependency coreutils -> bash
+[  270s] cycle: bash -> coreutils -> info
+[  270s]   breaking dependency coreutils -> info
+[  270s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[  270s]   breaking dependency filesystem -> bash
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[  270s]   breaking dependency coreutils -> gmp
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils
+[  270s]   breaking dependency coreutils -> glibc
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> libacl
+[  270s]   breaking dependency coreutils -> libacl
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> attr
+[  270s]   breaking dependency coreutils -> attr
+[  270s] cycle: coreutils -> libcap -> bash
+[  270s]   breaking dependency coreutils -> libcap
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs
+[  270s]   breaking dependency openssl-libs -> glibc
+[  270s] cycle: coreutils -> openssl-libs -> ca-certificates -> bash
+[  270s]   breaking dependency ca-certificates -> bash
+[  270s] cycle: coreutils -> openssl-libs -> ca-certificates
+[  270s]   breaking dependency ca-certificates -> coreutils
+[  270s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep -> bash
+[  270s]   breaking dependency grep -> bash
+[  270s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[  270s]   breaking dependency ca-certificates -> grep
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit
+[  270s]   breaking dependency p11-kit -> glibc
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> ca-certificates -> p11-kit -> libffi
+[  270s]   breaking dependency openssl-libs -> ca-certificates
+[  270s] cycle: coreutils -> openssl-libs -> crypto-policies -> bash
+[  270s]   breaking dependency crypto-policies -> bash
+[  270s] cycle: coreutils -> openssl-libs -> crypto-policies
+[  270s]   breaking dependency crypto-policies -> coreutils
+[  270s] cycle: coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency grep -> coreutils
+[  270s] cycle: glibc -> basesystem -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency glibc -> basesystem
+[  270s] cycle: glibc -> glibc-common -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency glibc-common -> bash
+[  270s] cycle: glibc -> glibc-common -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency glibc-common -> coreutils
+[  270s] cycle: glibc -> glibc-common
+[  270s]   breaking dependency glibc-common -> glibc
+[  270s] cycle: glibc -> glibc-common -> libselinux
+[  270s]   breaking dependency libselinux -> glibc
+[  270s] cycle: glibc -> glibc-common -> libselinux -> pcre2
+[  270s]   breaking dependency pcre2 -> glibc
+[  270s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline
+[  270s]   breaking dependency readline -> glibc
+[  270s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[  270s]   breaking dependency libselinux -> pcre2
+[  270s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency bash -> coreutils
+[  270s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> filesystem -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency libsepol -> bash
+[  270s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> coreutils -> openssl-libs -> crypto-policies -> grep
+[  270s]   breaking dependency coreutils -> openssl-libs
+[  270s] cycle: libselinux -> libsepol -> coreutils
+[  270s]   breaking dependency libsepol -> coreutils
+[  270s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[  270s]   breaking dependency glibc -> glibc-common
+[  270s] cycle: glibc -> filesystem -> coreutils -> libselinux -> libsepol
+[  270s]   breaking dependency filesystem -> coreutils
+[  270s] cycle: filesystem -> setup
+[  270s]   breaking dependency filesystem -> setup
+[  270s] cycle: systemd -> cryptsetup -> device-mapper
+[  270s]   breaking dependency systemd -> cryptsetup
+[  270s] cycle: perl-libs -> perl-Carp
+[  270s]   breaking dependency perl-libs -> perl-Carp
+[  270s] cycle: perl-libs -> perl-Exporter
+[  270s]   breaking dependency perl-libs -> perl-Exporter
+[  270s] cycle: perl-Carp -> perl-Exporter
+[  270s]   breaking dependency perl-Exporter -> perl-Carp
+[  270s] cycle: perl -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-PathTools
+[  270s] cycle: perl -> perl-ExtUtils-MakeMaker
+[  270s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[  270s] cycle: perl -> perl-File-Path -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-File-Path
+[  270s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[  270s]   breaking dependency perl -> perl-Getopt-Long
+[  270s] cycle: perl -> perl-Locale-Maketext
+[  270s]   breaking dependency perl -> perl-Locale-Maketext
+[  270s] cycle: perl -> perl-Pod-Simple
+[  270s]   breaking dependency perl -> perl-Pod-Simple
+[  270s] cycle: perl -> perl-Socket
+[  270s]   breaking dependency perl -> perl-Socket
+[  270s] cycle: perl -> perl-Storable
+[  270s]   breaking dependency perl -> perl-Storable
+[  270s] cycle: perl -> perl-Text-Tabs+Wrap
+[  270s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[  270s] cycle: perl -> perl-Time-Local -> perl-constant
+[  270s]   breaking dependency perl -> perl-Time-Local
+[  270s] cycle: perl -> perl-constant
+[  270s]   breaking dependency perl -> perl-constant
+[  270s] cycle: perl -> perl-threads
+[  270s]   breaking dependency perl -> perl-threads
+[  270s] cycle: perl -> perl-threads-shared
+[  270s]   breaking dependency perl -> perl-threads-shared
+[  270s] cycle: perl -> perl-Archive-Tar
+[  270s]   breaking dependency perl -> perl-Archive-Tar
+[  270s] cycle: perl -> perl-B-Debug
+[  270s]   breaking dependency perl -> perl-B-Debug
+[  270s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[  270s]   breaking dependency perl -> perl-CPAN-Meta
+[  270s] cycle: perl -> perl-CPAN-Meta-Requirements
+[  270s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[  270s] cycle: perl -> perl-CPAN-Meta-YAML
+[  270s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[  270s] cycle: perl -> perl-Compress-Raw-Bzip2
+[  270s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[  270s] cycle: perl -> perl-Compress-Raw-Zlib
+[  270s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[  270s] cycle: perl -> perl-Config-Perl-V
+[  270s]   breaking dependency perl -> perl-Config-Perl-V
+[  270s] cycle: perl -> perl-DB_File
+[  270s]   breaking dependency perl -> perl-DB_File
+[  270s] cycle: perl -> perl-Data-Dumper
+[  270s]   breaking dependency perl -> perl-Data-Dumper
+[  270s] cycle: perl -> perl-Devel-PPPort
+[  270s]   breaking dependency perl -> perl-Devel-PPPort
+[  270s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[  270s]   breaking dependency perl -> perl-Digest
+[  270s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  270s]   breaking dependency perl -> perl-Digest-MD5
+[  270s] cycle: perl -> perl-Digest-SHA
+[  270s]   breaking dependency perl -> perl-Digest-SHA
+[  270s] cycle: perl -> perl-Encode
+[  270s]   breaking dependency perl -> perl-Encode
+[  270s] cycle: perl -> perl-Env
+[  270s]   breaking dependency perl -> perl-Env
+[  270s] cycle: perl -> perl-ExtUtils-Command
+[  270s]   breaking dependency perl -> perl-ExtUtils-Command
+[  270s] cycle: perl -> perl-ExtUtils-Install
+[  270s]   breaking dependency perl -> perl-ExtUtils-Install
+[  270s] cycle: perl -> perl-ExtUtils-Manifest
+[  270s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[  270s] cycle: perl -> perl-ExtUtils-ParseXS
+[  270s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[  270s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-File-Fetch
+[  270s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-File-Temp
+[  270s] cycle: perl -> perl-Filter
+[  270s]   breaking dependency perl -> perl-Filter
+[  270s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[  270s]   breaking dependency perl -> perl-Filter-Simple
+[  270s] cycle: perl -> perl-HTTP-Tiny
+[  270s]   breaking dependency perl -> perl-HTTP-Tiny
+[  270s] cycle: perl -> perl-IO-Compress
+[  270s]   breaking dependency perl -> perl-IO-Compress
+[  270s] cycle: perl -> perl-IO-Socket-IP
+[  270s]   breaking dependency perl -> perl-IO-Socket-IP
+[  270s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[  270s]   breaking dependency perl -> perl-IPC-Cmd
+[  270s] cycle: perl -> perl-IPC-SysV
+[  270s]   breaking dependency perl -> perl-IPC-SysV
+[  270s] cycle: perl -> perl-JSON-PP
+[  270s]   breaking dependency perl -> perl-JSON-PP
+[  270s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[  270s]   breaking dependency perl -> perl-Locale-Codes
+[  270s] cycle: perl -> perl-MIME-Base64
+[  270s]   breaking dependency perl -> perl-MIME-Base64
+[  270s] cycle: perl -> perl-Math-BigInt
+[  270s]   breaking dependency perl -> perl-Math-BigInt
+[  270s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[  270s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[  270s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[  270s]   breaking dependency perl -> perl-Math-BigRat
+[  270s] cycle: perl -> perl-Module-CoreList
+[  270s]   breaking dependency perl -> perl-Module-CoreList
+[  270s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-Module-Load
+[  270s] cycle: perl -> perl-Module-Load-Conditional
+[  270s]   breaking dependency perl -> perl-Module-Load-Conditional
+[  270s] cycle: perl -> perl-Module-Metadata
+[  270s]   breaking dependency perl -> perl-Module-Metadata
+[  270s] cycle: perl -> perl-Params-Check
+[  270s]   breaking dependency perl -> perl-Params-Check
+[  270s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[  270s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[  270s] cycle: perl -> perl-Pod-Checker
+[  270s]   breaking dependency perl -> perl-Pod-Checker
+[  270s] cycle: perl -> perl-Pod-Escapes
+[  270s]   breaking dependency perl -> perl-Pod-Escapes
+[  270s] cycle: perl -> perl-Pod-Parser
+[  270s]   breaking dependency perl -> perl-Pod-Parser
+[  270s] cycle: perl -> perl-Pod-Perldoc
+[  270s]   breaking dependency perl -> perl-Pod-Perldoc
+[  270s] cycle: perl -> perl-Pod-Usage
+[  270s]   breaking dependency perl -> perl-Pod-Usage
+[  270s] cycle: perl -> perl-Sys-Syslog
+[  270s]   breaking dependency perl -> perl-Sys-Syslog
+[  270s] cycle: perl -> perl-Term-Cap
+[  270s]   breaking dependency perl -> perl-Term-Cap
+[  270s] cycle: perl -> perl-Test-Harness
+[  270s]   breaking dependency perl -> perl-Test-Harness
+[  270s] cycle: perl -> perl-Test-Simple
+[  270s]   breaking dependency perl -> perl-Test-Simple
+[  270s] cycle: perl -> perl-Text-Balanced
+[  270s]   breaking dependency perl -> perl-Text-Balanced
+[  270s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[  270s]   breaking dependency perl -> perl-Thread-Queue
+[  270s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[  270s]   breaking dependency perl -> perl-Unicode-Collate
+[  270s] cycle: perl -> perl-autodie
+[  270s]   breaking dependency perl -> perl-autodie
+[  270s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[  270s]   breaking dependency perl -> perl-bignum
+[  270s] cycle: perl -> perl-devel
+[  270s]   breaking dependency perl -> perl-devel
+[  270s] cycle: perl -> perl-Encode-devel
+[  270s]   breaking dependency perl -> perl-Encode-devel
+[  270s] cycle: perl -> perl-experimental
+[  270s]   breaking dependency perl -> perl-experimental
+[  270s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[  270s]   breaking dependency perl -> perl-libnet
+[  270s] cycle: perl -> perl-podlators
+[  270s]   breaking dependency perl -> perl-podlators
+[  270s] cycle: perl -> perl-version
+[  270s]   breaking dependency perl -> perl-version
+[  270s] cycle: glib2 -> gamin
+[  270s]   breaking dependency glib2 -> gamin
+[  270s] cycle: systemd -> gnutls -> unbound-libs -> shadow -> pam -> audit
+[  270s]   breaking dependency systemd -> gnutls
+[  270s] cycle: systemd -> pam -> audit
+[  270s]   breaking dependency systemd -> pam
+[  270s] cycle: systemd -> shadow -> pam -> audit
+[  270s]   breaking dependency systemd -> shadow
+[  270s] cycle: pam -> libpwquality
+[  270s]   breaking dependency pam -> libpwquality
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[  270s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[  270s]   breaking dependency perl-podlators -> perl-Encode
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[  270s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[  270s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[  270s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[  270s] cycle: perl-Pod-Usage -> perl-podlators
+[  270s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[  270s] cycle: groff -> perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc
+[  270s]   breaking dependency groff -> perl-Getopt-Long
+[  270s] cycle: fontconfig -> urw-base35-c059-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-c059-fonts
+[  270s] cycle: fontconfig -> urw-base35-nimbus-sans-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-nimbus-sans-fonts
+[  270s] cycle: fontconfig -> urw-base35-bookman-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-bookman-fonts
+[  270s] cycle: fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-nimbus-mono-ps-fonts
+[  270s] cycle: fontconfig -> urw-base35-z003-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-z003-fonts
+[  270s] cycle: fontconfig -> urw-base35-p052-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-p052-fonts
+[  270s] cycle: fontconfig -> urw-base35-nimbus-roman-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-nimbus-roman-fonts
+[  270s] cycle: fontconfig -> urw-base35-d050000l-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-d050000l-fonts
+[  270s] cycle: fontconfig -> urw-base35-gothic-fonts
+[  270s]   breaking dependency fontconfig -> urw-base35-gothic-fonts
+[  270s] cycle: python2 -> python2-debug
+[  270s]   breaking dependency python2-debug -> python2
+[  270s] cycle: python2 -> python2-debug -> python2-devel
+[  270s]   breaking dependency python2-debug -> python2-devel
+[  270s] cycle: python2 -> python2-debug -> python2-tkinter
+[  270s]   breaking dependency python2-debug -> python2-tkinter
+[  270s] cycle: python2-tools -> python2 -> python2-debug
+[  270s]   breaking dependency python2-debug -> python2-tools
+[  270s] cycle: libglvnd-egl -> mesa-libEGL
+[  270s]   breaking dependency mesa-libEGL -> libglvnd-egl
+[  270s] cycle: libglvnd-glx -> mesa-libGL
+[  270s]   breaking dependency mesa-libGL -> libglvnd-glx
+[  270s] cycle: libxcrypt-devel -> glibc-devel
+[  270s]   breaking dependency glibc-devel -> libxcrypt-devel
+[  270s] cycle: cmake-data -> cmake
+[  270s]   breaking dependency cmake -> cmake-data
+[  270s] cycle: nss-util -> nss
+[  270s]   breaking dependency nss -> nss-util
+[  270s] cycle: nss-softokn -> nss-util -> nss
+[  270s]   breaking dependency nss -> nss-softokn
+[  270s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[  270s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[  270s] cycle: openssh -> openssh-server
+[  270s]   breaking dependency openssh-server -> openssh
+[  270s] cycle: git -> perl-Git
+[  270s]   breaking dependency git -> perl-Git
+[  270s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[  270s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[  271s] done
+[  271s] querying package ids...
+[  308s] [1/535] installing adobe-mappings-pdf-20190401-2.oe1
+[  311s] [2/535] installing cmake-filesystem-3.22.0-1.oe1
+[  312s] [3/535] installing fonts-filesystem-2.0.2-2.oe1
+[  313s] [4/535] installing fuse-common-3.9.2-5.oe1
+[  314s] [5/535] installing kernel-headers-5.10-3.oe1
+[  319s] [6/535] installing libreport-filesystem-2.13.1-5.oe1
+[  320s] [7/535] installing ncurses-base-6.1-14.oe1
+[  323s] [8/535] installing openEuler-gpg-keys-1.0-2.5.oe1
+[  324s] [9/535] installing python-setuptools-59.4.0-3.oe1
+[  326s] [10/535] installing python2-help-2.7.16-17.oe1
+[  326s] [11/535] installing qt5-srpm-macros-5.15.2-1.oe1
+[  327s] [12/535] installing tzdata-2021a-2.oe1
+[  334s] [13/535] installing xkeyboard-config-2.30-1.oe1
+[  339s] [14/535] installing dnf-data-4.10.0-1.oe1
+[  340s] [15/535] installing google-droid-sans-fonts-20120715-15.oe1
+[  344s] [16/535] installing openEuler-repos-1.0-2.5.oe1
+[  344s] [17/535] installing openEuler-release-20.03LTS-40.oe1
+[  345s] [18/535] installing adobe-mappings-cmap-lang-20190730-3.oe1
+[  351s] [19/535] installing filesystem-3.9-3.oe1
+[  364s] warning: group mail does not exist - using root
+[  365s] [20/535] installing adobe-mappings-cmap-20190730-3.oe1
+[  365s] [21/535] installing emacs-filesystem-1:27.1-5.oe1
+[  366s] [22/535] installing libgcc-10.3.1-20220105.6.oe1
+[  368s] [23/535] installing setup-2.13.3-4.oe1
+[  371s] [24/535] installing urw-base35-fonts-common-20170801-11
+[  372s] [25/535] installing glibc-2.34-64.oe1
+[  378s] [26/535] installing brotli-1.0.9-2.oe1
+[  379s] [27/535] installing chrpath-0.16-12.oe1
+[  381s] [28/535] installing cpio-2.13-4.oe1
+[  382s] [29/535] installing diffutils-3.7-4.oe1
+[  385s] [30/535] installing expat-2.2.10-1.oe1
+[  385s] [31/535] installing fribidi-1.0.10-1.oe1
+[  388s] [32/535] installing gpm-libs-1.20.7-21.oe1
+[  389s] [33/535] installing jbig2dec-0.19-2.oe1
+[  390s] [34/535] installing jbigkit-libs-2.1-17.oe1
+[  390s] [35/535] installing json-c-0.15-1.oe1
+[  394s] [36/535] installing keyutils-libs-1.6.3-3.oe1
+[  395s] [37/535] installing lcms2-2.11-2.oe1
+[  396s] [38/535] installing libICE-1.0.10-2.oe1
+[  397s] [39/535] installing libXau-1.0.9-2.oe1
+[  397s] [40/535] installing libaio-0.3.112-1.oe1
+[  398s] [41/535] installing libargon2-20190702-1.oe1
+[  399s] [42/535] installing libatomic-10.3.1-20220105.6.oe1
+[  400s] [43/535] installing libcap-ng-0.7.11-1.oe1
+[  401s] [44/535] installing libdatrie-0.2.12-1.oe1
+[  403s] [45/535] installing libdrm-2.4.109-1.oe1
+[  404s] [46/535] installing libepoxy-1.5.3-2
+[  405s] [47/535] installing libev-4.24-11.oe1
+[  409s] [48/535] installing libffi-3.3-31.oe1
+[  410s] [49/535] installing libglvnd-1:1.3.4-2.oe1
+[  411s] [50/535] installing libgomp-10.3.1-20220105.6.oe1
+[  412s] [51/535] installing libgpg-error-1.41-1.oe1
+[  415s] [52/535] installing libijs-0.35-9.oe1
+[  416s] [53/535] installing libjpeg-turbo-2.0.6-1.oe1
+[  417s] [54/535] installing libnghttp2-1.42.0-1.oe1
+[  418s] [55/535] installing libpcap-14:1.9.1-7.oe1
+[  420s] [56/535] installing libpipeline-1.5.3-1.oe1
+[  421s] [57/535] installing libsigsegv-2.11-10.oe1
+[  422s] [58/535] installing libsmartcols-2.36.1-3.oe1
+[  423s] [59/535] installing libtasn1-4.16.0-2.oe1
+[  429s] [60/535] installing libtool-ltdl-2.4.6-34.oe1
+[  431s] [61/535] installing libunistring-0.9.10-8.oe1
+[  432s] [62/535] installing libuuid-2.36.1-3.oe1
+[  434s] [63/535] installing libuv-1:1.40.0-1.oe1
+[  435s] [64/535] installing libwayland-egl-1.18.0-1.fc33
+[  436s] [65/535] installing libwebp-1.1.0-3.oe1
+[  437s] [66/535] installing libxcrypt-4.4.8-4.oe1
+[  439s] [67/535] installing libxshmfence-1.3-6.oe1
+[  439s] [68/535] installing libyaml-0.2.5-1.oe1
+[  443s] [69/535] installing lz4-1.9.3-1.oe1
+[  446s] [70/535] installing m4-1.4.18-14.oe1
+[  448s] [71/535] installing mcpp-2.7.2-25.oe1
+[  449s] [72/535] installing nspr-4.32.0-1.oe1
+[  450s] [73/535] installing openjpeg2-2.3.1-6.oe1
+[  451s] [74/535] installing pixman-0.38.0-1.oe1
+[  453s] [75/535] installing pkgconf-1.7.3-1.oe1
+[  453s] [76/535] installing rhash-1.3.5-5.oe1
+[  455s] [77/535] installing which-2.21-14.oe1
+[  462s] [78/535] installing xz-libs-5.2.5-1.oe1
+[  464s] [79/535] installing zlib-1.2.11-18.oe1
+[  465s] [80/535] installing attr-2.4.48-12.oe1
+[  466s] [81/535] installing basesystem-12-2.oe1
+[  467s] [82/535] installing libidn-1.36-1.oe1
+[  473s] [83/535] installing libstdc++-10.3.1-20220105.6.oe1
+[  475s] [84/535] installing ncurses-libs-6.1-14.oe1
+[  476s] [85/535] installing libsepol-3.1-4.oe1
+[  479s] [86/535] installing libglvnd-core-devel-1:1.3.4-2.oe1
+[  480s] [87/535] installing libstdc++-devel-10.3.1-20220105.6.oe1
+[  497s] [88/535] installing wayland-protocols-devel-1.20-1.oe1
+[  498s] [89/535] installing xorg-x11-proto-devel-2019.1-1.oe1
+[  501s] [90/535] installing audit-libs-1:3.0-2.oe1
+[  503s] [91/535] installing elfutils-libelf-0.185-3.oe1
+[  504s] [92/535] installing file-libs-5.39-6.oe1
+[  507s] [93/535] installing fribidi-devel-1.0.10-1.oe1
+[  508s] [94/535] installing gmp-1:6.2.1-3.oe1
+[  509s] [95/535] installing iptables-libs-1.8.1-4.oe1
+[  511s] [96/535] installing less-563-2.oe1
+[  512s] [97/535] installing libacl-2.2.53-7.oe1
+[  514s] [98/535] installing libassuan-2.5.4-1.oe1
+[  515s] [99/535] installing libedit-3.1-27.oe1
+[  516s] [100/535] installing libffi-devel-3.3-31.oe1
+[  516s] [101/535] installing libfontenc-1.1.4-2.oe1
+[  519s] [102/535] installing libgcrypt-1.8.7-1.oe1
+[  520s] [103/535] installing libglvnd-opengl-1:1.3.4-2.oe1
+[  521s] [104/535] installing libpng-2:1.6.37-1.oe1
+[  522s] [105/535] installing libsepol-devel-3.1-4.oe1
+[  525s] [106/535] installing libthai-0.1.28-4.oe1
+[  528s] [107/535] installing libwayland-client-1.18.0-1.fc33
+[  529s] [108/535] installing libwayland-server-1.18.0-1.fc33
+[  531s] [109/535] installing libxcb-1.14-1.oe1
+[  532s] [110/535] installing pixman-devel-0.38.0-1.oe1
+[  533s] [111/535] installing readline-8.0-2.oe1
+[  535s] [112/535] installing zlib-devel-1.2.11-18.oe1
+[  536s] [113/535] installing fuse-2.9.9-6.oe1
+[  538s] [114/535] installing gc-8.0.4-2.oe1
+[  539s] [115/535] installing libSM-1.2.3-2.oe1
+[  540s] [116/535] installing libdatrie-devel-0.2.12-1.oe1
+[  541s] [117/535] installing libdb-5.3.28-35.oe1
+[  545s] [118/535] installing libicu-62.1-5.oe1
+[  558s] [119/535] installing libselinux-3.1-3.oe1
+[  560s] [120/535] installing libxml2-2.9.12-5.oe1
+[  561s] [121/535] installing bash-5.1-1.oe1
+[  565s] [122/535] installing perl-libs-4:5.28.0-435.oe1
+[  570s] [123/535] installing zstd-1.4.8-2.oe1
+[  574s] [124/535] installing ncurses-6.1-14.oe1
+[  583s] [125/535] installing thin-provisioning-tools-0.8.5-1.oe1
+[  586s] [126/535] installing libtiff-4.2.0-1.oe1
+[  587s] [127/535] installing perl-parent-1:0.237-4.oe1
+[  588s] [128/535] installing perl-perlfaq-5.20180915-5.oe1
+[  590s] [129/535] installing libX11-1.6.9-2.oe1
+[  592s] [130/535] installing libtiff-devel-4.2.0-1.oe1
+[  595s] [131/535] installing mesa-libglapi-21.3.1-1.oe1
+[  596s] [132/535] installing mpfr-4.1.0-1.oe1
+[  598s] [133/535] installing nettle-3.6-6.oe1
+[  600s] [134/535] installing pcre2-10.36-1.oe1
+[  602s] [135/535] installing perl-Exporter-5.74-1.oe1
+[  603s] [136/535] installing file-5.39-6.oe1
+[  604s] [137/535] installing gdbm-1:1.18.1-1.oe1
+[  605s] [138/535] installing libXau-devel-1.0.9-2.oe1
+[  606s] [139/535] installing libthai-devel-0.1.28-4.oe1
+[  607s] [140/535] installing libwayland-cursor-1.18.0-1.fc33
+[  609s] [141/535] installing libxkbcommon-1.0.3-1.oe1
+[  610s] [142/535] installing patch-2.7.6-12.oe1
+[  611s] [143/535] installing qrencode-4.1.1-1
+[  612s] [144/535] installing sed-4.8-2.oe1
+[  614s] [145/535] installing acl-2.2.53-7.oe1
+[  616s] [146/535] installing libcomps-0.1.15-1.oe1
+[  617s] [147/535] installing pcre-8.44-1.oe1
+[  618s] [148/535] installing glibc-common-2.34-64.oe1
+[  629s] [149/535] installing mesa-libgbm-21.3.1-1.oe1
+[  631s] [150/535] installing coreutils-8.31-4.oe1
+[  638s] [151/535] installing adwaita-icon-theme-3.38.0-1.oe1
+[  682s] [152/535] installing crontabs-1.11-21.oe1
+[  683s] [153/535] installing elfutils-default-yama-scope-0.185-3.oe1
+[  684s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[  684s] [154/535] installing hicolor-icon-theme-0.17-4.oe1
+[  686s] [155/535] installing libXcomposite-0.4.5-1.oe1
+[  688s] [156/535] installing libXext-1.3.4-2.oe1
+[  689s] [157/535] installing libXfixes-5.0.3-11.oe1
+[  690s] [158/535] installing libXpm-3.5.12-11.oe1
+[  692s] [159/535] installing libXrender-0.9.10-10.oe1
+[  694s] [160/535] installing perl-Carp-1.50-418.oe1
+[  695s] [161/535] installing perl-Perl-OSType-1.010-421.oe1
+[  701s] [162/535] installing perl-Term-ANSIColor-4.06-511.oe1
+[  702s] [163/535] installing publicsuffix-list-20200718-1.oe1
+[  704s] [164/535] installing uname-build-checks-1.0-0.4.oe1
+[  705s] [165/535] installing bzip2-1.0.8-3.oe1
+[  707s] [166/535] installing gzip-1.10-1.oe1
+[  708s] [167/535] installing hostname-3.21-2.oe1
+[  710s] [168/535] installing libcap-2.32-2.oe1
+[  711s] [169/535] installing libmpc-1.2.0-2.oe1
+[  713s] [170/535] installing libpaper-1.1.24-25.oe1
+[  714s] [171/535] installing libseccomp-2.4.3-2.oe1
+[  716s] [172/535] installing libxcb-devel-1.14-1.oe1
+[  719s] [173/535] installing npth-1.5-7.oe1
+[  720s] [174/535] installing popt-1.18-1.oe1
+[  724s] [175/535] installing sgml-common-0.6.3-51.oe1
+[  726s] [176/535] installing grep-3.6-1.oe1
+[  728s] [177/535] installing libXt-1.2.0-0.oe1
+[  730s] [178/535] installing libblkid-2.36.1-3.oe1
+[  732s] [179/535] installing libidn2-2.3.0-1.oe1
+[  734s] [180/535] installing libksba-1.3.5-12.oe1
+[  737s] [181/535] installing pcre-devel-8.44-1.oe1
+[  740s] [182/535] installing pcre2-devel-10.36-1.oe1
+[  743s] [183/535] installing tar-2:1.32-3.oe1
+[  745s] [184/535] installing tcl-1:8.6.10-3.oe1
+[  750s] [185/535] installing graphite2-1.3.13-2.oe1
+[  752s] [186/535] installing info-6.7-2.oe1
+[  753s] [187/535] installing jsoncpp-1.9.4-1.oe1
+[  756s] [188/535] installing libgpg-error-devel-1.41-1.oe1
+[  757s] [189/535] installing lua-5.3.5-6.oe1
+[  759s] [190/535] installing slang-2.3.2-8.oe1
+[  763s] [191/535] installing gawk-5.0.1-2.oe1
+[  765s] [192/535] installing libxslt-1.1.32-7.oe1
+[  767s] [193/535] installing libicu-devel-62.1-5.oe1
+[  773s] [194/535] installing libpng-devel-2:1.6.37-1.oe1
+[  775s] [195/535] installing wayland-devel-1.18.0-1.fc33
+[  777s] [196/535] installing guile-5:2.0.14-15.oe1
+[  785s] [197/535] installing mesa-libEGL-21.3.1-1.oe1
+[  787s] [198/535] installing bzip2-devel-1.0.8-3.oe1
+[  788s] [199/535] installing graphite2-devel-1.3.13-2.oe1
+[  790s] [200/535] installing zip-3.0-29.oe1
+[  791s] [201/535] installing libXdamage-1.1.5-1.oe1
+[  793s] [202/535] installing libXi-1.7.10-1.oe1
+[  795s] [203/535] installing libXinerama-1.1.4-5.oe1
+[  796s] [204/535] installing libXxf86misc-1.0.4-4.oe1
+[  798s] [205/535] installing libXxf86vm-1.1.4-13.oe1
+[  800s] [206/535] installing libfdisk-2.36.1-3.oe1
+[  802s] [207/535] installing libglvnd-egl-1:1.3.4-2.oe1
+[  803s] [208/535] installing libglvnd-gles-1:1.3.4-2.oe1
+[  804s] [209/535] installing newt-0.52.21-4.oe1
+[  808s] [210/535] installing perl-Text-ParseWords-3.30-419.oe1
+[  809s] [211/535] installing crypto-policies-20180925-3.git71ca85f.oe1
+[  815s] [212/535] installing elfutils-libs-0.185-3.oe1
+[  821s] [213/535] installing libX11-devel-1.6.9-2.oe1
+[  824s] [214/535] installing libXcursor-1.2.0-1.oe1
+[  825s] [215/535] installing libXmu-1.1.3-1.oe1
+[  827s] [216/535] installing libXrandr-1.5.2-1.oe1
+[  828s] [217/535] installing libmount-2.36.1-3.oe1
+[  831s] [218/535] installing libselinux-devel-3.1-3.oe1
+[  833s] [219/535] installing lua-posix-33.3.1-12.oe1
+[  835s] [220/535] installing unzip-6.0-47.oe1
+[  837s] [221/535] installing cracklib-2.9.7-6.oe1
+[  842s] [222/535] installing docbook-dtds-1.0-78.oe1
+[  865s] [223/535] installing e2fsprogs-1.45.6-3.oe1
+[  868s] [224/535] installing findutils-2:4.7.0-7.oe1
+[  870s] [225/535] installing libsemanage-3.1-4.oe1
+[  872s] [226/535] installing make-1:4.2.1-15.oe1
+[  874s] [227/535] installing sqlite-3.24.0-9.oe1
+[  877s] [228/535] installing xz-5.2.5-1.oe1
+[  880s] [229/535] installing logrotate-3.15.1-2.oe1
+[  882s] [230/535] installing opensp-1.5.2-31.oe1
+[  887s] [231/535] installing perl-Scalar-List-Utils-3:1.52-2.oe1
+[  889s] [232/535] installing perl-Time-HiRes-1.9760-2.oe1
+[  891s] [233/535] installing perl-Unicode-Normalize-1.26-419.oe1
+[  893s] [234/535] installing freetype-2.10.2-3.oe1
+[  897s] [235/535] installing glibc-devel-2.34-64.oe1
+[  907s] [236/535] installing libgcrypt-devel-1.8.7-1.oe1
+[  908s] [237/535] installing cpp-10.3.1-20220105.6.oe1
+[  918s] [238/535] installing gnupg2-2.2.27-2.oe1
+[  922s] [239/535] installing systemd-libs-243-22.oe1
+[  925s] [240/535] installing dbus-libs-1:1.12.20-3.oe1
+[  927s] [241/535] installing libusbx-1.0.23-3.oe1
+[  929s] [242/535] installing xz-devel-5.2.5-1.oe1
+[  931s] [243/535] installing libxcrypt-devel-4.4.8-4.oe1
+[  933s] [244/535] installing p11-kit-0.23.22-1.oe1
+[  943s] [245/535] installing procps-ng-3.3.16-15.oe1
+[  945s] [246/535] installing copy-jdk-configs-4.0-1.oe1
+[  947s] [247/535] installing gpgme-1.15.1-1.oe1
+[  950s] [248/535] installing libXext-devel-1.3.4-2.oe1
+[  952s] [249/535] installing libXfixes-devel-5.0.3-11.oe1
+[  953s] [250/535] installing libXrender-devel-0.9.10-10.oe1
+[  954s] [251/535] installing libXtst-1.2.3-10.oe1
+[  956s] [252/535] installing openssl-libs-1:1.1.1f-2.oe1
+[  959s] [253/535] installing chkconfig-1.14-2.oe1
+[  961s] [254/535] installing docbook-style-xsl-1.79.2-9.oe1
+[  974s] [255/535] installing elfutils-0.185-3.oe1
+[  979s] [256/535] installing libXaw-1.0.13-13.oe1
+[  981s] [257/535] installing freetype-devel-2.10.2-3.oe1
+[  983s] [258/535] installing openjade-1.3.2-60.oe1
+[  988s] [259/535] installing xorg-x11-font-utils-1:7.5-43.oe1
+[  991s] [260/535] installing glib2-2.66.8-1.oe1
+[  998s] [261/535] installing mesa-libGL-21.3.1-1.oe1
+[ 1000s] [262/535] installing xorg-x11-server-utils-7.7-28
+[ 1004s] [263/535] installing fontconfig-2.13.92-1.oe1
+[ 1011s] [264/535] installing atk-2.36.0-1.oe1
+[ 1014s] [265/535] installing dbus-tools-1:1.12.20-3.oe1
+[ 1017s] [266/535] installing ima-evm-utils-libs-1.2.1-8.oe1
+[ 1020s] [267/535] installing json-glib-1.6.2-1.oe1
+[ 1025s] [268/535] installing libevent-2.1.12-4
+[ 1029s] [269/535] installing libcroco-0.6.12-13.oe1
+[ 1032s] [270/535] installing libgusb-0.3.0-5.oe1
+[ 1034s] [271/535] installing fipscheck-1.5.0-7.oe1
+[ 1040s] [272/535] installing gamin-0.1.10-38.oe1
+[ 1043s] [273/535] installing kmod-libs-27-4.oe1
+[ 1045s] [274/535] installing libsecret-0.18.6-5.oe1
+[ 1051s] [275/535] installing obs-env-1.0-5.oe1
+[ 1060s] [276/535] installing xorg-x11-fonts-7.5-24
+[ 1091s] [277/535] installing dbus-devel-1:1.12.20-3.oe1
+[ 1096s] [278/535] installing gobject-introspection-1.66.1-1.oe1
+[ 1099s] [279/535] installing kmod-27-4.oe1
+[ 1101s] [280/535] installing libXcomposite-devel-0.4.5-1.oe1
+[ 1102s] [281/535] installing libXdamage-devel-1.1.5-1.oe1
+[ 1104s] [282/535] installing libXft-2.3.3-1.oe1
+[ 1106s] [283/535] installing libXinerama-devel-1.1.4-5.oe1
+[ 1107s] [284/535] installing libglvnd-glx-1:1.3.4-2.oe1
+[ 1134s] [285/535] installing shared-mime-info-1.10-4.oe1
+[ 1150s] [286/535] installing binutils-2.37-6.oe1
+[ 1158s] [287/535] installing dbus-glib-0.110-5.oe1
+[ 1160s] [288/535] installing libXcursor-devel-1.2.0-1.oe1
+[ 1164s] [289/535] installing libXi-devel-1.7.10-1.oe1
+[ 1166s] [290/535] installing libXrandr-devel-1.5.2-1.oe1
+[ 1168s] [291/535] installing urw-base35-bookman-fonts-20170801-11
+[ 1174s] [292/535] installing urw-base35-c059-fonts-20170801-11
+[ 1181s] [293/535] installing urw-base35-d050000l-fonts-20170801-11
+[ 1184s] [294/535] installing urw-base35-gothic-fonts-20170801-11
+[ 1190s] [295/535] installing urw-base35-nimbus-mono-ps-fonts-20170801-11
+[ 1193s] [296/535] installing urw-base35-nimbus-roman-fonts-20170801-11
+[ 1199s] [297/535] installing urw-base35-nimbus-sans-fonts-20170801-11
+[ 1207s] [298/535] installing urw-base35-p052-fonts-20170801-11
+[ 1212s] [299/535] installing urw-base35-standard-symbols-ps-fonts-20170801-11
+[ 1217s] [300/535] installing urw-base35-z003-fonts-20170801-11
+[ 1221s] [301/535] installing harfbuzz-2.7.4-1.oe1
+[ 1225s] [302/535] installing libxml2-devel-2.9.12-5.oe1
+[ 1238s] [303/535] installing p11-kit-trust-0.23.22-1.oe1
+[ 1240s] [304/535] installing babeltrace-1.5.8-1.oe1
+[ 1244s] [305/535] installing libarchive-3.5.1-1.oe1
+[ 1249s] [306/535] installing nodejs-libs-1:16.10.0-1.oe1
+[ 1283s] [307/535] installing cairo-1.16.0-6.fc32
+[ 1286s] [308/535] installing avahi-libs-0.8-6.oe1
+[ 1289s] [309/535] installing libxkbcommon-devel-1.0.3-1.oe1
+[ 1290s] [310/535] installing libverto-0.3.1-2.oe1
+[ 1292s] [311/535] installing colord-libs-1.4.3-6.oe1
+[ 1294s] [312/535] installing ca-certificates-2020.2.46-2.oe1
+[ 1302s] [313/535] installing libXtst-devel-1.2.3-10.oe1
+[ 1305s] [314/535] installing gdk-pixbuf2-2.42.6-1.oe1
+[ 1308s] [315/535] installing libglvnd-devel-1:1.3.4-2.oe1
+[ 1310s] [316/535] installing tk-1:8.6.10-2.oe1
+[ 1315s] [317/535] installing gettext-0.20.1-2.oe1
+[ 1320s] [318/535] installing pango-1.47.0-1.oe1
+[ 1322s] [319/535] installing urw-base35-fonts-20170801-11
+[ 1323s] [320/535] installing cairo-gobject-1.16.0-6.fc32
+[ 1325s] [321/535] installing gcc-10.3.1-20220105.6.oe1
+[ 1361s] [322/535] installing rpm-libs-4.15.1-25.oe1
+[ 1363s] [323/535] installing python-pip-wheel-19.2.3-2.fc32
+[ 1375s] [324/535] installing libepoxy-devel-1.5.3-2
+[ 1379s] [325/535] installing gdk-pixbuf2-modules-2.42.6-1.oe1
+[ 1382s] [326/535] installing fontconfig-devel-2.13.92-1.oe1
+[ 1384s] [327/535] installing libmodulemd-2.13.0-1.oe1
+[ 1386s] [328/535] installing gcc-c++-10.3.1-20220105.6.oe1
+[ 1397s] [329/535] installing krb5-libs-1.18.2-3.oe1
+[ 1400s] [330/535] installing librsvg2-2.50.5-1.oe1
+[ 1406s] [331/535] installing libtirpc-1.3.1-1.oe1
+[ 1409s] [332/535] installing cyrus-sasl-lib-2.1.27-10.oe1
+[ 1411s] [333/535] installing libssh-0.9.5-1.oe1
+[ 1414s] [334/535] installing libXft-devel-2.3.3-1.oe1
+[ 1417s] [335/535] installing elinks-0.12-1.oe1
+[ 1421s] [336/535] installing openldap-2.4.46-15.oe1
+[ 1423s] [337/535] installing libnsl2-1.3.0-2.oe1
+[ 1427s] [338/535] installing python3-3.8.5-13.oe1
+[ 1461s] [339/535] installing python2-debug-2.7.16-17.oe1
+[ 1471s] [340/535] installing python3-parameterized-0.6.1-9.fc32
+[ 1473s] [341/535] installing python3-pyparsing-2.4.5-1.fc32
+[ 1475s] [342/535] installing python3-setuptools-59.4.0-3.oe1
+[ 1486s] [343/535] installing python3-setuptools_scm-3.3.3-6.fc32
+[ 1488s] [344/535] installing python3-six-1.15.0-3.oe1
+[ 1490s] [345/535] installing python3-markupsafe-1.1.1-4.fc32
+[ 1493s] [346/535] installing python3-gpgme-1.15.1-1.oe1
+[ 1495s] [347/535] installing python3-lxml-4.4.1-3.fc32
+[ 1498s] [348/535] installing python3-libcomps-0.1.15-1.oe1
+[ 1500s] [349/535] installing libpsl-0.21.1-1.oe1
+[ 1503s] [350/535] installing gdb-headless-9.2-5.oe1
+[ 1509s] [351/535] installing python2-2.7.16-17.oe1
+[ 1529s] [352/535] installing python3-anytree-2.7.2-2.fc32
+[ 1531s] [353/535] installing python3-pygments-2.4.2-6.fc32
+[ 1547s] [354/535] installing systemtap-sdt-devel-4.1-3.oe1
+[ 1549s] [355/535] installing gdb-9.2-5.oe1
+[ 1553s] [356/535] installing python3-mako-1.1.0-4.fc32
+[ 1556s] [357/535] installing python3-pip-19.2.3-2.fc32
+[ 1565s] [358/535] installing python3-rpm-generators-10-2.fc32
+[ 1567s] [359/535] installing python2-tkinter-2.7.16-17.oe1
+[ 1571s] [360/535] installing libdbusmenu-16.04.0-10.oe1
+[ 1574s] [361/535] installing libcurl-7.79.1-1.oe1
+[ 1576s] [362/535] installing python2-tools-2.7.16-17.oe1
+[ 1577s] [363/535] installing curl-7.79.1-1.oe1
+[ 1579s] [364/535] installing librepo-1.14.2-2.oe1
+[ 1581s] [365/535] installing rpm-4.15.1-25.oe1
+[ 1585s] [366/535] installing efi-srpm-macros-4-3.oe1
+[ 1588s] [367/535] installing cmake-rpm-macros-3.22.0-1.oe1
+[ 1590s] [368/535] installing libsolv-0.7.20-1.oe1
+[ 1592s] [369/535] installing python3-rpm-4.15.1-25.oe1
+[ 1595s] [370/535] installing openEuler-rpm-config-30-22.oe1
+[ 1597s] [371/535] installing cmake-3.22.0-1.oe1
+[ 1611s] [372/535] installing libdnf-0.65.0-2.oe1
+[ 1614s] [373/535] installing cmake-data-3.22.0-1.oe1
+[ 1631s] [374/535] installing python2-devel-2.7.16-17.oe1
+[ 1655s] [375/535] installing python3-libdnf-0.65.0-2.oe1
+[ 1661s] [376/535] installing perl-4:5.28.0-435.oe1
+[ 1670s] [377/535] installing perl-B-Debug-1.26-4.oe1
+[ 1672s] [378/535] installing perl-Env-1.04-397.oe1
+[ 1673s] [379/535] installing perl-Devel-PPPort-3.42-4.oe1
+[ 1676s] [380/535] installing perl-Pod-Escapes-1:1.07-419.oe1
+[ 1677s] [381/535] installing perl-Text-Tabs+Wrap-2013.0523-419.oe1
+[ 1678s] [382/535] installing perl-Algorithm-Diff-1.1903-14.oe1
+[ 1679s] [383/535] installing perl-Params-Check-1:0.38-418.oe1
+[ 1681s] [384/535] installing perl-Term-Cap-1.17-510.oe1
+[ 1683s] [385/535] installing perl-TermReadKey-2.38-2.oe1
+[ 1685s] [386/535] installing perl-Text-Balanced-2.03-420.oe1
+[ 1688s] [387/535] installing perl-threads-1:2.22-419.oe1
+[ 1690s] [388/535] installing openssl-1:1.1.1f-2.oe1
+[ 1692s] [389/535] installing perl-Config-Perl-V-0.30-5.oe1
+[ 1694s] [390/535] installing perl-Error-1:0.17029-1.oe1
+[ 1696s] [391/535] installing perl-Filter-2:1.59-2.oe1
+[ 1699s] [392/535] installing perl-IPC-SysV-2.07-5.oe1
+[ 1701s] [393/535] installing perl-Locale-Maketext-1:1.28-1.oe1
+[ 1703s] [394/535] installing perl-SGMLSpm-1.03ii-45.oe1
+[ 1704s] [395/535] installing perl-constant-1.33-421.oe1
+[ 1706s] [396/535] installing docbook-style-dsssl-1.79-27.oe1
+[ 1716s] [397/535] installing perl-MIME-Base64-3.15-418.oe1
+[ 1719s] [398/535] installing perl-CPAN-Meta-YAML-0.018-420.oe1
+[ 1721s] [399/535] installing perl-Socket-4:2.029-2.oe1
+[ 1723s] [400/535] installing perl-Storable-1:3.15-2.oe1
+[ 1727s] [401/535] installing gd-2.2.5-6.oe1
+[ 1730s] [402/535] installing python3-hawkey-0.65.0-2.oe1
+[ 1732s] [403/535] installing perl-PerlIO-via-QuotedPrint-0.08-397.oe1
+[ 1733s] [404/535] installing perl-Digest-1.17-419.oe1
+[ 1735s] [405/535] installing perl-Filter-Simple-1:0.94-1.oe1
+[ 1736s] [406/535] installing perl-IO-Socket-IP-0.39-420.oe1
+[ 1738s] [407/535] installing perl-Text-Diff-1.45-7.oe1
+[ 1742s] [408/535] installing perl-Time-Local-2:1.280-6.oe1
+[ 1744s] [409/535] installing perl-version-8:0.99.24-3.oe1
+[ 1746s] [410/535] installing perl-IPC-System-Simple-1.25-19.oe1
+[ 1747s] [411/535] installing perl-threads-shared-1.59-2.oe1
+[ 1750s] [412/535] installing perl-Compress-Raw-Bzip2-2.100-1.oe1
+[ 1752s] [413/535] installing perl-Compress-Raw-Zlib-1:2.100-1.oe1
+[ 1754s] [414/535] installing perl-Locale-Codes-3.58-2.oe1
+[ 1757s] [415/535] installing perl-Math-BigInt-1:1.9998.13-5.oe1
+[ 1759s] [416/535] installing perl-PathTools-3.75-4.oe1
+[ 1761s] [417/535] installing python3-dnf-4.10.0-1.oe1
+[ 1764s] [418/535] installing perl-Data-Dumper-2.172-3.oe1
+[ 1766s] [419/535] installing perl-Sys-Syslog-0.35-420.oe1
+[ 1769s] [420/535] installing perl-Encode-4:2.98-9.oe1
+[ 1775s] [421/535] installing autogen-5.18.16-1.oe1
+[ 1779s] [422/535] installing nodejs-1:16.10.0-1.oe1
+[ 1782s] [423/535] installing systemd-243-22.oe1
+[ 1798s] /var/tmp/rpm-tmp.17JJya: line 8: groupadd: command not found
+[ 1798s] /var/tmp/rpm-tmp.17JJya: line 10: groupadd: command not found
+[ 1798s] /var/tmp/rpm-tmp.17JJya: line 13: groupadd: command not found
+[ 1798s] /var/tmp/rpm-tmp.17JJya: line 16: groupadd: command not found
+[ 1798s] [424/535] installing dbus-common-1:1.12.20-3.oe1
+[ 1802s] [425/535] installing nodejs-source-map-0.5.6-1.oe1
+[ 1805s] [426/535] installing perl-Module-Load-1:0.32-418.oe1
+[ 1806s] [427/535] installing nodejs-packaging-20-1.oe1
+[ 1808s] [428/535] installing dnf-4.10.0-1.oe1
+[ 1811s] Failed to preset unit, unit dnf-automatic.timer does not exist.
+[ 1811s] Failed to preset unit, unit dnf-automatic-notifyonly.timer does not exist.
+[ 1811s] Failed to preset unit, unit dnf-automatic-download.timer does not exist.
+[ 1811s] Failed to preset unit, unit dnf-automatic-install.timer does not exist.
+[ 1811s] [429/535] installing perl-File-Which-1.23-1.oe1
+[ 1813s] [430/535] installing perl-Thread-Queue-3.13-3.oe1
+[ 1815s] [431/535] installing perl-experimental-0.020-2.oe1
+[ 1816s] [432/535] installing perl-Digest-MD5-2.55-419.oe1
+[ 1818s] [433/535] installing perl-File-Path-2.16-4.oe1
+[ 1820s] [434/535] installing perl-Math-BigInt-FastCalc-0.500.700-4.oe1
+[ 1825s] [435/535] installing perl-Module-Metadata-1.000036-3.oe1
+[ 1830s] [436/535] installing perl-CPAN-Meta-Requirements-2.140-419.oe1
+[ 1833s] [437/535] installing perl-Encode-devel-4:2.98-9.oe1
+[ 1836s] [438/535] installing perl-HTTP-Tiny-0.076-3.oe1
+[ 1839s] [439/535] installing perl-Math-BigRat-0.2614-2.oe1
+[ 1840s] [440/535] installing audit-1:3.0-2.oe1
+[ 1849s] [441/535] installing perl-DB_File-1.842-2.oe1
+[ 1851s] [442/535] installing perl-autodie-2.29-398.oe1
+[ 1852s] [443/535] installing perl-Unicode-Collate-1.25-4.oe1
+[ 1859s] [444/535] installing perl-IO-Compress-2.081-6.oe1
+[ 1860s] [445/535] installing perl-podlators-1:4.14-1.oe1
+[ 1862s] [446/535] installing perl-ExtUtils-Command-1:7.60-1.oe1
+[ 1863s] [447/535] installing perl-ExtUtils-Manifest-1:1.71-4.oe1
+[ 1865s] [448/535] installing perl-bignum-0.50-4.oe1
+[ 1866s] [449/535] installing perl-File-Temp-1:0.230.800-4.oe1
+[ 1868s] [450/535] installing perl-libnet-3.11-420.oe1
+[ 1870s] [451/535] installing pam-1.5.1-1.oe1
+[ 1874s] [452/535] installing libpwquality-1.4.4-1.oe1
+[ 1877s] [453/535] installing perl-File-HomeDir-1.004-4.oe1
+[ 1878s] [454/535] installing shadow-2:4.8.1-5.oe1
+[ 1881s] [455/535] installing perl-Test-Simple-2:1.302175-2.oe1
+[ 1883s] [456/535] installing libutempter-1.1.6-16.oe1
+[ 1886s] [457/535] installing unbound-libs-1.10.1-4.oe1
+[ 1892s] [458/535] installing dbus-daemon-1:1.12.20-3.oe1
+[ 1901s] [459/535] installing openssh-server-8.2p1-10.oe1
+[ 1905s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[ 1905s] [460/535] installing groff-1.22.4-4.oe1
+[ 1914s] [461/535] installing dbus-1:1.12.20-3.oe1
+[ 1915s] [462/535] installing man-db-2.9.3-2.oe1
+[ 1920s] [463/535] installing perl-Pod-Perldoc-1:3.28-3.oe1
+[ 1922s] [464/535] installing gnutls-3.6.15-3.oe1
+[ 1926s] [465/535] installing util-linux-2.36.1-3.oe1
+[ 1932s] [466/535] installing nss-help-3.72.0-2.oe1
+[ 1934s] [467/535] installing util-linux-devel-2.36.1-3.oe1
+[ 1936s] [468/535] installing at-spi2-core-2.39.1-1.oe1
+[ 1939s] [469/535] installing cups-libs-1:2.3.3-6.oe1
+[ 1943s] [470/535] installing perl-Pod-Usage-4:1.69-418.oe1
+[ 1946s] [471/535] installing device-mapper-8:1.02.172-1.oe1
+[ 1950s] [472/535] installing openssh-8.2p1-10.oe1
+[ 1952s] [473/535] installing at-spi2-atk-2.38.0-1.oe1
+[ 1954s] [474/535] installing perl-Getopt-Long-1:2.52-1.oe1
+[ 1956s] [475/535] installing cryptsetup-2.3.3-3.oe1
+[ 1960s] [476/535] installing device-mapper-event-8:1.02.172-1.oe1
+[ 1963s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[ 1963s] [477/535] installing nss-3.72.0-2.oe1
+[ 1973s] [478/535] installing glib2-devel-2.66.8-1.oe1
+[ 1992s] [479/535] installing openssh-clients-8.2p1-10.oe1
+[ 1998s] [480/535] installing atk-devel-2.36.0-1.oe1
+[ 2001s] [481/535] installing nss-util-3.72.0-2.oe1
+[ 2006s] [482/535] installing perl-ExtUtils-ParseXS-2:3.35-1.oe1
+[ 2007s] [483/535] installing perl-Module-CoreList-1:5.20180920-2.oe1
+[ 2017s] [484/535] installing at-spi2-core-devel-2.39.1-1.oe1
+[ 2022s] [485/535] installing perl-Digest-SHA-1:6.02-7.oe1
+[ 2024s] [486/535] installing perl-Pod-Parser-1.63-397.oe1
+[ 2025s] [487/535] installing dbus-glib-devel-0.110-5.oe1
+[ 2027s] [488/535] installing gdk-pixbuf2-devel-2.42.6-1.oe1
+[ 2029s] [489/535] installing perl-Pod-Simple-1:3.35-418.oe1
+[ 2031s] [490/535] installing perl-Test-Harness-1:3.43_02-1.oe1
+[ 2033s] [491/535] installing cairo-devel-1.16.0-6.fc32
+[ 2035s] [492/535] installing docbook-utils-0.6.14-47.oe1
+[ 2037s] [493/535] installing harfbuzz-devel-2.7.4-1.oe1
+[ 2040s] [494/535] installing perl-Archive-Tar-2.30-421.oe1
+[ 2041s] [495/535] installing perl-JSON-PP-1:4.04-2.oe1
+[ 2043s] [496/535] installing lvm2-8:2.03.11-1.oe1
+[ 2048s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[ 2049s] [497/535] installing autoconf-2.69-30.oe1
+[ 2051s] [498/535] installing git-2.23.0-12.oe1
+[ 2063s] [499/535] installing gtk3-3.24.30-2.oe1
+[ 2072s] [500/535] installing libdbusmenu-devel-16.04.0-10.oe1
+[ 2074s] [501/535] installing cairo-gobject-devel-1.16.0-6.fc32
+[ 2075s] [502/535] installing nss-softokn-3.72.0-2.oe1
+[ 2078s] [503/535] installing at-spi2-atk-devel-2.38.0-1.oe1
+[ 2081s] [504/535] installing perl-Pod-Checker-4:1.73-398.oe1
+[ 2083s] [505/535] installing perl-Git-2.23.0-12.oe1
+[ 2084s] [506/535] installing gtk-doc-1.33.2-1.oe1
+[ 2088s] [507/535] installing libdbusmenu-gtk3-16.04.0-10.oe1
+[ 2090s] [508/535] installing libindicator-gtk3-12.10.1-15.oe1
+[ 2092s] [509/535] installing perl-CPAN-Meta-2.150010-419.oe1
+[ 2095s] [510/535] installing perl-Module-Load-Conditional-0.68-418.oe1
+[ 2096s] [511/535] installing automake-1.16.1-6.oe1
+[ 2099s] [512/535] installing pango-devel-1.47.0-1.oe1
+[ 2102s] [513/535] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe1
+[ 2104s] [514/535] installing gtk2-2.24.33-2.oe1
+[ 2113s] [515/535] installing ghostscript-9.52-5.oe1
+[ 2122s] [516/535] installing libtool-2.4.6-34.oe1
+[ 2124s] [517/535] installing perl-ExtUtils-Install-2.14-419.oe1
+[ 2126s] [518/535] installing libdbusmenu-gtk2-16.04.0-10.oe1
+[ 2128s] [519/535] installing libindicator-12.10.1-15.oe1
+[ 2132s] [520/535] installing perl-IPC-Cmd-2:1.04-4.oe1
+[ 2134s] [521/535] installing graphviz-2.44.1-4.oe1
+[ 2144s] [522/535] installing gtk2-devel-2.24.33-2.oe1
+[ 2153s] [523/535] installing rpm-build-4.15.1-25.oe1
+[ 2154s] [524/535] installing gtk3-devel-3.24.30-2.oe1
+[ 2173s] [525/535] installing graphviz-devel-2.44.1-4.oe1
+[ 2175s] [526/535] installing libindicator-devel-12.10.1-15.oe1
+[ 2178s] [527/535] installing libindicator-gtk3-devel-12.10.1-15.oe1
+[ 2180s] [528/535] installing libdbusmenu-gtk2-devel-16.04.0-10.oe1
+[ 2182s] [529/535] installing libdbusmenu-gtk3-devel-16.04.0-10.oe1
+[ 2184s] [530/535] installing gcc_secure-1.0-0.9.oe1
+[ 2186s] [531/535] installing gobject-introspection-devel-1.66.1-1.oe1
+[ 2197s] [532/535] installing perl-File-Fetch-0.56-4.oe1
+[ 2198s] [533/535] installing perl-devel-4:5.28.0-435.oe1
+[ 2208s] [534/535] installing vala-devel-0.50.8-3.oe1
+[ 2211s] [535/535] installing vala-0.50.8-3.oe1
+[ 2218s] removing nis flags from /var/cache/obs/worker/root_1/etc/nsswitch.conf...
+[ 2219s] now finalizing build dir...
+[ 2230s] Running build time source services...
+[ 2246s] -----------------------------------------------------------------
+[ 2246s] ----- building libappindicator.spec (user abuild)
+[ 2246s] -----------------------------------------------------------------
+[ 2246s] -----------------------------------------------------------------
+[ 2253s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/openEuler:Mainline:RISC-V/advanced_riscv64/a8aa9775ccf71b50be63ed294c2b16a5-libappindicator' /home/abuild/rpmbuild/SOURCES/libappindicator.spec
+[ 2253s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.GRc4er
+[ 2253s] + umask 022
+[ 2253s] + cd /home/abuild/rpmbuild/BUILD
+[ 2253s] + cd /home/abuild/rpmbuild/BUILD
+[ 2253s] + rm -rf libappindicator-12.10.0
+[ 2254s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/libappindicator-12.10.0.tar.gz
+[ 2254s] + /usr/bin/tar -xof -
+[ 2254s] + STATUS=0
+[ 2254s] + '[' 0 -ne 0 ']'
+[ 2254s] + cd libappindicator-12.10.0
+[ 2254s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2254s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2254s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/0001_Fix_mono_dir.patch
+[ 2254s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/incompatible_pointer_build_fix.patch
+[ 2254s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2254s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/libappindicator-add-patch-to-modify-build-err.patch
+[ 2254s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2255s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/nopython.patch
+[ 2255s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch
+[ 2255s] + sed -i s#gmcs#mcs#g configure.ac
+[ 2255s] + sed -i s/--nogtkinit// docs/reference/Makefile.am
+[ 2255s] + gtkdocize --copy
+[ 2264s] + cp -f gtk-doc.make gtk-doc.local.make
+[ 2264s] + autoreconf -vif
+[ 2271s] autoreconf: Entering directory `.'
+[ 2271s] autoreconf: configure.ac: not using Gettext
+[ 2272s] autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+[ 2297s] autoreconf: configure.ac: tracing
+[ 2307s] autoreconf: running: libtoolize --copy --force
+[ 2316s] libtoolize: putting auxiliary files in '.'.
+[ 2316s] libtoolize: copying file './ltmain.sh'
+[ 2317s] libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+[ 2317s] libtoolize: copying file 'm4/libtool.m4'
+[ 2318s] libtoolize: copying file 'm4/ltoptions.m4'
+[ 2319s] libtoolize: copying file 'm4/ltsugar.m4'
+[ 2320s] libtoolize: copying file 'm4/ltversion.m4'
+[ 2322s] libtoolize: copying file 'm4/lt~obsolete.m4'
+[ 2350s] autoreconf: running: /usr/bin/autoconf --force
+[ 2363s] autoreconf: running: /usr/bin/autoheader --force
+[ 2373s] autoreconf: running: automake --add-missing --copy --force-missing
+[ 2392s] configure.ac:20: installing './compile'
+[ 2393s] configure.ac:13: installing './missing'
+[ 2394s] bindings/mono/Makefile.am:128: warning: addprefix $(srcdir: non-POSIX variable name
+[ 2394s] bindings/mono/Makefile.am:128: (probably a GNU make extension)
+[ 2395s] bindings/mono/Makefile.am:58: warning: variable 'TEST_SOURCES' is defined but no program or
+[ 2395s] bindings/mono/Makefile.am:58: library has 'TEST' as canonical name (possible typo)
+[ 2396s] bindings/vala/examples/Makefile.am: installing './depcomp'
+[ 2397s] parallel-tests: installing './test-driver'
+[ 2399s] src/Makefile.am:43: warning: addprefix $(srcdir: non-POSIX variable name
+[ 2399s] src/Makefile.am:43: (probably a GNU make extension)
+[ 2399s] src/Makefile.am:104: warning: '%'-style pattern rules are a GNU make extension
+[ 2399s] src/Makefile.am:106: warning: subst -,_,$(subst .,_,$(basename $(notdir $<: non-POSIX variable name
+[ 2399s] src/Makefile.am:106: (probably a GNU make extension)
+[ 2399s] src/Makefile.am:108: warning: '%'-style pattern rules are a GNU make extension
+[ 2399s] src/Makefile.am:110: warning: subst -,_,$(subst .,_,$(basename $(notdir $<: non-POSIX variable name
+[ 2399s] src/Makefile.am:110: (probably a GNU make extension)
+[ 2399s] src/Makefile.am:136: warning: addprefix --c-include=$(libappindicatorincludefolder: non-POSIX variable name
+[ 2399s] src/Makefile.am:136: (probably a GNU make extension)
+[ 2399s] src/Makefile.am:143: warning: addprefix --c-include=$(libappindicatorincludefolder: non-POSIX variable name
+[ 2399s] src/Makefile.am:143: (probably a GNU make extension)
+[ 2399s] src/Makefile.am:152: warning: addprefix $(srcdir: non-POSIX variable name
+[ 2399s] src/Makefile.am:152: (probably a GNU make extension)
+[ 2399s] /usr/share/automake-1.16/am/ltlibrary.am: warning: 'libappindicator.la': linking libtool libraries using a non-POSIX
+[ 2399s] /usr/share/automake-1.16/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
+[ 2399s] src/Makefile.am:7:   while processing Libtool library 'libappindicator.la'
+[ 2399s] /usr/share/automake-1.16/am/ltlibrary.am: warning: 'libappindicator3.la': linking libtool libraries using a non-POSIX
+[ 2399s] /usr/share/automake-1.16/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
+[ 2399s] src/Makefile.am:3:   while processing Libtool library 'libappindicator3.la'
+[ 2402s] autoreconf: Leaving directory `.'
+[ 2402s] + RPM_EC=0
+[ 2402s] ++ jobs -p
+[ 2402s] + exit 0
+[ 2402s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.uBsHq8
+[ 2402s] + umask 022
+[ 2402s] + cd /home/abuild/rpmbuild/BUILD
+[ 2402s] + cd libappindicator-12.10.0
+[ 2402s] + mkdir build-gtk2 build-gtk3
+[ 2402s] + pushd build-gtk2
+[ 2402s] ~/rpmbuild/BUILD/libappindicator-12.10.0/build-gtk2 ~/rpmbuild/BUILD/libappindicator-12.10.0
+[ 2402s] + export 'CFLAGS=-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations'
+[ 2402s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations'
+[ 2402s] + CFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations'
+[ 2402s] + export CFLAGS
+[ 2402s] + CXXFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions'
+[ 2402s] + export CXXFLAGS
+[ 2402s] + FFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2402s] + export FFLAGS
+[ 2402s] + FCFLAGS='-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -fexceptions -I/usr/lib64/gfortran/modules'
+[ 2402s] + export FCFLAGS
+[ 2402s] + LDFLAGS='-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld'
+[ 2402s] + export LDFLAGS
+[ 2402s] + '[' 1 = 1 ']'
+[ 2402s] +++ dirname ../configure
+[ 2402s] ++ find .. -name config.guess -o -name config.sub
+[ 2403s] + for i in $(find $(dirname ../configure) -name config.guess -o -name config.sub)
+[ 2403s] ++ basename ../config.guess
+[ 2403s] + '[' -f /usr/lib/rpm/openEuler/config.guess ']'
+[ 2403s] + /usr/bin/rm -f ../config.guess
+[ 2403s] ++ basename ../config.guess
+[ 2403s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.guess ../config.guess
+[ 2403s] '/usr/lib/rpm/openEuler/config.guess' -> '../config.guess'
+[ 2403s] + for i in $(find $(dirname ../configure) -name config.guess -o -name config.sub)
+[ 2403s] ++ basename ../config.sub
+[ 2403s] + '[' -f /usr/lib/rpm/openEuler/config.sub ']'
+[ 2403s] + /usr/bin/rm -f ../config.sub
+[ 2404s] ++ basename ../config.sub
+[ 2404s] + /usr/bin/cp -fv /usr/lib/rpm/openEuler/config.sub ../config.sub
+[ 2404s] '/usr/lib/rpm/openEuler/config.sub' -> '../config.sub'
+[ 2404s] + '[' 1 = 1 ']'
+[ 2404s] + '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld' ']'
+[ 2404s] ++ find . -name ltmain.sh
+[ 2404s] + ../configure --build=riscv64-openEuler-linux-gnu --host=riscv64-openEuler-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-gtk=2 --enable-gtk-doc --disable-static
+[ 2413s] checking for a BSD-compatible install... /usr/bin/install -c
+[ 2413s] checking whether build environment is sane... yes
+[ 2414s] checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+[ 2414s] checking for gawk... gawk
+[ 2415s] checking whether make sets $(MAKE)... yes
+[ 2415s] checking whether make supports nested variables... yes
+[ 2416s] checking how to create a pax tar archive... gnutar
+[ 2416s] checking whether to enable maintainer-specific portions of Makefiles... yes
+[ 2416s] checking whether make supports nested variables... (cached) yes
+[ 2416s] checking for riscv64-openEuler-linux-gnu-gcc... no
+[ 2416s] checking for gcc... gcc
+[ 2424s] checking whether the C compiler works... yes
+[ 2424s] checking for C compiler default output file name... a.out
+[ 2425s] checking for suffix of executables... 
+[ 2428s] checking whether we are cross compiling... no
+[ 2429s] checking for suffix of object files... o
+[ 2431s] checking whether we are using the GNU C compiler... yes
+[ 2433s] checking whether gcc accepts -g... yes
+[ 2435s] checking for gcc option to accept ISO C89... none needed
+[ 2437s] checking whether gcc understands -c and -o together... yes
+[ 2437s] checking whether make supports the include directive... yes (GNU style)
+[ 2437s] checking dependency style of gcc... none
+[ 2439s] checking build system type... riscv64-openEuler-linux-gnu
+[ 2439s] checking host system type... riscv64-openEuler-linux-gnu
+[ 2439s] checking how to print strings... printf
+[ 2439s] checking for a sed that does not truncate output... /usr/bin/sed
+[ 2440s] checking for grep that handles long lines and -e... /usr/bin/grep
+[ 2440s] checking for egrep... /usr/bin/grep -E
+[ 2440s] checking for fgrep... /usr/bin/grep -F
+[ 2440s] checking for ld used by gcc... /usr/bin/ld
+[ 2441s] checking if the linker (/usr/bin/ld) is GNU ld... yes
+[ 2441s] checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+[ 2442s] checking the name lister (/usr/bin/nm -B) interface... BSD nm
+[ 2442s] checking whether ln -s works... yes
+[ 2443s] checking the maximum length of command line arguments... 1572864
+[ 2443s] checking how to convert riscv64-openEuler-linux-gnu file names to riscv64-openEuler-linux-gnu format... func_convert_file_noop
+[ 2443s] checking how to convert riscv64-openEuler-linux-gnu file names to toolchain format... func_convert_file_noop
+[ 2443s] checking for /usr/bin/ld option to reload object files... -r
+[ 2443s] checking for riscv64-openEuler-linux-gnu-objdump... no
+[ 2443s] checking for objdump... objdump
+[ 2443s] checking how to recognize dependent libraries... pass_all
+[ 2443s] checking for riscv64-openEuler-linux-gnu-dlltool... no
+[ 2443s] checking for dlltool... no
+[ 2443s] checking how to associate runtime and link libraries... printf %s\n
+[ 2443s] checking for riscv64-openEuler-linux-gnu-ar... no
+[ 2443s] checking for ar... ar
+[ 2444s] checking for archiver @FILE support... @
+[ 2444s] checking for riscv64-openEuler-linux-gnu-strip... no
+[ 2444s] checking for strip... strip
+[ 2444s] checking for riscv64-openEuler-linux-gnu-ranlib... no
+[ 2444s] checking for ranlib... ranlib
+[ 2449s] checking command to parse /usr/bin/nm -B output from gcc object... ok
+[ 2449s] checking for sysroot... no
+[ 2449s] checking for a working dd... /usr/bin/dd
+[ 2449s] checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+[ 2449s] checking for riscv64-openEuler-linux-gnu-mt... no
+[ 2449s] checking for mt... no
+[ 2449s] checking if : is a manifest tool... no
+[ 2453s] checking how to run the C preprocessor... gcc -E
+[ 2462s] checking for ANSI C header files... yes
+[ 2464s] checking for sys/types.h... yes
+[ 2466s] checking for sys/stat.h... yes
+[ 2468s] checking for stdlib.h... yes
+[ 2470s] checking for string.h... yes
+[ 2472s] checking for memory.h... yes
+[ 2474s] checking for strings.h... yes
+[ 2477s] checking for inttypes.h... yes
+[ 2479s] checking for stdint.h... yes
+[ 2481s] checking for unistd.h... yes
+[ 2484s] checking for dlfcn.h... yes
+[ 2484s] checking for objdir... .libs
+[ 2489s] checking if gcc supports -fno-rtti -fno-exceptions... no
+[ 2490s] checking for gcc option to produce PIC... -fPIC -DPIC
+[ 2491s] checking if gcc PIC flag -fPIC -DPIC works... yes
+[ 2495s] checking if gcc static flag -static works... yes
+[ 2497s] checking if gcc supports -c -o file.o... yes
+[ 2497s] checking if gcc supports -c -o file.o... (cached) yes
+[ 2498s] checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+[ 2501s] checking whether -lc should be explicitly linked in... no
+[ 2507s] checking dynamic linker characteristics... GNU/Linux ld.so
+[ 2507s] checking how to hardcode library paths into programs... immediate
+[ 2507s] checking whether stripping libraries is possible... yes
+[ 2507s] checking if libtool supports shared libraries... yes
+[ 2507s] checking whether to build shared libraries... yes
+[ 2507s] checking whether to build static libraries... no
+[ 2507s] checking for glib-mkenums... /usr/bin/glib-mkenums
+[ 2507s] checking for glib-genmarshal... /usr/bin/glib-genmarshal
+[ 2507s] checking for riscv64-openEuler-linux-gnu-pkg-config... /usr/bin/riscv64-openEuler-linux-gnu-pkg-config
+[ 2507s] checking pkg-config is at least version 0.9.0... yes
+[ 2507s] checking for gtk-doc... yes
+[ 2507s] checking for gtkdoc-check... gtkdoc-check.test
+[ 2507s] checking for gtkdoc-check... /usr/bin/gtkdoc-check
+[ 2507s] checking for gtkdoc-rebase... /usr/bin/gtkdoc-rebase
+[ 2507s] checking for gtkdoc-mkpdf... /usr/bin/gtkdoc-mkpdf
+[ 2507s] checking whether to build gtk-doc documentation... yes
+[ 2508s] checking for GTKDOC_DEPS... yes
+[ 2510s] checking for LIBRARY... yes
+[ 2510s] checking for TESTDEPS... yes
+[ 2511s] checking for gobject-introspection... yes
+[ 2512s] checking for vapigen... /usr/bin/vapigen
+[ 2512s] checking for valac... /usr/bin/valac
+[ 2513s] checking whether /usr/bin/valac is at least version 0.14.0... yes
+[ 2514s] checking for MONO_DEPENDENCY... no
+[ 2515s] checking for al... no
+[ 2515s] configure: No al tool found.  You need to install Mono.
+[ 2515s] checking for gacutil... no
+[ 2515s] configure: No gacutil tool found
+[ 2516s] checking for GTK_SHARP... no
+[ 2518s] checking for GAPI... no
+[ 2518s] checking for gapi2-parser... no
+[ 2518s] checking for gapi2-codegen... no
+[ 2518s] checking for gapi2-fixup... no
+[ 2520s] checking for NUNIT... no
+[ 2521s] checking for MONO_NUNIT... no
+[ 2523s] checking that generated files are newer than configure... done
+[ 2523s] configure: creating ./config.status
+[ 2549s] config.status: creating Makefile
+[ 2550s] config.status: creating src/Makefile
+[ 2552s] config.status: creating src/appindicator-0.1.pc
+[ 2553s] config.status: creating src/appindicator3-0.1.pc
+[ 2554s] config.status: creating bindings/Makefile
+[ 2555s] config.status: creating bindings/vala/Makefile
+[ 2556s] config.status: creating bindings/vala/examples/Makefile
+[ 2557s] config.status: creating tests/Makefile
+[ 2558s] config.status: creating example/Makefile
+[ 2559s] config.status: creating docs/Makefile
+[ 2560s] config.status: creating docs/reference/Makefile
+[ 2561s] config.status: creating docs/reference/version.xml
+[ 2562s] config.status: creating docs/reference/libappindicator-docs.sgml
+[ 2563s] config.status: creating config.h
+[ 2564s] config.status: executing depfiles commands
+[ 2564s] config.status: executing libtool commands
+[ 2564s] configure:
+[ 2564s] 
+[ 2564s] Libappindicator Configuration:
+[ 2564s] 
+[ 2564s] 	Prefix:        /usr
+[ 2564s] 	GTK+ Version:  2
+[ 2564s] 	Mono:          false
+[ 2564s] 	Tests:         yes
+[ 2564s] 	Mono tests:    no
+[ 2564s] 	gcov:	       no
+[ 2564s] 
+[ 2566s] + make -j1 V=1
+[ 2566s] make  all-recursive
+[ 2566s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/libappindicator-12.10.0/build-gtk2'
+[ 2567s] Making all in src
+[ 2567s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/libappindicator-12.10.0/build-gtk2/src'
+[ 2567s] mkdir -p `dirname ./app-indicator-enum-types.h`
+[ 2567s] /usr/bin/glib-mkenums \
+[ 2567s] 	--template ../../src/app-indicator-enum-types.h.in \
+[ 2567s] ../../src/app-indicator.h > xgen-eh \
+[ 2567s] && (cmp -s xgen-eh ./app-indicator-enum-types.h || cp -f xgen-eh ./app-indicator-enum-types.h) \
+[ 2567s] && rm -f xgen-eh \
+[ 2567s] && echo timestamp > stamp-enum-types
+[ 2570s] mkdir -p `dirname ./app-indicator-enum-types.c`
+[ 2570s] /usr/bin/glib-mkenums \
+[ 2570s] 	--template ../../src/app-indicator-enum-types.c.in \
+[ 2570s] ../../src/app-indicator.h > xgen-ec \
+[ 2570s] && cp -f xgen-ec ./app-indicator-enum-types.c \
+[ 2570s] && rm -f xgen-ec
+[ 2572s] /usr/bin/glib-genmarshal \
+[ 2572s] 	--prefix=_application_service_marshal \
+[ 2572s] 	--header \
+[ 2572s] ../../src/application-service-marshal.list > xgen-mh \
+[ 2572s] && (cmp -s xgen-mh application-service-marshal.h || cp -f xgen-mh application-service-marshal.h) \
+[ 2572s] && rm -f xgen-mh \
+[ 2572s] && echo timestamp > stamp-marshal
+[ 2573s] INFO: Reading ../../src/application-service-marshal.list...
+[ 2573s] WARNING: The token "BOOL" is deprecated; use "BOOLEAN" instead
+[ 2574s] (echo "#include \"application-service-marshal.h\"" ; \
+[ 2574s] /usr/bin/glib-genmarshal \
+[ 2574s] 	--prefix=_application_service_marshal \
+[ 2574s] 	--body \
+[ 2574s] ../../src/application-service-marshal.list) > xgen-mc \
+[ 2574s] && cp xgen-mc application-service-marshal.c \
+[ 2574s] && rm -f xgen-mc
+[ 2575s] INFO: Reading ../../src/application-service-marshal.list...
+[ 2575s] WARNING: The token "BOOL" is deprecated; use "BOOLEAN" instead
+[ 2575s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-app-indicator-enum-types.lo `test -f 'app-indicator-enum-types.c' || echo '../../src/'`app-indicator-enum-types.c
+[ 2581s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c app-indicator-enum-types.c  -fPIC -DPIC -o .libs/libappindicator_la-app-indicator-enum-types.o
+[ 2592s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-app-indicator.lo `test -f 'app-indicator.c' || echo '../../src/'`app-indicator.c
+[ 2596s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c ../../src/app-indicator.c  -fPIC -DPIC -o .libs/libappindicator_la-app-indicator.o
+[ 2606s] ../../src/app-indicator.c: In function 'app_indicator_init':
+[ 2606s] ../../src/app-indicator.c:584:13: warning: Deprecated pre-processor symbol, replace with 
+[ 2606s]   584 |  AppIndicatorPrivate * priv = APP_INDICATOR_GET_PRIVATE(self);
+[ 2606s]       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 2619s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-application-service-marshal.lo `test -f 'application-service-marshal.c' || echo '../../src/'`application-service-marshal.c
+[ 2623s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c application-service-marshal.c  -fPIC -DPIC -o .libs/libappindicator_la-application-service-marshal.o
+[ 2627s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-generate-id.lo `test -f 'generate-id.c' || echo '../../src/'`generate-id.c
+[ 2631s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c ../../src/generate-id.c  -fPIC -DPIC -o .libs/libappindicator_la-generate-id.o
+[ 2641s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-gen-notification-item.xml.lo `test -f 'gen-notification-item.xml.c' || echo '../../src/'`gen-notification-item.xml.c
+[ 2645s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c ../../src/gen-notification-item.xml.c  -fPIC -DPIC -o .libs/libappindicator_la-gen-notification-item.xml.o
+[ 2646s] /bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../src -I..    -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations -c -o libappindicator_la-gen-notification-watcher.xml.lo `test -f 'gen-notification-watcher.xml.c' || echo '../../src/'`gen-notification-watcher.xml.c
+[ 2651s] libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../src -I.. -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection -Wno-deprecated-declarations -c ../../src/gen-notification-watcher.xml.c  -fPIC -DPIC -o .libs/libappindicator_la-gen-notification-watcher.xml.o
+[ 2653s] /bin/sh ../libtool  --tag=CC   --mode=link gcc -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread   -Wall -Wno-deprecated-declarations -DG_LOG_DOMAIN=\"libappindicator\" -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations  -version-info 1:0:0 -no-undefined -export-symbols-regex "^[^_d].*" -Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld -o libappindicator.la -rpath /usr/lib64  libappindicator_la-app-indicator-enum-types.lo libappindicator_la-app-indicator.lo libappindicator_la-application-service-marshal.lo libappindicator_la-generate-id.lo libappindicator_la-gen-notification-item.xml.lo libappindicator_la-gen-notification-watcher.xml.lo -lindicator -ldbusmenu-gtk -ldbusmenu-glib -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype  
+[ 2660s] libtool: link: /usr/bin/nm -B  .libs/libappindicator_la-app-indicator-enum-types.o .libs/libappindicator_la-app-indicator.o .libs/libappindicator_la-application-service-marshal.o .libs/libappindicator_la-generate-id.o .libs/libappindicator_la-gen-notification-item.xml.o .libs/libappindicator_la-gen-notification-watcher.xml.o   | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' | /usr/bin/sed 's/.* //' | sort | uniq > .libs/libappindicator.exp
+[ 2661s] libtool: link: /usr/bin/grep -E -e "^[^_d].*" ".libs/libappindicator.exp" > ".libs/libappindicator.expT"
+[ 2661s] libtool: link: mv -f ".libs/libappindicator.expT" ".libs/libappindicator.exp"
+[ 2661s] libtool: link: echo "{ global:" > .libs/libappindicator.ver
+[ 2699s] libtool: link:  cat .libs/libappindicator.exp | sed -e "s/\(.*\)/\1;/" >> .libs/libappindicator.ver
+[ 2700s] libtool: link:  echo "local: *; };" >> .libs/libappindicator.ver
+[ 2700s] libtool: link:  gcc -shared  -fPIC -DPIC  .libs/libappindicator_la-app-indicator-enum-types.o .libs/libappindicator_la-app-indicator.o .libs/libappindicator_la-application-service-marshal.o .libs/libappindicator_la-generate-id.o .libs/libappindicator_la-gen-notification-item.xml.o .libs/libappindicator_la-gen-notification-watcher.xml.o   -lindicator -ldbusmenu-gtk -ldbusmenu-glib -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig -lfreetype  -pthread -O2 -g -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -Wl,-z -Wl,relro -Wl,-z -Wl,now -specs=/usr/lib/rpm/generic-hardened-ld   -pthread -Wl,-soname -Wl,libappindicator.so.1 -Wl,-version-script -Wl,.libs/libappindicator.ver -o .libs/libappindicator.so.1.0.0
+[ 2702s] libtool: link: (cd ".libs" && rm -f "libappindicator.so.1" && ln -s "libappindicator.so.1.0.0" "libappindicator.so.1")
+[ 2703s] libtool: link: (cd ".libs" && rm -f "libappindicator.so" && ln -s "libappindicator.so.1.0.0" "libappindicator.so")
+[ 2703s] libtool: link: ( cd ".libs" && rm -f "libappindicator.la" && ln -s "../libappindicator.la" "libappindicator.la" )
+[ 2703s] CPPFLAGS="" CFLAGS="-O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/generic-hardened-cc1 -fasynchronous-unwind-tables -fstack-clash-protection  -Wno-deprecated-declarations" LDFLAGS="-Wl,-z,relro   -Wl,-z,now -specs=/usr/lib/rpm/generic-hardened-ld" CC="gcc" PKG_CONFIG="/usr/bin/riscv64-openEuler-linux-gnu-pkg-config" GI_HOST_OS="" DLLTOOL="false"  /usr/bin/g-ir-scanner  --add-include-path=../../src --c-include=libappindicator/app-indicator.h --symbol-prefix=app --identifier-prefix=App --warn-all --namespace=AppIndicator --nsversion=0.1 --libtool="/bin/sh ../libtool"  --include=GObject-2.0 --include=Gtk-2.0    --library=libappindicator.la  --cflags-begin -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/atk-1.0 -I/usr/include/libindicator-0.4 -I/usr/include/libdbusmenu-gtk-0.4 -I/usr/include/libdbusmenu-glib-0.4 -pthread  -I../../src -I../src --cflags-end  ../../src/app-indicator.c ../../src/app-indicator.h libappindicator.la --output AppIndicator-0.1.gir
+[ 2707s] Traceback (most recent call last):
+[ 2707s]   File "/usr/bin/g-ir-scanner", line 98, in <module>
+[ 2707s]     from giscanner.scannermain import scanner_main
+[ 2707s]   File "/usr/lib64/gobject-introspection/giscanner/scannermain.py", line 35, in <module>
+[ 2707s]     from giscanner.ast import Include, Namespace
+[ 2707s]   File "/usr/lib64/gobject-introspection/giscanner/ast.py", line 29, in <module>
+[ 2707s]     from .sourcescanner import CTYPE_TYPEDEF, CSYMBOL_TYPE_TYPEDEF
+[ 2707s]   File "/usr/lib64/gobject-introspection/giscanner/sourcescanner.py", line 35, in <module>
+[ 2707s]     from giscanner._giscanner import SourceScanner as CSourceScanner
+[ 2707s] ModuleNotFoundError: No module named 'giscanner._giscanner'
+[ 2707s] make[2]: *** [/usr/share/gobject-introspection-1.0/Makefile.introspection:156: AppIndicator-0.1.gir] Error 1
+[ 2707s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/libappindicator-12.10.0/build-gtk2/src'
+[ 2707s] make[1]: *** [Makefile:465: all-recursive] Error 1
+[ 2707s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/libappindicator-12.10.0/build-gtk2'
+[ 2707s] make: *** [Makefile:396: all] Error 2
+[ 2707s] error: Bad exit status from /var/tmp/rpm-tmp.uBsHq8 (%build)
+[ 2707s] 
+[ 2707s] 
+[ 2707s] RPM build errors:
+[ 2707s]     Bad exit status from /var/tmp/rpm-tmp.uBsHq8 (%build)
+[ 2708s] 
+[ 2708s] oe-RISCV-worker25 failed "build libappindicator.spec" at Fri Apr 15 20:22:11 UTC 2022.
+[ 2708s] 

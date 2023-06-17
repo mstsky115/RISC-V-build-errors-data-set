@@ -1,0 +1,712 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_12/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_12/root
+[    0s] 
+[    0s] 
+[    0s] old-cirrus4 started "build xmrig.spec" at Wed Nov  2 12:18:35 UTC 2022.
+[    0s] 
+[    0s] Building xmrig for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7474b40b382dc943bd3e4a6a60eb8d19'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_12/.build-srcdir/xmrig.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_12/.build-srcdir/xmrig.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/12/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_12/.build.rpmlist /var/cache/obs/worker/root_12/.build-srcdir/xmrig.spec build ...
+[    2s] cycle: rpm-config-SUSE -> rpm
+[    2s]   breaking dependency rpm-config-SUSE -> rpm
+[    2s] [1/34] preinstalling filesystem...
+[    2s] [2/34] preinstalling permissions...
+[    2s] [3/34] preinstalling glibc...
+[    2s] [4/34] preinstalling diffutils...
+[    2s] [5/34] preinstalling fillup...
+[    2s] [6/34] preinstalling libacl1...
+[    2s] [7/34] preinstalling libattr1...
+[    2s] [8/34] preinstalling libbz2-1...
+[    3s] [9/34] preinstalling libcap2...
+[    3s] [10/34] preinstalling libgcc_s1...
+[    3s] [11/34] preinstalling libgpg-error0...
+[    3s] [12/34] preinstalling liblua5_4-5...
+[    3s] [13/34] preinstalling liblzma5...
+[    3s] [14/34] preinstalling libpcre2-8-0...
+[    3s] [15/34] preinstalling libpopt0...
+[    3s] [16/34] preinstalling libz1...
+[    3s] [17/34] preinstalling libzstd1...
+[    3s] [18/34] preinstalling attr...
+[    3s] [19/34] preinstalling libelf1...
+[    3s] [20/34] preinstalling libgcrypt20...
+[    3s] [21/34] preinstalling libncurses6...
+[    3s] [22/34] preinstalling libselinux1...
+[    4s] [23/34] preinstalling libreadline8...
+[    4s] [24/34] preinstalling tar...
+[    4s] [25/34] preinstalling bash...
+[    4s] [26/34] preinstalling bash-sh...
+[    4s] [27/34] preinstalling grep...
+[    4s] [28/34] preinstalling qemu-linux-user...
+[    5s] [29/34] preinstalling pam...
+[    5s] [30/34] preinstalling sed...
+[    5s] [31/34] preinstalling coreutils...
+[    5s] [32/34] preinstalling aaa_base...
+[    5s] [33/34] preinstalling rpm-config-SUSE...
+[    5s] [34/34] preinstalling rpm...
+[    5s] 
+[    5s] [1/9] preinstalling kernel-obs-build...
+[    5s] [2/9] preinstalling libblkid1...
+[    5s] [3/9] preinstalling libcrypt1...
+[    5s] [4/9] preinstalling libdb-4_8...
+[    6s] [5/9] preinstalling libsmartcols1...
+[    6s] [6/9] preinstalling libuuid1...
+[    6s] [7/9] preinstalling libmount1...
+[    6s] [8/9] preinstalling perl-base...
+[    6s] [9/9] preinstalling util-linux...
+[    6s] copying packages...
+[    7s] reordering...cycle: libncurses6 -> terminfo-base
+[    7s]   breaking dependency terminfo-base -> libncurses6
+[    7s] cycle: python310-base -> libpython3_10-1_0
+[    7s]   breaking dependency python310-base -> libpython3_10-1_0
+[    7s] cycle: binutils -> libctf0
+[    7s]   breaking dependency binutils -> libctf0
+[    7s] cycle: rpm-config-SUSE -> rpm
+[    7s]   breaking dependency rpm -> rpm-config-SUSE
+[    7s] cycle: libopenssl-1_1-devel -> libopenssl-devel
+[    7s]   breaking dependency libopenssl-devel -> libopenssl-1_1-devel
+[    7s] cycle: pam_unix -> pam
+[    7s]   breaking dependency pam -> pam_unix
+[    7s] done
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using UART console
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_12/.mount/boot/kernel -initrd /var/cache/obs/worker/root_12/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=ttyS0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_12/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_12/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_12/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   17s] ### VM INTERACTION END ###
+[   17s] 2nd stage started in virtual machine
+[   17s] machine type: riscv64
+[   17s] Linux version: 5.14.2-1-default #1 SMP Fri Sep 10 10:18:59 UTC 2021 (314dce0)
+[   17s] Increasing log level from now on...
+[   17s] [    8.782235][  T402] sysrq: Changing Loglevel
+[   17s] [    8.789196][  T402] sysrq: Loglevel set to 4
+[   17s] Enable sysrq operations
+[   18s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   18s] no label, UUID=58683d1e-3e52-499e-b4e2-d1fdd830068d
+[   18s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   18s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   18s] swapon /dev/vdb
+[   18s] WARNING: udev not running, creating extra device nodes
+[   19s] logging output to //.build.log...
+[   19s] processing recipe /.build-srcdir/xmrig.spec ...
+[   20s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/xmrig.spec build ...
+[   20s] initializing rpm db...
+[   21s] querying package ids...
+[   44s] [1/205] cumulate compat-usrmerge-tools-84.87-5.1
+[   44s] [2/205] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   44s] [3/205] cumulate file-magic-5.43-1.1
+[   44s] [4/205] cumulate hwloc-data-2.8.0-2.1
+[   44s] [5/205] cumulate kernel-obs-build-5.14.2-1.3
+[   44s] [6/205] cumulate libX11-data-1.8.1-3.1
+[   44s] [7/205] cumulate libsemanage-conf-3.4-1.1
+[   44s] [8/205] cumulate pkgconf-m4-1.8.0-1.1
+[   44s] [9/205] cumulate python-rpm-macros-20220912.f91cae2-1.1
+[   44s] [10/205] cumulate rpmlint-strict-2.4.0+git20221028.5eac7b1-1.1
+[   44s] [11/205] cumulate system-user-root-20190513-2.1
+[   44s] [12/205] cumulate filesystem-84.87-9.1
+[   44s] [13/205] cumulate glibc-2.36-7.1
+[   44s] [14/205] cumulate diffutils-3.8-3.1
+[   44s] [15/205] cumulate fillup-1.42-278.1
+[   44s] [16/205] cumulate libXau6-1.0.10-1.1
+[   44s] [17/205] cumulate libacl1-2.3.1-2.1
+[   44s] [18/205] cumulate libatomic1-12.2.1+git537-1.1
+[   44s] [19/205] cumulate libattr1-2.5.1-1.1
+[   44s] [20/205] cumulate libaudit1-3.0.6-4.1
+[   44s] [21/205] cumulate libblkid1-2.37.4-4.1
+[   44s] [22/205] cumulate libbz2-1-1.0.8-4.1
+[   44s] [23/205] cumulate libcap-ng0-0.8.3-1.1
+[   44s] [24/205] cumulate libcap2-2.66-1.1
+[   44s] [25/205] cumulate libcrypt1-4.4.28-1.1
+[   44s] [26/205] cumulate libeconf0-0.4.6+git20220427.3016f4e-1.1
+[   44s] [27/205] cumulate libexpat1-2.5.0-1.1
+[   44s] [28/205] cumulate libffi8-3.4.4-1.1
+[   44s] [29/205] cumulate libgcc_s1-12.2.1+git537-1.1
+[   44s] [30/205] cumulate libgdbm6-1.23-1.1
+[   44s] [31/205] cumulate libgmp10-6.2.1-4.1
+[   44s] [32/205] cumulate libgomp1-12.2.1+git537-1.1
+[   44s] [33/205] cumulate libgpg-error0-1.46-1.1
+[   44s] [34/205] cumulate liblua5_4-5-5.4.4-6.1
+[   44s] [35/205] cumulate liblzma5-5.2.7-2.1
+[   44s] [36/205] cumulate libmpdec3-2.5.1-2.1
+[   44s] [37/205] cumulate libpcre2-8-0-10.40-3.1
+[   44s] [38/205] cumulate libpkgconf3-1.8.0-1.1
+[   44s] [39/205] cumulate libpopt0-1.19-1.1
+[   44s] [40/205] cumulate librhash0-1.4.3-1.1
+[   44s] [41/205] cumulate libseccomp2-2.5.4-2.1
+[   44s] [42/205] cumulate libsepol2-3.4-1.1
+[   44s] [43/205] cumulate libsmartcols1-2.37.4-4.1
+[   44s] [44/205] cumulate libuuid1-2.37.4-4.1
+[   44s] [45/205] cumulate libuv1-1.44.2-2.1
+[   44s] [46/205] cumulate libyaml-0-2-0.2.5-2.1
+[   44s] [47/205] cumulate libz1-1.2.12-2.1
+[   44s] [48/205] cumulate libzstd1-1.5.2-1.1
+[   44s] [49/205] cumulate patch-2.7.6-6.1
+[   44s] [50/205] cumulate update-alternatives-1.21.8-1.1
+[   44s] [51/205] cumulate libX11-xcb1-1.8.1-3.1
+[   44s] [52/205] cumulate attr-2.5.1-1.1
+[   44s] [53/205] cumulate libctf-nobfd0-2.39-1.1
+[   44s] [54/205] cumulate libelf1-0.187-9.2
+[   44s] [55/205] cumulate libgcrypt20-1.9.4-6.1
+[   44s] [56/205] cumulate libgdbm_compat4-1.23-1.1
+[   44s] [57/205] cumulate libisl23-0.25-1.1
+[   44s] [58/205] cumulate libmpfr6-4.1.0-2.1
+[   44s] [59/205] cumulate libpciaccess0-0.17-1.1
+[   44s] [60/205] cumulate libselinux1-3.4-2.1
+[   44s] [61/205] cumulate libstdc++6-12.2.1+git537-1.1
+[   44s] [62/205] cumulate libxcb1-1.15-1.1
+[   44s] [63/205] cumulate perl-base-5.36.0-3.1
+[   44s] [64/205] cumulate pkgconf-1.8.0-1.1
+[   44s] [65/205] cumulate chkstat-1599_20220912-2.1
+[   44s] [66/205] cumulate libfdisk1-2.37.4-4.1
+[   44s] [67/205] cumulate libopenssl1_1-1.1.1q-2.1
+[   44s] [68/205] cumulate libxml2-2-2.10.3-2.1
+[   44s] [69/205] cumulate libmagic1-5.43-1.1
+[   44s] [70/205] cumulate build-mkbaselibs-20220927-1.1
+[   44s] [71/205] cumulate rpm-build-perl-4.17.1.1-2.1
+[   44s] [72/205] cumulate dwz-0.14-5.1
+[   44s] [73/205] cumulate findutils-4.9.0-1.1
+[   44s] [74/205] cumulate libxcb-composite0-1.15-1.1
+[   44s] [75/205] cumulate libxcb-damage0-1.15-1.1
+[   44s] [76/205] cumulate libxcb-dpms0-1.15-1.1
+[   44s] [77/205] cumulate libxcb-dri2-0-1.15-1.1
+[   44s] [78/205] cumulate libxcb-dri3-0-1.15-1.1
+[   44s] [79/205] cumulate libxcb-glx0-1.15-1.1
+[   44s] [80/205] cumulate libxcb-present0-1.15-1.1
+[   44s] [81/205] cumulate libxcb-randr0-1.15-1.1
+[   44s] [82/205] cumulate libxcb-record0-1.15-1.1
+[   44s] [83/205] cumulate libxcb-render0-1.15-1.1
+[   44s] [84/205] cumulate libxcb-res0-1.15-1.1
+[   44s] [85/205] cumulate libxcb-screensaver0-1.15-1.1
+[   44s] [86/205] cumulate libxcb-shape0-1.15-1.1
+[   44s] [87/205] cumulate libxcb-shm0-1.15-1.1
+[   44s] [88/205] cumulate libxcb-sync1-1.15-1.1
+[   44s] [89/205] cumulate libxcb-xf86dri0-1.15-1.1
+[   44s] [90/205] cumulate libxcb-xfixes0-1.15-1.1
+[   44s] [91/205] cumulate libxcb-xinerama0-1.15-1.1
+[   44s] [92/205] cumulate libxcb-xinput0-1.15-1.1
+[   44s] [93/205] cumulate libxcb-xkb1-1.15-1.1
+[   44s] [94/205] cumulate libxcb-xtest0-1.15-1.1
+[   44s] [95/205] cumulate libxcb-xv0-1.15-1.1
+[   44s] [96/205] cumulate libxcb-xvmc0-1.15-1.1
+[   44s] [97/205] cumulate file-5.43-1.1
+[   44s] [98/205] cumulate libX11-6-1.8.1-3.1
+[   44s] [99/205] cumulate libasan8-12.2.1+git537-1.1
+[   44s] [100/205] cumulate libdb-4_8-4.8.30-39.1
+[   44s] [101/205] cumulate libmount1-2.37.4-4.1
+[   44s] [102/205] cumulate libmpc3-1.2.1-1.2
+[   44s] [103/205] cumulate libsubid4-4.12.3-2.1
+[   44s] [104/205] cumulate libubsan1-12.2.1+git537-1.1
+[   44s] [105/205] cumulate ninja-1.11.1-8.1
+[   44s] [106/205] cumulate tar-1.34-8.1
+[   44s] [107/205] cumulate libdw1-0.187-9.2
+[   44s] [108/205] cumulate libsemanage2-3.4-1.1
+[   44s] [109/205] cumulate libXext6-1.3.5-1.1
+[   44s] [110/205] cumulate libasm1-0.187-9.2
+[   44s] [111/205] cumulate cpp12-12.2.1+git537-1.1
+[   44s] [112/205] cumulate perl-5.36.0-3.1
+[   44s] [113/205] cumulate brp-check-suse-84.87+git20211116.6c5fe09-2.1
+[   44s] [114/205] cumulate libXNVCtrl0-510.47.03-1.1
+[   44s] [115/205] cumulate libhwloc15-2.8.0-2.1
+[   44s] [116/205] cumulate terminfo-base-6.3.20221001-29.1
+[   44s] [117/205] cumulate libncurses6-6.3.20221001-29.1
+[   44s] [118/205] cumulate libreadline8-8.2-2.1
+[   44s] [119/205] cumulate ncurses-utils-6.3.20221001-29.1
+[   44s] [120/205] cumulate bash-5.2.2-3.1
+[   44s] [121/205] cumulate libxml2-tools-2.10.3-2.1
+[   44s] [122/205] cumulate bash-sh-5.2.2-3.1
+[   44s] [123/205] cumulate grep-3.8-2.1
+[   44s] [124/205] cumulate login_defs-4.12.3-2.1
+[   44s] [125/205] cumulate qemu-linux-user-7.1.0-39.1
+[   44s] [126/205] cumulate sysuser-shadow-3.1-5.1
+[   44s] [127/205] cumulate cpio-2.13-4.1
+[   44s] [128/205] cumulate cpp-12-2.1
+[   44s] [129/205] cumulate make-4.3-4.1
+[   44s] [130/205] cumulate which-2.21-5.1
+[   44s] [131/205] cumulate bzip2-1.0.8-4.1
+[   44s] [132/205] cumulate gettext-runtime-mini-0.21.1-1.1
+[   44s] [133/205] cumulate gzip-1.12-2.1
+[   44s] [134/205] cumulate pkgconf-pkg-config-1.8.0-1.1
+[   44s] [135/205] cumulate sed-4.8-3.2
+[   44s] [136/205] cumulate xz-5.2.7-2.1
+[   44s] [137/205] cumulate elfutils-0.187-9.2
+[   44s] [138/205] cumulate gawk-5.2.0-2.1
+[   44s] [139/205] cumulate lua54-5.4.4-6.1
+[   44s] [140/205] cumulate binutils-2.39-1.1
+[   44s] [141/205] cumulate zstd-1.5.2-1.1
+[   44s] [142/205] cumulate coreutils-9.1-5.1
+[   44s] [143/205] cumulate python310-base-3.10.8-1.2
+[   44s] [144/205] cumulate compat-usrmerge-build-84.87-5.1
+[   44s] [145/205] cumulate python310-pyparsing-3.0.9-2.1
+[   44s] [146/205] cumulate systemd-rpm-macros-17-1.1
+[   44s] [147/205] cumulate xorgproto-devel-2022.2-1.1
+[   44s] [148/205] cumulate libpciaccess-devel-0.17-1.1
+[   44s] [149/205] cumulate libpython3_10-1_0-3.10.8-1.2
+[   44s] [150/205] cumulate libuv-devel-1.44.2-2.1
+[   44s] [151/205] cumulate libxcrypt-devel-4.4.28-1.1
+[   44s] [152/205] cumulate linux-glibc-devel-6.0-1.1
+[   44s] [153/205] cumulate python310-six-1.16.0-2.4
+[   44s] [154/205] cumulate system-group-hardware-20170617-24.1
+[   44s] [155/205] cumulate sysuser-tools-3.1-5.1
+[   44s] [156/205] cumulate xz-devel-5.2.7-2.1
+[   44s] [157/205] cumulate glibc-locale-base-2.36-7.1
+[   44s] [158/205] cumulate libctf0-2.39-1.1
+[   44s] [159/205] cumulate python310-PyYAML-6.0-4.1
+[   44s] [160/205] cumulate openssl-1_1-1.1.1q-2.1
+[   44s] [161/205] cumulate gettext-tools-mini-0.21.1-1.1
+[   44s] [162/205] cumulate obs-service-recompress-0.5.2-1.1
+[   44s] [163/205] cumulate permissions-config-1599_20220912-2.1
+[   44s] [164/205] cumulate polkit-default-privs-1550+20221018.7616c25-1.1
+[   44s] [165/205] cumulate aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   44s] [166/205] cumulate debugedit-5.0-4.1
+[   44s] [167/205] cumulate cmake-mini-3.24.2-1.1
+[   44s] [168/205] cumulate rpm-4.17.1.1-2.1
+[   44s] [169/205] cumulate aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   44s] [170/205] cumulate cmake-3.24.2-1.1
+[   44s] [171/205] cumulate openssl-1.1.1q-1.1
+[   44s] [172/205] cumulate permissions-1599_20220912-2.1
+[   44s] [173/205] cumulate python310-packaging-21.3-4.1
+[   44s] [174/205] cumulate python310-python-dateutil-2.8.2-1.4
+[   44s] [175/205] cumulate glibc-devel-2.36-7.1
+[   44s] [176/205] cumulate libXau-devel-1.0.10-1.1
+[   45s] [177/205] cumulate rpm-config-SUSE-20220926-1.1
+[   45s] [178/205] cumulate rpmlint-mini-2.4.0+git20221028.5eac7b1-8.22
+[   45s] [179/205] cumulate build-compare-20220926T095347.40c240f-1.1
+[   45s] [180/205] cumulate librpmbuild9-4.17.1.1-2.1
+[   45s] [181/205] cumulate libstdc++6-devel-gcc12-12.2.1+git537-1.1
+[   45s] [182/205] cumulate zlib-devel-1.2.12-2.1
+[   45s] [183/205] cumulate libopenssl-devel-1.1.1q-1.1
+[   45s] [184/205] cumulate libutempter0-1.2.0-3.2
+[   45s] [185/205] cumulate obs-service-obs_scm-common-0.10.33.1664344889.48d1960-1.1
+[   45s] [186/205] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   45s] [187/205] cumulate post-build-checks-84.87+git20220922.95e4f0a-1.1
+[   45s] [188/205] cumulate pam-1.5.2-8.1
+[   45s] [189/205] cumulate gcc12-12.2.1+git537-1.1
+[   45s] [190/205] cumulate libxcb-devel-1.15-1.1
+[   45s] [191/205] cumulate gcc12-PIE-12.2.1+git537-1.1
+[   45s] [192/205] cumulate obs-service-tar-0.10.33.1664344889.48d1960-1.1
+[   45s] [193/205] cumulate gcc-12-2.1
+[   45s] [194/205] cumulate libopenssl-1_1-devel-1.1.1q-2.1
+[   45s] [195/205] cumulate pam_unix-1.5.2-8.1
+[   45s] [196/205] cumulate libX11-devel-1.8.1-3.1
+[   45s] [197/205] cumulate libxml2-devel-2.10.3-2.1
+[   45s] [198/205] cumulate gcc12-c++-12.2.1+git537-1.1
+[   45s] [199/205] cumulate shadow-4.12.3-2.1
+[   45s] [200/205] cumulate util-linux-2.37.4-4.1
+[   45s] [201/205] cumulate gcc-PIE-12-2.1
+[   45s] [202/205] cumulate gcc-c++-12-2.1
+[   45s] [203/205] cumulate libXext-devel-1.3.5-1.1
+[   45s] [204/205] cumulate rpm-build-4.17.1.1-2.1
+[   45s] [205/205] cumulate hwloc-devel-2.8.0-2.1
+[   45s] now installing cumulated packages
+[   46s] Preparing...                          ########################################
+[   47s] Updating / installing...
+[   47s] system-user-root-20190513-2.1         ########################################
+[   47s] libX11-data-1.8.1-3.1                 ########################################
+[   47s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   47s] python-rpm-macros-20220912.f91cae2-1.1########################################
+[   47s] pkgconf-m4-1.8.0-1.1                  ########################################
+[   47s] libsemanage-conf-3.4-1.1              ########################################
+[   47s] hwloc-data-2.8.0-2.1                  ########################################
+[   48s] file-magic-5.43-1.1                   ########################################
+[   48s] compat-usrmerge-tools-84.87-5.1       ########################################
+[   49s] filesystem-84.87-9.1                  ########################################
+[   49s] glibc-2.36-7.1                        ########################################
+[   50s] libz1-1.2.12-2.1                      ########################################
+[   50s] libgcc_s1-12.2.1+git537-1.1           ########################################
+[   50s] libstdc++6-12.2.1+git537-1.1          ########################################
+[   50s] libbz2-1-1.0.8-4.1                    ########################################
+[   51s] libcrypt1-4.4.28-1.1                  ########################################
+[   51s] libgmp10-6.2.1-4.1                    ########################################
+[   51s] liblzma5-5.2.7-2.1                    ########################################
+[   51s] libelf1-0.187-9.2                     ########################################
+[   51s] libzstd1-1.5.2-1.1                    ########################################
+[   53s] perl-base-5.36.0-3.1                  ########################################
+[   53s] libmpfr6-4.1.0-2.1                    ########################################
+[   53s] terminfo-base-6.3.20221001-29.1       ########################################
+[   53s] libncurses6-6.3.20221001-29.1         ########################################
+[   53s] ncurses-utils-6.3.20221001-29.1       ########################################
+[   54s] libreadline8-8.2-2.1                  ########################################
+[   54s] bash-5.2.2-3.1                        ########################################
+[   54s] bash-sh-5.2.2-3.1                     ########################################
+[   54s] xz-5.2.7-2.1                          ########################################
+[   55s] gawk-5.2.0-2.1                        ########################################
+[   56s] libopenssl1_1-1.1.1q-2.1              ########################################
+[   56s] libacl1-2.3.1-2.1                     ########################################
+[   56s] libaudit1-3.0.6-4.1                   ########################################
+[   56s] libdw1-0.187-9.2                      ########################################
+[   56s] fillup-1.42-278.1                     ########################################
+[   56s] libcap2-2.66-1.1                      ########################################
+[   56s] login_defs-4.12.3-2.1                 ########################################
+[   57s] cpio-2.13-4.1                         ########################################
+[   57s] libmpc3-1.2.1-1.2                     ########################################
+[   57s] libxml2-2-2.10.3-2.1                  ########################################
+[   58s] libisl23-0.25-1.1                     ########################################
+[   58s] libattr1-2.5.1-1.1                    ########################################
+[   58s] libblkid1-2.37.4-4.1                  ########################################
+[   58s] libeconf0-0.4.6+git20220427.3016f4e-1.########################################
+[   58s] libgomp1-12.2.1+git537-1.1            ########################################
+[   59s] liblua5_4-5-5.4.4-6.1                 ########################################
+[   59s] libpopt0-1.19-1.1                     ########################################
+[   59s] libuuid1-2.37.4-4.1                   ########################################
+[   65s] cpp12-12.2.1+git537-1.1               ########################################
+[   66s] chkstat-1599_20220912-2.1             ########################################
+[   66s] make-4.3-4.1                          ########################################
+[   66s] which-2.21-5.1                        ########################################
+[   66s] bzip2-1.0.8-4.1                       ########################################
+[   66s] gzip-1.12-2.1                         ########################################
+[   67s] libmagic1-5.43-1.1                    ########################################
+[   67s] dwz-0.14-5.1                          ########################################
+[   67s] libpciaccess0-0.17-1.1                ########################################
+[   67s] diffutils-3.8-3.1                     ########################################
+[   67s] libXau6-1.0.10-1.1                    ########################################
+[   68s] libxcb1-1.15-1.1                      ########################################
+[   68s] libX11-6-1.8.1-3.1                    ########################################
+[   68s] libXext6-1.3.5-1.1                    ########################################
+[   68s] libatomic1-12.2.1+git537-1.1          ########################################
+[   69s] zstd-1.5.2-1.1                        ########################################
+[   69s] libexpat1-2.5.0-1.1                   ########################################
+[   69s] libgdbm6-1.23-1.1                     ########################################
+[   69s] libpcre2-8-0-10.40-3.1                ########################################
+[   69s] libselinux1-3.4-2.1                   ########################################
+[   70s] coreutils-9.1-5.1                     ########################################
+[   71s] sed-4.8-3.2                           ########################################
+[   71s] grep-3.8-2.1                          ########################################
+[   72s] aaa_base-84.87+git20220822.6b9f7a3-1.1########################################
+[   72s] Updating /etc/sysconfig/language ...
+[   72s] Updating /etc/sysconfig/proxy ...
+[   73s] Updating /etc/sysconfig/windowmanager ...
+[   76s] glibc-locale-base-2.36-7.1            ########################################
+[   77s] openssl-1_1-1.1.1q-2.1                ########################################
+[   77s] findutils-4.9.0-1.1                   ########################################
+[   77s] libuv1-1.44.2-2.1                     ########################################
+[   78s] update-alternatives-1.21.8-1.1        ########################################
+[   78s] lua54-5.4.4-6.1                       ########################################
+[   78s] update-alternatives: using /usr/bin/lua5.4 to provide /usr/bin/lua (lua) in auto mode
+[   78s] openssl-1.1.1q-1.1                    ########################################
+[   78s] aaa_base-malloccheck-84.87+git20220822########################################
+[   78s] systemd-rpm-macros-17-1.1             ########################################
+[   80s] linux-glibc-devel-6.0-1.1             ########################################
+[   80s] permissions-config-1599_20220912-2.1  ########################################
+[   80s] Updating /etc/sysconfig/security ...
+[   81s] Checking permissions and ownerships - using the permissions files
+[   81s] 	/usr/share/permissions/permissions
+[   81s] 	/usr/share/permissions/permissions.easy
+[   81s] 	/etc/permissions.local
+[   81s] /usr/bin/mount: setting to root:root 4755 (wrong permissions 0755)
+[   81s] /usr/bin/su: setting to root:root 4755 (wrong permissions 0755)
+[   81s] /usr/bin/umount: setting to root:root 4755 (wrong permissions 0755)
+[   81s] /usr/sbin/unix2_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   81s] /usr/sbin/unix_chkpwd: setting to root:shadow 4755 (wrong owner/group root:root)
+[   81s] permissions-1599_20220912-2.1         ########################################
+[   82s] pam-1.5.2-8.1                         ########################################
+[   83s] pam_unix-1.5.2-8.1                    ########################################
+[   83s] polkit-default-privs-1550+20221018.761########################################
+[   83s] Updating /etc/sysconfig/security ...
+[   84s] libmount1-2.37.4-4.1                  ########################################
+[   85s] libsubid4-4.12.3-2.1                  ########################################
+[   85s] tar-1.34-8.1                          ########################################
+[   85s] libgdbm_compat4-1.23-1.1              ########################################
+[   85s] libXNVCtrl0-510.47.03-1.1             ########################################
+[   85s] libhwloc15-2.8.0-2.1                  ########################################
+[   85s] libxcb-composite0-1.15-1.1            ########################################
+[   85s] libxcb-damage0-1.15-1.1               ########################################
+[   85s] libxcb-dpms0-1.15-1.1                 ########################################
+[   85s] libxcb-dri2-0-1.15-1.1                ########################################
+[   86s] libxcb-dri3-0-1.15-1.1                ########################################
+[   86s] libxcb-glx0-1.15-1.1                  ########################################
+[   86s] libxcb-present0-1.15-1.1              ########################################
+[   86s] libxcb-randr0-1.15-1.1                ########################################
+[   86s] libxcb-record0-1.15-1.1               ########################################
+[   86s] libxcb-render0-1.15-1.1               ########################################
+[   86s] libxcb-res0-1.15-1.1                  ########################################
+[   87s] libxcb-screensaver0-1.15-1.1          ########################################
+[   87s] libxcb-shape0-1.15-1.1                ########################################
+[   87s] libxcb-shm0-1.15-1.1                  ########################################
+[   87s] libxcb-sync1-1.15-1.1                 ########################################
+[   88s] libxcb-xf86dri0-1.15-1.1              ########################################
+[   88s] libxcb-xfixes0-1.15-1.1               ########################################
+[   88s] libxcb-xinerama0-1.15-1.1             ########################################
+[   88s] libxcb-xinput0-1.15-1.1               ########################################
+[   88s] libxcb-xkb1-1.15-1.1                  ########################################
+[   88s] libxcb-xtest0-1.15-1.1                ########################################
+[   88s] libxcb-xv0-1.15-1.1                   ########################################
+[   88s] libxcb-xvmc0-1.15-1.1                 ########################################
+[   89s] cpp-12-2.1                            ########################################
+[   89s] libfdisk1-2.37.4-4.1                  ########################################
+[   89s] libxml2-tools-2.10.3-2.1              ########################################
+[   89s] libasm1-0.187-9.2                     ########################################
+[   89s] elfutils-0.187-9.2                    ########################################
+[   90s] gettext-runtime-mini-0.21.1-1.1       ########################################
+[   91s] gettext-tools-mini-0.21.1-1.1         ########################################
+[   91s] rpm-build-perl-4.17.1.1-2.1           ########################################
+[   92s] libasan8-12.2.1+git537-1.1            ########################################
+[   93s] libdb-4_8-4.8.30-39.1                 ########################################
+[  104s] perl-5.36.0-3.1                       ########################################
+[  104s] libubsan1-12.2.1+git537-1.1           ########################################
+[  104s] libctf-nobfd0-2.39-1.1                ########################################
+[  113s] binutils-2.39-1.1                     ########################################
+[  114s] update-alternatives: using /usr/bin/ld.bfd to provide /usr/bin/ld (ld) in auto mode
+[  114s] libctf0-2.39-1.1                      ########################################
+[  114s] debugedit-5.0-4.1                     ########################################
+[  114s] libcap-ng0-0.8.3-1.1                  ########################################
+[  114s] libffi8-3.4.4-1.1                     ########################################
+[  115s] libgpg-error0-1.46-1.1                ########################################
+[  115s] libgcrypt20-1.9.4-6.1                 ########################################
+[  115s] rpm-config-SUSE-20220926-1.1          ########################################
+[  116s] rpm-4.17.1.1-2.1                      ########################################
+[  116s] Updating /etc/sysconfig/services ...
+[  117s] librpmbuild9-4.17.1.1-2.1             ########################################
+[  117s] libmpdec3-2.5.1-2.1                   ########################################
+[  123s] python310-base-3.10.8-1.2             ########################################
+[  124s] libpython3_10-1_0-3.10.8-1.2          ########################################
+[  124s] python310-pyparsing-3.0.9-2.1         ########################################
+[  124s] python310-packaging-21.3-4.1          ########################################
+[  124s] python-rpm-packaging-20210526+a18ca48-########################################
+[  125s] python310-six-1.16.0-2.4              ########################################
+[  125s] python310-python-dateutil-2.8.2-1.4   ########################################
+[  125s] libpkgconf3-1.8.0-1.1                 ########################################
+[  125s] pkgconf-1.8.0-1.1                     ########################################
+[  125s] pkgconf-pkg-config-1.8.0-1.1          ########################################
+[  126s] xorgproto-devel-2022.2-1.1            ########################################
+[  126s] libXau-devel-1.0.10-1.1               ########################################
+[  126s] libxcb-devel-1.15-1.1                 ########################################
+[  126s] libpciaccess-devel-0.17-1.1           ########################################
+[  126s] libxcrypt-devel-4.4.28-1.1            ########################################
+[  127s] glibc-devel-2.36-7.1                  ########################################
+[  148s] gcc12-12.2.1+git537-1.1               ########################################
+[  148s] gcc-12-2.1                            ########################################
+[  149s] zlib-devel-1.2.12-2.1                 ########################################
+[  149s] libopenssl-1_1-devel-1.1.1q-2.1       ########################################
+[  149s] gcc12-PIE-12.2.1+git537-1.1           ########################################
+[  166s] libstdc++6-devel-gcc12-12.2.1+git537-1########################################
+[  172s] gcc12-c++-12.2.1+git537-1.1           ########################################
+[  172s] xz-devel-5.2.7-2.1                    ########################################
+[  172s] libxml2-devel-2.10.3-2.1              ########################################
+[  172s] librhash0-1.4.3-1.1                   ########################################
+[  180s] cmake-mini-3.24.2-1.1                 ########################################
+[  181s] libseccomp2-2.5.4-2.1                 ########################################
+[  181s] file-5.43-1.1                         ########################################
+[  181s] libsepol2-3.4-1.1                     ########################################
+[  181s] libsemanage2-3.4-1.1                  ########################################
+[  182s] shadow-4.12.3-2.1                     ########################################
+[  184s] sysuser-shadow-3.1-5.1                ########################################
+[  184s] /usr/sbin/groupadd -r kmem
+[  185s] /usr/sbin/groupadd -r lock
+[  185s] /usr/sbin/groupadd -r -g 5 tty
+[  185s] /usr/sbin/groupadd -r utmp
+[  186s] /usr/sbin/groupadd -r audio
+[  186s] /usr/sbin/groupadd -r cdrom
+[  186s] /usr/sbin/groupadd -r dialout
+[  187s] /usr/sbin/groupadd -r disk
+[  188s] /usr/sbin/groupadd -r input
+[  188s] /usr/sbin/groupadd -r lp
+[  188s] /usr/sbin/groupadd -r render
+[  189s] /usr/sbin/groupadd -r sgx
+[  189s] /usr/sbin/groupadd -r tape
+[  189s] /usr/sbin/groupadd -r video
+[  189s] system-group-hardware-20170617-24.1   ########################################
+[  189s] libutempter0-1.2.0-3.2                ########################################
+[  190s] libsmartcols1-2.37.4-4.1              ########################################
+[  191s] util-linux-2.37.4-4.1                 ########################################
+[  191s] /usr/bin/mount: setting to root:root 4755 (wrong permissions 0755)
+[  191s] /usr/bin/umount: setting to root:root 4755 (wrong permissions 0755)
+[  191s] /usr/bin/wall: setting to root:tty 2755 (wrong permissions 0755)
+[  191s] /usr/bin/write: setting to root:tty 2755 (wrong permissions 0755)
+[  192s] /usr/bin/su: setting to root:root 4755 (wrong permissions 0755)
+[  192s] libyaml-0-2-0.2.5-2.1                 ########################################
+[  192s] python310-PyYAML-6.0-4.1              ########################################
+[  192s] obs-service-obs_scm-common-0.10.33.166########################################
+[  192s] patch-2.7.6-6.1                       ########################################
+[  192s] libX11-xcb1-1.8.1-3.1                 ########################################
+[  193s] libX11-devel-1.8.1-3.1                ########################################
+[  194s] libXext-devel-1.3.5-1.1               ########################################
+[  194s] hwloc-devel-2.8.0-2.1                 ########################################
+[  194s] rpm-build-4.17.1.1-2.1                ########################################
+[  194s] obs-service-tar-0.10.33.1664344889.48d########################################
+[  194s] sysuser-tools-3.1-5.1                 ########################################
+[  194s] build-compare-20220926T095347.40c240f-########################################
+[  194s] cmake-3.24.2-1.1                      ########################################
+[  194s] gcc-c++-12-2.1                        ########################################
+[  194s] gcc-PIE-12-2.1                        ########################################
+[  194s] libopenssl-devel-1.1.1q-1.1           ########################################
+[  194s] libuv-devel-1.44.2-2.1                ########################################
+[  194s] brp-check-suse-84.87+git20211116.6c5fe########################################
+[  199s] rpmlint-mini-2.4.0+git20221028.5eac7b1########################################
+[  199s] post-build-checks-84.87+git20220922.95########################################
+[  199s] compat-usrmerge-build-84.87-5.1       ########################################
+[  199s] obs-service-recompress-0.5.2-1.1      ########################################
+[  199s] attr-2.5.1-1.1                        ########################################
+[  218s] qemu-linux-user-7.1.0-39.1            ########################################
+[  218s] build-mkbaselibs-20220927-1.1         ########################################
+[  218s] ninja-1.11.1-8.1                      ########################################
+[  218s] rpmlint-strict-2.4.0+git20221028.5eac7########################################
+[  220s] kernel-obs-build-5.14.2-1.3           ########################################
+[  236s] now finalizing build dir...
+[  236s] ... running 01-add_abuild_user_to_trusted_group
+[  237s] ... running 02-set_timezone_to_utc
+[  237s] ... running 03-set-permissions-secure
+[  237s] ... running 11-hack_uname_version_to_kernel_version
+[  243s] Unpacking xmrig-6.18.1.obscpio ...
+[  245s] 25582 blocks
+[  248s] Running build time source services...
+[  260s] Compressed xmrig-6.18.1.tar to xmrig-6.18.1.tar.gz
+[  269s] build target is riscv64-suse-linux
+[  269s] -----------------------------------------------------------------
+[  269s] I have the following modifications for xmrig.spec:
+[  269s] 21c21
+[  269s] < Release:        0
+[  269s] ---
+[  269s] > Release:        1.1
+[  270s] -----------------------------------------------------------------
+[  270s] ----- building xmrig.spec (user abuild)
+[  270s] -----------------------------------------------------------------
+[  270s] -----------------------------------------------------------------
+[  274s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7474b40b382dc943bd3e4a6a60eb8d19-xmrig' /home/abuild/rpmbuild/SOURCES/xmrig.spec
+[  275s] Building target platforms: riscv64-suse-linux
+[  275s] Building for target riscv64-suse-linux
+[  275s] setting SOURCE_DATE_EPOCH=1667347200
+[  276s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.onot1O
+[  276s] + umask 022
+[  276s] + cd /home/abuild/rpmbuild/BUILD
+[  276s] + cd /home/abuild/rpmbuild/BUILD
+[  276s] + rm -rf xmrig-6.18.1
+[  276s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/xmrig-6.18.1.tar.gz
+[  276s] + /usr/bin/tar -xof -
+[  277s] + STATUS=0
+[  277s] + '[' 0 -ne 0 ']'
+[  277s] + cd xmrig-6.18.1
+[  277s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  277s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  277s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/correct-opencl-file.patch
+[  277s] + RPM_EC=0
+[  277s] ++ jobs -p
+[  277s] + exit 0
+[  277s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Rhe52x
+[  277s] + umask 022
+[  277s] + cd /home/abuild/rpmbuild/BUILD
+[  277s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/xmrig-6.18.1-1.1.riscv64
+[  277s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/xmrig-6.18.1-1.1.riscv64
+[  278s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  278s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/xmrig-6.18.1-1.1.riscv64
+[  278s] + cd xmrig-6.18.1
+[  278s] + ref=/usr/lib/rpm
+[  278s] + mints=0
+[  278s] + case $(uname -m) in
+[  278s] ++ uname -m
+[  278s] + mints=20160911
+[  278s] + for s in guess sub
+[  278s] ++ find -maxdepth 8 -name config.guess
+[  278s] + for s in guess sub
+[  278s] ++ find -maxdepth 8 -name config.sub
+[  278s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  279s] + mkdir -p build
+[  279s] + cd build
+[  279s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/. -GNinja -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/xmrig -Wno-dev
+[  286s] -- The C compiler identification is GNU 12.2.1
+[  293s] -- The CXX compiler identification is GNU 12.2.1
+[  293s] -- Detecting C compiler ABI info
+[  301s] -- Detecting C compiler ABI info - done
+[  301s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  301s] -- Detecting C compile features
+[  301s] -- Detecting C compile features - done
+[  301s] -- Detecting CXX compiler ABI info
+[  308s] -- Detecting CXX compiler ABI info - done
+[  308s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  308s] -- Detecting CXX compile features
+[  308s] -- Detecting CXX compile features - done
+[  309s] -- Performing Test VAES_SUPPORTED
+[  310s] -- Performing Test VAES_SUPPORTED - Failed
+[  310s] -- Looking for syslog.h
+[  316s] -- Looking for syslog.h - found
+[  316s] -- Found HWLOC: /usr/lib64/libhwloc.so  
+[  317s] -- Found UV: /usr/lib64/libuv.so  
+[  317s] -- Looking for __builtin___clear_cache
+[  317s] -- Looking for __builtin___clear_cache - not found
+[  317s] -- WITH_MSR=ON
+[  318s] -- argon2: detecting feature 'sse2'...
+[  318s] -- Performing Test FEATURE_sse2_NOFLAG
+[  319s] -- Performing Test FEATURE_sse2_NOFLAG - Failed
+[  319s] -- Performing Test FEATURE_sse2_FLAG
+[  320s] -- Performing Test FEATURE_sse2_FLAG - Failed
+[  320s] -- argon2: detecting feature 'ssse3'...
+[  320s] -- Performing Test FEATURE_ssse3_NOFLAG
+[  321s] -- Performing Test FEATURE_ssse3_NOFLAG - Failed
+[  321s] -- Performing Test FEATURE_ssse3_FLAG
+[  322s] -- Performing Test FEATURE_ssse3_FLAG - Failed
+[  322s] -- argon2: detecting feature 'xop'...
+[  322s] -- Performing Test FEATURE_xop_NOFLAG
+[  323s] -- Performing Test FEATURE_xop_NOFLAG - Failed
+[  323s] -- Performing Test FEATURE_xop_FLAG
+[  324s] -- Performing Test FEATURE_xop_FLAG - Failed
+[  324s] -- argon2: detecting feature 'avx2'...
+[  324s] -- Performing Test FEATURE_avx2_NOFLAG
+[  325s] -- Performing Test FEATURE_avx2_NOFLAG - Failed
+[  325s] -- Performing Test FEATURE_avx2_FLAG
+[  326s] -- Performing Test FEATURE_avx2_FLAG - Failed
+[  326s] -- argon2: detecting feature 'avx512f'...
+[  326s] -- Performing Test FEATURE_avx512f_NOFLAG
+[  327s] -- Performing Test FEATURE_avx512f_NOFLAG - Failed
+[  327s] -- Performing Test FEATURE_avx512f_FLAG
+[  328s] -- Performing Test FEATURE_avx512f_FLAG - Failed
+[  334s] -- Found OpenSSL: /usr/lib64/libcrypto.so (found version "1.1.1q")  
+[  335s] -- The ASM compiler identification is GNU
+[  335s] -- Found assembler: /usr/bin/cc
+[  335s] -- Configuring done
+[  336s] -- Generating done
+[  337s] CMake Warning:
+[  337s]   Manually-specified variables were not used by the project:
+[  337s] 
+[  337s]     BUILD_STATIC_LIBS
+[  337s]     CMAKE_COLOR_MAKEFILE
+[  337s]     CMAKE_Fortran_FLAGS
+[  337s]     CMAKE_INSTALL_DO_STRIP
+[  337s]     CMAKE_INSTALL_LIBDIR
+[  337s]     CMAKE_INSTALL_LIBEXECDIR
+[  337s]     CMAKE_MODULES_INSTALL_DIR
+[  337s]     CMAKE_VERBOSE_MAKEFILE
+[  337s]     INCLUDE_INSTALL_DIR
+[  337s]     LIB_INSTALL_DIR
+[  337s]     LIB_SUFFIX
+[  337s]     SHARE_INSTALL_PREFIX
+[  337s]     SYSCONF_INSTALL_DIR
+[  337s] 
+[  337s] 
+[  337s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/build
+[  337s] + ninja -v -j4
+[  337s] [1/275] /usr/bin/c++ -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -fexceptions -fno-rtti -Wno-strict-aliasing -Wno-class-memaccess -maes -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o -MF CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o.d -o CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/backend/cpu/CpuLaunchData.cpp
+[  337s] FAILED: CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o 
+[  337s] /usr/bin/c++ -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -fexceptions -fno-rtti -Wno-strict-aliasing -Wno-class-memaccess -maes -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o -MF CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o.d -o CMakeFiles/xmrig.dir/src/backend/cpu/CpuLaunchData.cpp.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/backend/cpu/CpuLaunchData.cpp
+[  337s] c++: error: unrecognized command-line option '-maes'
+[  338s] [2/275] /usr/bin/c++ -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -fexceptions -fno-rtti -Wno-strict-aliasing -Wno-class-memaccess -maes -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o -MF CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o.d -o CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/backend/opencl/kernels/rx/HashAesKernel.cpp
+[  338s] FAILED: CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o 
+[  338s] /usr/bin/c++ -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -Wall -fexceptions -fno-rtti -Wno-strict-aliasing -Wno-class-memaccess -maes -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o -MF CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o.d -o CMakeFiles/xmrig.dir/src/backend/opencl/kernels/rx/HashAesKernel.cpp.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/backend/opencl/kernels/rx/HashAesKernel.cpp
+[  338s] c++: error: unrecognized command-line option '-maes'
+[  338s] [3/275] /usr/bin/cc -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/usr/include -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -g -DNDEBUG -MD -MT CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o -MF CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o.d -o CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/cn_main_loop.S
+[  338s] FAILED: CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o 
+[  338s] /usr/bin/cc -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/usr/include -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -g -DNDEBUG -MD -MT CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o -MF CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o.d -o CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/cn_main_loop.S.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/cn_main_loop.S
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/cn_main_loop.S: Assembler messages:
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/cn_main_loop.S:6: Error: unknown pseudo-op: `.intel_syntax'
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/cn_main_loop.S:25: Warning: alignment too large: 63 assumed
+[  338s] 
+[  338s] /usr/lib64/gcc/riscv64-suse-linux/12/../../../../riscv64-suse-linux/bin/as: out of memory allocating 9223372036854841462 bytes after a total of 135168 bytes
+[  338s] [4/275] /usr/bin/cc -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/usr/include -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -g -DNDEBUG -MD -MT CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o -MF CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o.d -o CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/CryptonightR_template.S
+[  338s] FAILED: CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o 
+[  338s] /usr/bin/cc -DCL_TARGET_OPENCL_VERSION=200 -DCL_USE_DEPRECATED_OPENCL_1_2_APIS -DHAVE_BUILTIN_CLEAR_CACHE -DHAVE_ROTR -DHAVE_SYSLOG_H -DUNICODE -DXMRIG_64_BIT -DXMRIG_ALGO_ARGON2 -DXMRIG_ALGO_CN_FEMTO -DXMRIG_ALGO_CN_HEAVY -DXMRIG_ALGO_CN_LITE -DXMRIG_ALGO_CN_PICO -DXMRIG_ALGO_GHOSTRIDER -DXMRIG_ALGO_KAWPOW -DXMRIG_ALGO_RANDOMX -DXMRIG_FEATURE_ADL -DXMRIG_FEATURE_API -DXMRIG_FEATURE_ASM -DXMRIG_FEATURE_BENCHMARK -DXMRIG_FEATURE_CUDA -DXMRIG_FEATURE_DMI -DXMRIG_FEATURE_ENV -DXMRIG_FEATURE_HTTP -DXMRIG_FEATURE_HWLOC -DXMRIG_FEATURE_MSR -DXMRIG_FEATURE_NVML -DXMRIG_FEATURE_OPENCL -DXMRIG_FEATURE_TLS -DXMRIG_FIX_RYZEN -DXMRIG_JSON_SINGLE_LINE_ARRAY -DXMRIG_MINER_PROJECT -DXMRIG_OS_LINUX -DXMRIG_OS_UNIX -DXMRIG_STRICT_OPENCL_CACHE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -D__STDC_FORMAT_MACROS -I/usr/include -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src -I/home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/3rdparty -O2 -g -DNDEBUG -MD -MT CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o -MF CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o.d -o CMakeFiles/xmrig-asm.dir/src/crypto/cn/asm/CryptonightR_template.S.o -c /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/CryptonightR_template.S
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/CryptonightR_template.S: Assembler messages:
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/CryptonightR_template.S:6: Error: unknown pseudo-op: `.intel_syntax'
+[  338s] /home/abuild/rpmbuild/BUILD/xmrig-6.18.1/src/crypto/cn/asm/CryptonightR_template.inc:13: Warning: alignment too large: 63 assumed
+[  338s] 
+[  338s] /usr/lib64/gcc/riscv64-suse-linux/12/../../../../riscv64-suse-linux/bin/as: out of memory allocating 9223372036854841462 bytes after a total of 270336 bytes
+[  338s] ninja: build stopped: subcommand failed.
+[  338s] error: Bad exit status from /var/tmp/rpm-tmp.Rhe52x (%build)
+[  338s] 
+[  338s] RPM build errors:
+[  338s]     Bad exit status from /var/tmp/rpm-tmp.Rhe52x (%build)
+[  339s] ### VM INTERACTION START ###
+[  339s] [  330.552705][    T1] sysrq: Power Off
+[  339s] [  330.557050][   T16] reboot: Power down
+[  339s] ### VM INTERACTION END ###
+[  339s] 
+[  339s] old-cirrus4 failed "build xmrig.spec" at Wed Nov  2 12:24:14 UTC 2022.
+[  339s] 

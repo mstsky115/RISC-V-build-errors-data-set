@@ -1,0 +1,2080 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_19/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_19/root
+[    0s] 
+[    0s] 
+[    0s] beatles started "build python-pyp.spec" at Sat Feb 18 21:25:17 UTC 2023.
+[    0s] 
+[    0s] Building python-pyp for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '10204eb0e48eda2474cce900bd4799f0'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_19/.build-srcdir/python-pyp.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_19/.build-srcdir/python-pyp.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/19/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_19/.build.rpmlist /var/cache/obs/worker/root_19/.build-srcdir/python-pyp.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    2s] 
+[    2s] copying packages...
+[    2s] reordering...done
+[    2s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_19/.mount/boot/kernel -initrd /var/cache/obs/worker/root_19/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 25600 -drive file=/var/cache/obs/worker/root_19/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_19/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_19/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    7s] ### VM INTERACTION END ###
+[    7s] 2nd stage started in virtual machine
+[    7s] machine type: riscv64
+[    7s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[    7s] Increasing log level from now on...
+[    7s] [    2.967414][  T413] sysrq: Changing Loglevel
+[    7s] [    2.967534][  T413] sysrq: Loglevel set to 4
+[    7s] Enable sysrq operations
+[    7s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    7s] no label, UUID=a93580f6-91fa-4e04-89de-49387119de51
+[    7s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    7s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    7s] swapon /dev/vdb
+[    7s] WARNING: udev not running, creating extra device nodes
+[    8s] logging output to //.build.log...
+[    8s] processing recipe /.build-srcdir/python-pyp.spec ...
+[    8s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-pyp.spec build ...
+[    8s] initializing rpm db...
+[    9s] querying package ids...
+[   24s] [1/200] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   24s] [2/200] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   24s] [3/200] preinstalled attr-2.5.1-1.1
+[   24s] [4/200] preinstalled bash-5.2.15-8.1
+[   24s] [5/200] preinstalled bash-sh-5.2.15-8.1
+[   24s] [6/200] cumulate bc-1.07.1-4.1
+[   24s] [7/200] preinstalled binutils-2.39-3.1
+[   24s] [8/200] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   24s] [9/200] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   24s] [10/200] preinstalled build-mkbaselibs-20230215-1.1
+[   24s] [11/200] preinstalled bzip2-1.0.8-4.1
+[   24s] [12/200] preinstalled chkstat-1599_20221220-1.2
+[   24s] [13/200] preinstalled compat-usrmerge-build-84.87-5.1
+[   24s] [14/200] preinstalled compat-usrmerge-tools-84.87-5.1
+[   24s] [15/200] preinstalled coreutils-9.1-5.1
+[   24s] [16/200] preinstalled cpio-2.13-5.1
+[   24s] [17/200] preinstalled cpp-12-2.1
+[   24s] [18/200] preinstalled cpp12-12.2.1+git749-4.1
+[   24s] [19/200] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   24s] [20/200] preinstalled debugedit-5.0-5.1
+[   24s] [21/200] preinstalled diffutils-3.9-1.1
+[   24s] [22/200] preinstalled dwz-0.15-2.1
+[   24s] [23/200] preinstalled elfutils-0.188-3.2
+[   24s] [24/200] cumulate fdupes-2.2.1-1.1
+[   24s] [25/200] preinstalled file-5.44-1.2
+[   24s] [26/200] preinstalled file-magic-5.44-1.2
+[   24s] [27/200] preinstalled filesystem-84.87-12.1
+[   24s] [28/200] preinstalled fillup-1.42-279.1
+[   24s] [29/200] preinstalled findutils-4.9.0-2.1
+[   24s] [30/200] preinstalled gawk-5.2.1-2.1
+[   24s] [31/200] preinstalled gcc-12-2.1
+[   24s] [32/200] preinstalled gcc-PIE-12-2.1
+[   24s] [33/200] preinstalled gcc12-12.2.1+git749-4.1
+[   24s] [34/200] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   24s] [35/200] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   24s] [36/200] preinstalled gettext-tools-mini-0.21.1-1.1
+[   24s] [37/200] preinstalled glibc-2.37-1.1
+[   24s] [38/200] preinstalled glibc-devel-2.37-1.1
+[   24s] [39/200] preinstalled glibc-locale-base-2.37-1.1
+[   24s] [40/200] preinstalled grep-3.8-3.1
+[   24s] [41/200] preinstalled gzip-1.12-3.1
+[   24s] [42/200] preinstalled kernel-obs-build-6.1.12-1.1
+[   24s] [43/200] preinstalled libacl1-2.3.1-2.1
+[   24s] [44/200] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   24s] [45/200] preinstalled libasan8-13.0.1+git5428-6.1
+[   24s] [46/200] preinstalled libasm1-0.188-3.2
+[   24s] [47/200] preinstalled libatomic1-13.0.1+git5428-6.1
+[   24s] [48/200] preinstalled libattr1-2.5.1-1.1
+[   24s] [49/200] preinstalled libaudit1-3.0.6-4.1
+[   24s] [50/200] preinstalled libblkid1-2.38.1-7.1
+[   24s] [51/200] preinstalled libbz2-1-1.0.8-4.1
+[   24s] [52/200] preinstalled libcap-ng0-0.8.3-1.1
+[   24s] [53/200] preinstalled libcap2-2.67-1.1
+[   24s] [54/200] preinstalled libcrypt1-4.4.33-1.1
+[   24s] [55/200] preinstalled libctf-nobfd0-2.39-3.1
+[   24s] [56/200] preinstalled libctf0-2.39-3.1
+[   24s] [57/200] preinstalled libdb-4_8-4.8.30-39.1
+[   24s] [58/200] preinstalled libdw1-0.188-3.2
+[   24s] [59/200] preinstalled libeconf0-0.5.1-1.1
+[   24s] [60/200] preinstalled libelf1-0.188-3.2
+[   24s] [61/200] preinstalled libexpat1-2.5.0-2.1
+[   24s] [62/200] preinstalled libfdisk1-2.38.1-7.1
+[   24s] [63/200] preinstalled libffi8-3.4.4-1.1
+[   24s] [64/200] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   24s] [65/200] preinstalled libgcrypt20-1.10.1-1.1
+[   24s] [66/200] preinstalled libgdbm6-1.23-1.1
+[   24s] [67/200] preinstalled libgdbm_compat4-1.23-1.1
+[   24s] [68/200] preinstalled libgmp10-6.2.1-4.1
+[   24s] [69/200] preinstalled libgomp1-13.0.1+git5428-6.1
+[   24s] [70/200] preinstalled libgpg-error0-1.46-1.1
+[   24s] [71/200] preinstalled libisl23-0.25-1.1
+[   24s] [72/200] preinstalled liblua5_4-5-5.4.4-8.1
+[   24s] [73/200] preinstalled liblzma5-5.4.1-1.1
+[   24s] [74/200] preinstalled libmagic1-5.44-1.2
+[   24s] [75/200] preinstalled libmount1-2.38.1-7.1
+[   25s] [76/200] preinstalled libmpc3-1.3.1-1.2
+[   25s] [77/200] preinstalled libmpdec3-2.5.1-2.1
+[   25s] [78/200] preinstalled libmpfr6-4.2.0-1.1
+[   25s] [79/200] preinstalled libncurses6-6.4.20230128-5.1
+[   25s] [80/200] cumulate libonig5-6.9.8-1.1
+[   25s] [81/200] preinstalled libopenssl3-3.0.7-3.1
+[   25s] [82/200] preinstalled libpcre2-8-0-10.42-3.2
+[   25s] [83/200] preinstalled libpkgconf3-1.8.0-2.1
+[   25s] [84/200] preinstalled libpopt0-1.19-1.1
+[   25s] [85/200] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   25s] [86/200] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   25s] [87/200] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   25s] [88/200] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   25s] [89/200] preinstalled libreadline8-8.2-2.1
+[   25s] [90/200] preinstalled librpmbuild9-4.18.0-3.2
+[   25s] [91/200] preinstalled libseccomp2-2.5.4-2.1
+[   25s] [92/200] preinstalled libselinux1-3.4-2.1
+[   25s] [93/200] preinstalled libsemanage-conf-3.4-1.1
+[   25s] [94/200] preinstalled libsemanage2-3.4-1.1
+[   25s] [95/200] preinstalled libsepol2-3.4-1.1
+[   25s] [96/200] preinstalled libsmartcols1-2.38.1-7.1
+[   25s] [97/200] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   25s] [98/200] preinstalled libsubid4-4.13-3.1
+[   25s] [99/200] preinstalled libubsan1-13.0.1+git5428-6.1
+[   25s] [100/200] preinstalled libutempter0-1.2.0-3.2
+[   25s] [101/200] preinstalled libuuid1-2.38.1-7.1
+[   25s] [102/200] preinstalled libxcrypt-devel-4.4.33-1.1
+[   25s] [103/200] preinstalled libz1-1.2.13-2.1
+[   25s] [104/200] preinstalled libzstd1-1.5.2-2.1
+[   25s] [105/200] preinstalled linux-glibc-devel-6.1-1.1
+[   25s] [106/200] preinstalled login_defs-4.13-3.1
+[   25s] [107/200] preinstalled lua54-5.4.4-8.1
+[   25s] [108/200] preinstalled make-4.4-2.1
+[   25s] [109/200] preinstalled ncurses-utils-6.4.20230128-5.1
+[   25s] [110/200] preinstalled pam-1.5.2-12.1
+[   25s] [111/200] preinstalled patch-2.7.6-6.1
+[   25s] [112/200] preinstalled perl-5.36.0-4.1
+[   25s] [113/200] preinstalled perl-base-5.36.0-4.1
+[   25s] [114/200] preinstalled permissions-1599_20221220-1.2
+[   25s] [115/200] preinstalled permissions-config-1599_20221220-1.2
+[   25s] [116/200] preinstalled pkgconf-1.8.0-2.1
+[   25s] [117/200] preinstalled pkgconf-m4-1.8.0-2.1
+[   25s] [118/200] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   25s] [119/200] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   25s] [120/200] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   25s] [121/200] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   25s] [122/200] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   25s] [123/200] cumulate python310-attrs-22.2.0-1.2
+[   25s] [124/200] preinstalled python310-base-3.10.9-2.2
+[   25s] [125/200] cumulate python310-exceptiongroup-1.1.0-1.2
+[   25s] [126/200] cumulate python310-iniconfig-1.1.1-3.2
+[   25s] [127/200] preinstalled python310-packaging-23.0-1.1
+[   25s] [128/200] cumulate python310-pluggy-1.0.0-1.5
+[   25s] [129/200] preinstalled python310-setuptools-65.6.3-1.2
+[   25s] [130/200] cumulate python310-six-1.16.0-2.5
+[   25s] [131/200] cumulate python310-tomli-2.0.1-1.3
+[   25s] [132/200] cumulate python310-zipp-3.8.1-1.2
+[   25s] [133/200] cumulate python311-attrs-22.2.0-1.2
+[   25s] [134/200] preinstalled python311-base-3.11.1-4.2
+[   25s] [135/200] cumulate python311-exceptiongroup-1.1.0-1.2
+[   25s] [136/200] cumulate python311-iniconfig-1.1.1-3.2
+[   25s] [137/200] cumulate python311-packaging-23.0-1.2
+[   25s] [138/200] cumulate python311-pluggy-1.0.0-1.5
+[   25s] [139/200] preinstalled python311-setuptools-65.6.3-1.2
+[   25s] [140/200] cumulate python311-six-1.16.0-2.5
+[   25s] [141/200] cumulate python311-tomli-2.0.1-1.3
+[   25s] [142/200] cumulate python311-zipp-3.8.1-1.2
+[   25s] [143/200] cumulate python38-attrs-22.2.0-1.2
+[   25s] [144/200] preinstalled python38-base-3.8.16-3.2
+[   25s] [145/200] cumulate python38-exceptiongroup-1.1.0-1.2
+[   25s] [146/200] cumulate python38-iniconfig-1.1.1-3.2
+[   25s] [147/200] cumulate python38-packaging-23.0-1.2
+[   25s] [148/200] cumulate python38-pluggy-1.0.0-1.5
+[   25s] [149/200] preinstalled python38-setuptools-65.6.3-1.2
+[   25s] [150/200] cumulate python38-six-1.16.0-2.5
+[   25s] [151/200] cumulate python38-tomli-2.0.1-1.3
+[   25s] [152/200] cumulate python38-zipp-3.8.1-1.2
+[   25s] [153/200] cumulate python39-attrs-22.2.0-1.2
+[   25s] [154/200] preinstalled python39-base-3.9.16-3.2
+[   25s] [155/200] cumulate python39-exceptiongroup-1.1.0-1.2
+[   25s] [156/200] cumulate python39-iniconfig-1.1.1-3.2
+[   25s] [157/200] cumulate python39-packaging-23.0-1.2
+[   25s] [158/200] cumulate python39-pluggy-1.0.0-1.5
+[   25s] [159/200] preinstalled python39-setuptools-65.6.3-1.2
+[   25s] [160/200] cumulate python39-six-1.16.0-2.5
+[   25s] [161/200] cumulate python39-tomli-2.0.1-1.3
+[   25s] [162/200] cumulate python39-zipp-3.8.1-1.2
+[   25s] [163/200] preinstalled qemu-linux-user-7.1.0-50.1
+[   25s] [164/200] preinstalled rpm-4.18.0-3.2
+[   25s] [165/200] preinstalled rpm-build-4.18.0-3.2
+[   25s] [166/200] preinstalled rpm-build-perl-4.18.0-3.2
+[   25s] [167/200] preinstalled rpm-config-SUSE-20220926-1.1
+[   25s] [168/200] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   25s] [169/200] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   25s] [170/200] preinstalled sed-4.9-2.1
+[   25s] [171/200] preinstalled shadow-4.13-3.1
+[   25s] [172/200] preinstalled system-group-hardware-20170617-24.1
+[   25s] [173/200] preinstalled system-user-root-20190513-2.1
+[   25s] [174/200] preinstalled systemd-rpm-macros-19-1.1
+[   25s] [175/200] preinstalled sysuser-shadow-3.1-5.1
+[   25s] [176/200] preinstalled tar-1.34-9.1
+[   25s] [177/200] preinstalled terminfo-base-6.4.20230128-5.1
+[   25s] [178/200] preinstalled update-alternatives-1.21.8-1.1
+[   25s] [179/200] preinstalled util-linux-2.38.1-7.1
+[   25s] [180/200] preinstalled which-2.21-5.1
+[   25s] [181/200] preinstalled xz-5.4.1-1.1
+[   25s] [182/200] cumulate alts-1.2+3.b848aad-3.1
+[   25s] [183/200] cumulate libjq1-1.6-3.1
+[   25s] [184/200] cumulate python310-importlib-metadata-6.0.0-1.2
+[   25s] [185/200] cumulate python311-importlib-metadata-6.0.0-1.2
+[   25s] [186/200] cumulate python38-importlib-metadata-6.0.0-1.2
+[   25s] [187/200] cumulate python39-importlib-metadata-6.0.0-1.2
+[   25s] [188/200] cumulate jq-1.6-3.1
+[   25s] [189/200] cumulate python310-wheel-0.38.4-1.2
+[   25s] [190/200] cumulate python311-wheel-0.38.4-1.2
+[   25s] [191/200] cumulate python38-wheel-0.38.4-1.2
+[   25s] [192/200] cumulate python39-wheel-0.38.4-1.2
+[   25s] [193/200] cumulate python310-pytest-7.2.0-2.2
+[   25s] [194/200] cumulate python311-pytest-7.2.0-2.2
+[   25s] [195/200] cumulate python38-pytest-7.2.0-2.2
+[   25s] [196/200] cumulate python39-pytest-7.2.0-2.2
+[   25s] [197/200] cumulate python310-astunparse-1.6.3-4.1
+[   25s] [198/200] cumulate python311-astunparse-1.6.3-4.1
+[   25s] [199/200] cumulate python38-astunparse-1.6.3-4.1
+[   25s] [200/200] cumulate python39-astunparse-1.6.3-4.1
+[   25s] now installing cumulated packages
+[   25s] Preparing...                          ########################################
+[   25s] Updating / installing...
+[   25s] python39-zipp-3.8.1-1.2               ########################################
+[   25s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   25s] python39-tomli-2.0.1-1.3              ########################################
+[   25s] python39-six-1.16.0-2.5               ########################################
+[   25s] python39-pluggy-1.0.0-1.5             ########################################
+[   25s] python39-packaging-23.0-1.2           ########################################
+[   25s] python39-iniconfig-1.1.1-3.2          ########################################
+[   25s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   25s] python39-attrs-22.2.0-1.2             ########################################
+[   25s] python38-zipp-3.8.1-1.2               ########################################
+[   25s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   25s] python38-tomli-2.0.1-1.3              ########################################
+[   25s] python38-six-1.16.0-2.5               ########################################
+[   25s] python38-pluggy-1.0.0-1.5             ########################################
+[   26s] python38-packaging-23.0-1.2           ########################################
+[   26s] python38-iniconfig-1.1.1-3.2          ########################################
+[   26s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   26s] python38-attrs-22.2.0-1.2             ########################################
+[   26s] python311-zipp-3.8.1-1.2              ########################################
+[   26s] python311-importlib-metadata-6.0.0-1.2########################################
+[   26s] python311-tomli-2.0.1-1.3             ########################################
+[   26s] python311-six-1.16.0-2.5              ########################################
+[   26s] python311-pluggy-1.0.0-1.5            ########################################
+[   26s] python311-packaging-23.0-1.2          ########################################
+[   26s] python311-iniconfig-1.1.1-3.2         ########################################
+[   26s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   26s] python311-attrs-22.2.0-1.2            ########################################
+[   26s] python310-zipp-3.8.1-1.2              ########################################
+[   26s] python310-importlib-metadata-6.0.0-1.2########################################
+[   26s] python310-tomli-2.0.1-1.3             ########################################
+[   26s] python310-six-1.16.0-2.5              ########################################
+[   26s] python310-pluggy-1.0.0-1.5            ########################################
+[   26s] python310-iniconfig-1.1.1-3.2         ########################################
+[   26s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   26s] python310-attrs-22.2.0-1.2            ########################################
+[   26s] libonig5-6.9.8-1.1                    ########################################
+[   26s] libjq1-1.6-3.1                        ########################################
+[   26s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   26s] alts-1.2+3.b848aad-3.1                ########################################
+[   26s] python310-wheel-0.38.4-1.2            ########################################
+[   27s] python311-wheel-0.38.4-1.2            ########################################
+[   27s] python38-wheel-0.38.4-1.2             ########################################
+[   27s] python39-wheel-0.38.4-1.2             ########################################
+[   27s] python39-astunparse-1.6.3-4.1         ########################################
+[   27s] python38-astunparse-1.6.3-4.1         ########################################
+[   27s] python311-astunparse-1.6.3-4.1        ########################################
+[   27s] python310-astunparse-1.6.3-4.1        ########################################
+[   28s] python310-pytest-7.2.0-2.2            ########################################
+[   28s] python311-pytest-7.2.0-2.2            ########################################
+[   29s] python38-pytest-7.2.0-2.2             ########################################
+[   29s] python39-pytest-7.2.0-2.2             ########################################
+[   29s] jq-1.6-3.1                            ########################################
+[   29s] fdupes-2.2.1-1.1                      ########################################
+[   29s] bc-1.07.1-4.1                         ########################################
+[   31s] now finalizing build dir...
+[   31s] ... running 01-add_abuild_user_to_trusted_group
+[   31s] ... running 02-set_timezone_to_utc
+[   32s] ... running 03-set-permissions-secure
+[   32s] ... running 11-hack_uname_version_to_kernel_version
+[   37s] -----------------------------------------------------------------
+[   37s] I have the following modifications for python-pyp.spec:
+[   37s] 24c24
+[   37s] < Release:        0
+[   37s] ---
+[   37s] > Release:        1.5
+[   41s] build target is riscv64-suse-linux
+[   41s] -----------------------------------------------------------------
+[   41s] ----- building python-pyp.spec (user abuild)
+[   41s] -----------------------------------------------------------------
+[   41s] -----------------------------------------------------------------
+[   43s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/10204eb0e48eda2474cce900bd4799f0-python-pyp' /home/abuild/rpmbuild/SOURCES/python-pyp.spec
+[   61s] Building target platforms: riscv64-suse-linux
+[   61s] Building for target riscv64-suse-linux
+[   61s] setting SOURCE_DATE_EPOCH=1631145600
+[   61s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.bRTLpx
+[   61s] + umask 022
+[   61s] + cd /home/abuild/rpmbuild/BUILD
+[   61s] + cd /home/abuild/rpmbuild/BUILD
+[   61s] + rm -rf pyp-0.3.4
+[   61s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/pyp-0.3.4.tar.gz
+[   61s] + STATUS=0
+[   61s] + '[' 0 -ne 0 ']'
+[   61s] + cd pyp-0.3.4
+[   61s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   61s] + sed -i '/^#!\//, 1d' pyp.py
+[   61s] + RPM_EC=0
+[   61s] ++ jobs -p
+[   61s] + exit 0
+[   62s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.Lm9rgE
+[   62s] + umask 022
+[   62s] + cd /home/abuild/rpmbuild/BUILD
+[   62s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64
+[   62s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64
+[   62s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   62s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64
+[   62s] + cd pyp-0.3.4
+[   62s] + ref=/usr/lib/rpm
+[   62s] + mints=0
+[   62s] + case $(uname -m) in
+[   62s] ++ uname -m
+[   62s] + mints=20160911
+[   62s] + for s in guess sub
+[   62s] ++ find -maxdepth 8 -name config.guess
+[   62s] + for s in guess sub
+[   62s] ++ find -maxdepth 8 -name config.sub
+[   62s] ++ '[' -f _current_flavor ']'
+[   62s] ++ true
+[   62s] + last_flavor=
+[   62s] + '[' -z '' ']'
+[   62s] + last_flavor=tmp
+[   62s] + '[' tmp '!=' python38 ']'
+[   62s] + '[' -d build ']'
+[   62s] + '[' -d _build.python38 ']'
+[   62s] + echo python38
+[   62s] + python_flavor=python38
+[   62s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[   65s] running build
+[   65s] running build_py
+[   65s] creating build
+[   65s] creating build/lib
+[   65s] copying pyp.py -> build/lib
+[   65s] ++ '[' -f _current_flavor ']'
+[   65s] ++ cat _current_flavor
+[   65s] + last_flavor=python38
+[   65s] + '[' -z python38 ']'
+[   65s] + '[' python38 '!=' python39 ']'
+[   65s] + '[' -d build ']'
+[   65s] + mv build _build.python38
+[   65s] + '[' -d _build.python39 ']'
+[   65s] + echo python39
+[   65s] + python_flavor=python39
+[   65s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[   67s] running build
+[   67s] running build_py
+[   67s] creating build
+[   67s] creating build/lib
+[   67s] copying pyp.py -> build/lib
+[   67s] ++ '[' -f _current_flavor ']'
+[   67s] ++ cat _current_flavor
+[   67s] + last_flavor=python39
+[   67s] + '[' -z python39 ']'
+[   67s] + '[' python39 '!=' python311 ']'
+[   67s] + '[' -d build ']'
+[   67s] + mv build _build.python39
+[   67s] + '[' -d _build.python311 ']'
+[   67s] + echo python311
+[   67s] + python_flavor=python311
+[   67s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[   69s] running build
+[   69s] running build_py
+[   69s] creating build
+[   69s] creating build/lib
+[   69s] copying pyp.py -> build/lib
+[   69s] ++ '[' -f _current_flavor ']'
+[   69s] ++ cat _current_flavor
+[   69s] + last_flavor=python311
+[   69s] + '[' -z python311 ']'
+[   69s] + '[' python311 '!=' python310 ']'
+[   69s] + '[' -d build ']'
+[   69s] + mv build _build.python311
+[   69s] + '[' -d _build.python310 ']'
+[   69s] + echo python310
+[   69s] + python_flavor=python310
+[   69s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[   71s] running build
+[   71s] running build_py
+[   71s] creating build
+[   71s] creating build/lib
+[   71s] copying pyp.py -> build/lib
+[   71s] + RPM_EC=0
+[   71s] ++ jobs -p
+[   71s] + exit 0
+[   71s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.c8s6Eo
+[   71s] + umask 022
+[   71s] + cd /home/abuild/rpmbuild/BUILD
+[   71s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64
+[   71s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   72s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64
+[   72s] + cd pyp-0.3.4
+[   72s] ++ '[' -f _current_flavor ']'
+[   72s] ++ cat _current_flavor
+[   72s] + last_flavor=python310
+[   72s] + '[' -z python310 ']'
+[   72s] + '[' python310 '!=' python38 ']'
+[   72s] + '[' -d build ']'
+[   72s] + mv build _build.python310
+[   72s] + '[' -d _build.python38 ']'
+[   72s] + mv _build.python38 build
+[   72s] + echo python38
+[   72s] + python_flavor=python38
+[   72s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64 --prefix /usr
+[   74s] running install
+[   74s] running install_lib
+[   74s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr
+[   74s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib
+[   74s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8
+[   74s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages
+[   74s] copying build/lib/pyp.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages
+[   74s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages/pyp.py to pyp.cpython-38.pyc
+[   74s] writing byte-compilation script '/tmp/tmpwlwfz4q_.py'
+[   74s] /usr/bin/python3.8 /tmp/tmpwlwfz4q_.py
+[   76s] removing /tmp/tmpwlwfz4q_.py
+[   76s] running install_egg_info
+[   76s] running egg_info
+[   76s] creating pypyp.egg-info
+[   76s] writing pypyp.egg-info/PKG-INFO
+[   76s] writing dependency_links to pypyp.egg-info/dependency_links.txt
+[   76s] writing entry points to pypyp.egg-info/entry_points.txt
+[   76s] writing requirements to pypyp.egg-info/requires.txt
+[   76s] writing top-level names to pypyp.egg-info/top_level.txt
+[   76s] writing manifest file 'pypyp.egg-info/SOURCES.txt'
+[   76s] reading manifest file 'pypyp.egg-info/SOURCES.txt'
+[   76s] adding license file 'LICENSE'
+[   76s] writing manifest file 'pypyp.egg-info/SOURCES.txt'
+[   76s] Copying pypyp.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages/pypyp-0.3.4-py3.8.egg-info
+[   76s] running install_scripts
+[   76s] Installing pyp script to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin
+[   76s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   76s]   warnings.warn(
+[   77s] ++ '[' -f _current_flavor ']'
+[   77s] ++ cat _current_flavor
+[   77s] + last_flavor=python38
+[   77s] + '[' -z python38 ']'
+[   77s] + '[' python38 '!=' python39 ']'
+[   77s] + '[' -d build ']'
+[   77s] + mv build _build.python38
+[   77s] + '[' -d _build.python39 ']'
+[   77s] + mv _build.python39 build
+[   77s] + echo python39
+[   77s] + python_flavor=python39
+[   77s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64 --prefix /usr
+[   79s] running install
+[   79s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   79s]   warnings.warn(
+[   79s] running install_lib
+[   79s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9
+[   79s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages
+[   79s] copying build/lib/pyp.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages
+[   79s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages/pyp.py to pyp.cpython-39.pyc
+[   79s] writing byte-compilation script '/tmp/tmprca6nzsl.py'
+[   79s] /usr/bin/python3.9 /tmp/tmprca6nzsl.py
+[   81s] removing /tmp/tmprca6nzsl.py
+[   81s] running install_egg_info
+[   81s] running egg_info
+[   81s] writing pypyp.egg-info/PKG-INFO
+[   81s] writing dependency_links to pypyp.egg-info/dependency_links.txt
+[   81s] writing entry points to pypyp.egg-info/entry_points.txt
+[   81s] writing requirements to pypyp.egg-info/requires.txt
+[   81s] writing top-level names to pypyp.egg-info/top_level.txt
+[   81s] reading manifest file 'pypyp.egg-info/SOURCES.txt'
+[   81s] adding license file 'LICENSE'
+[   81s] writing manifest file 'pypyp.egg-info/SOURCES.txt'
+[   81s] Copying pypyp.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages/pypyp-0.3.4-py3.9.egg-info
+[   81s] running install_scripts
+[   81s] Installing pyp script to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin
+[   81s] ++ '[' -f _current_flavor ']'
+[   81s] ++ cat _current_flavor
+[   81s] + last_flavor=python39
+[   81s] + '[' -z python39 ']'
+[   81s] + '[' python39 '!=' python311 ']'
+[   81s] + '[' -d build ']'
+[   81s] + mv build _build.python39
+[   81s] + '[' -d _build.python311 ']'
+[   81s] + mv _build.python311 build
+[   81s] + echo python311
+[   81s] + python_flavor=python311
+[   81s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64 --prefix /usr
+[   83s] running install
+[   83s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   83s]   warnings.warn(
+[   83s] running install_lib
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages
+[   84s] copying build/lib/pyp.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages/pyp.py to pyp.cpython-311.pyc
+[   84s] writing byte-compilation script '/tmp/tmpqsp1ui9f.py'
+[   84s] /usr/bin/python3.11 /tmp/tmpqsp1ui9f.py
+[   85s] removing /tmp/tmpqsp1ui9f.py
+[   85s] running install_egg_info
+[   85s] running egg_info
+[   85s] writing pypyp.egg-info/PKG-INFO
+[   85s] writing dependency_links to pypyp.egg-info/dependency_links.txt
+[   85s] writing entry points to pypyp.egg-info/entry_points.txt
+[   85s] writing requirements to pypyp.egg-info/requires.txt
+[   85s] writing top-level names to pypyp.egg-info/top_level.txt
+[   85s] reading manifest file 'pypyp.egg-info/SOURCES.txt'
+[   85s] adding license file 'LICENSE'
+[   86s] writing manifest file 'pypyp.egg-info/SOURCES.txt'
+[   86s] Copying pypyp.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages/pypyp-0.3.4-py3.11.egg-info
+[   86s] running install_scripts
+[   86s] Installing pyp script to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin
+[   86s] ++ '[' -f _current_flavor ']'
+[   86s] ++ cat _current_flavor
+[   86s] + last_flavor=python311
+[   86s] + '[' -z python311 ']'
+[   86s] + '[' python311 '!=' python310 ']'
+[   86s] + '[' -d build ']'
+[   86s] + mv build _build.python311
+[   86s] + '[' -d _build.python310 ']'
+[   86s] + mv _build.python310 build
+[   86s] + echo python310
+[   86s] + python_flavor=python310
+[   86s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64 --prefix /usr
+[   88s] running install
+[   88s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   88s]   warnings.warn(
+[   88s] running install_lib
+[   88s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10
+[   88s] creating /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10/site-packages
+[   88s] copying build/lib/pyp.py -> /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10/site-packages
+[   88s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10/site-packages/pyp.py to pyp.cpython-310.pyc
+[   88s] writing byte-compilation script '/tmp/tmpllv2o74f.py'
+[   88s] /usr/bin/python3.10 /tmp/tmpllv2o74f.py
+[   90s] removing /tmp/tmpllv2o74f.py
+[   90s] running install_egg_info
+[   91s] running egg_info
+[   91s] writing pypyp.egg-info/PKG-INFO
+[   91s] writing dependency_links to pypyp.egg-info/dependency_links.txt
+[   91s] writing entry points to pypyp.egg-info/entry_points.txt
+[   91s] writing requirements to pypyp.egg-info/requires.txt
+[   91s] writing top-level names to pypyp.egg-info/top_level.txt
+[   91s] reading manifest file 'pypyp.egg-info/SOURCES.txt'
+[   91s] adding license file 'LICENSE'
+[   91s] writing manifest file 'pypyp.egg-info/SOURCES.txt'
+[   91s] Copying pypyp.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10/site-packages/pypyp-0.3.4-py3.10.egg-info
+[   91s] running install_scripts
+[   91s] Installing pyp script to /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin
+[   91s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.8
+[   91s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.8@' /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.8
+[   91s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.9
+[   91s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.9@' /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.9
+[   91s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.11
+[   91s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.11
+[   91s] + cp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.10
+[   91s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.10
+[   91s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp
+[   91s] + alternative_target=/usr/bin/pyp
+[   91s] + [[ /usr/bin/pyp == /usr/share/man* ]]
+[   91s] + '[' 0 -eq 1 ']'
+[   91s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/etc/alternatives
+[   91s] + touch /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/etc/alternatives/pyp
+[   91s] + ln -sf /etc/alternatives/pyp /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp
+[   92s] ++ '[' -f _current_flavor ']'
+[   92s] ++ cat _current_flavor
+[   92s] + last_flavor=python310
+[   92s] + '[' -z python310 ']'
+[   92s] + '[' python310 '!=' python38 ']'
+[   92s] + '[' -d build ']'
+[   92s] + mv build _build.python310
+[   92s] + '[' -d _build.python38 ']'
+[   92s] + mv _build.python38 build
+[   92s] + echo python38
+[   92s] + python_flavor=python38
+[   92s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages
+[   92s] ++ '[' -f _current_flavor ']'
+[   92s] ++ cat _current_flavor
+[   92s] + last_flavor=python38
+[   92s] + '[' -z python38 ']'
+[   92s] + '[' python38 '!=' python39 ']'
+[   92s] + '[' -d build ']'
+[   92s] + mv build _build.python38
+[   92s] + '[' -d _build.python39 ']'
+[   92s] + mv _build.python39 build
+[   92s] + echo python39
+[   92s] + python_flavor=python39
+[   92s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages
+[   92s] ++ '[' -f _current_flavor ']'
+[   92s] ++ cat _current_flavor
+[   92s] + last_flavor=python39
+[   92s] + '[' -z python39 ']'
+[   92s] + '[' python39 '!=' python311 ']'
+[   92s] + '[' -d build ']'
+[   92s] + mv build _build.python39
+[   92s] + '[' -d _build.python311 ']'
+[   92s] + mv _build.python311 build
+[   92s] + echo python311
+[   92s] + python_flavor=python311
+[   92s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages
+[   92s] Linking /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages/__pycache__/pyp.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages/__pycache__/pyp.cpython-311.pyc
+[   92s] ++ '[' -f _current_flavor ']'
+[   92s] ++ cat _current_flavor
+[   92s] + last_flavor=python311
+[   92s] + '[' -z python311 ']'
+[   92s] + '[' python311 '!=' python310 ']'
+[   92s] + '[' -d build ']'
+[   92s] + mv build _build.python311
+[   92s] + '[' -d _build.python310 ']'
+[   92s] + mv _build.python310 build
+[   92s] + echo python310
+[   92s] + python_flavor=python310
+[   92s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.10/site-packages
+[   92s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/pyp-0.3.4
+[   93s] + /usr/lib/rpm/brp-compress
+[   93s] + /usr/lib/rpm/brp-suse
+[   93s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[   93s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[   94s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[   94s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[   94s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[   94s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.rIZnx2
+[   94s] + umask 022
+[   94s] + cd /home/abuild/rpmbuild/BUILD
+[   94s] + cd pyp-0.3.4
+[   94s] ++ pwd
+[   94s] + export PATH=/home/abuild/rpmbuild/BUILD/pyp-0.3.4:/usr/local/bin:/usr/bin:/bin
+[   94s] + PATH=/home/abuild/rpmbuild/BUILD/pyp-0.3.4:/usr/local/bin:/usr/bin:/bin
+[   94s] ++ '[' -f _current_flavor ']'
+[   94s] ++ cat _current_flavor
+[   94s] + last_flavor=python310
+[   94s] + '[' -z python310 ']'
+[   94s] + '[' python310 '!=' python38 ']'
+[   94s] + '[' -d build ']'
+[   94s] + mv build _build.python310
+[   94s] + '[' -d _build.python38 ']'
+[   94s] + mv _build.python38 build
+[   94s] + echo python38
+[   94s] + python_flavor=python38
+[   94s] + ln -sf /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.8 pyp
+[   94s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.8/site-packages
+[   94s] + py.test-3.8 -vv
+[   96s] ============================= test session starts ==============================
+[   96s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[   96s] cachedir: .pytest_cache
+[   96s] rootdir: /home/abuild/rpmbuild/BUILD/pyp-0.3.4
+[   97s] collecting ... collected 34 items
+[   97s] 
+[   97s] tests/test_find_names.py::test_basic PASSED                              [  2%]
+[   97s] tests/test_find_names.py::test_builtins PASSED                           [  5%]
+[   97s] tests/test_find_names.py::test_loops PASSED                              [  8%]
+[   97s] tests/test_find_names.py::test_weird_assignments PASSED                  [ 11%]
+[   97s] tests/test_find_names.py::test_more_control_flow PASSED                  [ 14%]
+[   97s] tests/test_find_names.py::test_import PASSED                             [ 17%]
+[   97s] tests/test_find_names.py::test_walrus PASSED                             [ 20%]
+[   97s] tests/test_find_names.py::test_comprehensions PASSED                     [ 23%]
+[   97s] tests/test_find_names.py::test_args PASSED                               [ 26%]
+[   97s] tests/test_find_names.py::test_definitions PASSED                        [ 29%]
+[   97s] tests/test_find_names.py::test_scope PASSED                              [ 32%]
+[   97s] tests/test_find_names.py::test_scope_failures XFAIL (do not currently fully support scopes) [ 35%]
+[   97s] tests/test_find_names.py::test_del XFAIL (do not currently support deletes) [ 38%]
+[  100s] tests/test_pyp.py::test_examples PASSED                                  [ 41%]
+[  100s] tests/test_pyp.py::test_magic_variable_failures PASSED                   [ 44%]
+[  100s] tests/test_pyp.py::test_user_error PASSED                                [ 47%]
+[  102s] tests/test_pyp.py::test_tracebacks PASSED                                [ 50%]
+[  102s] tests/test_pyp.py::test_explain PASSED                                   [ 52%]
+[  102s] tests/test_pyp.py::test_disable_automatic_print PASSED                   [ 55%]
+[  102s] tests/test_pyp.py::test_automatic_print_inside_statement PASSED          [ 58%]
+[  102s] tests/test_pyp.py::test_automatic_print_nested_scope PASSED              [ 61%]
+[  102s] tests/test_pyp.py::test_pypprint_basic PASSED                            [ 64%]
+[  102s] tests/test_pyp.py::test_get_valid_name PASSED                            [ 67%]
+[  102s] tests/test_pyp.py::test_wildcard_import PASSED                           [ 70%]
+[  102s] tests/test_pyp.py::test_config_imports PASSED                            [ 73%]
+[  102s] tests/test_pyp.py::test_config_invalid PASSED                            [ 76%]
+[  102s] tests/test_pyp.py::test_config_shebang PASSED                            [ 79%]
+[  102s] tests/test_pyp.py::test_config_lazy_wildcard_import PASSED               [ 82%]
+[  102s] tests/test_pyp.py::test_config_scope PASSED                              [ 85%]
+[  103s] tests/test_pyp.py::test_config_shadow PASSED                             [ 88%]
+[  103s] tests/test_pyp.py::test_config_recursive PASSED                          [ 91%]
+[  103s] tests/test_pyp.py::test_config_conditional PASSED                        [ 94%]
+[  103s] tests/test_pyp.py::test_config_conditional_current_shortcoming XFAIL (We don't currently support this) [ 97%]
+[  103s] tests/test_pyp.py::test_config_end_to_end PASSED                         [100%]
+[  103s] 
+[  103s] ======================== 31 passed, 3 xfailed in 6.47s =========================
+[  103s] ++ '[' -f _current_flavor ']'
+[  103s] ++ cat _current_flavor
+[  103s] + last_flavor=python38
+[  103s] + '[' -z python38 ']'
+[  103s] + '[' python38 '!=' python39 ']'
+[  103s] + '[' -d build ']'
+[  103s] + mv build _build.python38
+[  103s] + '[' -d _build.python39 ']'
+[  103s] + mv _build.python39 build
+[  103s] + echo python39
+[  103s] + python_flavor=python39
+[  103s] + ln -sf /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.9 pyp
+[  103s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.9/site-packages
+[  103s] + py.test-3.9 -vv
+[  105s] ============================= test session starts ==============================
+[  105s] platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.9
+[  105s] cachedir: .pytest_cache
+[  105s] rootdir: /home/abuild/rpmbuild/BUILD/pyp-0.3.4
+[  106s] collecting ... collected 34 items
+[  106s] 
+[  106s] tests/test_find_names.py::test_basic PASSED                              [  2%]
+[  106s] tests/test_find_names.py::test_builtins PASSED                           [  5%]
+[  106s] tests/test_find_names.py::test_loops PASSED                              [  8%]
+[  106s] tests/test_find_names.py::test_weird_assignments PASSED                  [ 11%]
+[  106s] tests/test_find_names.py::test_more_control_flow PASSED                  [ 14%]
+[  106s] tests/test_find_names.py::test_import PASSED                             [ 17%]
+[  106s] tests/test_find_names.py::test_walrus PASSED                             [ 20%]
+[  106s] tests/test_find_names.py::test_comprehensions PASSED                     [ 23%]
+[  106s] tests/test_find_names.py::test_args PASSED                               [ 26%]
+[  106s] tests/test_find_names.py::test_definitions PASSED                        [ 29%]
+[  106s] tests/test_find_names.py::test_scope PASSED                              [ 32%]
+[  107s] tests/test_find_names.py::test_scope_failures XFAIL (do not currently fully support scopes) [ 35%]
+[  107s] tests/test_find_names.py::test_del XFAIL (do not currently support deletes) [ 38%]
+[  110s] tests/test_pyp.py::test_examples PASSED                                  [ 41%]
+[  110s] tests/test_pyp.py::test_magic_variable_failures PASSED                   [ 44%]
+[  110s] tests/test_pyp.py::test_user_error PASSED                                [ 47%]
+[  112s] tests/test_pyp.py::test_tracebacks PASSED                                [ 50%]
+[  112s] tests/test_pyp.py::test_explain PASSED                                   [ 52%]
+[  112s] tests/test_pyp.py::test_disable_automatic_print PASSED                   [ 55%]
+[  112s] tests/test_pyp.py::test_automatic_print_inside_statement PASSED          [ 58%]
+[  112s] tests/test_pyp.py::test_automatic_print_nested_scope PASSED              [ 61%]
+[  112s] tests/test_pyp.py::test_pypprint_basic PASSED                            [ 64%]
+[  112s] tests/test_pyp.py::test_get_valid_name PASSED                            [ 67%]
+[  112s] tests/test_pyp.py::test_wildcard_import PASSED                           [ 70%]
+[  112s] tests/test_pyp.py::test_config_imports PASSED                            [ 73%]
+[  112s] tests/test_pyp.py::test_config_invalid PASSED                            [ 76%]
+[  112s] tests/test_pyp.py::test_config_shebang PASSED                            [ 79%]
+[  112s] tests/test_pyp.py::test_config_lazy_wildcard_import PASSED               [ 82%]
+[  112s] tests/test_pyp.py::test_config_scope PASSED                              [ 85%]
+[  112s] tests/test_pyp.py::test_config_shadow PASSED                             [ 88%]
+[  113s] tests/test_pyp.py::test_config_recursive PASSED                          [ 91%]
+[  113s] tests/test_pyp.py::test_config_conditional PASSED                        [ 94%]
+[  113s] tests/test_pyp.py::test_config_conditional_current_shortcoming XFAIL (We don't currently support this) [ 97%]
+[  113s] tests/test_pyp.py::test_config_end_to_end PASSED                         [100%]
+[  113s] 
+[  113s] ======================== 31 passed, 3 xfailed in 7.42s =========================
+[  113s] ++ '[' -f _current_flavor ']'
+[  113s] ++ cat _current_flavor
+[  113s] + last_flavor=python39
+[  113s] + '[' -z python39 ']'
+[  113s] + '[' python39 '!=' python311 ']'
+[  113s] + '[' -d build ']'
+[  113s] + mv build _build.python39
+[  113s] + '[' -d _build.python311 ']'
+[  113s] + mv _build.python311 build
+[  113s] + echo python311
+[  113s] + python_flavor=python311
+[  113s] + ln -sf /home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/bin/pyp-3.11 pyp
+[  113s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-pyp-0.3.4-1.5.riscv64/usr/lib/python3.11/site-packages
+[  113s] + py.test-3.11 -vv
+[  115s] ============================= test session starts ==============================
+[  115s] platform linux -- Python 3.11.1, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.11
+[  115s] cachedir: .pytest_cache
+[  115s] rootdir: /home/abuild/rpmbuild/BUILD/pyp-0.3.4
+[  116s] collecting ... collected 34 items
+[  116s] 
+[  116s] tests/test_find_names.py::test_basic PASSED                              [  2%]
+[  116s] tests/test_find_names.py::test_builtins PASSED                           [  5%]
+[  116s] tests/test_find_names.py::test_loops PASSED                              [  8%]
+[  116s] tests/test_find_names.py::test_weird_assignments PASSED                  [ 11%]
+[  116s] tests/test_find_names.py::test_more_control_flow PASSED                  [ 14%]
+[  116s] tests/test_find_names.py::test_import PASSED                             [ 17%]
+[  116s] tests/test_find_names.py::test_walrus PASSED                             [ 20%]
+[  116s] tests/test_find_names.py::test_comprehensions PASSED                     [ 23%]
+[  116s] tests/test_find_names.py::test_args PASSED                               [ 26%]
+[  116s] tests/test_find_names.py::test_definitions PASSED                        [ 29%]
+[  116s] tests/test_find_names.py::test_scope PASSED                              [ 32%]
+[  116s] tests/test_find_names.py::test_scope_failures XFAIL (do not currently fully support scopes) [ 35%]
+[  116s] tests/test_find_names.py::test_del XFAIL (do not currently support deletes) [ 38%]
+[  117s] tests/test_pyp.py::test_examples FAILED                                  [ 41%]
+[  117s] tests/test_pyp.py::test_magic_variable_failures PASSED                   [ 44%]
+[  117s] tests/test_pyp.py::test_user_error FAILED                                [ 47%]
+[  118s] tests/test_pyp.py::test_tracebacks FAILED                                [ 50%]
+[  119s] tests/test_pyp.py::test_explain FAILED                                   [ 52%]
+[  119s] tests/test_pyp.py::test_disable_automatic_print FAILED                   [ 55%]
+[  119s] tests/test_pyp.py::test_automatic_print_inside_statement FAILED          [ 58%]
+[  119s] tests/test_pyp.py::test_automatic_print_nested_scope PASSED              [ 61%]
+[  119s] tests/test_pyp.py::test_pypprint_basic FAILED                            [ 64%]
+[  120s] tests/test_pyp.py::test_get_valid_name FAILED                            [ 67%]
+[  120s] tests/test_pyp.py::test_wildcard_import PASSED                           [ 70%]
+[  120s] tests/test_pyp.py::test_config_imports PASSED                            [ 73%]
+[  120s] tests/test_pyp.py::test_config_invalid FAILED                            [ 76%]
+[  120s] tests/test_pyp.py::test_config_shebang PASSED                            [ 79%]
+[  120s] tests/test_pyp.py::test_config_lazy_wildcard_import FAILED               [ 82%]
+[  120s] tests/test_pyp.py::test_config_scope PASSED                              [ 85%]
+[  120s] tests/test_pyp.py::test_config_shadow FAILED                             [ 88%]
+[  120s] tests/test_pyp.py::test_config_recursive PASSED                          [ 91%]
+[  121s] tests/test_pyp.py::test_config_conditional PASSED                        [ 94%]
+[  121s] tests/test_pyp.py::test_config_conditional_current_shortcoming XFAIL (We don't currently support this) [ 97%]
+[  121s] tests/test_pyp.py::test_config_end_to_end FAILED                         [100%]
+[  121s] 
+[  121s] =================================== FAILURES ===================================
+[  121s] ________________________________ test_examples _________________________________
+[  121s] 
+[  121s] args = Namespace(code=['x[:4]'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_examples():
+[  121s]         """Test approximately the examples in the README."""
+[  121s]     
+[  121s]         example = "python\nsnake\nss\nmagpy\npiethon\nreadme.md\n"
+[  121s]     
+[  121s] >       compare_command(example_cmd="cut -c1-4", pyp_cmd="pyp 'x[:4]'", input=example)
+[  121s] 
+[  121s] tests/test_pyp.py:88: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:62: in compare_command
+[  121s]     pyp_output = run_cmd(pyp_cmd, input) if use_subprocess else run_pyp(pyp_cmd, input)
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['x[:4]'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] _______________________________ test_user_error ________________________________
+[  121s] 
+[  121s] args = Namespace(code=['1 / 0'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_user_error():
+[  121s]         pattern = re.compile("Invalid input.*SyntaxError", re.DOTALL)
+[  121s]         with pytest.raises(pyp.PypError, match="Invalid input"):
+[  121s]             run_pyp("pyp 'x +'")
+[  121s]     
+[  121s]         pattern = re.compile("Code raised.*Possible.*1 / 0.*ZeroDivisionError", re.DOTALL)
+[  121s]         with pytest.raises(pyp.PypError, match=pattern):
+[  121s] >           run_pyp("pyp '1 / 0'")
+[  121s] 
+[  121s] tests/test_pyp.py:161: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] cmd = ['1 / 0'], input = None
+[  121s] 
+[  121s]     def run_pyp(cmd: Union[str, List[str]], input: Optional[str] = None) -> str:
+[  121s]         """Run pyp in process. It's quicker and allows us to mock and so on."""
+[  121s]         if isinstance(cmd, str):
+[  121s]             cmd = shlex.split(cmd)
+[  121s]         if cmd[0] == "pyp":
+[  121s]             del cmd[0]
+[  121s]     
+[  121s]         output = io.StringIO()
+[  121s]         with contextlib.redirect_stdout(output):
+[  121s]             try:
+[  121s]                 old_stdin = sys.stdin
+[  121s]                 sys.stdin = io.StringIO(input)
+[  121s] >               pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] 
+[  121s] tests/test_pyp.py:48: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['1 / 0'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] 
+[  121s] During handling of the above exception, another exception occurred:
+[  121s] 
+[  121s]     def test_user_error():
+[  121s]         pattern = re.compile("Invalid input.*SyntaxError", re.DOTALL)
+[  121s]         with pytest.raises(pyp.PypError, match="Invalid input"):
+[  121s]             run_pyp("pyp 'x +'")
+[  121s]     
+[  121s]         pattern = re.compile("Code raised.*Possible.*1 / 0.*ZeroDivisionError", re.DOTALL)
+[  121s] >       with pytest.raises(pyp.PypError, match=pattern):
+[  121s] E       AssertionError: Regex pattern did not match.
+[  121s] E        Regex: re.compile('Code raised.*Possible.*1 / 0.*ZeroDivisionError', re.DOTALL)
+[  121s] E        Input: 'Code raised the following exception, consider using --explain to investigate:\n\nValueError: AST node line range (2, 1) is not valid'
+[  121s] 
+[  121s] tests/test_pyp.py:160: AssertionError
+[  121s] _______________________________ test_tracebacks ________________________________
+[  121s] 
+[  121s] args = Namespace(code=['1 / 0'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] During handling of the above exception, another exception occurred:
+[  121s] 
+[  121s] args = Namespace(code=['1 / 0'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s] >               tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s] 
+[  121s] pyp.py:574: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] self = <MagicMock name='TracebackException' id='274933875216'>
+[  121s] args = (<class 'ValueError'>, ValueError('AST node line range (2, 1) is not valid'), None)
+[  121s] kwargs = {}
+[  121s] 
+[  121s]     def __call__(self, /, *args, **kwargs):
+[  121s]         # can't use self in-case a function / method we are mocking uses self
+[  121s]         # in the signature
+[  121s]         self._mock_check_sig(*args, **kwargs)
+[  121s]         self._increment_mock_call(*args, **kwargs)
+[  121s] >       return self._mock_call(*args, **kwargs)
+[  121s] 
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1118: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] self = <MagicMock name='TracebackException' id='274933875216'>
+[  121s] args = (<class 'ValueError'>, ValueError('AST node line range (2, 1) is not valid'), None)
+[  121s] kwargs = {}
+[  121s] 
+[  121s]     def _mock_call(self, /, *args, **kwargs):
+[  121s] >       return self._execute_mock_call(*args, **kwargs)
+[  121s] 
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1122: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] self = <MagicMock name='TracebackException' id='274933875216'>
+[  121s] args = (<class 'ValueError'>, ValueError('AST node line range (2, 1) is not valid'), None)
+[  121s] kwargs = {}, effect = <function test_tracebacks.<locals>.effect at 0x4004063880>
+[  121s] 
+[  121s]     def _execute_mock_call(self, /, *args, **kwargs):
+[  121s]         # separate from _increment_mock_call so that awaited functions are
+[  121s]         # executed separately from their call, also AsyncMock overrides this method
+[  121s]     
+[  121s]         effect = self.side_effect
+[  121s]         if effect is not None:
+[  121s]             if _is_exception(effect):
+[  121s]                 raise effect
+[  121s]             elif not _callable(effect):
+[  121s]                 result = next(effect)
+[  121s]                 if _is_exception(result):
+[  121s]                     raise result
+[  121s]             else:
+[  121s] >               result = effect(*args, **kwargs)
+[  121s] 
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1183: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = (<class 'ValueError'>, ValueError('AST node line range (2, 1) is not valid'), None)
+[  121s] kwargs = {}, @py_assert0 = <class 'ValueError'>, @py_assert2 = False
+[  121s] @py_format4 = "<class 'ValueError'> == ZeroDivisionError"
+[  121s] @py_format6 = "assert <class 'ValueError'> == ZeroDivisionError"
+[  121s] 
+[  121s]     def effect(*args, **kwargs):
+[  121s]         nonlocal count
+[  121s]         if count == 0:
+[  121s] >           assert args[0] == ZeroDivisionError
+[  121s] E           AssertionError: assert <class 'ValueError'> == ZeroDivisionError
+[  121s] 
+[  121s] tests/test_pyp.py:187: AssertionError
+[  121s] 
+[  121s] During handling of the above exception, another exception occurred:
+[  121s] 
+[  121s]     def test_tracebacks():
+[  121s]         # If our sins against traceback implementation details come back to haunt us, and we can't
+[  121s]         # reconstruct a traceback, check that we still output something reasonable
+[  121s]         TBE = traceback.TracebackException
+[  121s]         with patch("traceback.TracebackException") as mock_tb:
+[  121s]             count = 0
+[  121s]     
+[  121s]             def effect(*args, **kwargs):
+[  121s]                 nonlocal count
+[  121s]                 if count == 0:
+[  121s]                     assert args[0] == ZeroDivisionError
+[  121s]                     count += 1
+[  121s]                     raise Exception
+[  121s]                 return TBE(*args, **kwargs)
+[  121s]     
+[  121s]             mock_tb.side_effect = effect
+[  121s]             pattern = re.compile("Code raised.*ZeroDivisionError", re.DOTALL)
+[  121s]             with pytest.raises(pyp.PypError, match=pattern) as e:
+[  121s] >               run_pyp("pyp '1 / 0'")
+[  121s] 
+[  121s] tests/test_pyp.py:195: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] pyp.py:589: in run_pyp
+[  121s]     message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s] /usr/lib64/python3.11/traceback.py:159: in format_exception_only
+[  121s]     te = TracebackException(type(value), value, None, compact=True)
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1118: in __call__
+[  121s]     return self._mock_call(*args, **kwargs)
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1122: in _mock_call
+[  121s]     return self._execute_mock_call(*args, **kwargs)
+[  121s] /usr/lib64/python3.11/unittest/mock.py:1183: in _execute_mock_call
+[  121s]     result = effect(*args, **kwargs)
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = (<class 'ValueError'>, ValueError('AST node line range (2, 1) is not valid'), None)
+[  121s] kwargs = {'compact': True}, @py_assert0 = <class 'ValueError'>
+[  121s] @py_assert2 = False, @py_format4 = "<class 'ValueError'> == ZeroDivisionError"
+[  121s] @py_format6 = "assert <class 'ValueError'> == ZeroDivisionError"
+[  121s] 
+[  121s]     def effect(*args, **kwargs):
+[  121s]         nonlocal count
+[  121s]         if count == 0:
+[  121s] >           assert args[0] == ZeroDivisionError
+[  121s] E           AssertionError: assert <class 'ValueError'> == ZeroDivisionError
+[  121s] 
+[  121s] tests/test_pyp.py:187: AssertionError
+[  121s] _________________________________ test_explain _________________________________
+[  121s] 
+[  121s]     def test_explain():
+[  121s]         command = (
+[  121s]             "pyp --explain -b 'd = defaultdict(list)' 'user, pid, *_ = x.split()' "
+[  121s]             """'d[user].append(pid)' -a 'del d["root"]' -a d"""
+[  121s]         )
+[  121s]         script = r"""
+[  121s]     #!/usr/bin/env python3
+[  121s]     from collections import defaultdict
+[  121s]     import sys
+[  121s]     from pyp import pypprint
+[  121s]     d = defaultdict(list)
+[  121s]     for x in sys.stdin:
+[  121s]         x = x.rstrip('\n')
+[  121s]         (user, pid, *_) = x.split()
+[  121s]         d[user].append(pid)
+[  121s]     del d['root']
+[  121s]     if d is not None:
+[  121s]         pypprint(d)
+[  121s]     """
+[  121s] >       compare_scripts(run_pyp(command), script)
+[  121s] 
+[  121s] tests/test_pyp.py:236: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] explain_output = "#!/usr/bin/env python3\nfrom collections import defaultdict\nimport sys\nfrom pyp import pypprint\nd = defaultdict(li...trip('\\n')\n    user, pid, *_ = x.split()\n    d[user].append(pid)\ndel d['root']\nif d is not None:\n    pypprint(d)"
+[  121s] script = "#!/usr/bin/env python3\nfrom collections import defaultdict\nimport sys\nfrom pyp import pypprint\nd = defaultdict(li...ip('\\n')\n    (user, pid, *_) = x.split()\n    d[user].append(pid)\ndel d['root']\nif d is not None:\n    pypprint(d)"
+[  121s] 
+[  121s]     def compare_scripts(explain_output: str, script: str) -> None:
+[  121s]         """Tests whether two scripts are equivalent."""
+[  121s]         explain_output = explain_output.strip("\n")
+[  121s]         script = script.strip("\n")
+[  121s]         if sys.version_info < (3, 9):
+[  121s]             # astunparse seems to parenthesise things slightly differently, so filter through ast to
+[  121s]             # hackily ensure that the scripts are the same.
+[  121s]             assert pyp.unparse(ast.parse(explain_output)) == pyp.unparse(ast.parse(script))
+[  121s]         else:
+[  121s] >           assert explain_output == script
+[  121s] E           assert "#!/usr/bin/env python3\nfrom collections import defaultdict\nimport sys\nfrom pyp import pypprint\nd = defaultdict(list)\nfor x in sys.stdin:\n    x = x.rstrip('\\n')\n    user, pid, *_ = x.split()\n    d[user].append(pid)\ndel d['root']\nif d is not None:\n    pypprint(d)" == "#!/usr/bin/env python3\nfrom collections import defaultdict\nimport sys\nfrom pyp import pypprint\nd = defaultdict(list)\nfor x in sys.stdin:\n    x = x.rstrip('\\n')\n    (user, pid, *_) = x.split()\n    d[user].append(pid)\ndel d['root']\nif d is not None:\n    pypprint(d)"
+[  121s] E               #!/usr/bin/env python3
+[  121s] E               from collections import defaultdict
+[  121s] E               import sys
+[  121s] E               from pyp import pypprint
+[  121s] E               d = defaultdict(list)
+[  121s] E               for x in sys.stdin:
+[  121s] E                   x = x.rstrip('\n')
+[  121s] E             -     (user, pid, *_) = x.split()
+[  121s] E             ?     -             -
+[  121s] E             +     user, pid, *_ = x.split()
+[  121s] E                   d[user].append(pid)
+[  121s] E               del d['root']
+[  121s] E               if d is not None:
+[  121s] E                   pypprint(d)
+[  121s] 
+[  121s] tests/test_pyp.py:75: AssertionError
+[  121s] _________________________ test_disable_automatic_print _________________________
+[  121s] 
+[  121s] args = Namespace(code=['pass'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_disable_automatic_print():
+[  121s] >       assert run_pyp("pyp pass") == ""
+[  121s] 
+[  121s] tests/test_pyp.py:240: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['pass'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] ____________________ test_automatic_print_inside_statement _____________________
+[  121s] 
+[  121s] args = Namespace(code=['if int(x) > 2: x'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_automatic_print_inside_statement():
+[  121s] >       assert run_pyp("pyp 'if int(x) > 2: x'", input="1\n4\n2\n3") == "4\n3\n"
+[  121s] 
+[  121s] tests/test_pyp.py:247: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['if int(x) > 2: x'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] _____________________________ test_pypprint_basic ______________________________
+[  121s] 
+[  121s] args = Namespace(code=['pypprint(1); pypprint(1, 2)'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_pypprint_basic():
+[  121s] >       assert run_pyp("pyp 'pypprint(1); pypprint(1, 2)'") == "1\n1 2\n"
+[  121s] 
+[  121s] tests/test_pyp.py:261: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['pypprint(1); pypprint(1, 2)'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] _____________________________ test_get_valid_name ______________________________
+[  121s] 
+[  121s] args = Namespace(code=['output = 0; 1'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s]     def test_get_valid_name():
+[  121s]         # output is already defined, so we shouldn't print 0
+[  121s] >       assert run_pyp("pyp 'output = 0; 1'") == "1\n"
+[  121s] 
+[  121s] tests/test_pyp.py:268: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['output = 0; 1'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] _____________________________ test_config_invalid ______________________________
+[  121s] 
+[  121s] args = Namespace(code=['x'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s] config_mock = <MagicMock name='get_config_contents' id='274945986128'>
+[  121s] 
+[  121s]     @patch("pyp.get_config_contents")
+[  121s]     def test_config_invalid(config_mock):
+[  121s]         config_mock.return_value = "import numpy as np\nimport scipy as np"
+[  121s]         with pytest.raises(pyp.PypError, match="Config has multiple definitions"):
+[  121s]             run_pyp("x")
+[  121s]     
+[  121s]         config_mock.return_value = "f()"
+[  121s]         with pytest.raises(pyp.PypError, match=r"Config.*unsupported construct \(call\)"):
+[  121s]             run_pyp("x")
+[  121s]     
+[  121s]         config_mock.return_value = "del x"
+[  121s]         with pytest.raises(pyp.PypError, match=r"Config.*unsupported construct \(delete\)"):
+[  121s]             run_pyp("x")
+[  121s]     
+[  121s]         config_mock.return_value = "1 +"
+[  121s]         with pytest.raises(pyp.PypError, match="Config has invalid syntax"):
+[  121s]             run_pyp("x")
+[  121s]     
+[  121s]         config_mock.return_value = "from xyz import *"
+[  121s] >       run_pyp("x")
+[  121s] 
+[  121s] tests/test_pyp.py:386: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['x'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] _______________________ test_config_lazy_wildcard_import _______________________
+[  121s] 
+[  121s] args = Namespace(code=['pass'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s] config_mock = <MagicMock name='get_config_contents' id='274950946384'>
+[  121s] 
+[  121s]     @patch("pyp.get_config_contents")
+[  121s]     def test_config_lazy_wildcard_import(config_mock):
+[  121s]         # importing "this" has a side effect, so we can tell whether or not it was imported
+[  121s]         config_mock.return_value = "from this import *"
+[  121s] >       assert run_pyp("pass") == ""  # not imported
+[  121s] 
+[  121s] tests/test_pyp.py:408: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['pass'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] ______________________________ test_config_shadow ______________________________
+[  121s] 
+[  121s] args = Namespace(code=['print(range)'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s] config_mock = <MagicMock name='get_config_contents' id='274950376080'>
+[  121s] 
+[  121s]     @patch("pyp.get_config_contents")
+[  121s]     def test_config_shadow(config_mock):
+[  121s]         # shadowing a builtin
+[  121s]         config_mock.return_value = "range = 5"
+[  121s] >       assert run_pyp("print(range)") == "5\n"
+[  121s] 
+[  121s] tests/test_pyp.py:438: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['print(range)'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] ____________________________ test_config_end_to_end ____________________________
+[  121s] 
+[  121s] args = Namespace(code=['foo()'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s] >           exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:558: ValueError
+[  121s] 
+[  121s] The above exception was the direct cause of the following exception:
+[  121s] 
+[  121s] monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x4003f707d0>
+[  121s] 
+[  121s]     def test_config_end_to_end(monkeypatch):
+[  121s]         with tempfile.NamedTemporaryFile("w") as f:
+[  121s]             monkeypatch.setenv("PYP_CONFIG_PATH", f.name)
+[  121s]             config = "def foo(): return 1"
+[  121s]             f.write(config)
+[  121s]             f.flush()
+[  121s] >           assert run_pyp("foo()") == "1\n"
+[  121s] 
+[  121s] tests/test_pyp.py:549: 
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] tests/test_pyp.py:48: in run_pyp
+[  121s]     pyp.run_pyp(pyp.parse_options(cmd))
+[  121s] _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[  121s] 
+[  121s] args = Namespace(code=['foo()'], explain=False, before=[], after=[], define_pypprint=False)
+[  121s] 
+[  121s]     def run_pyp(args: argparse.Namespace) -> None:
+[  121s]         config = PypConfig()
+[  121s]         tree = PypTransform(args.before, args.code, args.after, args.define_pypprint, config).build()
+[  121s]         if args.explain:
+[  121s]             print(config.shebang)
+[  121s]             print(unparse(tree))
+[  121s]             return
+[  121s]         try:
+[  121s]             exec(compile(tree, filename="<pyp>", mode="exec"), {})
+[  121s]         except Exception as e:
+[  121s]             try:
+[  121s]                 line_to_node: Dict[int, ast.AST] = {}
+[  121s]                 for node in dfs_walk(tree):
+[  121s]                     line_to_node.setdefault(getattr(node, "lineno", -1), node)
+[  121s]     
+[  121s]                 def code_for_line(lineno: int) -> str:
+[  121s]                     node = line_to_node[lineno]
+[  121s]                     # Don't unparse nested child statements. Note this destroys the tree.
+[  121s]                     for _, value in ast.iter_fields(node):
+[  121s]                         if isinstance(value, list) and value and isinstance(value[0], ast.stmt):
+[  121s]                             value.clear()
+[  121s]                     return unparse(node, short_fallback=True).strip()
+[  121s]     
+[  121s]                 # Time to commit several sins against CPython implementation details
+[  121s]                 tb_except = traceback.TracebackException(
+[  121s]                     type(e), e, e.__traceback__.tb_next  # type: ignore
+[  121s]                 )
+[  121s]                 for fs in tb_except.stack:
+[  121s]                     if fs.filename == "<pyp>":
+[  121s]                         fs._line = code_for_line(fs.lineno)  # type: ignore[attr-defined]
+[  121s]                         fs.lineno = "PYP_REDACTED"  # type: ignore[assignment]
+[  121s]     
+[  121s]                 tb_format = tb_except.format()
+[  121s]                 assert "Traceback (most recent call last)" in next(tb_format)
+[  121s]     
+[  121s]                 message = "Possible reconstructed traceback (most recent call last):\n"
+[  121s]                 message += "".join(tb_format).strip("\n")
+[  121s]                 message = message.replace(", line PYP_REDACTED", "")
+[  121s]             except Exception:
+[  121s]                 message = "".join(traceback.format_exception_only(type(e), e)).strip()
+[  121s]             if isinstance(e, ModuleNotFoundError):
+[  121s]                 message += (
+[  121s]                     "\n\nNote pyp treats undefined names as modules to automatically import. "
+[  121s]                     "Perhaps you forgot to define something or PYP_CONFIG_PATH is set incorrectly?"
+[  121s]                 )
+[  121s]             if args.before and isinstance(e, NameError):
+[  121s]                 var = str(e)
+[  121s]                 var = var[var.find("'") + 1 : var.rfind("'")]
+[  121s]                 if var in ("lines", "stdin"):
+[  121s]                     message += (
+[  121s]                         "\n\nNote code in `--before` runs before any magic variables are defined "
+[  121s]                         "and should not process input. Your command should work by simply removing "
+[  121s]                         "`--before`, so instead passing in multiple statements in the main section "
+[  121s]                         "of your code."
+[  121s]                     )
+[  121s] >           raise PypError(
+[  121s]                 "Code raised the following exception, consider using --explain to investigate:\n\n"
+[  121s]                 f"{message}"
+[  121s]             ) from e
+[  121s] E           pyp.PypError: Code raised the following exception, consider using --explain to investigate:
+[  121s] E           
+[  121s] E           ValueError: AST node line range (2, 1) is not valid
+[  121s] 
+[  121s] pyp.py:605: PypError
+[  121s] =========================== short test summary info ============================
+[  121s] FAILED tests/test_pyp.py::test_examples - pyp.PypError: Code raised the follo...
+[  121s] FAILED tests/test_pyp.py::test_user_error - AssertionError: Regex pattern did...
+[  121s] FAILED tests/test_pyp.py::test_tracebacks - AssertionError: assert <class 'Va...
+[  121s] FAILED tests/test_pyp.py::test_explain - assert "#!/usr/bin/env python3\nfrom...
+[  121s] FAILED tests/test_pyp.py::test_disable_automatic_print - pyp.PypError: Code r...
+[  121s] FAILED tests/test_pyp.py::test_automatic_print_inside_statement - pyp.PypErro...
+[  121s] FAILED tests/test_pyp.py::test_pypprint_basic - pyp.PypError: Code raised the...
+[  121s] FAILED tests/test_pyp.py::test_get_valid_name - pyp.PypError: Code raised the...
+[  121s] FAILED tests/test_pyp.py::test_config_invalid - pyp.PypError: Code raised the...
+[  121s] FAILED tests/test_pyp.py::test_config_lazy_wildcard_import - pyp.PypError: Co...
+[  121s] FAILED tests/test_pyp.py::test_config_shadow - pyp.PypError: Code raised the ...
+[  121s] FAILED tests/test_pyp.py::test_config_end_to_end - pyp.PypError: Code raised ...
+[  121s] =================== 12 failed, 19 passed, 3 xfailed in 5.85s ===================
+[  121s] error: Bad exit status from /var/tmp/rpm-tmp.rIZnx2 (%check)
+[  121s] 
+[  121s] RPM build errors:
+[  121s]     Bad exit status from /var/tmp/rpm-tmp.rIZnx2 (%check)
+[  121s] ### VM INTERACTION START ###
+[  122s] [  117.462033][    T1] sysrq: Power Off
+[  122s] [  117.463417][  T330] reboot: Power down
+[  122s] ### VM INTERACTION END ###
+[  122s] 
+[  122s] beatles failed "build python-pyp.spec" at Sat Feb 18 21:27:19 UTC 2023.
+[  122s] 

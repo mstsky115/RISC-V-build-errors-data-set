@@ -1,0 +1,1044 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] old-atreju3 started "build mumble.spec" at Mon Feb  6 04:05:12 UTC 2023.
+[    0s] 
+[    0s] Building mumble for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '7292b7d4ce7887f913dfd568917f6399'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/mumble.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/mumble.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/mumble.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [d2b144e8b13e7ca9b822e439150d14f2]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] cycle: gio-branding-upstream -> libgio-2_0-0
+[    3s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[    3s] cycle: libgio-2_0-0 -> glib2-tools
+[    3s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[    3s] cycle: Mesa-dri -> Mesa
+[    3s]   breaking dependency Mesa -> Mesa-dri
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[    3s]   breaking dependency Mesa -> Mesa-libEGL1
+[    3s] cycle: Mesa -> Mesa-libGL1
+[    3s]   breaking dependency Mesa-libGL1 -> Mesa
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[    3s]   breaking dependency Mesa -> Mesa-libGL1
+[    3s] cycle: libglvnd -> Mesa-dri -> Mesa
+[    3s]   breaking dependency libglvnd -> Mesa-dri
+[    3s] cycle: openssl -> openssl-3
+[    3s]   breaking dependency openssl-3 -> openssl
+[    3s] cycle: fontconfig -> libfontconfig1
+[    3s]   breaking dependency libfontconfig1 -> fontconfig
+[    3s] cycle: libopenssl-3-devel -> libopenssl-devel
+[    3s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.1.8-1-default #1 SMP PREEMPT_DYNAMIC Tue Jan 24 06:29:25 UTC 2023 (baebfe0)
+[    9s] Increasing log level from now on...
+[    9s] [    4.289221][  T369] sysrq: Changing Loglevel
+[    9s] [    4.289357][  T369] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   10s] no label, UUID=61510834-a3ca-457d-8a50-4b81ac3c546b
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/mumble.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/mumble.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   42s] [1/406] cumulate Mesa-KHR-devel-22.3.4-347.1
+[   42s] [2/406] cumulate Mesa-libglapi0-22.3.4-347.1
+[   42s] [3/406] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   42s] [4/406] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   42s] [5/406] preinstalled attr-2.5.1-1.1
+[   42s] [6/406] preinstalled bash-5.2.15-8.1
+[   42s] [7/406] preinstalled bash-sh-5.2.15-8.1
+[   42s] [8/406] preinstalled binutils-2.39-3.1
+[   42s] [9/406] cumulate boost-license1_81_0-1.81.0-1.1
+[   42s] [10/406] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   42s] [11/406] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   42s] [12/406] preinstalled build-mkbaselibs-20230105-1.1
+[   42s] [13/406] preinstalled bzip2-1.0.8-4.1
+[   42s] [14/406] preinstalled chkstat-1599_20221220-1.2
+[   42s] [15/406] preinstalled compat-usrmerge-build-84.87-5.1
+[   42s] [16/406] preinstalled compat-usrmerge-tools-84.87-5.1
+[   42s] [17/406] preinstalled coreutils-9.1-5.1
+[   42s] [18/406] preinstalled cpio-2.13-5.1
+[   42s] [19/406] preinstalled cpp-12-2.1
+[   42s] [20/406] preinstalled cpp12-12.2.1+git749-4.1
+[   42s] [21/406] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   42s] [22/406] cumulate dbus-1-common-1.14.4-1.1
+[   42s] [23/406] preinstalled debugedit-5.0-5.1
+[   42s] [24/406] preinstalled diffutils-3.9-1.1
+[   42s] [25/406] preinstalled dwz-0.15-2.1
+[   42s] [26/406] preinstalled elfutils-0.188-3.2
+[   42s] [27/406] preinstalled file-5.44-1.1
+[   42s] [28/406] preinstalled file-magic-5.44-1.1
+[   42s] [29/406] preinstalled filesystem-84.87-11.1
+[   42s] [30/406] preinstalled fillup-1.42-279.1
+[   42s] [31/406] preinstalled findutils-4.9.0-2.1
+[   42s] [32/406] preinstalled gawk-5.2.1-2.1
+[   42s] [33/406] preinstalled gcc-12-2.1
+[   42s] [34/406] preinstalled gcc-PIE-12-2.1
+[   42s] [35/406] preinstalled gcc12-12.2.1+git749-4.1
+[   42s] [36/406] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   42s] [37/406] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   42s] [38/406] preinstalled gettext-tools-mini-0.21.1-1.1
+[   42s] [39/406] preinstalled glibc-2.36-9.1
+[   42s] [40/406] preinstalled glibc-devel-2.36-9.1
+[   42s] [41/406] preinstalled glibc-locale-base-2.36-9.1
+[   42s] [42/406] preinstalled grep-3.8-3.1
+[   42s] [43/406] preinstalled gzip-1.12-3.1
+[   42s] [44/406] preinstalled kernel-obs-build-6.1.8-1.2
+[   42s] [45/406] cumulate libICE6-1.1.1-1.1
+[   42s] [46/406] cumulate libPocoFoundation92-1.12.2-1.2
+[   42s] [47/406] cumulate libX11-data-1.8.1-4.1
+[   42s] [48/406] cumulate libXau6-1.0.11-1.1
+[   42s] [49/406] preinstalled libacl1-2.3.1-2.1
+[   42s] [50/406] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   42s] [51/406] preinstalled libasan8-13.0.1+git5428-6.1
+[   42s] [52/406] preinstalled libasm1-0.188-3.2
+[   42s] [53/406] cumulate libasound2-1.2.8-1.1
+[   42s] [54/406] preinstalled libatomic1-13.0.1+git5428-6.1
+[   42s] [55/406] preinstalled libattr1-2.5.1-1.1
+[   42s] [56/406] preinstalled libaudit1-3.0.6-4.1
+[   42s] [57/406] cumulate libavahi-common3-0.8-22.2
+[   42s] [58/406] cumulate libblkid-devel-2.38.1-6.1
+[   42s] [59/406] preinstalled libblkid1-2.38.1-6.1
+[   42s] [60/406] cumulate libbrotlicommon1-1.0.9-1.1
+[   42s] [61/406] preinstalled libbz2-1-1.0.8-4.1
+[   42s] [62/406] preinstalled libcap-ng0-0.8.3-1.1
+[   42s] [63/406] preinstalled libcap2-2.66-1.1
+[   42s] [64/406] cumulate libcelt0-2-0.11.3-1.3
+[   42s] [65/406] cumulate libcom_err2-1.46.5-4.1
+[   42s] [66/406] preinstalled libcrypt1-4.4.33-1.1
+[   42s] [67/406] preinstalled libctf-nobfd0-2.39-3.1
+[   42s] [68/406] preinstalled libctf0-2.39-3.1
+[   42s] [69/406] preinstalled libdb-4_8-4.8.30-39.1
+[   42s] [70/406] cumulate libdouble-conversion3-3.2.1-1.1
+[   42s] [71/406] cumulate libdrm2-2.4.114-3.1
+[   42s] [72/406] preinstalled libdw1-0.188-3.2
+[   42s] [73/406] preinstalled libeconf0-0.5.1-1.1
+[   42s] [74/406] cumulate libedit0-20210910.3.1-1.1
+[   42s] [75/406] preinstalled libelf1-0.188-3.2
+[   42s] [76/406] cumulate libevdev2-1.13.0-1.1
+[   42s] [77/406] cumulate libexpat1-2.5.0-2.1
+[   42s] [78/406] preinstalled libfdisk1-2.38.1-6.1
+[   42s] [79/406] cumulate libffi8-3.4.4-1.1
+[   42s] [80/406] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   42s] [81/406] preinstalled libgcrypt20-1.10.1-1.1
+[   42s] [82/406] preinstalled libgdbm6-1.23-1.1
+[   42s] [83/406] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [84/406] cumulate libglib-2_0-0-2.74.5-1.1
+[   42s] [85/406] preinstalled libgmp10-6.2.1-4.1
+[   42s] [86/406] preinstalled libgomp1-13.0.1+git5428-6.1
+[   42s] [87/406] preinstalled libgpg-error0-1.46-1.1
+[   42s] [88/406] cumulate libgraphite2-3-1.3.14-3.1
+[   42s] [89/406] cumulate libicu72-ledata-72.1-1.1
+[   42s] [90/406] preinstalled libisl23-0.25-1.1
+[   42s] [91/406] cumulate libjack0-1.9.21-1.3
+[   42s] [92/406] cumulate libjitterentropy3-3.4.1-1.1
+[   42s] [93/406] cumulate libjpeg8-8.2.2-72.1
+[   42s] [94/406] cumulate libkeyutils1-1.6.3-5.1
+[   42s] [95/406] cumulate libltdl7-2.4.7-3.2
+[   42s] [96/406] preinstalled liblua5_4-5-5.4.4-8.1
+[   42s] [97/406] preinstalled liblzma5-5.4.1-1.1
+[   42s] [98/406] preinstalled libmagic1-5.44-1.1
+[   42s] [99/406] preinstalled libmount1-2.38.1-6.1
+[   42s] [100/406] preinstalled libmpc3-1.3.1-1.2
+[   42s] [101/406] cumulate libmpdec3-2.5.1-2.1
+[   42s] [102/406] preinstalled libmpfr6-4.2.0-1.1
+[   42s] [103/406] cumulate libmtdev1-1.1.6-1.1
+[   42s] [104/406] preinstalled libncurses6-6.4.20230121-3.1
+[   42s] [105/406] cumulate libnettle8-3.8.1-1.1
+[   42s] [106/406] cumulate libogg0-1.3.5-1.1
+[   42s] [107/406] cumulate libopus0-1.3.1-3.2
+[   42s] [108/406] cumulate libpciaccess0-0.17-1.1
+[   42s] [109/406] cumulate libpcre1-8.45-2.1
+[   42s] [110/406] cumulate libpcre16-0-8.45-2.1
+[   42s] [111/406] cumulate libpcre2-16-0-10.42-3.2
+[   42s] [112/406] cumulate libpcre2-32-0-10.42-3.2
+[   42s] [113/406] preinstalled libpcre2-8-0-10.42-3.2
+[   42s] [114/406] cumulate libpcre2-posix3-10.42-3.2
+[   42s] [115/406] preinstalled libpkgconf3-1.8.0-2.1
+[   42s] [116/406] cumulate libpng16-16-1.6.39-2.1
+[   42s] [117/406] preinstalled libpopt0-1.19-1.1
+[   42s] [118/406] cumulate libprotobuf-lite3_21_12-21.12-1.2
+[   42s] [119/406] cumulate libprotobuf3_21_12-21.12-1.2
+[   42s] [120/406] cumulate libproxy1-0.4.18-1.1
+[   42s] [121/406] cumulate libpsx2-2.66-1.1
+[   42s] [122/406] preinstalled libreadline8-8.2-2.1
+[   42s] [123/406] cumulate librhash0-1.4.3-1.1
+[   42s] [124/406] preinstalled librpmbuild9-4.18.0-3.1
+[   42s] [125/406] cumulate libsamplerate0-0.2.2-1.1
+[   42s] [126/406] preinstalled libseccomp2-2.5.4-2.1
+[   42s] [127/406] preinstalled libselinux1-3.4-2.1
+[   42s] [128/406] preinstalled libsemanage-conf-3.4-1.1
+[   42s] [129/406] preinstalled libsemanage2-3.4-1.1
+[   42s] [130/406] cumulate libsepol-devel-3.4-1.1
+[   42s] [131/406] preinstalled libsepol2-3.4-1.1
+[   42s] [132/406] preinstalled libsmartcols1-2.38.1-6.1
+[   42s] [133/406] cumulate libspeex1-1.2.1-1.1
+[   42s] [134/406] cumulate libspeexdsp1-1.2.1-1.1
+[   42s] [135/406] cumulate libsqlite3-0-3.40.1-1.1
+[   42s] [136/406] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   42s] [137/406] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   42s] [138/406] preinstalled libsubid4-4.13-3.1
+[   42s] [139/406] cumulate libsystemd0-mini-252.5-1.1
+[   42s] [140/406] cumulate libtasn1-6-4.19.0-1.1
+[   42s] [141/406] cumulate libts0-1.22-1.1
+[   42s] [142/406] preinstalled libubsan1-13.0.1+git5428-6.1
+[   42s] [143/406] cumulate libudev-mini1-252.5-1.1
+[   42s] [144/406] cumulate libunistring5-1.1-1.1
+[   42s] [145/406] preinstalled libutempter0-1.2.0-3.2
+[   42s] [146/406] preinstalled libuuid1-2.38.1-6.1
+[   42s] [147/406] cumulate libuv1-1.44.2-3.1
+[   42s] [148/406] cumulate libverto1-0.3.2-1.1
+[   42s] [149/406] cumulate libvulkan1-1.3.239.0-1.1
+[   42s] [150/406] cumulate libwacom-data-2.5.0-1.1
+[   42s] [151/406] cumulate libwayland-egl1-1.21.0-4.2
+[   42s] [152/406] preinstalled libxcrypt-devel-4.4.33-1.1
+[   42s] [153/406] cumulate libxml2-2-2.10.3-2.1
+[   42s] [154/406] cumulate libxshmfence1-1.3.2-1.1
+[   42s] [155/406] preinstalled libz1-1.2.13-2.1
+[   42s] [156/406] preinstalled libzstd1-1.5.2-2.1
+[   42s] [157/406] preinstalled linux-glibc-devel-6.1-1.1
+[   42s] [158/406] preinstalled login_defs-4.13-3.1
+[   42s] [159/406] preinstalled lua54-5.4.4-8.1
+[   42s] [160/406] preinstalled make-4.4-2.1
+[   42s] [161/406] preinstalled ncurses-utils-6.4.20230121-3.1
+[   42s] [162/406] preinstalled pam-1.5.2-12.1
+[   42s] [163/406] preinstalled patch-2.7.6-6.1
+[   42s] [164/406] preinstalled perl-5.36.0-4.1
+[   42s] [165/406] preinstalled perl-base-5.36.0-4.1
+[   42s] [166/406] preinstalled permissions-1599_20221220-1.2
+[   42s] [167/406] preinstalled permissions-config-1599_20221220-1.2
+[   42s] [168/406] preinstalled pkgconf-1.8.0-2.1
+[   42s] [169/406] preinstalled pkgconf-m4-1.8.0-2.1
+[   42s] [170/406] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   42s] [171/406] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   42s] [172/406] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   42s] [173/406] cumulate python-rpm-macros-20230128.e704796-1.1
+[   42s] [174/406] preinstalled qemu-linux-user-7.1.0-48.1
+[   42s] [175/406] preinstalled rpm-4.18.0-3.1
+[   42s] [176/406] preinstalled rpm-build-4.18.0-3.1
+[   42s] [177/406] preinstalled rpm-build-perl-4.18.0-3.1
+[   42s] [178/406] preinstalled rpm-config-SUSE-20220926-1.1
+[   42s] [179/406] preinstalled rpmlint-mini-2.4.0+git20230125.20e5b58-8.54
+[   42s] [180/406] preinstalled rpmlint-strict-2.4.0+git20230125.20e5b58-1.1
+[   42s] [181/406] preinstalled sed-4.9-2.1
+[   42s] [182/406] preinstalled shadow-4.13-3.1
+[   42s] [183/406] preinstalled system-group-hardware-20170617-24.1
+[   42s] [184/406] cumulate system-user-lp-20170617-24.1
+[   42s] [185/406] preinstalled system-user-root-20190513-2.1
+[   42s] [186/406] preinstalled systemd-rpm-macros-19-1.1
+[   42s] [187/406] preinstalled sysuser-shadow-3.1-5.1
+[   42s] [188/406] preinstalled tar-1.34-9.1
+[   42s] [189/406] preinstalled terminfo-base-6.4.20230121-3.1
+[   42s] [190/406] cumulate timezone-2022g-2.1
+[   42s] [191/406] preinstalled update-alternatives-1.21.8-1.1
+[   42s] [192/406] preinstalled util-linux-2.38.1-6.1
+[   42s] [193/406] preinstalled which-2.21-5.1
+[   42s] [194/406] cumulate xkeyboard-config-2.37-1.1
+[   42s] [195/406] cumulate xorgproto-devel-2022.2-2.1
+[   42s] [196/406] preinstalled xz-5.4.1-1.1
+[   42s] [197/406] cumulate zlib-devel-1.2.13-2.1
+[   42s] [198/406] cumulate alsa-devel-1.2.8-1.1
+[   42s] [199/406] cumulate alts-1.2+3.b848aad-3.1
+[   42s] [200/406] cumulate cups-config-2.4.2-4.2
+[   42s] [201/406] cumulate desktop-file-utils-0.26-5.1
+[   42s] [202/406] cumulate gcc12-c++-12.2.1+git749-4.1
+[   42s] [203/406] cumulate libFLAC12-1.4.2-1.1
+[   42s] [204/406] cumulate libLLVM15-15.0.7-1.1
+[   42s] [205/406] cumulate libPocoCppParser92-1.12.2-1.2
+[   42s] [206/406] cumulate libPocoData92-1.12.2-1.2
+[   42s] [207/406] cumulate libPocoEncodings92-1.12.2-1.2
+[   42s] [208/406] cumulate libPocoJSON92-1.12.2-1.2
+[   42s] [209/406] cumulate libPocoNet92-1.12.2-1.2
+[   42s] [210/406] cumulate libPocoZip92-1.12.2-1.2
+[   42s] [211/406] cumulate libSM6-1.2.4-2.1
+[   42s] [212/406] cumulate libX11-xcb1-1.8.1-4.1
+[   42s] [213/406] cumulate libavahi-core7-0.8-22.2
+[   42s] [214/406] cumulate libbrotlidec1-1.0.9-1.1
+[   42s] [215/406] cumulate libcap-devel-2.66-1.1
+[   42s] [216/406] cumulate libdrm_amdgpu1-2.4.114-3.1
+[   42s] [217/406] cumulate libdrm_nouveau2-2.4.114-3.1
+[   42s] [218/406] cumulate libdrm_radeon1-2.4.114-3.1
+[   42s] [219/406] cumulate libexpat-devel-2.5.0-2.1
+[   42s] [220/406] cumulate libffi-devel-3.4.4-1.1
+[   42s] [221/406] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   42s] [222/406] cumulate libgthread-2_0-0-2.74.5-1.1
+[   42s] [223/406] cumulate libhogweed6-3.8.1-1.1
+[   42s] [224/406] cumulate libidn2-0-2.3.4-1.1
+[   42s] [225/406] cumulate libodbc2-2.3.11-2.1
+[   42s] [226/406] cumulate libogg-devel-1.3.5-1.1
+[   42s] [227/406] cumulate libopenssl3-3.0.7-3.1
+[   42s] [228/406] cumulate libopus-devel-1.3.1-3.2
+[   42s] [229/406] cumulate libp11-kit0-0.24.1-2.1
+[   42s] [230/406] cumulate libpciaccess-devel-0.17-1.1
+[   42s] [231/406] cumulate libpcrecpp0-8.45-2.1
+[   42s] [232/406] cumulate libpcreposix0-8.45-2.1
+[   42s] [233/406] cumulate libprotoc3_21_12-21.12-1.2
+[   42s] [234/406] cumulate libspeechd2-0.11.4-1.2
+[   42s] [235/406] cumulate libstdc++-devel-12-2.1
+[   42s] [236/406] cumulate libvorbis0-1.3.7-2.1
+[   42s] [237/406] cumulate libwayland-client0-1.21.0-4.2
+[   42s] [238/406] cumulate libwayland-server0-1.21.0-4.2
+[   42s] [239/406] cumulate libxcb1-1.15-2.1
+[   42s] [240/406] cumulate libxkbcommon0-1.5.0-1.1
+[   42s] [241/406] cumulate speexdsp-devel-1.2.1-1.1
+[   42s] [242/406] cumulate libICE-devel-1.1.1-1.1
+[   42s] [243/406] cumulate libPocoXML92-1.12.2-1.2
+[   42s] [244/406] cumulate libXau-devel-1.0.11-1.1
+[   42s] [245/406] cumulate libdbus-1-3-1.14.4-1.1
+[   42s] [246/406] cumulate libdrm_intel1-2.4.114-3.1
+[   42s] [247/406] cumulate libgobject-2_0-0-2.74.5-1.1
+[   42s] [248/406] cumulate libicu72-72.1-1.1
+[   42s] [249/406] cumulate libjackserver0-1.9.21-1.3
+[   42s] [250/406] cumulate shared-mime-info-2.2-1.1
+[   42s] [251/406] cumulate krb5-mini-1.20.1-2.3
+[   42s] [252/406] cumulate libjacknet0-1.9.21-1.3
+[   42s] [253/406] cumulate dbus-1-tools-1.14.4-1.1
+[   42s] [254/406] cumulate gcc-c++-12-2.1
+[   42s] [255/406] cumulate libFLAC++10-1.4.2-1.1
+[   42s] [256/406] cumulate libevent-2_1-7-2.1.12-3.2
+[   42s] [257/406] cumulate libmariadb3-3.3.3-1.2
+[   42s] [258/406] cumulate libvorbisenc2-1.3.7-2.1
+[   42s] [259/406] cumulate libwayland-cursor0-1.21.0-4.2
+[   42s] [260/406] cumulate libxcb-composite0-1.15-2.1
+[   42s] [261/406] cumulate libxcb-damage0-1.15-2.1
+[   42s] [262/406] cumulate libxcb-dpms0-1.15-2.1
+[   42s] [263/406] cumulate libxcb-dri2-0-1.15-2.1
+[   42s] [264/406] cumulate libxcb-dri3-0-1.15-2.1
+[   42s] [265/406] cumulate libxcb-glx0-1.15-2.1
+[   42s] [266/406] cumulate libxcb-icccm4-0.4.2-1.1
+[   42s] [267/406] cumulate libxcb-keysyms1-0.4.1-1.1
+[   42s] [268/406] cumulate libxcb-present0-1.15-2.1
+[   42s] [269/406] cumulate libxcb-randr0-1.15-2.1
+[   42s] [270/406] cumulate libxcb-record0-1.15-2.1
+[   42s] [271/406] cumulate libxcb-render0-1.15-2.1
+[   42s] [272/406] cumulate libxcb-res0-1.15-2.1
+[   42s] [273/406] cumulate libxcb-screensaver0-1.15-2.1
+[   42s] [274/406] cumulate libxcb-shape0-1.15-2.1
+[   42s] [275/406] cumulate libxcb-shm0-1.15-2.1
+[   42s] [276/406] cumulate libxcb-sync1-1.15-2.1
+[   42s] [277/406] cumulate libxcb-util1-0.4.1-1.1
+[   42s] [278/406] cumulate libxcb-xf86dri0-1.15-2.1
+[   42s] [279/406] cumulate libxcb-xfixes0-1.15-2.1
+[   42s] [280/406] cumulate libxcb-xinerama0-1.15-2.1
+[   42s] [281/406] cumulate libxcb-xinput0-1.15-2.1
+[   42s] [282/406] cumulate libxcb-xkb1-1.15-2.1
+[   42s] [283/406] cumulate libxcb-xtest0-1.15-2.1
+[   42s] [284/406] cumulate libxcb-xv0-1.15-2.1
+[   42s] [285/406] cumulate libxcb-xvmc0-1.15-2.1
+[   42s] [286/406] cumulate update-desktop-files-84.87-6.1
+[   42s] [287/406] cumulate libPocoCrypto92-1.12.2-1.2
+[   42s] [288/406] cumulate libPocoMongoDB92-1.12.2-1.2
+[   42s] [289/406] cumulate libPocoPrometheus92-1.12.2-1.2
+[   42s] [290/406] cumulate libPocoRedis92-1.12.2-1.2
+[   42s] [291/406] cumulate libX11-6-1.8.1-4.1
+[   42s] [292/406] cumulate libavahi-client3-0.8-22.2
+[   42s] [293/406] cumulate libboost_headers1_81_0-devel-1.81.0-1.1
+[   42s] [294/406] cumulate libfreetype6-2.12.1-4.1
+[   42s] [295/406] cumulate libvorbisfile3-1.3.7-2.1
+[   42s] [296/406] cumulate speex-devel-1.2.1-1.1
+[   42s] [297/406] cumulate unixODBC-2.3.11-2.1
+[   42s] [298/406] cumulate dbus-1-daemon-1.14.4-1.1
+[   42s] [299/406] cumulate libPocoDataODBC92-1.12.2-1.2
+[   42s] [300/406] cumulate libPocoDataSQLite92-1.12.2-1.2
+[   43s] [301/406] cumulate libPocoUtil92-1.12.2-1.2
+[   43s] [302/406] cumulate libgbm1-22.3.4-347.1
+[   43s] [303/406] cumulate libgudev-1_0-0-237-2.1
+[   43s] [304/406] cumulate libjack-devel-1.9.21-1.3
+[   43s] [305/406] cumulate pcre2-devel-10.42-3.2
+[   43s] [306/406] cumulate libQt5Core5-5.15.8+kde160-1.2
+[   43s] [307/406] cumulate pcre-devel-8.45-2.1
+[   43s] [308/406] cumulate libdrm-devel-2.4.114-3.1
+[   43s] [309/406] cumulate libgnutls30-3.7.8-3.1
+[   43s] [310/406] cumulate libQt5Concurrent5-5.15.8+kde160-1.2
+[   43s] [311/406] cumulate libQt5Sql5-5.15.8+kde160-1.2
+[   43s] [312/406] cumulate libQt5TextToSpeech5-5.15.8+kde1-1.2
+[   43s] [313/406] cumulate libQt5Xml5-5.15.8+kde160-1.2
+[   43s] [314/406] cumulate libXext6-1.3.5-1.1
+[   43s] [315/406] cumulate libXfixes3-6.0.0-2.1
+[   43s] [316/406] cumulate libXrender1-0.9.11-1.1
+[   43s] [317/406] cumulate libboost_headers-devel-1.81.0-1.1
+[   43s] [318/406] cumulate libQt5DBus5-5.15.8+kde160-1.2
+[   43s] [319/406] cumulate libavahi-libevent1-0.8-22.2
+[   43s] [320/406] cumulate libdns_sd-0.8-22.2
+[   43s] [321/406] cumulate libselinux-devel-3.4-2.1
+[   43s] [322/406] cumulate libxcb-render-util0-0.3.10-1.1
+[   43s] [323/406] cumulate unixODBC-devel-2.3.11-2.1
+[   43s] [324/406] cumulate libPocoDataMySQL92-1.12.2-1.2
+[   43s] [325/406] cumulate libPocoJWT92-1.12.2-1.2
+[   43s] [326/406] cumulate libPocoPDF92-1.12.2-1.2
+[   43s] [327/406] cumulate libharfbuzz0-6.0.0-1.2
+[   43s] [328/406] cumulate libxcb-image0-0.4.1-1.1
+[   43s] [329/406] cumulate libxkbcommon-x11-0-1.5.0-1.1
+[   43s] [330/406] cumulate poco-cpspc-1.12.2-1.2
+[   43s] [331/406] cumulate flac-devel-1.4.2-1.1
+[   43s] [332/406] cumulate libvorbis-devel-1.3.7-2.1
+[   43s] [333/406] cumulate libwacom9-2.5.0-1.1
+[   43s] [334/406] cumulate libPocoNetSSL92-1.12.2-1.2
+[   43s] [335/406] cumulate libcups2-2.4.2-4.2
+[   43s] [336/406] cumulate protobuf-devel-21.12-1.2
+[   43s] [337/406] cumulate libsndfile1-1.1.0-1.2
+[   43s] [338/406] cumulate dbus-1-1.14.4-1.1
+[   43s] [339/406] cumulate wayland-devel-1.21.0-4.2
+[   43s] [340/406] cumulate libxcb-devel-1.15-2.1
+[   43s] [341/406] cumulate dbus-1-devel-1.14.4-1.1
+[   43s] [342/406] cumulate libXi6-1.8-1.1
+[   43s] [343/406] cumulate libXxf86vm1-1.1.5-1.1
+[   43s] [344/406] cumulate libmount-devel-2.38.1-6.1
+[   43s] [345/406] cumulate libXrandr2-1.5.3-1.1
+[   43s] [346/406] cumulate libQt5Network5-5.15.8+kde160-1.2
+[   43s] [347/406] cumulate libX11-devel-1.8.1-4.1
+[   43s] [348/406] cumulate libinput10-1.22.1-1.1
+[   43s] [349/406] cumulate libpulse0-16.1-1.3
+[   43s] [350/406] cumulate libsndfile-devel-1.1.0-1.2
+[   43s] [351/406] cumulate libpulse-mainloop-glib0-16.1-1.3
+[   43s] [352/406] cumulate libXext-devel-1.3.5-1.1
+[   43s] [353/406] cumulate libXfixes-devel-6.0.0-2.1
+[   43s] [354/406] cumulate libXrender-devel-0.9.11-1.1
+[   43s] [355/406] cumulate libXi-devel-1.8-1.1
+[   43s] [356/406] cumulate libXrandr-devel-1.5.3-1.1
+[   43s] [357/406] cumulate libglvnd-1.6.0-1.1
+[   43s] [358/406] cumulate libfontconfig1-2.14.2-1.1
+[   43s] [359/406] cumulate openssl-3-3.0.7-3.1
+[   43s] [360/406] cumulate python310-base-3.10.9-2.2
+[   43s] [361/406] cumulate libgio-2_0-0-2.74.5-1.1
+[   43s] [362/406] cumulate gio-branding-upstream-2.74.5-1.1
+[   43s] [363/406] cumulate libglvnd-devel-1.6.0-1.1
+[   43s] [364/406] cumulate libpython3_10-1_0-3.10.9-2.2
+[   43s] [365/406] cumulate openssl-3.0.7-1.1
+[   43s] [366/406] cumulate python310-packaging-23.0-1.1
+[   43s] [367/406] cumulate fontconfig-2.14.2-1.1
+[   43s] [368/406] cumulate libevent-devel-2.1.12-3.2
+[   43s] [369/406] cumulate Mesa-22.3.4-347.1
+[   43s] [370/406] cumulate glib2-tools-2.74.5-1.1
+[   43s] [371/406] cumulate cmake-mini-3.25.2-1.2
+[   43s] [372/406] cumulate vulkan-headers-1.3.239.0-1.1
+[   43s] [373/406] cumulate Mesa-libEGL1-22.3.4-347.1
+[   43s] [374/406] cumulate Mesa-libGL1-22.3.4-347.1
+[   43s] [375/406] cumulate libQt5Gui5-5.15.8+kde160-1.2
+[   43s] [376/406] cumulate cmake-3.25.2-1.1
+[   43s] [377/406] cumulate libQt5Widgets5-5.15.8+kde160-1.2
+[   43s] [378/406] cumulate vulkan-devel-1.3.239.0-1.1
+[   43s] [379/406] cumulate libopenssl-devel-3.0.7-1.1
+[   43s] [380/406] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   43s] [381/406] cumulate Mesa-libEGL-devel-22.3.4-347.1
+[   43s] [382/406] cumulate Mesa-libGL-devel-22.3.4-347.1
+[   43s] [383/406] cumulate libavahi-devel-0.8-22.2
+[   43s] [384/406] cumulate Mesa-dri-22.3.4-347.1
+[   43s] [385/406] cumulate glib2-devel-2.74.5-1.1
+[   43s] [386/406] cumulate avahi-compat-mDNSResponder-devel-0.8-22.2
+[   43s] [387/406] cumulate libspeechd-devel-0.11.4-1.2
+[   43s] [388/406] cumulate libQt5Svg5-5.15.8+kde8-1.1
+[   43s] [389/406] cumulate libopenssl-3-devel-3.0.7-3.1
+[   43s] [390/406] cumulate libpulse-devel-16.1-1.3
+[   43s] [391/406] cumulate libqt5-qtbase-common-devel-5.15.8+kde160-1.2
+[   43s] [392/406] cumulate libQt5PrintSupport5-5.15.8+kde160-1.2
+[   43s] [393/406] cumulate libQt5Core-devel-5.15.8+kde160-1.2
+[   43s] [394/406] cumulate libmariadb-devel-3.3.3-1.2
+[   43s] [395/406] cumulate libqt5-linguist-5.15.8+kde1-1.1
+[   43s] [396/406] cumulate libQt5Concurrent-devel-5.15.8+kde160-1.2
+[   43s] [397/406] cumulate libQt5Network-devel-5.15.8+kde160-1.2
+[   43s] [398/406] cumulate libQt5Sql-devel-5.15.8+kde160-1.2
+[   43s] [399/406] cumulate libQt5Xml-devel-5.15.8+kde160-1.2
+[   43s] [400/406] cumulate libqt5-linguist-devel-5.15.8+kde1-1.1
+[   43s] [401/406] cumulate libqt5-qtspeech-devel-5.15.8+kde1-1.2
+[   43s] [402/406] cumulate libQt5DBus-devel-5.15.8+kde160-1.2
+[   43s] [403/406] cumulate libQt5Gui-devel-5.15.8+kde160-1.2
+[   43s] [404/406] cumulate poco-devel-1.12.2-1.2
+[   43s] [405/406] cumulate libQt5Widgets-devel-5.15.8+kde160-1.2
+[   43s] [406/406] cumulate libqt5-qtsvg-devel-5.15.8+kde8-1.1
+[   43s] now installing cumulated packages
+[   44s] Preparing...                          ########################################
+[   45s] Updating / installing...
+[   45s] libPocoFoundation92-1.12.2-1.2        ########################################
+[   45s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   45s] libexpat1-2.5.0-2.1                   ########################################
+[   45s] libdrm2-2.4.114-3.1                   ########################################
+[   46s] xorgproto-devel-2022.2-2.1            ########################################
+[   46s] libPocoNet92-1.12.2-1.2               ########################################
+[   46s] libffi8-3.4.4-1.1                     ########################################
+[   46s] libavahi-common3-0.8-22.2             ########################################
+[   46s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   46s] libsystemd0-mini-252.5-1.1            ########################################
+[   46s] libogg0-1.3.5-1.1                     ########################################
+[   46s] libvorbis0-1.3.7-2.1                  ########################################
+[   47s] libPocoData92-1.12.2-1.2              ########################################
+[   47s] zlib-devel-1.2.13-2.1                 ########################################
+[   47s] libopus0-1.3.1-3.2                    ########################################
+[   47s] libFLAC12-1.4.2-1.1                   ########################################
+[   47s] libogg-devel-1.3.5-1.1                ########################################
+[   47s] libwayland-client0-1.21.0-4.2         ########################################
+[   47s] libwayland-server0-1.21.0-4.2         ########################################
+[   47s] libPocoXML92-1.12.2-1.2               ########################################
+[   47s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   47s] libPocoJSON92-1.12.2-1.2              ########################################
+[   48s] libPocoUtil92-1.12.2-1.2              ########################################
+[   48s] libudev-mini1-252.5-1.1               ########################################
+[   48s] libpcre1-8.45-2.1                     ########################################
+[   48s] libICE6-1.1.1-1.1                     ########################################
+[   48s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   49s] libopenssl3-3.0.7-3.1                 ########################################
+[   49s] libPocoCrypto92-1.12.2-1.2            ########################################
+[   49s] Mesa-libglapi0-22.3.4-347.1           ########################################
+[   49s] libevent-2_1-7-2.1.12-3.2             ########################################
+[   49s] libmariadb3-3.3.3-1.2                 ########################################
+[   49s] openssl-3.0.7-1.1                     ########################################
+[   50s] openssl-3-3.0.7-3.1                   ########################################
+[   50s] libgbm1-22.3.4-347.1                  ########################################
+[   50s] libvorbisenc2-1.3.7-2.1               ########################################
+[   50s] libffi-devel-3.4.4-1.1                ########################################
+[   50s] libdrm_amdgpu1-2.4.114-3.1            ########################################
+[   50s] libdrm_nouveau2-2.4.114-3.1           ########################################
+[   50s] libdrm_radeon1-2.4.114-3.1            ########################################
+[   50s] libxshmfence1-1.3.2-1.1               ########################################
+[   51s] libxml2-2-2.10.3-2.1                  ########################################
+[   51s] libunistring5-1.1-1.1                 ########################################
+[   63s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   63s] libstdc++-devel-12-2.1                ########################################
+[   63s] libspeex1-1.2.1-1.1                   ########################################
+[   64s] libsndfile1-1.1.0-1.2                 ########################################
+[   64s] libprotobuf3_21_12-21.12-1.2          ########################################
+[   64s] libpng16-16-1.6.39-2.1                ########################################
+[   64s] libpcre2-16-0-10.42-3.2               ########################################
+[   64s] libpciaccess0-0.17-1.1                ########################################
+[   64s] libnettle8-3.8.1-1.1                  ########################################
+[   64s] libmtdev1-1.1.6-1.1                   ########################################
+[   65s] libltdl7-2.4.7-3.2                    ########################################
+[   65s] libodbc2-2.3.11-2.1                   ########################################
+[   65s] libcelt0-2-0.11.3-1.3                 ########################################
+[   65s] libXau6-1.0.11-1.1                    ########################################
+[   65s] libxcb1-1.15-2.1                      ########################################
+[   65s] libxcb-shm0-1.15-2.1                  ########################################
+[   65s] libxcb-sync1-1.15-2.1                 ########################################
+[   65s] libxcb-xfixes0-1.15-2.1               ########################################
+[   65s] libxcb-dri2-0-1.15-2.1                ########################################
+[   65s] libxcb-dri3-0-1.15-2.1                ########################################
+[   65s] libxcb-glx0-1.15-2.1                  ########################################
+[   65s] libxcb-present0-1.15-2.1              ########################################
+[   65s] libxcb-randr0-1.15-2.1                ########################################
+[   65s] libxcb-render0-1.15-2.1               ########################################
+[   66s] libxcb-xkb1-1.15-2.1                  ########################################
+[   66s] libxcb-shape0-1.15-2.1                ########################################
+[   66s] libxcb-xinerama0-1.15-2.1             ########################################
+[   66s] libxcb-xinput0-1.15-2.1               ########################################
+[   66s] libX11-data-1.8.1-4.1                 ########################################
+[   66s] libX11-6-1.8.1-4.1                    ########################################
+[   66s] libXext6-1.3.5-1.1                    ########################################
+[   66s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   66s] libXfixes3-6.0.0-2.1                  ########################################
+[   66s] libXrender1-0.9.11-1.1                ########################################
+[   66s] dbus-1-common-1.14.4-1.1              ########################################
+[   67s] libdbus-1-3-1.14.4-1.1                ########################################
+[   67s] libavahi-client3-0.8-22.2             ########################################
+[   67s] libpulse0-16.1-1.3                    ########################################
+[   67s] Mesa-KHR-devel-22.3.4-347.1           ########################################
+[   67s] libpulse-mainloop-glib0-16.1-1.3      ########################################
+[   67s] libdns_sd-0.8-22.2                    ########################################
+[   67s] dbus-1-tools-1.14.4-1.1               ########################################
+[   67s] dbus-1-daemon-1.14.4-1.1              ########################################
+[   67s] libXrandr2-1.5.3-1.1                  ########################################
+[   67s] libXi6-1.8-1.1                        ########################################
+[   67s] libXxf86vm1-1.1.5-1.1                 ########################################
+[   67s] libxcb-render-util0-0.3.10-1.1        ########################################
+[   67s] libxcb-composite0-1.15-2.1            ########################################
+[   67s] libxcb-damage0-1.15-2.1               ########################################
+[   68s] libxcb-dpms0-1.15-2.1                 ########################################
+[   68s] libxcb-icccm4-0.4.2-1.1               ########################################
+[   68s] libxcb-keysyms1-0.4.1-1.1             ########################################
+[   68s] libxcb-record0-1.15-2.1               ########################################
+[   68s] libxcb-res0-1.15-2.1                  ########################################
+[   68s] libxcb-screensaver0-1.15-2.1          ########################################
+[   68s] libxcb-util1-0.4.1-1.1                ########################################
+[   68s] libxcb-image0-0.4.1-1.1               ########################################
+[   68s] libxcb-xf86dri0-1.15-2.1              ########################################
+[   68s] libxcb-xtest0-1.15-2.1                ########################################
+[   68s] libxcb-xv0-1.15-2.1                   ########################################
+[   68s] libxcb-xvmc0-1.15-2.1                 ########################################
+[   68s] libXau-devel-1.0.11-1.1               ########################################
+[   69s] libxcb-devel-1.15-2.1                 ########################################
+[   70s] libX11-devel-1.8.1-4.1                ########################################
+[   70s] libXext-devel-1.3.5-1.1               ########################################
+[   70s] libXfixes-devel-6.0.0-2.1             ########################################
+[   70s] libXrender-devel-0.9.11-1.1           ########################################
+[   70s] libXrandr-devel-1.5.3-1.1             ########################################
+[   70s] libjackserver0-1.9.21-1.3             ########################################
+[   70s] unixODBC-2.3.11-2.1                   ########################################
+[   70s] unixODBC-devel-2.3.11-2.1             ########################################
+[   70s] libPocoDataODBC92-1.12.2-1.2          ########################################
+[   70s] libhogweed6-3.8.1-1.1                 ########################################
+[   70s] libpciaccess-devel-0.17-1.1           ########################################
+[   70s] libdrm_intel1-2.4.114-3.1             ########################################
+[   71s] libdrm-devel-2.4.114-3.1              ########################################
+[   71s] libprotoc3_21_12-21.12-1.2            ########################################
+[   75s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   75s] gcc-c++-12-2.1                        ########################################
+[   75s] libidn2-0-2.3.4-1.1                   ########################################
+[   75s] shared-mime-info-2.2-1.1              ########################################
+[   87s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   89s] libopenssl-devel-3.0.7-1.1            ########################################
+[   89s] libmariadb-devel-3.3.3-1.2            ########################################
+[   89s] libPocoDataMySQL92-1.12.2-1.2         ########################################
+[   89s] libavahi-libevent1-0.8-22.2           ########################################
+[   89s] libPocoJWT92-1.12.2-1.2               ########################################
+[   89s] libPocoNetSSL92-1.12.2-1.2            ########################################
+[   89s] libSM6-1.2.4-2.1                      ########################################
+[   89s] libpcrecpp0-8.45-2.1                  ########################################
+[   90s] libpcreposix0-8.45-2.1                ########################################
+[   90s] libgudev-1_0-0-237-2.1                ########################################
+[   90s] libPocoPDF92-1.12.2-1.2               ########################################
+[   90s] poco-cpspc-1.12.2-1.2                 ########################################
+[   90s] libwayland-cursor0-1.21.0-4.2         ########################################
+[   90s] libFLAC++10-1.4.2-1.1                 ########################################
+[   91s] flac-devel-1.4.2-1.1                  ########################################
+[   91s] libopus-devel-1.3.1-3.2               ########################################
+[   91s] libvorbisfile3-1.3.7-2.1              ########################################
+[   91s] libvorbis-devel-1.3.7-2.1             ########################################
+[   91s] libavahi-core7-0.8-22.2               ########################################
+[   91s] libp11-kit0-0.24.1-2.1                ########################################
+[   91s] libPocoMongoDB92-1.12.2-1.2           ########################################
+[   91s] libPocoPrometheus92-1.12.2-1.2        ########################################
+[   92s] libPocoRedis92-1.12.2-1.2             ########################################
+[   92s] libexpat-devel-2.5.0-2.1              ########################################
+[   92s] desktop-file-utils-0.26-5.1           ########################################
+[   95s] libgthread-2_0-0-2.74.5-1.1           ########################################
+[   95s] libspeechd2-0.11.4-1.2                ########################################
+[   95s] libPocoCppParser92-1.12.2-1.2         ########################################
+[   95s] libPocoEncodings92-1.12.2-1.2         ########################################
+[   95s] libPocoZip92-1.12.2-1.2               ########################################
+[   96s] xkeyboard-config-2.37-1.1             ########################################
+[   96s] libxkbcommon0-1.5.0-1.1               ########################################
+[   96s] libxkbcommon-x11-0-1.5.0-1.1          ########################################
+[   96s] timezone-2022g-2.1                    ########################################
+[   97s] /usr/sbin/useradd -r -c Printing daemon -d /var/spool/lpd -g lp lp -s /usr/sbin/nologin
+[   97s] system-user-lp-20170617-24.1          ########################################
+[   98s] cups-config-2.4.2-4.2                 ########################################
+[   98s] python-rpm-macros-20230128.e704796-1.1########################################
+[   98s] libwayland-egl1-1.21.0-4.2            ########################################
+[   98s] wayland-devel-1.21.0-4.2              ########################################
+[   98s] libwacom-data-2.5.0-1.1               ########################################
+[   98s] libwacom9-2.5.0-1.1                   ########################################
+[   98s] libvulkan1-1.3.239.0-1.1              ########################################
+[   98s] libverto1-0.3.2-1.1                   ########################################
+[   98s] libuv1-1.44.2-3.1                     ########################################
+[   98s] libts0-1.22-1.1                       ########################################
+[   99s] libtasn1-6-4.19.0-1.1                 ########################################
+[   99s] libsqlite3-0-3.40.1-1.1               ########################################
+[   99s] libPocoDataSQLite92-1.12.2-1.2        ########################################
+[   99s] libspeexdsp1-1.2.1-1.1                ########################################
+[   99s] speexdsp-devel-1.2.1-1.1              ########################################
+[   99s] speex-devel-1.2.1-1.1                 ########################################
+[   99s] libsepol-devel-3.4-1.1                ########################################
+[   99s] libsamplerate0-0.2.2-1.1              ########################################
+[   99s] libjacknet0-1.9.21-1.3                ########################################
+[  100s] librhash0-1.4.3-1.1                   ########################################
+[  100s] libpsx2-2.66-1.1                      ########################################
+[  100s] libproxy1-0.4.18-1.1                  ########################################
+[  100s] libprotobuf-lite3_21_12-21.12-1.2     ########################################
+[  100s] libpcre2-posix3-10.42-3.2             ########################################
+[  100s] libpcre2-32-0-10.42-3.2               ########################################
+[  100s] pcre2-devel-10.42-3.2                 ########################################
+[  101s] libselinux-devel-3.4-2.1              ########################################
+[  101s] libpcre16-0-8.45-2.1                  ########################################
+[  101s] pcre-devel-8.45-2.1                   ########################################
+[  101s] libmpdec3-2.5.1-2.1                   ########################################
+[  101s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[  106s] python310-base-3.10.9-2.2             ########################################
+[  106s] python310-packaging-23.0-1.1          ########################################
+[  107s] libevent-devel-2.1.12-3.2             ########################################
+[  113s] cmake-mini-3.25.2-1.2                 ########################################
+[  113s] cmake-3.25.2-1.1                      ########################################
+[  116s] vulkan-headers-1.3.239.0-1.1          ########################################
+[  116s] vulkan-devel-1.3.239.0-1.1            ########################################
+[  116s] libkeyutils1-1.6.3-5.1                ########################################
+[  116s] libjpeg8-8.2.2-72.1                   ########################################
+[  116s] libjitterentropy3-3.4.1-1.1           ########################################
+[  116s] libgnutls30-3.7.8-3.1                 ########################################
+[  116s] libjack0-1.9.21-1.3                   ########################################
+[  121s] libicu72-ledata-72.1-1.1              ########################################
+[  122s] libicu72-72.1-1.1                     ########################################
+[  122s] libgraphite2-3-1.3.14-3.1             ########################################
+[  122s] libevdev2-1.13.0-1.1                  ########################################
+[  122s] libinput10-1.22.1-1.1                 ########################################
+[  122s] libedit0-20210910.3.1-1.1             ########################################
+[  134s] libLLVM15-15.0.7-1.1                  ########################################
+[  134s] Mesa-libEGL1-22.3.4-347.1             ########################################
+[  135s] libglvnd-1.6.0-1.1                    ########################################
+[  135s] Mesa-libGL1-22.3.4-347.1              ########################################
+[  135s] Mesa-22.3.4-347.1                     ########################################
+[  138s] Mesa-dri-22.3.4-347.1                 ########################################
+[  138s] libglvnd-devel-1.6.0-1.1              ########################################
+[  138s] Mesa-libEGL-devel-22.3.4-347.1        ########################################
+[  138s] Mesa-libGL-devel-22.3.4-347.1         ########################################
+[  138s] libdouble-conversion3-3.2.1-1.1       ########################################
+[  139s] libQt5Core5-5.15.8+kde160-1.2         ########################################
+[  139s] libQt5DBus5-5.15.8+kde160-1.2         ########################################
+[  140s] libQt5Network5-5.15.8+kde160-1.2      ########################################
+[  140s] libQt5Xml5-5.15.8+kde160-1.2          ########################################
+[  140s] libQt5Concurrent5-5.15.8+kde160-1.2   ########################################
+[  140s] libQt5Sql5-5.15.8+kde160-1.2          ########################################
+[  141s] libQt5TextToSpeech5-5.15.8+kde1-1.2   ########################################
+[  142s] libqt5-qtbase-common-devel-5.15.8+kde1########################################
+[  143s] libQt5Core-devel-5.15.8+kde160-1.2    ########################################
+[  143s] libcom_err2-1.46.5-4.1                ########################################
+[  143s] krb5-mini-1.20.1-2.3                  ########################################
+[  144s] Updating /etc/sysconfig/kadmind ...
+[  144s] Updating /etc/sysconfig/krb5kdc ...
+[  144s] libcups2-2.4.2-4.2                    ########################################
+[  144s] libbrotlicommon1-1.0.9-1.1            ########################################
+[  144s] libbrotlidec1-1.0.9-1.1               ########################################
+[  144s] libfreetype6-2.12.1-4.1               ########################################
+[  145s] libfontconfig1-2.14.2-1.1             ########################################
+[  145s] fontconfig-2.14.2-1.1                 ########################################
+[  145s] libharfbuzz0-6.0.0-1.2                ########################################
+[  146s] libQt5Gui5-5.15.8+kde160-1.2          ########################################
+[  148s] libQt5Widgets5-5.15.8+kde160-1.2      ########################################
+[  148s] libQt5Gui-devel-5.15.8+kde160-1.2     ########################################
+[  149s] libQt5Widgets-devel-5.15.8+kde160-1.2 ########################################
+[  149s] libQt5Svg5-5.15.8+kde8-1.1            ########################################
+[  149s] libQt5PrintSupport5-5.15.8+kde160-1.2 ########################################
+[  149s] libqt5-linguist-5.15.8+kde1-1.1       ########################################
+[  153s] libblkid-devel-2.38.1-6.1             ########################################
+[  153s] libmount-devel-2.38.1-6.1             ########################################
+[  153s] libasound2-1.2.8-1.1                  ########################################
+[  153s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[  153s] alts-1.2+3.b848aad-3.1                ########################################
+[  153s] /usr/sbin/useradd -r -c User for D-Bus -d /run/dbus -U messagebus -s /usr/sbin/nologin
+[  154s] dbus-1-1.14.4-1.1                     ########################################
+[  154s] gio-branding-upstream-2.74.5-1.1      ########################################
+[  155s] libgio-2_0-0-2.74.5-1.1               ########################################
+[  158s] glib2-tools-2.74.5-1.1                ########################################
+[  159s] glib2-devel-2.74.5-1.1                ########################################
+[  159s] dbus-1-devel-1.14.4-1.1               ########################################
+[  159s] libavahi-devel-0.8-22.2               ########################################
+[  159s] boost-license1_81_0-1.81.0-1.1        ########################################
+[  177s] libboost_headers1_81_0-devel-1.81.0-1.########################################
+[  179s] libboost_headers-devel-1.81.0-1.1     ########################################
+[  179s] avahi-compat-mDNSResponder-devel-0.8-2########################################
+[  179s] libspeechd-devel-0.11.4-1.2           ########################################
+[  179s] libpulse-devel-16.1-1.3               ########################################
+[  179s] alsa-devel-1.2.8-1.1                  ########################################
+[  179s] libqt5-linguist-devel-5.15.8+kde1-1.1 ########################################
+[  179s] libqt5-qtsvg-devel-5.15.8+kde8-1.1    ########################################
+[  179s] libQt5Concurrent-devel-5.15.8+kde160-1########################################
+[  179s] libQt5Network-devel-5.15.8+kde160-1.2 ########################################
+[  179s] libQt5Sql-devel-5.15.8+kde160-1.2     ########################################
+[  179s] libQt5Xml-devel-5.15.8+kde160-1.2     ########################################
+[  179s] libqt5-qtspeech-devel-5.15.8+kde1-1.2 ########################################
+[  179s] libQt5DBus-devel-5.15.8+kde160-1.2    ########################################
+[  180s] libjack-devel-1.9.21-1.3              ########################################
+[  180s] python-rpm-packaging-20210526+a18ca48-########################################
+[  181s] poco-devel-1.12.2-1.2                 ########################################
+[  181s] protobuf-devel-21.12-1.2              ########################################
+[  181s] libcap-devel-2.66-1.1                 ########################################
+[  181s] libsndfile-devel-1.1.0-1.2            ########################################
+[  181s] update-desktop-files-84.87-6.1        ########################################
+[  181s] libXi-devel-1.8-1.1                   ########################################
+[  181s] libICE-devel-1.1.1-1.1                ########################################
+[  193s] now finalizing build dir...
+[  194s] ... running 01-add_abuild_user_to_trusted_group
+[  194s] ... running 02-set_timezone_to_utc
+[  194s] ... running 03-set-permissions-secure
+[  194s] ... running 11-hack_uname_version_to_kernel_version
+[  203s] -----------------------------------------------------------------
+[  203s] I have the following modifications for mumble.spec:
+[  203s] 32c32
+[  203s] < Release:        0
+[  203s] ---
+[  203s] > Release:        1.7
+[  211s] build target is riscv64-suse-linux
+[  211s] -----------------------------------------------------------------
+[  211s] ----- building mumble.spec (user abuild)
+[  211s] -----------------------------------------------------------------
+[  211s] -----------------------------------------------------------------
+[  215s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/7292b7d4ce7887f913dfd568917f6399-mumble' /home/abuild/rpmbuild/SOURCES/mumble.spec
+[  215s] Building target platforms: riscv64-suse-linux
+[  215s] Building for target riscv64-suse-linux
+[  215s] setting SOURCE_DATE_EPOCH=1663718400
+[  216s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.5ctWsv
+[  216s] + umask 022
+[  216s] + cd /home/abuild/rpmbuild/BUILD
+[  216s] + cd /home/abuild/rpmbuild/BUILD
+[  216s] + rm -rf mumble-1.4.287.src
+[  216s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/mumble-1.4.287.tar.gz
+[  217s] + STATUS=0
+[  217s] + '[' 0 -ne 0 ']'
+[  217s] + cd mumble-1.4.287.src
+[  217s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  218s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  218s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/fix-64bit-only-plugins.patch
+[  218s] + RPM_EC=0
+[  218s] ++ jobs -p
+[  218s] + exit 0
+[  218s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.FIPOLK
+[  218s] + umask 022
+[  218s] + cd /home/abuild/rpmbuild/BUILD
+[  218s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/mumble-1.4.287-1.7.riscv64
+[  218s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/mumble-1.4.287-1.7.riscv64
+[  218s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  218s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/mumble-1.4.287-1.7.riscv64
+[  218s] + cd mumble-1.4.287.src
+[  218s] + ref=/usr/lib/rpm
+[  218s] + mints=0
+[  218s] + case $(uname -m) in
+[  218s] ++ uname -m
+[  218s] + mints=20160911
+[  218s] + for s in guess sub
+[  218s] ++ find -maxdepth 8 -name config.guess
+[  219s] + for s in guess sub
+[  219s] ++ find -maxdepth 8 -name config.sub
+[  219s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[  219s] + mkdir -p build
+[  219s] + cd build
+[  219s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/mumble -Dupdate:BOOL=OFF -Doverlay-xcompile:BOOL=OFF -Dsymbols:BOOL=ON -Dcrash-report:BOOL=OFF -DMUMBLE_INSTALL_PLUGINDIR=/usr/lib64/mumble/plugins -DCMAKE_MODULE_LINKER_FLAGS= -DCMAKE_SHARED_LINKER_FLAGS= -Dice=OFF -Dbundled-opus:BOOL=OFF -Dbundled-speex:BOOL=OFF
+[  224s] -- The C compiler identification is GNU 12.2.1
+[  228s] -- The CXX compiler identification is GNU 12.2.1
+[  228s] -- Detecting C compiler ABI info
+[  232s] -- Detecting C compiler ABI info - done
+[  232s] -- Check for working C compiler: /usr/bin/cc - skipped
+[  232s] -- Detecting C compile features
+[  232s] -- Detecting C compile features - done
+[  233s] -- Detecting CXX compiler ABI info
+[  237s] -- Detecting CXX compiler ABI info - done
+[  237s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  237s] -- Detecting CXX compile features
+[  237s] -- Detecting CXX compile features - done
+[  237s] -- Performing Test COMPILER_HAS_MBIG_OBJ
+[  238s] -- Performing Test COMPILER_HAS_MBIG_OBJ - Failed
+[  242s] -- ##################################################
+[  242s] -- Mumble version:          1.4.0
+[  242s] -- Architecture:            unknown
+[  242s] -- Build type:              RelWithDebInfo
+[  242s] -- ##################################################
+[  243s] -- Qt5 component found: Core | Version: 5.15.8
+[  243s] -- Qt5 component found: Network | Version: 5.15.8
+[  243s] -- Qt5 component found: Xml | Version: 5.15.8
+[  243s] -- OpenSSL component found: Crypto | Version: 3.0.7
+[  243s] -- OpenSSL component found: SSL | Version: 3.0.7
+[  247s] -- Protobuf found | Version: 3.21.12
+[  247s] -- Qt5 component found: Concurrent | Version: 5.15.8
+[  247s] -- Qt5 component found: Sql | Version: 5.15.8
+[  247s] -- Qt5 component found: Svg | Version: 5.15.8
+[  247s] -- Qt5 component found: Widgets | Version: 5.15.8
+[  251s] -- Poco component found: XML | Version: 1.12.2
+[  254s] -- Poco component found: Zip | Version: 1.12.2
+[  254s] -- SndFile found | Version: 1.1.0
+[  279s] -- X11 component found: Xext
+[  280s] -- X11 component found: Xi
+[  283s] -- opus found | Version: 1.3.1
+[  283s] -- Disabling warnings for targets: celt
+[  286s] -- speex found | Version: 1.2.1
+[  289s] -- speexdsp found | Version: 1.2.1
+[  289s] -- Disabling warnings for targets: rnnoise
+[  291s] -- speech-dispatcher found | Version: 0.11.4
+[  292s] -- Qt5 component found: DBus | Version: 5.15.8
+[  292s] -- Qt5 component found: LinguistTools | Version: 5.15.8
+[  295s] -- ALSA found
+[  295s] -- Qt5 component found: Sql | Version: 5.15.8
+[  295s] -- File: /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/murmur/murmur_autogen
+[  295s] -- Qt5 component found: DBus | Version: 5.15.8
+[  295s] -- Configuring done
+[  299s] -- Generating done
+[  299s] CMake Warning:
+[  299s]   Manually-specified variables were not used by the project:
+[  299s] 
+[  299s]     BUILD_STATIC_LIBS
+[  299s]     CMAKE_Fortran_FLAGS
+[  299s]     CMAKE_INSTALL_DO_STRIP
+[  299s]     CMAKE_MODULES_INSTALL_DIR
+[  299s]     INCLUDE_INSTALL_DIR
+[  299s]     LIB_INSTALL_DIR
+[  299s]     LIB_SUFFIX
+[  299s]     SHARE_INSTALL_PREFIX
+[  299s]     SYSCONF_INSTALL_DIR
+[  299s] 
+[  299s] 
+[  299s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build
+[  300s] + /usr/bin/make -O VERBOSE=1 -j4 -j1
+[  300s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src -B/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  300s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/CMakeFiles /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build//CMakeFiles/progress.marks
+[  300s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  300s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  300s] /usr/bin/make  -f src/CMakeFiles/shared_autogen.dir/build.make src/CMakeFiles/shared_autogen.dir/depend
+[  300s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  300s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/CMakeFiles/shared_autogen.dir/DependInfo.cmake
+[  301s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  301s] /usr/bin/make  -f src/CMakeFiles/shared_autogen.dir/build.make src/CMakeFiles/shared_autogen.dir/build
+[  301s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  301s] [  1%] Running cpp protocol buffer compiler on /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/Mumble.proto
+[  301s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/protoc --cpp_out /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/Mumble.proto
+[  303s] [  1%] Automatic MOC for target shared
+[  303s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/cmake -E cmake_autogen /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/CMakeFiles/shared_autogen.dir/AutogenInfo.json RelWithDebInfo
+[  303s] AutoGen: Refreshing parse cache because it doesn't exist.
+[  303s] AutoMoc: Generating "SRC:/build/src/shared_autogen/moc_predefs.h", because it doesn't exist.
+[  303s] /usr/bin/c++ -dM -E -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -DMUMBLE_BUILD_YEAR=2022 "-DMUMBLE_TARGET_ARCH=\"unknown\"" "-DMUMBLE_TARGET_OS=\"linux\"" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/lib64/qt5/mkspecs/linux-g++ -I/usr/include/qt5/QtNetwork -I/usr/include/qt5/QtXml -I/usr/include -I/usr/include/c++/12 -I/usr/include/c++/12/riscv64-suse-linux -I/usr/include/c++/12/backward -I/usr/lib64/gcc/riscv64-suse-linux/12/include -I/usr/local/include -I/usr/lib64/gcc/riscv64-suse-linux/12/include-fixed -I/usr/riscv64-suse-linux/include
+[  304s] AutoGen: Parsing "SRC:/3rdparty/arc4random/arc4random_uniform.h"
+[  304s] AutoGen: Parsing "SRC:/src/ByteSwap.h"
+[  304s] AutoGen: Parsing "SRC:/build/src/Mumble.pb.h"
+[  304s] AutoGen: Parsing "SRC:/src/Ban.h"
+[  304s] AutoGen: Parsing "SRC:/src/EnvUtils.h"
+[  304s] AutoGen: Parsing "SRC:/src/FFDHE.h"
+[  304s] AutoGen: Parsing "SRC:/src/FFDHETable.h"
+[  304s] AutoGen: Parsing "SRC:/src/HTMLFilter.h"
+[  304s] AutoGen: Parsing "SRC:/src/HostAddress.h"
+[  304s] AutoGen: Parsing "SRC:/src/License.h"
+[  304s] AutoGen: Parsing "SRC:/src/LogEmitter.h"
+[  304s] AutoGen: Parsing "SRC:/src/Net.h"
+[  304s] AutoGen: Parsing "SRC:/src/OSInfo.h"
+[  304s] AutoGen: Parsing "SRC:/src/PasswordGenerator.h"
+[  304s] AutoGen: Parsing "SRC:/src/PlatformCheck.h"
+[  304s] AutoGen: Parsing "SRC:/src/ProcessResolver.h"
+[  304s] AutoGen: Parsing "SRC:/src/ProtoUtils.h"
+[  304s] AutoGen: Parsing "SRC:/src/QtUtils.h"
+[  304s] AutoGen: Parsing "SRC:/src/SSL.h"
+[  304s] AutoGen: Parsing "SRC:/src/SSLLocks.h"
+[  304s] AutoGen: Parsing "SRC:/src/SelfSignedCertificate.h"
+[  304s] AutoGen: Parsing "SRC:/src/ServerAddress.h"
+[  304s] AutoGen: Parsing "SRC:/src/ServerResolver.h"
+[  304s] AutoGen: Parsing "SRC:/src/ServerResolverRecord.h"
+[  304s] AutoGen: Parsing "SRC:/src/Timer.h"
+[  304s] AutoGen: Parsing "SRC:/src/UnresolvedServerAddress.h"
+[  304s] AutoGen: Parsing "SRC:/src/User.h"
+[  304s] AutoGen: Parsing "SRC:/src/Version.h"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptState.h"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptStateOCB2.h"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptographicHash.h"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptographicRandom.h"
+[  304s] AutoGen: Parsing "SRC:/src/licenses.h"
+[  304s] AutoGen: Parsing "SRC:/3rdparty/arc4random/arc4random_uniform.cpp"
+[  304s] AutoGen: Parsing "SRC:/build/src/Mumble.pb.cc"
+[  304s] AutoGen: Parsing "SRC:/src/Ban.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/EnvUtils.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/FFDHE.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/HTMLFilter.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/HostAddress.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/License.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/LogEmitter.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/OSInfo.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/PasswordGenerator.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/PlatformCheck.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/ProcessResolver.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/ProtoUtils.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/QtUtils.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/SSL.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/SSLLocks.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/SelfSignedCertificate.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/ServerAddress.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/ServerResolver.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/ServerResolverRecord.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/Timer.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/UnresolvedServerAddress.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/User.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/Version.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptStateOCB2.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptographicHash.cpp"
+[  304s] AutoGen: Parsing "SRC:/src/crypto/CryptographicRandom.cpp"
+[  304s] AutoMoc: Generating "SRC:/build/src/shared_autogen/EWIEGA46WW/moc_LogEmitter.cpp", because it doesn't exist, from "SRC:/src/LogEmitter.h"
+[  304s] /usr/lib64/qt5/bin/moc -DMUMBLE_BUILD_YEAR=2022 "-DMUMBLE_TARGET_ARCH=\"unknown\"" "-DMUMBLE_TARGET_OS=\"linux\"" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/lib64/qt5/mkspecs/linux-g++ -I/usr/include/qt5/QtNetwork -I/usr/include/qt5/QtXml -I/usr/include -I/usr/include/c++/12 -I/usr/include/c++/12/riscv64-suse-linux -I/usr/include/c++/12/backward -I/usr/lib64/gcc/riscv64-suse-linux/12/include -I/usr/local/include -I/usr/lib64/gcc/riscv64-suse-linux/12/include-fixed -I/usr/riscv64-suse-linux/include --include /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/moc_predefs.h --output-dep-file -o /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/EWIEGA46WW/moc_LogEmitter.cpp /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/LogEmitter.h
+[  304s] AutoMoc: Generating "SRC:/build/src/shared_autogen/include/ServerResolver.moc", because it doesn't exist, from "SRC:/src/ServerResolver.cpp"
+[  304s] /usr/lib64/qt5/bin/moc -DMUMBLE_BUILD_YEAR=2022 "-DMUMBLE_TARGET_ARCH=\"unknown\"" "-DMUMBLE_TARGET_OS=\"linux\"" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/lib64/qt5/mkspecs/linux-g++ -I/usr/include/qt5/QtNetwork -I/usr/include/qt5/QtXml -I/usr/include -I/usr/include/c++/12 -I/usr/include/c++/12/riscv64-suse-linux -I/usr/include/c++/12/backward -I/usr/lib64/gcc/riscv64-suse-linux/12/include -I/usr/local/include -I/usr/lib64/gcc/riscv64-suse-linux/12/include-fixed -I/usr/riscv64-suse-linux/include --include /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/moc_predefs.h --output-dep-file -o /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include/ServerResolver.moc /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/ServerResolver.cpp
+[  304s] AutoMoc: Generating "SRC:/build/src/shared_autogen/EWIEGA46WW/moc_ServerResolver.cpp", because it doesn't exist, from "SRC:/src/ServerResolver.h"
+[  304s] /usr/lib64/qt5/bin/moc -DMUMBLE_BUILD_YEAR=2022 "-DMUMBLE_TARGET_ARCH=\"unknown\"" "-DMUMBLE_TARGET_OS=\"linux\"" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -I/usr/include/qt5 -I/usr/include/qt5/QtCore -I/usr/lib64/qt5/mkspecs/linux-g++ -I/usr/include/qt5/QtNetwork -I/usr/include/qt5/QtXml -I/usr/include -I/usr/include/c++/12 -I/usr/include/c++/12/riscv64-suse-linux -I/usr/include/c++/12/backward -I/usr/lib64/gcc/riscv64-suse-linux/12/include -I/usr/local/include -I/usr/lib64/gcc/riscv64-suse-linux/12/include-fixed -I/usr/riscv64-suse-linux/include --include /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/moc_predefs.h --output-dep-file -o /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/EWIEGA46WW/moc_ServerResolver.cpp /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/ServerResolver.h
+[  305s] AutoMoc: Reading dependencies from "SRC:/build/src/shared_autogen/include/ServerResolver.moc.d"
+[  305s] AutoMoc: Reading dependencies from "SRC:/build/src/shared_autogen/EWIEGA46WW/moc_LogEmitter.cpp.d"
+[  305s] AutoMoc: Reading dependencies from "SRC:/build/src/shared_autogen/EWIEGA46WW/moc_ServerResolver.cpp.d"
+[  305s] AutoMoc: Generating MOC compilation "SRC:/build/src/shared_autogen/mocs_compilation.cpp"
+[  305s] AutoGen: Writing the parse cache file "SRC:/build/src/CMakeFiles/shared_autogen.dir/ParseCache.txt"
+[  305s] AutoGen: Writing the settings file "SRC:/build/src/CMakeFiles/shared_autogen.dir/AutogenUsed.txt"
+[  305s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  306s] [  1%] Built target shared_autogen
+[  306s] /usr/bin/make  -f src/CMakeFiles/shared.dir/build.make src/CMakeFiles/shared.dir/depend
+[  306s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  306s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/CMakeFiles/shared.dir/DependInfo.cmake
+[  306s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  306s] /usr/bin/make  -f src/CMakeFiles/shared.dir/build.make src/CMakeFiles/shared.dir/build
+[  306s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  306s] [  1%] Building CXX object src/CMakeFiles/shared.dir/shared_autogen/mocs_compilation.cpp.o
+[  306s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/shared_autogen/mocs_compilation.cpp.o -MF CMakeFiles/shared.dir/shared_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/shared.dir/shared_autogen/mocs_compilation.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/mocs_compilation.cpp
+[  332s] [  2%] Building CXX object src/CMakeFiles/shared.dir/Mumble.pb.cc.o
+[  332s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -w -MD -MT src/CMakeFiles/shared.dir/Mumble.pb.cc.o -MF CMakeFiles/shared.dir/Mumble.pb.cc.o.d -o CMakeFiles/shared.dir/Mumble.pb.cc.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/Mumble.pb.cc
+[  392s] [  2%] Building CXX object src/CMakeFiles/shared.dir/Ban.cpp.o
+[  392s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/Ban.cpp.o -MF CMakeFiles/shared.dir/Ban.cpp.o.d -o CMakeFiles/shared.dir/Ban.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/Ban.cpp
+[  418s] [  2%] Building CXX object src/CMakeFiles/shared.dir/EnvUtils.cpp.o
+[  418s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/EnvUtils.cpp.o -MF CMakeFiles/shared.dir/EnvUtils.cpp.o.d -o CMakeFiles/shared.dir/EnvUtils.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/EnvUtils.cpp
+[  432s] [  2%] Building CXX object src/CMakeFiles/shared.dir/FFDHE.cpp.o
+[  432s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/FFDHE.cpp.o -MF CMakeFiles/shared.dir/FFDHE.cpp.o.d -o CMakeFiles/shared.dir/FFDHE.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/FFDHE.cpp
+[  449s] [  3%] Building CXX object src/CMakeFiles/shared.dir/HostAddress.cpp.o
+[  449s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/HostAddress.cpp.o -MF CMakeFiles/shared.dir/HostAddress.cpp.o.d -o CMakeFiles/shared.dir/HostAddress.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/HostAddress.cpp
+[  476s] [  3%] Building CXX object src/CMakeFiles/shared.dir/HTMLFilter.cpp.o
+[  476s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/HTMLFilter.cpp.o -MF CMakeFiles/shared.dir/HTMLFilter.cpp.o.d -o CMakeFiles/shared.dir/HTMLFilter.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/HTMLFilter.cpp
+[  498s] [  3%] Building CXX object src/CMakeFiles/shared.dir/License.cpp.o
+[  498s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/License.cpp.o -MF CMakeFiles/shared.dir/License.cpp.o.d -o CMakeFiles/shared.dir/License.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/License.cpp
+[  516s] [  4%] Building CXX object src/CMakeFiles/shared.dir/LogEmitter.cpp.o
+[  516s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/LogEmitter.cpp.o -MF CMakeFiles/shared.dir/LogEmitter.cpp.o.d -o CMakeFiles/shared.dir/LogEmitter.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/LogEmitter.cpp
+[  536s] [  4%] Building CXX object src/CMakeFiles/shared.dir/OSInfo.cpp.o
+[  536s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/OSInfo.cpp.o -MF CMakeFiles/shared.dir/OSInfo.cpp.o.d -o CMakeFiles/shared.dir/OSInfo.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/OSInfo.cpp
+[  565s] [  4%] Building CXX object src/CMakeFiles/shared.dir/PasswordGenerator.cpp.o
+[  565s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/PasswordGenerator.cpp.o -MF CMakeFiles/shared.dir/PasswordGenerator.cpp.o.d -o CMakeFiles/shared.dir/PasswordGenerator.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/PasswordGenerator.cpp
+[  582s] [  4%] Building CXX object src/CMakeFiles/shared.dir/PlatformCheck.cpp.o
+[  582s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/PlatformCheck.cpp.o -MF CMakeFiles/shared.dir/PlatformCheck.cpp.o.d -o CMakeFiles/shared.dir/PlatformCheck.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/PlatformCheck.cpp
+[  611s] [  5%] Building CXX object src/CMakeFiles/shared.dir/QtUtils.cpp.o
+[  611s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/QtUtils.cpp.o -MF CMakeFiles/shared.dir/QtUtils.cpp.o.d -o CMakeFiles/shared.dir/QtUtils.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/QtUtils.cpp
+[  638s] [  5%] Building CXX object src/CMakeFiles/shared.dir/ProcessResolver.cpp.o
+[  638s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/ProcessResolver.cpp.o -MF CMakeFiles/shared.dir/ProcessResolver.cpp.o.d -o CMakeFiles/shared.dir/ProcessResolver.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/ProcessResolver.cpp
+[  674s] [  5%] Building CXX object src/CMakeFiles/shared.dir/ProtoUtils.cpp.o
+[  674s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/ProtoUtils.cpp.o -MF CMakeFiles/shared.dir/ProtoUtils.cpp.o.d -o CMakeFiles/shared.dir/ProtoUtils.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/ProtoUtils.cpp
+[  728s] [  5%] Building CXX object src/CMakeFiles/shared.dir/SelfSignedCertificate.cpp.o
+[  728s] cd /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src && /usr/bin/c++ -DMUMBLE_BUILD_YEAR=2022 -DMUMBLE_TARGET_ARCH=\"unknown\" -DMUMBLE_TARGET_OS=\"linux\" -DMUMBLE_VERSION=1.4.0 -DMUMBLE_VERSION_MAJOR=1 -DMUMBLE_VERSION_MINOR=4 -DMUMBLE_VERSION_PATCH=0 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQT_XML_LIB -DUSE_QSSLDIFFIEHELLMANPARAMETERS -D_USE_MATH_DEFINES -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src/shared_autogen/include -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build/src -I/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/3rdparty/arc4random -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtCore -isystem /usr/lib64/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtXml -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -g -fPIC -std=gnu++14 -MD -MT src/CMakeFiles/shared.dir/SelfSignedCertificate.cpp.o -MF CMakeFiles/shared.dir/SelfSignedCertificate.cpp.o.d -o CMakeFiles/shared.dir/SelfSignedCertificate.cpp.o -c /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp
+[  761s] /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp: In static member function 'static bool SelfSignedCertificate::generate(CertificateType, QString, QString, QSslCertificate&, QSslKey&)':
+[  761s] /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp:45:29: error: 'CRYPTO_MEM_CHECK_ON' was not declared in this scope
+[  761s]    45 |         if (CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON) == -1) {
+[  761s]       |                             ^~~~~~~~~~~~~~~~~~~
+[  761s] /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp:45:13: error: 'CRYPTO_mem_ctrl' was not declared in this scope; did you mean 'CRYPTO_memcmp'?
+[  761s]    45 |         if (CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON) == -1) {
+[  761s]       |             ^~~~~~~~~~~~~~~
+[  761s]       |             CRYPTO_memcmp
+[  761s] /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp:62:22: warning: 'RSA* RSA_new()' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  761s]    62 |         rsa = RSA_new();
+[  761s]       |               ~~~~~~~^~
+[  761s] In file included from /usr/include/openssl/x509.h:36,
+[  761s]                  from /usr/include/openssl/x509v3.h:25,
+[  761s]                  from /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp:8:
+[  761s] /usr/include/openssl/rsa.h:201:28: note: declared here
+[  761s]   201 | OSSL_DEPRECATEDIN_3_0 RSA *RSA_new(void);
+[  761s]       |                            ^~~~~~~
+[  761s] /home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/src/SelfSignedCertificate.cpp:78:32: warning: 'int RSA_generate_key_ex(RSA*, int, BIGNUM*, BN_GENCB*)' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+[  761s]    78 |         if (RSA_generate_key_ex(rsa, 2048, e, nullptr) == 0) {
+[  761s]       |             ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[  761s] /usr/include/openssl/rsa.h:260:27: note: declared here
+[  761s]   260 | OSSL_DEPRECATEDIN_3_0 int RSA_generate_key_ex(RSA *rsa, int bits, BIGNUM *e,
+[  761s]       |                           ^~~~~~~~~~~~~~~~~~~
+[  764s] make[2]: *** [src/CMakeFiles/shared.dir/build.make:297: src/CMakeFiles/shared.dir/SelfSignedCertificate.cpp.o] Error 1
+[  764s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  764s] make[1]: *** [CMakeFiles/Makefile2:1181: src/CMakeFiles/shared.dir/all] Error 2
+[  764s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/mumble-1.4.287.src/build'
+[  764s] make: *** [Makefile:139: all] Error 2
+[  764s] error: Bad exit status from /var/tmp/rpm-tmp.FIPOLK (%build)
+[  764s] 
+[  764s] RPM build errors:
+[  764s]     Bad exit status from /var/tmp/rpm-tmp.FIPOLK (%build)
+[  764s] ### VM INTERACTION START ###
+[  765s] [  759.677398][    T1] sysrq: Power Off
+[  765s] [  759.679659][   T18] reboot: Power down
+[  765s] ### VM INTERACTION END ###
+[  765s] 
+[  765s] old-atreju3 failed "build mumble.spec" at Mon Feb  6 04:17:57 UTC 2023.
+[  765s] 

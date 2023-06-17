@@ -1,0 +1,244 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_3/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_3/root
+[    0s] 
+[    0s] 
+[    0s] lamb05 started "build delve.spec" at Fri Dec  9 12:18:55 UTC 2022.
+[    0s] 
+[    0s] Building delve for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '095c94b7a3172fc714a21ed42f66ee16'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_3/.build-srcdir/delve.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_3/.build-srcdir/delve.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/3/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_3/.build.rpmlist /var/cache/obs/worker/root_3/.build-srcdir/delve.spec build ...
+[    0s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [e652dbb94c3c21903975053878ea219d]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_3/.mount/boot/kernel -initrd /var/cache/obs/worker/root_3/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_3/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_3/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_3/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.0.10-1-default #1 SMP PREEMPT_DYNAMIC Sat Nov 26 17:59:17 UTC 2022 (582305b)
+[    9s] Increasing log level from now on...
+[    9s] [    4.729373][  T409] sysrq: Changing Loglevel
+[    9s] [    4.729619][  T409] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=3fc9a146-7a2c-40d8-9fce-26f2ae94deb6
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/delve.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/delve.spec build ...
+[   11s] initializing rpm db...
+[   12s] querying package ids...
+[   32s] [1/129] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   32s] [2/129] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   32s] [3/129] preinstalled attr-2.5.1-1.1
+[   32s] [4/129] preinstalled bash-5.2.12-6.1
+[   32s] [5/129] preinstalled bash-sh-5.2.12-6.1
+[   32s] [6/129] preinstalled binutils-2.39-1.1
+[   32s] [7/129] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   32s] [8/129] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   32s] [9/129] preinstalled build-mkbaselibs-20221118-1.1
+[   32s] [10/129] preinstalled bzip2-1.0.8-4.1
+[   32s] [11/129] preinstalled chkstat-1599_20220912-2.1
+[   32s] [12/129] preinstalled compat-usrmerge-build-84.87-5.1
+[   32s] [13/129] preinstalled compat-usrmerge-tools-84.87-5.1
+[   32s] [14/129] preinstalled coreutils-9.1-5.1
+[   32s] [15/129] preinstalled cpio-2.13-4.1
+[   32s] [16/129] preinstalled cpp-12-2.1
+[   32s] [17/129] preinstalled cpp12-12.2.1+git537-1.1
+[   32s] [18/129] preinstalled debugedit-5.0-5.1
+[   32s] [19/129] preinstalled diffutils-3.8-3.1
+[   32s] [20/129] preinstalled dwz-0.15-2.1
+[   32s] [21/129] preinstalled elfutils-0.188-2.1
+[   32s] [22/129] preinstalled file-5.43-1.1
+[   32s] [23/129] preinstalled file-magic-5.43-1.1
+[   32s] [24/129] preinstalled filesystem-84.87-10.1
+[   32s] [25/129] preinstalled fillup-1.42-278.1
+[   32s] [26/129] preinstalled findutils-4.9.0-1.1
+[   32s] [27/129] preinstalled gawk-5.2.1-1.1
+[   32s] [28/129] preinstalled gcc-12-2.1
+[   32s] [29/129] preinstalled gcc-PIE-12-2.1
+[   32s] [30/129] preinstalled gcc12-12.2.1+git537-1.1
+[   32s] [31/129] preinstalled gcc12-PIE-12.2.1+git537-1.1
+[   32s] [32/129] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   32s] [33/129] preinstalled gettext-tools-mini-0.21.1-1.1
+[   32s] [34/129] preinstalled glibc-2.36-8.1
+[   32s] [35/129] preinstalled glibc-devel-2.36-8.1
+[   32s] [36/129] preinstalled glibc-locale-base-2.36-8.1
+[   32s] [37/129] cumulate go1.19-1.19.4-1.1
+[   32s] [38/129] preinstalled grep-3.8-2.1
+[   32s] [39/129] preinstalled gzip-1.12-2.1
+[   32s] [40/129] preinstalled kernel-obs-build-6.0.10-1.1
+[   32s] [41/129] preinstalled libacl1-2.3.1-2.1
+[   32s] [42/129] preinstalled libasan8-12.2.1+git537-1.1
+[   32s] [43/129] preinstalled libasm1-0.188-2.1
+[   32s] [44/129] preinstalled libatomic1-12.2.1+git537-1.1
+[   32s] [45/129] preinstalled libattr1-2.5.1-1.1
+[   32s] [46/129] preinstalled libaudit1-3.0.6-4.1
+[   32s] [47/129] preinstalled libblkid1-2.37.4-4.1
+[   32s] [48/129] preinstalled libbz2-1-1.0.8-4.1
+[   32s] [49/129] preinstalled libcap-ng0-0.8.3-1.1
+[   32s] [50/129] preinstalled libcap2-2.66-1.1
+[   32s] [51/129] preinstalled libcrypt1-4.4.33-1.1
+[   32s] [52/129] preinstalled libctf-nobfd0-2.39-1.1
+[   32s] [53/129] preinstalled libctf0-2.39-1.1
+[   32s] [54/129] preinstalled libdb-4_8-4.8.30-39.1
+[   32s] [55/129] preinstalled libdw1-0.188-2.1
+[   32s] [56/129] preinstalled libeconf0-0.5.0-1.1
+[   32s] [57/129] preinstalled libelf1-0.188-2.1
+[   32s] [58/129] preinstalled libfdisk1-2.37.4-4.1
+[   32s] [59/129] preinstalled libgcc_s1-12.2.1+git537-1.1
+[   32s] [60/129] preinstalled libgcrypt20-1.10.1-1.1
+[   32s] [61/129] preinstalled libgdbm6-1.23-1.1
+[   32s] [62/129] preinstalled libgdbm_compat4-1.23-1.1
+[   32s] [63/129] preinstalled libgmp10-6.2.1-4.1
+[   32s] [64/129] preinstalled libgomp1-12.2.1+git537-1.1
+[   32s] [65/129] preinstalled libgpg-error0-1.46-1.1
+[   32s] [66/129] preinstalled libisl23-0.25-1.1
+[   32s] [67/129] preinstalled liblua5_4-5-5.4.4-6.1
+[   32s] [68/129] preinstalled liblzma5-5.2.8-1.1
+[   32s] [69/129] preinstalled libmagic1-5.43-1.1
+[   32s] [70/129] preinstalled libmount1-2.37.4-4.1
+[   32s] [71/129] preinstalled libmpc3-1.2.1-1.2
+[   32s] [72/129] preinstalled libmpfr6-4.1.1-3.1
+[   32s] [73/129] preinstalled libncurses6-6.3.20221126-31.1
+[   32s] [74/129] preinstalled libpcre2-8-0-10.40-3.1
+[   32s] [75/129] preinstalled libpkgconf3-1.8.0-1.1
+[   32s] [76/129] preinstalled libpopt0-1.19-1.1
+[   32s] [77/129] preinstalled libreadline8-8.2-2.1
+[   32s] [78/129] preinstalled librpmbuild9-4.17.1.1-3.1
+[   32s] [79/129] preinstalled libseccomp2-2.5.4-2.1
+[   32s] [80/129] preinstalled libselinux1-3.4-2.1
+[   32s] [81/129] preinstalled libsemanage-conf-3.4-1.1
+[   32s] [82/129] preinstalled libsemanage2-3.4-1.1
+[   32s] [83/129] preinstalled libsepol2-3.4-1.1
+[   32s] [84/129] preinstalled libsmartcols1-2.37.4-4.1
+[   32s] [85/129] preinstalled libstdc++6-12.2.1+git537-1.1
+[   32s] [86/129] preinstalled libsubid4-4.13-1.1
+[   32s] [87/129] preinstalled libubsan1-12.2.1+git537-1.1
+[   32s] [88/129] preinstalled libutempter0-1.2.0-3.2
+[   32s] [89/129] preinstalled libuuid1-2.37.4-4.1
+[   32s] [90/129] preinstalled libxcrypt-devel-4.4.33-1.1
+[   32s] [91/129] preinstalled libz1-1.2.12-2.1
+[   32s] [92/129] preinstalled libzstd1-1.5.2-1.1
+[   32s] [93/129] preinstalled linux-glibc-devel-6.0-1.1
+[   32s] [94/129] preinstalled login_defs-4.13-1.1
+[   32s] [95/129] preinstalled lua54-5.4.4-6.1
+[   32s] [96/129] preinstalled make-4.4-2.1
+[   32s] [97/129] preinstalled ncurses-utils-6.3.20221126-31.1
+[   32s] [98/129] preinstalled pam-1.5.2-9.1
+[   32s] [99/129] preinstalled pam_unix-1.5.2-9.1
+[   32s] [100/129] preinstalled patch-2.7.6-6.1
+[   32s] [101/129] preinstalled perl-5.36.0-3.1
+[   32s] [102/129] preinstalled perl-base-5.36.0-3.1
+[   32s] [103/129] preinstalled permissions-1599_20220912-2.1
+[   32s] [104/129] preinstalled permissions-config-1599_20220912-2.1
+[   32s] [105/129] preinstalled pkgconf-1.8.0-1.1
+[   32s] [106/129] preinstalled pkgconf-m4-1.8.0-1.1
+[   32s] [107/129] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   32s] [108/129] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   32s] [109/129] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   32s] [110/129] preinstalled qemu-linux-user-7.1.0-45.1
+[   32s] [111/129] preinstalled rpm-4.17.1.1-3.1
+[   32s] [112/129] preinstalled rpm-build-4.17.1.1-3.1
+[   32s] [113/129] preinstalled rpm-build-perl-4.17.1.1-3.1
+[   32s] [114/129] preinstalled rpm-config-SUSE-20220926-1.1
+[   32s] [115/129] preinstalled rpmlint-mini-2.4.0+git20221201.82b8b0c-8.32
+[   32s] [116/129] preinstalled rpmlint-strict-2.4.0+git20221201.82b8b0c-1.1
+[   32s] [117/129] preinstalled sed-4.9-1.1
+[   32s] [118/129] preinstalled shadow-4.13-1.1
+[   32s] [119/129] preinstalled system-group-hardware-20170617-24.1
+[   32s] [120/129] preinstalled system-user-root-20190513-2.1
+[   32s] [121/129] preinstalled systemd-rpm-macros-18-1.1
+[   32s] [122/129] preinstalled sysuser-shadow-3.1-5.1
+[   32s] [123/129] preinstalled tar-1.34-8.1
+[   32s] [124/129] preinstalled terminfo-base-6.3.20221126-31.1
+[   32s] [125/129] preinstalled update-alternatives-1.21.8-1.1
+[   32s] [126/129] preinstalled util-linux-2.37.4-4.1
+[   32s] [127/129] preinstalled which-2.21-5.1
+[   32s] [128/129] preinstalled xz-5.2.8-1.1
+[   32s] [129/129] cumulate go-1.19-1.1
+[   32s] now installing cumulated packages
+[   32s] Preparing...                          ########################################
+[   32s] Updating / installing...
+[   81s] go1.19-1.19.4-1.1                     ########################################
+[   82s] update-alternatives: using /usr/lib64/go/1.19/bin/go to provide /usr/bin/go (go) in auto mode
+[   82s] go-1.19-1.1                           ########################################
+[   83s] now finalizing build dir...
+[   83s] ... running 01-add_abuild_user_to_trusted_group
+[   83s] ... running 02-set_timezone_to_utc
+[   83s] ... running 03-set-permissions-secure
+[   84s] ... running 11-hack_uname_version_to_kernel_version
+[   89s] Running build time source services...
+[   97s] build target is riscv64-suse-linux
+[   97s] -----------------------------------------------------------------
+[   97s] I have the following modifications for delve.spec:
+[   97s] 26c26
+[   97s] < Release:        0
+[   97s] ---
+[   97s] > Release:        1.1
+[   97s] -----------------------------------------------------------------
+[   97s] ----- building delve.spec (user abuild)
+[   97s] -----------------------------------------------------------------
+[   97s] -----------------------------------------------------------------
+[  100s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/095c94b7a3172fc714a21ed42f66ee16-delve' /home/abuild/rpmbuild/SOURCES/delve.spec
+[  101s] Building target platforms: riscv64-suse-linux
+[  101s] Building for target riscv64-suse-linux
+[  101s] setting SOURCE_DATE_EPOCH=1670457600
+[  101s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.12pnJx
+[  101s] + umask 022
+[  101s] + cd /home/abuild/rpmbuild/BUILD
+[  101s] + cd /home/abuild/rpmbuild/BUILD
+[  101s] + rm -rf delve-1.20.0
+[  101s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/delve-1.20.0.tar.gz
+[  101s] + /usr/bin/tar -xof -
+[  102s] + STATUS=0
+[  102s] + '[' 0 -ne 0 ']'
+[  102s] + cd delve-1.20.0
+[  102s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/vendor.tar.gz
+[  102s] + /usr/bin/tar -xof -
+[  103s] + STATUS=0
+[  103s] + '[' 0 -ne 0 ']'
+[  103s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  103s] + RPM_EC=0
+[  103s] ++ jobs -p
+[  103s] + exit 0
+[  103s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.tBWZmQ
+[  103s] + umask 022
+[  103s] + cd /home/abuild/rpmbuild/BUILD
+[  103s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/delve-1.20.0-1.1.riscv64
+[  103s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/delve-1.20.0-1.1.riscv64
+[  103s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  103s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/delve-1.20.0-1.1.riscv64
+[  103s] + cd delve-1.20.0
+[  103s] + ref=/usr/lib/rpm
+[  103s] + mints=0
+[  103s] + case $(uname -m) in
+[  103s] ++ uname -m
+[  104s] + mints=20160911
+[  104s] + for s in guess sub
+[  104s] ++ find -maxdepth 8 -name config.guess
+[  104s] + for s in guess sub
+[  104s] ++ find -maxdepth 8 -name config.sub
+[  104s] + go build -mod=vendor -buildmode=pie -o dlv ./cmd/dlv
+[  105s] service/debugger/debugger.go:32:2: found packages native (dump_linux.go) and your_linux_architecture_is_not_supported_by_delve (support_sentinel_linux.go) in /home/abuild/rpmbuild/BUILD/delve-1.20.0/pkg/proc/native
+[  105s] error: Bad exit status from /var/tmp/rpm-tmp.tBWZmQ (%build)
+[  105s] 
+[  105s] RPM build errors:
+[  105s]     Bad exit status from /var/tmp/rpm-tmp.tBWZmQ (%build)
+[  106s] ### VM INTERACTION START ###
+[  106s] [  101.533080][    T1] sysrq: Power Off
+[  106s] [  101.537968][   T18] reboot: Power down
+[  106s] ### VM INTERACTION END ###
+[  106s] 
+[  106s] lamb05 failed "build delve.spec" at Fri Dec  9 12:20:41 UTC 2022.
+[  106s] 

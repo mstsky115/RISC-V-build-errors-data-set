@@ -1,0 +1,1302 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] lamb17 started "build python-curio.spec" at Sat Feb 18 21:25:09 UTC 2023.
+[    0s] 
+[    0s] Building python-curio for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'b2f427618c0d9a1c38ec1aec59720123'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-curio.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-curio.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-curio.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    6s] 
+[    6s] copying packages...
+[    6s] reordering...done
+[    6s] Detected virtio-serial support
+[    8s] booting kvm...
+[    8s] ### VM INTERACTION START ###
+[    8s] Using virtio-serial support
+[    8s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   15s] ### VM INTERACTION END ###
+[   15s] 2nd stage started in virtual machine
+[   16s] machine type: riscv64
+[   16s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   16s] Increasing log level from now on...
+[   16s] [    7.783666][  T411] sysrq: Changing Loglevel
+[   16s] [    7.784001][  T411] sysrq: Loglevel set to 4
+[   16s] Enable sysrq operations
+[   17s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   17s] no label, UUID=a3888b38-3a26-4279-a242-9aa9ec2e0f0c
+[   17s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   17s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   17s] swapon /dev/vdb
+[   17s] WARNING: udev not running, creating extra device nodes
+[   18s] logging output to //.build.log...
+[   18s] processing recipe /.build-srcdir/python-curio.spec ...
+[   18s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-curio.spec build ...
+[   19s] initializing rpm db...
+[   20s] querying package ids...
+[   52s] [1/192] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   52s] [2/192] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   52s] [3/192] preinstalled attr-2.5.1-1.1
+[   52s] [4/192] preinstalled bash-5.2.15-8.1
+[   52s] [5/192] preinstalled bash-sh-5.2.15-8.1
+[   52s] [6/192] preinstalled binutils-2.39-3.1
+[   52s] [7/192] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   52s] [8/192] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   52s] [9/192] preinstalled build-mkbaselibs-20230215-1.1
+[   52s] [10/192] preinstalled bzip2-1.0.8-4.1
+[   52s] [11/192] preinstalled chkstat-1599_20221220-1.2
+[   52s] [12/192] preinstalled compat-usrmerge-build-84.87-5.1
+[   52s] [13/192] preinstalled compat-usrmerge-tools-84.87-5.1
+[   52s] [14/192] preinstalled coreutils-9.1-5.1
+[   52s] [15/192] preinstalled cpio-2.13-5.1
+[   52s] [16/192] preinstalled cpp-12-2.1
+[   52s] [17/192] preinstalled cpp12-12.2.1+git749-4.1
+[   53s] [18/192] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   53s] [19/192] preinstalled debugedit-5.0-5.1
+[   53s] [20/192] preinstalled diffutils-3.9-1.1
+[   53s] [21/192] preinstalled dwz-0.15-2.1
+[   53s] [22/192] preinstalled elfutils-0.188-3.2
+[   53s] [23/192] cumulate fdupes-2.2.1-1.1
+[   53s] [24/192] preinstalled file-5.44-1.2
+[   53s] [25/192] preinstalled file-magic-5.44-1.2
+[   53s] [26/192] preinstalled filesystem-84.87-12.1
+[   53s] [27/192] preinstalled fillup-1.42-279.1
+[   53s] [28/192] preinstalled findutils-4.9.0-2.1
+[   53s] [29/192] preinstalled gawk-5.2.1-2.1
+[   53s] [30/192] preinstalled gcc-12-2.1
+[   53s] [31/192] preinstalled gcc-PIE-12-2.1
+[   53s] [32/192] preinstalled gcc12-12.2.1+git749-4.1
+[   53s] [33/192] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   53s] [34/192] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   53s] [35/192] preinstalled gettext-tools-mini-0.21.1-1.1
+[   53s] [36/192] preinstalled glibc-2.37-1.1
+[   53s] [37/192] preinstalled glibc-devel-2.37-1.1
+[   53s] [38/192] preinstalled glibc-locale-base-2.37-1.1
+[   53s] [39/192] preinstalled grep-3.8-3.1
+[   53s] [40/192] preinstalled gzip-1.12-3.1
+[   53s] [41/192] preinstalled kernel-obs-build-6.1.12-1.1
+[   53s] [42/192] preinstalled libacl1-2.3.1-2.1
+[   53s] [43/192] cumulate libalternatives1-1.2+3.b848aad-3.1
+[   53s] [44/192] preinstalled libasan8-13.0.1+git5428-6.1
+[   53s] [45/192] preinstalled libasm1-0.188-3.2
+[   53s] [46/192] preinstalled libatomic1-13.0.1+git5428-6.1
+[   53s] [47/192] preinstalled libattr1-2.5.1-1.1
+[   53s] [48/192] preinstalled libaudit1-3.0.6-4.1
+[   53s] [49/192] preinstalled libblkid1-2.38.1-7.1
+[   53s] [50/192] preinstalled libbz2-1-1.0.8-4.1
+[   53s] [51/192] preinstalled libcap-ng0-0.8.3-1.1
+[   53s] [52/192] preinstalled libcap2-2.67-1.1
+[   53s] [53/192] preinstalled libcrypt1-4.4.33-1.1
+[   53s] [54/192] preinstalled libctf-nobfd0-2.39-3.1
+[   53s] [55/192] preinstalled libctf0-2.39-3.1
+[   53s] [56/192] preinstalled libdb-4_8-4.8.30-39.1
+[   53s] [57/192] preinstalled libdw1-0.188-3.2
+[   53s] [58/192] preinstalled libeconf0-0.5.1-1.1
+[   53s] [59/192] preinstalled libelf1-0.188-3.2
+[   53s] [60/192] preinstalled libexpat1-2.5.0-2.1
+[   53s] [61/192] preinstalled libfdisk1-2.38.1-7.1
+[   53s] [62/192] preinstalled libffi8-3.4.4-1.1
+[   53s] [63/192] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   53s] [64/192] preinstalled libgcrypt20-1.10.1-1.1
+[   53s] [65/192] preinstalled libgdbm6-1.23-1.1
+[   53s] [66/192] preinstalled libgdbm_compat4-1.23-1.1
+[   53s] [67/192] preinstalled libgmp10-6.2.1-4.1
+[   53s] [68/192] preinstalled libgomp1-13.0.1+git5428-6.1
+[   53s] [69/192] preinstalled libgpg-error0-1.46-1.1
+[   53s] [70/192] preinstalled libisl23-0.25-1.1
+[   53s] [71/192] preinstalled liblua5_4-5-5.4.4-8.1
+[   53s] [72/192] preinstalled liblzma5-5.4.1-1.1
+[   53s] [73/192] preinstalled libmagic1-5.44-1.2
+[   53s] [74/192] preinstalled libmount1-2.38.1-7.1
+[   53s] [75/192] preinstalled libmpc3-1.3.1-1.2
+[   53s] [76/192] preinstalled libmpdec3-2.5.1-2.1
+[   53s] [77/192] preinstalled libmpfr6-4.2.0-1.1
+[   53s] [78/192] preinstalled libncurses6-6.4.20230128-5.1
+[   53s] [79/192] preinstalled libopenssl3-3.0.7-3.1
+[   53s] [80/192] preinstalled libpcre2-8-0-10.42-3.2
+[   53s] [81/192] preinstalled libpkgconf3-1.8.0-2.1
+[   53s] [82/192] preinstalled libpopt0-1.19-1.1
+[   53s] [83/192] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   53s] [84/192] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   53s] [85/192] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   53s] [86/192] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   53s] [87/192] preinstalled libreadline8-8.2-2.1
+[   53s] [88/192] preinstalled librpmbuild9-4.18.0-3.2
+[   53s] [89/192] preinstalled libseccomp2-2.5.4-2.1
+[   53s] [90/192] preinstalled libselinux1-3.4-2.1
+[   53s] [91/192] preinstalled libsemanage-conf-3.4-1.1
+[   53s] [92/192] preinstalled libsemanage2-3.4-1.1
+[   53s] [93/192] preinstalled libsepol2-3.4-1.1
+[   53s] [94/192] preinstalled libsmartcols1-2.38.1-7.1
+[   53s] [95/192] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   53s] [96/192] preinstalled libsubid4-4.13-3.1
+[   53s] [97/192] preinstalled libubsan1-13.0.1+git5428-6.1
+[   53s] [98/192] preinstalled libutempter0-1.2.0-3.2
+[   53s] [99/192] preinstalled libuuid1-2.38.1-7.1
+[   53s] [100/192] preinstalled libxcrypt-devel-4.4.33-1.1
+[   53s] [101/192] preinstalled libz1-1.2.13-2.1
+[   53s] [102/192] preinstalled libzstd1-1.5.2-2.1
+[   53s] [103/192] preinstalled linux-glibc-devel-6.1-1.1
+[   53s] [104/192] preinstalled login_defs-4.13-3.1
+[   53s] [105/192] preinstalled lua54-5.4.4-8.1
+[   53s] [106/192] preinstalled make-4.4-2.1
+[   53s] [107/192] preinstalled ncurses-utils-6.4.20230128-5.1
+[   53s] [108/192] preinstalled pam-1.5.2-12.1
+[   53s] [109/192] preinstalled patch-2.7.6-6.1
+[   53s] [110/192] preinstalled perl-5.36.0-4.1
+[   53s] [111/192] preinstalled perl-base-5.36.0-4.1
+[   53s] [112/192] preinstalled permissions-1599_20221220-1.2
+[   53s] [113/192] preinstalled permissions-config-1599_20221220-1.2
+[   53s] [114/192] preinstalled pkgconf-1.8.0-2.1
+[   53s] [115/192] preinstalled pkgconf-m4-1.8.0-2.1
+[   53s] [116/192] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   53s] [117/192] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   53s] [118/192] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   53s] [119/192] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   53s] [120/192] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   53s] [121/192] cumulate python310-attrs-22.2.0-1.2
+[   53s] [122/192] preinstalled python310-base-3.10.9-2.2
+[   53s] [123/192] cumulate python310-exceptiongroup-1.1.0-1.2
+[   53s] [124/192] cumulate python310-iniconfig-1.1.1-3.2
+[   53s] [125/192] preinstalled python310-packaging-23.0-1.1
+[   53s] [126/192] cumulate python310-pluggy-1.0.0-1.5
+[   53s] [127/192] preinstalled python310-setuptools-65.6.3-1.2
+[   53s] [128/192] cumulate python310-tomli-2.0.1-1.3
+[   53s] [129/192] cumulate python310-zipp-3.8.1-1.2
+[   53s] [130/192] cumulate python311-attrs-22.2.0-1.2
+[   53s] [131/192] preinstalled python311-base-3.11.1-4.2
+[   53s] [132/192] cumulate python311-exceptiongroup-1.1.0-1.2
+[   53s] [133/192] cumulate python311-iniconfig-1.1.1-3.2
+[   53s] [134/192] cumulate python311-packaging-23.0-1.2
+[   53s] [135/192] cumulate python311-pluggy-1.0.0-1.5
+[   53s] [136/192] preinstalled python311-setuptools-65.6.3-1.2
+[   53s] [137/192] cumulate python311-tomli-2.0.1-1.3
+[   53s] [138/192] cumulate python311-zipp-3.8.1-1.2
+[   53s] [139/192] cumulate python38-attrs-22.2.0-1.2
+[   53s] [140/192] preinstalled python38-base-3.8.16-3.2
+[   53s] [141/192] cumulate python38-exceptiongroup-1.1.0-1.2
+[   53s] [142/192] cumulate python38-iniconfig-1.1.1-3.2
+[   53s] [143/192] cumulate python38-packaging-23.0-1.2
+[   53s] [144/192] cumulate python38-pluggy-1.0.0-1.5
+[   53s] [145/192] preinstalled python38-setuptools-65.6.3-1.2
+[   53s] [146/192] cumulate python38-tomli-2.0.1-1.3
+[   53s] [147/192] cumulate python38-zipp-3.8.1-1.2
+[   53s] [148/192] cumulate python39-attrs-22.2.0-1.2
+[   53s] [149/192] preinstalled python39-base-3.9.16-3.2
+[   53s] [150/192] cumulate python39-exceptiongroup-1.1.0-1.2
+[   53s] [151/192] cumulate python39-iniconfig-1.1.1-3.2
+[   53s] [152/192] cumulate python39-packaging-23.0-1.2
+[   53s] [153/192] cumulate python39-pluggy-1.0.0-1.5
+[   53s] [154/192] preinstalled python39-setuptools-65.6.3-1.2
+[   53s] [155/192] cumulate python39-tomli-2.0.1-1.3
+[   53s] [156/192] cumulate python39-zipp-3.8.1-1.2
+[   53s] [157/192] preinstalled qemu-linux-user-7.1.0-50.1
+[   53s] [158/192] preinstalled rpm-4.18.0-3.2
+[   53s] [159/192] preinstalled rpm-build-4.18.0-3.2
+[   53s] [160/192] preinstalled rpm-build-perl-4.18.0-3.2
+[   53s] [161/192] preinstalled rpm-config-SUSE-20220926-1.1
+[   53s] [162/192] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   53s] [163/192] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   53s] [164/192] preinstalled sed-4.9-2.1
+[   53s] [165/192] preinstalled shadow-4.13-3.1
+[   53s] [166/192] preinstalled system-group-hardware-20170617-24.1
+[   53s] [167/192] preinstalled system-user-root-20190513-2.1
+[   53s] [168/192] preinstalled systemd-rpm-macros-19-1.1
+[   53s] [169/192] preinstalled sysuser-shadow-3.1-5.1
+[   53s] [170/192] preinstalled tar-1.34-9.1
+[   53s] [171/192] preinstalled terminfo-base-6.4.20230128-5.1
+[   53s] [172/192] preinstalled update-alternatives-1.21.8-1.1
+[   53s] [173/192] preinstalled util-linux-2.38.1-7.1
+[   53s] [174/192] preinstalled which-2.21-5.1
+[   53s] [175/192] preinstalled xz-5.4.1-1.1
+[   53s] [176/192] cumulate alts-1.2+3.b848aad-3.1
+[   53s] [177/192] cumulate python310-importlib-metadata-6.0.0-1.2
+[   53s] [178/192] cumulate python311-importlib-metadata-6.0.0-1.2
+[   53s] [179/192] cumulate python38-importlib-metadata-6.0.0-1.2
+[   53s] [180/192] cumulate python39-importlib-metadata-6.0.0-1.2
+[   53s] [181/192] cumulate python310-pip-22.3.1-1.2
+[   53s] [182/192] cumulate python310-wheel-0.38.4-1.2
+[   53s] [183/192] cumulate python311-pip-22.3.1-1.2
+[   53s] [184/192] cumulate python311-wheel-0.38.4-1.2
+[   53s] [185/192] cumulate python38-pip-22.3.1-1.2
+[   53s] [186/192] cumulate python38-wheel-0.38.4-1.2
+[   53s] [187/192] cumulate python39-pip-22.3.1-1.2
+[   53s] [188/192] cumulate python39-wheel-0.38.4-1.2
+[   53s] [189/192] cumulate python310-pytest-7.2.0-2.2
+[   53s] [190/192] cumulate python311-pytest-7.2.0-2.2
+[   53s] [191/192] cumulate python38-pytest-7.2.0-2.2
+[   53s] [192/192] cumulate python39-pytest-7.2.0-2.2
+[   53s] now installing cumulated packages
+[   54s] Preparing...                          ########################################
+[   54s] Updating / installing...
+[   54s] python39-zipp-3.8.1-1.2               ########################################
+[   54s] python39-importlib-metadata-6.0.0-1.2 ########################################
+[   54s] python39-tomli-2.0.1-1.3              ########################################
+[   54s] python39-pluggy-1.0.0-1.5             ########################################
+[   54s] python39-packaging-23.0-1.2           ########################################
+[   54s] python39-iniconfig-1.1.1-3.2          ########################################
+[   54s] python39-exceptiongroup-1.1.0-1.2     ########################################
+[   54s] python39-attrs-22.2.0-1.2             ########################################
+[   54s] python38-zipp-3.8.1-1.2               ########################################
+[   54s] python38-importlib-metadata-6.0.0-1.2 ########################################
+[   54s] python38-tomli-2.0.1-1.3              ########################################
+[   54s] python38-pluggy-1.0.0-1.5             ########################################
+[   54s] python38-packaging-23.0-1.2           ########################################
+[   54s] python38-iniconfig-1.1.1-3.2          ########################################
+[   54s] python38-exceptiongroup-1.1.0-1.2     ########################################
+[   54s] python38-attrs-22.2.0-1.2             ########################################
+[   54s] python311-zipp-3.8.1-1.2              ########################################
+[   55s] python311-importlib-metadata-6.0.0-1.2########################################
+[   55s] python311-tomli-2.0.1-1.3             ########################################
+[   55s] python311-pluggy-1.0.0-1.5            ########################################
+[   55s] python311-packaging-23.0-1.2          ########################################
+[   55s] python311-iniconfig-1.1.1-3.2         ########################################
+[   55s] python311-exceptiongroup-1.1.0-1.2    ########################################
+[   55s] python311-attrs-22.2.0-1.2            ########################################
+[   55s] python310-zipp-3.8.1-1.2              ########################################
+[   55s] python310-importlib-metadata-6.0.0-1.2########################################
+[   55s] python310-tomli-2.0.1-1.3             ########################################
+[   55s] python310-pluggy-1.0.0-1.5            ########################################
+[   55s] python310-iniconfig-1.1.1-3.2         ########################################
+[   55s] python310-exceptiongroup-1.1.0-1.2    ########################################
+[   55s] python310-attrs-22.2.0-1.2            ########################################
+[   55s] libalternatives1-1.2+3.b848aad-3.1    ########################################
+[   55s] alts-1.2+3.b848aad-3.1                ########################################
+[   58s] python310-pip-22.3.1-1.2              ########################################
+[   58s] python310-wheel-0.38.4-1.2            ########################################
+[   61s] python311-pip-22.3.1-1.2              ########################################
+[   61s] python311-wheel-0.38.4-1.2            ########################################
+[   64s] python38-pip-22.3.1-1.2               ########################################
+[   64s] python38-wheel-0.38.4-1.2             ########################################
+[   67s] python39-pip-22.3.1-1.2               ########################################
+[   67s] python39-wheel-0.38.4-1.2             ########################################
+[   68s] python310-pytest-7.2.0-2.2            ########################################
+[   69s] python311-pytest-7.2.0-2.2            ########################################
+[   69s] python38-pytest-7.2.0-2.2             ########################################
+[   70s] python39-pytest-7.2.0-2.2             ########################################
+[   70s] fdupes-2.2.1-1.1                      ########################################
+[   73s] now finalizing build dir...
+[   73s] ... running 01-add_abuild_user_to_trusted_group
+[   74s] ... running 02-set_timezone_to_utc
+[   74s] ... running 03-set-permissions-secure
+[   74s] ... running 11-hack_uname_version_to_kernel_version
+[   85s] -----------------------------------------------------------------
+[   85s] I have the following modifications for python-curio.spec:
+[   85s] 21c21
+[   85s] < Release:        0
+[   85s] ---
+[   85s] > Release:        2.2
+[   94s] build target is riscv64-suse-linux
+[   94s] -----------------------------------------------------------------
+[   94s] ----- building python-curio.spec (user abuild)
+[   94s] -----------------------------------------------------------------
+[   94s] -----------------------------------------------------------------
+[   99s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/b2f427618c0d9a1c38ec1aec59720123-python-curio' /home/abuild/rpmbuild/SOURCES/python-curio.spec
+[  148s] Building target platforms: riscv64-suse-linux
+[  148s] Building for target riscv64-suse-linux
+[  148s] setting SOURCE_DATE_EPOCH=1675296000
+[  148s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.RUSseX
+[  148s] + umask 022
+[  148s] + cd /home/abuild/rpmbuild/BUILD
+[  148s] + cd /home/abuild/rpmbuild/BUILD
+[  148s] + rm -rf curio-1.6
+[  148s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/curio-1.6.tar.gz
+[  149s] + STATUS=0
+[  149s] + '[' 0 -ne 0 ']'
+[  149s] + cd curio-1.6
+[  149s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  149s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/make-tests-reproducible.patch
+[  149s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  149s] + RPM_EC=0
+[  149s] ++ jobs -p
+[  149s] + exit 0
+[  150s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.lFtVmW
+[  150s] + umask 022
+[  150s] + cd /home/abuild/rpmbuild/BUILD
+[  150s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64
+[  150s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64
+[  150s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  150s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64
+[  150s] + cd curio-1.6
+[  150s] + ref=/usr/lib/rpm
+[  150s] + mints=0
+[  150s] + case $(uname -m) in
+[  150s] ++ uname -m
+[  150s] + mints=20160911
+[  150s] + for s in guess sub
+[  150s] ++ find -maxdepth 8 -name config.guess
+[  150s] + for s in guess sub
+[  150s] ++ find -maxdepth 8 -name config.sub
+[  150s] ++ '[' -f _current_flavor ']'
+[  150s] ++ true
+[  150s] + last_flavor=
+[  150s] + '[' -z '' ']'
+[  150s] + last_flavor=tmp
+[  150s] + '[' tmp '!=' python38 ']'
+[  150s] + '[' -d build ']'
+[  150s] + '[' -d _build.python38 ']'
+[  150s] + echo python38
+[  150s] + python_flavor=python38
+[  150s] + myargs=
+[  150s] + '[' -f './dist/*-none-any.whl' ']'
+[  150s] + /usr/bin/python3.8 -mpip wheel --verbose --progress-bar off --disable-pip-version-check --use-pep517 --no-build-isolation --no-deps --wheel-dir ./build .
+[  158s] Processing /home/abuild/rpmbuild/BUILD/curio-1.6
+[  158s]   Preparing metadata (pyproject.toml): started
+[  158s]   Running command Preparing metadata (pyproject.toml)
+[  165s]   running dist_info
+[  165s]   creating /tmp/pip-modern-metadata-5eskxtj2/curio.egg-info
+[  165s]   writing /tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/PKG-INFO
+[  165s]   writing dependency_links to /tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/dependency_links.txt
+[  165s]   writing requirements to /tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/requires.txt
+[  165s]   writing top-level names to /tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/top_level.txt
+[  165s]   writing manifest file '/tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/SOURCES.txt'
+[  165s]   reading manifest file '/tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/SOURCES.txt'
+[  165s]   reading manifest template 'MANIFEST.in'
+[  165s]   warning: no previously-included files matching '*.pyc' found under directory '__pycache__'
+[  165s]   warning: no previously-included files matching '*.pyo' found under directory '__pycache__'
+[  165s]   adding license file 'LICENSE'
+[  165s]   writing manifest file '/tmp/pip-modern-metadata-5eskxtj2/curio.egg-info/SOURCES.txt'
+[  165s]   creating '/tmp/pip-modern-metadata-5eskxtj2/curio-1.6.dist-info'
+[  166s]   Preparing metadata (pyproject.toml): finished with status 'done'
+[  166s] Building wheels for collected packages: curio
+[  166s]   Building wheel for curio (pyproject.toml): started
+[  166s]   Running command Building wheel for curio (pyproject.toml)
+[  171s]   running bdist_wheel
+[  172s]   running build
+[  172s]   running build_py
+[  172s]   creating build/lib
+[  172s]   creating build/lib/curio
+[  172s]   copying curio/__init__.py -> build/lib/curio
+[  172s]   copying curio/__main__.py -> build/lib/curio
+[  172s]   copying curio/channel.py -> build/lib/curio
+[  172s]   copying curio/debug.py -> build/lib/curio
+[  172s]   copying curio/errors.py -> build/lib/curio
+[  172s]   copying curio/file.py -> build/lib/curio
+[  172s]   copying curio/io.py -> build/lib/curio
+[  172s]   copying curio/kernel.py -> build/lib/curio
+[  172s]   copying curio/meta.py -> build/lib/curio
+[  172s]   copying curio/monitor.py -> build/lib/curio
+[  172s]   copying curio/network.py -> build/lib/curio
+[  172s]   copying curio/queue.py -> build/lib/curio
+[  172s]   copying curio/sched.py -> build/lib/curio
+[  172s]   copying curio/socket.py -> build/lib/curio
+[  172s]   copying curio/ssl.py -> build/lib/curio
+[  172s]   copying curio/subprocess.py -> build/lib/curio
+[  172s]   copying curio/sync.py -> build/lib/curio
+[  172s]   copying curio/task.py -> build/lib/curio
+[  172s]   copying curio/thread.py -> build/lib/curio
+[  172s]   copying curio/time.py -> build/lib/curio
+[  172s]   copying curio/timequeue.py -> build/lib/curio
+[  172s]   copying curio/traps.py -> build/lib/curio
+[  172s]   copying curio/workers.py -> build/lib/curio
+[  172s]   installing to build/bdist.linux-riscv64/wheel
+[  172s]   running install
+[  172s]   running install_lib
+[  172s]   creating build/bdist.linux-riscv64
+[  172s]   creating build/bdist.linux-riscv64/wheel
+[  172s]   creating build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/__init__.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/__main__.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/channel.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/debug.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/errors.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/file.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/io.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/kernel.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/meta.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/monitor.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/network.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/queue.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/sched.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/socket.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/ssl.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/subprocess.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/sync.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/task.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/thread.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/time.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/timequeue.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/traps.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   copying build/lib/curio/workers.py -> build/bdist.linux-riscv64/wheel/curio
+[  172s]   running install_egg_info
+[  172s]   running egg_info
+[  172s]   creating curio.egg-info
+[  172s]   writing curio.egg-info/PKG-INFO
+[  172s]   writing dependency_links to curio.egg-info/dependency_links.txt
+[  172s]   writing requirements to curio.egg-info/requires.txt
+[  172s]   writing top-level names to curio.egg-info/top_level.txt
+[  172s]   writing manifest file 'curio.egg-info/SOURCES.txt'
+[  172s]   reading manifest file 'curio.egg-info/SOURCES.txt'
+[  172s]   reading manifest template 'MANIFEST.in'
+[  173s]   warning: no previously-included files matching '*.pyc' found under directory '__pycache__'
+[  173s]   warning: no previously-included files matching '*.pyo' found under directory '__pycache__'
+[  173s]   adding license file 'LICENSE'
+[  173s]   writing manifest file 'curio.egg-info/SOURCES.txt'
+[  173s]   Copying curio.egg-info to build/bdist.linux-riscv64/wheel/curio-1.6-py3.8.egg-info
+[  173s]   running install_scripts
+[  173s]   creating build/bdist.linux-riscv64/wheel/curio-1.6.dist-info/WHEEL
+[  173s]   creating '/tmp/pip-wheel-yegb5fy5/.tmp-2hpedb88/curio-1.6-py3-none-any.whl' and adding 'build/bdist.linux-riscv64/wheel' to it
+[  173s]   adding 'curio/__init__.py'
+[  173s]   adding 'curio/__main__.py'
+[  173s]   adding 'curio/channel.py'
+[  173s]   adding 'curio/debug.py'
+[  173s]   adding 'curio/errors.py'
+[  173s]   adding 'curio/file.py'
+[  173s]   adding 'curio/io.py'
+[  173s]   adding 'curio/kernel.py'
+[  173s]   adding 'curio/meta.py'
+[  173s]   adding 'curio/monitor.py'
+[  173s]   adding 'curio/network.py'
+[  173s]   adding 'curio/queue.py'
+[  173s]   adding 'curio/sched.py'
+[  173s]   adding 'curio/socket.py'
+[  173s]   adding 'curio/ssl.py'
+[  173s]   adding 'curio/subprocess.py'
+[  173s]   adding 'curio/sync.py'
+[  173s]   adding 'curio/task.py'
+[  173s]   adding 'curio/thread.py'
+[  173s]   adding 'curio/time.py'
+[  173s]   adding 'curio/timequeue.py'
+[  173s]   adding 'curio/traps.py'
+[  173s]   adding 'curio/workers.py'
+[  173s]   adding 'curio-1.6.dist-info/LICENSE'
+[  173s]   adding 'curio-1.6.dist-info/METADATA'
+[  173s]   adding 'curio-1.6.dist-info/WHEEL'
+[  173s]   adding 'curio-1.6.dist-info/top_level.txt'
+[  173s]   adding 'curio-1.6.dist-info/RECORD'
+[  173s]   removing build/bdist.linux-riscv64/wheel
+[  174s]   Building wheel for curio (pyproject.toml): finished with status 'done'
+[  174s]   Created wheel for curio: filename=curio-1.6-py3-none-any.whl size=64043 sha256=7acb9d43ee7409587d49486a2c991988c6301e1fabbd9a6ea08eeb77bf844aae
+[  174s]   Stored in directory: /home/abuild/.cache/pip/wheels/e8/8e/33/b1bc0548a7ac018c077cf92fb58964ad8fd80af0dca0b41127
+[  174s] Successfully built curio
+[  174s] + '[' -f ./build/curio-1.6-py3-none-any.whl ']'
+[  174s] + mkdir -p ./dist
+[  174s] + cp ./build/curio-1.6-py3-none-any.whl ./dist/
+[  174s] ++ '[' -f _current_flavor ']'
+[  174s] ++ cat _current_flavor
+[  174s] + last_flavor=python38
+[  174s] + '[' -z python38 ']'
+[  174s] + '[' python38 '!=' python39 ']'
+[  174s] + '[' -d build ']'
+[  174s] + mv build _build.python38
+[  174s] + '[' -d _build.python39 ']'
+[  174s] + echo python39
+[  174s] + python_flavor=python39
+[  174s] + myargs=
+[  174s] + '[' -f ./dist/curio-1.6-py3-none-any.whl ']'
+[  174s] + echo 'Already found a compatible wheel in ./dist'
+[  174s] Already found a compatible wheel in ./dist
+[  174s] + mkdir -p ./build
+[  174s] + cp ./dist/curio-1.6-py3-none-any.whl ./build/
+[  174s] ++ '[' -f _current_flavor ']'
+[  174s] ++ cat _current_flavor
+[  174s] + last_flavor=python39
+[  174s] + '[' -z python39 ']'
+[  174s] + '[' python39 '!=' python311 ']'
+[  174s] + '[' -d build ']'
+[  174s] + mv build _build.python39
+[  175s] + '[' -d _build.python311 ']'
+[  175s] + echo python311
+[  175s] + python_flavor=python311
+[  175s] + myargs=
+[  175s] + '[' -f ./dist/curio-1.6-py3-none-any.whl ']'
+[  175s] + echo 'Already found a compatible wheel in ./dist'
+[  175s] Already found a compatible wheel in ./dist
+[  175s] + mkdir -p ./build
+[  175s] + cp ./dist/curio-1.6-py3-none-any.whl ./build/
+[  175s] ++ '[' -f _current_flavor ']'
+[  175s] ++ cat _current_flavor
+[  175s] + last_flavor=python311
+[  175s] + '[' -z python311 ']'
+[  175s] + '[' python311 '!=' python310 ']'
+[  175s] + '[' -d build ']'
+[  175s] + mv build _build.python311
+[  175s] + '[' -d _build.python310 ']'
+[  175s] + echo python310
+[  175s] + python_flavor=python310
+[  175s] + myargs=
+[  175s] + '[' -f ./dist/curio-1.6-py3-none-any.whl ']'
+[  175s] + echo 'Already found a compatible wheel in ./dist'
+[  175s] Already found a compatible wheel in ./dist
+[  175s] + mkdir -p ./build
+[  175s] + cp ./dist/curio-1.6-py3-none-any.whl ./build/
+[  175s] + RPM_EC=0
+[  175s] ++ jobs -p
+[  175s] + exit 0
+[  175s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.cGzhKW
+[  176s] + umask 022
+[  176s] + cd /home/abuild/rpmbuild/BUILD
+[  176s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64
+[  176s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  176s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64
+[  176s] + cd curio-1.6
+[  176s] ++ '[' -f _current_flavor ']'
+[  176s] ++ cat _current_flavor
+[  176s] + last_flavor=python310
+[  176s] + '[' -z python310 ']'
+[  176s] + '[' python310 '!=' python38 ']'
+[  176s] + '[' -d build ']'
+[  176s] + mv build _build.python310
+[  176s] + '[' -d _build.python38 ']'
+[  176s] + mv _build.python38 build
+[  176s] + echo python38
+[  176s] + python_flavor=python38
+[  176s] + myargs=
+[  176s] + havereq=0
+[  176s] + '[' -n '' ']'
+[  176s] + '[' 0 -eq 0 ']'
+[  176s] + ls ./build/curio-1.6-py3-none-any.whl
+[  176s] ./build/curio-1.6-py3-none-any.whl
+[  176s] + for w in ./build/*.whl
+[  176s] +++ basename ./build/curio-1.6-py3-none-any.whl
+[  176s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  177s] ++ echo curio-1.6-py3-none-any.whl
+[  177s] + myargs=' curio==1.6'
+[  177s] + /usr/bin/python3.8 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build curio==1.6
+[  184s] Using pip 22.3.1 from /usr/lib/python3.8/site-packages/pip (python 3.8)
+[  185s] Looking in links: ./build
+[  185s] Processing ./build/curio-1.6-py3-none-any.whl
+[  185s] Installing collected packages: curio
+[  186s] Successfully installed curio-1.6
+[  186s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  186s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages ']'
+[  186s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages -iname '*.pyc' -delete
+[  186s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.8 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  186s] Generating cached byte-code for curio/__init__.py
+[  187s] Generating cached byte-code for curio/__main__.py
+[  188s] Generating cached byte-code for curio/channel.py
+[  189s] Generating cached byte-code for curio/debug.py
+[  190s] Generating cached byte-code for curio/errors.py
+[  191s] Generating cached byte-code for curio/file.py
+[  193s] Generating cached byte-code for curio/io.py
+[  194s] Generating cached byte-code for curio/kernel.py
+[  195s] Generating cached byte-code for curio/meta.py
+[  197s] Generating cached byte-code for curio/monitor.py
+[  198s] Generating cached byte-code for curio/network.py
+[  199s] Generating cached byte-code for curio/queue.py
+[  200s] Generating cached byte-code for curio/sched.py
+[  201s] Generating cached byte-code for curio/socket.py
+[  202s] Generating cached byte-code for curio/ssl.py
+[  204s] Generating cached byte-code for curio/subprocess.py
+[  205s] Generating cached byte-code for curio/sync.py
+[  206s] Generating cached byte-code for curio/task.py
+[  207s] Generating cached byte-code for curio/thread.py
+[  208s] Generating cached byte-code for curio/time.py
+[  209s] Generating cached byte-code for curio/timequeue.py
+[  210s] Generating cached byte-code for curio/traps.py
+[  211s] Generating cached byte-code for curio/workers.py
+[  212s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.8/site-packages
+[  212s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.8/site-packages ']'
+[  212s] ++ '[' -f _current_flavor ']'
+[  212s] ++ cat _current_flavor
+[  212s] + last_flavor=python38
+[  212s] + '[' -z python38 ']'
+[  212s] + '[' python38 '!=' python39 ']'
+[  212s] + '[' -d build ']'
+[  212s] + mv build _build.python38
+[  212s] + '[' -d _build.python39 ']'
+[  212s] + mv _build.python39 build
+[  212s] + echo python39
+[  212s] + python_flavor=python39
+[  212s] + myargs=
+[  212s] + havereq=0
+[  212s] + '[' -n '' ']'
+[  212s] + '[' 0 -eq 0 ']'
+[  212s] + ls ./build/curio-1.6-py3-none-any.whl
+[  212s] ./build/curio-1.6-py3-none-any.whl
+[  212s] + for w in ./build/*.whl
+[  212s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  212s] +++ basename ./build/curio-1.6-py3-none-any.whl
+[  212s] ++ echo curio-1.6-py3-none-any.whl
+[  212s] + myargs=' curio==1.6'
+[  212s] + /usr/bin/python3.9 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build curio==1.6
+[  219s] Using pip 22.3.1 from /usr/lib/python3.9/site-packages/pip (python 3.9)
+[  220s] Looking in links: ./build
+[  220s] Processing ./build/curio-1.6-py3-none-any.whl
+[  220s] Installing collected packages: curio
+[  220s] Successfully installed curio-1.6
+[  221s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  221s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages ']'
+[  221s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages -iname '*.pyc' -delete
+[  221s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.9 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  221s] Generating cached byte-code for curio/__init__.py
+[  222s] Generating cached byte-code for curio/__main__.py
+[  223s] Generating cached byte-code for curio/channel.py
+[  224s] Generating cached byte-code for curio/debug.py
+[  225s] Generating cached byte-code for curio/errors.py
+[  226s] Generating cached byte-code for curio/file.py
+[  227s] Generating cached byte-code for curio/io.py
+[  228s] Generating cached byte-code for curio/kernel.py
+[  229s] Generating cached byte-code for curio/meta.py
+[  230s] Generating cached byte-code for curio/monitor.py
+[  230s] Generating cached byte-code for curio/network.py
+[  231s] Generating cached byte-code for curio/queue.py
+[  232s] Generating cached byte-code for curio/sched.py
+[  233s] Generating cached byte-code for curio/socket.py
+[  234s] Generating cached byte-code for curio/ssl.py
+[  235s] Generating cached byte-code for curio/subprocess.py
+[  236s] Generating cached byte-code for curio/sync.py
+[  237s] Generating cached byte-code for curio/task.py
+[  237s] Generating cached byte-code for curio/thread.py
+[  238s] Generating cached byte-code for curio/time.py
+[  239s] Generating cached byte-code for curio/timequeue.py
+[  240s] Generating cached byte-code for curio/traps.py
+[  241s] Generating cached byte-code for curio/workers.py
+[  242s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.9/site-packages
+[  242s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.9/site-packages ']'
+[  242s] ++ '[' -f _current_flavor ']'
+[  242s] ++ cat _current_flavor
+[  242s] + last_flavor=python39
+[  242s] + '[' -z python39 ']'
+[  242s] + '[' python39 '!=' python311 ']'
+[  242s] + '[' -d build ']'
+[  242s] + mv build _build.python39
+[  242s] + '[' -d _build.python311 ']'
+[  242s] + mv _build.python311 build
+[  242s] + echo python311
+[  242s] + python_flavor=python311
+[  242s] + myargs=
+[  242s] + havereq=0
+[  242s] + '[' -n '' ']'
+[  242s] + '[' 0 -eq 0 ']'
+[  242s] + ls ./build/curio-1.6-py3-none-any.whl
+[  242s] ./build/curio-1.6-py3-none-any.whl
+[  242s] + for w in ./build/*.whl
+[  242s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  242s] +++ basename ./build/curio-1.6-py3-none-any.whl
+[  242s] ++ echo curio-1.6-py3-none-any.whl
+[  242s] + myargs=' curio==1.6'
+[  242s] + /usr/bin/python3.11 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build curio==1.6
+[  248s] Using pip 22.3.1 from /usr/lib/python3.11/site-packages/pip (python 3.11)
+[  249s] Looking in links: ./build
+[  249s] Processing ./build/curio-1.6-py3-none-any.whl
+[  249s] Installing collected packages: curio
+[  249s] Successfully installed curio-1.6
+[  249s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  249s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages ']'
+[  249s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages -iname '*.pyc' -delete
+[  249s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.11 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  249s] Generating cached byte-code for curio/__init__.py
+[  250s] Generating cached byte-code for curio/__main__.py
+[  251s] Generating cached byte-code for curio/channel.py
+[  252s] Generating cached byte-code for curio/debug.py
+[  253s] Generating cached byte-code for curio/errors.py
+[  254s] Generating cached byte-code for curio/file.py
+[  255s] Generating cached byte-code for curio/io.py
+[  256s] Generating cached byte-code for curio/kernel.py
+[  258s] Generating cached byte-code for curio/meta.py
+[  259s] Generating cached byte-code for curio/monitor.py
+[  259s] Generating cached byte-code for curio/network.py
+[  260s] Generating cached byte-code for curio/queue.py
+[  261s] Generating cached byte-code for curio/sched.py
+[  262s] Generating cached byte-code for curio/socket.py
+[  263s] Generating cached byte-code for curio/ssl.py
+[  264s] Generating cached byte-code for curio/subprocess.py
+[  266s] Generating cached byte-code for curio/sync.py
+[  267s] Generating cached byte-code for curio/task.py
+[  268s] Generating cached byte-code for curio/thread.py
+[  269s] Generating cached byte-code for curio/time.py
+[  270s] Generating cached byte-code for curio/timequeue.py
+[  271s] Generating cached byte-code for curio/traps.py
+[  272s] Generating cached byte-code for curio/workers.py
+[  273s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.11/site-packages
+[  273s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.11/site-packages ']'
+[  273s] ++ '[' -f _current_flavor ']'
+[  273s] ++ cat _current_flavor
+[  273s] + last_flavor=python311
+[  273s] + '[' -z python311 ']'
+[  273s] + '[' python311 '!=' python310 ']'
+[  273s] + '[' -d build ']'
+[  273s] + mv build _build.python311
+[  273s] + '[' -d _build.python310 ']'
+[  273s] + mv _build.python310 build
+[  273s] + echo python310
+[  273s] + python_flavor=python310
+[  273s] + myargs=
+[  273s] + havereq=0
+[  273s] + '[' -n '' ']'
+[  273s] + '[' 0 -eq 0 ']'
+[  273s] + ls ./build/curio-1.6-py3-none-any.whl
+[  274s] ./build/curio-1.6-py3-none-any.whl
+[  274s] + for w in ./build/*.whl
+[  274s] ++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
+[  274s] +++ basename ./build/curio-1.6-py3-none-any.whl
+[  274s] ++ echo curio-1.6-py3-none-any.whl
+[  274s] + myargs=' curio==1.6'
+[  274s] + /usr/bin/python3.10 -mpip install --verbose --progress-bar off --disable-pip-version-check --root /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64 --no-compile --ignore-installed --no-deps --no-index --find-links ./build curio==1.6
+[  281s] Using pip 22.3.1 from /usr/lib/python3.10/site-packages/pip (python 3.10)
+[  282s] Looking in links: ./build
+[  282s] Processing ./build/curio-1.6-py3-none-any.whl
+[  282s] Installing collected packages: curio
+[  283s] Successfully installed curio-1.6
+[  283s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  283s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages ']'
+[  283s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages -iname '*.pyc' -delete
+[  283s] + find /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages -iname '*.py' -printf 'Generating cached byte-code for %P\n' -exec /usr/bin/python3.10 -c 'import py_compile; f="{}"; [py_compile.compile(f, dfile=f[len("/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64"):], optimize=o) for o in [0, 1]]' ';'
+[  283s] Generating cached byte-code for curio/__init__.py
+[  284s] Generating cached byte-code for curio/__main__.py
+[  285s] Generating cached byte-code for curio/channel.py
+[  286s] Generating cached byte-code for curio/debug.py
+[  287s] Generating cached byte-code for curio/errors.py
+[  288s] Generating cached byte-code for curio/file.py
+[  289s] Generating cached byte-code for curio/io.py
+[  290s] Generating cached byte-code for curio/kernel.py
+[  291s] Generating cached byte-code for curio/meta.py
+[  292s] Generating cached byte-code for curio/monitor.py
+[  293s] Generating cached byte-code for curio/network.py
+[  294s] Generating cached byte-code for curio/queue.py
+[  295s] Generating cached byte-code for curio/sched.py
+[  296s] Generating cached byte-code for curio/socket.py
+[  296s] Generating cached byte-code for curio/ssl.py
+[  297s] Generating cached byte-code for curio/subprocess.py
+[  298s] Generating cached byte-code for curio/sync.py
+[  299s] Generating cached byte-code for curio/task.py
+[  300s] Generating cached byte-code for curio/thread.py
+[  301s] Generating cached byte-code for curio/time.py
+[  302s] Generating cached byte-code for curio/timequeue.py
+[  302s] Generating cached byte-code for curio/traps.py
+[  303s] Generating cached byte-code for curio/workers.py
+[  304s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.10/site-packages
+[  304s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib64/python3.10/site-packages ']'
+[  304s] ++ '[' -f _current_flavor ']'
+[  304s] ++ cat _current_flavor
+[  304s] + last_flavor=python310
+[  304s] + '[' -z python310 ']'
+[  304s] + '[' python310 '!=' python38 ']'
+[  304s] + '[' -d build ']'
+[  304s] + mv build _build.python310
+[  305s] + '[' -d _build.python38 ']'
+[  305s] + mv _build.python38 build
+[  305s] + echo python38
+[  305s] + python_flavor=python38
+[  305s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/workers.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/workers.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/traps.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/traps.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/timequeue.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/timequeue.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/time.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/time.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/thread.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/thread.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/subprocess.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/subprocess.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/ssl.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/ssl.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/socket.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/socket.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/sched.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/sched.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/network.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/network.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/monitor.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/monitor.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/file.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/file.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/errors.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/errors.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/debug.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/debug.cpython-38.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/__init__.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/__pycache__/__init__.cpython-38.pyc
+[  305s] ++ '[' -f _current_flavor ']'
+[  305s] ++ cat _current_flavor
+[  305s] + last_flavor=python38
+[  305s] + '[' -z python38 ']'
+[  305s] + '[' python38 '!=' python39 ']'
+[  305s] + '[' -d build ']'
+[  305s] + mv build _build.python38
+[  305s] + '[' -d _build.python39 ']'
+[  305s] + mv _build.python39 build
+[  305s] + echo python39
+[  305s] + python_flavor=python39
+[  305s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/workers.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/workers.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/traps.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/traps.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/timequeue.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/timequeue.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/time.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/time.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/thread.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/thread.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/subprocess.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/subprocess.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/ssl.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/ssl.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/socket.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/socket.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/sched.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/sched.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/network.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/network.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/monitor.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/monitor.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/file.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/file.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/errors.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/errors.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/debug.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/debug.cpython-39.pyc
+[  305s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/__init__.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.9/site-packages/curio/__pycache__/__init__.cpython-39.pyc
+[  305s] ++ '[' -f _current_flavor ']'
+[  305s] ++ cat _current_flavor
+[  305s] + last_flavor=python39
+[  305s] + '[' -z python39 ']'
+[  305s] + '[' python39 '!=' python311 ']'
+[  305s] + '[' -d build ']'
+[  305s] + mv build _build.python39
+[  305s] + '[' -d _build.python311 ']'
+[  305s] + mv _build.python311 build
+[  305s] + echo python311
+[  305s] + python_flavor=python311
+[  305s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/workers.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/workers.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/traps.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/traps.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/timequeue.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/timequeue.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/time.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/time.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/thread.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/thread.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/subprocess.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/subprocess.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/ssl.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/ssl.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/socket.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/socket.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/sched.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/sched.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/network.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/network.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/monitor.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/monitor.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/file.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/file.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/errors.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/errors.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/debug.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/debug.cpython-311.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.11/site-packages/curio/__pycache__/__init__.cpython-311.pyc
+[  306s] ++ '[' -f _current_flavor ']'
+[  306s] ++ cat _current_flavor
+[  306s] + last_flavor=python311
+[  306s] + '[' -z python311 ']'
+[  306s] + '[' python311 '!=' python310 ']'
+[  306s] + '[' -d build ']'
+[  306s] + mv build _build.python311
+[  306s] + '[' -d _build.python310 ']'
+[  306s] + mv _build.python310 build
+[  306s] + echo python310
+[  306s] + python_flavor=python310
+[  306s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/workers.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/workers.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/traps.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/traps.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/timequeue.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/timequeue.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/time.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/time.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/thread.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/thread.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/subprocess.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/subprocess.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/ssl.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/ssl.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/socket.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/socket.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/sched.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/sched.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/network.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/network.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/monitor.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/monitor.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/file.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/file.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/errors.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/errors.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/debug.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/debug.cpython-310.pyc
+[  306s] Linking /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.10/site-packages/curio/__pycache__/__init__.cpython-310.pyc
+[  306s] + /usr/lib/rpm/find-debuginfo -j8 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/curio-1.6
+[  307s] + /usr/lib/rpm/brp-compress
+[  307s] + /usr/lib/rpm/brp-suse
+[  307s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  307s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  307s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  308s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  308s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  308s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.GwpTLy
+[  308s] + umask 022
+[  308s] + cd /home/abuild/rpmbuild/BUILD
+[  308s] + cd curio-1.6
+[  308s] + set +x
+[  309s] Using libalternatives variant 38 for pip in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  309s] Using libalternatives variant 38 for pip3 in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  309s] Using libalternatives variant 38 for py.test in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  309s] Using libalternatives variant 38 for pytest in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  309s] Using libalternatives variant 38 for wheel in XDG_CONFIG_HOME during Python 3.8 expansions.
+[  310s] Using libalternatives variant 39 for pip in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  310s] Using libalternatives variant 39 for pip3 in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  310s] Using libalternatives variant 39 for py.test in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  310s] Using libalternatives variant 39 for pytest in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  310s] Using libalternatives variant 39 for wheel in XDG_CONFIG_HOME during Python 3.9 expansions.
+[  311s] Using libalternatives variant 311 for pip in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  311s] Using libalternatives variant 311 for pip3 in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  311s] Using libalternatives variant 311 for py.test in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for pytest in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  312s] Using libalternatives variant 311 for wheel in XDG_CONFIG_HOME during Python 3.11 expansions.
+[  313s] + export PATH=/home/abuild/rpmbuild/BUILD/curio-1.6/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  313s] + PATH=/home/abuild/rpmbuild/BUILD/curio-1.6/build/flavorbin:/usr/local/bin:/usr/bin:/bin
+[  313s] ++ '[' -f _current_flavor ']'
+[  313s] ++ cat _current_flavor
+[  313s] + last_flavor=python310
+[  313s] + '[' -z python310 ']'
+[  313s] + '[' python310 '!=' python38 ']'
+[  313s] + '[' -d build ']'
+[  313s] + mv build _build.python310
+[  313s] + '[' -d _build.python38 ']'
+[  313s] + mv _build.python38 build
+[  313s] + echo python38
+[  313s] + python_flavor=python38
+[  313s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages
+[  313s] + PYTHONDONTWRITEBYTECODE=1
+[  313s] + pytest-3.8 --ignore=_build.python38 --ignore=_build.python39 --ignore=_build.python311 --ignore=_build.python310 -v -m 'not internet'
+[  318s] ============================= test session starts ==============================
+[  318s] platform linux -- Python 3.8.16, pytest-7.2.0, pluggy-1.0.0 -- /usr/bin/python3.8
+[  318s] cachedir: .pytest_cache
+[  318s] rootdir: /home/abuild/rpmbuild/BUILD/curio-1.6, configfile: setup.cfg, testpaths: tests
+[  326s] collecting ... collected 263 items / 2 deselected / 261 selected
+[  326s] 
+[  326s] tests/test_activation.py::test_activation_base PASSED                    [  0%]
+[  326s] tests/test_activation.py::test_activation_crash PASSED                   [  0%]
+[  326s] tests/test_activation.py::test_activation_count PASSED                   [  1%]
+[  326s] tests/test_asyncgen.py::test_simple_agen PASSED                          [  1%]
+[  326s] tests/test_asyncgen.py::test_simple_agen_final PASSED                    [  1%]
+[  326s] tests/test_asyncgen.py::test_agen_final_finalize PASSED                  [  2%]
+[  326s] tests/test_asyncgen.py::test_agen_except_ok PASSED                       [  2%]
+[  326s] tests/test_asyncgen.py::test_awaitable_agen PASSED                       [  3%]
+[  326s] tests/test_channel.py::test_connection_hello PASSED                      [  3%]
+[  326s] tests/test_channel.py::test_connection_hello_bytes PASSED                [  3%]
+[  328s] tests/test_channel.py::test_connection_large PASSED                      [  4%]
+[  328s] tests/test_channel.py::test_connection_auth PASSED                       [  4%]
+[  328s] tests/test_channel.py::test_connection_auth_fail PASSED                  [  4%]
+[  328s] tests/test_channel.py::test_connection_send_partial_bytes PASSED         [  5%]
+[  328s] tests/test_channel.py::test_connection_from_connection PASSED            [  5%]
+[  329s] tests/test_channel.py::test_connection_recv_cancel PASSED                [  6%]
+[  330s] tests/test_channel.py::test_connection_recv_timeout PASSED               [  6%]
+[  331s] tests/test_channel.py::test_connection_send_cancel PASSED                [  6%]
+[  332s] tests/test_channel.py::test_connection_send_timeout PASSED               [  7%]
+[  332s] tests/test_channel.py::test_channel_hello PASSED                         [  7%]
+[  332s] tests/test_channel.py::test_channel_hello_auth PASSED                    [  8%]
+[  332s] tests/test_channel.py::test_channel_hello_auth_fail PASSED               [  8%]
+[  332s] tests/test_channel.py::test_channel_slow_connect SKIPPED (unconditional skip) [  8%]
+[  332s] tests/test_channel.py::test_recv_bytes_into PASSED                       [  9%]
+[  332s] tests/test_file.py::test_read PASSED                                     [  9%]
+[  332s] tests/test_file.py::test_readall PASSED                                  [  9%]
+[  332s] tests/test_file.py::test_read1 PASSED                                    [ 10%]
+[  332s] tests/test_file.py::test_readinto PASSED                                 [ 10%]
+[  332s] tests/test_file.py::test_readinto1 PASSED                                [ 11%]
+[  333s] tests/test_file.py::test_readline PASSED                                 [ 11%]
+[  333s] tests/test_file.py::test_readlines PASSED                                [ 11%]
+[  333s] tests/test_file.py::test_readiter PASSED                                 [ 12%]
+[  333s] tests/test_file.py::test_read_anext PASSED                               [ 12%]
+[  333s] tests/test_file.py::test_read_anext2 PASSED                              [ 13%]
+[  333s] tests/test_file.py::test_bad_usage PASSED                                [ 13%]
+[  333s] tests/test_file.py::test_write PASSED                                    [ 13%]
+[  333s] tests/test_file.py::test_writelines PASSED                               [ 14%]
+[  333s] tests/test_file.py::test_seek_tell PASSED                                [ 14%]
+[  333s] tests/test_file.py::test_truncate PASSED                                 [ 14%]
+[  333s] tests/test_file.py::test_sync_iter PASSED                                [ 15%]
+[  333s] tests/test_file.py::test_sync_with PASSED                                [ 15%]
+[  333s] tests/test_file.py::test_must_be_asynccontext PASSED                     [ 16%]
+[  333s] tests/test_file.py::test_blocking PASSED                                 [ 16%]
+[  333s] tests/test_file.py::test_file_misc PASSED                                [ 16%]
+[  333s] tests/test_io.py::test_socket_blocking PASSED                            [ 17%]
+[  333s] tests/test_io.py::test_socketstream_blocking PASSED                      [ 17%]
+[  333s] tests/test_io.py::test_filestream_blocking PASSED                        [ 18%]
+[  333s] tests/test_io.py::test_filestream_bad_blocking PASSED                    [ 18%]
+[  333s] tests/test_io.py::test_socketstream_bad_blocking PASSED                  [ 18%]
+[  333s] tests/test_io.py::test_read_partial PASSED                               [ 19%]
+[  333s] tests/test_io.py::test_readall PASSED                                    [ 19%]
+[  333s] tests/test_io.py::test_readall_partial PASSED                            [ 19%]
+[  334s] tests/test_io.py::test_readall_timeout PASSED                            [ 20%]
+[  334s] tests/test_io.py::test_read_exactly PASSED                               [ 20%]
+[  334s] tests/test_io.py::test_read_exactly_incomplete PASSED                    [ 21%]
+[  335s] tests/test_io.py::test_read_exactly_timeout PASSED                       [ 21%]
+[  335s] tests/test_io.py::test_readline PASSED                                   [ 21%]
+[  336s] tests/test_io.py::test_readlines PASSED                                  [ 22%]
+[  337s] tests/test_io.py::test_readlines_timeout PASSED                          [ 22%]
+[  337s] tests/test_io.py::test_writelines PASSED                                 [ 22%]
+[  352s] tests/test_io.py::test_writelines_timeout PASSED                         [ 23%]
+[  353s] tests/test_io.py::test_write_timeout PASSED                              [ 23%]
+[  353s] tests/test_io.py::test_iterline PASSED                                   [ 24%]
+[  354s] tests/test_io.py::test_double_recv PASSED                                [ 24%]
+[  354s] tests/test_io.py::test_sendall_cancel SKIPPED (flaky)                    [ 24%]
+[  354s] tests/test_io.py::test_stream_bad_context PASSED                         [ 25%]
+[  354s] tests/test_io.py::test_stream_bad_iter PASSED                            [ 25%]
+[  355s] tests/test_io.py::test_io_waiting PASSED                                 [ 26%]
+[  355s] tests/test_io.py::test_io_unregister PASSED                              [ 26%]
+[  355s] tests/test_kernel.py::test_hello PASSED                                  [ 26%]
+[  355s] tests/test_kernel.py::test_raise PASSED                                  [ 27%]
+[  355s] tests/test_kernel.py::test_sleep PASSED                                  [ 27%]
+[  355s] tests/test_kernel.py::test_clock PASSED                                  [ 27%]
+[  355s] tests/test_kernel.py::test_sleep_cancel PASSED                           [ 28%]
+[  356s] tests/test_kernel.py::test_sleep_timeout PASSED                          [ 28%]
+[  356s] tests/test_kernel.py::test_sleep_ignore_timeout PASSED                   [ 29%]
+[  356s] tests/test_kernel.py::test_sleep_notimeout PASSED                        [ 29%]
+[  356s] tests/test_kernel.py::test_task_join PASSED                              [ 29%]
+[  356s] tests/test_kernel.py::test_task_join_error PASSED                        [ 30%]
+[  356s] tests/test_kernel.py::test_task_cancel PASSED                            [ 30%]
+[  357s] tests/test_kernel.py::test_task_cancel_poll PASSED                       [ 31%]
+[  357s] tests/test_kernel.py::test_task_cancel_not_blocking PASSED               [ 31%]
+[  357s] tests/test_kernel.py::test_task_cancel_join PASSED                       [ 31%]
+[  357s] tests/test_kernel.py::test_task_cancel_join_wait PASSED                  [ 32%]
+[  357s] tests/test_kernel.py::test_task_child_cancel PASSED                      [ 32%]
+[  358s] tests/test_kernel.py::test_task_ready_cancel PASSED                      [ 32%]
+[  360s] tests/test_kernel.py::test_double_cancel PASSED                          [ 33%]
+[  360s] tests/test_kernel.py::test_nested_timeout PASSED                         [ 33%]
+[  361s] tests/test_kernel.py::test_nested_context_timeout PASSED                 [ 34%]
+[  361s] tests/test_kernel.py::test_nested_context_timeout2 PASSED                [ 34%]
+[  361s] tests/test_kernel.py::test_nested_context_timeout3 PASSED                [ 34%]
+[  362s] tests/test_kernel.py::test_nested_timeout_uncaught PASSED                [ 35%]
+[  363s] tests/test_kernel.py::test_nested_context_timeout_uncaught PASSED        [ 35%]
+[  364s] tests/test_kernel.py::test_nested_timeout_none PASSED                    [ 36%]
+[  365s] tests/test_kernel.py::test_task_run_error PASSED                         [ 36%]
+[  365s] tests/test_kernel.py::test_sleep_0_starvation PASSED                     [ 36%]
+[  365s] tests/test_kernel.py::test_ping_pong_starvation PASSED                   [ 37%]
+[  366s] tests/test_kernel.py::test_task_cancel_timeout PASSED                    [ 37%]
+[  366s] tests/test_kernel.py::test_reentrant_kernel PASSED                       [ 37%]
+[  366s] tests/test_kernel.py::test_pending_cancellation PASSED                   [ 38%]
+[  366s] tests/test_kernel.py::test_single_stepping PASSED                        [ 38%]
+[  366s] tests/test_kernel.py::test_io_registration PASSED                        [ 39%]
+[  366s] tests/test_kernel.py::test_coro_partial PASSED                           [ 39%]
+[  366s] tests/test_kernel.py::test_custom_cancel PASSED                          [ 39%]
+[  367s] tests/test_kernel.py::test_timeout_badness PASSED                        [ 40%]
+[  367s] tests/test_kernel.py::test_kernel_no_shutdown PASSED                     [ 40%]
+[  367s] tests/test_kernel.py::test_kernel_exit PASSED                            [ 40%]
+[  367s] tests/test_kernel.py::test_kernel_badtrap PASSED                         [ 41%]
+[  368s] tests/test_kernel.py::test_kernel_multischedule PASSED                   [ 41%]
+[  368s] tests/test_kernel.py::test_kernel_debug PASSED                           [ 42%]
+[  368s] tests/test_meta.py::test_iscoroutinefunc PASSED                          [ 42%]
+[  368s] tests/test_meta.py::test_instantiate_coroutine PASSED                    [ 42%]
+[  368s] tests/test_meta.py::test_bad_awaitable PASSED                            [ 43%]
+[  368s] tests/test_meta.py::test_awaitable_partial PASSED                        [ 43%]
+[  368s] tests/test_meta.py::test_asynccontextmanager PASSED                      [ 44%]
+[  368s] tests/test_meta.py::test_missing_asynccontextmanager PASSED              [ 44%]
+[  368s] tests/test_network.py::test_tcp_echo PASSED                              [ 44%]
+[  369s] tests/test_network.py::test_unix_echo PASSED                             [ 45%]
+[  370s] tests/test_network.py::test_ssl_server PASSED                            [ 45%]
+[  370s] tests/test_network.py::test_unix_ssl_server PASSED                       [ 45%]
+[  371s] tests/test_network.py::test_ssl_wrapping PASSED                          [ 46%]
+[  371s] tests/test_network.py::test_ssl_manual_wrapping PASSED                   [ 46%]
+[  371s] tests/test_queue.py::test_queue_simple PASSED                            [ 47%]
+[  372s] tests/test_queue.py::test_queue_unbounded PASSED                         [ 47%]
+[  372s] tests/test_queue.py::test_queue_bounded PASSED                           [ 47%]
+[  373s] tests/test_queue.py::test_queue_get_cancel PASSED                        [ 48%]
+[  373s] tests/test_queue.py::test_queue_put_cancel PASSED                        [ 48%]
+[  374s] tests/test_queue.py::test_queue_get_timeout PASSED                       [ 49%]
+[  374s] tests/test_queue.py::test_queue_put_timeout PASSED                       [ 49%]
+[  374s] tests/test_queue.py::test_queue_qsize PASSED                             [ 49%]
+[  375s] tests/test_queue.py::test_priority_queue PASSED                          [ 50%]
+[  376s] tests/test_queue.py::test_lifo_queue PASSED                              [ 50%]
+[  376s] tests/test_queue.py::test_univ_queue_basic PASSED                        [ 50%]
+[  377s] tests/test_queue.py::test_univ_queue_sync_async PASSED                   [ 51%]
+[  378s] tests/test_queue.py::test_univ_queue_async_sync PASSED                   [ 51%]
+[  380s] tests/test_queue.py::test_univ_queue_cancel PASSED                       [ 52%]
+[  380s] tests/test_queue.py::test_univ_queue_multiple_consumer PASSED            [ 52%]
+[  381s] tests/test_queue.py::test_univ_queue_multiple_kernels PASSED             [ 52%]
+[  382s] tests/test_queue.py::test_univ_queue_withfd PASSED                       [ 53%]
+[  382s] tests/test_queue.py::test_uqueue_asyncio_prod PASSED                     [ 53%]
+[  382s] tests/test_queue.py::test_uqueue_asyncio_consumer PASSED                 [ 54%]
+[  382s] tests/test_queue.py::test_uqueue_withfd_corner PASSED                    [ 54%]
+[  382s] tests/test_queue.py::test_uqueue_put_cancel PASSED                       [ 54%]
+[  383s] tests/test_socket.py::test_tcp_echo PASSED                               [ 55%]
+[  383s] tests/test_socket.py::test_tcp_file_echo PASSED                          [ 55%]
+[  383s] tests/test_socket.py::test_udp_echo PASSED                               [ 55%]
+[  383s] tests/test_socket.py::test_fromfd_tcp_echo PASSED                        [ 56%]
+[  384s] tests/test_socket.py::test_accept_timeout PASSED                         [ 56%]
+[  384s] tests/test_socket.py::test_accept_cancel PASSED                          [ 57%]
+[  385s] tests/test_socket.py::test_recv_timeout PASSED                           [ 57%]
+[  387s] tests/test_socket.py::test_recv_cancel PASSED                            [ 57%]
+[  388s] tests/test_socket.py::test_recvfrom_timeout PASSED                       [ 58%]
+[  389s] tests/test_socket.py::test_recvfrom_cancel PASSED                        [ 58%]
+[  396s] tests/test_socket.py::test_buffer_into PASSED                            [ 59%]
+[  404s] tests/test_socket.py::test_buffer_stream_into PASSED                     [ 59%]
+[  412s] tests/test_socket.py::test_buffer_makefile_into PASSED                   [ 59%]
+[  413s] tests/test_socket.py::test_read_write_on_same_socket PASSED              [ 60%]
+[  413s] tests/test_socket.py::test_create_connection PASSED                      [ 60%]
+[  413s] tests/test_socket.py::test_create_bad_connection PASSED                  [ 60%]
+[  413s] tests/test_socket.py::test_socket_funcs SKIPPED (unreliable)             [ 61%]
+[  417s] tests/test_subprocess.py::test_simple PASSED                             [ 61%]
+[  422s] tests/test_subprocess.py::test_simple_check_output PASSED                [ 62%]
+[  424s] tests/test_subprocess.py::test_bad_cmd PASSED                            [ 62%]
+[  426s] tests/test_subprocess.py::test_bad_cmd_check_output PASSED               [ 62%]
+[  427s] tests/test_subprocess.py::test_timeout FAILED                            [ 63%]
+[  427s] tests/test_subprocess.py::test_universal PASSED                          [ 63%]
+[  432s] tests/test_subprocess.py::test_stdin_pipe PASSED                         [ 63%]
+[  432s] tests/test_subprocess.py::test_check_output_stdin PASSED                 [ 64%]
+[  432s] tests/test_subprocess.py::test_no_input_cancel PASSED                    [ 64%]
+[  434s] tests/test_subprocess.py::test_popen_join PASSED                         [ 65%]
+[  436s] tests/test_subprocess.py::test_io_error PASSED                           [ 65%]
+[  437s] tests/test_sync.py::TestEvent::test_event_get_wait PASSED                [ 65%]
+[  438s] tests/test_sync.py::TestEvent::test_event_get_immediate PASSED           [ 66%]
+[  439s] tests/test_sync.py::TestEvent::test_event_wait_cancel PASSED             [ 66%]
+[  440s] tests/test_sync.py::TestEvent::test_event_wait_timeout PASSED            [ 67%]
+[  441s] tests/test_sync.py::TestEvent::test_event_wait_notimeout PASSED          [ 67%]
+[  442s] tests/test_sync.py::TestLock::test_lock_sequence PASSED                  [ 67%]
+[  443s] tests/test_sync.py::TestLock::test_lock_acquire_cancel PASSED            [ 68%]
+[  444s] tests/test_sync.py::TestLock::test_lock_acquire_timeout PASSED           [ 68%]
+[  444s] tests/test_sync.py::TestRLock::test_rlock_reenter PASSED                 [ 68%]
+[  445s] tests/test_sync.py::TestRLock::test_rlock_notowner PASSED                [ 69%]
+[  445s] tests/test_sync.py::TestSemaphore::test_sema_sequence PASSED             [ 69%]
+[  446s] tests/test_sync.py::TestSemaphore::test_sema_sequence2 PASSED            [ 70%]
+[  447s] tests/test_sync.py::TestSemaphore::test_sema_acquire_cancel PASSED       [ 70%]
+[  448s] tests/test_sync.py::TestSemaphore::test_sema_acquire_timeout PASSED      [ 70%]
+[  449s] tests/test_sync.py::TestCondition::test_cond_sequence PASSED             [ 71%]
+[  450s] tests/test_sync.py::TestCondition::test_cond_wait_cancel PASSED          [ 71%]
+[  451s] tests/test_sync.py::TestCondition::test_cond_wait_timeout PASSED         [ 72%]
+[  452s] tests/test_sync.py::TestCondition::test_cond_notify_all PASSED           [ 72%]
+[  452s] tests/test_sync.py::TestCondition::test_cond_waitfor PASSED              [ 72%]
+[  452s] tests/test_sync.py::TestCondition::test_condition_error PASSED           [ 73%]
+[  453s] tests/test_sync.py::TestUniversalEvent::test_uevent_get_wait PASSED      [ 73%]
+[  454s] tests/test_sync.py::TestUniversalEvent::test_uevent_get_twait PASSED     [ 73%]
+[  455s] tests/test_sync.py::TestUniversalEvent::test_uevent_get_asyncio_set PASSED [ 74%]
+[  457s] tests/test_sync.py::TestUniversalEvent::test_uevent_get_asyncio_wait PASSED [ 74%]
+[  459s] tests/test_sync.py::TestUniversalEvent::test_uevent_get_wait_timeout PASSED [ 75%]
+[  459s] tests/test_sync.py::TestResult::test_value PASSED                        [ 75%]
+[  459s] tests/test_sync.py::TestResult::test_error PASSED                        [ 75%]
+[  459s] tests/test_sync.py::TestUniversalResult::test_universal_value PASSED     [ 76%]
+[  459s] tests/test_sync.py::TestUniversalResult::test_universal_error PASSED     [ 76%]
+[  459s] tests/test_sync.py::test_repr PASSED                                     [ 77%]
+[  459s] tests/test_task.py::test_cancel_noblock PASSED                           [ 77%]
+[  459s] tests/test_task.py::test_cancel_custom_exception PASSED                  [ 77%]
+[  459s] tests/test_task.py::test_cancel_custom_exception_instance PASSED         [ 78%]
+[  459s] tests/test_task.py::test_task_group PASSED                               [ 78%]
+[  459s] tests/test_task.py::test_task_group_daemon PASSED                        [ 78%]
+[  459s] tests/test_task.py::test_task_group_daemon_error PASSED                  [ 79%]
+[  459s] tests/test_task.py::test_task_group_existing PASSED                      [ 79%]
+[  459s] tests/test_task.py::test_task_any_cancel PASSED                          [ 80%]
+[  459s] tests/test_task.py::test_task_any_error PASSED                           [ 80%]
+[  459s] tests/test_task.py::test_task_group_iter PASSED                          [ 80%]
+[  459s] tests/test_task.py::test_task_wait_none PASSED                           [ 81%]
+[  459s] tests/test_task.py::test_task_join_daemon PASSED                         [ 81%]
+[  459s] tests/test_task.py::test_task_group_error PASSED                         [ 81%]
+[  459s] tests/test_task.py::test_task_group_error_block PASSED                   [ 82%]
+[  459s] tests/test_task.py::test_task_group_join PASSED                          [ 82%]
+[  459s] tests/test_task.py::test_task_group_cancel PASSED                        [ 83%]
+[  459s] tests/test_task.py::test_task_group_timeout PASSED                       [ 83%]
+[  459s] tests/test_task.py::test_task_group_cancel_remaining PASSED              [ 83%]
+[  459s] tests/test_task.py::test_task_group_use_error PASSED                     [ 84%]
+[  459s] tests/test_task.py::test_task_group_empty PASSED                         [ 84%]
+[  459s] tests/test_task.py::test_defer_cancellation PASSED                       [ 85%]
+[  459s] tests/test_task.py::test_explicit_raise_cancel_disable PASSED            [ 85%]
+[  459s] tests/test_task.py::test_disable_cancellation_function PASSED            [ 85%]
+[  459s] tests/test_task.py::test_self_cancellation PASSED                        [ 86%]
+[  459s] tests/test_task.py::test_disable_cancellation_explicit_raise PASSED      [ 86%]
+[  459s] tests/test_task.py::test_set_cancellation PASSED                         [ 86%]
+[  459s] tests/test_task.py::test_taskgroup_misc PASSED                           [ 87%]
+[  460s] tests/test_task.py::test_contextvars PASSED                              [ 87%]
+[  460s] tests/test_task.py::test_task_group_result PASSED                        [ 88%]
+[  460s] tests/test_task.py::test_task_diag PASSED                                [ 88%]
+[  460s] tests/test_task.py::test_late_join PASSED                                [ 88%]
+[  460s] tests/test_task.py::test_task_group_join_done PASSED                     [ 89%]
+[  460s] tests/test_task.py::test_errors PASSED                                   [ 89%]
+[  460s] tests/test_task.py::test_diag PASSED                                     [ 90%]
+[  460s] tests/test_thread.py::test_good_result PASSED                            [ 90%]
+[  461s] tests/test_thread.py::test_bad_result PASSED                             [ 90%]
+[  461s] tests/test_thread.py::test_cancel_result PASSED                          [ 91%]
+[  462s] tests/test_thread.py::test_thread_good_result PASSED                     [ 91%]
+[  462s] tests/test_thread.py::test_thread_bad_result PASSED                      [ 91%]
+[  462s] tests/test_thread.py::test_thread_cancel_result PASSED                   [ 92%]
+[  463s] tests/test_thread.py::test_thread_sync PASSED                            [ 92%]
+[  464s] tests/test_thread.py::test_thread_timeout PASSED                         [ 93%]
+[  465s] tests/test_thread.py::test_thread_disable_cancellation PASSED            [ 93%]
+[  465s] tests/test_thread.py::test_thread_read PASSED                            [ 93%]
+[  466s] tests/test_thread.py::test_subprocess_popen PASSED                       [ 94%]
+[  466s] tests/test_thread.py::test_task_group_thread PASSED                      [ 94%]
+[  466s] tests/test_thread.py::test_task_group_spawn_thread PASSED                [ 95%]
+[  466s] tests/test_thread.py::test_thread_context SKIPPED (unconditional skip)   [ 95%]
+[  466s] tests/test_thread.py::test_await_passthrough PASSED                      [ 95%]
+[  466s] tests/test_thread.py::test_errors PASSED                                 [ 96%]
+[  466s] tests/test_timequeue.py::test_timequeue_expired PASSED                   [ 96%]
+[  543s] tests/test_workers.py::test_cpu PASSED                                   [ 96%]
+[  543s] tests/test_workers.py::test_bad_cpu PASSED                               [ 97%]
+[  545s] tests/test_workers.py::test_blocking PASSED                              [ 97%]
+[  545s] tests/test_workers.py::test_executor PASSED                              [ 98%]
+[  546s] tests/test_workers.py::test_worker_cancel[run_in_thread] PASSED          [ 98%]
+[  547s] tests/test_workers.py::test_worker_cancel[run_in_process] PASSED         [ 98%]
+[  548s] tests/test_workers.py::test_worker_timeout[run_in_thread] PASSED         [ 99%]
+[  550s] tests/test_workers.py::test_worker_timeout[run_in_process] PASSED        [ 99%]
+[  550s] tests/test_workers.py::test_exception PASSED                             [100%]
+[  550s] 
+[  550s] =================================== FAILURES ===================================
+[  550s] _________________________________ test_timeout _________________________________
+[  550s] 
+[  550s] kernel = <curio.kernel.Kernel object at 0x400595e460>
+[  550s] 
+[  550s]     def test_timeout(kernel):
+[  550s]         results = []
+[  550s]         async def subproc():
+[  550s]             try:
+[  550s]                 async with timeout_after(0.5):
+[  550s]                     out = await subprocess.run([executable, os.path.join(dirname, 'child.py')], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+[  550s]                     results.append('what?')
+[  550s]             except TaskTimeout as e:
+[  550s]                 results.append('timeout')
+[  550s]                 results.append(e.stdout)
+[  550s]                 results.append(e.stderr)
+[  550s]     
+[  550s]         kernel.run(subproc())
+[  550s]         if sys.platform.startswith('win'):
+[  550s]             assert results == ['timeout', b'', b'']
+[  550s]         else:
+[  550s] >           assert results == ['timeout', b't-minus 4\n', b'']
+[  550s] E           AssertionError: assert ['timeout', b'', b''] == ['timeout', b't-minus 4\n', b'']
+[  550s] E             At index 1 diff: b'' != b't-minus 4\n'
+[  550s] E             Full diff:
+[  550s] E             - ['timeout', b't-minus 4\n', b'']
+[  550s] E             ?               -----------
+[  550s] E             + ['timeout', b'', b'']
+[  550s] 
+[  550s] tests/test_subprocess.py:84: AssertionError
+[  550s] =============================== warnings summary ===============================
+[  550s] tests/test_file.py::test_sync_with
+[  550s]   /home/abuild/rpmbuild/BUILD/curio-1.6/tests/test_file.py:224: RuntimeWarning: coroutine 'AsyncFile.__aenter__' was never awaited
+[  550s]     assert True
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] tests/test_io.py::test_stream_bad_context
+[  550s]   /home/abuild/rpmbuild/BUILD/curio-1.6/tests/test_io.py:850: RuntimeWarning: coroutine 'StreamBase.__aenter__' was never awaited
+[  550s]     results.append(True)
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] tests/test_io.py::test_stream_bad_iter
+[  550s]   /home/abuild/rpmbuild/BUILD/curio-1.6/tests/test_io.py:883: RuntimeWarning: coroutine 'StreamBase.__anext__' was never awaited
+[  550s]     results.append(True)
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] tests/test_kernel.py::test_reentrant_kernel
+[  550s]   /home/abuild/rpmbuild/BUILD/curio-1.6/tests/test_kernel.py:727: RuntimeWarning: coroutine 'test_reentrant_kernel.<locals>.child' was never awaited
+[  550s]     kernel.run(child)
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] tests/test_kernel.py::test_kernel_no_shutdown
+[  550s]   /usr/lib/python3.8/site-packages/_pytest/unraisableexception.py:78: PytestUnraisableExceptionWarning: Exception ignored in: <function Kernel.__del__ at 0x4005558e50>
+[  550s]   
+[  550s]   Traceback (most recent call last):
+[  550s]     File "/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/kernel.py", line 116, in __del__
+[  550s]       raise RuntimeError(
+[  550s]   RuntimeError: Curio kernel not properly terminated.  Please use Kernel.run(shutdown=True)
+[  550s]   
+[  550s]     warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+[  550s] 
+[  550s] tests/test_meta.py::test_instantiate_coroutine
+[  550s]   /usr/lib/python3.8/site-packages/_pytest/python.py:195: RuntimeWarning: coroutine 'test_instantiate_coroutine.<locals>.coro' was never awaited
+[  550s]     result = testfunction(**testargs)
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] tests/test_meta.py::test_awaitable_partial
+[  550s]   /usr/lib/python3.8/site-packages/_pytest/unraisableexception.py:78: PytestUnraisableExceptionWarning: Exception ignored in: <function Task.__del__ at 0x40048d7280>
+[  550s]   
+[  550s]   Traceback (most recent call last):
+[  550s]     File "/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/task.py", line 157, in __del__
+[  550s]       if not self.daemon and not self.exception:
+[  550s]     File "/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/task.py", line 222, in exception
+[  550s]       raise RuntimeError('Task not terminated')
+[  550s]   RuntimeError: Task not terminated
+[  550s]   
+[  550s]     warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+[  550s] 
+[  550s] tests/test_meta.py::test_missing_asynccontextmanager
+[  550s]   /usr/lib/python3.8/site-packages/_pytest/unraisableexception.py:78: PytestUnraisableExceptionWarning: Exception ignored in: <async_generator object test_missing_asynccontextmanager.<locals>.manager at 0x4008174670>
+[  550s]   
+[  550s]   Traceback (most recent call last):
+[  550s]     File "/home/abuild/rpmbuild/BUILDROOT/python-curio-1.6-2.2.riscv64/usr/lib/python3.8/site-packages/curio/meta.py", line 224, in _fini_async_gen
+[  550s]       raise RuntimeError("Async generator with async finalization must be wrapped by\n"
+[  550s]   RuntimeError: Async generator with async finalization must be wrapped by
+[  550s]   async with curio.meta.finalize(agen) as agen:
+[  550s]       async for n in agen:
+[  550s]            ...
+[  550s]   See PEP 533 for further discussion.
+[  550s]   
+[  550s]     warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+[  550s] 
+[  550s] tests/test_thread.py::test_errors
+[  550s]   /home/abuild/rpmbuild/BUILD/curio-1.6/tests/test_thread.py:267: RuntimeWarning: coroutine 'simple_coro' was never awaited
+[  550s]     AWAIT(simple_coro(2,3))
+[  550s]   Enable tracemalloc to get traceback where the object was allocated.
+[  550s]   See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+[  550s] 
+[  550s] -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+[  550s] =========================== short test summary info ============================
+[  550s] FAILED tests/test_subprocess.py::test_timeout - AssertionError: assert ['time...
+[  550s] = 1 failed, 256 passed, 4 skipped, 2 deselected, 9 warnings in 231.76s (0:03:51) =
+[  550s] error: Bad exit status from /var/tmp/rpm-tmp.GwpTLy (%check)
+[  550s] 
+[  550s] RPM build errors:
+[  550s]     Bad exit status from /var/tmp/rpm-tmp.GwpTLy (%check)
+[  550s] ### VM INTERACTION START ###
+[  551s] [  542.377039][    T1] sysrq: Power Off
+[  551s] [  542.379243][  T360] reboot: Power down
+[  551s] ### VM INTERACTION END ###
+[  551s] 
+[  551s] lamb17 failed "build python-curio.spec" at Sat Feb 18 21:34:20 UTC 2023.
+[  551s] 

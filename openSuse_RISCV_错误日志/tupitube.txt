@@ -1,0 +1,1001 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    1s] 
+[    1s] cloud115 started "build tupitube.spec" at Mon Feb 20 02:43:32 UTC 2023.
+[    1s] 
+[    1s] Building tupitube for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'e5719e6832429c3a89714a79c2848843'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/tupitube.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/tupitube.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/tupitube.spec build ...
+[    4s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7af7cc9404d4e5044d5fcd39115539d1]
+[    8s] 
+[    8s] copying packages...
+[   13s] reordering...cycle: python310-base -> libpython3_10-1_0
+[   13s]   breaking dependency python310-base -> libpython3_10-1_0
+[   13s] cycle: gio-branding-upstream -> libgio-2_0-0
+[   13s]   breaking dependency libgio-2_0-0 -> gio-branding-upstream
+[   13s] cycle: libgio-2_0-0 -> glib2-tools
+[   13s]   breaking dependency libgio-2_0-0 -> glib2-tools
+[   13s] cycle: Mesa-dri -> Mesa
+[   13s]   breaking dependency Mesa -> Mesa-dri
+[   13s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libEGL1
+[   13s]   breaking dependency Mesa -> Mesa-libEGL1
+[   13s] cycle: Mesa -> Mesa-libGL1
+[   13s]   breaking dependency Mesa-libGL1 -> Mesa
+[   13s] cycle: libglvnd -> Mesa-dri -> Mesa -> Mesa-libGL1
+[   13s]   breaking dependency Mesa -> Mesa-libGL1
+[   13s] cycle: libglvnd -> Mesa-dri -> Mesa
+[   13s]   breaking dependency libglvnd -> Mesa-dri
+[   13s] cycle: libfontconfig1 -> fontconfig
+[   13s]   breaking dependency libfontconfig1 -> fontconfig
+[   13s] cycle: ruby3.2 -> ruby-common -> ruby3.2-rubygem-gem2rpm
+[   13s]   breaking dependency ruby3.2-rubygem-gem2rpm -> ruby3.2
+[   13s] cycle: libgstreamer-1_0-0 -> gstreamer
+[   13s]   breaking dependency libgstreamer-1_0-0 -> gstreamer
+[   13s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstallocators-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgstapp-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstapp-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgstaudio-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstaudio-1_0-0
+[   13s] cycle: libgstallocators-1_0-0 -> gstreamer-plugins-base -> libgstgl-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstgl-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgstpbutils-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstpbutils-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgstriff-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstriff-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgsttag-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgsttag-1_0-0
+[   13s] cycle: gstreamer-plugins-base -> libgstvideo-1_0-0
+[   13s]   breaking dependency gstreamer-plugins-base -> libgstvideo-1_0-0
+[   13s] done
+[   14s] Detected virtio-serial support
+[   23s] booting kvm...
+[   23s] ### VM INTERACTION START ###
+[   23s] Using virtio-serial support
+[   23s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   29s] ### VM INTERACTION END ###
+[   29s] 2nd stage started in virtual machine
+[   29s] machine type: riscv64
+[   29s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   29s] Increasing log level from now on...
+[   29s] [    5.421503][  T368] sysrq: Changing Loglevel
+[   29s] [    5.421727][  T368] sysrq: Loglevel set to 4
+[   29s] Enable sysrq operations
+[   30s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   30s] no label, UUID=e5aeb51f-4122-4ba0-beb3-7b821c9afa4f
+[   30s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   30s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   30s] swapon /dev/vdb
+[   30s] WARNING: udev not running, creating extra device nodes
+[   31s] logging output to //.build.log...
+[   31s] processing recipe /.build-srcdir/tupitube.spec ...
+[   31s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/tupitube.spec build ...
+[   31s] initializing rpm db...
+[   32s] querying package ids...
+[   70s] [1/383] cumulate Mesa-KHR-devel-22.3.5-350.1
+[   70s] [2/383] cumulate Mesa-libglapi0-22.3.5-350.1
+[   70s] [3/383] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   70s] [4/383] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   70s] [5/383] preinstalled attr-2.5.1-1.1
+[   70s] [6/383] preinstalled bash-5.2.15-8.1
+[   70s] [7/383] preinstalled bash-sh-5.2.15-8.1
+[   70s] [8/383] preinstalled binutils-2.39-3.1
+[   70s] [9/383] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   70s] [10/383] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   70s] [11/383] preinstalled build-mkbaselibs-20230215-1.1
+[   70s] [12/383] preinstalled bzip2-1.0.8-4.1
+[   70s] [13/383] preinstalled chkstat-1599_20230217-1.1
+[   70s] [14/383] preinstalled compat-usrmerge-build-84.87-5.1
+[   70s] [15/383] preinstalled compat-usrmerge-tools-84.87-5.1
+[   70s] [16/383] preinstalled coreutils-9.1-5.1
+[   70s] [17/383] preinstalled cpio-2.13-5.1
+[   70s] [18/383] preinstalled cpp-12-2.1
+[   70s] [19/383] preinstalled cpp12-12.2.1+git749-4.1
+[   70s] [20/383] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   70s] [21/383] cumulate dbus-1-common-1.14.6-1.1
+[   70s] [22/383] preinstalled debugedit-5.0-5.1
+[   70s] [23/383] preinstalled diffutils-3.9-1.1
+[   70s] [24/383] cumulate dos2unix-7.4.4-1.1
+[   70s] [25/383] preinstalled dwz-0.15-2.1
+[   70s] [26/383] preinstalled elfutils-0.188-4.1
+[   70s] [27/383] cumulate fdupes-2.2.1-1.1
+[   70s] [28/383] cumulate ffmpeg-5-mini-libs-5.1.2-9.1
+[   70s] [29/383] preinstalled file-5.44-1.2
+[   70s] [30/383] preinstalled file-magic-5.44-1.2
+[   70s] [31/383] preinstalled filesystem-84.87-12.1
+[   70s] [32/383] preinstalled fillup-1.42-279.1
+[   70s] [33/383] preinstalled findutils-4.9.0-2.1
+[   70s] [34/383] preinstalled gawk-5.2.1-2.1
+[   70s] [35/383] preinstalled gcc-12-2.1
+[   70s] [36/383] preinstalled gcc-PIE-12-2.1
+[   70s] [37/383] preinstalled gcc12-12.2.1+git749-4.1
+[   70s] [38/383] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   70s] [39/383] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   70s] [40/383] preinstalled gettext-tools-mini-0.21.1-1.1
+[   70s] [41/383] preinstalled glibc-2.37-1.1
+[   70s] [42/383] preinstalled glibc-devel-2.37-1.1
+[   70s] [43/383] preinstalled glibc-locale-base-2.37-1.1
+[   70s] [44/383] preinstalled grep-3.8-3.1
+[   70s] [45/383] preinstalled gzip-1.12-3.1
+[   70s] [46/383] cumulate hicolor-icon-theme-0.17-4.1
+[   70s] [47/383] preinstalled kernel-obs-build-6.1.12-1.1
+[   70s] [48/383] cumulate libICE6-1.1.1-1.1
+[   70s] [49/383] cumulate libX11-data-1.8.1-4.1
+[   70s] [50/383] cumulate libXau6-1.0.11-1.1
+[   70s] [51/383] preinstalled libacl1-2.3.1-2.1
+[   70s] [52/383] preinstalled libasan8-13.0.1+git5428-6.1
+[   70s] [53/383] preinstalled libasm1-0.188-4.1
+[   70s] [54/383] cumulate libasound2-1.2.8-1.1
+[   70s] [55/383] preinstalled libatomic1-13.0.1+git5428-6.1
+[   70s] [56/383] preinstalled libattr1-2.5.1-1.1
+[   70s] [57/383] preinstalled libaudit1-3.0.9-1.1
+[   70s] [58/383] cumulate libavahi-common3-0.8-22.2
+[   70s] [59/383] cumulate libblkid-devel-2.38.1-7.1
+[   70s] [60/383] preinstalled libblkid1-2.38.1-7.1
+[   70s] [61/383] cumulate libbrotlicommon1-1.0.9-1.1
+[   70s] [62/383] preinstalled libbz2-1-1.0.8-4.1
+[   70s] [63/383] cumulate libbz2-devel-1.0.8-4.1
+[   70s] [64/383] preinstalled libcap-ng0-0.8.3-1.1
+[   70s] [65/383] preinstalled libcap2-2.67-1.1
+[   70s] [66/383] cumulate libcdda_interface0-3.10.2-28.2
+[   70s] [67/383] cumulate libcom_err2-1.46.5-4.1
+[   70s] [68/383] preinstalled libcrypt1-4.4.33-1.1
+[   70s] [69/383] preinstalled libctf-nobfd0-2.39-3.1
+[   70s] [70/383] preinstalled libctf0-2.39-3.1
+[   70s] [71/383] cumulate libdatrie1-0.2.13-1.1
+[   70s] [72/383] preinstalled libdb-4_8-4.8.30-39.1
+[   70s] [73/383] cumulate libdouble-conversion3-3.2.1-1.1
+[   70s] [74/383] cumulate libdrm2-2.4.115-2.1
+[   70s] [75/383] preinstalled libdw1-0.188-4.1
+[   70s] [76/383] preinstalled libeconf0-0.5.1-1.1
+[   70s] [77/383] cumulate libedit0-20210910.3.1-1.1
+[   70s] [78/383] preinstalled libelf1-0.188-4.1
+[   70s] [79/383] cumulate libevdev2-1.13.0-1.1
+[   70s] [80/383] cumulate libexpat1-2.5.0-2.1
+[   70s] [81/383] preinstalled libfdisk1-2.38.1-7.1
+[   70s] [82/383] cumulate libffi8-3.4.4-1.1
+[   70s] [83/383] cumulate libfribidi0-1.0.12-1.1
+[   70s] [84/383] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   70s] [85/383] preinstalled libgcrypt20-1.10.1-1.1
+[   70s] [86/383] preinstalled libgdbm6-1.23-1.1
+[   70s] [87/383] preinstalled libgdbm_compat4-1.23-1.1
+[   70s] [88/383] cumulate libglib-2_0-0-2.74.5-1.1
+[   70s] [89/383] preinstalled libgmp10-6.2.1-4.1
+[   70s] [90/383] preinstalled libgomp1-13.0.1+git5428-6.1
+[   70s] [91/383] preinstalled libgpg-error0-1.46-1.1
+[   70s] [92/383] cumulate libgraphite2-3-1.3.14-3.1
+[   70s] [93/383] cumulate libicu72-ledata-72.1-1.1
+[   70s] [94/383] preinstalled libisl23-0.25-1.1
+[   70s] [95/383] cumulate libjack0-1.9.21-1.3
+[   70s] [96/383] cumulate libjitterentropy3-3.4.1-1.1
+[   70s] [97/383] cumulate libjpeg8-8.2.2-72.1
+[   70s] [98/383] cumulate libkeyutils1-1.6.3-5.1
+[   70s] [99/383] preinstalled liblua5_4-5-5.4.4-8.1
+[   70s] [100/383] preinstalled liblzma5-5.4.1-1.1
+[   70s] [101/383] preinstalled libmagic1-5.44-1.2
+[   70s] [102/383] preinstalled libmount1-2.38.1-7.1
+[   70s] [103/383] preinstalled libmpc3-1.3.1-1.2
+[   70s] [104/383] cumulate libmpdec3-2.5.1-2.1
+[   70s] [105/383] preinstalled libmpfr6-4.2.0-1.1
+[   70s] [106/383] cumulate libmtdev1-1.1.6-1.1
+[   70s] [107/383] preinstalled libncurses6-6.4.20230128-5.1
+[   70s] [108/383] cumulate libnettle8-3.8.1-1.1
+[   70s] [109/383] cumulate libogg0-1.3.5-1.1
+[   70s] [110/383] cumulate libonig5-6.9.8-1.1
+[   70s] [111/383] cumulate libopus0-1.3.1-3.2
+[   70s] [112/383] cumulate liborc-0_4-0-0.4.33-1.1
+[   70s] [113/383] cumulate libpciaccess0-0.17-1.1
+[   70s] [114/383] cumulate libpcre2-16-0-10.42-3.2
+[   70s] [115/383] cumulate libpcre2-32-0-10.42-3.2
+[   70s] [116/383] preinstalled libpcre2-8-0-10.42-3.2
+[   70s] [117/383] cumulate libpcre2-posix3-10.42-3.2
+[   70s] [118/383] cumulate libpixman-1-0-0.42.2-1.1
+[   70s] [119/383] preinstalled libpkgconf3-1.8.0-2.1
+[   70s] [120/383] cumulate libpng16-16-1.6.39-2.1
+[   70s] [121/383] preinstalled libpopt0-1.19-1.1
+[   70s] [122/383] cumulate libproxy1-0.4.18-1.1
+[   70s] [123/383] preinstalled libreadline8-8.2-2.1
+[   70s] [124/383] cumulate librhash0-1.4.3-1.1
+[   70s] [125/383] preinstalled librpmbuild9-4.18.0-3.2
+[   70s] [126/383] cumulate libruby3_2-3_2-3.2.1-1.1
+[   70s] [127/383] preinstalled libseccomp2-2.5.4-2.1
+[   70s] [128/383] preinstalled libselinux1-3.4-2.1
+[   70s] [129/383] preinstalled libsemanage-conf-3.4-1.1
+[   70s] [130/383] preinstalled libsemanage2-3.4-1.1
+[   70s] [131/383] cumulate libsepol-devel-3.4-1.1
+[   70s] [132/383] preinstalled libsepol2-3.4-1.1
+[   70s] [133/383] preinstalled libsmartcols1-2.38.1-7.1
+[   70s] [134/383] cumulate libspeex1-1.2.1-1.1
+[   70s] [135/383] cumulate libsqlite3-0-3.40.1-1.1
+[   70s] [136/383] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   70s] [137/383] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   70s] [138/383] preinstalled libsubid4-4.13-4.1
+[   70s] [139/383] cumulate libsystemd0-mini-252.5-1.1
+[   70s] [140/383] cumulate libtasn1-6-4.19.0-1.1
+[   70s] [141/383] cumulate libthai-data-0.1.29-1.1
+[   70s] [142/383] cumulate libtheoradec1-1.1.1-30.1
+[   70s] [143/383] cumulate libts0-1.22-1.1
+[   70s] [144/383] preinstalled libubsan1-13.0.1+git5428-6.1
+[   70s] [145/383] cumulate libudev-mini1-252.5-1.1
+[   70s] [146/383] cumulate libunistring5-1.1-1.1
+[   70s] [147/383] cumulate libunwind8-1.6.2-4.1
+[   70s] [148/383] preinstalled libutempter0-1.2.0-3.2
+[   70s] [149/383] preinstalled libuuid1-2.38.1-7.1
+[   70s] [150/383] cumulate libuv1-1.44.2-3.1
+[   70s] [151/383] cumulate libverto1-0.3.2-1.1
+[   70s] [152/383] cumulate libvisual-0_4-0-0.4.0-204.1
+[   70s] [153/383] cumulate libvulkan1-1.3.239.0-1.1
+[   70s] [154/383] cumulate libwacom-data-2.5.0-1.1
+[   70s] [155/383] cumulate libwayland-egl1-1.21.0-4.2
+[   70s] [156/383] preinstalled libxcrypt-devel-4.4.33-1.1
+[   70s] [157/383] cumulate libxml2-2-2.10.3-3.1
+[   70s] [158/383] cumulate libxshmfence1-1.3.2-1.1
+[   70s] [159/383] cumulate libyaml-0-2-0.2.5-2.1
+[   70s] [160/383] preinstalled libz1-1.2.13-2.1
+[   70s] [161/383] preinstalled libzstd1-1.5.2-2.1
+[   70s] [162/383] preinstalled linux-glibc-devel-6.1-1.1
+[   70s] [163/383] preinstalled login_defs-4.13-4.1
+[   70s] [164/383] preinstalled lua54-5.4.4-8.1
+[   70s] [165/383] preinstalled make-4.4-2.1
+[   70s] [166/383] preinstalled ncurses-utils-6.4.20230128-5.1
+[   70s] [167/383] preinstalled pam-1.5.2-12.1
+[   70s] [168/383] preinstalled patch-2.7.6-6.1
+[   70s] [169/383] preinstalled perl-5.36.0-4.1
+[   70s] [170/383] preinstalled perl-base-5.36.0-4.1
+[   70s] [171/383] preinstalled permissions-1599_20230217-1.1
+[   70s] [172/383] preinstalled permissions-config-1599_20230217-1.1
+[   70s] [173/383] preinstalled pkgconf-1.8.0-2.1
+[   70s] [174/383] preinstalled pkgconf-m4-1.8.0-2.1
+[   70s] [175/383] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   70s] [176/383] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   70s] [177/383] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   70s] [178/383] cumulate python-rpm-macros-20230128.e704796-1.2
+[   70s] [179/383] preinstalled qemu-linux-user-7.1.0-50.1
+[   70s] [180/383] preinstalled rpm-4.18.0-3.2
+[   70s] [181/383] preinstalled rpm-build-4.18.0-3.2
+[   70s] [182/383] preinstalled rpm-build-perl-4.18.0-3.2
+[   70s] [183/383] preinstalled rpm-config-SUSE-20220926-1.1
+[   70s] [184/383] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.6
+[   70s] [185/383] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   70s] [186/383] preinstalled sed-4.9-2.1
+[   70s] [187/383] preinstalled shadow-4.13-4.1
+[   70s] [188/383] preinstalled system-group-hardware-20170617-24.1
+[   70s] [189/383] cumulate system-user-lp-20170617-24.1
+[   70s] [190/383] preinstalled system-user-root-20190513-2.1
+[   70s] [191/383] preinstalled systemd-rpm-macros-19-1.1
+[   70s] [192/383] preinstalled sysuser-shadow-3.1-5.1
+[   70s] [193/383] preinstalled tar-1.34-9.1
+[   70s] [194/383] preinstalled terminfo-base-6.4.20230128-5.1
+[   70s] [195/383] cumulate timezone-2022g-2.1
+[   70s] [196/383] preinstalled update-alternatives-1.21.8-1.1
+[   70s] [197/383] preinstalled util-linux-2.38.1-7.1
+[   70s] [198/383] preinstalled which-2.21-5.1
+[   70s] [199/383] cumulate xkeyboard-config-2.38-1.1
+[   70s] [200/383] cumulate xorgproto-devel-2022.2-2.1
+[   70s] [201/383] preinstalled xz-5.4.1-1.1
+[   70s] [202/383] cumulate zlib-devel-1.2.13-2.1
+[   70s] [203/383] cumulate cups-config-2.4.2-4.2
+[   70s] [204/383] cumulate desktop-file-utils-0.26-5.1
+[   70s] [205/383] cumulate ffmpeg-5-mini-devel-5.1.2-9.1
+[   70s] [206/383] cumulate gcc12-c++-12.2.1+git749-4.1
+[   70s] [207/383] cumulate libFLAC12-1.4.2-1.1
+[   70s] [208/383] cumulate libLLVM15-15.0.7-1.1
+[   70s] [209/383] cumulate libSM6-1.2.4-2.1
+[   70s] [210/383] cumulate libX11-xcb1-1.8.1-4.1
+[   70s] [211/383] cumulate libbrotlidec1-1.0.9-1.1
+[   70s] [212/383] cumulate libcdda_paranoia0-3.10.2-28.2
+[   70s] [213/383] cumulate libdrm_amdgpu1-2.4.115-2.1
+[   70s] [214/383] cumulate libdrm_nouveau2-2.4.115-2.1
+[   70s] [215/383] cumulate libdrm_radeon1-2.4.115-2.1
+[   70s] [216/383] cumulate libffi-devel-3.4.4-1.1
+[   70s] [217/383] cumulate libgmodule-2_0-0-2.74.5-1.1
+[   70s] [218/383] cumulate libgthread-2_0-0-2.74.5-1.1
+[   70s] [219/383] cumulate libhogweed6-3.8.1-1.1
+[   70s] [220/383] cumulate libidn2-0-2.3.4-1.1
+[   70s] [221/383] cumulate libjq1-1.6-3.1
+[   70s] [222/383] cumulate libogg-devel-1.3.5-1.1
+[   70s] [223/383] cumulate libopenssl3-3.0.7-3.1
+[   70s] [224/383] cumulate libp11-kit0-0.24.1-2.1
+[   70s] [225/383] cumulate libpciaccess-devel-0.17-1.1
+[   70s] [226/383] cumulate libstdc++-devel-12-2.1
+[   70s] [227/383] cumulate libtheora0-1.1.1-30.1
+[   70s] [228/383] cumulate libtheoraenc1-1.1.1-30.1
+[   70s] [229/383] cumulate libvorbis0-1.3.7-2.1
+[   70s] [230/383] cumulate libwayland-client0-1.21.0-4.2
+[   70s] [231/383] cumulate libwayland-server0-1.21.0-4.2
+[   70s] [232/383] cumulate libxcb1-1.15-2.1
+[   70s] [233/383] cumulate libxkbcommon0-1.5.0-1.1
+[   70s] [234/383] cumulate libXau-devel-1.0.11-1.1
+[   70s] [235/383] cumulate libdbus-1-3-1.14.6-1.1
+[   70s] [236/383] cumulate libdrm_intel1-2.4.115-2.1
+[   70s] [237/383] cumulate libgobject-2_0-0-2.74.5-1.1
+[   70s] [238/383] cumulate libicu72-72.1-1.1
+[   70s] [239/383] cumulate libportaudio2-190700_20210406-1.1
+[   70s] [240/383] cumulate libthai0-0.1.29-1.1
+[   70s] [241/383] cumulate shared-mime-info-2.2-1.1
+[   70s] [242/383] cumulate krb5-mini-1.20.1-2.3
+[   70s] [243/383] cumulate gcc-c++-12-2.1
+[   70s] [244/383] cumulate jq-1.6-3.1
+[   70s] [245/383] cumulate libvorbisenc2-1.3.7-2.1
+[   70s] [246/383] cumulate libwayland-cursor0-1.21.0-4.2
+[   70s] [247/383] cumulate libxcb-composite0-1.15-2.1
+[   70s] [248/383] cumulate libxcb-damage0-1.15-2.1
+[   70s] [249/383] cumulate libxcb-dpms0-1.15-2.1
+[   70s] [250/383] cumulate libxcb-dri2-0-1.15-2.1
+[   70s] [251/383] cumulate libxcb-dri3-0-1.15-2.1
+[   70s] [252/383] cumulate libxcb-glx0-1.15-2.1
+[   70s] [253/383] cumulate libxcb-icccm4-0.4.2-1.1
+[   70s] [254/383] cumulate libxcb-keysyms1-0.4.1-1.1
+[   70s] [255/383] cumulate libxcb-present0-1.15-2.1
+[   70s] [256/383] cumulate libxcb-randr0-1.15-2.1
+[   70s] [257/383] cumulate libxcb-record0-1.15-2.1
+[   70s] [258/383] cumulate libxcb-render0-1.15-2.1
+[   70s] [259/383] cumulate libxcb-res0-1.15-2.1
+[   70s] [260/383] cumulate libxcb-screensaver0-1.15-2.1
+[   70s] [261/383] cumulate libxcb-shape0-1.15-2.1
+[   70s] [262/383] cumulate libxcb-shm0-1.15-2.1
+[   70s] [263/383] cumulate libxcb-sync1-1.15-2.1
+[   70s] [264/383] cumulate libxcb-util1-0.4.1-1.1
+[   70s] [265/383] cumulate libxcb-xf86dri0-1.15-2.1
+[   70s] [266/383] cumulate libxcb-xfixes0-1.15-2.1
+[   70s] [267/383] cumulate libxcb-xinerama0-1.15-2.1
+[   70s] [268/383] cumulate libxcb-xinput0-1.15-2.1
+[   70s] [269/383] cumulate libxcb-xkb1-1.15-2.1
+[   70s] [270/383] cumulate libxcb-xtest0-1.15-2.1
+[   70s] [271/383] cumulate libxcb-xv0-1.15-2.1
+[   70s] [272/383] cumulate libxcb-xvmc0-1.15-2.1
+[   70s] [273/383] cumulate update-desktop-files-84.87-6.1
+[   70s] [274/383] cumulate libX11-6-1.8.1-4.1
+[   70s] [275/383] cumulate libavahi-client3-0.8-22.2
+[   70s] [276/383] cumulate libfreetype6-2.12.1-4.1
+[   70s] [277/383] cumulate libgraphene-1_0-0-1.10.8-1.1
+[   70s] [278/383] cumulate libgbm1-22.3.5-350.1
+[   70s] [279/383] cumulate libgudev-1_0-0-237-2.1
+[   70s] [280/383] cumulate libtheora-devel-1.1.1-30.1
+[   70s] [281/383] cumulate pcre2-devel-10.42-3.2
+[   70s] [282/383] cumulate libQt5Core5-5.15.8+kde160-1.2
+[   70s] [283/383] cumulate libdrm-devel-2.4.115-2.1
+[   70s] [284/383] cumulate libgnutls30-3.7.9-1.1
+[   70s] [285/383] cumulate libQt5Sql5-5.15.8+kde160-1.2
+[   70s] [286/383] cumulate libQt5Test5-5.15.8+kde160-1.2
+[   70s] [287/383] cumulate libQt5Xml5-5.15.8+kde160-1.2
+[   70s] [288/383] cumulate libXext6-1.3.5-1.1
+[   70s] [289/383] cumulate libXfixes3-6.0.0-2.1
+[   70s] [290/383] cumulate libXrender1-0.9.11-1.1
+[   70s] [291/383] cumulate libquazip1-qt5-1_4_0-1.4-2.1
+[   70s] [292/383] cumulate qml-autoreqprov-1.1-2.1
+[   70s] [293/383] cumulate libQt5DBus5-5.15.8+kde160-1.2
+[   70s] [294/383] cumulate libselinux-devel-3.4-2.1
+[   70s] [295/383] cumulate libxcb-render-util0-0.3.10-1.1
+[   70s] [296/383] cumulate libharfbuzz0-7.0.0-1.1
+[   70s] [297/383] cumulate libxcb-image0-0.4.1-1.1
+[   70s] [298/383] cumulate libxkbcommon-x11-0-1.5.0-1.1
+[   70s] [299/383] cumulate libwacom9-2.5.0-1.1
+[   70s] [300/383] cumulate libcups2-2.4.2-4.2
+[   70s] [301/383] cumulate libsndfile1-1.1.0-1.2
+[   70s] [302/383] cumulate wayland-devel-1.21.0-4.2
+[   70s] [303/383] cumulate libxcb-devel-1.15-2.1
+[   70s] [304/383] cumulate libXi6-1.8-1.1
+[   70s] [305/383] cumulate libXv1-1.0.12-1.1
+[   70s] [306/383] cumulate libXxf86vm1-1.1.5-1.1
+[   70s] [307/383] cumulate libmount-devel-2.38.1-7.1
+[   70s] [308/383] cumulate libQt5Sql5-sqlite-5.15.8+kde160-1.2
+[   70s] [309/383] cumulate libXrandr2-1.5.3-1.1
+[   70s] [310/383] cumulate libQt5Network5-5.15.8+kde160-1.2
+[   70s] [311/383] cumulate libX11-devel-1.8.1-4.1
+[   70s] [312/383] cumulate libinput10-1.22.1-1.1
+[   70s] [313/383] cumulate libpulse0-16.1-2.1
+[   70s] [314/383] cumulate libpulse-mainloop-glib0-16.1-2.1
+[   70s] [315/383] cumulate libXext-devel-1.3.5-1.1
+[   70s] [316/383] cumulate libXrender-devel-0.9.11-1.1
+[   70s] [317/383] cumulate libopenal1-1.22.2-1.1
+[   70s] [318/383] cumulate libXrandr-devel-1.5.3-1.1
+[   70s] [319/383] cumulate ruby3.2-rubygem-gem2rpm-0.10.1-20.1
+[   70s] [320/383] cumulate libglvnd-1.6.0-1.1
+[   71s] [321/383] cumulate libfontconfig1-2.14.2-1.1
+[   71s] [322/383] cumulate python310-base-3.10.9-2.2
+[   71s] [323/383] cumulate libgio-2_0-0-2.74.5-1.1
+[   71s] [324/383] cumulate gio-branding-upstream-2.74.5-1.1
+[   71s] [325/383] cumulate libglvnd-devel-1.6.0-1.1
+[   71s] [326/383] cumulate libpython3_10-1_0-3.10.9-2.2
+[   71s] [327/383] cumulate python310-packaging-23.0-1.1
+[   71s] [328/383] cumulate fontconfig-2.14.2-1.1
+[   71s] [329/383] cumulate ruby-common-3.2-2.1
+[   71s] [330/383] cumulate Mesa-22.3.5-350.1
+[   71s] [331/383] cumulate glib2-tools-2.74.5-1.1
+[   71s] [332/383] cumulate libXft2-2.3.7-1.1
+[   71s] [333/383] cumulate cmake-mini-3.25.2-1.2
+[   71s] [334/383] cumulate vulkan-headers-1.3.239.0-1.1
+[   71s] [335/383] cumulate libgstreamer-1_0-0-1.22.0-2.1
+[   71s] [336/383] cumulate libcairo2-1.17.6-1.1
+[   71s] [337/383] cumulate Mesa-libEGL1-22.3.5-350.1
+[   71s] [338/383] cumulate Mesa-libGL1-22.3.5-350.1
+[   71s] [339/383] cumulate libQt5Gui5-5.15.8+kde160-1.2
+[   71s] [340/383] cumulate cmake-3.25.2-1.1
+[   71s] [341/383] cumulate libQt5Widgets5-5.15.8+kde160-1.2
+[   71s] [342/383] cumulate vulkan-devel-1.3.239.0-1.1
+[   71s] [343/383] cumulate libgstphotography-1_0-0-1.22.0-4.1
+[   71s] [344/383] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   71s] [345/383] cumulate Mesa-libEGL-devel-22.3.5-350.1
+[   71s] [346/383] cumulate Mesa-libGL-devel-22.3.5-350.1
+[   71s] [347/383] cumulate gstreamer-1.22.0-2.1
+[   71s] [348/383] cumulate ruby3.2-3.2.1-1.1
+[   71s] [349/383] cumulate Mesa-dri-22.3.5-350.1
+[   71s] [350/383] cumulate glib2-devel-2.74.5-1.1
+[   71s] [351/383] cumulate libpango-1_0-0-1.50.12-1.1
+[   71s] [352/383] cumulate ruby-3.2-1.1
+[   71s] [353/383] cumulate libQt5OpenGL5-5.15.8+kde160-1.2
+[   71s] [354/383] cumulate libQt5Svg5-5.15.8+kde8-1.1
+[   71s] [355/383] cumulate libpulse-devel-16.1-2.1
+[   71s] [356/383] cumulate libqt5-qtbase-common-devel-5.15.8+kde160-1.2
+[   71s] [357/383] cumulate libQt5PrintSupport5-5.15.8+kde160-1.2
+[   71s] [358/383] cumulate libQtQuick5-5.15.8+kde22-1.1
+[   71s] [359/383] cumulate gstreamer-plugins-base-1.22.0-1.1
+[   71s] [360/383] cumulate qtdeclarative-imports-provides-qt5-1.0-1.10
+[   71s] [361/383] cumulate libQt5Core-devel-5.15.8+kde160-1.2
+[   71s] [362/383] cumulate qmlpluginexports-qt5-1.0-1.5
+[   71s] [363/383] cumulate libgstallocators-1_0-0-1.22.0-1.1
+[   71s] [364/383] cumulate libgstapp-1_0-0-1.22.0-1.1
+[   71s] [365/383] cumulate libgsttag-1_0-0-1.22.0-1.1
+[   71s] [366/383] cumulate libgstvideo-1_0-0-1.22.0-1.1
+[   71s] [367/383] cumulate libqt5-qtdeclarative-tools-5.15.8+kde22-1.1
+[   71s] [368/383] cumulate libQt5Network-devel-5.15.8+kde160-1.2
+[   71s] [369/383] cumulate libQt5Test-devel-5.15.8+kde160-1.2
+[   71s] [370/383] cumulate libQt5Xml-devel-5.15.8+kde160-1.2
+[   71s] [371/383] cumulate quazip-qt5-devel-1.4-2.1
+[   71s] [372/383] cumulate libQt5Gui-devel-5.15.8+kde160-1.2
+[   71s] [373/383] cumulate libgstaudio-1_0-0-1.22.0-1.1
+[   71s] [374/383] cumulate libgstgl-1_0-0-1.22.0-1.1
+[   71s] [375/383] cumulate libQt5Widgets-devel-5.15.8+kde160-1.2
+[   71s] [376/383] cumulate libgstriff-1_0-0-1.22.0-1.1
+[   71s] [377/383] cumulate libgstpbutils-1_0-0-1.22.0-1.1
+[   71s] [378/383] cumulate libQt5PrintSupport-devel-5.15.8+kde160-1.2
+[   71s] [379/383] cumulate libqt5-qtsvg-devel-5.15.8+kde8-1.1
+[   71s] [380/383] cumulate libQt5OpenGL-devel-5.15.8+kde160-1.2
+[   71s] [381/383] cumulate libqt5-qtdeclarative-devel-5.15.8+kde22-1.1
+[   71s] [382/383] cumulate libQt5Multimedia5-5.15.8+kde1-1.1
+[   71s] [383/383] cumulate libqt5-qtmultimedia-devel-5.15.8+kde1-1.1
+[   71s] now installing cumulated packages
+[   72s] Preparing...                          ########################################
+[   73s] Updating / installing...
+[   73s] libglib-2_0-0-2.74.5-1.1              ########################################
+[   73s] libdrm2-2.4.115-2.1                   ########################################
+[   73s] libexpat1-2.5.0-2.1                   ########################################
+[   74s] libogg0-1.3.5-1.1                     ########################################
+[   74s] libffi8-3.4.4-1.1                     ########################################
+[   74s] libgobject-2_0-0-2.74.5-1.1           ########################################
+[   74s] libgmodule-2_0-0-2.74.5-1.1           ########################################
+[   74s] xorgproto-devel-2022.2-2.1            ########################################
+[   74s] libwayland-client0-1.21.0-4.2         ########################################
+[   75s] libpng16-16-1.6.39-2.1                ########################################
+[   75s] libasound2-1.2.8-1.1                  ########################################
+[   75s] libwayland-server0-1.21.0-4.2         ########################################
+[   75s] libgbm1-22.3.5-350.1                  ########################################
+[   76s] libvorbis0-1.3.7-2.1                  ########################################
+[   76s] libudev-mini1-252.5-1.1               ########################################
+[   76s] libsystemd0-mini-252.5-1.1            ########################################
+[   76s] liborc-0_4-0-0.4.33-1.1               ########################################
+[   76s] Mesa-libglapi0-22.3.5-350.1           ########################################
+[   77s] libgudev-1_0-0-237-2.1                ########################################
+[   77s] libvorbisenc2-1.3.7-2.1               ########################################
+[   77s] libwayland-cursor0-1.21.0-4.2         ########################################
+[   77s] libffi-devel-3.4.4-1.1                ########################################
+[   77s] libtheoraenc1-1.1.1-30.1              ########################################
+[   77s] libdrm_amdgpu1-2.4.115-2.1            ########################################
+[   77s] libdrm_nouveau2-2.4.115-2.1           ########################################
+[   77s] libdrm_radeon1-2.4.115-2.1            ########################################
+[   77s] zlib-devel-1.2.13-2.1                 ########################################
+[   77s] libxshmfence1-1.3.2-1.1               ########################################
+[   78s] libxml2-2-2.10.3-3.1                  ########################################
+[   78s] libwayland-egl1-1.21.0-4.2            ########################################
+[   78s] libunistring5-1.1-1.1                 ########################################
+[   78s] libtheoradec1-1.1.1-30.1              ########################################
+[   94s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   94s] libpcre2-16-0-10.42-3.2               ########################################
+[   95s] libpciaccess0-0.17-1.1                ########################################
+[   95s] libopus0-1.3.1-3.2                    ########################################
+[   95s] libnettle8-3.8.1-1.1                  ########################################
+[   95s] libmtdev1-1.1.6-1.1                   ########################################
+[   95s] libjpeg8-8.2.2-72.1                   ########################################
+[   96s] libcdda_interface0-3.10.2-28.2        ########################################
+[   96s] libavahi-common3-0.8-22.2             ########################################
+[   96s] libXau6-1.0.11-1.1                    ########################################
+[   96s] libxcb1-1.15-2.1                      ########################################
+[   96s] libxcb-shm0-1.15-2.1                  ########################################
+[   96s] libxcb-randr0-1.15-2.1                ########################################
+[   96s] libxcb-render0-1.15-2.1               ########################################
+[   96s] libxcb-sync1-1.15-2.1                 ########################################
+[   97s] libxcb-xfixes0-1.15-2.1               ########################################
+[   97s] libxcb-dri2-0-1.15-2.1                ########################################
+[   97s] libxcb-dri3-0-1.15-2.1                ########################################
+[   97s] libxcb-glx0-1.15-2.1                  ########################################
+[   97s] libxcb-present0-1.15-2.1              ########################################
+[   97s] libxcb-xkb1-1.15-2.1                  ########################################
+[   98s] libxcb-shape0-1.15-2.1                ########################################
+[   98s] libxcb-xinerama0-1.15-2.1             ########################################
+[   98s] libxcb-xinput0-1.15-2.1               ########################################
+[   98s] libX11-data-1.8.1-4.1                 ########################################
+[   99s] libX11-6-1.8.1-4.1                    ########################################
+[   99s] libXext6-1.3.5-1.1                    ########################################
+[   99s] libXrender1-0.9.11-1.1                ########################################
+[   99s] libX11-xcb1-1.8.1-4.1                 ########################################
+[   99s] libICE6-1.1.1-1.1                     ########################################
+[   99s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[  100s] libopenssl3-3.0.7-3.1                 ########################################
+[  100s] Mesa-KHR-devel-22.3.5-350.1           ########################################
+[  100s] libSM6-1.2.4-2.1                      ########################################
+[  100s] libXrandr2-1.5.3-1.1                  ########################################
+[  101s] libXi6-1.8-1.1                        ########################################
+[  101s] libXv1-1.0.12-1.1                     ########################################
+[  101s] libXxf86vm1-1.1.5-1.1                 ########################################
+[  101s] libXfixes3-6.0.0-2.1                  ########################################
+[  101s] libxcb-render-util0-0.3.10-1.1        ########################################
+[  101s] libxcb-composite0-1.15-2.1            ########################################
+[  101s] libxcb-damage0-1.15-2.1               ########################################
+[  101s] libxcb-dpms0-1.15-2.1                 ########################################
+[  101s] libxcb-icccm4-0.4.2-1.1               ########################################
+[  101s] libxcb-keysyms1-0.4.1-1.1             ########################################
+[  102s] libxcb-record0-1.15-2.1               ########################################
+[  102s] libxcb-res0-1.15-2.1                  ########################################
+[  102s] libxcb-screensaver0-1.15-2.1          ########################################
+[  102s] libxcb-util1-0.4.1-1.1                ########################################
+[  102s] libxcb-image0-0.4.1-1.1               ########################################
+[  102s] libxcb-xf86dri0-1.15-2.1              ########################################
+[  102s] libxcb-xtest0-1.15-2.1                ########################################
+[  102s] libxcb-xv0-1.15-2.1                   ########################################
+[  102s] libxcb-xvmc0-1.15-2.1                 ########################################
+[  102s] libXau-devel-1.0.11-1.1               ########################################
+[  103s] libxcb-devel-1.15-2.1                 ########################################
+[  104s] libX11-devel-1.8.1-4.1                ########################################
+[  104s] libXext-devel-1.3.5-1.1               ########################################
+[  104s] libXrender-devel-0.9.11-1.1           ########################################
+[  104s] libXrandr-devel-1.5.3-1.1             ########################################
+[  105s] libcdda_paranoia0-3.10.2-28.2         ########################################
+[  105s] libhogweed6-3.8.1-1.1                 ########################################
+[  105s] libpciaccess-devel-0.17-1.1           ########################################
+[  105s] libdrm_intel1-2.4.115-2.1             ########################################
+[  105s] libdrm-devel-2.4.115-2.1              ########################################
+[  110s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[  110s] gcc-c++-12-2.1                        ########################################
+[  110s] libstdc++-devel-12-2.1                ########################################
+[  110s] libidn2-0-2.3.4-1.1                   ########################################
+[  111s] wayland-devel-1.21.0-4.2              ########################################
+[  112s] shared-mime-info-2.2-1.1              ########################################
+[  126s] gio-branding-upstream-2.74.5-1.1      ########################################
+[  126s] libgio-2_0-0-2.74.5-1.1               ########################################
+[  127s] glib2-tools-2.74.5-1.1                ########################################
+[  127s] No schema files found: doing nothing.
+[  127s] libgraphene-1_0-0-1.10.8-1.1          ########################################
+[  128s] libp11-kit0-0.24.1-2.1                ########################################
+[  128s] libFLAC12-1.4.2-1.1                   ########################################
+[  128s] libogg-devel-1.3.5-1.1                ########################################
+[  128s] libtheora0-1.1.1-30.1                 ########################################
+[  128s] desktop-file-utils-0.26-5.1           ########################################
+[  136s] libgthread-2_0-0-2.74.5-1.1           ########################################
+[  137s] xkeyboard-config-2.38-1.1             ########################################
+[  138s] libxkbcommon0-1.5.0-1.1               ########################################
+[  138s] libxkbcommon-x11-0-1.5.0-1.1          ########################################
+[  139s] timezone-2022g-2.1                    ########################################
+[  139s] /usr/sbin/useradd -r -c Printing daemon -d /var/spool/lpd -g lp lp -s /usr/sbin/nologin
+[  140s] system-user-lp-20170617-24.1          ########################################
+[  140s] cups-config-2.4.2-4.2                 ########################################
+[  140s] python-rpm-macros-20230128.e704796-1.2########################################
+[  140s] libyaml-0-2-0.2.5-2.1                 ########################################
+[  141s] libwacom-data-2.5.0-1.1               ########################################
+[  141s] libwacom9-2.5.0-1.1                   ########################################
+[  141s] libvulkan1-1.3.239.0-1.1              ########################################
+[  141s] libvisual-0_4-0-0.4.0-204.1           ########################################
+[  142s] libverto1-0.3.2-1.1                   ########################################
+[  142s] libuv1-1.44.2-3.1                     ########################################
+[  142s] libunwind8-1.6.2-4.1                  ########################################
+[  142s] libts0-1.22-1.1                       ########################################
+[  142s] libthai-data-0.1.29-1.1               ########################################
+[  142s] libtasn1-6-4.19.0-1.1                 ########################################
+[  143s] libsqlite3-0-3.40.1-1.1               ########################################
+[  143s] libspeex1-1.2.1-1.1                   ########################################
+[  143s] libsndfile1-1.1.0-1.2                 ########################################
+[  143s] libsepol-devel-3.4-1.1                ########################################
+[  144s] libruby3_2-3_2-3.2.1-1.1              ########################################
+[  144s] librhash0-1.4.3-1.1                   ########################################
+[  144s] libproxy1-0.4.18-1.1                  ########################################
+[  144s] libpixman-1-0-0.42.2-1.1              ########################################
+[  144s] libpcre2-posix3-10.42-3.2             ########################################
+[  145s] libpcre2-32-0-10.42-3.2               ########################################
+[  145s] pcre2-devel-10.42-3.2                 ########################################
+[  145s] libselinux-devel-3.4-2.1              ########################################
+[  145s] libonig5-6.9.8-1.1                    ########################################
+[  145s] libjq1-1.6-3.1                        ########################################
+[  145s] jq-1.6-3.1                            ########################################
+[  145s] libmpdec3-2.5.1-2.1                   ########################################
+[  146s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[  153s] python310-base-3.10.9-2.2             ########################################
+[  154s] python310-packaging-23.0-1.1          ########################################
+[  163s] cmake-mini-3.25.2-1.2                 ########################################
+[  164s] cmake-3.25.2-1.1                      ########################################
+[  167s] vulkan-headers-1.3.239.0-1.1          ########################################
+[  167s] vulkan-devel-1.3.239.0-1.1            ########################################
+[  167s] libkeyutils1-1.6.3-5.1                ########################################
+[  167s] libjitterentropy3-3.4.1-1.1           ########################################
+[  168s] libgnutls30-3.7.9-1.1                 ########################################
+[  168s] libjack0-1.9.21-1.3                   ########################################
+[  168s] libportaudio2-190700_20210406-1.1     ########################################
+[  175s] libicu72-ledata-72.1-1.1              ########################################
+[  176s] libicu72-72.1-1.1                     ########################################
+[  176s] libgraphite2-3-1.3.14-3.1             ########################################
+[  176s] libfribidi0-1.0.12-1.1                ########################################
+[  176s] libevdev2-1.13.0-1.1                  ########################################
+[  177s] libinput10-1.22.1-1.1                 ########################################
+[  177s] libedit0-20210910.3.1-1.1             ########################################
+[  194s] libLLVM15-15.0.7-1.1                  ########################################
+[  195s] Mesa-libEGL1-22.3.5-350.1             ########################################
+[  195s] libglvnd-1.6.0-1.1                    ########################################
+[  195s] Mesa-libGL1-22.3.5-350.1              ########################################
+[  196s] Mesa-22.3.5-350.1                     ########################################
+[  199s] Mesa-dri-22.3.5-350.1                 ########################################
+[  199s] libglvnd-devel-1.6.0-1.1              ########################################
+[  200s] Mesa-libGL-devel-22.3.5-350.1         ########################################
+[  200s] Mesa-libEGL-devel-22.3.5-350.1        ########################################
+[  200s] libdouble-conversion3-3.2.1-1.1       ########################################
+[  201s] libQt5Core5-5.15.8+kde160-1.2         ########################################
+[  201s] libQt5Test5-5.15.8+kde160-1.2         ########################################
+[  202s] libQt5Sql5-5.15.8+kde160-1.2          ########################################
+[  202s] libQt5Sql5-sqlite-5.15.8+kde160-1.2   ########################################
+[  202s] libQt5Xml5-5.15.8+kde160-1.2          ########################################
+[  202s] libquazip1-qt5-1_4_0-1.4-2.1          ########################################
+[  204s] libqt5-qtbase-common-devel-5.15.8+kde1########################################
+[  205s] libQt5Core-devel-5.15.8+kde160-1.2    ########################################
+[  205s] libQt5Test-devel-5.15.8+kde160-1.2    ########################################
+[  205s] libdatrie1-0.2.13-1.1                 ########################################
+[  205s] libthai0-0.1.29-1.1                   ########################################
+[  205s] libcom_err2-1.46.5-4.1                ########################################
+[  206s] krb5-mini-1.20.1-2.3                  ########################################
+[  206s] Updating /etc/sysconfig/kadmind ...
+[  206s] Updating /etc/sysconfig/krb5kdc ...
+[  206s] libbz2-devel-1.0.8-4.1                ########################################
+[  206s] libbrotlicommon1-1.0.9-1.1            ########################################
+[  206s] libbrotlidec1-1.0.9-1.1               ########################################
+[  207s] libfreetype6-2.12.1-4.1               ########################################
+[  207s] libfontconfig1-2.14.2-1.1             ########################################
+[  207s] fontconfig-2.14.2-1.1                 ########################################
+[  207s] libcairo2-1.17.6-1.1                  ########################################
+[  208s] libharfbuzz0-7.0.0-1.1                ########################################
+[  208s] libXft2-2.3.7-1.1                     ########################################
+[  208s] libpango-1_0-0-1.50.12-1.1            ########################################
+[  209s] libgstreamer-1_0-0-1.22.0-2.1         ########################################
+[  209s] gstreamer-1.22.0-2.1                  ########################################
+[  209s] /usr/libexec/gstreamer-1.0/gst-ptp-helper: setting to root:root 0755 "cap_net_bind_service=ep". (missing capabilities)
+[  209s] libgstallocators-1_0-0-1.22.0-1.1     ########################################
+[  210s] libgstapp-1_0-0-1.22.0-1.1            ########################################
+[  210s] libgsttag-1_0-0-1.22.0-1.1            ########################################
+[  210s] libgstvideo-1_0-0-1.22.0-1.1          ########################################
+[  210s] libgstgl-1_0-0-1.22.0-1.1             ########################################
+[  211s] libgstaudio-1_0-0-1.22.0-1.1          ########################################
+[  211s] libgstriff-1_0-0-1.22.0-1.1           ########################################
+[  211s] libgstpbutils-1_0-0-1.22.0-1.1        ########################################
+[  212s] gstreamer-plugins-base-1.22.0-1.1     ########################################
+[  212s] libgstphotography-1_0-0-1.22.0-4.1    ########################################
+[  212s] libblkid-devel-2.38.1-7.1             ########################################
+[  212s] libmount-devel-2.38.1-7.1             ########################################
+[  213s] glib2-devel-2.74.5-1.1                ########################################
+[  213s] No schema files found: doing nothing.
+[  214s] ffmpeg-5-mini-libs-5.1.2-9.1          ########################################
+[  215s] fdupes-2.2.1-1.1                      ########################################
+[  215s] ruby-common-3.2-2.1                   ########################################
+[  221s] ruby3.2-3.2.1-1.1                     ########################################
+[  222s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle (bundle) in auto mode
+[  222s] update-alternatives: using /usr/bin/bundle.ruby.ruby3.2 to provide /usr/bin/bundle.ruby3.2 (bundle.ruby3.2) in auto mode
+[  222s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler (bundler) in auto mode
+[  222s] update-alternatives: using /usr/bin/bundler.ruby.ruby3.2 to provide /usr/bin/bundler.ruby3.2 (bundler.ruby3.2) in auto mode
+[  222s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc (racc) in auto mode
+[  222s] update-alternatives: using /usr/bin/racc.ruby.ruby3.2 to provide /usr/bin/racc.ruby3.2 (racc.ruby3.2) in auto mode
+[  222s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake (rake) in auto mode
+[  223s] update-alternatives: using /usr/bin/rake.ruby.ruby3.2 to provide /usr/bin/rake.ruby3.2 (rake.ruby3.2) in auto mode
+[  223s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs (rbs) in auto mode
+[  223s] update-alternatives: using /usr/bin/rbs.ruby.ruby3.2 to provide /usr/bin/rbs.ruby3.2 (rbs.ruby3.2) in auto mode
+[  223s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc (rdoc) in auto mode
+[  223s] update-alternatives: using /usr/bin/rdoc.ruby.ruby3.2 to provide /usr/bin/rdoc.ruby3.2 (rdoc.ruby3.2) in auto mode
+[  223s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri (ri) in auto mode
+[  223s] update-alternatives: using /usr/bin/ri.ruby.ruby3.2 to provide /usr/bin/ri.ruby3.2 (ri.ruby3.2) in auto mode
+[  223s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof (typeprof) in auto mode
+[  223s] update-alternatives: using /usr/bin/typeprof.ruby.ruby3.2 to provide /usr/bin/typeprof.ruby3.2 (typeprof.ruby3.2) in auto mode
+[  223s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg (rdbg) in auto mode
+[  224s] update-alternatives: using /usr/bin/rdbg.ruby.ruby3.2 to provide /usr/bin/rdbg.ruby3.2 (rdbg.ruby3.2) in auto mode
+[  224s] ruby3.2-rubygem-gem2rpm-0.10.1-20.1   ########################################
+[  224s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm (gem2rpm) in auto mode
+[  224s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm-0.10.1 (gem2rpm-0.10.1) in auto mode
+[  224s] update-alternatives: using /usr/bin/gem2rpm.ruby3.2-0.10.1 to provide /usr/bin/gem2rpm.ruby3.2 (gem2rpm.ruby3.2) in auto mode
+[  224s] dbus-1-common-1.14.6-1.1              ########################################
+[  224s] libdbus-1-3-1.14.6-1.1                ########################################
+[  225s] libpulse0-16.1-2.1                    ########################################
+[  225s] libQt5DBus5-5.15.8+kde160-1.2         ########################################
+[  226s] libQt5Network5-5.15.8+kde160-1.2      ########################################
+[  228s] libQt5Gui5-5.15.8+kde160-1.2          ########################################
+[  230s] libQt5Widgets5-5.15.8+kde160-1.2      ########################################
+[  232s] libQt5Gui-devel-5.15.8+kde160-1.2     ########################################
+[  233s] libQt5Widgets-devel-5.15.8+kde160-1.2 ########################################
+[  233s] qmlpluginexports-qt5-1.0-1.5          ########################################
+[  233s] qml-autoreqprov-1.1-2.1               ########################################
+[  235s] libQtQuick5-5.15.8+kde22-1.1          ########################################
+[  236s] libqt5-qtdeclarative-tools-5.15.8+kde2########################################
+[  237s] libQt5Network-devel-5.15.8+kde160-1.2 ########################################
+[  247s] libqt5-qtdeclarative-devel-5.15.8+kde2########################################
+[  248s] qtdeclarative-imports-provides-qt5-1.0########################################
+[  248s] libQt5OpenGL5-5.15.8+kde160-1.2       ########################################
+[  248s] libQt5Svg5-5.15.8+kde8-1.1            ########################################
+[  248s] libpulse-mainloop-glib0-16.1-2.1      ########################################
+[  249s] libpulse-devel-16.1-2.1               ########################################
+[  249s] libopenal1-1.22.2-1.1                 ########################################
+[  250s] libQt5Multimedia5-5.15.8+kde1-1.1     ########################################
+[  251s] libavahi-client3-0.8-22.2             ########################################
+[  251s] libcups2-2.4.2-4.2                    ########################################
+[  251s] libQt5PrintSupport5-5.15.8+kde160-1.2 ########################################
+[  252s] libQt5PrintSupport-devel-5.15.8+kde160########################################
+[  252s] libqt5-qtmultimedia-devel-5.15.8+kde1-########################################
+[  252s] libqt5-qtsvg-devel-5.15.8+kde8-1.1    ########################################
+[  252s] libQt5OpenGL-devel-5.15.8+kde160-1.2  ########################################
+[  252s] ruby-3.2-1.1                          ########################################
+[  253s] ffmpeg-5-mini-devel-5.1.2-9.1         ########################################
+[  253s] quazip-qt5-devel-1.4-2.1              ########################################
+[  253s] libQt5Xml-devel-5.15.8+kde160-1.2     ########################################
+[  253s] python-rpm-packaging-20210526+a18ca48-########################################
+[  253s] update-desktop-files-84.87-6.1        ########################################
+[  253s] libtheora-devel-1.1.1-30.1            ########################################
+[  253s] hicolor-icon-theme-0.17-4.1           ########################################
+[  254s] dos2unix-7.4.4-1.1                    ########################################
+[  277s] now finalizing build dir...
+[  277s] ... running 01-add_abuild_user_to_trusted_group
+[  278s] ... running 02-set_timezone_to_utc
+[  278s] ... running 03-set-permissions-secure
+[  278s] ... running 11-hack_uname_version_to_kernel_version
+[  289s] Warning: spec file parser line 61: can't expand %(...)
+[  289s] Warning: spec file parser line 62: can't expand %(...)
+[  290s] -----------------------------------------------------------------
+[  290s] I have the following modifications for tupitube.spec:
+[  290s] 26c26
+[  290s] < Release:        0
+[  290s] ---
+[  290s] > Release:        2.5
+[  300s] build target is riscv64-suse-linux
+[  300s] -----------------------------------------------------------------
+[  300s] ----- building tupitube.spec (user abuild)
+[  300s] -----------------------------------------------------------------
+[  300s] -----------------------------------------------------------------
+[  306s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/e5719e6832429c3a89714a79c2848843-tupitube' /home/abuild/rpmbuild/SOURCES/tupitube.spec
+[  307s] Building target platforms: riscv64-suse-linux
+[  307s] Building for target riscv64-suse-linux
+[  307s] setting SOURCE_DATE_EPOCH=1650931200
+[  307s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.X8MXa2
+[  307s] + umask 022
+[  307s] + cd /home/abuild/rpmbuild/BUILD
+[  307s] + cd /home/abuild/rpmbuild/BUILD
+[  307s] + rm -rf tupitube.desk
+[  307s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/tupitube.desk-0.2.18.tar.gz
+[  309s] + STATUS=0
+[  309s] + '[' 0 -ne 0 ']'
+[  309s] + cd tupitube.desk
+[  309s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  309s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/tupitube.quazip5.patch
+[  309s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  309s] + sed -i '/require .os/d' qonf/configure.rb
+[  309s] + chmod -x COPYING README README.md launcher/tupitube.xml
+[  309s] + dos2unix src/shell/html/css/tupitube.css
+[  309s] dos2unix: converting file src/shell/html/css/tupitube.css to Unix format...
+[  309s] ++ pkg-config --cflags-only-I libavutil
+[  309s] + ffmpeg_include='-I/usr/include/ffmpeg '
+[  309s] ++ pkg-config --cflags-only-I quazip1-qt5
+[  309s] + quazip_include='-I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + find . -type f -name '*.pro'
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + echo 'QMAKE_CXXFLAGS += -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -I/usr/include/ffmpeg  -I/usr/include/QuaZip-Qt5-1.4 -I/usr/include/QuaZip-Qt5-1.4/quazip -I/usr/include/qt5/QtCore -I/usr/include/qt5 '
+[  310s] + read f
+[  310s] + sed -i '/^#!/d' src/mypaint/raster/main/brushes/label-brush-mypaint.sh
+[  310s] + RPM_EC=0
+[  310s] ++ jobs -p
+[  310s] + exit 0
+[  310s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.O9xuy1
+[  310s] + umask 022
+[  310s] + cd /home/abuild/rpmbuild/BUILD
+[  310s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/tupitube-0.2.18-2.5.riscv64
+[  310s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/tupitube-0.2.18-2.5.riscv64
+[  310s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  310s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/tupitube-0.2.18-2.5.riscv64
+[  310s] + cd tupitube.desk
+[  310s] + ref=/usr/lib/rpm
+[  310s] + mints=0
+[  310s] + case $(uname -m) in
+[  310s] ++ uname -m
+[  310s] + mints=20160911
+[  310s] + for s in guess sub
+[  310s] ++ find -maxdepth 8 -name config.guess
+[  311s] + for s in guess sub
+[  311s] ++ find -maxdepth 8 -name config.sub
+[  311s] + CONFIG_SHELL=/usr/bin/bash
+[  311s] + export CONFIG_SHELL
+[  311s] + CFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  311s] + export CFLAGS
+[  311s] + CXXFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g'
+[  311s] + export CXXFLAGS
+[  311s] + FFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  311s] + export FFLAGS
+[  311s] + FCFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g '
+[  311s] + export FCFLAGS
+[  311s] + LDFLAGS=-flto=auto
+[  311s] + export LDFLAGS
+[  311s] + ./configure --host=riscv64-suse-linux-gnu --build=riscv64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-qtdir=/usr/lib64/qt5/ --bindir=/usr/lib64/tupitube/bin --libdir=/usr/lib64/tupitube --sharedir=/usr/share/tupitube
+[  314s] [92m *[0m Debug support... [ [92mON[0m ]
+[  314s] [92m *[0m Checking for Qt >= 5.13.0
+[  314s] [92m *[0m Testing for qmake... which: no qmake in (/usr/local/bin:/usr/bin:/bin)
+[  315s] (Found: 5.15.8) [ [92mOK[0m ]
+[  315s] [93m *[0m Adding ffmpeg support: true
+[  315s] [92m *[0m Checking for Zlib... [91m *[0m Configure failed. error was: undefined method `exists?' for File:Class
+[  315s] + make -j4
+[  315s] make: *** No targets specified and no makefile found.  Stop.
+[  315s] error: Bad exit status from /var/tmp/rpm-tmp.O9xuy1 (%build)
+[  315s] 
+[  315s] RPM build errors:
+[  315s]     Bad exit status from /var/tmp/rpm-tmp.O9xuy1 (%build)
+[  316s] ### VM INTERACTION START ###
+[  316s] [  292.450356][    T1] sysrq: Power Off
+[  316s] [  292.458100][   T18] reboot: Power down
+[  316s] ### VM INTERACTION END ###
+[  316s] 
+[  317s] cloud115 failed "build tupitube.spec" at Mon Feb 20 02:48:48 UTC 2023.
+[  317s] 

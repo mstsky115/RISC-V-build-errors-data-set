@@ -1,0 +1,539 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_6/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_6/root
+[    0s] 
+[    0s] 
+[    0s] lamb20 started "build ghc-authenticate-oauth.spec" at Mon Feb 20 10:39:09 UTC 2023.
+[    0s] 
+[    0s] Building ghc-authenticate-oauth for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'a129067f1b0f57bbaf2244de5b88fa31'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_6/.build-srcdir/ghc-authenticate-oauth.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_6/.build-srcdir/ghc-authenticate-oauth.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/6/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_6/.build.rpmlist /var/cache/obs/worker/root_6/.build-srcdir/ghc-authenticate-oauth.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7af7cc9404d4e5044d5fcd39115539d1]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...cycle: ghc-compiler -> ghc-base-devel
+[    4s]   breaking dependency ghc-compiler -> ghc-base-devel
+[    4s] done
+[    5s] Detected virtio-serial support
+[    6s] booting kvm...
+[    6s] ### VM INTERACTION START ###
+[    6s] Using virtio-serial support
+[    6s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_6/.mount/boot/kernel -initrd /var/cache/obs/worker/root_6/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_6/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_6/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_6/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   13s] ### VM INTERACTION END ###
+[   13s] 2nd stage started in virtual machine
+[   14s] machine type: riscv64
+[   14s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   14s] Increasing log level from now on...
+[   14s] [    7.841682][  T416] sysrq: Changing Loglevel
+[   14s] [    7.842108][  T416] sysrq: Loglevel set to 4
+[   14s] Enable sysrq operations
+[   15s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   15s] no label, UUID=d2eddcad-3265-4c9d-b613-09d5f574561a
+[   15s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   15s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   15s] swapon /dev/vdb
+[   15s] WARNING: udev not running, creating extra device nodes
+[   16s] logging output to //.build.log...
+[   16s] processing recipe /.build-srcdir/ghc-authenticate-oauth.spec ...
+[   16s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/ghc-authenticate-oauth.spec build ...
+[   17s] initializing rpm db...
+[   18s] querying package ids...
+[   47s] [1/271] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   47s] [2/271] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   47s] [3/271] preinstalled attr-2.5.1-1.1
+[   47s] [4/271] preinstalled bash-5.2.15-8.1
+[   47s] [5/271] preinstalled bash-sh-5.2.15-8.1
+[   47s] [6/271] preinstalled binutils-2.39-3.1
+[   47s] [7/271] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   47s] [8/271] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   47s] [9/271] preinstalled build-mkbaselibs-20230215-1.1
+[   47s] [10/271] preinstalled bzip2-1.0.8-4.1
+[   47s] [11/271] preinstalled chkstat-1599_20230217-1.1
+[   47s] [12/271] preinstalled compat-usrmerge-build-84.87-5.1
+[   47s] [13/271] preinstalled compat-usrmerge-tools-84.87-5.1
+[   47s] [14/271] preinstalled coreutils-9.1-5.1
+[   47s] [15/271] preinstalled cpio-2.13-5.1
+[   47s] [16/271] preinstalled cpp-12-2.1
+[   47s] [17/271] preinstalled cpp12-12.2.1+git749-4.1
+[   47s] [18/271] preinstalled debugedit-5.0-5.1
+[   47s] [19/271] preinstalled diffutils-3.9-1.1
+[   47s] [20/271] preinstalled dwz-0.15-2.1
+[   47s] [21/271] preinstalled elfutils-0.188-4.1
+[   47s] [22/271] preinstalled file-5.44-1.2
+[   47s] [23/271] preinstalled file-magic-5.44-1.2
+[   47s] [24/271] preinstalled filesystem-84.87-12.1
+[   47s] [25/271] preinstalled fillup-1.42-279.1
+[   47s] [26/271] preinstalled findutils-4.9.0-2.1
+[   47s] [27/271] preinstalled gawk-5.2.1-2.1
+[   47s] [28/271] preinstalled gcc-12-2.1
+[   47s] [29/271] preinstalled gcc-PIE-12-2.1
+[   47s] [30/271] preinstalled gcc12-12.2.1+git749-4.1
+[   47s] [31/271] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   47s] [32/271] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   47s] [33/271] preinstalled gettext-tools-mini-0.21.1-1.1
+[   47s] [34/271] cumulate ghc-rpm-macros-1.9.95-3.1
+[   47s] [35/271] preinstalled glibc-2.37-1.1
+[   47s] [36/271] preinstalled glibc-devel-2.37-1.1
+[   47s] [37/271] preinstalled glibc-locale-base-2.37-1.1
+[   47s] [38/271] preinstalled grep-3.8-3.1
+[   47s] [39/271] preinstalled gzip-1.12-3.1
+[   47s] [40/271] preinstalled kernel-obs-build-6.1.12-1.1
+[   47s] [41/271] preinstalled libacl1-2.3.1-2.1
+[   47s] [42/271] preinstalled libasan8-13.0.1+git5428-6.1
+[   47s] [43/271] preinstalled libasm1-0.188-4.1
+[   47s] [44/271] preinstalled libatomic1-13.0.1+git5428-6.1
+[   47s] [45/271] preinstalled libattr1-2.5.1-1.1
+[   47s] [46/271] preinstalled libaudit1-3.0.9-1.1
+[   47s] [47/271] preinstalled libblkid1-2.38.1-7.1
+[   47s] [48/271] preinstalled libbz2-1-1.0.8-4.1
+[   47s] [49/271] preinstalled libcap-ng0-0.8.3-1.1
+[   47s] [50/271] preinstalled libcap2-2.67-1.1
+[   47s] [51/271] preinstalled libcrypt1-4.4.33-1.1
+[   47s] [52/271] preinstalled libctf-nobfd0-2.39-3.1
+[   47s] [53/271] preinstalled libctf0-2.39-3.1
+[   47s] [54/271] preinstalled libdb-4_8-4.8.30-39.1
+[   47s] [55/271] preinstalled libdw1-0.188-4.1
+[   47s] [56/271] preinstalled libeconf0-0.5.1-1.1
+[   47s] [57/271] cumulate libedit0-20210910.3.1-1.1
+[   47s] [58/271] preinstalled libelf1-0.188-4.1
+[   47s] [59/271] preinstalled libfdisk1-2.38.1-7.1
+[   47s] [60/271] cumulate libffi8-3.4.4-1.1
+[   47s] [61/271] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   47s] [62/271] preinstalled libgcrypt20-1.10.1-1.1
+[   47s] [63/271] preinstalled libgdbm6-1.23-1.1
+[   47s] [64/271] preinstalled libgdbm_compat4-1.23-1.1
+[   47s] [65/271] preinstalled libgmp10-6.2.1-4.1
+[   47s] [66/271] cumulate libgmpxx4-6.2.1-4.1
+[   47s] [67/271] preinstalled libgomp1-13.0.1+git5428-6.1
+[   47s] [68/271] preinstalled libgpg-error0-1.46-1.1
+[   47s] [69/271] preinstalled libisl23-0.25-1.1
+[   47s] [70/271] preinstalled liblua5_4-5-5.4.4-8.1
+[   47s] [71/271] preinstalled liblzma5-5.4.1-1.1
+[   47s] [72/271] preinstalled libmagic1-5.44-1.2
+[   47s] [73/271] preinstalled libmount1-2.38.1-7.1
+[   47s] [74/271] preinstalled libmpc3-1.3.1-1.2
+[   47s] [75/271] preinstalled libmpfr6-4.2.0-1.1
+[   47s] [76/271] preinstalled libncurses6-6.4.20230128-5.1
+[   47s] [77/271] cumulate libnuma1-2.0.15.0.g01a39cb-1.1
+[   47s] [78/271] preinstalled libpcre2-8-0-10.42-3.2
+[   47s] [79/271] preinstalled libpkgconf3-1.8.0-2.1
+[   47s] [80/271] preinstalled libpopt0-1.19-1.1
+[   47s] [81/271] preinstalled libreadline8-8.2-2.1
+[   47s] [82/271] preinstalled librpmbuild9-4.18.0-3.2
+[   47s] [83/271] preinstalled libseccomp2-2.5.4-2.1
+[   47s] [84/271] preinstalled libselinux1-3.4-2.1
+[   47s] [85/271] preinstalled libsemanage-conf-3.4-1.1
+[   47s] [86/271] preinstalled libsemanage2-3.4-1.1
+[   47s] [87/271] preinstalled libsepol2-3.4-1.1
+[   47s] [88/271] preinstalled libsmartcols1-2.38.1-7.1
+[   47s] [89/271] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   47s] [90/271] preinstalled libsubid4-4.13-4.1
+[   47s] [91/271] preinstalled libubsan1-13.0.1+git5428-6.1
+[   47s] [92/271] preinstalled libutempter0-1.2.0-3.2
+[   47s] [93/271] preinstalled libuuid1-2.38.1-7.1
+[   47s] [94/271] preinstalled libxcrypt-devel-4.4.33-1.1
+[   47s] [95/271] preinstalled libz1-1.2.13-2.1
+[   47s] [96/271] cumulate libzstd-devel-1.5.2-2.1
+[   47s] [97/271] preinstalled libzstd1-1.5.2-2.1
+[   47s] [98/271] preinstalled linux-glibc-devel-6.1-1.1
+[   47s] [99/271] preinstalled login_defs-4.13-4.1
+[   47s] [100/271] preinstalled lua54-5.4.4-8.1
+[   47s] [101/271] preinstalled make-4.4-2.1
+[   47s] [102/271] preinstalled ncurses-utils-6.4.20230128-5.1
+[   47s] [103/271] preinstalled pam-1.5.2-12.1
+[   47s] [104/271] preinstalled patch-2.7.6-6.1
+[   47s] [105/271] preinstalled perl-5.36.0-4.1
+[   47s] [106/271] preinstalled perl-base-5.36.0-4.1
+[   47s] [107/271] preinstalled permissions-1599_20230217-1.1
+[   47s] [108/271] preinstalled permissions-config-1599_20230217-1.1
+[   47s] [109/271] preinstalled pkgconf-1.8.0-2.1
+[   47s] [110/271] preinstalled pkgconf-m4-1.8.0-2.1
+[   47s] [111/271] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   47s] [112/271] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   47s] [113/271] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   47s] [114/271] preinstalled qemu-linux-user-7.1.0-50.1
+[   47s] [115/271] preinstalled rpm-4.18.0-3.2
+[   47s] [116/271] preinstalled rpm-build-4.18.0-3.2
+[   47s] [117/271] preinstalled rpm-build-perl-4.18.0-3.2
+[   47s] [118/271] preinstalled rpm-config-SUSE-20220926-1.1
+[   47s] [119/271] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.6
+[   47s] [120/271] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   47s] [121/271] preinstalled sed-4.9-2.1
+[   47s] [122/271] preinstalled shadow-4.13-4.1
+[   47s] [123/271] preinstalled system-group-hardware-20170617-24.1
+[   47s] [124/271] preinstalled system-user-root-20190513-2.1
+[   47s] [125/271] preinstalled systemd-rpm-macros-19-1.1
+[   47s] [126/271] preinstalled sysuser-shadow-3.1-5.1
+[   47s] [127/271] preinstalled tar-1.34-9.1
+[   47s] [128/271] preinstalled terminfo-base-6.4.20230128-5.1
+[   47s] [129/271] preinstalled update-alternatives-1.21.8-1.1
+[   47s] [130/271] preinstalled util-linux-2.38.1-7.1
+[   47s] [131/271] preinstalled which-2.21-5.1
+[   47s] [132/271] preinstalled xz-5.4.1-1.1
+[   47s] [133/271] cumulate xz-devel-5.4.1-1.1
+[   47s] [134/271] cumulate zlib-devel-1.2.13-2.1
+[   47s] [135/271] cumulate gmp-devel-6.2.1-4.1
+[   47s] [136/271] cumulate libLLVM12-12.0.1-19.1
+[   47s] [137/271] cumulate libelf-devel-0.188-4.1
+[   47s] [138/271] cumulate libffi-devel-3.4.4-1.1
+[   47s] [139/271] cumulate libnuma-devel-2.0.15.0.g01a39cb-1.1
+[   47s] [140/271] cumulate ghc-base-4.14.3.0-23.1
+[   47s] [141/271] cumulate ghc-array-0.5.4.0-23.1
+[   47s] [142/271] cumulate ghc-basement-0.0.15-1.1
+[   47s] [143/271] cumulate ghc-byteorder-1.0.4-3.4
+[   47s] [144/271] cumulate ghc-data-default-class-0.1.2.0-9.4
+[   47s] [145/271] cumulate ghc-filepath-1.4.2.1-23.1
+[   47s] [146/271] cumulate ghc-ghc-boot-th-8.10.7-23.1
+[   47s] [147/271] cumulate ghc-ghc-heap-8.10.7-23.1
+[   47s] [148/271] cumulate ghc-old-locale-1.0.0.7-12.4
+[   47s] [149/271] cumulate ghc-terminfo-0.4.1.4-23.1
+[   47s] [150/271] cumulate ghc-transformers-0.5.6.2-23.1
+[   47s] [151/271] cumulate ghc-xhtml-3000.2.2.1-23.1
+[   47s] [152/271] cumulate llvm12-12.0.1-19.1
+[   47s] [153/271] cumulate libdw-devel-0.188-4.1
+[   47s] [154/271] cumulate ghc-deepseq-1.4.4.0-23.1
+[   47s] [155/271] cumulate ghc-mtl-2.2.2-23.1
+[   47s] [156/271] cumulate ghc-stm-2.5.0.1-23.1
+[   47s] [157/271] cumulate ghc-transformers-compat-0.7.2-1.1
+[   47s] [158/271] cumulate ghc-data-default-instances-old-locale-0.0.1-10.4
+[   47s] [159/271] cumulate ghc-bytestring-0.10.12.0-23.1
+[   47s] [160/271] cumulate ghc-containers-0.6.5.1-23.1
+[   47s] [161/271] cumulate ghc-dlist-1.0-2.4
+[   47s] [162/271] cumulate ghc-hourglass-0.2.12-6.4
+[   47s] [163/271] cumulate ghc-pretty-1.1.3.6-23.1
+[   47s] [164/271] cumulate ghc-splitmix-0.1.0.4-3.1
+[   47s] [165/271] cumulate ghc-time-1.9.3-23.1
+[   47s] [166/271] cumulate ghc-appar-0.1.8-3.4
+[   47s] [167/271] cumulate ghc-base64-bytestring-1.2.1.0-1.1
+[   47s] [168/271] cumulate ghc-zlib-0.6.3.0-1.1
+[   47s] [169/271] cumulate ghc-binary-0.8.8.0-23.1
+[   47s] [170/271] cumulate ghc-cereal-0.5.8.3-1.1
+[   47s] [171/271] cumulate ghc-data-default-instances-containers-0.0.1-10.4
+[   47s] [172/271] cumulate ghc-data-default-instances-dlist-0.0.1-10.4
+[   47s] [173/271] cumulate ghc-memory-0.18.0-1.1
+[   47s] [174/271] cumulate ghc-template-haskell-2.16.0.0-23.1
+[   47s] [175/271] cumulate ghc-unix-2.7.2.2-23.1
+[   47s] [176/271] cumulate ghc-random-1.2.1.1-1.1
+[   47s] [177/271] cumulate ghc-SHA-1.6.4.4-7.4
+[   47s] [178/271] cumulate ghc-entropy-0.4.1.10-1.1
+[   47s] [179/271] cumulate ghc-asn1-types-0.3.4-4.8
+[   47s] [180/271] cumulate ghc-directory-1.3.6.0-23.1
+[   47s] [181/271] cumulate ghc-tagged-0.8.6.1-4.1
+[   47s] [182/271] cumulate ghc-exceptions-0.10.4-23.1
+[   47s] [183/271] cumulate ghc-text-1.2.4.1-23.1
+[   47s] [184/271] cumulate ghc-data-default-0.7.1.1-9.4
+[   47s] [185/271] cumulate ghc-asn1-encoding-0.9.6-7.6
+[   47s] [186/271] cumulate ghc-network-3.1.2.7-1.1
+[   47s] [187/271] cumulate ghc-process-1.6.13.2-23.1
+[   47s] [188/271] cumulate ghc-hpc-0.6.1.0-23.1
+[   47s] [189/271] cumulate ghc-blaze-builder-0.4.2.2-2.1
+[   47s] [190/271] cumulate ghc-hashable-1.3.5.0-2.1
+[   47s] [191/271] cumulate ghc-mime-types-0.1.1.0-1.1
+[   47s] [192/271] cumulate ghc-ghc-boot-8.10.7-23.1
+[   47s] [193/271] cumulate ghc-th-compat-0.1.4-1.1
+[   47s] [194/271] cumulate ghc-cookie-0.4.6-1.1
+[   47s] [195/271] cumulate ghc-parsec-3.1.14.0-23.1
+[   47s] [196/271] cumulate ghc-crypto-api-0.13.3-4.7
+[   47s] [197/271] cumulate ghc-crypto-pubkey-types-0.4.3-1.7
+[   47s] [198/271] cumulate ghc-case-insensitive-1.2.1.0-5.6
+[   47s] [199/271] cumulate ghc-async-2.2.4-3.1
+[   47s] [200/271] cumulate ghc-iproute-1.7.12-1.2
+[   47s] [201/271] cumulate ghc-ghci-8.10.7-23.1
+[   47s] [202/271] cumulate ghc-Cabal-3.2.1.0-23.1
+[   47s] [203/271] cumulate ghc-haskeline-0.8.2-23.1
+[   47s] [204/271] cumulate ghc-network-uri-2.6.4.2-1.1
+[   47s] [205/271] cumulate ghc-http-types-0.12.3-5.5
+[   47s] [206/271] cumulate ghc-libiserv-8.10.7-23.1
+[   47s] [207/271] cumulate ghc-ghc-8.10.7-23.1
+[   47s] [208/271] cumulate ghc-RSA-2.4.1-1.8
+[   47s] [209/271] cumulate ghc-streaming-commons-0.2.2.5-1.1
+[   47s] [210/271] cumulate ghc-http-client-0.7.13.1-2.1
+[   47s] [211/271] cumulate ghc-compiler-8.10.7-23.1
+[   47s] [212/271] cumulate ghc-base-devel-4.14.3.0-23.1
+[   47s] [213/271] cumulate ghc-array-devel-0.5.4.0-23.1
+[   47s] [214/271] cumulate ghc-basement-devel-0.0.15-1.1
+[   47s] [215/271] cumulate ghc-byteorder-devel-1.0.4-3.4
+[   47s] [216/271] cumulate ghc-data-default-class-devel-0.1.2.0-9.4
+[   47s] [217/271] cumulate ghc-filepath-devel-1.4.2.1-23.1
+[   47s] [218/271] cumulate ghc-ghc-boot-th-devel-8.10.7-23.1
+[   47s] [219/271] cumulate ghc-old-locale-devel-1.0.0.7-12.4
+[   47s] [220/271] cumulate ghc-transformers-devel-0.5.6.2-23.1
+[   47s] [221/271] cumulate ghc-deepseq-devel-1.4.4.0-23.1
+[   47s] [222/271] cumulate ghc-mtl-devel-2.2.2-23.1
+[   47s] [223/271] cumulate ghc-stm-devel-2.5.0.1-23.1
+[   47s] [224/271] cumulate ghc-transformers-compat-devel-0.7.2-1.1
+[   47s] [225/271] cumulate ghc-data-default-instances-old-locale-devel-0.0.1-10.4
+[   47s] [226/271] cumulate ghc-bytestring-devel-0.10.12.0-23.1
+[   47s] [227/271] cumulate ghc-dlist-devel-1.0-2.4
+[   47s] [228/271] cumulate ghc-hourglass-devel-0.2.12-6.4
+[   47s] [229/271] cumulate ghc-pretty-devel-1.1.3.6-23.1
+[   47s] [230/271] cumulate ghc-splitmix-devel-0.1.0.4-3.1
+[   47s] [231/271] cumulate ghc-time-devel-1.9.3-23.1
+[   47s] [232/271] cumulate ghc-containers-devel-0.6.5.1-23.1
+[   47s] [233/271] cumulate ghc-appar-devel-0.1.8-3.4
+[   47s] [234/271] cumulate ghc-base64-bytestring-devel-1.2.1.0-1.1
+[   47s] [235/271] cumulate ghc-data-default-instances-containers-devel-0.0.1-10.4
+[   47s] [236/271] cumulate ghc-data-default-instances-dlist-devel-0.0.1-10.4
+[   47s] [237/271] cumulate ghc-template-haskell-devel-2.16.0.0-23.1
+[   47s] [238/271] cumulate ghc-unix-devel-2.7.2.2-23.1
+[   47s] [239/271] cumulate ghc-zlib-devel-0.6.3.0-1.1
+[   47s] [240/271] cumulate ghc-binary-devel-0.8.8.0-23.1
+[   47s] [241/271] cumulate ghc-cereal-devel-0.5.8.3-1.1
+[   47s] [242/271] cumulate ghc-memory-devel-0.18.0-1.1
+[   47s] [243/271] cumulate ghc-random-devel-1.2.1.1-1.1
+[   47s] [244/271] cumulate ghc-entropy-devel-0.4.1.10-1.1
+[   47s] [245/271] cumulate ghc-SHA-devel-1.6.4.4-7.4
+[   47s] [246/271] cumulate ghc-asn1-types-devel-0.3.4-4.8
+[   47s] [247/271] cumulate ghc-directory-devel-1.3.6.0-23.1
+[   47s] [248/271] cumulate ghc-tagged-devel-0.8.6.1-4.1
+[   47s] [249/271] cumulate ghc-data-default-devel-0.7.1.1-9.4
+[   47s] [250/271] cumulate ghc-exceptions-devel-0.10.4-23.1
+[   47s] [251/271] cumulate ghc-text-devel-1.2.4.1-23.1
+[   47s] [252/271] cumulate ghc-asn1-encoding-devel-0.9.6-7.6
+[   47s] [253/271] cumulate ghc-blaze-builder-devel-0.4.2.2-2.1
+[   47s] [254/271] cumulate ghc-mime-types-devel-0.1.1.0-1.1
+[   47s] [255/271] cumulate ghc-network-devel-3.1.2.7-1.1
+[   47s] [256/271] cumulate ghc-parsec-devel-3.1.14.0-23.1
+[   47s] [257/271] cumulate ghc-th-compat-devel-0.1.4-1.1
+[   47s] [258/271] cumulate ghc-hashable-devel-1.3.5.0-2.1
+[   47s] [259/271] cumulate ghc-process-devel-1.6.13.2-23.1
+[   47s] [260/271] cumulate ghc-cookie-devel-0.4.6-1.1
+[   47s] [261/271] cumulate ghc-crypto-api-devel-0.13.3-4.7
+[   47s] [262/271] cumulate ghc-async-devel-2.2.4-3.1
+[   48s] [263/271] cumulate ghc-crypto-pubkey-types-devel-0.4.3-1.7
+[   48s] [264/271] cumulate ghc-case-insensitive-devel-1.2.1.0-5.6
+[   48s] [265/271] cumulate ghc-network-uri-devel-2.6.4.2-1.1
+[   48s] [266/271] cumulate ghc-iproute-devel-1.7.12-1.2
+[   48s] [267/271] cumulate ghc-Cabal-devel-3.2.1.0-23.1
+[   48s] [268/271] cumulate ghc-http-types-devel-0.12.3-5.5
+[   48s] [269/271] cumulate ghc-RSA-devel-2.4.1-1.8
+[   48s] [270/271] cumulate ghc-streaming-commons-devel-0.2.2.5-1.1
+[   48s] [271/271] cumulate ghc-http-client-devel-0.7.13.1-2.1
+[   48s] now installing cumulated packages
+[   48s] Preparing...                          ########################################
+[   48s] Updating / installing...
+[   48s] zlib-devel-1.2.13-2.1                 ########################################
+[   48s] libnuma1-2.0.15.0.g01a39cb-1.1        ########################################
+[   48s] libffi8-3.4.4-1.1                     ########################################
+[   52s] ghc-base-4.14.3.0-23.1                ########################################
+[   52s] ghc-array-0.5.4.0-23.1                ########################################
+[   52s] ghc-deepseq-1.4.4.0-23.1              ########################################
+[   53s] ghc-bytestring-0.10.12.0-23.1         ########################################
+[   53s] ghc-containers-0.6.5.1-23.1           ########################################
+[   53s] ghc-ghc-boot-th-8.10.7-23.1           ########################################
+[   54s] ghc-pretty-1.1.3.6-23.1               ########################################
+[   54s] ghc-template-haskell-2.16.0.0-23.1    ########################################
+[   55s] ghc-time-1.9.3-23.1                   ########################################
+[   55s] ghc-binary-0.8.8.0-23.1               ########################################
+[   55s] ghc-unix-2.7.2.2-23.1                 ########################################
+[   55s] ghc-transformers-0.5.6.2-23.1         ########################################
+[   56s] ghc-filepath-1.4.2.1-23.1             ########################################
+[   56s] ghc-directory-1.3.6.0-23.1            ########################################
+[   56s] ghc-text-1.2.4.1-23.1                 ########################################
+[   56s] ghc-mtl-2.2.2-23.1                    ########################################
+[   56s] ghc-process-1.6.13.2-23.1             ########################################
+[   56s] ghc-stm-2.5.0.1-23.1                  ########################################
+[   56s] ghc-data-default-class-0.1.2.0-9.4    ########################################
+[   56s] ghc-hashable-1.3.5.0-2.1              ########################################
+[   57s] ghc-basement-0.0.15-1.1               ########################################
+[   57s] ghc-memory-0.18.0-1.1                 ########################################
+[   57s] ghc-parsec-3.1.14.0-23.1              ########################################
+[   57s] ghc-hourglass-0.2.12-6.4              ########################################
+[   57s] ghc-asn1-types-0.3.4-4.8              ########################################
+[   57s] ghc-exceptions-0.10.4-23.1            ########################################
+[   58s] ghc-network-3.1.2.7-1.1               ########################################
+[   58s] ghc-ghc-boot-8.10.7-23.1              ########################################
+[   58s] ghc-splitmix-0.1.0.4-3.1              ########################################
+[   58s] ghc-ghc-heap-8.10.7-23.1              ########################################
+[   58s] ghc-ghci-8.10.7-23.1                  ########################################
+[   59s] ghc-random-1.2.1.1-1.1                ########################################
+[   59s] ghc-asn1-encoding-0.9.6-7.6           ########################################
+[   59s] ghc-case-insensitive-1.2.1.0-5.6      ########################################
+[   59s] ghc-async-2.2.4-3.1                   ########################################
+[   59s] ghc-th-compat-0.1.4-1.1               ########################################
+[   59s] ghc-tagged-0.8.6.1-4.1                ########################################
+[   59s] ghc-entropy-0.4.1.10-1.1              ########################################
+[   59s] ghc-cereal-0.5.8.3-1.1                ########################################
+[   59s] ghc-appar-0.1.8-3.4                   ########################################
+[   59s] ghc-zlib-0.6.3.0-1.1                  ########################################
+[   59s] ghc-dlist-1.0-2.4                     ########################################
+[   59s] ghc-byteorder-1.0.4-3.4               ########################################
+[   59s] ghc-old-locale-1.0.0.7-12.4           ########################################
+[   59s] ghc-terminfo-0.4.1.4-23.1             ########################################
+[   59s] ghc-data-default-instances-old-locale-########################################
+[   59s] ghc-iproute-1.7.12-1.2                ########################################
+[   59s] ghc-data-default-instances-dlist-0.0.1########################################
+[   59s] ghc-streaming-commons-0.2.2.5-1.1     ########################################
+[   59s] ghc-crypto-api-0.13.3-4.7             ########################################
+[   59s] ghc-network-uri-2.6.4.2-1.1           ########################################
+[   59s] ghc-http-types-0.12.3-5.5             ########################################
+[   60s] ghc-crypto-pubkey-types-0.4.3-1.7     ########################################
+[   66s] ghc-Cabal-3.2.1.0-23.1                ########################################
+[   66s] ghc-data-default-instances-containers-########################################
+[   66s] ghc-cookie-0.4.6-1.1                  ########################################
+[   66s] ghc-blaze-builder-0.4.2.2-2.1         ########################################
+[   66s] ghc-mime-types-0.1.1.0-1.1            ########################################
+[   67s] ghc-hpc-0.6.1.0-23.1                  ########################################
+[   67s] ghc-SHA-1.6.4.4-7.4                   ########################################
+[   67s] ghc-base64-bytestring-1.2.1.0-1.1     ########################################
+[   67s] libelf-devel-0.188-4.1                ########################################
+[   67s] ghc-http-client-0.7.13.1-2.1          ########################################
+[   67s] ghc-RSA-2.4.1-1.8                     ########################################
+[   86s] ghc-ghc-8.10.7-23.1                   ########################################
+[   86s] ghc-data-default-0.7.1.1-9.4          ########################################
+[   87s] ghc-haskeline-0.8.2-23.1              ########################################
+[   87s] ghc-libiserv-8.10.7-23.1              ########################################
+[   87s] ghc-transformers-compat-0.7.2-1.1     ########################################
+[   87s] ghc-xhtml-3000.2.2.1-23.1             ########################################
+[   87s] libffi-devel-3.4.4-1.1                ########################################
+[   87s] libnuma-devel-2.0.15.0.g01a39cb-1.1   ########################################
+[   87s] xz-devel-5.4.1-1.1                    ########################################
+[   87s] libzstd-devel-1.5.2-2.1               ########################################
+[   90s] libdw-devel-0.188-4.1                 ########################################
+[   90s] libgmpxx4-6.2.1-4.1                   ########################################
+[   90s] gmp-devel-6.2.1-4.1                   ########################################
+[   90s] libedit0-20210910.3.1-1.1             ########################################
+[  101s] libLLVM12-12.0.1-19.1                 ########################################
+[  102s] llvm12-12.0.1-19.1                    ########################################
+[  102s] update-alternatives: using /usr/bin/llvm-ar-12.0.1 to provide /usr/bin/llvm-ar (llvm-ar) in auto mode
+[  112s] ghc-compiler-8.10.7-23.1              ########################################
+[  112s] update-alternatives: using /usr/bin/runghc to provide /usr/bin/runhaskell (runhaskell) in auto mode
+[  113s] update-alternatives: using /usr/bin/hsc2hs-ghc to provide /usr/bin/hsc2hs (hsc2hs) in auto mode
+[  190s] ghc-base-devel-4.14.3.0-23.1          ########################################
+[  217s] ghc-array-devel-0.5.4.0-23.1          ########################################
+[  240s] ghc-deepseq-devel-1.4.4.0-23.1        ########################################
+[  271s] ghc-bytestring-devel-0.10.12.0-23.1   ########################################
+[  313s] ghc-containers-devel-0.6.5.1-23.1     ########################################
+[  346s] ghc-transformers-devel-0.5.6.2-23.1   ########################################
+[  376s] ghc-time-devel-1.9.3-23.1             ########################################
+[  403s] ghc-unix-devel-2.7.2.2-23.1           ########################################
+[  426s] ghc-data-default-class-devel-0.1.2.0-9########################################
+[  451s] ghc-filepath-devel-1.4.2.1-23.1       ########################################
+[  477s] ghc-directory-devel-1.3.6.0-23.1      ########################################
+[  500s] ghc-mtl-devel-2.2.2-23.1              ########################################
+[  527s] ghc-binary-devel-0.8.8.0-23.1         ########################################
+[  551s] ghc-stm-devel-2.5.0.1-23.1            ########################################
+[  576s] ghc-network-devel-3.1.2.7-1.1         ########################################
+[  600s] ghc-process-devel-1.6.13.2-23.1       ########################################
+[  628s] ghc-hourglass-devel-0.2.12-6.4        ########################################
+[  654s] ghc-pretty-devel-1.1.3.6-23.1         ########################################
+[  681s] ghc-SHA-devel-1.6.4.4-7.4             ########################################
+[  705s] ghc-data-default-instances-containers-########################################
+[  730s] ghc-entropy-devel-0.4.1.10-1.1        ########################################
+[  755s] ghc-cereal-devel-0.5.8.3-1.1          ########################################
+[  779s] ghc-appar-devel-0.1.8-3.4             ########################################
+[  803s] ghc-base64-bytestring-devel-1.2.1.0-1.########################################
+[  828s] ghc-zlib-devel-0.6.3.0-1.1            ########################################
+[  855s] ghc-dlist-devel-1.0-2.4               ########################################
+[  878s] ghc-data-default-instances-dlist-devel########################################
+[  901s] ghc-splitmix-devel-0.1.0.4-3.1        ########################################
+[  926s] ghc-random-devel-1.2.1.1-1.1          ########################################
+[  957s] ghc-basement-devel-0.0.15-1.1         ########################################
+[  988s] ghc-memory-devel-0.18.0-1.1           ########################################
+[ 1018s] ghc-asn1-types-devel-0.3.4-4.8        ########################################
+[ 1047s] ghc-asn1-encoding-devel-0.9.6-7.6     ########################################
+[ 1079s] ghc-crypto-pubkey-types-devel-0.4.3-1.########################################
+[ 1110s] ghc-byteorder-devel-1.0.4-3.4         ########################################
+[ 1147s] ghc-iproute-devel-1.7.12-1.2          ########################################
+[ 1175s] ghc-ghc-boot-th-devel-8.10.7-23.1     ########################################
+[ 1210s] ghc-template-haskell-devel-2.16.0.0-23########################################
+[ 1239s] ghc-text-devel-1.2.4.1-23.1           ########################################
+[ 1263s] ghc-parsec-devel-3.1.14.0-23.1        ########################################
+[ 1287s] ghc-hashable-devel-1.3.5.0-2.1        ########################################
+[ 1310s] ghc-async-devel-2.2.4-3.1             ########################################
+[ 1334s] ghc-case-insensitive-devel-1.2.1.0-5.6########################################
+[ 1359s] ghc-http-types-devel-0.12.3-5.5       ########################################
+[ 1385s] ghc-streaming-commons-devel-0.2.2.5-1.########################################
+[ 1411s] ghc-blaze-builder-devel-0.4.2.2-2.1   ########################################
+[ 1440s] ghc-mime-types-devel-0.1.1.0-1.1      ########################################
+[ 1466s] ghc-cookie-devel-0.4.6-1.1            ########################################
+[ 1492s] ghc-tagged-devel-0.8.6.1-4.1          ########################################
+[ 1520s] ghc-crypto-api-devel-0.13.3-4.7       ########################################
+[ 1546s] ghc-exceptions-devel-0.10.4-23.1      ########################################
+[ 1573s] ghc-th-compat-devel-0.1.4-1.1         ########################################
+[ 1600s] ghc-network-uri-devel-2.6.4.2-1.1     ########################################
+[ 1627s] ghc-old-locale-devel-1.0.0.7-12.4     ########################################
+[ 1655s] ghc-data-default-instances-old-locale-########################################
+[ 1682s] ghc-data-default-devel-0.7.1.1-9.4    ########################################
+[ 1711s] ghc-http-client-devel-0.7.13.1-2.1    ########################################
+[ 1741s] ghc-RSA-devel-2.4.1-1.8               ########################################
+[ 1865s] ghc-Cabal-devel-3.2.1.0-23.1          ########################################
+[ 1891s] ghc-transformers-compat-devel-0.7.2-1.########################################
+[ 1915s] ghc-rpm-macros-1.9.95-3.1             ########################################
+[ 1923s] now finalizing build dir...
+[ 1923s] ... running 01-add_abuild_user_to_trusted_group
+[ 1924s] ... running 02-set_timezone_to_utc
+[ 1924s] ... running 03-set-permissions-secure
+[ 1924s] ... running 11-hack_uname_version_to_kernel_version
+[ 1933s] -----------------------------------------------------------------
+[ 1933s] I have the following modifications for ghc-authenticate-oauth.spec:
+[ 1933s] 22c22
+[ 1933s] < Release:        0
+[ 1933s] ---
+[ 1933s] > Release:        2.2
+[ 1940s] build target is riscv64-suse-linux
+[ 1940s] -----------------------------------------------------------------
+[ 1940s] ----- building ghc-authenticate-oauth.spec (user abuild)
+[ 1940s] -----------------------------------------------------------------
+[ 1940s] -----------------------------------------------------------------
+[ 1944s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/a129067f1b0f57bbaf2244de5b88fa31-ghc-authenticate-oauth' /home/abuild/rpmbuild/SOURCES/ghc-authenticate-oauth.spec
+[ 2301s] Building target platforms: riscv64-suse-linux
+[ 2301s] Building for target riscv64-suse-linux
+[ 2301s] setting SOURCE_DATE_EPOCH=1660694400
+[ 2301s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.eUtNDi
+[ 2301s] + umask 022
+[ 2301s] + cd /home/abuild/rpmbuild/BUILD
+[ 2301s] + cd /home/abuild/rpmbuild/BUILD
+[ 2301s] + rm -rf authenticate-oauth-1.7
+[ 2301s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/authenticate-oauth-1.7.tar.gz
+[ 2302s] + STATUS=0
+[ 2302s] + '[' 0 -ne 0 ']'
+[ 2302s] + cd authenticate-oauth-1.7
+[ 2302s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[ 2302s] + cp -p /home/abuild/rpmbuild/SOURCES/authenticate-oauth.cabal authenticate-oauth.cabal
+[ 2302s] + RPM_EC=0
+[ 2302s] ++ jobs -p
+[ 2302s] + exit 0
+[ 2302s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.lCFd4N
+[ 2302s] + umask 022
+[ 2302s] + cd /home/abuild/rpmbuild/BUILD
+[ 2302s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/ghc-authenticate-oauth-1.7-2.2.riscv64
+[ 2302s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/ghc-authenticate-oauth-1.7-2.2.riscv64
+[ 2302s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[ 2302s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/ghc-authenticate-oauth-1.7-2.2.riscv64
+[ 2302s] + cd authenticate-oauth-1.7
+[ 2302s] + ref=/usr/lib/rpm
+[ 2302s] + mints=0
+[ 2302s] + case $(uname -m) in
+[ 2302s] ++ uname -m
+[ 2302s] + mints=20160911
+[ 2302s] + for s in guess sub
+[ 2302s] ++ find -maxdepth 8 -name config.guess
+[ 2302s] + for s in guess sub
+[ 2302s] ++ find -maxdepth 8 -name config.sub
+[ 2302s] + '[' -f Setup.hs -o -f Setup.lhs ']'
+[ 2302s] + '[' -x Setup ']'
+[ 2302s] + ghc --make -no-user-package-db Setup
+[ 2326s] [1 of 1] Compiling Main             ( Setup.lhs, Setup.o )
+[ 2332s] Linking Setup ...
+[ 2397s] + LANG=en_US.utf8
+[ 2397s] + ./Setup --version
+[ 2420s] Cabal library version 3.2.1.0
+[ 2421s] + '[' -x Setup ']'
+[ 2421s] + LANG=en_US.utf8
+[ 2421s] + ./Setup configure --prefix=/usr --libdir=/usr/lib64 --docdir=/usr/share/licenses/ghc-authenticate-oauth '--libsubdir=$compiler/$pkgid' '--datasubdir=$pkgid' --ghc '--dynlibdir=/usr/lib64/$compiler/$pkgid' --global '--ghc-options= ' -v -p --enable-shared --htmldir=/usr/share/doc/ghc-8.10.7/html/libraries/authenticate-oauth-1.7 --global
+[ 2448s] [ 2442.198534][ T8997] Out of memory: Killed process 8950 (Setup) total-vm:1080717380kB, anon-rss:4737464kB, file-rss:4kB, shmem-rss:0kB, UID:399 pgtables:13316kB oom_score_adj:0
+[ 2449s] /var/tmp/rpm-tmp.lCFd4N: line 62:  8950 Killed                  ./Setup configure --prefix=/usr --libdir=/usr/lib64 --docdir=/usr/share/licenses/ghc-authenticate-oauth --libsubdir='$compiler/$pkgid' --datasubdir='$pkgid' --ghc --dynlibdir=/usr/lib64/'$compiler/$pkgid' --global --ghc-options="${CFLAGS:+$(echo ' '$CFLAGS | sed -e 's/ / -optc/g')} ${LDFLAGS:+$(echo ' '$LDFLAGS | sed -e 's/ / -optl/g')}" -v $cabal_configure_extra_options -p --enable-shared --htmldir=/usr/share/doc/ghc-8.10.7/html/libraries/authenticate-oauth-1.7 --global
+[ 2449s] error: Bad exit status from /var/tmp/rpm-tmp.lCFd4N (%build)
+[ 2449s] 
+[ 2449s] RPM build errors:
+[ 2449s]     Bad exit status from /var/tmp/rpm-tmp.lCFd4N (%build)
+[ 2449s] ### VM INTERACTION START ###
+[ 2450s] [ 2443.720724][    T1] sysrq: Power Off
+[ 2450s] [ 2443.724901][   T18] reboot: Power down
+[ 2450s] ### VM INTERACTION END ###
+[ 2450s] 
+[ 2450s] lamb20 failed "build ghc-authenticate-oauth.spec" at Mon Feb 20 11:19:59 UTC 2023.
+[ 2450s] 

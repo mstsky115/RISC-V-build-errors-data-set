@@ -1,0 +1,522 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_1/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_1/root
+[    0s] 
+[    0s] 
+[    0s] lamb18 started "build python-llvmlite.spec" at Sat Feb 18 20:04:41 UTC 2023.
+[    0s] 
+[    0s] Building python-llvmlite for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'a4fa4bf05d916979465a09e3f6248d36'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_1/.build-srcdir/python-llvmlite.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_1/.build-srcdir/python-llvmlite.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/1/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_1/.build.rpmlist /var/cache/obs/worker/root_1/.build-srcdir/python-llvmlite.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7f1f24da28b81384a50e3930e651d4e0]
+[    4s] 
+[    4s] copying packages...
+[    4s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    4s]   breaking dependency python310-base -> libpython3_10-1_0
+[    4s] cycle: libpython3_11-1_0 -> python311-base
+[    4s]   breaking dependency python311-base -> libpython3_11-1_0
+[    4s] cycle: libpython3_8-1_0 -> python38-base
+[    4s]   breaking dependency python38-base -> libpython3_8-1_0
+[    4s] cycle: libpython3_9-1_0 -> python39-base
+[    4s]   breaking dependency python39-base -> libpython3_9-1_0
+[    4s] cycle: llvm11-LTO-devel -> llvm11-devel
+[    4s]   breaking dependency llvm11-devel -> llvm11-LTO-devel
+[    4s] done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_1/.mount/boot/kernel -initrd /var/cache/obs/worker/root_1/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_1/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_1/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_1/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: riscv64
+[   12s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   12s] Increasing log level from now on...
+[   12s] [    5.710877][  T416] sysrq: Changing Loglevel
+[   12s] [    5.711101][  T416] sysrq: Loglevel set to 4
+[   12s] Enable sysrq operations
+[   12s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   12s] no label, UUID=7053a366-f186-44b0-aba6-a0f1c9b7c198
+[   12s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   12s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   12s] swapon /dev/vdb
+[   12s] WARNING: udev not running, creating extra device nodes
+[   13s] logging output to //.build.log...
+[   13s] processing recipe /.build-srcdir/python-llvmlite.spec ...
+[   14s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-llvmlite.spec build ...
+[   14s] initializing rpm db...
+[   15s] querying package ids...
+[   42s] [1/173] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   42s] [2/173] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   42s] [3/173] preinstalled attr-2.5.1-1.1
+[   42s] [4/173] preinstalled bash-5.2.15-8.1
+[   42s] [5/173] preinstalled bash-sh-5.2.15-8.1
+[   42s] [6/173] preinstalled binutils-2.39-3.1
+[   42s] [7/173] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   42s] [8/173] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   42s] [9/173] preinstalled build-mkbaselibs-20230215-1.1
+[   42s] [10/173] preinstalled bzip2-1.0.8-4.1
+[   42s] [11/173] preinstalled chkstat-1599_20221220-1.2
+[   42s] [12/173] preinstalled compat-usrmerge-build-84.87-5.1
+[   42s] [13/173] preinstalled compat-usrmerge-tools-84.87-5.1
+[   42s] [14/173] preinstalled coreutils-9.1-5.1
+[   42s] [15/173] preinstalled cpio-2.13-5.1
+[   42s] [16/173] preinstalled cpp-12-2.1
+[   42s] [17/173] preinstalled cpp12-12.2.1+git749-4.1
+[   42s] [18/173] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   42s] [19/173] preinstalled debugedit-5.0-5.1
+[   42s] [20/173] preinstalled diffutils-3.9-1.1
+[   42s] [21/173] preinstalled dwz-0.15-2.1
+[   42s] [22/173] preinstalled elfutils-0.188-3.2
+[   42s] [23/173] cumulate fdupes-2.2.1-1.1
+[   42s] [24/173] preinstalled file-5.44-1.1
+[   42s] [25/173] preinstalled file-magic-5.44-1.1
+[   42s] [26/173] preinstalled filesystem-84.87-12.1
+[   42s] [27/173] preinstalled fillup-1.42-279.1
+[   42s] [28/173] preinstalled findutils-4.9.0-2.1
+[   42s] [29/173] preinstalled gawk-5.2.1-2.1
+[   42s] [30/173] preinstalled gcc-12-2.1
+[   42s] [31/173] preinstalled gcc-PIE-12-2.1
+[   42s] [32/173] preinstalled gcc12-12.2.1+git749-4.1
+[   42s] [33/173] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   42s] [34/173] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   42s] [35/173] preinstalled gettext-tools-mini-0.21.1-1.1
+[   42s] [36/173] preinstalled glibc-2.37-1.1
+[   42s] [37/173] preinstalled glibc-devel-2.37-1.1
+[   42s] [38/173] preinstalled glibc-locale-base-2.37-1.1
+[   42s] [39/173] preinstalled grep-3.8-3.1
+[   42s] [40/173] preinstalled gzip-1.12-3.1
+[   42s] [41/173] preinstalled kernel-obs-build-6.1.12-1.1
+[   42s] [42/173] preinstalled libacl1-2.3.1-2.1
+[   42s] [43/173] preinstalled libasan8-13.0.1+git5428-6.1
+[   42s] [44/173] preinstalled libasm1-0.188-3.2
+[   42s] [45/173] preinstalled libatomic1-13.0.1+git5428-6.1
+[   42s] [46/173] preinstalled libattr1-2.5.1-1.1
+[   42s] [47/173] preinstalled libaudit1-3.0.6-4.1
+[   42s] [48/173] preinstalled libblkid1-2.38.1-7.1
+[   42s] [49/173] preinstalled libbz2-1-1.0.8-4.1
+[   42s] [50/173] preinstalled libcap-ng0-0.8.3-1.1
+[   42s] [51/173] preinstalled libcap2-2.67-1.1
+[   42s] [52/173] preinstalled libcrypt1-4.4.33-1.1
+[   42s] [53/173] preinstalled libctf-nobfd0-2.39-3.1
+[   42s] [54/173] preinstalled libctf0-2.39-3.1
+[   42s] [55/173] preinstalled libdb-4_8-4.8.30-39.1
+[   42s] [56/173] preinstalled libdw1-0.188-3.2
+[   42s] [57/173] preinstalled libeconf0-0.5.1-1.1
+[   42s] [58/173] cumulate libedit0-20210910.3.1-1.1
+[   42s] [59/173] preinstalled libelf1-0.188-3.2
+[   42s] [60/173] cumulate libexpat1-2.5.0-2.1
+[   42s] [61/173] preinstalled libfdisk1-2.38.1-7.1
+[   42s] [62/173] cumulate libffi8-3.4.4-1.1
+[   42s] [63/173] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   42s] [64/173] preinstalled libgcrypt20-1.10.1-1.1
+[   42s] [65/173] preinstalled libgdbm6-1.23-1.1
+[   42s] [66/173] preinstalled libgdbm_compat4-1.23-1.1
+[   42s] [67/173] preinstalled libgmp10-6.2.1-4.1
+[   42s] [68/173] preinstalled libgomp1-13.0.1+git5428-6.1
+[   42s] [69/173] preinstalled libgpg-error0-1.46-1.1
+[   42s] [70/173] preinstalled libisl23-0.25-1.1
+[   42s] [71/173] cumulate libltdl7-2.4.7-3.2
+[   42s] [72/173] preinstalled liblua5_4-5-5.4.4-8.1
+[   42s] [73/173] preinstalled liblzma5-5.4.1-1.1
+[   42s] [74/173] preinstalled libmagic1-5.44-1.1
+[   42s] [75/173] preinstalled libmount1-2.38.1-7.1
+[   42s] [76/173] preinstalled libmpc3-1.3.1-1.2
+[   42s] [77/173] cumulate libmpdec3-2.5.1-2.1
+[   42s] [78/173] preinstalled libmpfr6-4.2.0-1.1
+[   42s] [79/173] preinstalled libncurses6-6.4.20230128-5.1
+[   42s] [80/173] preinstalled libpcre2-8-0-10.42-3.2
+[   42s] [81/173] preinstalled libpkgconf3-1.8.0-2.1
+[   42s] [82/173] preinstalled libpopt0-1.19-1.1
+[   42s] [83/173] preinstalled libreadline8-8.2-2.1
+[   42s] [84/173] cumulate librhash0-1.4.3-1.1
+[   42s] [85/173] preinstalled librpmbuild9-4.18.0-3.1
+[   42s] [86/173] preinstalled libseccomp2-2.5.4-2.1
+[   42s] [87/173] preinstalled libselinux1-3.4-2.1
+[   42s] [88/173] preinstalled libsemanage-conf-3.4-1.1
+[   42s] [89/173] preinstalled libsemanage2-3.4-1.1
+[   42s] [90/173] preinstalled libsepol2-3.4-1.1
+[   42s] [91/173] preinstalled libsmartcols1-2.38.1-7.1
+[   42s] [92/173] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   42s] [93/173] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   42s] [94/173] preinstalled libsubid4-4.13-3.1
+[   42s] [95/173] preinstalled libubsan1-13.0.1+git5428-6.1
+[   42s] [96/173] preinstalled libutempter0-1.2.0-3.2
+[   42s] [97/173] preinstalled libuuid1-2.38.1-7.1
+[   42s] [98/173] cumulate libuv1-1.44.2-3.1
+[   42s] [99/173] preinstalled libxcrypt-devel-4.4.33-1.1
+[   42s] [100/173] preinstalled libz1-1.2.13-2.1
+[   42s] [101/173] preinstalled libzstd1-1.5.2-2.1
+[   42s] [102/173] preinstalled linux-glibc-devel-6.1-1.1
+[   42s] [103/173] cumulate llvm11-polly-11.0.1-15.1
+[   42s] [104/173] preinstalled login_defs-4.13-3.1
+[   42s] [105/173] preinstalled lua54-5.4.4-8.1
+[   42s] [106/173] cumulate m4-1.4.18-7.1
+[   42s] [107/173] preinstalled make-4.4-2.1
+[   42s] [108/173] preinstalled ncurses-utils-6.4.20230128-5.1
+[   42s] [109/173] preinstalled pam-1.5.2-12.1
+[   42s] [110/173] preinstalled patch-2.7.6-6.1
+[   42s] [111/173] preinstalled perl-5.36.0-4.1
+[   42s] [112/173] preinstalled perl-base-5.36.0-4.1
+[   42s] [113/173] preinstalled permissions-1599_20221220-1.2
+[   42s] [114/173] preinstalled permissions-config-1599_20221220-1.2
+[   42s] [115/173] preinstalled pkgconf-1.8.0-2.1
+[   42s] [116/173] preinstalled pkgconf-m4-1.8.0-2.1
+[   42s] [117/173] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   42s] [118/173] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   42s] [119/173] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   42s] [120/173] cumulate python-rpm-macros-20230128.e704796-1.2
+[   42s] [121/173] preinstalled qemu-linux-user-7.1.0-50.1
+[   42s] [122/173] preinstalled rpm-4.18.0-3.1
+[   42s] [123/173] preinstalled rpm-build-4.18.0-3.1
+[   42s] [124/173] preinstalled rpm-build-perl-4.18.0-3.1
+[   42s] [125/173] preinstalled rpm-config-SUSE-20220926-1.1
+[   42s] [126/173] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   42s] [127/173] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   42s] [128/173] preinstalled sed-4.9-2.1
+[   42s] [129/173] preinstalled shadow-4.13-3.1
+[   42s] [130/173] preinstalled system-group-hardware-20170617-24.1
+[   42s] [131/173] preinstalled system-user-root-20190513-2.1
+[   42s] [132/173] preinstalled systemd-rpm-macros-19-1.1
+[   42s] [133/173] preinstalled sysuser-shadow-3.1-5.1
+[   42s] [134/173] preinstalled tar-1.34-9.1
+[   42s] [135/173] preinstalled terminfo-base-6.4.20230128-5.1
+[   42s] [136/173] preinstalled update-alternatives-1.21.8-1.1
+[   42s] [137/173] preinstalled util-linux-2.38.1-7.1
+[   42s] [138/173] preinstalled which-2.21-5.1
+[   42s] [139/173] preinstalled xz-5.4.1-1.1
+[   42s] [140/173] cumulate autoconf-2.71-2.1
+[   42s] [141/173] cumulate gcc12-c++-12.2.1+git749-4.1
+[   42s] [142/173] cumulate libLLVM11-11.0.1-15.1
+[   42s] [143/173] cumulate libopenssl3-3.0.7-3.1
+[   42s] [144/173] cumulate libstdc++-devel-12-2.1
+[   42s] [145/173] cumulate llvm11-polly-devel-11.0.1-15.1
+[   42s] [146/173] cumulate automake-1.16.5-3.1
+[   42s] [147/173] cumulate gcc-c++-12-2.1
+[   42s] [148/173] cumulate libLTO11-11.0.1-15.1
+[   42s] [149/173] cumulate llvm11-11.0.1-15.1
+[   42s] [150/173] cumulate llvm11-gold-11.0.1-15.1
+[   42s] [151/173] cumulate libtool-2.4.7-3.2
+[   42s] [152/173] cumulate python310-base-3.10.9-2.2
+[   42s] [153/173] cumulate python311-base-3.11.1-4.2
+[   42s] [154/173] cumulate python38-base-3.8.16-3.2
+[   42s] [155/173] cumulate python39-base-3.9.16-3.2
+[   42s] [156/173] cumulate llvm11-devel-11.0.1-15.1
+[   42s] [157/173] cumulate libpython3_10-1_0-3.10.9-2.2
+[   42s] [158/173] cumulate libpython3_11-1_0-3.11.1-4.2
+[   42s] [159/173] cumulate libpython3_8-1_0-3.8.16-3.2
+[   42s] [160/173] cumulate libpython3_9-1_0-3.9.16-3.2
+[   42s] [161/173] cumulate python310-packaging-23.0-1.1
+[   42s] [162/173] cumulate python310-setuptools-65.6.3-1.2
+[   42s] [163/173] cumulate python311-devel-3.11.1-4.2
+[   42s] [164/173] cumulate python311-setuptools-65.6.3-1.2
+[   42s] [165/173] cumulate python38-devel-3.8.16-3.2
+[   42s] [166/173] cumulate python38-setuptools-65.6.3-1.2
+[   42s] [167/173] cumulate python39-devel-3.9.16-3.2
+[   42s] [168/173] cumulate python39-setuptools-65.6.3-1.2
+[   42s] [169/173] cumulate llvm11-LTO-devel-11.0.1-15.1
+[   42s] [170/173] cumulate cmake-mini-3.25.2-1.2
+[   42s] [171/173] cumulate cmake-3.25.2-1.1
+[   42s] [172/173] cumulate python310-devel-3.10.9-2.2
+[   42s] [173/173] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   42s] now installing cumulated packages
+[   43s] Preparing...                          ########################################
+[   43s] Updating / installing...
+[   43s] libexpat1-2.5.0-2.1                   ########################################
+[   43s] libmpdec3-2.5.1-2.1                   ########################################
+[   44s] libffi8-3.4.4-1.1                     ########################################
+[   44s] m4-1.4.18-7.1                         ########################################
+[   57s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   61s] gcc12-c++-12.2.1+git749-4.1           ########################################
+[   61s] libstdc++-devel-12-2.1                ########################################
+[   61s] autoconf-2.71-2.1                     ########################################
+[   62s] automake-1.16.5-3.1                   ########################################
+[   62s] python-rpm-macros-20230128.e704796-1.2########################################
+[   63s] llvm11-polly-11.0.1-15.1              ########################################
+[   63s] llvm11-polly-devel-11.0.1-15.1        ########################################
+[   63s] libuv1-1.44.2-3.1                     ########################################
+[   63s] librhash0-1.4.3-1.1                   ########################################
+[   63s] libltdl7-2.4.7-3.2                    ########################################
+[   64s] libtool-2.4.7-3.2                     ########################################
+[   64s] libedit0-20210910.3.1-1.1             ########################################
+[   74s] libLLVM11-11.0.1-15.1                 ########################################
+[   74s] libLTO11-11.0.1-15.1                  ########################################
+[   76s] llvm11-11.0.1-15.1                    ########################################
+[   76s] update-alternatives: using /usr/bin/llvm-ar-11.0.1 to provide /usr/bin/llvm-ar (llvm-ar) in auto mode
+[   76s] llvm11-gold-11.0.1-15.1               ########################################
+[   76s] llvm11-LTO-devel-11.0.1-15.1          ########################################
+[   79s] llvm11-devel-11.0.1-15.1              ########################################
+[   79s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   80s] libopenssl3-3.0.7-3.1                 ########################################
+[   81s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   85s] python310-base-3.10.9-2.2             ########################################
+[   86s] libpython3_11-1_0-3.11.1-4.2          ########################################
+[   92s] python311-base-3.11.1-4.2             ########################################
+[   93s] libpython3_8-1_0-3.8.16-3.2           ########################################
+[   99s] python38-base-3.8.16-3.2              ########################################
+[  100s] libpython3_9-1_0-3.9.16-3.2           ########################################
+[  105s] python39-base-3.9.16-3.2              ########################################
+[  105s] python310-packaging-23.0-1.1          ########################################
+[  113s] cmake-mini-3.25.2-1.2                 ########################################
+[  113s] cmake-3.25.2-1.1                      ########################################
+[  113s] python-rpm-packaging-20210526+a18ca48-########################################
+[  113s] python39-devel-3.9.16-3.2             ########################################
+[  115s] python39-setuptools-65.6.3-1.2        ########################################
+[  115s] python38-devel-3.8.16-3.2             ########################################
+[  116s] python38-setuptools-65.6.3-1.2        ########################################
+[  116s] python311-devel-3.11.1-4.2            ########################################
+[  117s] python311-setuptools-65.6.3-1.2       ########################################
+[  118s] python310-setuptools-65.6.3-1.2       ########################################
+[  119s] python310-devel-3.10.9-2.2            ########################################
+[  119s] gcc-c++-12-2.1                        ########################################
+[  119s] fdupes-2.2.1-1.1                      ########################################
+[  122s] now finalizing build dir...
+[  122s] ... running 01-add_abuild_user_to_trusted_group
+[  123s] ... running 02-set_timezone_to_utc
+[  123s] ... running 03-set-permissions-secure
+[  123s] ... running 11-hack_uname_version_to_kernel_version
+[  132s] -----------------------------------------------------------------
+[  132s] I have the following modifications for python-llvmlite.spec:
+[  132s] 26c26
+[  132s] < Release:        0
+[  132s] ---
+[  132s] > Release:        1.1
+[  140s] build target is riscv64-suse-linux
+[  140s] -----------------------------------------------------------------
+[  140s] ----- building python-llvmlite.spec (user abuild)
+[  140s] -----------------------------------------------------------------
+[  140s] -----------------------------------------------------------------
+[  144s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/a4fa4bf05d916979465a09e3f6248d36-python-llvmlite' /home/abuild/rpmbuild/SOURCES/python-llvmlite.spec
+[  162s] Building target platforms: riscv64-suse-linux
+[  162s] Building for target riscv64-suse-linux
+[  162s] setting SOURCE_DATE_EPOCH=1664323200
+[  162s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.RuMSFb
+[  162s] + umask 022
+[  162s] + cd /home/abuild/rpmbuild/BUILD
+[  162s] + cd /home/abuild/rpmbuild/BUILD
+[  162s] + rm -rf llvmlite-0.39.1
+[  162s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/llvmlite-0.39.1.tar.gz
+[  163s] + STATUS=0
+[  163s] + '[' 0 -ne 0 ']'
+[  163s] + cd llvmlite-0.39.1
+[  163s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  163s] + RPM_EC=0
+[  163s] ++ jobs -p
+[  163s] + exit 0
+[  163s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.H3256q
+[  163s] + umask 022
+[  163s] + cd /home/abuild/rpmbuild/BUILD
+[  163s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-llvmlite-0.39.1-1.1.riscv64
+[  163s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-llvmlite-0.39.1-1.1.riscv64
+[  163s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  163s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-llvmlite-0.39.1-1.1.riscv64
+[  163s] + cd llvmlite-0.39.1
+[  163s] + ref=/usr/lib/rpm
+[  163s] + mints=0
+[  163s] + case $(uname -m) in
+[  163s] ++ uname -m
+[  164s] + mints=20160911
+[  164s] + for s in guess sub
+[  164s] ++ find -maxdepth 8 -name config.guess
+[  164s] + for s in guess sub
+[  164s] ++ find -maxdepth 8 -name config.sub
+[  164s] + export 'CPPFLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC'
+[  164s] + CPPFLAGS='-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC'
+[  164s] + export LLVM_CONFIG=/usr/bin/llvm-config
+[  164s] + LLVM_CONFIG=/usr/bin/llvm-config
+[  164s] ++ '[' -f _current_flavor ']'
+[  164s] ++ true
+[  164s] + last_flavor=
+[  164s] + '[' -z '' ']'
+[  164s] + last_flavor=tmp
+[  164s] + '[' tmp '!=' python38 ']'
+[  164s] + '[' -d build ']'
+[  164s] + '[' -d _build.python38 ']'
+[  164s] + echo python38
+[  164s] + python_flavor=python38
+[  164s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[  169s] running build
+[  169s] got version from expanded keyword {'version': '0.39.1', 'full': '31f808fa7a5796bb8d4b14e8a9e27c6dd15f2b6c'}
+[  169s] running build_ext
+[  169s] /usr/bin/python3.8 /home/abuild/rpmbuild/BUILD/llvmlite-0.39.1/ffi/build.py
+[  172s] LLVM version... Makefile.linux:22: warning: ignoring prerequisites on suffix rule definition
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC assembly.cpp -o assembly.o
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC bitcode.cpp -o bitcode.o
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC core.cpp -o core.o
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC initfini.cpp -o initfini.o
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC module.cpp -o module.o
+[  172s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC value.cpp -o value.o
+[  173s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC executionengine.cpp -o executionengine.o
+[  173s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC transforms.cpp -o transforms.o
+[  175s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC passmanagers.cpp -o passmanagers.o
+[  175s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC targets.cpp -o targets.o
+[  175s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC dylib.cpp -o dylib.o
+[  185s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC linker.cpp -o linker.o
+[  191s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC object_file.cpp -o object_file.o
+[  215s] g++ -c -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC custom_passes.cpp -o custom_passes.o
+[  283s] custom_passes.cpp: In constructor ‘RefPrunePass::RefPrunePass(Subpasses, size_t)’:
+[  283s] custom_passes.cpp:185:7: warning: ‘RefPrunePass::flags’ will be initialized after [-Wreorder]
+[  283s]   185 |     } flags;
+[  283s]       |       ^~~~~
+[  283s] custom_passes.cpp:173:12: warning:   ‘size_t RefPrunePass::subgraph_limit’ [-Wreorder]
+[  283s]   173 |     size_t subgraph_limit;
+[  283s]       |            ^~~~~~~~~~~~~~
+[  283s] custom_passes.cpp:187:5: warning:   when initialized here [-Wreorder]
+[  283s]   187 |     RefPrunePass(Subpasses flags = Subpasses::All, size_t subgraph_limit = -1)
+[  283s]       |     ^~~~~~~~~~~~
+[  344s] # static-libstdc++ avoids runtime dependencies on a
+[  344s] # particular libstdc++ version.
+[  344s] g++  -shared -O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIC  -fPIC -I/usr/include -std=c++14 -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -fno-rtti -g -flto -fPIC assembly.o bitcode.o core.o initfini.o module.o value.o executionengine.o transforms.o passmanagers.o targets.o dylib.o linker.o object_file.o custom_passes.o -o libllvmlite.so  -L/usr/lib64 -flto -Wl,--exclude-libs=ALL -lLLVM
+[  396s] 11.0.1
+[  396s] 
+[  396s] SVML not detected
+[  396s] running build_py
+[  396s] creating build
+[  396s] creating build/lib.linux-riscv64-cpython-38
+[  396s] creating build/lib.linux-riscv64-cpython-38/llvmlite
+[  396s] copying llvmlite/__init__.py -> build/lib.linux-riscv64-cpython-38/llvmlite
+[  396s] copying llvmlite/_version.py -> build/lib.linux-riscv64-cpython-38/llvmlite
+[  396s] copying llvmlite/utils.py -> build/lib.linux-riscv64-cpython-38/llvmlite
+[  396s] creating build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/__init__.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/analysis.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/common.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/context.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/dylib.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/executionengine.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/ffi.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/initfini.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/linker.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/module.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/object_file.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/options.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/passmanagers.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/targets.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/transforms.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] copying llvmlite/binding/value.py -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] creating build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/__init__.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/_utils.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/builder.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/context.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/instructions.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/module.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/transforms.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/types.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] copying llvmlite/ir/values.py -> build/lib.linux-riscv64-cpython-38/llvmlite/ir
+[  396s] creating build/lib.linux-riscv64-cpython-38/llvmlite/llvmpy
+[  396s] copying llvmlite/llvmpy/__init__.py -> build/lib.linux-riscv64-cpython-38/llvmlite/llvmpy
+[  396s] copying llvmlite/llvmpy/core.py -> build/lib.linux-riscv64-cpython-38/llvmlite/llvmpy
+[  396s] copying llvmlite/llvmpy/passes.py -> build/lib.linux-riscv64-cpython-38/llvmlite/llvmpy
+[  396s] creating build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/__init__.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/__main__.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/customize.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/refprune_proto.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/test_binding.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/test_ir.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/test_llvmpy.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/test_refprune.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/tests/test_valuerepr.py -> build/lib.linux-riscv64-cpython-38/llvmlite/tests
+[  396s] copying llvmlite/binding/libllvmlite.so -> build/lib.linux-riscv64-cpython-38/llvmlite/binding
+[  396s] UPDATING build/lib.linux-riscv64-cpython-38/llvmlite/_version.py
+[  397s] ++ '[' -f _current_flavor ']'
+[  397s] ++ cat _current_flavor
+[  397s] + last_flavor=python38
+[  397s] + '[' -z python38 ']'
+[  397s] + '[' python38 '!=' python39 ']'
+[  397s] + '[' -d build ']'
+[  397s] + mv build _build.python38
+[  397s] + '[' -d _build.python39 ']'
+[  397s] + echo python39
+[  397s] + python_flavor=python39
+[  397s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[  402s] running build
+[  402s] got version from expanded keyword {'version': '0.39.1', 'full': '31f808fa7a5796bb8d4b14e8a9e27c6dd15f2b6c'}
+[  402s] running build_ext
+[  402s] /usr/bin/python3.9 /home/abuild/rpmbuild/BUILD/llvmlite-0.39.1/ffi/build.py
+[  406s] LLVM version... Makefile.linux:22: warning: ignoring prerequisites on suffix rule definition
+[  406s] make: Nothing to be done for 'all'.
+[  406s] 11.0.1
+[  406s] 
+[  406s] SVML not detected
+[  406s] running build_py
+[  406s] creating build
+[  406s] creating build/lib.linux-riscv64-cpython-39
+[  406s] creating build/lib.linux-riscv64-cpython-39/llvmlite
+[  406s] copying llvmlite/__init__.py -> build/lib.linux-riscv64-cpython-39/llvmlite
+[  406s] copying llvmlite/_version.py -> build/lib.linux-riscv64-cpython-39/llvmlite
+[  406s] copying llvmlite/utils.py -> build/lib.linux-riscv64-cpython-39/llvmlite
+[  406s] creating build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/__init__.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/analysis.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/common.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/context.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/dylib.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/executionengine.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/ffi.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/initfini.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/linker.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/module.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/object_file.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/options.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/passmanagers.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/targets.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/transforms.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] copying llvmlite/binding/value.py -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] creating build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/__init__.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/_utils.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/builder.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/context.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/instructions.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/module.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/transforms.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/types.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] copying llvmlite/ir/values.py -> build/lib.linux-riscv64-cpython-39/llvmlite/ir
+[  406s] creating build/lib.linux-riscv64-cpython-39/llvmlite/llvmpy
+[  406s] copying llvmlite/llvmpy/__init__.py -> build/lib.linux-riscv64-cpython-39/llvmlite/llvmpy
+[  406s] copying llvmlite/llvmpy/core.py -> build/lib.linux-riscv64-cpython-39/llvmlite/llvmpy
+[  406s] copying llvmlite/llvmpy/passes.py -> build/lib.linux-riscv64-cpython-39/llvmlite/llvmpy
+[  406s] creating build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/__init__.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/__main__.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/customize.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/refprune_proto.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/test_binding.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/test_ir.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/test_llvmpy.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/test_refprune.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/tests/test_valuerepr.py -> build/lib.linux-riscv64-cpython-39/llvmlite/tests
+[  406s] copying llvmlite/binding/libllvmlite.so -> build/lib.linux-riscv64-cpython-39/llvmlite/binding
+[  406s] UPDATING build/lib.linux-riscv64-cpython-39/llvmlite/_version.py
+[  406s] ++ '[' -f _current_flavor ']'
+[  406s] ++ cat _current_flavor
+[  407s] + last_flavor=python39
+[  407s] + '[' -z python39 ']'
+[  407s] + '[' python39 '!=' python311 ']'
+[  407s] + '[' -d build ']'
+[  407s] + mv build _build.python39
+[  407s] + '[' -d _build.python311 ']'
+[  407s] + echo python311
+[  407s] + python_flavor=python311
+[  407s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[  411s] Traceback (most recent call last):
+[  411s]   File "/home/abuild/rpmbuild/BUILD/llvmlite-0.39.1/setup.py", line 55, in <module>
+[  411s]     _guard_py_ver()
+[  411s]   File "/home/abuild/rpmbuild/BUILD/llvmlite-0.39.1/setup.py", line 52, in _guard_py_ver
+[  411s]     raise RuntimeError(msg.format(cur_py, min_py, max_py))
+[  411s] RuntimeError: Cannot install on Python version 3.11.1; only versions >=3.7,<3.11 are supported.
+[  411s] error: Bad exit status from /var/tmp/rpm-tmp.H3256q (%build)
+[  411s] 
+[  411s] RPM build errors:
+[  411s]     Bad exit status from /var/tmp/rpm-tmp.H3256q (%build)
+[  412s] ### VM INTERACTION START ###
+[  412s] [  406.357378][    T1] sysrq: Power Off
+[  412s] [  406.365977][   T18] reboot: Power down
+[  412s] ### VM INTERACTION END ###
+[  412s] 
+[  412s] lamb18 failed "build python-llvmlite.spec" at Sat Feb 18 20:11:33 UTC 2023.
+[  412s] 

@@ -1,0 +1,353 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_2/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_2/root
+[    0s] 
+[    1s] 
+[    1s] cloud102 started "build rust-keylime.spec" at Fri Feb 17 15:58:03 UTC 2023.
+[    1s] 
+[    1s] Building rust-keylime for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '04f976b5cf4ea7f1d59be4233d0e85c4'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_2/.build-srcdir/rust-keylime.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_2/.build-srcdir/rust-keylime.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/2/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_2/.build.rpmlist /var/cache/obs/worker/root_2/.build-srcdir/rust-keylime.spec build ...
+[    3s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [7f1f24da28b81384a50e3930e651d4e0]
+[   18s] 
+[   18s] copying packages...
+[   23s] reordering...cycle: openssl -> openssl-3
+[   23s]   breaking dependency openssl-3 -> openssl
+[   23s] cycle: libopenssl-3-devel -> libopenssl-devel
+[   23s]   breaking dependency libopenssl-devel -> libopenssl-3-devel
+[   23s] done
+[   24s] Detected virtio-serial support
+[   34s] booting kvm...
+[   34s] ### VM INTERACTION START ###
+[   34s] Using virtio-serial support
+[   34s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_2/.mount/boot/kernel -initrd /var/cache/obs/worker/root_2/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 3072 -drive file=/var/cache/obs/worker/root_2/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_2/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_2/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   39s] ### VM INTERACTION END ###
+[   39s] 2nd stage started in virtual machine
+[   40s] machine type: riscv64
+[   40s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   40s] Increasing log level from now on...
+[   40s] [    5.331088][  T367] sysrq: Changing Loglevel
+[   40s] [    5.331280][  T367] sysrq: Loglevel set to 4
+[   40s] Enable sysrq operations
+[   41s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   41s] no label, UUID=f5c72885-17ea-4c73-94e3-8ab496cab052
+[   41s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   41s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   41s] swapon /dev/vdb
+[   41s] WARNING: udev not running, creating extra device nodes
+[   41s] logging output to //.build.log...
+[   42s] processing recipe /.build-srcdir/rust-keylime.spec ...
+[   42s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/rust-keylime.spec build ...
+[   42s] initializing rpm db...
+[   43s] querying package ids...
+[   71s] [1/188] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   71s] [2/188] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   71s] [3/188] preinstalled attr-2.5.1-1.1
+[   71s] [4/188] preinstalled bash-5.2.15-8.1
+[   71s] [5/188] preinstalled bash-sh-5.2.15-8.1
+[   71s] [6/188] preinstalled binutils-2.39-3.1
+[   71s] [7/188] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   71s] [8/188] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   71s] [9/188] preinstalled build-mkbaselibs-20230215-1.1
+[   71s] [10/188] preinstalled bzip2-1.0.8-4.1
+[   71s] [11/188] preinstalled chkstat-1599_20221220-1.2
+[   71s] [12/188] preinstalled compat-usrmerge-build-84.87-5.1
+[   71s] [13/188] preinstalled compat-usrmerge-tools-84.87-5.1
+[   71s] [14/188] preinstalled coreutils-9.1-5.1
+[   71s] [15/188] preinstalled cpio-2.13-5.1
+[   71s] [16/188] preinstalled cpp-12-2.1
+[   71s] [17/188] preinstalled cpp12-12.2.1+git749-4.1
+[   71s] [18/188] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   71s] [19/188] preinstalled debugedit-5.0-5.1
+[   71s] [20/188] preinstalled diffutils-3.9-1.1
+[   71s] [21/188] preinstalled dwz-0.15-2.1
+[   71s] [22/188] preinstalled elfutils-0.188-3.2
+[   71s] [23/188] preinstalled file-5.44-1.1
+[   71s] [24/188] preinstalled file-magic-5.44-1.1
+[   71s] [25/188] preinstalled filesystem-84.87-12.1
+[   71s] [26/188] preinstalled fillup-1.42-279.1
+[   71s] [27/188] preinstalled findutils-4.9.0-2.1
+[   71s] [28/188] cumulate firewall-macros-1.3.0-1.1
+[   71s] [29/188] preinstalled gawk-5.2.1-2.1
+[   71s] [30/188] preinstalled gcc-12-2.1
+[   71s] [31/188] preinstalled gcc-PIE-12-2.1
+[   71s] [32/188] preinstalled gcc12-12.2.1+git749-4.1
+[   71s] [33/188] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   71s] [34/188] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   71s] [35/188] preinstalled gettext-tools-mini-0.21.1-1.1
+[   71s] [36/188] preinstalled glibc-2.37-1.1
+[   71s] [37/188] preinstalled glibc-devel-2.37-1.1
+[   71s] [38/188] preinstalled glibc-locale-base-2.37-1.1
+[   71s] [39/188] preinstalled grep-3.8-3.1
+[   71s] [40/188] preinstalled gzip-1.12-3.1
+[   71s] [41/188] preinstalled kernel-obs-build-6.1.12-1.1
+[   71s] [42/188] preinstalled libacl1-2.3.1-2.1
+[   71s] [43/188] preinstalled libasan8-13.0.1+git5428-6.1
+[   71s] [44/188] preinstalled libasm1-0.188-3.2
+[   71s] [45/188] preinstalled libatomic1-13.0.1+git5428-6.1
+[   71s] [46/188] preinstalled libattr1-2.5.1-1.1
+[   71s] [47/188] preinstalled libaudit1-3.0.6-4.1
+[   71s] [48/188] preinstalled libblkid1-2.38.1-7.1
+[   71s] [49/188] cumulate libbrotlicommon1-1.0.9-1.1
+[   71s] [50/188] preinstalled libbz2-1-1.0.8-4.1
+[   71s] [51/188] preinstalled libcap-ng0-0.8.3-1.1
+[   71s] [52/188] preinstalled libcap2-2.67-1.1
+[   71s] [53/188] cumulate libcom_err2-1.46.5-4.1
+[   71s] [54/188] preinstalled libcrypt1-4.4.33-1.1
+[   71s] [55/188] preinstalled libctf-nobfd0-2.39-3.1
+[   71s] [56/188] preinstalled libctf0-2.39-3.1
+[   71s] [57/188] preinstalled libdb-4_8-4.8.30-39.1
+[   71s] [58/188] preinstalled libdw1-0.188-3.2
+[   71s] [59/188] preinstalled libeconf0-0.5.1-1.1
+[   71s] [60/188] cumulate libedit0-20210910.3.1-1.1
+[   71s] [61/188] preinstalled libelf1-0.188-3.2
+[   71s] [62/188] preinstalled libfdisk1-2.38.1-7.1
+[   71s] [63/188] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   71s] [64/188] preinstalled libgcrypt20-1.10.1-1.1
+[   71s] [65/188] preinstalled libgdbm6-1.23-1.1
+[   72s] [66/188] preinstalled libgdbm_compat4-1.23-1.1
+[   72s] [67/188] preinstalled libgmp10-6.2.1-4.1
+[   72s] [68/188] preinstalled libgomp1-13.0.1+git5428-6.1
+[   72s] [69/188] preinstalled libgpg-error0-1.46-1.1
+[   72s] [70/188] preinstalled libisl23-0.25-1.1
+[   72s] [71/188] cumulate libjson-c5-0.16-1.3
+[   72s] [72/188] cumulate libkeyutils1-1.6.3-5.1
+[   72s] [73/188] preinstalled liblua5_4-5-5.4.4-8.1
+[   72s] [74/188] cumulate liblz4-1-1.9.4-1.1
+[   72s] [75/188] preinstalled liblzma5-5.4.1-1.1
+[   72s] [76/188] preinstalled libmagic1-5.44-1.1
+[   72s] [77/188] preinstalled libmount1-2.38.1-7.1
+[   72s] [78/188] preinstalled libmpc3-1.3.1-1.2
+[   72s] [79/188] preinstalled libmpfr6-4.2.0-1.1
+[   72s] [80/188] preinstalled libncurses6-6.4.20230128-5.1
+[   72s] [81/188] cumulate libnghttp2-14-1.51.0-7.2
+[   72s] [82/188] preinstalled libpcre2-8-0-10.42-3.2
+[   72s] [83/188] preinstalled libpkgconf3-1.8.0-2.1
+[   72s] [84/188] preinstalled libpopt0-1.19-1.1
+[   72s] [85/188] preinstalled libreadline8-8.2-2.1
+[   72s] [86/188] preinstalled librpmbuild9-4.18.0-3.1
+[   72s] [87/188] cumulate libsasl2-3-2.1.28-4.2
+[   72s] [88/188] preinstalled libseccomp2-2.5.4-2.1
+[   72s] [89/188] preinstalled libselinux1-3.4-2.1
+[   72s] [90/188] preinstalled libsemanage-conf-3.4-1.1
+[   72s] [91/188] preinstalled libsemanage2-3.4-1.1
+[   72s] [92/188] preinstalled libsepol2-3.4-1.1
+[   72s] [93/188] preinstalled libsmartcols1-2.38.1-7.1
+[   72s] [94/188] cumulate libssh-config-0.10.4-1.2
+[   72s] [95/188] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   72s] [96/188] preinstalled libsubid4-4.13-3.1
+[   72s] [97/188] cumulate libtss2-mu0-4.0.1-1.1
+[   72s] [98/188] cumulate libtss2-rc0-4.0.1-1.1
+[   72s] [99/188] cumulate libtss2-tctildr0-4.0.1-1.1
+[   72s] [100/188] preinstalled libubsan1-13.0.1+git5428-6.1
+[   72s] [101/188] cumulate libunistring5-1.1-1.1
+[   72s] [102/188] preinstalled libutempter0-1.2.0-3.2
+[   72s] [103/188] cumulate libuuid-devel-2.38.1-7.1
+[   72s] [104/188] preinstalled libuuid1-2.38.1-7.1
+[   72s] [105/188] cumulate libverto1-0.3.2-1.1
+[   72s] [106/188] preinstalled libxcrypt-devel-4.4.33-1.1
+[   72s] [107/188] cumulate libxml2-2-2.10.3-3.1
+[   72s] [108/188] preinstalled libz1-1.2.13-2.1
+[   72s] [109/188] preinstalled libzstd1-1.5.2-2.1
+[   72s] [110/188] preinstalled linux-glibc-devel-6.1-1.1
+[   72s] [111/188] preinstalled login_defs-4.13-3.1
+[   72s] [112/188] preinstalled lua54-5.4.4-8.1
+[   72s] [113/188] preinstalled make-4.4-2.1
+[   72s] [114/188] preinstalled ncurses-utils-6.4.20230128-5.1
+[   72s] [115/188] preinstalled pam-1.5.2-12.1
+[   72s] [116/188] preinstalled patch-2.7.6-6.1
+[   72s] [117/188] preinstalled perl-5.36.0-4.1
+[   72s] [118/188] preinstalled perl-base-5.36.0-4.1
+[   72s] [119/188] preinstalled permissions-1599_20221220-1.2
+[   72s] [120/188] preinstalled permissions-config-1599_20221220-1.2
+[   72s] [121/188] preinstalled pkgconf-1.8.0-2.1
+[   72s] [122/188] preinstalled pkgconf-m4-1.8.0-2.1
+[   72s] [123/188] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   72s] [124/188] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   72s] [125/188] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   72s] [126/188] preinstalled qemu-linux-user-7.1.0-50.1
+[   72s] [127/188] preinstalled rpm-4.18.0-3.1
+[   72s] [128/188] preinstalled rpm-build-4.18.0-3.1
+[   72s] [129/188] preinstalled rpm-build-perl-4.18.0-3.1
+[   72s] [130/188] preinstalled rpm-config-SUSE-20220926-1.1
+[   72s] [131/188] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   72s] [132/188] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   72s] [133/188] preinstalled sed-4.9-2.1
+[   72s] [134/188] preinstalled shadow-4.13-3.1
+[   72s] [135/188] preinstalled system-group-hardware-20170617-24.1
+[   72s] [136/188] preinstalled system-user-root-20190513-2.1
+[   72s] [137/188] cumulate system-user-tss-20170617-24.1
+[   72s] [138/188] preinstalled systemd-rpm-macros-19-1.1
+[   72s] [139/188] preinstalled sysuser-shadow-3.1-5.1
+[   72s] [140/188] cumulate sysuser-tools-3.1-5.1
+[   72s] [141/188] preinstalled tar-1.34-9.1
+[   72s] [142/188] preinstalled terminfo-base-6.4.20230128-5.1
+[   72s] [143/188] preinstalled update-alternatives-1.21.8-1.1
+[   72s] [144/188] preinstalled util-linux-2.38.1-7.1
+[   72s] [145/188] preinstalled which-2.21-5.1
+[   72s] [146/188] preinstalled xz-5.4.1-1.1
+[   72s] [147/188] cumulate zlib-devel-1.2.13-2.1
+[   72s] [148/188] cumulate zstd-1.5.2-2.1
+[   72s] [149/188] cumulate libLLVM15-15.0.7-1.1
+[   72s] [150/188] cumulate libbrotlidec1-1.0.9-1.1
+[   72s] [151/188] cumulate libidn2-0-2.3.4-1.1
+[   72s] [152/188] cumulate libjson-c-devel-0.16-1.3
+[   72s] [153/188] cumulate libopenssl3-3.0.7-3.1
+[   72s] [154/188] cumulate libtss2-sys1-4.0.1-1.1
+[   72s] [155/188] cumulate libtss2-tcti-cmd0-4.0.1-1.1
+[   72s] [156/188] cumulate libtss2-tcti-device0-4.0.1-1.1
+[   72s] [157/188] cumulate libtss2-tcti-mssim0-4.0.1-1.1
+[   72s] [158/188] cumulate libtss2-tcti-spi-helper0-4.0.1-1.1
+[   72s] [159/188] cumulate libtss2-tcti-swtpm0-4.0.1-1.1
+[   72s] [160/188] cumulate tpm2-0-tss-4.0.1-1.1
+[   72s] [161/188] cumulate libtss2-tcti-pcap0-4.0.1-1.1
+[   72s] [162/188] cumulate krb5-mini-1.20.1-2.3
+[   72s] [163/188] cumulate libclang-cpp15-15.0.7-1.1
+[   72s] [164/188] cumulate lld15-15.0.7-1.1
+[   72s] [165/188] cumulate libldap2-2.6.3-3.2
+[   72s] [166/188] cumulate libpsl5-0.21.2-1.1
+[   72s] [167/188] cumulate libarchive13-3.6.2-1.2
+[   72s] [168/188] cumulate libssh4-0.10.4-1.2
+[   72s] [169/188] cumulate libtss2-esys0-4.0.1-1.1
+[   72s] [170/188] cumulate libarchive-devel-3.6.2-1.2
+[   72s] [171/188] cumulate libclang13-15.0.7-1.1
+[   72s] [172/188] cumulate rust1.67-1.67.1-1.1
+[   72s] [173/188] cumulate libtss2-policy0-4.0.1-1.1
+[   72s] [174/188] cumulate libcurl4-7.87.0-1.3
+[   72s] [175/188] cumulate libcurl-devel-7.87.0-1.3
+[   72s] [176/188] cumulate rust-1.67.1-1.1
+[   72s] [177/188] cumulate cargo1.67-1.67.1-1.1
+[   72s] [178/188] cumulate clang15-15.0.7-1.1
+[   72s] [179/188] cumulate libtss2-fapi1-4.0.1-1.1
+[   72s] [180/188] cumulate clang-15.0.7-1.1
+[   72s] [181/188] cumulate cargo-1.67.1-1.1
+[   72s] [182/188] cumulate cargo-auditable-0.5.2~0-1.1
+[   72s] [183/188] cumulate cargo-packaging-1.1.0+0-1.1
+[   72s] [184/188] cumulate openssl-3-3.0.7-3.1
+[   72s] [185/188] cumulate openssl-3.0.7-1.1
+[   72s] [186/188] cumulate libopenssl-devel-3.0.7-1.1
+[   72s] [187/188] cumulate libopenssl-3-devel-3.0.7-3.1
+[   72s] [188/188] cumulate tpm2-0-tss-devel-4.0.1-1.1
+[   72s] now installing cumulated packages
+[   73s] Preparing...                          ########################################
+[   73s] Updating / installing...
+[   73s] libtss2-mu0-4.0.1-1.1                 ########################################
+[   73s] libtss2-tctildr0-4.0.1-1.1            ########################################
+[   73s] libjson-c5-0.16-1.3                   ########################################
+[   73s] libtss2-sys1-4.0.1-1.1                ########################################
+[   73s] libunistring5-1.1-1.1                 ########################################
+[   73s] libidn2-0-2.3.4-1.1                   ########################################
+[   74s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   75s] libopenssl3-3.0.7-3.1                 ########################################
+[   75s] libtss2-esys0-4.0.1-1.1               ########################################
+[   75s] openssl-3.0.7-1.1                     ########################################
+[   75s] openssl-3-3.0.7-3.1                   ########################################
+[   75s] libtss2-policy0-4.0.1-1.1             ########################################
+[   76s] libpsl5-0.21.2-1.1                    ########################################
+[   76s] libjson-c-devel-0.16-1.3              ########################################
+[   76s] libtss2-tcti-pcap0-4.0.1-1.1          ########################################
+[   76s] libtss2-tcti-cmd0-4.0.1-1.1           ########################################
+[   76s] libtss2-tcti-device0-4.0.1-1.1        ########################################
+[   76s] libtss2-tcti-mssim0-4.0.1-1.1         ########################################
+[   76s] libtss2-tcti-spi-helper0-4.0.1-1.1    ########################################
+[   76s] libtss2-tcti-swtpm0-4.0.1-1.1         ########################################
+[   76s] zstd-1.5.2-2.1                        ########################################
+[   76s] zlib-devel-1.2.13-2.1                 ########################################
+[   79s] libopenssl-3-devel-3.0.7-3.1          ########################################
+[   81s] libopenssl-devel-3.0.7-1.1            ########################################
+[   82s] /usr/sbin/useradd -r -c TSS daemon -d /var/lib/tpm -U -u 98 tss -s /usr/sbin/nologin
+[   82s] system-user-tss-20170617-24.1         ########################################
+[   82s] tpm2-0-tss-4.0.1-1.1                  ########################################
+[   82s] /var/tmp/rpm-tmp.VbC913: line 1: /usr/bin/udevadm: No such file or directory
+[   83s] libxml2-2-2.10.3-3.1                  ########################################
+[   83s] libverto1-0.3.2-1.1                   ########################################
+[   83s] libuuid-devel-2.38.1-7.1              ########################################
+[   83s] libtss2-rc0-4.0.1-1.1                 ########################################
+[   83s] libssh-config-0.10.4-1.2              ########################################
+[   83s] libsasl2-3-2.1.28-4.2                 ########################################
+[   83s] libldap2-2.6.3-3.2                    ########################################
+[   83s] libnghttp2-14-1.51.0-7.2              ########################################
+[   83s] liblz4-1-1.9.4-1.1                    ########################################
+[   84s] libarchive13-3.6.2-1.2                ########################################
+[   84s] libkeyutils1-1.6.3-5.1                ########################################
+[   84s] libedit0-20210910.3.1-1.1             ########################################
+[  100s] libLLVM15-15.0.7-1.1                  ########################################
+[  111s] libclang-cpp15-15.0.7-1.1             ########################################
+[  112s] libclang13-15.0.7-1.1                 ########################################
+[  125s] clang15-15.0.7-1.1                    ########################################
+[  126s] update-alternatives: using /usr/bin/clang-15.0.7 to provide /usr/bin/clang (clang) in auto mode
+[  126s] clang-15.0.7-1.1                      ########################################
+[  127s] lld15-15.0.7-1.1                      ########################################
+[  127s] update-alternatives: using /usr/bin/lld-15.0.7 to provide /usr/bin/lld (lld) in auto mode
+[  127s] libcom_err2-1.46.5-4.1                ########################################
+[  128s] krb5-mini-1.20.1-2.3                  ########################################
+[  129s] Updating /etc/sysconfig/kadmind ...
+[  129s] Updating /etc/sysconfig/krb5kdc ...
+[  129s] libssh4-0.10.4-1.2                    ########################################
+[  129s] libbrotlicommon1-1.0.9-1.1            ########################################
+[  129s] libbrotlidec1-1.0.9-1.1               ########################################
+[  130s] libcurl4-7.87.0-1.3                   ########################################
+[  130s] libcurl-devel-7.87.0-1.3              ########################################
+[  130s] rust-1.67.1-1.1                       ########################################
+[  168s] rust1.67-1.67.1-1.1                   ########################################
+[  171s] cargo1.67-1.67.1-1.1                  ########################################
+[  171s] cargo-1.67.1-1.1                      ########################################
+[  172s] cargo-auditable-0.5.2~0-1.1           ########################################
+[  172s] libtss2-fapi1-4.0.1-1.1               ########################################
+[  172s] tpm2-0-tss-devel-4.0.1-1.1            ########################################
+[  173s] cargo-packaging-1.1.0+0-1.1           ########################################
+[  173s] libarchive-devel-3.6.2-1.2            ########################################
+[  173s] sysuser-tools-3.1-5.1                 ########################################
+[  173s] firewall-macros-1.3.0-1.1             ########################################
+[  178s] now finalizing build dir...
+[  178s] ... running 01-add_abuild_user_to_trusted_group
+[  179s] ... running 02-set_timezone_to_utc
+[  179s] ... running 03-set-permissions-secure
+[  180s] ... running 11-hack_uname_version_to_kernel_version
+[  187s] Running build time source services...
+[  192s] -----------------------------------------------------------------
+[  192s] I have the following modifications for rust-keylime.spec:
+[  192s] 29c29
+[  192s] < Release:        0
+[  192s] ---
+[  192s] > Release:        6.1
+[  201s] build target is riscv64-suse-linux
+[  201s] -----------------------------------------------------------------
+[  201s] ----- building rust-keylime.spec (user abuild)
+[  201s] -----------------------------------------------------------------
+[  201s] -----------------------------------------------------------------
+[  206s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/04f976b5cf4ea7f1d59be4233d0e85c4-rust-keylime' /home/abuild/rpmbuild/SOURCES/rust-keylime.spec
+[  207s] Building target platforms: riscv64-suse-linux
+[  207s] Building for target riscv64-suse-linux
+[  207s] setting SOURCE_DATE_EPOCH=1676505600
+[  207s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.Lpq3do
+[  207s] + umask 022
+[  207s] + cd /home/abuild/rpmbuild/BUILD
+[  207s] + cd /home/abuild/rpmbuild/BUILD
+[  207s] + rm -rf rust-keylime-0.1.0+git.1676549716.5382ed9
+[  207s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/rust-keylime-0.1.0+git.1676549716.5382ed9.tar.xz
+[  208s] + STATUS=0
+[  208s] + '[' 0 -ne 0 ']'
+[  208s] + cd rust-keylime-0.1.0+git.1676549716.5382ed9
+[  208s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/vendor.tar.xz
+[  233s] + STATUS=0
+[  233s] + '[' 0 -ne 0 ']'
+[  233s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  233s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/keylime-agent.conf.diff
+[  233s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  233s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/vendor.patch
+[  233s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  234s] 1 out of 1 hunk FAILED -- saving rejects to file vendor/tss-esapi-sys/.cargo-checksum.json.rej
+[  234s] error: Bad exit status from /var/tmp/rpm-tmp.Lpq3do (%prep)
+[  234s] 
+[  234s] RPM build errors:
+[  234s]     Bad exit status from /var/tmp/rpm-tmp.Lpq3do (%prep)
+[  234s] ### VM INTERACTION START ###
+[  235s] [  200.084398][    T1] sysrq: Power Off
+[  235s] [  200.092156][    T7] reboot: Power down
+[  235s] ### VM INTERACTION END ###
+[  235s] 
+[  235s] cloud102 failed "build rust-keylime.spec" at Fri Feb 17 16:01:57 UTC 2023.
+[  235s] 

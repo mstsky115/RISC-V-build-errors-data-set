@@ -1,0 +1,876 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_9/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_9/root
+[    0s] 
+[    1s] 
+[    1s] sheep83 started "build python-openwrt-luci-rpc.spec" at Sun Feb 19 07:11:50 UTC 2023.
+[    1s] 
+[    1s] Building python-openwrt-luci-rpc for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '8f8d68c9466bbb238978720925a5b5f0'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_9/.build-srcdir/python-openwrt-luci-rpc.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_9/.build-srcdir/python-openwrt-luci-rpc.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/9/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_9/.build.rpmlist /var/cache/obs/worker/root_9/.build-srcdir/python-openwrt-luci-rpc.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [83160fede3a282f635470653fe6cebf8]
+[    3s] 
+[    3s] copying packages...
+[    4s] reordering...done
+[    4s] Detected virtio-serial support
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] Using virtio-serial support
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/hwrng,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_9/.mount/boot/kernel -initrd /var/cache/obs/worker/root_9/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_9/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_9/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_9/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 6
+[    8s] ### VM INTERACTION END ###
+[    8s] 2nd stage started in virtual machine
+[    8s] machine type: riscv64
+[    9s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[    9s] Increasing log level from now on...
+[    9s] [    3.489879][  T393] sysrq: Changing Loglevel
+[    9s] [    3.490106][  T393] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[    9s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[    9s] no label, UUID=99dba6a6-9512-453e-84a3-ea004f6611a3
+[    9s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    9s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[    9s] swapon /dev/vdb
+[    9s] WARNING: udev not running, creating extra device nodes
+[   10s] logging output to //.build.log...
+[   10s] processing recipe /.build-srcdir/python-openwrt-luci-rpc.spec ...
+[   10s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-openwrt-luci-rpc.spec build ...
+[   10s] initializing rpm db...
+[   11s] querying package ids...
+[   29s] [1/217] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   29s] [2/217] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   29s] [3/217] preinstalled attr-2.5.1-1.1
+[   29s] [4/217] preinstalled bash-5.2.15-8.1
+[   29s] [5/217] preinstalled bash-sh-5.2.15-8.1
+[   29s] [6/217] preinstalled binutils-2.39-3.1
+[   29s] [7/217] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   29s] [8/217] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   29s] [9/217] preinstalled build-mkbaselibs-20230215-1.1
+[   29s] [10/217] preinstalled bzip2-1.0.8-4.1
+[   29s] [11/217] preinstalled chkstat-1599_20221220-1.2
+[   29s] [12/217] preinstalled compat-usrmerge-build-84.87-5.1
+[   29s] [13/217] preinstalled compat-usrmerge-tools-84.87-5.1
+[   29s] [14/217] preinstalled coreutils-9.1-5.1
+[   29s] [15/217] preinstalled cpio-2.13-5.1
+[   29s] [16/217] preinstalled cpp-12-2.1
+[   29s] [17/217] preinstalled cpp12-12.2.1+git749-4.1
+[   29s] [18/217] preinstalled crypto-policies-20210917.c9d86d1-1.1
+[   29s] [19/217] preinstalled debugedit-5.0-5.1
+[   29s] [20/217] preinstalled diffutils-3.9-1.1
+[   29s] [21/217] preinstalled dwz-0.15-2.1
+[   29s] [22/217] preinstalled elfutils-0.188-3.2
+[   29s] [23/217] cumulate fdupes-2.2.1-1.1
+[   29s] [24/217] preinstalled file-5.44-1.2
+[   29s] [25/217] preinstalled file-magic-5.44-1.2
+[   29s] [26/217] preinstalled filesystem-84.87-12.1
+[   29s] [27/217] preinstalled fillup-1.42-279.1
+[   29s] [28/217] preinstalled findutils-4.9.0-2.1
+[   29s] [29/217] preinstalled gawk-5.2.1-2.1
+[   29s] [30/217] preinstalled gcc-12-2.1
+[   29s] [31/217] preinstalled gcc-PIE-12-2.1
+[   29s] [32/217] preinstalled gcc12-12.2.1+git749-4.1
+[   29s] [33/217] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   29s] [34/217] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   29s] [35/217] preinstalled gettext-tools-mini-0.21.1-1.1
+[   29s] [36/217] preinstalled glibc-2.37-1.1
+[   29s] [37/217] preinstalled glibc-devel-2.37-1.1
+[   29s] [38/217] preinstalled glibc-locale-base-2.37-1.1
+[   29s] [39/217] preinstalled grep-3.8-3.1
+[   29s] [40/217] preinstalled gzip-1.12-3.1
+[   29s] [41/217] preinstalled kernel-obs-build-6.1.12-1.1
+[   29s] [42/217] preinstalled libacl1-2.3.1-2.1
+[   29s] [43/217] preinstalled libasan8-13.0.1+git5428-6.1
+[   29s] [44/217] preinstalled libasm1-0.188-3.2
+[   29s] [45/217] preinstalled libatomic1-13.0.1+git5428-6.1
+[   29s] [46/217] preinstalled libattr1-2.5.1-1.1
+[   29s] [47/217] preinstalled libaudit1-3.0.6-4.1
+[   29s] [48/217] preinstalled libblkid1-2.38.1-7.1
+[   29s] [49/217] preinstalled libbz2-1-1.0.8-4.1
+[   29s] [50/217] preinstalled libcap-ng0-0.8.3-1.1
+[   29s] [51/217] preinstalled libcap2-2.67-1.1
+[   29s] [52/217] preinstalled libcrypt1-4.4.33-1.1
+[   29s] [53/217] preinstalled libctf-nobfd0-2.39-3.1
+[   29s] [54/217] preinstalled libctf0-2.39-3.1
+[   29s] [55/217] preinstalled libdb-4_8-4.8.30-39.1
+[   29s] [56/217] preinstalled libdw1-0.188-3.2
+[   29s] [57/217] preinstalled libeconf0-0.5.1-1.1
+[   29s] [58/217] preinstalled libelf1-0.188-3.2
+[   29s] [59/217] preinstalled libexpat1-2.5.0-2.1
+[   30s] [60/217] preinstalled libfdisk1-2.38.1-7.1
+[   30s] [61/217] preinstalled libffi8-3.4.4-1.1
+[   30s] [62/217] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   30s] [63/217] preinstalled libgcrypt20-1.10.1-1.1
+[   30s] [64/217] preinstalled libgdbm6-1.23-1.1
+[   30s] [65/217] preinstalled libgdbm_compat4-1.23-1.1
+[   30s] [66/217] preinstalled libgmp10-6.2.1-4.1
+[   30s] [67/217] preinstalled libgomp1-13.0.1+git5428-6.1
+[   30s] [68/217] preinstalled libgpg-error0-1.46-1.1
+[   30s] [69/217] preinstalled libisl23-0.25-1.1
+[   30s] [70/217] preinstalled liblua5_4-5-5.4.4-8.1
+[   30s] [71/217] preinstalled liblzma5-5.4.1-1.1
+[   30s] [72/217] preinstalled libmagic1-5.44-1.2
+[   30s] [73/217] preinstalled libmount1-2.38.1-7.1
+[   30s] [74/217] preinstalled libmpc3-1.3.1-1.2
+[   30s] [75/217] preinstalled libmpdec3-2.5.1-2.1
+[   30s] [76/217] preinstalled libmpfr6-4.2.0-1.1
+[   30s] [77/217] preinstalled libncurses6-6.4.20230128-5.1
+[   30s] [78/217] preinstalled libopenssl3-3.0.7-3.1
+[   30s] [79/217] cumulate libp11-kit0-0.24.1-2.1
+[   30s] [80/217] preinstalled libpcre2-8-0-10.42-3.2
+[   30s] [81/217] preinstalled libpkgconf3-1.8.0-2.1
+[   30s] [82/217] preinstalled libpopt0-1.19-1.1
+[   30s] [83/217] preinstalled libpython3_10-1_0-3.10.9-2.2
+[   30s] [84/217] preinstalled libpython3_11-1_0-3.11.1-4.2
+[   30s] [85/217] preinstalled libpython3_8-1_0-3.8.16-3.2
+[   30s] [86/217] preinstalled libpython3_9-1_0-3.9.16-3.2
+[   30s] [87/217] preinstalled libreadline8-8.2-2.1
+[   30s] [88/217] preinstalled librpmbuild9-4.18.0-3.2
+[   30s] [89/217] preinstalled libseccomp2-2.5.4-2.1
+[   30s] [90/217] preinstalled libselinux1-3.4-2.1
+[   30s] [91/217] preinstalled libsemanage-conf-3.4-1.1
+[   30s] [92/217] preinstalled libsemanage2-3.4-1.1
+[   30s] [93/217] preinstalled libsepol2-3.4-1.1
+[   30s] [94/217] preinstalled libsmartcols1-2.38.1-7.1
+[   30s] [95/217] cumulate libsqlite3-0-3.40.1-1.1
+[   30s] [96/217] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   30s] [97/217] preinstalled libsubid4-4.13-3.1
+[   30s] [98/217] cumulate libtasn1-6-4.19.0-1.1
+[   30s] [99/217] preinstalled libubsan1-13.0.1+git5428-6.1
+[   30s] [100/217] preinstalled libutempter0-1.2.0-3.2
+[   30s] [101/217] preinstalled libuuid1-2.38.1-7.1
+[   30s] [102/217] preinstalled libxcrypt-devel-4.4.33-1.1
+[   30s] [103/217] preinstalled libz1-1.2.13-2.1
+[   30s] [104/217] preinstalled libzstd1-1.5.2-2.1
+[   30s] [105/217] preinstalled linux-glibc-devel-6.1-1.1
+[   30s] [106/217] preinstalled login_defs-4.13-3.1
+[   30s] [107/217] preinstalled lua54-5.4.4-8.1
+[   30s] [108/217] preinstalled make-4.4-2.1
+[   30s] [109/217] preinstalled ncurses-utils-6.4.20230128-5.1
+[   30s] [110/217] preinstalled pam-1.5.2-12.1
+[   30s] [111/217] preinstalled patch-2.7.6-6.1
+[   30s] [112/217] preinstalled perl-5.36.0-4.1
+[   30s] [113/217] preinstalled perl-base-5.36.0-4.1
+[   30s] [114/217] preinstalled permissions-1599_20221220-1.2
+[   30s] [115/217] preinstalled permissions-config-1599_20221220-1.2
+[   30s] [116/217] preinstalled pkgconf-1.8.0-2.1
+[   30s] [117/217] preinstalled pkgconf-m4-1.8.0-2.1
+[   30s] [118/217] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   30s] [119/217] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   30s] [120/217] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   30s] [121/217] preinstalled python-rpm-macros-20230128.e704796-1.2
+[   30s] [122/217] preinstalled python-rpm-packaging-20210526+a18ca48-1.2
+[   30s] [123/217] cumulate python310-apipkg-3.0.1-1.2
+[   30s] [124/217] preinstalled python310-base-3.10.9-2.2
+[   30s] [125/217] cumulate python310-charset-normalizer-3.0.1-1.2
+[   30s] [126/217] cumulate python310-click-8.1.3-1.3
+[   30s] [127/217] cumulate python310-idna-3.4-1.2
+[   30s] [128/217] cumulate python310-iniconfig-1.1.1-3.2
+[   30s] [129/217] preinstalled python310-packaging-23.0-1.1
+[   30s] [130/217] cumulate python310-pycparser-2.21-1.5
+[   30s] [131/217] preinstalled python310-setuptools-65.6.3-1.2
+[   30s] [132/217] cumulate python310-six-1.16.0-2.5
+[   30s] [133/217] cumulate python311-apipkg-3.0.1-1.2
+[   30s] [134/217] preinstalled python311-base-3.11.1-4.2
+[   30s] [135/217] cumulate python311-charset-normalizer-3.0.1-1.2
+[   30s] [136/217] cumulate python311-click-8.1.3-1.3
+[   30s] [137/217] cumulate python311-idna-3.4-1.2
+[   30s] [138/217] cumulate python311-iniconfig-1.1.1-3.2
+[   30s] [139/217] cumulate python311-packaging-23.0-1.2
+[   30s] [140/217] cumulate python311-pycparser-2.21-1.5
+[   30s] [141/217] preinstalled python311-setuptools-65.6.3-1.2
+[   30s] [142/217] cumulate python311-six-1.16.0-2.5
+[   30s] [143/217] cumulate python38-apipkg-3.0.1-1.2
+[   30s] [144/217] preinstalled python38-base-3.8.16-3.2
+[   30s] [145/217] cumulate python38-charset-normalizer-3.0.1-1.2
+[   30s] [146/217] cumulate python38-click-8.1.3-1.3
+[   30s] [147/217] cumulate python38-idna-3.4-1.2
+[   30s] [148/217] cumulate python38-iniconfig-1.1.1-3.2
+[   30s] [149/217] cumulate python38-packaging-23.0-1.2
+[   30s] [150/217] cumulate python38-pycparser-2.21-1.5
+[   30s] [151/217] preinstalled python38-setuptools-65.6.3-1.2
+[   30s] [152/217] cumulate python38-six-1.16.0-2.5
+[   30s] [153/217] cumulate python39-apipkg-3.0.1-1.2
+[   30s] [154/217] preinstalled python39-base-3.9.16-3.2
+[   30s] [155/217] cumulate python39-charset-normalizer-3.0.1-1.2
+[   30s] [156/217] cumulate python39-click-8.1.3-1.3
+[   30s] [157/217] cumulate python39-idna-3.4-1.2
+[   30s] [158/217] cumulate python39-iniconfig-1.1.1-3.2
+[   30s] [159/217] cumulate python39-packaging-23.0-1.2
+[   30s] [160/217] cumulate python39-pycparser-2.21-1.5
+[   30s] [161/217] preinstalled python39-setuptools-65.6.3-1.2
+[   30s] [162/217] cumulate python39-six-1.16.0-2.5
+[   30s] [163/217] preinstalled qemu-linux-user-7.1.0-50.1
+[   30s] [164/217] preinstalled rpm-4.18.0-3.2
+[   30s] [165/217] preinstalled rpm-build-4.18.0-3.2
+[   30s] [166/217] preinstalled rpm-build-perl-4.18.0-3.2
+[   30s] [167/217] preinstalled rpm-config-SUSE-20220926-1.1
+[   30s] [168/217] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   30s] [169/217] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   30s] [170/217] preinstalled sed-4.9-2.1
+[   30s] [171/217] preinstalled shadow-4.13-3.1
+[   30s] [172/217] preinstalled system-group-hardware-20170617-24.1
+[   30s] [173/217] preinstalled system-user-root-20190513-2.1
+[   30s] [174/217] preinstalled systemd-rpm-macros-19-1.1
+[   30s] [175/217] preinstalled sysuser-shadow-3.1-5.1
+[   30s] [176/217] preinstalled tar-1.34-9.1
+[   30s] [177/217] preinstalled terminfo-base-6.4.20230128-5.1
+[   30s] [178/217] preinstalled update-alternatives-1.21.8-1.1
+[   30s] [179/217] preinstalled util-linux-2.38.1-7.1
+[   30s] [180/217] preinstalled which-2.21-5.1
+[   30s] [181/217] preinstalled xz-5.4.1-1.1
+[   30s] [182/217] cumulate python310-3.10.9-2.1
+[   30s] [183/217] cumulate python310-cffi-1.15.1-3.2
+[   30s] [184/217] cumulate python311-3.11.1-4.1
+[   30s] [185/217] cumulate python311-cffi-1.15.1-3.2
+[   30s] [186/217] cumulate python38-3.8.16-3.1
+[   30s] [187/217] cumulate python38-cffi-1.15.1-3.2
+[   30s] [188/217] cumulate python39-3.9.16-3.1
+[   30s] [189/217] cumulate python39-cffi-1.15.1-3.2
+[   30s] [190/217] cumulate p11-kit-0.24.1-2.1
+[   30s] [191/217] cumulate p11-kit-tools-0.24.1-2.1
+[   30s] [192/217] cumulate python310-py-1.11.0-3.2
+[   30s] [193/217] cumulate python311-py-1.11.0-3.2
+[   30s] [194/217] cumulate python38-py-1.11.0-3.2
+[   30s] [195/217] cumulate python39-py-1.11.0-3.2
+[   30s] [196/217] cumulate python310-pyOpenSSL-23.0.0-1.2
+[   30s] [197/217] cumulate python311-pyOpenSSL-23.0.0-1.2
+[   30s] [198/217] cumulate python38-pyOpenSSL-23.0.0-1.2
+[   30s] [199/217] cumulate python39-pyOpenSSL-23.0.0-1.2
+[   30s] [200/217] cumulate ca-certificates-2+git20211004.3efbea9-1.1
+[   30s] [201/217] cumulate python310-cryptography-39.0.1-1.2
+[   30s] [202/217] cumulate python311-cryptography-39.0.1-1.2
+[   30s] [203/217] cumulate python38-cryptography-39.0.1-1.2
+[   30s] [204/217] cumulate python39-cryptography-39.0.1-1.2
+[   30s] [205/217] cumulate ca-certificates-mozilla-2.60-1.2
+[   30s] [206/217] cumulate python310-certifi-2022.9.24-1.2
+[   30s] [207/217] cumulate python311-certifi-2022.9.24-1.2
+[   30s] [208/217] cumulate python38-certifi-2022.9.24-1.2
+[   30s] [209/217] cumulate python39-certifi-2022.9.24-1.2
+[   30s] [210/217] cumulate python310-urllib3-1.26.14-1.2
+[   30s] [211/217] cumulate python311-urllib3-1.26.14-1.2
+[   30s] [212/217] cumulate python38-urllib3-1.26.14-1.2
+[   30s] [213/217] cumulate python39-urllib3-1.26.14-1.2
+[   30s] [214/217] cumulate python310-requests-2.28.2-1.2
+[   30s] [215/217] cumulate python311-requests-2.28.2-1.2
+[   30s] [216/217] cumulate python38-requests-2.28.2-1.2
+[   30s] [217/217] cumulate python39-requests-2.28.2-1.2
+[   30s] now installing cumulated packages
+[   30s] Preparing...                          ########################################
+[   30s] Updating / installing...
+[   30s] libsqlite3-0-3.40.1-1.1               ########################################
+[   30s] python310-3.10.9-2.1                  ########################################
+[   30s] python311-3.11.1-4.1                  ########################################
+[   31s] python38-3.8.16-3.1                   ########################################
+[   31s] python39-3.9.16-3.1                   ########################################
+[   31s] python39-idna-3.4-1.2                 ########################################
+[   31s] python38-idna-3.4-1.2                 ########################################
+[   31s] python311-idna-3.4-1.2                ########################################
+[   31s] python310-idna-3.4-1.2                ########################################
+[   31s] libtasn1-6-4.19.0-1.1                 ########################################
+[   31s] libp11-kit0-0.24.1-2.1                ########################################
+[   31s] p11-kit-0.24.1-2.1                    ########################################
+[   31s] p11-kit-tools-0.24.1-2.1              ########################################
+[   31s] ca-certificates-2+git20211004.3efbea9-########################################
+[   33s] ca-certificates-mozilla-2.60-1.2      ########################################
+[   37s] python310-certifi-2022.9.24-1.2       ########################################
+[   37s] python311-certifi-2022.9.24-1.2       ########################################
+[   37s] python38-certifi-2022.9.24-1.2        ########################################
+[   37s] python39-certifi-2022.9.24-1.2        ########################################
+[   37s] python39-six-1.16.0-2.5               ########################################
+[   37s] python39-pycparser-2.21-1.5           ########################################
+[   37s] python39-cffi-1.15.1-3.2              ########################################
+[   37s] python39-cryptography-39.0.1-1.2      ########################################
+[   38s] python39-pyOpenSSL-23.0.0-1.2         ########################################
+[   38s] python39-urllib3-1.26.14-1.2          ########################################
+[   38s] python39-iniconfig-1.1.1-3.2          ########################################
+[   38s] python39-charset-normalizer-3.0.1-1.2 ########################################
+[   38s] python39-apipkg-3.0.1-1.2             ########################################
+[   38s] python39-py-1.11.0-3.2                ########################################
+[   38s] python38-six-1.16.0-2.5               ########################################
+[   38s] python38-pycparser-2.21-1.5           ########################################
+[   38s] python38-cffi-1.15.1-3.2              ########################################
+[   39s] python38-cryptography-39.0.1-1.2      ########################################
+[   39s] python38-pyOpenSSL-23.0.0-1.2         ########################################
+[   39s] python38-urllib3-1.26.14-1.2          ########################################
+[   39s] python38-iniconfig-1.1.1-3.2          ########################################
+[   39s] python38-charset-normalizer-3.0.1-1.2 ########################################
+[   39s] python38-apipkg-3.0.1-1.2             ########################################
+[   39s] python38-py-1.11.0-3.2                ########################################
+[   39s] python311-six-1.16.0-2.5              ########################################
+[   40s] python311-pycparser-2.21-1.5          ########################################
+[   40s] python311-cffi-1.15.1-3.2             ########################################
+[   40s] python311-cryptography-39.0.1-1.2     ########################################
+[   40s] python311-pyOpenSSL-23.0.0-1.2        ########################################
+[   40s] python311-urllib3-1.26.14-1.2         ########################################
+[   40s] python311-iniconfig-1.1.1-3.2         ########################################
+[   40s] python311-charset-normalizer-3.0.1-1.2########################################
+[   41s] python311-apipkg-3.0.1-1.2            ########################################
+[   41s] python311-py-1.11.0-3.2               ########################################
+[   41s] python310-six-1.16.0-2.5              ########################################
+[   41s] python310-pycparser-2.21-1.5          ########################################
+[   41s] python310-cffi-1.15.1-3.2             ########################################
+[   42s] python310-cryptography-39.0.1-1.2     ########################################
+[   42s] python310-pyOpenSSL-23.0.0-1.2        ########################################
+[   42s] python310-urllib3-1.26.14-1.2         ########################################
+[   42s] python310-iniconfig-1.1.1-3.2         ########################################
+[   42s] python310-charset-normalizer-3.0.1-1.2########################################
+[   42s] python310-apipkg-3.0.1-1.2            ########################################
+[   42s] python310-py-1.11.0-3.2               ########################################
+[   42s] python310-requests-2.28.2-1.2         ########################################
+[   42s] python311-requests-2.28.2-1.2         ########################################
+[   42s] python38-requests-2.28.2-1.2          ########################################
+[   42s] python39-requests-2.28.2-1.2          ########################################
+[   42s] python39-packaging-23.0-1.2           ########################################
+[   42s] python39-click-8.1.3-1.3              ########################################
+[   42s] python38-packaging-23.0-1.2           ########################################
+[   42s] python38-click-8.1.3-1.3              ########################################
+[   42s] python311-packaging-23.0-1.2          ########################################
+[   43s] python311-click-8.1.3-1.3             ########################################
+[   43s] python310-click-8.1.3-1.3             ########################################
+[   43s] fdupes-2.2.1-1.1                      ########################################
+[   49s] now finalizing build dir...
+[   49s] ... running 01-add_abuild_user_to_trusted_group
+[   49s] ... running 02-set_timezone_to_utc
+[   50s] ... running 03-set-permissions-secure
+[   50s] ... running 11-hack_uname_version_to_kernel_version
+[   55s] -----------------------------------------------------------------
+[   55s] I have the following modifications for python-openwrt-luci-rpc.spec:
+[   55s] 22c22
+[   55s] < Release:        0
+[   55s] ---
+[   55s] > Release:        1.2
+[   59s] build target is riscv64-suse-linux
+[   59s] -----------------------------------------------------------------
+[   59s] ----- building python-openwrt-luci-rpc.spec (user abuild)
+[   59s] -----------------------------------------------------------------
+[   59s] -----------------------------------------------------------------
+[   62s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/8f8d68c9466bbb238978720925a5b5f0-python-openwrt-luci-rpc' /home/abuild/rpmbuild/SOURCES/python-openwrt-luci-rpc.spec
+[   68s] Building target platforms: riscv64-suse-linux
+[   68s] Building for target riscv64-suse-linux
+[   68s] setting SOURCE_DATE_EPOCH=1664928000
+[   68s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.0EQxNG
+[   68s] + umask 022
+[   68s] + cd /home/abuild/rpmbuild/BUILD
+[   68s] + cd /home/abuild/rpmbuild/BUILD
+[   68s] + rm -rf openwrt-luci-rpc-1.1.12
+[   68s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/openwrt-luci-rpc-1.1.12.tar.gz
+[   69s] + STATUS=0
+[   69s] + '[' 0 -ne 0 ']'
+[   69s] + cd openwrt-luci-rpc-1.1.12
+[   69s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   69s] + sed -i -e 's:==:>=:g' setup.py
+[   69s] + RPM_EC=0
+[   69s] ++ jobs -p
+[   69s] + exit 0
+[   69s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.UB0avz
+[   69s] + umask 022
+[   69s] + cd /home/abuild/rpmbuild/BUILD
+[   69s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64
+[   69s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64
+[   69s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   69s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64
+[   69s] + cd openwrt-luci-rpc-1.1.12
+[   69s] + ref=/usr/lib/rpm
+[   69s] + mints=0
+[   69s] + case $(uname -m) in
+[   69s] ++ uname -m
+[   69s] + mints=20160911
+[   69s] + for s in guess sub
+[   69s] ++ find -maxdepth 8 -name config.guess
+[   69s] + for s in guess sub
+[   69s] ++ find -maxdepth 8 -name config.sub
+[   69s] ++ '[' -f _current_flavor ']'
+[   69s] ++ true
+[   69s] + last_flavor=
+[   69s] + '[' -z '' ']'
+[   69s] + last_flavor=tmp
+[   69s] + '[' tmp '!=' python38 ']'
+[   69s] + '[' -d build ']'
+[   69s] + '[' -d _build.python38 ']'
+[   69s] + echo python38
+[   69s] + python_flavor=python38
+[   69s] + /usr/bin/python3.8 setup.py build '--executable=/usr/bin/python3.8 -s'
+[   72s] running build
+[   72s] running build_py
+[   72s] creating build
+[   72s] creating build/lib
+[   72s] creating build/lib/openwrt_luci_rpc
+[   72s] copying openwrt_luci_rpc/__init__.py -> build/lib/openwrt_luci_rpc
+[   72s] copying openwrt_luci_rpc/constants.py -> build/lib/openwrt_luci_rpc
+[   72s] copying openwrt_luci_rpc/exceptions.py -> build/lib/openwrt_luci_rpc
+[   72s] copying openwrt_luci_rpc/openwrt_luci_rpc.py -> build/lib/openwrt_luci_rpc
+[   72s] copying openwrt_luci_rpc/utilities.py -> build/lib/openwrt_luci_rpc
+[   72s] running egg_info
+[   72s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   72s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   72s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   72s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   72s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   72s] reading manifest template 'MANIFEST.in'
+[   72s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   72s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   72s] warning: no files found matching '*.jpg' under directory 'docs'
+[   72s] warning: no files found matching '*.png' under directory 'docs'
+[   72s] warning: no files found matching '*.gif' under directory 'docs'
+[   72s] adding license file 'LICENSE'
+[   72s] adding license file 'AUTHORS.rst'
+[   72s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   73s] ++ '[' -f _current_flavor ']'
+[   73s] ++ cat _current_flavor
+[   73s] + last_flavor=python38
+[   73s] + '[' -z python38 ']'
+[   73s] + '[' python38 '!=' python39 ']'
+[   73s] + '[' -d build ']'
+[   73s] + mv build _build.python38
+[   73s] + '[' -d _build.python39 ']'
+[   73s] + echo python39
+[   73s] + python_flavor=python39
+[   73s] + /usr/bin/python3.9 setup.py build '--executable=/usr/bin/python3.9 -s'
+[   75s] running build
+[   75s] running build_py
+[   75s] creating build
+[   75s] creating build/lib
+[   75s] creating build/lib/openwrt_luci_rpc
+[   75s] copying openwrt_luci_rpc/__init__.py -> build/lib/openwrt_luci_rpc
+[   75s] copying openwrt_luci_rpc/constants.py -> build/lib/openwrt_luci_rpc
+[   75s] copying openwrt_luci_rpc/exceptions.py -> build/lib/openwrt_luci_rpc
+[   75s] copying openwrt_luci_rpc/openwrt_luci_rpc.py -> build/lib/openwrt_luci_rpc
+[   75s] copying openwrt_luci_rpc/utilities.py -> build/lib/openwrt_luci_rpc
+[   75s] running egg_info
+[   75s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   75s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   75s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   75s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   75s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   75s] reading manifest template 'MANIFEST.in'
+[   75s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   75s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   75s] warning: no files found matching '*.jpg' under directory 'docs'
+[   75s] warning: no files found matching '*.png' under directory 'docs'
+[   75s] warning: no files found matching '*.gif' under directory 'docs'
+[   75s] adding license file 'LICENSE'
+[   75s] adding license file 'AUTHORS.rst'
+[   75s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   75s] ++ '[' -f _current_flavor ']'
+[   75s] ++ cat _current_flavor
+[   75s] + last_flavor=python39
+[   75s] + '[' -z python39 ']'
+[   75s] + '[' python39 '!=' python311 ']'
+[   75s] + '[' -d build ']'
+[   75s] + mv build _build.python39
+[   75s] + '[' -d _build.python311 ']'
+[   75s] + echo python311
+[   75s] + python_flavor=python311
+[   75s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[   78s] running build
+[   78s] running build_py
+[   78s] creating build
+[   78s] creating build/lib
+[   78s] creating build/lib/openwrt_luci_rpc
+[   78s] copying openwrt_luci_rpc/__init__.py -> build/lib/openwrt_luci_rpc
+[   78s] copying openwrt_luci_rpc/constants.py -> build/lib/openwrt_luci_rpc
+[   78s] copying openwrt_luci_rpc/exceptions.py -> build/lib/openwrt_luci_rpc
+[   78s] copying openwrt_luci_rpc/openwrt_luci_rpc.py -> build/lib/openwrt_luci_rpc
+[   78s] copying openwrt_luci_rpc/utilities.py -> build/lib/openwrt_luci_rpc
+[   78s] running egg_info
+[   78s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   78s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   78s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   78s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   78s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   78s] reading manifest template 'MANIFEST.in'
+[   78s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   78s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   78s] warning: no files found matching '*.jpg' under directory 'docs'
+[   78s] warning: no files found matching '*.png' under directory 'docs'
+[   78s] warning: no files found matching '*.gif' under directory 'docs'
+[   78s] adding license file 'LICENSE'
+[   78s] adding license file 'AUTHORS.rst'
+[   78s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   78s] ++ '[' -f _current_flavor ']'
+[   78s] ++ cat _current_flavor
+[   78s] + last_flavor=python311
+[   78s] + '[' -z python311 ']'
+[   78s] + '[' python311 '!=' python310 ']'
+[   78s] + '[' -d build ']'
+[   78s] + mv build _build.python311
+[   78s] + '[' -d _build.python310 ']'
+[   78s] + echo python310
+[   78s] + python_flavor=python310
+[   78s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[   81s] running build
+[   81s] running build_py
+[   81s] creating build
+[   81s] creating build/lib
+[   81s] creating build/lib/openwrt_luci_rpc
+[   81s] copying openwrt_luci_rpc/__init__.py -> build/lib/openwrt_luci_rpc
+[   81s] copying openwrt_luci_rpc/constants.py -> build/lib/openwrt_luci_rpc
+[   81s] copying openwrt_luci_rpc/exceptions.py -> build/lib/openwrt_luci_rpc
+[   81s] copying openwrt_luci_rpc/openwrt_luci_rpc.py -> build/lib/openwrt_luci_rpc
+[   81s] copying openwrt_luci_rpc/utilities.py -> build/lib/openwrt_luci_rpc
+[   81s] running egg_info
+[   81s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   81s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   81s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   81s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   81s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   81s] reading manifest template 'MANIFEST.in'
+[   81s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   81s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   81s] warning: no files found matching '*.jpg' under directory 'docs'
+[   81s] warning: no files found matching '*.png' under directory 'docs'
+[   81s] warning: no files found matching '*.gif' under directory 'docs'
+[   81s] adding license file 'LICENSE'
+[   81s] adding license file 'AUTHORS.rst'
+[   81s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   81s] + RPM_EC=0
+[   81s] ++ jobs -p
+[   81s] + exit 0
+[   81s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.OgGxWc
+[   81s] + umask 022
+[   81s] + cd /home/abuild/rpmbuild/BUILD
+[   81s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64
+[   81s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   81s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64
+[   81s] + cd openwrt-luci-rpc-1.1.12
+[   81s] ++ '[' -f _current_flavor ']'
+[   81s] ++ cat _current_flavor
+[   81s] + last_flavor=python310
+[   81s] + '[' -z python310 ']'
+[   81s] + '[' python310 '!=' python38 ']'
+[   81s] + '[' -d build ']'
+[   81s] + mv build _build.python310
+[   81s] + '[' -d _build.python38 ']'
+[   81s] + mv _build.python38 build
+[   81s] + echo python38
+[   81s] + python_flavor=python38
+[   81s] + /usr/bin/python3.8 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64 --prefix /usr
+[   84s] running install
+[   84s] running install_lib
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages
+[   84s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] copying build/lib/openwrt_luci_rpc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] copying build/lib/openwrt_luci_rpc/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] copying build/lib/openwrt_luci_rpc/exceptions.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] copying build/lib/openwrt_luci_rpc/openwrt_luci_rpc.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] copying build/lib/openwrt_luci_rpc/utilities.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__init__.py to __init__.cpython-38.pyc
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/constants.py to constants.cpython-38.pyc
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/exceptions.py to exceptions.cpython-38.pyc
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/openwrt_luci_rpc.py to openwrt_luci_rpc.cpython-38.pyc
+[   84s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/utilities.py to utilities.cpython-38.pyc
+[   84s] writing byte-compilation script '/tmp/tmpcf4oetol.py'
+[   84s] /usr/bin/python3.8 /tmp/tmpcf4oetol.py
+[   87s] removing /tmp/tmpcf4oetol.py
+[   87s] running install_egg_info
+[   87s] running egg_info
+[   87s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   87s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   87s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   87s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   87s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   87s] reading manifest template 'MANIFEST.in'
+[   87s] /usr/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   87s]   warnings.warn(
+[   87s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   87s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   87s] warning: no files found matching '*.jpg' under directory 'docs'
+[   87s] warning: no files found matching '*.png' under directory 'docs'
+[   87s] warning: no files found matching '*.gif' under directory 'docs'
+[   87s] adding license file 'LICENSE'
+[   87s] adding license file 'AUTHORS.rst'
+[   87s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   87s] Copying openwrt_luci_rpc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc-1.1.12-py3.8.egg-info
+[   87s] running install_scripts
+[   87s] ++ '[' -f _current_flavor ']'
+[   87s] ++ cat _current_flavor
+[   87s] + last_flavor=python38
+[   87s] + '[' -z python38 ']'
+[   87s] + '[' python38 '!=' python39 ']'
+[   87s] + '[' -d build ']'
+[   87s] + mv build _build.python38
+[   88s] + '[' -d _build.python39 ']'
+[   88s] + mv _build.python39 build
+[   88s] + echo python39
+[   88s] + python_flavor=python39
+[   88s] + /usr/bin/python3.9 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64 --prefix /usr
+[   90s] running install
+[   90s] /usr/lib/python3.9/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   90s]   warnings.warn(
+[   90s] running install_lib
+[   90s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9
+[   90s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages
+[   90s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] copying build/lib/openwrt_luci_rpc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] copying build/lib/openwrt_luci_rpc/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] copying build/lib/openwrt_luci_rpc/exceptions.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] copying build/lib/openwrt_luci_rpc/openwrt_luci_rpc.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] copying build/lib/openwrt_luci_rpc/utilities.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc
+[   90s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__init__.py to __init__.cpython-39.pyc
+[   90s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/constants.py to constants.cpython-39.pyc
+[   90s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/exceptions.py to exceptions.cpython-39.pyc
+[   90s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/openwrt_luci_rpc.py to openwrt_luci_rpc.cpython-39.pyc
+[   90s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/utilities.py to utilities.cpython-39.pyc
+[   90s] writing byte-compilation script '/tmp/tmpyc31w9jc.py'
+[   90s] /usr/bin/python3.9 /tmp/tmpyc31w9jc.py
+[   92s] removing /tmp/tmpyc31w9jc.py
+[   92s] running install_egg_info
+[   92s] running egg_info
+[   92s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   92s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   92s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   92s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   93s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   93s] reading manifest template 'MANIFEST.in'
+[   93s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   93s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   93s] warning: no files found matching '*.jpg' under directory 'docs'
+[   93s] warning: no files found matching '*.png' under directory 'docs'
+[   93s] warning: no files found matching '*.gif' under directory 'docs'
+[   93s] adding license file 'LICENSE'
+[   93s] adding license file 'AUTHORS.rst'
+[   93s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   93s] Copying openwrt_luci_rpc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc-1.1.12-py3.9.egg-info
+[   93s] running install_scripts
+[   93s] ++ '[' -f _current_flavor ']'
+[   93s] ++ cat _current_flavor
+[   93s] + last_flavor=python39
+[   93s] + '[' -z python39 ']'
+[   93s] + '[' python39 '!=' python311 ']'
+[   93s] + '[' -d build ']'
+[   93s] + mv build _build.python39
+[   93s] + '[' -d _build.python311 ']'
+[   93s] + mv _build.python311 build
+[   93s] + echo python311
+[   93s] + python_flavor=python311
+[   93s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64 --prefix /usr
+[   95s] running install
+[   95s] /usr/lib/python3.11/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[   95s]   warnings.warn(
+[   95s] running install_lib
+[   96s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11
+[   96s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages
+[   96s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] copying build/lib/openwrt_luci_rpc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] copying build/lib/openwrt_luci_rpc/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] copying build/lib/openwrt_luci_rpc/exceptions.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] copying build/lib/openwrt_luci_rpc/openwrt_luci_rpc.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] copying build/lib/openwrt_luci_rpc/utilities.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc
+[   96s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__init__.py to __init__.cpython-311.pyc
+[   96s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/constants.py to constants.cpython-311.pyc
+[   96s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/exceptions.py to exceptions.cpython-311.pyc
+[   96s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/openwrt_luci_rpc.py to openwrt_luci_rpc.cpython-311.pyc
+[   96s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/utilities.py to utilities.cpython-311.pyc
+[   96s] writing byte-compilation script '/tmp/tmp78n16yth.py'
+[   96s] /usr/bin/python3.11 /tmp/tmp78n16yth.py
+[   98s] removing /tmp/tmp78n16yth.py
+[   98s] running install_egg_info
+[   98s] running egg_info
+[   98s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[   98s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[   98s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[   98s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[   98s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   98s] reading manifest template 'MANIFEST.in'
+[   98s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[   98s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[   98s] warning: no files found matching '*.jpg' under directory 'docs'
+[   98s] warning: no files found matching '*.png' under directory 'docs'
+[   98s] warning: no files found matching '*.gif' under directory 'docs'
+[   98s] adding license file 'LICENSE'
+[   98s] adding license file 'AUTHORS.rst'
+[   98s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[   98s] Copying openwrt_luci_rpc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc-1.1.12-py3.11.egg-info
+[   98s] running install_scripts
+[   98s] ++ '[' -f _current_flavor ']'
+[   98s] ++ cat _current_flavor
+[   98s] + last_flavor=python311
+[   98s] + '[' -z python311 ']'
+[   98s] + '[' python311 '!=' python310 ']'
+[   98s] + '[' -d build ']'
+[   98s] + mv build _build.python311
+[   99s] + '[' -d _build.python310 ']'
+[   99s] + mv _build.python310 build
+[   99s] + echo python310
+[   99s] + python_flavor=python310
+[   99s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64 --prefix /usr
+[  101s] running install
+[  101s] /usr/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[  101s]   warnings.warn(
+[  101s] running install_lib
+[  101s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10
+[  101s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages
+[  101s] creating /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] copying build/lib/openwrt_luci_rpc/__init__.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] copying build/lib/openwrt_luci_rpc/constants.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] copying build/lib/openwrt_luci_rpc/exceptions.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] copying build/lib/openwrt_luci_rpc/openwrt_luci_rpc.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] copying build/lib/openwrt_luci_rpc/utilities.py -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc
+[  101s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__init__.py to __init__.cpython-310.pyc
+[  101s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/constants.py to constants.cpython-310.pyc
+[  101s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/exceptions.py to exceptions.cpython-310.pyc
+[  101s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/openwrt_luci_rpc.py to openwrt_luci_rpc.cpython-310.pyc
+[  101s] byte-compiling /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/utilities.py to utilities.cpython-310.pyc
+[  101s] writing byte-compilation script '/tmp/tmppoq5w9cr.py'
+[  101s] /usr/bin/python3.10 /tmp/tmppoq5w9cr.py
+[  103s] removing /tmp/tmppoq5w9cr.py
+[  103s] running install_egg_info
+[  103s] running egg_info
+[  103s] writing openwrt_luci_rpc.egg-info/PKG-INFO
+[  103s] writing dependency_links to openwrt_luci_rpc.egg-info/dependency_links.txt
+[  103s] writing requirements to openwrt_luci_rpc.egg-info/requires.txt
+[  103s] writing top-level names to openwrt_luci_rpc.egg-info/top_level.txt
+[  103s] reading manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[  103s] reading manifest template 'MANIFEST.in'
+[  103s] warning: no previously-included files matching '__pycache__' found under directory '*'
+[  103s] warning: no previously-included files matching '*.py[co]' found under directory '*'
+[  103s] warning: no files found matching '*.jpg' under directory 'docs'
+[  103s] warning: no files found matching '*.png' under directory 'docs'
+[  103s] warning: no files found matching '*.gif' under directory 'docs'
+[  103s] adding license file 'LICENSE'
+[  103s] adding license file 'AUTHORS.rst'
+[  104s] writing manifest file 'openwrt_luci_rpc.egg-info/SOURCES.txt'
+[  104s] Copying openwrt_luci_rpc.egg-info to /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc-1.1.12-py3.10.egg-info
+[  104s] running install_scripts
+[  104s] ++ '[' -f _current_flavor ']'
+[  104s] ++ cat _current_flavor
+[  104s] + last_flavor=python310
+[  104s] + '[' -z python310 ']'
+[  104s] + '[' python310 '!=' python38 ']'
+[  104s] + '[' -d build ']'
+[  104s] + mv build _build.python310
+[  104s] + '[' -d _build.python38 ']'
+[  104s] + mv _build.python38 build
+[  104s] + echo python38
+[  104s] + python_flavor=python38
+[  104s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc-1.1.12-py3.8.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc-1.1.12-py3.8.egg-info/not-zip-safe
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-38.pyc
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-38.pyc
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-38.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-38.pyc
+[  104s] ++ '[' -f _current_flavor ']'
+[  104s] ++ cat _current_flavor
+[  104s] + last_flavor=python38
+[  104s] + '[' -z python38 ']'
+[  104s] + '[' python38 '!=' python39 ']'
+[  104s] + '[' -d build ']'
+[  104s] + mv build _build.python38
+[  104s] + '[' -d _build.python39 ']'
+[  104s] + mv _build.python39 build
+[  104s] + echo python39
+[  104s] + python_flavor=python39
+[  104s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc-1.1.12-py3.9.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc-1.1.12-py3.9.egg-info/not-zip-safe
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-39.pyc
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-39.pyc
+[  104s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-39.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.9/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-39.pyc
+[  104s] ++ '[' -f _current_flavor ']'
+[  104s] ++ cat _current_flavor
+[  104s] + last_flavor=python39
+[  104s] + '[' -z python39 ']'
+[  104s] + '[' python39 '!=' python311 ']'
+[  104s] + '[' -d build ']'
+[  104s] + mv build _build.python39
+[  104s] + '[' -d _build.python311 ']'
+[  105s] + mv _build.python311 build
+[  105s] + echo python311
+[  105s] + python_flavor=python311
+[  105s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc-1.1.12-py3.11.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc-1.1.12-py3.11.egg-info/not-zip-safe
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-311.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-311.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-311.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/__init__.cpython-311.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/openwrt_luci_rpc.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.11/site-packages/openwrt_luci_rpc/__pycache__/openwrt_luci_rpc.cpython-311.pyc
+[  105s] ++ '[' -f _current_flavor ']'
+[  105s] ++ cat _current_flavor
+[  105s] + last_flavor=python311
+[  105s] + '[' -z python311 ']'
+[  105s] + '[' python311 '!=' python310 ']'
+[  105s] + '[' -d build ']'
+[  105s] + mv build _build.python311
+[  105s] + '[' -d _build.python310 ']'
+[  105s] + mv _build.python310 build
+[  105s] + echo python310
+[  105s] + python_flavor=python310
+[  105s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc-1.1.12-py3.10.egg-info/dependency_links.txt -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc-1.1.12-py3.10.egg-info/not-zip-safe
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/utilities.cpython-310.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/exceptions.cpython-310.pyc
+[  105s] Linking /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.10/site-packages/openwrt_luci_rpc/__pycache__/constants.cpython-310.pyc
+[  105s] + /usr/lib/rpm/find-debuginfo -j6 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/openwrt-luci-rpc-1.1.12
+[  105s] + /usr/lib/rpm/brp-compress
+[  106s] + /usr/lib/rpm/brp-suse
+[  106s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[  106s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[  106s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[  106s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[  106s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[  106s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.4mtKlj
+[  106s] + umask 022
+[  106s] + cd /home/abuild/rpmbuild/BUILD
+[  106s] + cd openwrt-luci-rpc-1.1.12
+[  106s] ++ '[' -f _current_flavor ']'
+[  106s] ++ cat _current_flavor
+[  106s] + last_flavor=python310
+[  106s] + '[' -z python310 ']'
+[  106s] + '[' python310 '!=' python38 ']'
+[  106s] + '[' -d build ']'
+[  106s] + mv build _build.python310
+[  106s] + '[' -d _build.python38 ']'
+[  106s] + mv _build.python38 build
+[  107s] + echo python38
+[  107s] + python_flavor=python38
+[  107s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-openwrt-luci-rpc-1.1.12-1.2.riscv64/usr/lib/python3.8/site-packages
+[  107s] + python3.8 -m unittest discover -v
+[  108s] testDiscover (tests.test_openwrt_15.TestOpenwrt15LuciRPC) ... skipped 'unskip this to test using env vars'
+[  108s] test_normalise_keys (tests.test_openwrt_17.TestOpenwrtLuciRPC)
+[  108s] Test replacing v17 keys works as expected. ... ok
+[  108s] test_normalise_keys (tests.test_openwrt_18.TestOpenwrtLuciRPC)
+[  108s] Test replacing v18 keys works as expected. ... ok
+[  108s] test_defaults (tests.test_openwrt_luci_rpc.TestOpenwrtLuciRPC)
+[  108s] Test defaults are in place. ... Could not determine OpenWRT version,                          defaulting to version 18.06
+[  108s] ok
+[  108s] test_empty_host (tests.test_openwrt_luci_rpc.TestOpenwrtLuciRPC)
+[  108s] Test invalid host raises exception. ... ok
+[  108s] test_none_host (tests.test_openwrt_luci_rpc.TestOpenwrtLuciRPC)
+[  108s] Test invalid host raises exception. ... ok
+[  108s] test_normalise_key_none_type (tests.test_openwrt_luci_rpc.TestOpenwrtLuciRPC)
+[  108s] Test a None result is handled. ... ok
+[  108s] test_normalise_key_stripping (tests.test_openwrt_luci_rpc.TestOpenwrtLuciRPC)
+[  108s] Test replacing dots and spaces works. ... ok
+[  108s] test_is_legacy_version (tests.test_version.TestOpenwrtLuciRPC)
+[  108s] Test comparing versions works as expected. ... ERROR
+[  108s] 
+[  108s] ======================================================================
+[  108s] ERROR: test_is_legacy_version (tests.test_version.TestOpenwrtLuciRPC)
+[  108s] Test comparing versions works as expected.
+[  108s] ----------------------------------------------------------------------
+[  108s] Traceback (most recent call last):
+[  108s]   File "/home/abuild/rpmbuild/BUILD/openwrt-luci-rpc-1.1.12/tests/test_version.py", line 33, in test_is_legacy_version
+[  108s]     assert is_legacy_version(version.parse("snapshot")) is False
+[  108s]   File "/usr/lib/python3.8/site-packages/packaging/version.py", line 52, in parse
+[  108s]     return Version(version)
+[  108s]   File "/usr/lib/python3.8/site-packages/packaging/version.py", line 197, in __init__
+[  108s]     raise InvalidVersion(f"Invalid version: '{version}'")
+[  108s] packaging.version.InvalidVersion: Invalid version: 'snapshot'
+[  108s] 
+[  108s] ----------------------------------------------------------------------
+[  108s] Ran 9 tests in 0.032s
+[  108s] 
+[  108s] FAILED (errors=1, skipped=1)
+[  108s] error: Bad exit status from /var/tmp/rpm-tmp.4mtKlj (%check)
+[  108s] 
+[  108s] RPM build errors:
+[  108s]     Bad exit status from /var/tmp/rpm-tmp.4mtKlj (%check)
+[  109s] ### VM INTERACTION START ###
+[  109s] [  103.641264][    T1] sysrq: Power Off
+[  109s] [  103.643976][  T284] reboot: Power down
+[  109s] ### VM INTERACTION END ###
+[  109s] 
+[  109s] sheep83 failed "build python-openwrt-luci-rpc.spec" at Sun Feb 19 07:13:38 UTC 2023.
+[  109s] 

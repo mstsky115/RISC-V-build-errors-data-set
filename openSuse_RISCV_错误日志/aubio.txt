@@ -1,0 +1,991 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_10/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_10/root
+[    0s] 
+[    1s] 
+[    1s] old-atreju3 started "build aubio.spec" at Sun Feb 19 03:31:54 UTC 2023.
+[    1s] 
+[    1s] Building aubio for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '9dbd6c0d937cce250ad1c05631268125'
+[    1s] 
+[    1s] processing recipe /var/cache/obs/worker/root_10/.build-srcdir/aubio.spec ...
+[    1s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_10/.build-srcdir/aubio.spec
+[    1s] init_buildsystem --configdir /var/run/obs/worker/10/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_10/.build.rpmlist /var/cache/obs/worker/root_10/.build-srcdir/aubio.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [9548cbf31d4a05bed17985388360dd74]
+[    5s] 
+[    5s] copying packages...
+[    5s] reordering...cycle: libpython3_10-1_0 -> python310-base
+[    5s]   breaking dependency python310-base -> libpython3_10-1_0
+[    5s] done
+[    5s] Detected virtio-serial support
+[    7s] booting kvm...
+[    7s] ### VM INTERACTION START ###
+[    7s] Using virtio-serial support
+[    7s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_10/.mount/boot/kernel -initrd /var/cache/obs/worker/root_10/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_10/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_10/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_10/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[   13s] ### VM INTERACTION END ###
+[   13s] 2nd stage started in virtual machine
+[   13s] machine type: riscv64
+[   14s] Linux version: 6.1.12-1-default #1 SMP PREEMPT_DYNAMIC Wed Feb 15 05:31:41 UTC 2023 (373f017)
+[   14s] Increasing log level from now on...
+[   14s] [    6.581598][  T369] sysrq: Changing Loglevel
+[   14s] [    6.581721][  T369] sysrq: Loglevel set to 4
+[   14s] Enable sysrq operations
+[   14s] Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+[   14s] no label, UUID=43da9d92-9625-4e6a-9765-ca6ca248a9d0
+[   14s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   14s] swapon: /dev/vdb: pagesize=4096, swapsize=2147483648, devsize=2147483648
+[   14s] swapon /dev/vdb
+[   14s] WARNING: udev not running, creating extra device nodes
+[   15s] logging output to //.build.log...
+[   16s] processing recipe /.build-srcdir/aubio.spec ...
+[   16s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/aubio.spec build ...
+[   16s] initializing rpm db...
+[   17s] querying package ids...
+[   52s] [1/171] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   52s] [2/171] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   52s] [3/171] preinstalled attr-2.5.1-1.1
+[   52s] [4/171] preinstalled bash-5.2.15-8.1
+[   52s] [5/171] preinstalled bash-sh-5.2.15-8.1
+[   52s] [6/171] preinstalled binutils-2.39-3.1
+[   53s] [7/171] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   53s] [8/171] preinstalled build-compare-20221206T204012.bb70754-1.2
+[   53s] [9/171] preinstalled build-mkbaselibs-20230215-1.1
+[   53s] [10/171] preinstalled bzip2-1.0.8-4.1
+[   53s] [11/171] preinstalled chkstat-1599_20221220-1.2
+[   53s] [12/171] preinstalled compat-usrmerge-build-84.87-5.1
+[   53s] [13/171] preinstalled compat-usrmerge-tools-84.87-5.1
+[   53s] [14/171] preinstalled coreutils-9.1-5.1
+[   53s] [15/171] preinstalled cpio-2.13-5.1
+[   53s] [16/171] preinstalled cpp-12-2.1
+[   53s] [17/171] preinstalled cpp12-12.2.1+git749-4.1
+[   53s] [18/171] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   53s] [19/171] preinstalled debugedit-5.0-5.1
+[   53s] [20/171] preinstalled diffutils-3.9-1.1
+[   53s] [21/171] cumulate doxygen-1.9.6-1.1
+[   53s] [22/171] preinstalled dwz-0.15-2.1
+[   53s] [23/171] preinstalled elfutils-0.188-3.2
+[   53s] [24/171] cumulate ffmpeg-5-mini-libs-5.1.2-9.1
+[   53s] [25/171] preinstalled file-5.44-1.2
+[   53s] [26/171] preinstalled file-magic-5.44-1.2
+[   53s] [27/171] preinstalled filesystem-84.87-12.1
+[   53s] [28/171] preinstalled fillup-1.42-279.1
+[   53s] [29/171] preinstalled findutils-4.9.0-2.1
+[   53s] [30/171] preinstalled gawk-5.2.1-2.1
+[   53s] [31/171] preinstalled gcc-12-2.1
+[   53s] [32/171] preinstalled gcc-PIE-12-2.1
+[   53s] [33/171] preinstalled gcc12-12.2.1+git749-4.1
+[   53s] [34/171] preinstalled gcc12-PIE-12.2.1+git749-4.1
+[   53s] [35/171] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   53s] [36/171] preinstalled gettext-tools-mini-0.21.1-1.1
+[   53s] [37/171] preinstalled glibc-2.37-1.1
+[   53s] [38/171] preinstalled glibc-devel-2.37-1.1
+[   53s] [39/171] preinstalled glibc-locale-base-2.37-1.1
+[   53s] [40/171] preinstalled grep-3.8-3.1
+[   53s] [41/171] preinstalled gzip-1.12-3.1
+[   53s] [42/171] preinstalled kernel-obs-build-6.1.12-1.1
+[   53s] [43/171] preinstalled libacl1-2.3.1-2.1
+[   53s] [44/171] preinstalled libasan8-13.0.1+git5428-6.1
+[   53s] [45/171] preinstalled libasm1-0.188-3.2
+[   53s] [46/171] cumulate libasound2-1.2.8-1.1
+[   53s] [47/171] preinstalled libatomic1-13.0.1+git5428-6.1
+[   53s] [48/171] preinstalled libattr1-2.5.1-1.1
+[   53s] [49/171] preinstalled libaudit1-3.0.6-4.1
+[   53s] [50/171] preinstalled libblkid1-2.38.1-7.1
+[   53s] [51/171] preinstalled libbz2-1-1.0.8-4.1
+[   53s] [52/171] preinstalled libcap-ng0-0.8.3-1.1
+[   53s] [53/171] preinstalled libcap2-2.67-1.1
+[   53s] [54/171] cumulate libcelt0-2-0.11.3-1.3
+[   53s] [55/171] preinstalled libcrypt1-4.4.33-1.1
+[   53s] [56/171] preinstalled libctf-nobfd0-2.39-3.1
+[   53s] [57/171] preinstalled libctf0-2.39-3.1
+[   53s] [58/171] preinstalled libdb-4_8-4.8.30-39.1
+[   53s] [59/171] preinstalled libdw1-0.188-3.2
+[   53s] [60/171] preinstalled libeconf0-0.5.1-1.1
+[   53s] [61/171] preinstalled libelf1-0.188-3.2
+[   53s] [62/171] cumulate libexpat1-2.5.0-2.1
+[   53s] [63/171] preinstalled libfdisk1-2.38.1-7.1
+[   53s] [64/171] cumulate libffi8-3.4.4-1.1
+[   53s] [65/171] cumulate libfftw3-3-3.3.10-3.1
+[   53s] [66/171] preinstalled libgcc_s1-13.0.1+git5428-6.1
+[   53s] [67/171] preinstalled libgcrypt20-1.10.1-1.1
+[   53s] [68/171] preinstalled libgdbm6-1.23-1.1
+[   53s] [69/171] preinstalled libgdbm_compat4-1.23-1.1
+[   53s] [70/171] preinstalled libgmp10-6.2.1-4.1
+[   53s] [71/171] preinstalled libgomp1-13.0.1+git5428-6.1
+[   53s] [72/171] preinstalled libgpg-error0-1.46-1.1
+[   53s] [73/171] preinstalled libisl23-0.25-1.1
+[   53s] [74/171] cumulate libjack0-1.9.21-1.3
+[   53s] [75/171] preinstalled liblua5_4-5-5.4.4-8.1
+[   53s] [76/171] preinstalled liblzma5-5.4.1-1.1
+[   53s] [77/171] preinstalled libmagic1-5.44-1.2
+[   53s] [78/171] preinstalled libmount1-2.38.1-7.1
+[   53s] [79/171] preinstalled libmpc3-1.3.1-1.2
+[   53s] [80/171] cumulate libmpdec3-2.5.1-2.1
+[   53s] [81/171] preinstalled libmpfr6-4.2.0-1.1
+[   53s] [82/171] preinstalled libncurses6-6.4.20230128-5.1
+[   53s] [83/171] cumulate libogg0-1.3.5-1.1
+[   53s] [84/171] cumulate libopus0-1.3.1-3.2
+[   53s] [85/171] preinstalled libpcre2-8-0-10.42-3.2
+[   53s] [86/171] preinstalled libpkgconf3-1.8.0-2.1
+[   53s] [87/171] preinstalled libpopt0-1.19-1.1
+[   53s] [88/171] preinstalled libreadline8-8.2-2.1
+[   53s] [89/171] preinstalled librpmbuild9-4.18.0-3.2
+[   53s] [90/171] cumulate libsamplerate0-0.2.2-1.1
+[   53s] [91/171] preinstalled libseccomp2-2.5.4-2.1
+[   53s] [92/171] preinstalled libselinux1-3.4-2.1
+[   53s] [93/171] preinstalled libsemanage-conf-3.4-1.1
+[   53s] [94/171] preinstalled libsemanage2-3.4-1.1
+[   53s] [95/171] preinstalled libsepol2-3.4-1.1
+[   53s] [96/171] preinstalled libsmartcols1-2.38.1-7.1
+[   53s] [97/171] cumulate libspeex1-1.2.1-1.1
+[   53s] [98/171] cumulate libspeexdsp1-1.2.1-1.1
+[   53s] [99/171] preinstalled libstdc++6-13.0.1+git5428-6.1
+[   53s] [100/171] cumulate libstdc++6-devel-gcc12-12.2.1+git749-4.1
+[   53s] [101/171] preinstalled libsubid4-4.13-3.1
+[   53s] [102/171] preinstalled libubsan1-13.0.1+git5428-6.1
+[   53s] [103/171] preinstalled libutempter0-1.2.0-3.2
+[   53s] [104/171] preinstalled libuuid1-2.38.1-7.1
+[   53s] [105/171] preinstalled libxcrypt-devel-4.4.33-1.1
+[   53s] [106/171] preinstalled libz1-1.2.13-2.1
+[   53s] [107/171] preinstalled libzstd1-1.5.2-2.1
+[   53s] [108/171] preinstalled linux-glibc-devel-6.1-1.1
+[   53s] [109/171] preinstalled login_defs-4.13-3.1
+[   53s] [110/171] preinstalled lua54-5.4.4-8.1
+[   53s] [111/171] preinstalled make-4.4-2.1
+[   53s] [112/171] preinstalled ncurses-utils-6.4.20230128-5.1
+[   53s] [113/171] preinstalled pam-1.5.2-12.1
+[   53s] [114/171] preinstalled patch-2.7.6-6.1
+[   53s] [115/171] preinstalled perl-5.36.0-4.1
+[   53s] [116/171] preinstalled perl-base-5.36.0-4.1
+[   53s] [117/171] preinstalled permissions-1599_20221220-1.2
+[   53s] [118/171] preinstalled permissions-config-1599_20221220-1.2
+[   53s] [119/171] preinstalled pkgconf-1.8.0-2.1
+[   53s] [120/171] preinstalled pkgconf-m4-1.8.0-2.1
+[   53s] [121/171] preinstalled pkgconf-pkg-config-1.8.0-2.1
+[   53s] [122/171] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   53s] [123/171] preinstalled post-build-checks-84.87+git20230106.3a359c5-1.1
+[   53s] [124/171] cumulate python-rpm-macros-20230128.e704796-1.2
+[   53s] [125/171] preinstalled qemu-linux-user-7.1.0-50.1
+[   53s] [126/171] preinstalled rpm-4.18.0-3.2
+[   53s] [127/171] preinstalled rpm-build-4.18.0-3.2
+[   53s] [128/171] preinstalled rpm-build-perl-4.18.0-3.2
+[   53s] [129/171] preinstalled rpm-config-SUSE-20220926-1.1
+[   53s] [130/171] preinstalled rpmlint-mini-2.4.0+git20230214.1bab129-9.4
+[   53s] [131/171] preinstalled rpmlint-strict-2.4.0+git20230214.1bab129-1.1
+[   53s] [132/171] preinstalled sed-4.9-2.1
+[   53s] [133/171] preinstalled shadow-4.13-3.1
+[   53s] [134/171] preinstalled system-group-hardware-20170617-24.1
+[   53s] [135/171] preinstalled system-user-root-20190513-2.1
+[   53s] [136/171] preinstalled systemd-rpm-macros-19-1.1
+[   53s] [137/171] preinstalled sysuser-shadow-3.1-5.1
+[   53s] [138/171] preinstalled tar-1.34-9.1
+[   53s] [139/171] preinstalled terminfo-base-6.4.20230128-5.1
+[   53s] [140/171] cumulate txt2man-1.7.1-1.1
+[   53s] [141/171] preinstalled update-alternatives-1.21.8-1.1
+[   53s] [142/171] preinstalled util-linux-2.38.1-7.1
+[   53s] [143/171] preinstalled which-2.21-5.1
+[   53s] [144/171] preinstalled xz-5.4.1-1.1
+[   53s] [145/171] cumulate alsa-devel-1.2.8-1.1
+[   53s] [146/171] cumulate ffmpeg-5-mini-devel-5.1.2-9.1
+[   53s] [147/171] cumulate libFLAC12-1.4.2-1.1
+[   53s] [148/171] cumulate libfftw3_threads3-3.3.10-3.1
+[   53s] [149/171] cumulate libogg-devel-1.3.5-1.1
+[   53s] [150/171] cumulate libopenssl3-3.0.7-3.1
+[   53s] [151/171] cumulate libopus-devel-1.3.1-3.2
+[   53s] [152/171] cumulate libsamplerate-devel-0.2.2-1.1
+[   53s] [153/171] cumulate libstdc++-devel-12-2.1
+[   53s] [154/171] cumulate libvorbis0-1.3.7-2.1
+[   53s] [155/171] cumulate speexdsp-devel-1.2.1-1.1
+[   53s] [156/171] cumulate libjackserver0-1.9.21-1.3
+[   53s] [157/171] cumulate libjacknet0-1.9.21-1.3
+[   53s] [158/171] cumulate libFLAC++10-1.4.2-1.1
+[   53s] [159/171] cumulate libvorbisenc2-1.3.7-2.1
+[   53s] [160/171] cumulate fftw3-devel-3.3.10-3.1
+[   53s] [161/171] cumulate libvorbisfile3-1.3.7-2.1
+[   53s] [162/171] cumulate speex-devel-1.2.1-1.1
+[   53s] [163/171] cumulate libjack-devel-1.9.21-1.3
+[   53s] [164/171] cumulate flac-devel-1.4.2-1.1
+[   53s] [165/171] cumulate libvorbis-devel-1.3.7-2.1
+[   53s] [166/171] cumulate libsndfile1-1.1.0-1.2
+[   53s] [167/171] cumulate libsndfile-devel-1.1.0-1.2
+[   53s] [168/171] cumulate python310-base-3.10.9-2.2
+[   53s] [169/171] cumulate libpython3_10-1_0-3.10.9-2.2
+[   53s] [170/171] cumulate python310-packaging-23.0-1.1
+[   53s] [171/171] cumulate python-rpm-packaging-20210526+a18ca48-1.2
+[   53s] now installing cumulated packages
+[   54s] Preparing...                          ########################################
+[   54s] Updating / installing...
+[   54s] libogg0-1.3.5-1.1                     ########################################
+[   54s] libvorbis0-1.3.7-2.1                  ########################################
+[   54s] libopus0-1.3.1-3.2                    ########################################
+[   55s] libFLAC12-1.4.2-1.1                   ########################################
+[   55s] libogg-devel-1.3.5-1.1                ########################################
+[   55s] libvorbisenc2-1.3.7-2.1               ########################################
+[   55s] libspeex1-1.2.1-1.1                   ########################################
+[   56s] libsamplerate0-0.2.2-1.1              ########################################
+[   57s] libfftw3-3-3.3.10-3.1                 ########################################
+[   57s] libcelt0-2-0.11.3-1.3                 ########################################
+[   57s] libjackserver0-1.9.21-1.3             ########################################
+[   57s] libjacknet0-1.9.21-1.3                ########################################
+[   57s] libfftw3_threads3-3.3.10-3.1          ########################################
+[   58s] libsndfile1-1.1.0-1.2                 ########################################
+[   58s] libFLAC++10-1.4.2-1.1                 ########################################
+[   58s] libopus-devel-1.3.1-3.2               ########################################
+[   58s] libvorbisfile3-1.3.7-2.1              ########################################
+[   58s] libvorbis-devel-1.3.7-2.1             ########################################
+[   58s] python-rpm-macros-20230128.e704796-1.2########################################
+[   78s] libstdc++6-devel-gcc12-12.2.1+git749-4########################################
+[   79s] libstdc++-devel-12-2.1                ########################################
+[   80s] flac-devel-1.4.2-1.1                  ########################################
+[   80s] libspeexdsp1-1.2.1-1.1                ########################################
+[   80s] speexdsp-devel-1.2.1-1.1              ########################################
+[   80s] speex-devel-1.2.1-1.1                 ########################################
+[   80s] libmpdec3-2.5.1-2.1                   ########################################
+[   80s] libjack0-1.9.21-1.3                   ########################################
+[   80s] libffi8-3.4.4-1.1                     ########################################
+[   81s] libexpat1-2.5.0-2.1                   ########################################
+[   81s] libasound2-1.2.8-1.1                  ########################################
+[   83s] ffmpeg-5-mini-libs-5.1.2-9.1          ########################################
+[   83s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   84s] libopenssl3-3.0.7-3.1                 ########################################
+[   85s] libpython3_10-1_0-3.10.9-2.2          ########################################
+[   92s] python310-base-3.10.9-2.2             ########################################
+[   92s] python310-packaging-23.0-1.1          ########################################
+[   92s] python-rpm-packaging-20210526+a18ca48-########################################
+[   93s] ffmpeg-5-mini-devel-5.1.2-9.1         ########################################
+[   93s] alsa-devel-1.2.8-1.1                  ########################################
+[   93s] libjack-devel-1.9.21-1.3              ########################################
+[   93s] libsndfile-devel-1.1.0-1.2            ########################################
+[   94s] fftw3-devel-3.3.10-3.1                ########################################
+[   94s] libsamplerate-devel-0.2.2-1.1         ########################################
+[   94s] txt2man-1.7.1-1.1                     ########################################
+[   98s] doxygen-1.9.6-1.1                     ########################################
+[  101s] now finalizing build dir...
+[  101s] ... running 01-add_abuild_user_to_trusted_group
+[  102s] ... running 02-set_timezone_to_utc
+[  102s] ... running 03-set-permissions-secure
+[  102s] ... running 11-hack_uname_version_to_kernel_version
+[  115s] -----------------------------------------------------------------
+[  115s] I have the following modifications for aubio.spec:
+[  116s] 23c23
+[  116s] < Release:        0
+[  116s] ---
+[  116s] > Release:        7.3
+[  116s] 42c42
+[  116s] < BuildRequires:  pkg-config
+[  116s] ---
+[  116s] > BuildRequires:  pkgconf-pkg-config
+[  125s] build target is riscv64-suse-linux
+[  125s] -----------------------------------------------------------------
+[  125s] ----- building aubio.spec (user abuild)
+[  125s] -----------------------------------------------------------------
+[  125s] -----------------------------------------------------------------
+[  130s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/9dbd6c0d937cce250ad1c05631268125-aubio' /home/abuild/rpmbuild/SOURCES/aubio.spec
+[  130s] Building target platforms: riscv64-suse-linux
+[  130s] Building for target riscv64-suse-linux
+[  130s] setting SOURCE_DATE_EPOCH=1670889600
+[  131s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.5n6XuN
+[  131s] + umask 022
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + cd /home/abuild/rpmbuild/BUILD
+[  131s] + rm -rf aubio-0.4.9
+[  131s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/aubio-0.4.9.tar.bz2
+[  132s] + STATUS=0
+[  132s] + '[' 0 -ne 0 ']'
+[  132s] + cd aubio-0.4.9
+[  132s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  132s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/cdfe9ce.patch
+[  132s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  133s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/8a05420.patch
+[  133s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[  133s] + sed -i -e s#/lib#/lib64# src/wscript_build
+[  133s] + sed -i -e 's#python\ ${SRC}#python3 ${SRC}#g' tests/wscript_build
+[  133s] + RPM_EC=0
+[  134s] ++ jobs -p
+[  134s] + exit 0
+[  134s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.AlfghR
+[  134s] + umask 022
+[  134s] + cd /home/abuild/rpmbuild/BUILD
+[  134s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/aubio-0.4.9-7.3.riscv64
+[  134s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/aubio-0.4.9-7.3.riscv64
+[  134s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  134s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/aubio-0.4.9-7.3.riscv64
+[  134s] + cd aubio-0.4.9
+[  134s] + ref=/usr/lib/rpm
+[  134s] + mints=0
+[  134s] + case $(uname -m) in
+[  134s] ++ uname -m
+[  134s] + mints=20160911
+[  134s] + for s in guess sub
+[  134s] ++ find -maxdepth 8 -name config.guess
+[  135s] + for s in guess sub
+[  135s] ++ find -maxdepth 8 -name config.sub
+[  135s] + python3 ./waf configure --prefix=/usr --libdir=/usr/lib64 --enable-fftw3
+[  141s] Setting top to                           : /home/abuild/rpmbuild/BUILD/aubio-0.4.9 
+[  142s] Setting out to                           : /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build 
+[  144s] Checking for 'gcc' (C compiler)          : /usr/bin/gcc 
+[  147s] Checking for header stdlib.h             : yes 
+[  149s] Checking for header stdio.h              : yes 
+[  152s] Checking for header math.h               : yes 
+[  154s] Checking for header string.h             : yes 
+[  156s] Checking for header errno.h              : yes 
+[  158s] Checking for header limits.h             : yes 
+[  159s] Checking for header stdarg.h             : yes 
+[  161s] Checking for header getopt.h             : yes 
+[  163s] Checking for header unistd.h             : yes 
+[  166s] Checking for library m                   : yes 
+[  167s] Checking for C99 __VA_ARGS__ macro       : yes 
+[  167s] Checking for size of smpl_t              : float 
+[  167s] Checking for size of lsmp_t              : double 
+[  167s] Checking if complex.h is enabled         : no 
+[  167s] Checking for program 'pkg-config'        : /usr/bin/pkg-config 
+[  168s] Checking for 'fftw3f'                    : yes 
+[  168s] Checking for FFT implementation          : fftw3f 
+[  168s] Checking for 'sndfile'                   : yes 
+[  168s] Checking for 'samplerate'                : yes 
+[  168s] Checking for 'jack'                      : yes 
+[  169s] Checking for 'libavcodec'                : yes 
+[  169s] Checking for 'libavformat'               : yes 
+[  169s] Checking for 'libavutil'                 : yes 
+[  170s] Checking for 'libswresample'             : yes 
+[  170s] Checking for all libav libraries         : yes 
+[  170s] Checking if using source_wavread         : yes 
+[  170s] Checking if using sink_wavwrite          : yes 
+[  170s] Checking for program 'txt2man'           : /usr/bin/txt2man 
+[  170s] Checking for program 'doxygen'           : /usr/bin/doxygen 
+[  170s] Checking for program 'sphinx-build'      : not found 
+[  170s] 'configure' finished successfully (28.181s)
+[  170s] + python3 ./waf build -v -j4
+[  174s] Waf: Entering directory `/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build'
+[  187s] Sphinx manual: install aubio first 
+[  189s] [  1/232] Compiling src/spectral/dct.c
+[  189s] 03:35:02 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct.c.1.o']
+[  189s] [  2/232] Compiling src/io/utils_apple_audio.c
+[  189s] 03:35:02 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/utils_apple_audio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/utils_apple_audio.c.1.o']
+[  189s] [  3/232] Compiling src/io/sink_apple_audio.c
+[  189s] 03:35:03 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/sink_apple_audio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/sink_apple_audio.c.1.o']
+[  189s] [  4/232] Compiling src/fvec.c
+[  189s] 03:35:03 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/fvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/fvec.c.1.o']
+[  192s] [  5/232] Compiling src/cvec.c
+[  192s] 03:35:05 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/cvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/cvec.c.1.o']
+[  192s] [  6/232] Compiling src/vecutils.c
+[  192s] 03:35:05 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/vecutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/vecutils.c.1.o']
+[  193s] [  7/232] Compiling src/utils/windll.c
+[  193s] 03:35:07 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/utils/windll.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/utils/windll.c.1.o']
+[  195s] [  8/232] Compiling src/utils/parameter.c
+[  195s] 03:35:08 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/utils/parameter.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/utils/parameter.c.1.o']
+[  196s] [  9/232] Compiling src/temporal/filter.c
+[  196s] 03:35:09 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/temporal/filter.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/temporal/filter.c.1.o']
+[  196s] [ 10/232] Compiling src/temporal/resampler.c
+[  196s] 03:35:09 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/temporal/resampler.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/temporal/resampler.c.1.o']
+[  197s] [ 11/232] Compiling src/temporal/c_weighting.c
+[  197s] 03:35:10 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/temporal/c_weighting.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/temporal/c_weighting.c.1.o']
+[  199s] [ 12/232] Compiling src/temporal/biquad.c
+[  199s] 03:35:12 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/temporal/biquad.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/temporal/biquad.c.1.o']
+[  199s] [ 13/232] Compiling src/pitch/pitchschmitt.c
+[  199s] 03:35:13 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchschmitt.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchschmitt.c.1.o']
+[  200s] [ 14/232] Compiling src/io/source_avcodec.c
+[  200s] 03:35:13 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/source_avcodec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/source_avcodec.c.1.o']
+[  200s] [ 15/232] Compiling src/temporal/a_weighting.c
+[  200s] 03:35:13 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/temporal/a_weighting.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/temporal/a_weighting.c.1.o']
+[  202s] [ 16/232] Compiling src/tempo/tempo.c
+[  202s] 03:35:15 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/tempo/tempo.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/tempo/tempo.c.1.o']
+[  204s] [ 17/232] Compiling src/pitch/pitchmcomb.c
+[  204s] 03:35:17 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchmcomb.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchmcomb.c.1.o']
+[  204s] [ 18/232] Compiling src/tempo/beattracking.c
+[  204s] 03:35:18 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/tempo/beattracking.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/tempo/beattracking.c.1.o']
+[  207s] [ 19/232] Compiling src/synth/wavetable.c
+[  207s] 03:35:20 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/synth/wavetable.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/synth/wavetable.c.1.o']
+[  207s] ../src/io/source_avcodec.c: In function ‘new_aubio_source_avcodec’:
+[  207s] ../src/io/source_avcodec.c:230:9: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+[  207s]   230 |   codec = avcodec_find_decoder(codecpar->codec_id);
+[  207s]       |         ^
+[  207s] ../src/io/source_avcodec.c:274:3: warning: ‘channels’ is deprecated [-Wdeprecated-declarations]
+[  207s]   274 |   s->input_channels   = avCodecCtx->channels;
+[  207s]       |   ^
+[  207s] In file included from ../src/io/source_avcodec.c:25:
+[  207s] /usr/include/ffmpeg/libavcodec/avcodec.h:1006:9: note: declared here
+[  207s]  1006 |     int channels;
+[  207s]       |         ^~~~~~~~
+[  207s] ../src/io/source_avcodec.c: In function ‘aubio_source_avcodec_reset_resampler’:
+[  207s] ../src/io/source_avcodec.c:339:5: warning: ‘av_get_default_channel_layout’ is deprecated [-Wdeprecated-declarations]
+[  207s]   339 |     int64_t input_layout = av_get_default_channel_layout(s->input_channels);
+[  207s]       |     ^~~~~~~
+[  207s] In file included from /usr/include/ffmpeg/libavutil/frame.h:33,
+[  207s]                  from /usr/include/ffmpeg/libavcodec/avcodec.h:35:
+[  207s] /usr/include/ffmpeg/libavutil/channel_layout.h:457:9: note: declared here
+[  207s]   457 | int64_t av_get_default_channel_layout(int nb_channels);
+[  207s]       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  207s] ../src/io/source_avcodec.c:340:5: warning: ‘av_get_default_channel_layout’ is deprecated [-Wdeprecated-declarations]
+[  207s]   340 |     int64_t output_layout = av_get_default_channel_layout(s->input_channels);
+[  207s]       |     ^~~~~~~
+[  207s] /usr/include/ffmpeg/libavutil/channel_layout.h:457:9: note: declared here
+[  207s]   457 | int64_t av_get_default_channel_layout(int nb_channels);
+[  207s]       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[  207s] ../src/io/source_avcodec.c: In function ‘aubio_source_avcodec_readframe’:
+[  207s] ../src/io/source_avcodec.c:400:3: warning: ‘channels’ is deprecated [-Wdeprecated-declarations]
+[  207s]   400 |   int max_out_samples = AUBIO_AVCODEC_MAX_BUFFER_SIZE / avCodecCtx->channels;
+[  207s]       |   ^~~
+[  207s] /usr/include/ffmpeg/libavcodec/avcodec.h:1006:9: note: declared here
+[  207s]  1006 |     int channels;
+[  207s]       |         ^~~~~~~~
+[  207s] ../src/io/source_avcodec.c:469:3: warning: ‘channels’ is deprecated [-Wdeprecated-declarations]
+[  207s]   469 |   if (avFrame->channels != (sint_t)s->input_channels) {
+[  207s]       |   ^~
+[  207s] /usr/include/ffmpeg/libavutil/frame.h:643:9: note: declared here
+[  207s]   643 |     int channels;
+[  207s]       |         ^~~~~~~~
+[  207s] ../src/io/source_avcodec.c:470:5: warning: ‘channels’ is deprecated [-Wdeprecated-declarations]
+[  207s]   470 |     AUBIO_WRN ("source_avcodec: trying to read from %d channel(s),"
+[  207s]       |     ^~~~~~~~~
+[  207s] /usr/include/ffmpeg/libavutil/frame.h:643:9: note: declared here
+[  207s]   643 |     int channels;
+[  207s]       |         ^~~~~~~~
+[  207s] ../src/io/source_avcodec.c:491:3: warning: ‘channels’ is deprecated [-Wdeprecated-declarations]
+[  207s]   491 |   max_out_samples = AUBIO_AVCODEC_MAX_BUFFER_SIZE / avCodecCtx->channels;
+[  207s]       |   ^~~~~~~~~~~~~~~
+[  207s] /usr/include/ffmpeg/libavcodec/avcodec.h:1006:9: note: declared here
+[  207s]  1006 |     int channels;
+[  207s]       |         ^~~~~~~~
+[  207s] ../src/io/source_avcodec.c: In function ‘aubio_source_avcodec_get_duration’:
+[  207s] ../src/io/source_avcodec.c:641:30: warning: the comparison will always evaluate as ‘true’ for the address of ‘avFormatCtx’ will never be NULL [-Waddress]
+[  207s]   641 |   if (s && &(s->avFormatCtx) != NULL) {
+[  207s]       |                              ^~
+[  207s] ../src/io/source_avcodec.c:86:20: note: ‘avFormatCtx’ declared here
+[  207s]    86 |   AVFormatContext *avFormatCtx;
+[  207s]       |                    ^~~~~~~~~~~
+[  207s] 
+[  207s] [ 20/232] Compiling src/pitch/pitchfcomb.c
+[  207s] 03:35:21 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchfcomb.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchfcomb.c.1.o']
+[  209s] [ 21/232] Compiling src/io/source_apple_audio.c
+[  209s] 03:35:22 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/source_apple_audio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/source_apple_audio.c.1.o']
+[  210s] [ 22/232] Compiling src/io/ioutils.c
+[  210s] 03:35:23 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/ioutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/ioutils.c.1.o']
+[  211s] [ 23/232] Compiling src/fmat.c
+[  211s] 03:35:24 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/fmat.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/fmat.c.1.o']
+[  211s] [ 24/232] Compiling src/synth/sampler.c
+[  211s] 03:35:25 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/synth/sampler.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/synth/sampler.c.1.o']
+[  212s] [ 25/232] Compiling src/spectral/tss.c
+[  212s] 03:35:26 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/tss.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/tss.c.1.o']
+[  214s] [ 26/232] Compiling src/pitch/pitch.c
+[  214s] 03:35:27 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitch.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitch.c.1.o']
+[  215s] [ 27/232] Compiling src/spectral/statistics.c
+[  215s] 03:35:29 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/statistics.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/statistics.c.1.o']
+[  217s] [ 28/232] Compiling src/spectral/specdesc.c
+[  217s] 03:35:30 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/specdesc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/specdesc.c.1.o']
+[  217s] [ 29/232] Compiling src/onset/peakpicker.c
+[  217s] 03:35:30 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/onset/peakpicker.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/onset/peakpicker.c.1.o']
+[  219s] [ 30/232] Compiling src/io/source.c
+[  219s] 03:35:32 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/source.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/source.c.1.o']
+[  220s] [ 31/232] Compiling src/spectral/phasevoc.c
+[  220s] 03:35:34 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/phasevoc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/phasevoc.c.1.o']
+[  221s] [ 32/232] Compiling src/spectral/ooura_fft8g.c
+[  221s] 03:35:35 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/ooura_fft8g.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/ooura_fft8g.c.1.o']
+[  222s] [ 33/232] Compiling src/onset/onset.c
+[  222s] 03:35:35 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/onset/onset.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/onset/onset.c.1.o']
+[  222s] [ 34/232] Compiling src/spectral/mfcc.c
+[  222s] 03:35:36 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/mfcc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/mfcc.c.1.o']
+[  225s] [ 35/232] Compiling src/spectral/filterbank_mel.c
+[  225s] 03:35:38 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/filterbank_mel.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/filterbank_mel.c.1.o']
+[  227s] [ 36/232] Compiling src/notes/notes.c
+[  227s] 03:35:40 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/notes/notes.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/notes/notes.c.1.o']
+[  227s] [ 37/232] Compiling src/io/sink_wavwrite.c
+[  227s] 03:35:41 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/sink_wavwrite.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/sink_wavwrite.c.1.o']
+[  231s] [ 38/232] Compiling src/io/audio_unit.c
+[  232s] 03:35:45 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/audio_unit.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/audio_unit.c.1.o']
+[  232s] [ 39/232] Compiling src/spectral/filterbank.c
+[  232s] 03:35:45 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/filterbank.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/filterbank.c.1.o']
+[  233s] [ 40/232] Compiling src/spectral/fft.c
+[  233s] 03:35:46 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/fft.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/fft.c.1.o']
+[  234s] [ 41/232] Compiling src/musicutils.c
+[  234s] 03:35:47 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/musicutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/musicutils.c.1.o']
+[  235s] [ 42/232] Compiling src/spectral/dct_plain.c
+[  235s] 03:35:48 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct_plain.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct_plain.c.1.o']
+[  237s] [ 43/232] Compiling src/spectral/dct_ooura.c
+[  237s] 03:35:50 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct_ooura.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct_ooura.c.1.o']
+[  238s] [ 44/232] Compiling src/mathutils.c
+[  238s] 03:35:51 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/mathutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/mathutils.c.1.o']
+[  238s] [ 45/232] Compiling src/io/sink_sndfile.c
+[  238s] 03:35:52 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/sink_sndfile.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/sink_sndfile.c.1.o']
+[  239s] [ 46/232] Compiling src/spectral/dct_ipp.c
+[  239s] 03:35:52 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct_ipp.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct_ipp.c.1.o']
+[  241s] [ 47/232] Compiling src/spectral/dct_fftw.c
+[  241s] 03:35:54 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct_fftw.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct_fftw.c.1.o']
+[  243s] [ 48/232] Compiling src/lvec.c
+[  243s] 03:35:57 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/lvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/lvec.c.1.o']
+[  244s] [ 49/232] Compiling src/spectral/dct_accelerate.c
+[  244s] 03:35:57 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/dct_accelerate.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/dct_accelerate.c.1.o']
+[  245s] [ 50/232] Compiling src/pitch/pitchspecacf.c
+[  245s] 03:35:58 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchspecacf.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchspecacf.c.1.o']
+[  246s] [ 51/232] Compiling src/utils/scale.c
+[  246s] 03:35:59 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/utils/scale.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/utils/scale.c.1.o']
+[  247s] [ 52/232] Compiling src/io/sink.c
+[  247s] 03:36:00 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/sink.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/sink.c.1.o']
+[  248s] [ 53/232] Compiling src/io/source_sndfile.c
+[  248s] 03:36:02 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/source_sndfile.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/source_sndfile.c.1.o']
+[  249s] [ 54/232] Compiling src/spectral/awhitening.c
+[  249s] 03:36:02 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/spectral/awhitening.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/spectral/awhitening.c.1.o']
+[  250s] [ 55/232] Compiling src/io/source_wavread.c
+[  250s] 03:36:03 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/io/source_wavread.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/io/source_wavread.c.1.o']
+[  250s] [ 56/232] Compiling src/pitch/pitchyin.c
+[  250s] 03:36:04 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchyin.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchyin.c.1.o']
+[  253s] [ 57/232] Compiling src/utils/hist.c
+[  253s] 03:36:06 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/utils/hist.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/utils/hist.c.1.o']
+[  253s] [ 58/232] Compiling src/pitch/pitchyinfft.c
+[  253s] 03:36:07 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchyinfft.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchyinfft.c.1.o']
+[  255s] [ 59/232] Compiling src/utils/log.c
+[  255s] 03:36:08 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/utils/log.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/utils/log.c.1.o']
+[  257s] [ 60/232] Compiling src/pitch/pitchyinfast.c
+[  257s] 03:36:10 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../src/pitch/pitchyinfast.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/pitch/pitchyinfast.c.1.o']
+[  258s] [ 61/232] Compiling examples/jackio.c
+[  258s] 03:36:11 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/jackio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/jackio.c.1.o']
+[  258s] [ 62/232] Compiling examples/utils.c
+[  258s] 03:36:12 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/utils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/utils.c.1.o']
+[  258s] [ 63/232] Compiling tests/src/io/test-sink.c
+[  258s] 03:36:12 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-sink.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-sink.c.2.o']
+[  261s] [ 64/232] Compiling tests/src/io/test-sink_apple_audio.c
+[  261s] 03:36:14 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-sink_apple_audio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-sink_apple_audio.c.3.o']
+[  263s] [ 65/232] Compiling tests/src/io/test-sink_sndfile.c
+[  263s] 03:36:16 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-sink_sndfile.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-sink_sndfile.c.4.o']
+[  263s] [ 66/232] Linking build/src/libaubio.so
+[  263s] 03:36:16 runner ['/usr/bin/gcc', '-shared', '-Wl,-h,libaubio.so.5', 'src/cvec.c.1.o', 'src/fmat.c.1.o', 'src/fvec.c.1.o', 'src/io/audio_unit.c.1.o', 'src/io/ioutils.c.1.o', 'src/io/sink.c.1.o', 'src/io/sink_apple_audio.c.1.o', 'src/io/sink_sndfile.c.1.o', 'src/io/sink_wavwrite.c.1.o', 'src/io/source.c.1.o', 'src/io/source_apple_audio.c.1.o', 'src/io/source_avcodec.c.1.o', 'src/io/source_sndfile.c.1.o', 'src/io/source_wavread.c.1.o', 'src/io/utils_apple_audio.c.1.o', 'src/lvec.c.1.o', 'src/mathutils.c.1.o', 'src/musicutils.c.1.o', 'src/notes/notes.c.1.o', 'src/onset/onset.c.1.o', 'src/onset/peakpicker.c.1.o', 'src/pitch/pitch.c.1.o', 'src/pitch/pitchfcomb.c.1.o', 'src/pitch/pitchmcomb.c.1.o', 'src/pitch/pitchschmitt.c.1.o', 'src/pitch/pitchspecacf.c.1.o', 'src/pitch/pitchyin.c.1.o', 'src/pitch/pitchyinfast.c.1.o', 'src/pitch/pitchyinfft.c.1.o', 'src/spectral/awhitening.c.1.o', 'src/spectral/dct.c.1.o', 'src/spectral/dct_accelerate.c.1.o', 'src/spectral/dct_fftw.c.1.o', 'src/spectral/dct_ipp.c.1.o', 'src/spectral/dct_ooura.c.1.o', 'src/spectral/dct_plain.c.1.o', 'src/spectral/fft.c.1.o', 'src/spectral/filterbank.c.1.o', 'src/spectral/filterbank_mel.c.1.o', 'src/spectral/mfcc.c.1.o', 'src/spectral/ooura_fft8g.c.1.o', 'src/spectral/phasevoc.c.1.o', 'src/spectral/specdesc.c.1.o', 'src/spectral/statistics.c.1.o', 'src/spectral/tss.c.1.o', 'src/synth/sampler.c.1.o', 'src/synth/wavetable.c.1.o', 'src/tempo/beattracking.c.1.o', 'src/tempo/tempo.c.1.o', 'src/temporal/a_weighting.c.1.o', 'src/temporal/biquad.c.1.o', 'src/temporal/c_weighting.c.1.o', 'src/temporal/filter.c.1.o', 'src/temporal/resampler.c.1.o', 'src/utils/hist.c.1.o', 'src/utils/log.c.1.o', 'src/utils/parameter.c.1.o', 'src/utils/scale.c.1.o', 'src/utils/windll.c.1.o', 'src/vecutils.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/src/libaubio.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  264s] [ 67/232] Compiling tests/src/io/test-sink_wavwrite.c
+[  264s] 03:36:17 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-sink_wavwrite.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-sink_wavwrite.c.5.o']
+[  265s] [ 68/232] Compiling tests/src/io/test-source.c
+[  265s] 03:36:18 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-source.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-source.c.6.o']
+[  265s] [ 69/232] Compiling tests/src/io/test-source_apple_audio.c
+[  265s] 03:36:18 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-source_apple_audio.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-source_apple_audio.c.7.o']
+[  267s] [ 70/232] Compiling tests/src/io/test-source_avcodec.c
+[  267s] 03:36:20 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-source_avcodec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-source_avcodec.c.8.o']
+[  269s] [ 71/232] Linking build/tests/test-sink
+[  269s] 03:36:22 runner ['/usr/bin/gcc', 'tests/src/io/test-sink.c.2.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  269s] [ 72/232] Linking build/tests/test-sink_apple_audio
+[  269s] 03:36:22 runner ['/usr/bin/gcc', 'tests/src/io/test-sink_apple_audio.c.3.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_apple_audio', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  269s] [ 73/232] Linking build/tests/test-sink_sndfile
+[  269s] 03:36:22 runner ['/usr/bin/gcc', 'tests/src/io/test-sink_sndfile.c.4.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_sndfile', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  269s] [ 74/232] Linking build/tests/test-sink_wavwrite
+[  269s] 03:36:23 runner ['/usr/bin/gcc', 'tests/src/io/test-sink_wavwrite.c.5.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_wavwrite', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  270s] [ 75/232] Linking build/tests/test-source
+[  270s] 03:36:23 runner ['/usr/bin/gcc', 'tests/src/io/test-source.c.6.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  270s] [ 76/232] Linking build/tests/test-source_apple_audio
+[  270s] 03:36:24 runner ['/usr/bin/gcc', 'tests/src/io/test-source_apple_audio.c.7.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_apple_audio', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  270s] [ 77/232] Compiling tests/src/io/test-source_sndfile.c
+[  270s] 03:36:24 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-source_sndfile.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-source_sndfile.c.9.o']
+[  270s] [ 78/232] Compiling tests/src/io/test-source_wavread.c
+[  270s] 03:36:24 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/io/test-source_wavread.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/io/test-source_wavread.c.10.o']
+[  271s] [ 79/232] Compiling tests/src/notes/test-notes.c
+[  271s] 03:36:24 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/notes/test-notes.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/notes/test-notes.c.11.o']
+[  271s] [ 80/232] Linking build/tests/test-source_avcodec
+[  271s] 03:36:24 runner ['/usr/bin/gcc', 'tests/src/io/test-source_avcodec.c.8.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  272s] [ 81/232] Compiling tests/src/onset/test-onset.c
+[  272s] 03:36:25 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/onset/test-onset.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/onset/test-onset.c.12.o']
+[  273s] [ 82/232] Compiling tests/src/onset/test-peakpicker.c
+[  273s] 03:36:27 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/onset/test-peakpicker.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/onset/test-peakpicker.c.13.o']
+[  275s] [ 83/232] Linking build/tests/test-notes
+[  275s] 03:36:28 runner ['/usr/bin/gcc', 'tests/src/notes/test-notes.c.11.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-notes', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  275s] [ 84/232] Linking build/tests/test-source_sndfile
+[  275s] 03:36:29 runner ['/usr/bin/gcc', 'tests/src/io/test-source_sndfile.c.9.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_sndfile', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  276s] [ 85/232] Linking build/tests/test-peakpicker
+[  276s] 03:36:29 runner ['/usr/bin/gcc', 'tests/src/onset/test-peakpicker.c.13.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-peakpicker', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  276s] [ 86/232] Linking build/tests/test-onset
+[  276s] 03:36:29 runner ['/usr/bin/gcc', 'tests/src/onset/test-onset.c.12.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-onset', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  276s] [ 87/232] Compiling tests/src/pitch/test-pitch.c
+[  276s] 03:36:30 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitch.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitch.c.14.o']
+[  276s] [ 88/232] Compiling tests/src/pitch/test-pitchfcomb.c
+[  276s] 03:36:30 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchfcomb.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchfcomb.c.15.o']
+[  277s] [ 89/232] Compiling tests/src/pitch/test-pitchmcomb.c
+[  277s] 03:36:30 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchmcomb.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchmcomb.c.16.o']
+[  277s] [ 90/232] Linking build/tests/test-source_wavread
+[  277s] 03:36:31 runner ['/usr/bin/gcc', 'tests/src/io/test-source_wavread.c.10.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_wavread', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  278s] [ 91/232] Compiling tests/src/pitch/test-pitchschmitt.c
+[  278s] 03:36:31 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchschmitt.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchschmitt.c.17.o']
+[  278s] [ 92/232] Compiling tests/src/pitch/test-pitchspecacf.c
+[  278s] 03:36:32 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchspecacf.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchspecacf.c.18.o']
+[  279s] [ 93/232] Linking build/tests/test-pitchfcomb
+[  279s] 03:36:33 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchfcomb.c.15.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchfcomb', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  280s] [ 94/232] Linking build/tests/test-pitchmcomb
+[  280s] 03:36:33 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchmcomb.c.16.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchmcomb', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  281s] [ 95/232] Linking build/tests/test-pitch
+[  281s] 03:36:34 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitch.c.14.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitch', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  281s] [ 96/232] Compiling tests/src/pitch/test-pitchyin.c
+[  281s] 03:36:34 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchyin.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchyin.c.19.o']
+[  281s] [ 97/232] Compiling tests/src/pitch/test-pitchyinfft.c
+[  281s] 03:36:34 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/pitch/test-pitchyinfft.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/pitch/test-pitchyinfft.c.20.o']
+[  281s] [ 98/232] Linking build/tests/test-pitchschmitt
+[  281s] 03:36:34 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchschmitt.c.17.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchschmitt', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  282s] [ 99/232] Linking build/tests/test-pitchspecacf
+[  282s] 03:36:35 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchspecacf.c.18.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchspecacf', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  282s] [100/232] Compiling tests/src/spectral/test-awhitening.c
+[  282s] 03:36:35 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-awhitening.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-awhitening.c.21.o']
+[  283s] [101/232] Compiling tests/src/spectral/test-dct.c
+[  283s] 03:36:36 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-dct.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-dct.c.22.o']
+[  284s] [102/232] Compiling tests/src/spectral/test-fft.c
+[  284s] 03:36:37 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-fft.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-fft.c.23.o']
+[  284s] [103/232] Linking build/tests/test-pitchyin
+[  284s] 03:36:37 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchyin.c.19.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyin', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  285s] [104/232] Linking build/tests/test-pitchyinfft
+[  285s] 03:36:38 runner ['/usr/bin/gcc', 'tests/src/pitch/test-pitchyinfft.c.20.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyinfft', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  286s] [105/232] Compiling tests/src/spectral/test-filterbank.c
+[  286s] 03:36:39 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-filterbank.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-filterbank.c.24.o']
+[  286s] [106/232] Linking build/tests/test-fft
+[  286s] 03:36:39 runner ['/usr/bin/gcc', 'tests/src/spectral/test-fft.c.23.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fft', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  287s] [107/232] Compiling tests/src/spectral/test-filterbank_mel.c
+[  287s] 03:36:40 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-filterbank_mel.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-filterbank_mel.c.25.o']
+[  288s] [108/232] Compiling tests/src/spectral/test-mfcc.c
+[  288s] 03:36:41 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-mfcc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-mfcc.c.26.o']
+[  288s] [109/232] Linking build/tests/test-awhitening
+[  288s] 03:36:41 runner ['/usr/bin/gcc', 'tests/src/spectral/test-awhitening.c.21.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-awhitening', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  289s] [110/232] Linking build/tests/test-dct
+[  289s] 03:36:42 runner ['/usr/bin/gcc', 'tests/src/spectral/test-dct.c.22.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-dct', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  289s] [111/232] Linking build/tests/test-filterbank
+[  289s] 03:36:43 runner ['/usr/bin/gcc', 'tests/src/spectral/test-filterbank.c.24.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  290s] [112/232] Compiling tests/src/spectral/test-phasevoc.c
+[  290s] 03:36:43 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-phasevoc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-phasevoc.c.27.o']
+[  290s] [113/232] Linking build/tests/test-filterbank_mel
+[  290s] 03:36:43 runner ['/usr/bin/gcc', 'tests/src/spectral/test-filterbank_mel.c.25.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank_mel', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  291s] [114/232] Compiling tests/src/spectral/test-specdesc.c
+[  291s] 03:36:44 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-specdesc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-specdesc.c.28.o']
+[  291s] [115/232] Compiling tests/src/spectral/test-tss.c
+[  291s] 03:36:44 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/spectral/test-tss.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/spectral/test-tss.c.29.o']
+[  292s] [116/232] Compiling tests/src/synth/test-sampler.c
+[  292s] 03:36:46 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/synth/test-sampler.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/synth/test-sampler.c.30.o']
+[  292s] [117/232] Linking build/tests/test-phasevoc
+[  292s] 03:36:46 runner ['/usr/bin/gcc', 'tests/src/spectral/test-phasevoc.c.27.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-phasevoc', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  293s] [118/232] Linking build/tests/test-mfcc
+[  293s] 03:36:46 runner ['/usr/bin/gcc', 'tests/src/spectral/test-mfcc.c.26.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mfcc', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  294s] [119/232] Linking build/tests/test-specdesc
+[  294s] 03:36:47 runner ['/usr/bin/gcc', 'tests/src/spectral/test-specdesc.c.28.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-specdesc', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  294s] [120/232] Compiling tests/src/synth/test-wavetable.c
+[  294s] 03:36:47 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/synth/test-wavetable.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/synth/test-wavetable.c.31.o']
+[  294s] [121/232] Compiling tests/src/tempo/test-beattracking.c
+[  294s] 03:36:47 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/tempo/test-beattracking.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/tempo/test-beattracking.c.32.o']
+[  294s] [122/232] Linking build/tests/test-tss
+[  294s] 03:36:48 runner ['/usr/bin/gcc', 'tests/src/spectral/test-tss.c.29.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tss', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  296s] [123/232] Compiling tests/src/tempo/test-tempo.c
+[  296s] 03:36:49 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/tempo/test-tempo.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/tempo/test-tempo.c.33.o']
+[  297s] [124/232] Compiling tests/src/temporal/test-a_weighting.c
+[  297s] 03:36:50 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/temporal/test-a_weighting.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/temporal/test-a_weighting.c.34.o']
+[  297s] [125/232] Linking build/tests/test-sampler
+[  297s] 03:36:50 runner ['/usr/bin/gcc', 'tests/src/synth/test-sampler.c.30.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sampler', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  298s] [126/232] Linking build/tests/test-beattracking
+[  298s] 03:36:51 runner ['/usr/bin/gcc', 'tests/src/tempo/test-beattracking.c.32.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-beattracking', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  298s] [127/232] Linking build/tests/test-wavetable
+[  298s] 03:36:52 runner ['/usr/bin/gcc', 'tests/src/synth/test-wavetable.c.31.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-wavetable', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  299s] [128/232] Compiling tests/src/temporal/test-biquad.c
+[  299s] 03:36:52 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/temporal/test-biquad.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/temporal/test-biquad.c.35.o']
+[  299s] [129/232] Compiling tests/src/temporal/test-c_weighting.c
+[  300s] 03:36:53 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/temporal/test-c_weighting.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/temporal/test-c_weighting.c.36.o']
+[  300s] [130/232] Compiling tests/src/temporal/test-filter.c
+[  300s] 03:36:53 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/temporal/test-filter.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/temporal/test-filter.c.37.o']
+[  301s] [131/232] Compiling tests/src/temporal/test-resampler.c
+[  301s] 03:36:54 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/temporal/test-resampler.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/temporal/test-resampler.c.38.o']
+[  302s] [132/232] Linking build/tests/test-tempo
+[  302s] 03:36:55 runner ['/usr/bin/gcc', 'tests/src/tempo/test-tempo.c.33.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tempo', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  302s] [133/232] Linking build/tests/test-a_weighting
+[  302s] 03:36:55 runner ['/usr/bin/gcc', 'tests/src/temporal/test-a_weighting.c.34.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-a_weighting', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  302s] [134/232] Linking build/tests/test-biquad
+[  302s] 03:36:56 runner ['/usr/bin/gcc', 'tests/src/temporal/test-biquad.c.35.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-biquad', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  303s] [135/232] Linking build/tests/test-c_weighting
+[  303s] 03:36:56 runner ['/usr/bin/gcc', 'tests/src/temporal/test-c_weighting.c.36.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-c_weighting', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  303s] [136/232] Linking build/tests/test-filter
+[  303s] 03:36:56 runner ['/usr/bin/gcc', 'tests/src/temporal/test-filter.c.37.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filter', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  303s] [137/232] Compiling tests/src/test-cvec.c
+[  303s] 03:36:56 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-cvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-cvec.c.39.o']
+[  303s] [138/232] Compiling tests/src/test-fmat.c
+[  303s] 03:36:57 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-fmat.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-fmat.c.40.o']
+[  304s] [139/232] Linking build/tests/test-resampler
+[  304s] 03:36:57 runner ['/usr/bin/gcc', 'tests/src/temporal/test-resampler.c.38.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-resampler', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  304s] [140/232] Compiling tests/src/test-fvec.c
+[  304s] 03:36:57 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-fvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-fvec.c.41.o']
+[  305s] [141/232] Compiling tests/src/test-lvec.c
+[  305s] 03:36:58 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-lvec.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-lvec.c.42.o']
+[  308s] [142/232] Compiling tests/src/test-mathutils-window.c
+[  308s] 03:37:01 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-mathutils-window.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-mathutils-window.c.43.o']
+[  309s] [143/232] Linking build/tests/test-fmat
+[  309s] 03:37:02 runner ['/usr/bin/gcc', 'tests/src/test-fmat.c.40.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fmat', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  309s] [144/232] Linking build/tests/test-fvec
+[  309s] 03:37:02 runner ['/usr/bin/gcc', 'tests/src/test-fvec.c.41.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fvec', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  310s] [145/232] Linking build/tests/test-cvec
+[  310s] 03:37:03 runner ['/usr/bin/gcc', 'tests/src/test-cvec.c.39.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-cvec', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  310s] [146/232] Compiling tests/src/test-mathutils.c
+[  310s] 03:37:03 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-mathutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-mathutils.c.44.o']
+[  310s] [147/232] Compiling tests/src/test-vecutils.c
+[  310s] 03:37:03 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/test-vecutils.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/test-vecutils.c.45.o']
+[  310s] [148/232] Linking build/tests/test-lvec
+[  310s] 03:37:04 runner ['/usr/bin/gcc', 'tests/src/test-lvec.c.42.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-lvec', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  311s] [149/232] Compiling tests/src/utils/test-hist.c
+[  311s] 03:37:04 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/utils/test-hist.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/utils/test-hist.c.46.o']
+[  312s] [150/232] Compiling tests/src/utils/test-log.c
+[  312s] 03:37:05 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/utils/test-log.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/utils/test-log.c.47.o']
+[  313s] [151/232] Linking build/tests/test-mathutils-window
+[  313s] 03:37:06 runner ['/usr/bin/gcc', 'tests/src/test-mathutils-window.c.43.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils-window', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  313s] [152/232] Linking build/tests/test-hist
+[  313s] 03:37:07 runner ['/usr/bin/gcc', 'tests/src/utils/test-hist.c.46.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-hist', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  314s] [153/232] Compiling tests/src/utils/test-parameter.c
+[  314s] 03:37:08 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/utils/test-parameter.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/utils/test-parameter.c.48.o']
+[  315s] [154/232] Linking build/tests/test-vecutils
+[  315s] 03:37:08 runner ['/usr/bin/gcc', 'tests/src/test-vecutils.c.45.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-vecutils', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  315s] [155/232] Compiling tests/src/utils/test-scale.c
+[  315s] 03:37:08 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-Itests', '-I../tests', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '-DAUBIO_UNSTABLE_API=1', '-DAUBIO_TESTS_SOURCE=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav', '../tests/src/utils/test-scale.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/src/utils/test-scale.c.49.o']
+[  316s] [156/232] Linking build/tests/test-mathutils
+[  316s] 03:37:09 runner ['/usr/bin/gcc', 'tests/src/test-mathutils.c.44.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  316s] [157/232] Compiling examples/aubiomfcc.c
+[  316s] 03:37:09 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubiomfcc.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiomfcc.c.2.o']
+[  317s] [158/232] Linking build/tests/test-log
+[  317s] 03:37:10 runner ['/usr/bin/gcc', 'tests/src/utils/test-log.c.47.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-log', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  318s] [159/232] Compiling examples/aubionotes.c
+[  318s] 03:37:11 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubionotes.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubionotes.c.3.o']
+[  318s] [160/232] Linking build/tests/test-scale
+[  318s] 03:37:11 runner ['/usr/bin/gcc', 'tests/src/utils/test-scale.c.49.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-scale', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  319s] [161/232] Compiling examples/aubioonset.c
+[  319s] 03:37:13 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubioonset.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubioonset.c.4.o']
+[  320s] [162/232] Compiling examples/aubiopitch.c
+[  320s] 03:37:13 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubiopitch.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiopitch.c.5.o']
+[  322s] [163/232] Linking build/tests/test-parameter
+[  322s] 03:37:15 runner ['/usr/bin/gcc', 'tests/src/utils/test-parameter.c.48.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-parameter', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil']
+[  323s] [164/232] Linking build/examples/aubiomfcc
+[  323s] 03:37:16 runner ['/usr/bin/gcc', 'examples/aubiomfcc.c.2.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiomfcc', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  324s] [165/232] Compiling examples/aubioquiet.c
+[  324s] 03:37:17 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubioquiet.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubioquiet.c.6.o']
+[  324s] [166/232] Linking build/examples/aubionotes
+[  324s] 03:37:18 runner ['/usr/bin/gcc', 'examples/aubionotes.c.3.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubionotes', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  326s] [167/232] Compiling examples/aubiotrack.c
+[  326s] 03:37:19 runner ['/usr/bin/gcc', '-g', '-Wall', '-Wextra', '-O2', '-fPIC', '-Isrc', '-I../src', '-I/usr/include/opus', '-I/usr/include/ffmpeg', '-DHAVE_CONFIG_H=1', '-DAUBIO_PREFIX="/usr"', '-DPACKAGE="aubio"', '../examples/aubiotrack.c', '-c', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiotrack.c.7.o']
+[  326s] [168/232] Linking build/examples/aubioonset
+[  326s] 03:37:19 runner ['/usr/bin/gcc', 'examples/aubioonset.c.4.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubioonset', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  326s] [169/232] Compiling tests/create_tests_source.py
+[  326s] 03:37:19 runner ' python3 ../tests/create_tests_source.py tests/44100Hz_44100f_sine441_stereo.wav '
+[  327s] [170/232] Linking build/examples/aubiopitch
+[  327s] 03:37:21 runner ['/usr/bin/gcc', 'examples/aubiopitch.c.5.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiopitch', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  328s] [171/232] Linking build/src/libaubio.a
+[  328s] 03:37:22 runner ['/usr/bin/ar', 'rcs', 'src/libaubio.a', 'src/cvec.c.1.o', 'src/fmat.c.1.o', 'src/fvec.c.1.o', 'src/io/audio_unit.c.1.o', 'src/io/ioutils.c.1.o', 'src/io/sink.c.1.o', 'src/io/sink_apple_audio.c.1.o', 'src/io/sink_sndfile.c.1.o', 'src/io/sink_wavwrite.c.1.o', 'src/io/source.c.1.o', 'src/io/source_apple_audio.c.1.o', 'src/io/source_avcodec.c.1.o', 'src/io/source_sndfile.c.1.o', 'src/io/source_wavread.c.1.o', 'src/io/utils_apple_audio.c.1.o', 'src/lvec.c.1.o', 'src/mathutils.c.1.o', 'src/musicutils.c.1.o', 'src/notes/notes.c.1.o', 'src/onset/onset.c.1.o', 'src/onset/peakpicker.c.1.o', 'src/pitch/pitch.c.1.o', 'src/pitch/pitchfcomb.c.1.o', 'src/pitch/pitchmcomb.c.1.o', 'src/pitch/pitchschmitt.c.1.o', 'src/pitch/pitchspecacf.c.1.o', 'src/pitch/pitchyin.c.1.o', 'src/pitch/pitchyinfast.c.1.o', 'src/pitch/pitchyinfft.c.1.o', 'src/spectral/awhitening.c.1.o', 'src/spectral/dct.c.1.o', 'src/spectral/dct_accelerate.c.1.o', 'src/spectral/dct_fftw.c.1.o', 'src/spectral/dct_ipp.c.1.o', 'src/spectral/dct_ooura.c.1.o', 'src/spectral/dct_plain.c.1.o', 'src/spectral/fft.c.1.o', 'src/spectral/filterbank.c.1.o', 'src/spectral/filterbank_mel.c.1.o', 'src/spectral/mfcc.c.1.o', 'src/spectral/ooura_fft8g.c.1.o', 'src/spectral/phasevoc.c.1.o', 'src/spectral/specdesc.c.1.o', 'src/spectral/statistics.c.1.o', 'src/spectral/tss.c.1.o', 'src/synth/sampler.c.1.o', 'src/synth/wavetable.c.1.o', 'src/tempo/beattracking.c.1.o', 'src/tempo/tempo.c.1.o', 'src/temporal/a_weighting.c.1.o', 'src/temporal/biquad.c.1.o', 'src/temporal/c_weighting.c.1.o', 'src/temporal/filter.c.1.o', 'src/temporal/resampler.c.1.o', 'src/utils/hist.c.1.o', 'src/utils/log.c.1.o', 'src/utils/parameter.c.1.o', 'src/utils/scale.c.1.o', 'src/utils/windll.c.1.o', 'src/vecutils.c.1.o']
+[  329s] [172/232] Linking build/examples/aubioquiet
+[  329s] 03:37:22 runner ['/usr/bin/gcc', 'examples/aubioquiet.c.6.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubioquiet', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  329s] [173/232] Compiling aubio.pc.in
+[  329s] [174/232] Compiling doc/aubioonset.txt
+[  329s] 03:37:22 runner " /usr/bin/txt2man -t `basename doc/aubioonset.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubioonset.txt > doc/aubioonset.1 "
+[  330s] [175/232] Compiling doc/aubiocut.txt
+[  330s] 03:37:23 runner " /usr/bin/txt2man -t `basename doc/aubiocut.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubiocut.txt > doc/aubiocut.1 "
+[  330s] [176/232] Linking build/examples/aubiotrack
+[  330s] 03:37:24 runner ['/usr/bin/gcc', 'examples/aubiotrack.c.7.o', 'examples/utils.c.1.o', 'examples/jackio.c.1.o', '-o/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/examples/aubiotrack', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-Lsrc', '-laubio', '-lm', '-lfftw3f', '-lsamplerate', '-lsndfile', '-lavcodec', '-lavformat', '-lswresample', '-lavutil', '-ljack']
+[  330s] [177/232] Compiling doc/aubiomfcc.txt
+[  330s] 03:37:24 runner " /usr/bin/txt2man -t `basename doc/aubiomfcc.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubiomfcc.txt > doc/aubiomfcc.1 "
+[  331s] [178/232] Compiling doc/aubio.txt
+[  331s] 03:37:24 runner " /usr/bin/txt2man -t `basename doc/aubio.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubio.txt > doc/aubio.1 "
+[  332s] [179/232] Compiling doc/aubiotrack.txt
+[  332s] 03:37:25 runner " /usr/bin/txt2man -t `basename doc/aubiotrack.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubiotrack.txt > doc/aubiotrack.1 "
+[  332s] [180/232] Compiling doc/aubionotes.txt
+[  332s] 03:37:25 runner " /usr/bin/txt2man -t `basename doc/aubionotes.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubionotes.txt > doc/aubionotes.1 "
+[  332s] [181/232] Compiling doc/aubiopitch.txt
+[  332s] 03:37:25 runner " /usr/bin/txt2man -t `basename doc/aubiopitch.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubiopitch.txt > doc/aubiopitch.1 "
+[  333s] [182/232] Symlinking build/src/libaubio.so
+[  333s] [183/232] Compiling doc/aubioquiet.txt
+[  333s] 03:37:26 runner " /usr/bin/txt2man -t `basename doc/aubioquiet.1 | cut -f 1 -d . | tr a-z A-Z` -r aubio\\ 0.4.9 -P aubio -v aubio\\ User\\'s\\ manual -s 1 ../doc/aubioquiet.txt > doc/aubioquiet.1 "
+[  334s] [184/232] Processing build/tests/test-sink
+[  334s] 03:37:27 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink']
+[  334s] [185/232] Processing build/tests/test-sink_apple_audio
+[  334s] 03:37:27 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_apple_audio']
+[  334s] [186/232] Processing build/tests/test-sink_sndfile
+[  334s] 03:37:27 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_sndfile']
+[  334s] [187/232] Processing build/tests/test-sink_wavwrite
+[  334s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_wavwrite']
+[  334s] [188/232] Processing build/tests/test-source
+[  334s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source']
+[  334s] [189/232] Processing build/tests/test-source_apple_audio
+[  334s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_apple_audio']
+[  335s] [190/232] Processing build/tests/test-source_avcodec
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec']
+[  335s] [191/232] Processing build/tests/test-source_sndfile
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_sndfile']
+[  335s] [192/232] Processing build/tests/test-source_wavread
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_wavread']
+[  335s] [193/232] Processing build/tests/test-notes
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-notes']
+[  335s] [194/232] Processing build/tests/test-onset
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-onset']
+[  335s] [195/232] Processing build/tests/test-peakpicker
+[  335s] 03:37:28 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-peakpicker']
+[  335s] [196/232] Processing build/tests/test-pitch
+[  335s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitch']
+[  335s] [197/232] Processing build/tests/test-pitchfcomb
+[  335s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchfcomb']
+[  335s] [198/232] Processing build/tests/test-pitchmcomb
+[  335s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchmcomb']
+[  335s] [199/232] Processing build/tests/test-pitchschmitt
+[  335s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchschmitt']
+[  336s] [200/232] Processing build/tests/test-pitchspecacf
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchspecacf']
+[  336s] [201/232] Processing build/tests/test-pitchyin
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyin']
+[  336s] [202/232] Processing build/tests/test-pitchyinfft
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyinfft']
+[  336s] [203/232] Processing build/tests/test-awhitening
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-awhitening']
+[  336s] [204/232] Processing build/tests/test-dct
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-dct']
+[  336s] [205/232] Processing build/tests/test-fft
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fft']
+[  336s] [206/232] Processing build/tests/test-filterbank
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank']
+[  336s] [207/232] Processing build/tests/test-filterbank_mel
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank_mel']
+[  336s] [208/232] Processing build/tests/test-mfcc
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mfcc']
+[  336s] [209/232] Processing build/tests/test-phasevoc
+[  336s] 03:37:29 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-phasevoc']
+[  336s] [210/232] Processing build/tests/test-specdesc
+[  336s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-specdesc']
+[  336s] [211/232] Processing build/tests/test-tss
+[  336s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tss']
+[  337s] [212/232] Processing build/tests/test-sampler
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sampler']
+[  337s] [213/232] Processing build/tests/test-wavetable
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-wavetable']
+[  337s] [214/232] Processing build/tests/test-beattracking
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-beattracking']
+[  337s] [215/232] Processing build/tests/test-tempo
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tempo']
+[  337s] [216/232] Processing build/tests/test-a_weighting
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-a_weighting']
+[  337s] [217/232] Processing build/tests/test-biquad
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-biquad']
+[  337s] [218/232] Processing build/tests/test-c_weighting
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-c_weighting']
+[  337s] [219/232] Processing build/tests/test-filter
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filter']
+[  337s] [220/232] Processing build/tests/test-resampler
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-resampler']
+[  337s] [221/232] Processing build/tests/test-cvec
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-cvec']
+[  337s] [222/232] Processing build/tests/test-fmat
+[  337s] 03:37:30 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fmat']
+[  337s] [223/232] Processing build/tests/test-fvec
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fvec']
+[  337s] [224/232] Processing build/tests/test-lvec
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-lvec']
+[  337s] [225/232] Processing build/tests/test-mathutils-window
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils-window']
+[  337s] [226/232] Processing build/tests/test-mathutils
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils']
+[  337s] [227/232] Processing build/tests/test-vecutils
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-vecutils']
+[  337s] [228/232] Processing build/tests/test-hist
+[  337s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-hist']
+[  338s] [229/232] Processing build/tests/test-log
+[  338s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-log']
+[  338s] [230/232] Processing build/tests/test-parameter
+[  338s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-parameter']
+[  338s] [231/232] Processing build/tests/test-scale
+[  338s] 03:37:31 runner ['/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-scale']
+[  338s] [232/232] Processing doxygen: doc/web.cfg src/aubio.h src/aubio_priv.h src/cvec.h src/fmat.h src/fvec.h src/io/audio_unit.h src/io/ioutils.h src/io/sink.h src/io/sink_apple_audio.h src/io/sink_sndfile.h src/io/sink_wavwrite.h src/io/source.h src/io/source_apple_audio.h src/io/source_avcodec.h src/io/source_sndfile.h src/io/source_wavread.h src/lvec.h src/mathutils.h src/musicutils.h src/notes/notes.h src/onset/onset.h src/onset/peakpicker.h src/pitch/pitch.h src/pitch/pitchfcomb.h src/pitch/pitchmcomb.h src/pitch/pitchschmitt.h src/pitch/pitchspecacf.h src/pitch/pitchyin.h src/pitch/pitchyinfast.h src/pitch/pitchyinfft.h src/spectral/awhitening.h src/spectral/dct.h src/spectral/fft.h src/spectral/filterbank.h src/spectral/filterbank_mel.h src/spectral/mfcc.h src/spectral/phasevoc.h src/spectral/specdesc.h src/spectral/tss.h src/synth/sampler.h src/synth/wavetable.h src/tempo/beattracking.h src/tempo/tempo.h src/temporal/a_weighting.h src/temporal/biquad.h src/temporal/c_weighting.h src/temporal/filter.h src/temporal/resampler.h src/types.h src/utils/hist.h src/utils/log.h src/utils/parameter.h src/utils/scale.h src/vecutils.h -> build/api/index.html
+[  338s] 03:37:31 runner ' ( cat /home/abuild/rpmbuild/BUILD/aubio-0.4.9/doc/web.cfg && echo PROJECT_NUMBER=0.4.9 && echo OUTPUT_DIRECTORY=/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build && echo HTML_OUTPUT=api ) | doxygen - > /dev/null '
+[  346s] warning: Tag 'TCL_SUBST' at line 237 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'CLANG_ASSISTED_PARSING' at line 1052 of file '-' belongs to an option that was not enabled at compile time.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+[  346s] warning: Tag 'CLANG_OPTIONS' at line 1060 of file '-' belongs to an option that was not enabled at compile time.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
+[  346s] warning: Tag 'COLS_IN_ALPHA_INDEX' at line 1078 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'FORMULA_TRANSPARENT' at line 1495 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'LATEX_SOURCE_CODE' at line 1783 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'RTF_SOURCE_CODE' at line 1865 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'DOCBOOK_PROGRAMLISTING' at line 1963 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'PERL_PATH' at line 2143 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'CLASS_DIAGRAMS' at line 2156 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'MSCGEN_PATH' at line 2165 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'DOT_FONTNAME' at line 2207 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'DOT_FONTSIZE' at line 2214 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] warning: Tag 'DOT_TRANSPARENT' at line 2440 of file '-' has become obsolete.
+[  346s]          To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+[  346s] 
+[  346s] Waf: Leaving directory `/home/abuild/rpmbuild/BUILD/aubio-0.4.9/build'
+[  346s] execution summary 
+[  346s]   tests that pass 47/48 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_apple_audio 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_sndfile 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sink_wavwrite 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_apple_audio 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_sndfile 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-notes 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_wavread 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-peakpicker 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchmcomb 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchfcomb 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchschmitt 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitch 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchspecacf 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyinfft 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-onset 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-dct 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-pitchyin 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filterbank_mel 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-phasevoc 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-specdesc 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-awhitening 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tss 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fft 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-sampler 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mfcc 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-a_weighting 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-wavetable 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-biquad 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-c_weighting 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-filter 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-cvec 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fmat 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-beattracking 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-fvec 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-lvec 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils-window 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-mathutils 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-vecutils 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-hist 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-log 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-parameter 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-tempo 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-scale 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-resampler 
+[  346s]   tests that fail 1/48 
+[  346s]     /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec 
+[  346s] stdout:
+[  346s] read a wave file as a mono vector
+[  346s] usage: /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec <source_path> [samplerate] [hop_size]
+[  346s] examples:
+[  346s]  - read file.wav at original samplerate
+[  346s]        /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec file.wav
+[  346s]  - read file.wav at 32000Hz
+[  346s]        /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec file.aif 32000
+[  346s]  - read file.wav at original samplerate with 4096 blocks
+[  346s]        /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/test-source_avcodec file.wav 0 4096 
+[  346s] 
+[  346s] stderr:
+[  346s] AUBIO-TESTS ERROR: not enough arguments, running tests
+[  346s] AUBIO ERROR: source_avcodec: Aborted opening null path
+[  346s] AUBIO ERROR: source_avcodec: Failed opening  (No such file or directory)
+[  346s] AUBIO ERROR: source_avcodec: Can not open /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav with samplerate -1
+[  346s] AUBIO ERROR: source_avcodec: Can not open /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav with hop_size 0
+[  346s] AUBIO ERROR: source_avcodec: Failed opening /home/abuild/rpmbuild/BUILD/aubio-0.4.9/build/tests/44100Hz_44100f_sine441_stereo.wav (Invalid data found when processing input)
+[  346s] 
+[  346s] error: Bad exit status from /var/tmp/rpm-tmp.AlfghR (%build)
+[  346s] 
+[  346s] RPM build errors:
+[  346s]     Bad exit status from /var/tmp/rpm-tmp.AlfghR (%build)
+[  347s] ### VM INTERACTION START ###
+[  347s] [  339.968403][    T1] sysrq: Power Off
+[  347s] [  339.971695][   T18] reboot: Power down
+[  347s] ### VM INTERACTION END ###
+[  347s] 
+[  347s] old-atreju3 failed "build aubio.spec" at Sun Feb 19 03:37:40 UTC 2023.
+[  347s] 

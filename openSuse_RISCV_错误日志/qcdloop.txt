@@ -1,0 +1,422 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] lamb08 started "build qcdloop.spec" at Thu Dec  8 15:53:21 UTC 2022.
+[    0s] 
+[    0s] Building qcdloop for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 '663f62449a70ba42cfa721b101ea136a'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/qcdloop.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/qcdloop.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/qcdloop.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-base [e652dbb94c3c21903975053878ea219d]
+[    3s] 
+[    3s] copying packages...
+[    3s] reordering...cycle: python310-base -> libpython3_10-1_0
+[    3s]   breaking dependency python310-base -> libpython3_10-1_0
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 8192 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,id=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    9s] ### VM INTERACTION END ###
+[    9s] 2nd stage started in virtual machine
+[    9s] machine type: riscv64
+[    9s] Linux version: 6.0.10-1-default #1 SMP PREEMPT_DYNAMIC Sat Nov 26 17:59:17 UTC 2022 (582305b)
+[    9s] Increasing log level from now on...
+[    9s] [    4.688392][  T417] sysrq: Changing Loglevel
+[    9s] [    4.688605][  T417] sysrq: Loglevel set to 4
+[    9s] Enable sysrq operations
+[   10s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   10s] no label, UUID=46f4ab9b-f246-4b7a-b718-b5d4836156bd
+[   10s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   10s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   10s] swapon /dev/vdb
+[   10s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/qcdloop.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/qcdloop.spec build ...
+[   12s] initializing rpm db...
+[   12s] querying package ids...
+[   33s] [1/148] preinstalled aaa_base-84.87+git20220822.6b9f7a3-1.1
+[   33s] [2/148] preinstalled aaa_base-malloccheck-84.87+git20220822.6b9f7a3-1.1
+[   33s] [3/148] preinstalled attr-2.5.1-1.1
+[   33s] [4/148] preinstalled bash-5.2.12-6.1
+[   33s] [5/148] preinstalled bash-sh-5.2.12-6.1
+[   33s] [6/148] preinstalled binutils-2.39-1.1
+[   33s] [7/148] preinstalled brp-check-suse-84.87+git20221115.2f7add6-1.1
+[   33s] [8/148] preinstalled build-compare-20220926T095347.40c240f-1.1
+[   33s] [9/148] preinstalled build-mkbaselibs-20221118-1.1
+[   33s] [10/148] preinstalled bzip2-1.0.8-4.1
+[   33s] [11/148] preinstalled chkstat-1599_20220912-2.1
+[   33s] [12/148] preinstalled compat-usrmerge-build-84.87-5.1
+[   33s] [13/148] preinstalled compat-usrmerge-tools-84.87-5.1
+[   33s] [14/148] preinstalled coreutils-9.1-5.1
+[   33s] [15/148] preinstalled cpio-2.13-4.1
+[   33s] [16/148] preinstalled cpp-12-2.1
+[   33s] [17/148] preinstalled cpp12-12.2.1+git537-1.1
+[   33s] [18/148] cumulate crypto-policies-20210917.c9d86d1-1.1
+[   33s] [19/148] preinstalled debugedit-5.0-5.1
+[   33s] [20/148] preinstalled diffutils-3.8-3.1
+[   33s] [21/148] preinstalled dwz-0.15-2.1
+[   33s] [22/148] preinstalled elfutils-0.188-2.1
+[   33s] [23/148] preinstalled file-5.43-1.1
+[   33s] [24/148] preinstalled file-magic-5.43-1.1
+[   33s] [25/148] preinstalled filesystem-84.87-10.1
+[   33s] [26/148] preinstalled fillup-1.42-278.1
+[   33s] [27/148] preinstalled findutils-4.9.0-1.1
+[   33s] [28/148] preinstalled gawk-5.2.1-1.1
+[   33s] [29/148] preinstalled gcc-12-2.1
+[   33s] [30/148] preinstalled gcc-PIE-12-2.1
+[   33s] [31/148] preinstalled gcc12-12.2.1+git537-1.1
+[   33s] [32/148] preinstalled gcc12-PIE-12.2.1+git537-1.1
+[   33s] [33/148] preinstalled gettext-runtime-mini-0.21.1-1.1
+[   33s] [34/148] preinstalled gettext-tools-mini-0.21.1-1.1
+[   33s] [35/148] preinstalled glibc-2.36-8.1
+[   33s] [36/148] preinstalled glibc-devel-2.36-8.1
+[   33s] [37/148] preinstalled glibc-locale-base-2.36-8.1
+[   33s] [38/148] preinstalled grep-3.8-2.1
+[   33s] [39/148] preinstalled gzip-1.12-2.1
+[   33s] [40/148] preinstalled kernel-obs-build-6.0.10-1.1
+[   33s] [41/148] preinstalled libacl1-2.3.1-2.1
+[   33s] [42/148] preinstalled libasan8-12.2.1+git537-1.1
+[   33s] [43/148] preinstalled libasm1-0.188-2.1
+[   33s] [44/148] preinstalled libatomic1-12.2.1+git537-1.1
+[   33s] [45/148] preinstalled libattr1-2.5.1-1.1
+[   33s] [46/148] preinstalled libaudit1-3.0.6-4.1
+[   33s] [47/148] preinstalled libblkid1-2.37.4-4.1
+[   33s] [48/148] preinstalled libbz2-1-1.0.8-4.1
+[   33s] [49/148] preinstalled libcap-ng0-0.8.3-1.1
+[   33s] [50/148] preinstalled libcap2-2.66-1.1
+[   33s] [51/148] preinstalled libcrypt1-4.4.33-1.1
+[   33s] [52/148] preinstalled libctf-nobfd0-2.39-1.1
+[   33s] [53/148] preinstalled libctf0-2.39-1.1
+[   33s] [54/148] preinstalled libdb-4_8-4.8.30-39.1
+[   33s] [55/148] preinstalled libdw1-0.188-2.1
+[   33s] [56/148] preinstalled libeconf0-0.5.0-1.1
+[   33s] [57/148] preinstalled libelf1-0.188-2.1
+[   33s] [58/148] cumulate libexpat1-2.5.0-1.1
+[   33s] [59/148] preinstalled libfdisk1-2.37.4-4.1
+[   33s] [60/148] cumulate libffi8-3.4.4-1.1
+[   33s] [61/148] preinstalled libgcc_s1-12.2.1+git537-1.1
+[   33s] [62/148] preinstalled libgcrypt20-1.10.1-1.1
+[   33s] [63/148] preinstalled libgdbm6-1.23-1.1
+[   33s] [64/148] preinstalled libgdbm_compat4-1.23-1.1
+[   33s] [65/148] cumulate libgfortran5-12.2.1+git537-1.1
+[   33s] [66/148] preinstalled libgmp10-6.2.1-4.1
+[   33s] [67/148] preinstalled libgomp1-12.2.1+git537-1.1
+[   33s] [68/148] preinstalled libgpg-error0-1.46-1.1
+[   33s] [69/148] preinstalled libisl23-0.25-1.1
+[   33s] [70/148] preinstalled liblua5_4-5-5.4.4-6.1
+[   33s] [71/148] preinstalled liblzma5-5.2.8-1.1
+[   33s] [72/148] preinstalled libmagic1-5.43-1.1
+[   33s] [73/148] preinstalled libmount1-2.37.4-4.1
+[   33s] [74/148] preinstalled libmpc3-1.2.1-1.2
+[   33s] [75/148] cumulate libmpdec3-2.5.1-2.1
+[   33s] [76/148] preinstalled libmpfr6-4.1.1-3.1
+[   33s] [77/148] preinstalled libncurses6-6.3.20221126-31.1
+[   33s] [78/148] preinstalled libpcre2-8-0-10.40-3.1
+[   33s] [79/148] preinstalled libpkgconf3-1.8.0-1.1
+[   33s] [80/148] preinstalled libpopt0-1.19-1.1
+[   33s] [81/148] preinstalled libreadline8-8.2-2.1
+[   33s] [82/148] cumulate librhash0-1.4.3-1.1
+[   33s] [83/148] preinstalled librpmbuild9-4.17.1.1-3.1
+[   33s] [84/148] preinstalled libseccomp2-2.5.4-2.1
+[   33s] [85/148] preinstalled libselinux1-3.4-2.1
+[   33s] [86/148] preinstalled libsemanage-conf-3.4-1.1
+[   33s] [87/148] preinstalled libsemanage2-3.4-1.1
+[   33s] [88/148] preinstalled libsepol2-3.4-1.1
+[   33s] [89/148] preinstalled libsmartcols1-2.37.4-4.1
+[   33s] [90/148] preinstalled libstdc++6-12.2.1+git537-1.1
+[   33s] [91/148] cumulate libstdc++6-devel-gcc12-12.2.1+git537-1.1
+[   33s] [92/148] preinstalled libsubid4-4.13-1.1
+[   33s] [93/148] preinstalled libubsan1-12.2.1+git537-1.1
+[   33s] [94/148] preinstalled libutempter0-1.2.0-3.2
+[   33s] [95/148] preinstalled libuuid1-2.37.4-4.1
+[   33s] [96/148] cumulate libuv1-1.44.2-2.1
+[   33s] [97/148] preinstalled libxcrypt-devel-4.4.33-1.1
+[   33s] [98/148] preinstalled libz1-1.2.12-2.1
+[   33s] [99/148] preinstalled libzstd1-1.5.2-1.1
+[   33s] [100/148] preinstalled linux-glibc-devel-6.0-1.1
+[   33s] [101/148] preinstalled login_defs-4.13-1.1
+[   33s] [102/148] preinstalled lua54-5.4.4-6.1
+[   33s] [103/148] preinstalled make-4.4-2.1
+[   33s] [104/148] preinstalled ncurses-utils-6.3.20221126-31.1
+[   33s] [105/148] preinstalled pam-1.5.2-9.1
+[   33s] [106/148] preinstalled pam_unix-1.5.2-9.1
+[   33s] [107/148] preinstalled patch-2.7.6-6.1
+[   33s] [108/148] preinstalled perl-5.36.0-3.1
+[   33s] [109/148] preinstalled perl-base-5.36.0-3.1
+[   33s] [110/148] preinstalled permissions-1599_20220912-2.1
+[   33s] [111/148] preinstalled permissions-config-1599_20220912-2.1
+[   33s] [112/148] preinstalled pkgconf-1.8.0-1.1
+[   33s] [113/148] preinstalled pkgconf-m4-1.8.0-1.1
+[   33s] [114/148] preinstalled pkgconf-pkg-config-1.8.0-1.1
+[   33s] [115/148] preinstalled polkit-default-privs-1550+20221102.9f111fa-1.1
+[   33s] [116/148] preinstalled post-build-checks-84.87+git20221125.a8b2d0e-1.1
+[   33s] [117/148] cumulate python-rpm-macros-20221117.8687578-1.1
+[   33s] [118/148] preinstalled qemu-linux-user-7.1.0-45.1
+[   33s] [119/148] preinstalled rpm-4.17.1.1-3.1
+[   33s] [120/148] preinstalled rpm-build-4.17.1.1-3.1
+[   33s] [121/148] preinstalled rpm-build-perl-4.17.1.1-3.1
+[   33s] [122/148] preinstalled rpm-config-SUSE-20220926-1.1
+[   33s] [123/148] preinstalled rpmlint-mini-2.4.0+git20221201.82b8b0c-8.32
+[   33s] [124/148] preinstalled rpmlint-strict-2.4.0+git20221201.82b8b0c-1.1
+[   33s] [125/148] preinstalled sed-4.9-1.1
+[   33s] [126/148] preinstalled shadow-4.13-1.1
+[   33s] [127/148] preinstalled system-group-hardware-20170617-24.1
+[   33s] [128/148] preinstalled system-user-root-20190513-2.1
+[   33s] [129/148] preinstalled systemd-rpm-macros-18-1.1
+[   33s] [130/148] preinstalled sysuser-shadow-3.1-5.1
+[   33s] [131/148] preinstalled tar-1.34-8.1
+[   33s] [132/148] preinstalled terminfo-base-6.3.20221126-31.1
+[   33s] [133/148] preinstalled update-alternatives-1.21.8-1.1
+[   33s] [134/148] preinstalled util-linux-2.37.4-4.1
+[   33s] [135/148] preinstalled which-2.21-5.1
+[   33s] [136/148] preinstalled xz-5.2.8-1.1
+[   33s] [137/148] cumulate gcc12-c++-12.2.1+git537-1.1
+[   33s] [138/148] cumulate gcc12-fortran-12.2.1+git537-1.1
+[   33s] [139/148] cumulate libopenssl1_1-1.1.1s-1.1
+[   33s] [140/148] cumulate gcc-c++-12-2.1
+[   33s] [141/148] cumulate gcc-fortran-12-2.1
+[   33s] [142/148] cumulate python310-base-3.10.8-3.1
+[   33s] [143/148] cumulate libpython3_10-1_0-3.10.8-3.1
+[   33s] [144/148] cumulate python310-pyparsing-3.0.9-2.1
+[   33s] [145/148] cumulate cmake-mini-3.25.1-1.1
+[   33s] [146/148] cumulate cmake-3.25.1-1.1
+[   33s] [147/148] cumulate python310-packaging-21.3-4.1
+[   33s] [148/148] cumulate python-rpm-packaging-20210526+a18ca48-1.1
+[   33s] now installing cumulated packages
+[   34s] Preparing...                          ########################################
+[   34s] Updating / installing...
+[   34s] libexpat1-2.5.0-1.1                   ########################################
+[   34s] python-rpm-macros-20221117.8687578-1.1########################################
+[   34s] libuv1-1.44.2-2.1                     ########################################
+[   44s] libstdc++6-devel-gcc12-12.2.1+git537-1########################################
+[   47s] gcc12-c++-12.2.1+git537-1.1           ########################################
+[   47s] librhash0-1.4.3-1.1                   ########################################
+[   47s] libmpdec3-2.5.1-2.1                   ########################################
+[   47s] libgfortran5-12.2.1+git537-1.1        ########################################
+[   53s] gcc12-fortran-12.2.1+git537-1.1       ########################################
+[   53s] libffi8-3.4.4-1.1                     ########################################
+[   54s] crypto-policies-20210917.c9d86d1-1.1  ########################################
+[   54s] libopenssl1_1-1.1.1s-1.1              ########################################
+[   54s] libpython3_10-1_0-3.10.8-3.1          ########################################
+[   58s] python310-base-3.10.8-3.1             ########################################
+[   58s] python310-pyparsing-3.0.9-2.1         ########################################
+[   58s] python310-packaging-21.3-4.1          ########################################
+[   64s] cmake-mini-3.25.1-1.1                 ########################################
+[   64s] cmake-3.25.1-1.1                      ########################################
+[   64s] python-rpm-packaging-20210526+a18ca48-########################################
+[   64s] gcc-fortran-12-2.1                    ########################################
+[   64s] gcc-c++-12-2.1                        ########################################
+[   65s] now finalizing build dir...
+[   66s] ... running 01-add_abuild_user_to_trusted_group
+[   66s] ... running 02-set_timezone_to_utc
+[   66s] ... running 03-set-permissions-secure
+[   66s] ... running 11-hack_uname_version_to_kernel_version
+[   77s] build target is riscv64-suse-linux
+[   77s] -----------------------------------------------------------------
+[   77s] I have the following modifications for qcdloop.spec:
+[   77s] 22c22
+[   77s] < Release:        0
+[   77s] ---
+[   77s] > Release:        1.1
+[   78s] -----------------------------------------------------------------
+[   78s] ----- building qcdloop.spec (user abuild)
+[   78s] -----------------------------------------------------------------
+[   78s] -----------------------------------------------------------------
+[   81s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/663f62449a70ba42cfa721b101ea136a-qcdloop' /home/abuild/rpmbuild/SOURCES/qcdloop.spec
+[   81s] Building target platforms: riscv64-suse-linux
+[   81s] Building for target riscv64-suse-linux
+[   81s] setting SOURCE_DATE_EPOCH=1670284800
+[   81s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.pE3Fiv
+[   82s] + umask 022
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + rm -rf qcdloop-2.0.9
+[   82s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/qcdloop-2.0.9.tar.gz
+[   82s] + /usr/bin/tar -xof -
+[   82s] + STATUS=0
+[   82s] + '[' 0 -ne 0 ']'
+[   82s] + cd qcdloop-2.0.9
+[   82s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   82s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/qcdloop-quadmath-linking.patch
+[   82s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   82s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   82s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/qcdloop-soversion.patch
+[   82s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/qcdloop-fix-conflicting-types.patch
+[   82s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   82s] + /usr/bin/cat /home/abuild/rpmbuild/SOURCES/qcdloop-remove-march-mtune-flags.patch
+[   82s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   82s] + sed -i '1{s|#! /usr/bin/env bash|#! /bin/bash|}' src/qcdloop-config.in
+[   82s] + RPM_EC=0
+[   82s] ++ jobs -p
+[   82s] + exit 0
+[   82s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.w7apQN
+[   82s] + umask 022
+[   82s] + cd /home/abuild/rpmbuild/BUILD
+[   82s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/qcdloop-2.0.9-1.1.riscv64
+[   82s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/qcdloop-2.0.9-1.1.riscv64
+[   82s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   82s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/qcdloop-2.0.9-1.1.riscv64
+[   83s] + cd qcdloop-2.0.9
+[   83s] + ref=/usr/lib/rpm
+[   83s] + mints=0
+[   83s] + case $(uname -m) in
+[   83s] ++ uname -m
+[   83s] + mints=20160911
+[   83s] + for s in guess sub
+[   83s] ++ find -maxdepth 8 -name config.guess
+[   83s] + for s in guess sub
+[   83s] ++ find -maxdepth 8 -name config.sub
+[   83s] + find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
+[   83s] + mkdir -p build
+[   83s] + cd build
+[   83s] + /usr/bin/cmake /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_LIBEXECDIR=/usr/libexec -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_CXX_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_Fortran_FLAGS=-O2 -Wall -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g' '-DCMAKE_EXE_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS=-flto=auto -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS=-flto=auto -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/qcdloop -DENABLE_EXAMPLES:BOOL=ON -DENABLE_FORTRAN_WRAPPER:BOOL=ON
+[   88s] -- The C compiler identification is GNU 12.2.1
+[   93s] -- The CXX compiler identification is GNU 12.2.1
+[   93s] -- Detecting C compiler ABI info
+[   98s] -- Detecting C compiler ABI info - done
+[   98s] -- Check for working C compiler: /usr/bin/cc - skipped
+[   98s] -- Detecting C compile features
+[   98s] -- Detecting C compile features - done
+[   98s] -- Detecting CXX compiler ABI info
+[  103s] -- Detecting CXX compiler ABI info - done
+[  103s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[  103s] -- Detecting CXX compile features
+[  103s] -- Detecting CXX compile features - done
+[  104s] -- Configuring done
+[  104s] -- Generating done
+[  104s] CMake Warning:
+[  104s]   Manually-specified variables were not used by the project:
+[  104s] 
+[  104s]     BUILD_STATIC_LIBS
+[  104s]     CMAKE_Fortran_FLAGS
+[  104s]     CMAKE_INSTALL_DO_STRIP
+[  104s]     CMAKE_MODULES_INSTALL_DIR
+[  104s]     INCLUDE_INSTALL_DIR
+[  104s]     LIB_INSTALL_DIR
+[  104s]     LIB_SUFFIX
+[  104s]     SHARE_INSTALL_PREFIX
+[  104s]     SYSCONF_INSTALL_DIR
+[  104s] 
+[  104s] 
+[  104s] -- Build files have been written to: /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build
+[  104s] + /usr/bin/make -O VERBOSE=1 -j8
+[  104s] /usr/bin/cmake -S/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9 -B/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build --check-build-system CMakeFiles/Makefile.cmake 0
+[  104s] /usr/bin/cmake -E cmake_progress_start /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build/CMakeFiles /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build//CMakeFiles/progress.marks
+[  104s] /usr/bin/make  -f CMakeFiles/Makefile2 all
+[  104s] /usr/bin/make  -f CMakeFiles/qcdloop.dir/build.make CMakeFiles/qcdloop.dir/depend
+[  105s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  105s] cd /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9 /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9 /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build/CMakeFiles/qcdloop.dir/DependInfo.cmake
+[  105s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  105s] /usr/bin/make  -f CMakeFiles/qcdloop.dir/build.make CMakeFiles/qcdloop.dir/build
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [  5%] Building CXX object CMakeFiles/qcdloop.dir/src/triangle.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/triangle.cc.o -MF CMakeFiles/qcdloop.dir/src/triangle.cc.o.d -o CMakeFiles/qcdloop.dir/src/triangle.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/triangle.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/topology.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/triangle.h:10,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/triangle.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:177: CMakeFiles/qcdloop.dir/src/triangle.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: *** Waiting for unfinished jobs....
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 23%] Building CXX object CMakeFiles/qcdloop.dir/src/tadpole.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/tadpole.cc.o -MF CMakeFiles/qcdloop.dir/src/tadpole.cc.o.d -o CMakeFiles/qcdloop.dir/src/tadpole.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/tadpole.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/topology.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/tadpole.h:10,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/tadpole.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:135: CMakeFiles/qcdloop.dir/src/tadpole.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 23%] Building CXX object CMakeFiles/qcdloop.dir/src/box.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/box.cc.o -MF CMakeFiles/qcdloop.dir/src/box.cc.o.d -o CMakeFiles/qcdloop.dir/src/box.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/box.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/topology.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/box.h:10,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/box.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:79: CMakeFiles/qcdloop.dir/src/box.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 11%] Building CXX object CMakeFiles/qcdloop.dir/src/qcdloop.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/qcdloop.cc.o -MF CMakeFiles/qcdloop.dir/src/qcdloop.cc.o.d -o CMakeFiles/qcdloop.dir/src/qcdloop.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/qcdloop.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:121: CMakeFiles/qcdloop.dir/src/qcdloop.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 35%] Building CXX object CMakeFiles/qcdloop.dir/src/topology.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/topology.cc.o -MF CMakeFiles/qcdloop.dir/src/topology.cc.o.d -o CMakeFiles/qcdloop.dir/src/topology.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/topology.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/topology.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/topology.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:163: CMakeFiles/qcdloop.dir/src/topology.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 41%] Building CXX object CMakeFiles/qcdloop.dir/src/bubble.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/bubble.cc.o -MF CMakeFiles/qcdloop.dir/src/bubble.cc.o.d -o CMakeFiles/qcdloop.dir/src/bubble.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/bubble.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/topology.h:12,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/bubble.h:10,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/bubble.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:93: CMakeFiles/qcdloop.dir/src/bubble.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  106s] [ 29%] Building CXX object CMakeFiles/qcdloop.dir/src/cache.cc.o
+[  106s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/cache.cc.o -MF CMakeFiles/qcdloop.dir/src/cache.cc.o.d -o CMakeFiles/qcdloop.dir/src/cache.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/cache.cc
+[  106s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/cache.h:15,
+[  106s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/cache.cc:8:
+[  106s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  106s]    11 | #include <quadmath.h>
+[  106s]       |          ^~~~~~~~~~~~
+[  106s] compilation terminated.
+[  106s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:107: CMakeFiles/qcdloop.dir/src/cache.cc.o] Error 1
+[  106s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  107s] make[2]: Entering directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  107s] [ 47%] Building CXX object CMakeFiles/qcdloop.dir/src/tools.cc.o
+[  107s] /usr/bin/c++ -DQL_NAMES -Dqcdloop_EXPORTS -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop -I/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src -Wall -Wextra -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -fext-numeric-literals -O2 -g -DNDEBUG -fPIC -std=c++11 -MD -MT CMakeFiles/qcdloop.dir/src/tools.cc.o -MF CMakeFiles/qcdloop.dir/src/tools.cc.o.d -o CMakeFiles/qcdloop.dir/src/tools.cc.o -c /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/tools.cc
+[  107s] In file included from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/tools.h:10,
+[  107s]                  from /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/tools.cc:10:
+[  107s] /home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/src/qcdloop/types.h:11:10: fatal error: quadmath.h: No such file or directory
+[  107s]    11 | #include <quadmath.h>
+[  107s]       |          ^~~~~~~~~~~~
+[  107s] compilation terminated.
+[  107s] make[2]: *** [CMakeFiles/qcdloop.dir/build.make:149: CMakeFiles/qcdloop.dir/src/tools.cc.o] Error 1
+[  107s] make[2]: Leaving directory '/home/abuild/rpmbuild/BUILD/qcdloop-2.0.9/build'
+[  107s] make[1]: *** [CMakeFiles/Makefile2:92: CMakeFiles/qcdloop.dir/all] Error 2
+[  107s] make: *** [Makefile:139: all] Error 2
+[  107s] error: Bad exit status from /var/tmp/rpm-tmp.w7apQN (%build)
+[  107s] 
+[  107s] RPM build errors:
+[  107s]     Bad exit status from /var/tmp/rpm-tmp.w7apQN (%build)
+[  107s] ### VM INTERACTION START ###
+[  107s] [  102.702182][    T1] sysrq: Power Off
+[  107s] [  102.706627][   T18] reboot: Power down
+[  107s] ### VM INTERACTION END ###
+[  107s] 
+[  107s] lamb08 failed "build qcdloop.spec" at Thu Dec  8 15:55:08 UTC 2022.
+[  107s] 
