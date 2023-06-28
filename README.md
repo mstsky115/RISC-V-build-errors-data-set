@@ -35,7 +35,9 @@ openEuler_url_template = "https://build.openeuler.openatom.cn/public/build/openE
 
 如图1所示，即为本数据集的分类情况，数字即为该类的标签名
 
-<img src="picture/3.png" alt="RISCV构建错误日志分类" style="zoom:67%;" />
+<div style="text-align: center;">
+  <img src="picture/3.png" alt="RISCV构建错误日志分类" style="zoom:67%;" />
+</div>
  
 <p align="center">图1  RISC-V软件包构建错误分类及其标签</p>>
 
@@ -43,7 +45,9 @@ openEuler_url_template = "https://build.openeuler.openatom.cn/public/build/openE
 
 如图2所示，饼图展示了样本标签的占比情况
 
-<img src="picture/pieChart.png" alt="饼图" style="zoom: 67%;" />
+<div style="text-align: center;">
+  <img src="picture/pieChart.png" alt="饼图" style="zoom: 67%;" />
+</div>
 
 <p align="center">图2  构建错误日志样本的分布情况</p>>
 
