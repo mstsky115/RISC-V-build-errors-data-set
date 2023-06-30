@@ -20,12 +20,12 @@ openSuse：https://build.opensuse.org/
 openEuler：https://build.openeuler.openatom.cn/   
 ```
 
-查找关于RISCV构建的包，通过爬虫爬取，日志URL如下：
+查找关于RISCV构建的包，设计采集工具，各构建平台日志URL如下：
 
 ```python
 openSuse_url_template = "https://build.opensuse.org/public/build/openSUSE:Factory:RISCV/standard/riscv64/{包名}/_log"
 openEuler_url_template = "https://build.openeuler.openatom.cn/public/build/openEuler:Mainline:RISC-V/advanced_riscv64/riscv64/{包名}/_log
-具体步骤：  
+采集具体步骤：  
 (1)在obs官网找到RISCV架构构建失败的软件包目录，并保存  
 (2)通过以上日志URL获取requert请求：response = requests.get(url)
 (3)通过：f.write(response.content)  #下载日志文件
